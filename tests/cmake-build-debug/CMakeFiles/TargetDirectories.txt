@@ -1,0 +1,3 @@
+/Users/callumaxon/Programming/cpp/sdi-project/tests/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/callumaxon/Programming/cpp/sdi-project/tests/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/callumaxon/Programming/cpp/sdi-project/tests/cmake-build-debug/CMakeFiles/tests.dir
