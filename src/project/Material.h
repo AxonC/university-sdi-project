@@ -15,18 +15,18 @@ namespace TrekStar {
         class Material
         {
             private:
-                int id;
+                unsigned int id;
                 std::string title;
                 std::string format;
                 std::string audioFormat;
                 std::string runTime;
                 std::string language;
-                unsigned int retailPrice;
+                unsigned long int retailPrice; // stored in pence
                 std::string subtitles;
                 std::string frameAspect;
             public:
-                Material();
-                ~Material();
+                Material() = default;
+                ~Material() = default;
 
                 int getId();
                 std::string getTitle();

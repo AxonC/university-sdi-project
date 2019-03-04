@@ -1,25 +1,20 @@
-#pragma once
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
 #include <string>
+
 #include <project/Project.h>
 #include <project/Material.h>
-#include "../mock/MockProject.h"
-
-using ::testing::Return;
-using ::testing::NiceMock;
-using ::testing::Test;
 
 using TrekStar::Project::Project;
 using TrekStar::Material::Material;
-using TrekStarTest::Mocks::MockProject;
 
 namespace TrekStarTest {
     namespace Tests {
         class ProjectTest: public Test
         {
         public:
+            // Default state of a project every time a test is ran.
             ProjectTest() : project("Project", "A summary of a project")
             {}
 
@@ -42,6 +37,15 @@ namespace TrekStarTest {
             project.AddMaterials(material);
 
             EXPECT_EQ(project.GetMaterials().size(), 1);
+        }
+
+        TEST_F(ProjectTest, CantAddMaterialsWhenNotReleased)
+        {
+            Material material;
+
+            project.AddMaterials(material);
+
+            EXPECT_EQ(project.GetMaterials().size(), 0);
         }
     }
 }
