@@ -3,53 +3,54 @@
 //
 
 #include "Material.h"
+#include <string>
 
 namespace TrekStar {
     namespace Material {
         /**
          *  Trekstar Material Class Implementation
          */
-        int getId()
+        int Material :: getId()
         {
             return id;
         }
 
-        std::string getTitle()
+        std::string Material :: getTitle()
         {
             return title;
         }
 
-        std::string getFormat()
+        std::string Material :: getFormat()
         {
             return format;
         }
 
-        std::string getAudioFormat()
+        std::string Material :: getAudioFormat()
         {
             return audioFormat;
         }
 
-        std::string getRunTime()
+        std::string Material :: getRunTime()
         {
             return runTime;
         }
 
-        std::string getLanguage()
+        std::string Material :: getLanguage()
         {
             return language;
         }
 
-        unsigned int getRetailPrice()
+        unsigned int Material :: getRetailPrice()
         {
             return retailPrice;
         }
 
-        std::string getSubtitles()
+        std::string Material :: getSubtitles()
         {
             return subtitles;
         }
 
-        std::string getFrameAspect()
+        std::string Material :: getFrameAspect()
         {
             return frameAspect;
         }
