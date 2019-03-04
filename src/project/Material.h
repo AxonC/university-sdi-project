@@ -5,6 +5,8 @@
 #ifndef TREKSTAR_MATERIAL_H
 #define TREKSTAR_MATERIAL_H
 
+#include <string>
+
 namespace TrekStar {
     namespace Material {
         /**
@@ -34,7 +36,7 @@ namespace TrekStar {
                 std::string getLanguage();
                 unsigned int getRetailPrice();
                 std::string getSubtitles();
-                std::string getFrameAspect;
+                std::string getFrameAspect();
         };
     }
 }

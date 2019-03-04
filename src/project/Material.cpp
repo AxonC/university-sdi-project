@@ -3,7 +3,6 @@
 //
 
 #include "Material.h"
-#include <string>
 
 namespace TrekStar {
     namespace Material {
