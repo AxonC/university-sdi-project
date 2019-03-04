@@ -9,11 +9,15 @@ namespace TrekStar {
         Project::Project(std::string & title)
         {
             this->title = title;
+            materials = {};
+
         }
 
-        void Project::SetSummary(std::string & contents)
+        Project::Project(std::string & name, std::string & summary, bool released)
         {
-            this->summary = contents;
+            this->title = name;
+            this->summary = summary;
+            this->released = released;
         }
 
         std::string Project::GetSummary() const
@@ -26,15 +30,29 @@ namespace TrekStar {
             return {this->title, this->GetSummary()};
         }
 
-        Project::Project(std::string & name, std::string & summary)
-        {
-            this->title = name;
-            this->summary = summary;
+        bool Project::CanAddMaterial() const {
+            return released;
         }
 
-        Project::~Project() {
+        bool Project::AddMaterials(Material::Material & material) {
+            if (!this->CanAddMaterial()) {
+                return false;
+            }
 
+            materials.push_back(material);
+
+            return true;
         }
+
+        std::vector<Material::Material> Project::GetMaterials() const {
+            return materials;
+        }
+
+        void Project::ReleaseProject() {
+            this->released = true;
+        }
+
+        Project::~Project() = default;
     }
 }
 
