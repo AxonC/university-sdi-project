@@ -18,7 +18,7 @@ namespace TrekStar {
             public:
                 Project() = default;
                 explicit Project(std::string & title);
-                explicit Project(std::string & title, std::string & summary, bool released = false);
+                explicit Project(const std::string & title, const std::string & summary, bool released = false);
                 ~Project();
 
                 std::string GetSummary() const override;
@@ -38,6 +38,7 @@ namespace TrekStar {
                 std::string summary;
                 std::vector<Material::Material> materials;
                 bool released{false};
+                bool playingInTheatres{false};
         };
     }
 }

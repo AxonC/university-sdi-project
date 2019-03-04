@@ -9,6 +9,7 @@
 
 using ::testing::Return;
 using ::testing::NiceMock;
+using ::testing::Test;
 
 using TrekStar::Project::Project;
 using TrekStar::Material::Material;
@@ -16,21 +17,24 @@ using TrekStarTest::Mocks::MockProject;
 
 namespace TrekStarTest {
     namespace Tests {
-        TEST(ProjectTest, CanGetPairWithTitleAndSummary)
+        class ProjectTest: public Test
         {
-            std::string projectName("Project");
-            std::string projectSummary("A summary of a project");
-            Project project(projectName, projectSummary);
+        public:
+            ProjectTest() : project("Project", "A summary of a project")
+            {}
 
+            Project project;
+        };
+
+
+        TEST_F(ProjectTest, CanGetPairWithTitleAndSummary)
+        {
             ASSERT_EQ(project.GetTitleSummary().second, "A summary of a project");
             ASSERT_EQ(project.GetTitleSummary().first, "Project");
         }
 
-        TEST(ProjectTest, CanAddMaterialsWhenValid)
+        TEST_F(ProjectTest, CanAddMaterialsWhenValid)
         {
-            std::string projectName("Project");
-            std::string projectSummary("A summary of a project");
-            Project project(projectName, projectSummary, true);
             Material material;
 
             project.ReleaseProject();

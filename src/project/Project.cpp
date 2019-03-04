@@ -13,7 +13,7 @@ namespace TrekStar {
 
         }
 
-        Project::Project(std::string & name, std::string & summary, bool released)
+        Project::Project(const std::string & name, const std::string & summary, bool released)
         {
             this->title = name;
             this->summary = summary;
@@ -31,7 +31,7 @@ namespace TrekStar {
         }
 
         bool Project::CanAddMaterial() const {
-            return released;
+            return this->released && !this->playingInTheatres;
         }
 
         bool Project::AddMaterials(Material::Material & material) {
