@@ -14,7 +14,7 @@ namespace TrekStar {
         class Project : public ProjectInterface
         {
             public:
-                Project() {};
+                Project() = default;
                 explicit Project(std::string & title);
                 explicit Project(std::string & name, std::string & summary);
                 ~Project();

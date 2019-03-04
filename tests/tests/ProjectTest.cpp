@@ -20,6 +20,7 @@ namespace TrekStarTest {
             Project project(projectName, projectSummary);
 
             ASSERT_EQ(project.GetTitleSummary().second, "A summary of a project");
+            ASSERT_EQ(project.GetTitleSummary().first, "Project");
         }
     }
 }

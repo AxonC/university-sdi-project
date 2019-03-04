@@ -31,6 +31,10 @@ namespace TrekStar {
             this->title = name;
             this->summary = summary;
         }
+
+        Project::~Project() {
+
+        }
     }
 }
 
