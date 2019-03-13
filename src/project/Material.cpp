@@ -6,9 +6,16 @@
 
 namespace TrekStar {
     namespace Material {
-        /**
-         *  Trekstar Material Class Implementation
-         */
+
+    /**
+      *  Trekstar Material Class Implementation
+    */
+        Material::Material(unsigned int id, const std::string title)
+        {
+            this->id = id;
+            this->title = title;
+        }
+
         int Material::GetId() const
         {
             return id;
@@ -53,8 +60,7 @@ namespace TrekStar {
         {
             return frameAspect;
         }
-
-        bool Material::operator==(const Material &material) const
+    bool Material::operator==(const Material &material) const
         {
             return this->GetId() == material.GetId();
         }
