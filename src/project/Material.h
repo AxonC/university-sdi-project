@@ -28,8 +28,8 @@ namespace TrekStar {
                 Material() = default;
                 ~Material() = default;
 
-                int getId();
-                std::string getTitle();
+                int GetId() const;
+                std::string GetTitle() const;
                 std::string getFormat();
                 std::string getAudioFormat();
                 std::string getRunTime();
@@ -37,6 +37,7 @@ namespace TrekStar {
                 unsigned int getRetailPrice();
                 std::string getSubtitles();
                 std::string getFrameAspect();
+                bool operator==(const Material& material) const;
         };
     }
 }

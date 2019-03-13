@@ -9,49 +9,54 @@ namespace TrekStar {
         /**
          *  Trekstar Material Class Implementation
          */
-        int Material :: getId()
+        int Material::GetId() const
         {
             return id;
         }
 
-        std::string Material :: getTitle()
+        std::string Material::GetTitle() const
         {
             return title;
         }
 
-        std::string Material :: getFormat()
+        std::string Material::getFormat()
         {
             return format;
         }
 
-        std::string Material :: getAudioFormat()
+        std::string Material::getAudioFormat()
         {
             return audioFormat;
         }
 
-        std::string Material :: getRunTime()
+        std::string Material::getRunTime()
         {
             return runTime;
         }
 
-        std::string Material :: getLanguage()
+        std::string Material::getLanguage()
         {
             return language;
         }
 
-        unsigned int Material :: getRetailPrice()
+        unsigned int Material::getRetailPrice()
         {
             return retailPrice;
         }
 
-        std::string Material :: getSubtitles()
+        std::string Material::getSubtitles()
         {
             return subtitles;
         }
 
-        std::string Material :: getFrameAspect()
+        std::string Material::getFrameAspect()
         {
             return frameAspect;
+        }
+
+        bool Material::operator==(const Material &material) const
+        {
+            return this->GetId() == material.GetId();
         }
     }
 }

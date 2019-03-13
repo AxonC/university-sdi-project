@@ -1,7 +1,3 @@
-//
-// Created by Callum Axon on 2019-02-27
-//
-
 #include "Project.h"
 
 namespace TrekStar {
@@ -20,6 +16,8 @@ namespace TrekStar {
             this->released = released;
         }
 
+        Project::~Project() = default;
+
         std::string Project::GetSummary() const
         {
             return this->summary;
@@ -30,11 +28,13 @@ namespace TrekStar {
             return {this->title, this->GetSummary()};
         }
 
-        bool Project::CanAddMaterial() const {
+        bool Project::CanAddMaterial() const
+        {
             return this->released && !this->playingInTheatres;
         }
 
-        bool Project::AddMaterials(Material::Material & material) {
+        bool Project::AddMaterials(Material::Material & material)
+        {
             if (!this->CanAddMaterial()) {
                 return false;
             }
@@ -44,15 +44,15 @@ namespace TrekStar {
             return true;
         }
 
-        std::vector<Material::Material> Project::GetMaterials() const {
+        std::vector<Material::Material> Project::GetMaterials() const
+        {
             return materials;
         }
 
-        void Project::ReleaseProject() {
+        void Project::ReleaseProject()
+        {
             this->released = true;
         }
-
-        Project::~Project() = default;
     }
 }
 

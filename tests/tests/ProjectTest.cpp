@@ -11,7 +11,7 @@ using TrekStar::Material::Material;
 
 namespace TrekStarTest {
     namespace Tests {
-        class ProjectTest: public Test
+        class ProjectTest: public testing::Test
         {
         public:
             // Default state of a project every time a test is ran.
