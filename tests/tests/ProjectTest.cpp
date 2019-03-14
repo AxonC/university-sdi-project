@@ -2,6 +2,7 @@
 #include <gtest/gtest.h>
 
 #include <string>
+#include <algorithm>
 
 #include <project/Project.h>
 #include <project/Material.h>
@@ -15,10 +16,14 @@ namespace TrekStarTest {
         {
         public:
             // Default state of a project every time a test is ran.
-            ProjectTest() : project("Project", "A summary of a project")
-            {}
+            ProjectTest() : project("Project", "A summary of a project"),
+                            releasedProject("Project 2", "A summary of a project")
+            {
+                releasedProject.ReleaseProject();
+            }
 
             Project project;
+            Project releasedProject;
         };
 
 
@@ -46,6 +51,24 @@ namespace TrekStarTest {
             project.AddMaterials(material);
 
             EXPECT_EQ(project.GetMaterials().size(), 0);
+        }
+
+        TEST_F(ProjectTest, CanRemoveMaterialWhenAssociatedWithProject)
+        {
+            Material material;
+
+            releasedProject.AddMaterials(material);
+
+            releasedProject.RemoveMaterial(material);
+
+            EXPECT_EQ(project.GetMaterials().size(), 0);
+        }
+
+        TEST_F(ProjectTest, CantRemoveMaterialWhenNotAssociatedWithProject)
+        {
+            Material material;
+
+            ASSERT_THROW(project.RemoveMaterial(material), std::out_of_range);
         }
     }
 }

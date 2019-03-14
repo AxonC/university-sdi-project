@@ -1,3 +1,5 @@
+#include <algorithm>
+
 #include "Project.h"
 
 namespace TrekStar {
@@ -42,6 +44,17 @@ namespace TrekStar {
             materials.push_back(material);
 
             return true;
+        }
+
+        void Project::RemoveMaterial(Material::Material &material)
+        {
+            auto search = std::find(materials.begin(), materials.end(), material);
+
+            if(search == materials.end()) {
+                throw std::out_of_range("Material not found.");
+            }
+
+            materials.erase(search);
         }
 
         std::vector<Material::Material> Project::GetMaterials() const
