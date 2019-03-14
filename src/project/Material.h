@@ -26,7 +26,7 @@ namespace TrekStar {
                 std::string frameAspect;
             public:
                 Material() = default;
-                explicit Material(unsigned int id, const std::string title);
+                explicit Material(unsigned int id, const std::string & title);
                 ~Material() = default;
 
                 int GetId() const;
@@ -39,6 +39,7 @@ namespace TrekStar {
                 std::string getSubtitles();
                 std::string getFrameAspect();
                 bool operator==(const Material& material) const;
+                bool operator!=(const Material& material) const;
         };
     }
 }
