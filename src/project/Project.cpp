@@ -1,6 +1,4 @@
-//
-// Created by Callum Axon on 2019-02-27
-//
+#include <algorithm>
 
 #include "Project.h"
 
@@ -9,12 +7,18 @@ namespace TrekStar {
         Project::Project(std::string & title)
         {
             this->title = title;
+            materials = {};
+
         }
 
-        void Project::SetSummary(std::string & contents)
+        Project::Project(const std::string & name, const std::string & summary, bool released)
         {
-            this->summary = contents;
+            this->title = name;
+            this->summary = summary;
+            this->released = released;
         }
+
+        Project::~Project() = default;
 
         std::string Project::GetSummary() const
         {
@@ -26,14 +30,41 @@ namespace TrekStar {
             return {this->title, this->GetSummary()};
         }
 
-        Project::Project(std::string & name, std::string & summary)
+        bool Project::CanAddMaterial() const
         {
-            this->title = name;
-            this->summary = summary;
+            return this->released && !this->playingInTheatres;
         }
 
-        Project::~Project() {
+        bool Project::AddMaterials(Material::Material & material)
+        {
+            if (!this->CanAddMaterial()) {
+                return false;
+            }
 
+            materials.push_back(material);
+
+            return true;
+        }
+
+        void Project::RemoveMaterial(Material::Material &material)
+        {
+            auto search = std::find(materials.begin(), materials.end(), material);
+
+            if(search == materials.end()) {
+                throw std::out_of_range("Material not found.");
+            }
+
+            materials.erase(search);
+        }
+
+        std::vector<Material::Material> Project::GetMaterials() const
+        {
+            return materials;
+        }
+
+        void Project::ReleaseProject()
+        {
+            this->released = true;
         }
     }
 }
