@@ -1,0 +1,10 @@
+# Projects
+# format: Project|title|summary|released|playingInTheatres
+
+Project|"Deadpool"|"A superhero does stuff"|true|true
+
+
+# Materials
+# format: Material|id|title|format|audioFormat|runTime|language|retailPrice|subtitles|frameAspect
+
+Material|1|"Deadpool"|"dvd"|"DTS"|"120"|"ENG"|9.99|"ENG"|"16:9"
