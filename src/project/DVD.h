@@ -23,9 +23,9 @@ namespace TrekStar {
             DVD();
             ~DVD();
 
-            std::vector<std::string> getAdditionalLanguageTracks();
-            std::vector<std::string> getAdditionalSubtitleTracks();
-            std::vector<std::string> getBonusFeatures();
+            std::vector<std::string> GetAdditionalLanguageTracks() const;
+            std::vector<std::string> GetAdditionalSubtitleTracks() const;
+            std::vector<std::string> GetBonusFeatures() const;
         };
     }
 }
