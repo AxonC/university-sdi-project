@@ -5,21 +5,21 @@
 #include "DVD.h"
 
 namespace TrekStar {
-    namespace DVD {
+    namespace Material {
         /**
          *  Trekstar DVD Class Implementation
          */
-        std::vector<std::string> DVD :: getAdditionalLanguageTracks()
+        std::vector<std::string> DVD :: GetAdditionalLanguageTracks() const
         {
             return additionalLanguageTracks;
         }
 
-        std::vector<std::string> DVD :: getAdditionalSubtitleTracks()
+        std::vector<std::string> DVD :: GetAdditionalSubtitleTracks() const
         {
             return additionalSubtitleTracks;
         }
 
-        std::vector<std::string> DVD :: getBonusFeatures()
+        std::vector<std::string> DVD :: GetBonusFeatures() const
         {
             return bonusFeatures;
         }

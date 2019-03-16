@@ -9,7 +9,7 @@
 #include <string>
 
 namespace TrekStar {
-    namespace DVD {
+    namespace Material {
         /**
          *  Trekstar DVD Class
          */
