@@ -16,9 +16,10 @@ namespace TrekStar {
         class DVD
         {
         private:
-            std::vector<std::string> additionalLanguageTracks;
-            std::vector<std::string> additionalSubtitleTracks;
-            std::vector<std::string> bonusFeatures;  // for short films or directors comments
+            std::string content;                                // DVD contents
+            std::vector<std::string> additionalLanguageTracks;  // other languages available
+            std::vector<std::string> additionalSubtitleTracks;  // any additional subtitles
+            std::vector<std::string> bonusFeatures;             // for short films or directors comments
         public:
             DVD();
             ~DVD();
