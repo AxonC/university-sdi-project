@@ -4,6 +4,7 @@
 #include <string>
 #include <utility>
 #include <vector>
+#include <fstream>
 
 #include "Material.h"
 
@@ -16,6 +17,7 @@ namespace TrekStar {
         {
             public:
                 Project() = default;
+                explicit Project(std::ifstream& file);
                 explicit Project(std::string & title);
                 explicit Project(const std::string & title, const std::string & summary, bool released = false);
                 ~Project();

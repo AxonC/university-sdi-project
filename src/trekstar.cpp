@@ -6,26 +6,11 @@
 
 int main()
 {
+    std::string fileDirectory = "/Users/Matt/Documents/School/NTU/OneDrive - Nottingham Trent University/Year 2/SOFT20091 Software Design & Implementation/Assessment/Coursework Assignment/sdi-project/src/data";
     std::vector<std::string> files;
     files = readDirectory("/Users/Matt/Documents/School/NTU/OneDrive - Nottingham Trent University/Year 2/SOFT20091 Software Design & Implementation/Assessment/Coursework Assignment/sdi-project/src/data");
 
-    importProjects(files);
-
-    std::ifstream dataFile ("data.txt");
-
-    if ( ! isFileOpen(dataFile) )
-    {
-        std::cout << "Error: File not found." << std::endl;
-        return 1;
-    }
-
-    if ( ! isFileOkay(dataFile) )
-    {
-        std::cout << "Error: There was an error reading the file, it may be corrupted." << std::endl;
-        return 1;
-    }
-
-    //std::vector<Project> projects;
+    importProjects(fileDirectory, files);
 
     std::cout << "Welcome to TrekStar Management System | Console" << std::endl;
 

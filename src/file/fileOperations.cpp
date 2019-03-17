@@ -4,9 +4,6 @@
 
 #include "fileOperations.h"
 
-#include <dirent.h>
-#include <sys/types.h>
-
 bool isFileOpen(std::ifstream& file)
 {
     return file.is_open();
@@ -44,13 +41,32 @@ std::vector<std::string> readDirectory(const std::string& path = std::string())
     return result;
 }
 
-#include <iostream>
-std::vector<TrekStar::Project::Project> importProjects(std::vector<std::string> files)
+std::vector<TrekStar::Project::Project> importProjects(std::string fileDirectory, std::vector<std::string> files)
 {
+    TrekStar::Project::Project currentProject;
+    std::vector<TrekStar::Project::Project> projects;
+
     for (std::vector<std::string>::iterator it = files.begin() ; it != files.end(); ++it) {
         if (*it != "." && *it != "..")
         {
-            std::cout << *it << std::endl;
+            std::ifstream dataFile (fileDirectory + "/" + *it);
+
+            if ( ! isFileOpen(dataFile) || ! isFileOkay(dataFile) )
+            {
+                if ( ! isFileOpen(dataFile) )
+                {
+                    std::cout << "Error: File not found." << std::endl;
+                }
+                if ( ! isFileOkay(dataFile) )
+                {
+                    std::cout << "Error: There was an error reading the file, it may be corrupted." << std::endl;
+                }
+            }
+            else
+            {
+                currentProject = TrekStar::Project::Project(dataFile);
+                projects.push_back(currentProject);
+            }
         }
     }
 }

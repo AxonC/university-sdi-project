@@ -1,14 +1,24 @@
+#include <iostream>
 #include <algorithm>
 
 #include "Project.h"
 
 namespace TrekStar {
     namespace Project {
+        Project::Project(std::ifstream& file)
+        {
+            std::string line;
+            while (getline(file, line))
+            {
+                std::cout << line << std::endl;
+            }
+            std::cout << "test2" << std::endl;
+        }
+
         Project::Project(std::string & title)
         {
             this->title = title;
             materials = {};
-
         }
 
         Project::Project(const std::string & name, const std::string & summary, bool released)
