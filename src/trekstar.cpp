@@ -7,8 +7,9 @@
 int main()
 {
     std::vector<std::string> files;
-    files = read_directory("/Users/Matt/Documents/School/NTU/OneDrive - Nottingham Trent University/Year 2/SOFT20091 Software Design & Implementation/Assessment/Coursework Assignment/sdi-project/src/data");
-    std::cout << files[2] << std::endl;
+    files = readDirectory("/Users/Matt/Documents/School/NTU/OneDrive - Nottingham Trent University/Year 2/SOFT20091 Software Design & Implementation/Assessment/Coursework Assignment/sdi-project/src/data");
+
+    importProjects(files);
 
     std::ifstream dataFile ("data.txt");
 
