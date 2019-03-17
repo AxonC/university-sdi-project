@@ -10,7 +10,7 @@ int main()
     std::vector<std::string> files;
     files = readDirectory("/Users/Matt/Documents/School/NTU/OneDrive - Nottingham Trent University/Year 2/SOFT20091 Software Design & Implementation/Assessment/Coursework Assignment/sdi-project/src/data");
 
-    importProjects(fileDirectory, files);
+    std::vector<TrekStar::Project::Project> projects = importProjects(fileDirectory, files);
 
     std::cout << "Welcome to TrekStar Management System | Console" << std::endl;
 

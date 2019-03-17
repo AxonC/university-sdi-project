@@ -8,7 +8,9 @@ namespace TrekStar {
     namespace Project {
         Project::Project(std::ifstream& file)
         {
+            std::vector<std::string> projectAttributes;
             std::string line;
+
             while (getline(file, line))
             {
                 if (line[0] != '#')
@@ -17,13 +19,32 @@ namespace TrekStar {
                     while (pos != std::string::npos)
                     {
                         pos = line.find('|');
-                        std::cout << line.substr(0, pos) << std::endl;
+                        projectAttributes.push_back(line.substr(0, pos));
                         line = line.substr(pos + 1);
                     }
-                    //std::cout << line << std::endl;
                 }
             }
-            std::cout << "test2" << std::endl;
+
+            this->title = projectAttributes[1];
+            this->summary = projectAttributes[2];
+
+            if (projectAttributes[3] == "true")
+            {
+                this->released = true;
+            }
+            else
+            {
+                this->released = false;
+            }
+
+            if (projectAttributes[4] == "true")
+            {
+                this->playingInTheatres = true;
+            }
+            else
+            {
+                this->playingInTheatres = false;
+            }
         }
 
         Project::Project(std::string & title)

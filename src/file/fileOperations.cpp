@@ -69,4 +69,6 @@ std::vector<TrekStar::Project::Project> importProjects(std::string fileDirectory
             }
         }
     }
+
+    return projects;
 }
