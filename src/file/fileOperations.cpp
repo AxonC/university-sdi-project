@@ -48,6 +48,9 @@ std::vector<std::string> readDirectory(const std::string& path = std::string())
 std::vector<TrekStar::Project::Project> importProjects(std::vector<std::string> files)
 {
     for (std::vector<std::string>::iterator it = files.begin() ; it != files.end(); ++it) {
-        std::cout << *it << std::endl;
+        if (*it != "." && *it != "..")
+        {
+            std::cout << *it << std::endl;
+        }
     }
 }
