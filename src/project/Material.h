@@ -26,6 +26,7 @@ namespace TrekStar {
                 std::string frameAspect;
             public:
                 Material() = default;
+                explicit Material(std::string materialLine);
                 explicit Material(unsigned int id, const std::string & title);
                 ~Material() = default;
 

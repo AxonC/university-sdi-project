@@ -3,13 +3,38 @@
 //
 
 #include "Material.h"
+#include <vector>
 
 namespace TrekStar {
     namespace Material {
+        /**
+          *  Trekstar Material Class Implementation
+        */
+        Material::Material(std::string line)
+        {
+            std::vector<std::string> materialAttributes;
 
-    /**
-      *  Trekstar Material Class Implementation
-    */
+            std::string::size_type pos = line.find('|');
+            line = line.substr(pos + 1);
+
+            while (pos != std::string::npos)
+            {
+                pos = line.find('|');
+                materialAttributes.push_back(line.substr(0, pos));
+                line = line.substr(pos + 1);
+            }
+
+            this->id = std::stoi(materialAttributes[0]);
+            this->title = materialAttributes[1];
+            this->format = materialAttributes[2];
+            this->audioFormat = materialAttributes[3];
+            this->runTime = materialAttributes[4];
+            this->language = materialAttributes[5];
+            this->retailPrice = std::stoul(materialAttributes[6], nullptr ,0);
+            this->subtitles = materialAttributes[7];
+            this->frameAspect = materialAttributes[8];
+        }
+
         Material::Material(unsigned int id, const std::string & title)
         {
             this->id = id;

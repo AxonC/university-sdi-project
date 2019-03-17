@@ -9,6 +9,7 @@ namespace TrekStar {
         Project::Project(std::ifstream& file)
         {
             std::vector<std::string> projectAttributes;
+            std::vector<Material::Material> projectMaterials;
             std::string line;
 
             while (getline(file, line))
@@ -16,11 +17,19 @@ namespace TrekStar {
                 if (line[0] != '#')
                 {
                     std::string::size_type pos = line.find('|');
-                    while (pos != std::string::npos)
+                    if (line.substr(0, pos) == "Project")
                     {
-                        pos = line.find('|');
-                        projectAttributes.push_back(line.substr(0, pos));
-                        line = line.substr(pos + 1);
+                        while (pos != std::string::npos)
+                        {
+                            pos = line.find('|');
+                            projectAttributes.push_back(line.substr(0, pos));
+                            line = line.substr(pos + 1);
+                        }
+                    }
+                    else if (line.substr(0, pos) == "Material")
+                    {
+                        Material::Material aMaterial = Material::Material(line);
+                        projectMaterials.push_back(aMaterial);
                     }
                 }
             }
@@ -45,6 +54,8 @@ namespace TrekStar {
             {
                 this->playingInTheatres = false;
             }
+
+            this->materials = projectMaterials;
         }
 
         Project::Project(std::string & title)
