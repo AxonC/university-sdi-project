@@ -1,5 +1,6 @@
 #include <iostream>
 #include <algorithm>
+#include <sstream>     // for std::stringstream
 
 #include "Project.h"
 
@@ -10,7 +11,17 @@ namespace TrekStar {
             std::string line;
             while (getline(file, line))
             {
-                std::cout << line << std::endl;
+                if (line[0] != '#')
+                {
+                    std::string::size_type pos = line.find('|');
+                    while (pos != std::string::npos)
+                    {
+                        pos = line.find('|');
+                        std::cout << line.substr(0, pos) << std::endl;
+                        line = line.substr(pos + 1);
+                    }
+                    //std::cout << line << std::endl;
+                }
             }
             std::cout << "test2" << std::endl;
         }
