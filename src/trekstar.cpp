@@ -1,10 +1,15 @@
 #include <iostream>
 #include <fstream>
+#include <vector>
 
 #include "file/fileOperations.cpp"
 
 int main()
 {
+    std::vector<std::string> files;
+    files = read_directory("/Users/Matt/Documents/School/NTU/OneDrive - Nottingham Trent University/Year 2/SOFT20091 Software Design & Implementation/Assessment/Coursework Assignment/sdi-project/src/data");
+    std::cout << files[2] << std::endl;
+
     std::ifstream dataFile ("data.txt");
 
     if ( ! isFileOpen(dataFile) )
@@ -18,6 +23,8 @@ int main()
         std::cout << "Error: There was an error reading the file, it may be corrupted." << std::endl;
         return 1;
     }
+
+    //std::vector<Project> projects;
 
     std::cout << "Welcome to TrekStar Management System | Console" << std::endl;
 
