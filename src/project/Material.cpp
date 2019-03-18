@@ -51,37 +51,37 @@ namespace TrekStar {
             return title;
         }
 
-        std::string Material::getFormat()
+        std::string Material::GetFormat() const
         {
             return format;
         }
 
-        std::string Material::getAudioFormat()
+        std::string Material::GetAudioFormat() const
         {
             return audioFormat;
         }
 
-        std::string Material::getRunTime()
+        std::string Material::GetRunTime() const
         {
             return runTime;
         }
 
-        std::string Material::getLanguage()
+        std::string Material::GetLanguage() const
         {
             return language;
         }
 
-        unsigned int Material::getRetailPrice()
+        unsigned int Material::GetRetailPrice() const
         {
             return retailPrice;
         }
 
-        std::string Material::getSubtitles()
+        std::string Material::GetSubtitles() const
         {
             return subtitles;
         }
 
-        std::string Material::getFrameAspect()
+        std::string Material::GetFrameAspect() const
         {
             return frameAspect;
         }

@@ -32,13 +32,13 @@ namespace TrekStar {
 
                 int GetId() const;
                 std::string GetTitle() const;
-                std::string getFormat();
-                std::string getAudioFormat();
-                std::string getRunTime();
-                std::string getLanguage();
-                unsigned int getRetailPrice();
-                std::string getSubtitles();
-                std::string getFrameAspect();
+                std::string GetFormat() const;
+                std::string GetAudioFormat() const;
+                std::string GetRunTime() const;
+                std::string GetLanguage() const;
+                unsigned int GetRetailPrice() const;
+                std::string GetSubtitles() const;
+                std::string GetFrameAspect() const;
                 bool operator==(const Material& material) const;
                 bool operator!=(const Material& material) const;
         };

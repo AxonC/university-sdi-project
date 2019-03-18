@@ -19,15 +19,22 @@ int main()
     {
         std::cout << std::endl;
         std::cout << "Available commands: " << std::endl;
-        std::cout << " list projects - lsp" << std::endl;
-        std::cout << " quit          - q" << std::endl;
+        std::cout << " list projects  - lsp" << std::endl;
+        std::cout << " list materials - lsm [project number]" << std::endl;
+        std::cout << " quit           - q" << std::endl;
 
         std::cout << "> ";
-        std::cin >> command;
+        std::getline(std::cin, command);
 
-        if ( command == "lsp" )
+        std::string::size_type pos = command.find(' ');
+
+        if ( command.substr(0, pos) == "lsp" )
         {
             listProjects(projects);
+        }
+        else if ( command.substr(0, pos) == "lsm" )
+        {
+            listMaterials(projects, command.substr(pos + 1));
         }
     }
 
