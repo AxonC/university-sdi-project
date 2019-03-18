@@ -22,7 +22,11 @@ namespace TrekStar {
                 explicit Project(const std::string & title, const std::string & summary, bool released = false);
                 ~Project();
 
+                std::string GetTitle() const;
                 std::string GetSummary() const;
+                bool GetReleased() const;
+                bool GetPlayingInTheatres() const;
+
                 void SetSummary(const std::string & contents);
 
                 std::pair<std::string, std::string> GetTitleSummary() const;

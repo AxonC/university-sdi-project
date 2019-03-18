@@ -73,9 +73,24 @@ namespace TrekStar {
 
         Project::~Project() = default;
 
+        std::string Project::GetTitle() const
+        {
+            return this->title;
+        }
+
         std::string Project::GetSummary() const
         {
             return this->summary;
+        }
+
+        bool Project::GetReleased() const
+        {
+            return this->released;
+        }
+
+        bool Project::GetPlayingInTheatres() const
+        {
+            return this->playingInTheatres;
         }
 
         std::pair<std::string, std::string> Project::GetTitleSummary() const
