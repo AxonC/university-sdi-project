@@ -6,9 +6,9 @@
 
 int main()
 {
-    std::string fileDirectory = "/Users/Matt/Documents/School/NTU/OneDrive - Nottingham Trent University/Year 2/SOFT20091 Software Design & Implementation/Assessment/Coursework Assignment/sdi-project/src/data";
+    std::string fileDirectory = "data";
     std::vector<std::string> files;
-    files = readDirectory("/Users/Matt/Documents/School/NTU/OneDrive - Nottingham Trent University/Year 2/SOFT20091 Software Design & Implementation/Assessment/Coursework Assignment/sdi-project/src/data");
+    files = readDirectory(fileDirectory);
 
     std::vector<TrekStar::Project::Project> projects = importProjects(fileDirectory, files);
 
