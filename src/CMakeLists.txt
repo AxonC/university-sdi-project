@@ -12,7 +12,7 @@ if(Boost_FOUND)
     include_directories(${Boost_INCLUDE_DIRS})
 endif()
 
-add_library(Project project/Project.cpp project/Project.h project/Material.h project/Material.cpp project/DVD.h project/DVD.cpp)
+add_library(Project project/Project.cpp project/Project.h project/Material.h project/Material.cpp project/DVD.h project/DVD.cpp project/MaterialFactory.cpp project/MaterialFactory.h)
 add_library(File file/fileOperations.h file/fileOperations.cpp)
 add_library(Information listInformation.cpp)
 

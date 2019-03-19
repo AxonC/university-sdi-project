@@ -7,13 +7,14 @@
 
 #include <vector>
 #include <string>
+#include "Material.h"
 
 namespace TrekStar {
     namespace Material {
         /**
          *  Trekstar DVD Class
          */
-        class DVD
+        class DVD: public Material::Material
         {
         private:
             std::string content;                                // DVD contents
