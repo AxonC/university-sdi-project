@@ -18,7 +18,7 @@ namespace TrekStar {
             public:
                 Project() = default;
                 explicit Project(std::string title, std::string summary, bool released, bool playingInTheatres);
-                void Project::AddMaterials(std::vector<std::shared_ptr<Material::Material>> materials);
+                void AddMaterials(std::vector<std::shared_ptr<Material::Material>> materials);
                 explicit Project(std::string & title);
                 explicit Project(const std::string & title, const std::string & summary, bool released = false);
                 ~Project();
