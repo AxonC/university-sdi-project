@@ -6,6 +6,7 @@
 #define TREKSTAR_FILEOPERATIONS_H
 
 #include "../project/Project.h"
+#include "../project/Material.h"
 
 #include <iostream>
 #include <fstream>
