@@ -14,7 +14,7 @@ namespace TrekStar {
             this->playingInTheatres = playingInTheatres;
         }
 
-        void AddMaterials(std::shared_ptr<Material::Material> materials)
+        void Project::AddMaterials(std::shared_ptr<Material::Material> materials)
         {
             this->materials = materials;
         }
