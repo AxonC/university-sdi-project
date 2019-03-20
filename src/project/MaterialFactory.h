@@ -12,12 +12,12 @@ namespace TrekStar {
         class MaterialFactory
         {
          public:
-            MaterialFactory();
+            MaterialFactory() = default;
+            ~MaterialFactory() = default;
 
-            std::shared_ptr<Material> Create(const std::string & materialType);
+            static std::shared_ptr<Material> Create(const std::string & materialType);
         };
     }
 }
-
 
 #endif //TREKSTAR_MATERIALFACTORY_H

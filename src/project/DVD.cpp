@@ -23,5 +23,10 @@ namespace TrekStar {
         {
             return bonusFeatures;
         }
+
+        DVD::DVD() : Material()
+        {
+
+        }
     }
 }

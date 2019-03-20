@@ -9,12 +9,14 @@
 #include <string>
 #include "Material.h"
 
+using TrekStar::Material::Material;
+
 namespace TrekStar {
     namespace Material {
         /**
          *  Trekstar DVD Class
          */
-        class DVD: public Material::Material
+        class DVD : public Material
         {
         private:
             std::string content;                                // DVD contents

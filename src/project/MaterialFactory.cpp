@@ -7,6 +7,8 @@ namespace TrekStar {
         {
             if (materialType == "DVD") {
                 return std::make_shared<DVD>();
+            } else {
+                return nullptr;
             }
         }
     }

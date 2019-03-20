@@ -30,6 +30,8 @@ namespace TrekStar {
                 explicit Material(unsigned int id, const std::string & title);
                 ~Material() = default;
 
+                virtual void PopulateFromFile(std::string materialLine) = 0;
+
                 int GetId() const;
                 std::string GetTitle() const;
                 std::string GetFormat() const;
