@@ -24,7 +24,7 @@ namespace TrekStar {
                 line = line.substr(pos + 1);
             }
 
-            this->id = std::stoi(materialAttributes[0]);
+            this->id = static_cast<unsigned int>(std::stoi(materialAttributes[0]));
             this->title = materialAttributes[1];
             this->format = materialAttributes[2];
             this->audioFormat = materialAttributes[3];
@@ -91,7 +91,8 @@ namespace TrekStar {
             return this->GetId() == material.GetId();
         }
 
-        bool Material::operator!=(const Material &material) const {
+        bool Material::operator!=(const Material &material) const
+        {
             return this->GetId() != material.GetId();
         }
     }
