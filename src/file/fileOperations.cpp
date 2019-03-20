@@ -41,6 +41,65 @@ std::vector<std::string> readDirectory(const std::string& path = std::string())
     return result;
 }
 
+TrekStar::Project::Project createProject(std::ifstream& dataFile)
+{
+    TrekStar::Project::Project aProject;
+    std::vector<std::string> projectAttributes;
+    //std::vector<Material::Material> projectMaterials;
+    std::string line;
+
+    while (getline(file, line))
+    {
+        if (line[0] != '#')
+        {
+            std::string::size_type pos = line.find('|');
+            if (line.substr(0, pos) == "Project")
+            {
+                while (pos != std::string::npos)
+                {
+                    pos = line.find('|');
+                    projectAttributes.push_back(line.substr(0, pos));
+                    line = line.substr(pos + 1);
+                }
+            }
+//            else if (line.substr(0, pos) == "Material")
+//            {
+//                Material::Material aMaterial = Material::Material(line);
+//                projectMaterials.push_back(aMaterial);
+//            }
+        }
+    }
+
+    std::string title = projectAttributes[1];
+    std::string summary = projectAttributes[2];
+
+    bool released;
+
+    if (projectAttributes[3] == "true")
+    {
+        released = true;
+    }
+    else
+    {
+        released = false;
+    }
+
+    bool playingInTheatres;
+
+    if (projectAttributes[4] == "true")
+    {
+        playingInTheatres = true;
+    }
+    else
+    {
+        playingInTheatres = false;
+    }
+
+    aProject = Project::Project(title, summary, released, playingInTheatres);
+
+    return aProject;
+}
+
 std::vector<TrekStar::Project::Project> importProjects(std::string fileDirectory, std::vector<std::string> files)
 {
     TrekStar::Project::Project currentProject;
@@ -64,7 +123,7 @@ std::vector<TrekStar::Project::Project> importProjects(std::string fileDirectory
             }
             else
             {
-                currentProject = TrekStar::Project::Project(dataFile);
+                currentProject = createProject(dataFile);
                 projects.push_back(currentProject);
             }
         }

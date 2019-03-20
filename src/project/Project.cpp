@@ -6,56 +6,17 @@
 
 namespace TrekStar {
     namespace Project {
-        Project::Project(std::ifstream& file)
+        Project::Project(std::string title, std::string summary, bool released, bool playingInTheatres)
         {
-            std::vector<std::string> projectAttributes;
-            std::vector<Material::Material> projectMaterials;
-            std::string line;
+            this->title = title;
+            this->summary = summary;
+            this->released = released;
+            this->playingInTheatres = playingInTheatres;
+        }
 
-            while (getline(file, line))
-            {
-                if (line[0] != '#')
-                {
-                    std::string::size_type pos = line.find('|');
-                    if (line.substr(0, pos) == "Project")
-                    {
-                        while (pos != std::string::npos)
-                        {
-                            pos = line.find('|');
-                            projectAttributes.push_back(line.substr(0, pos));
-                            line = line.substr(pos + 1);
-                        }
-                    }
-                    else if (line.substr(0, pos) == "Material")
-                    {
-                        Material::Material aMaterial = Material::Material(line);
-                        projectMaterials.push_back(aMaterial);
-                    }
-                }
-            }
-
-            this->title = projectAttributes[1];
-            this->summary = projectAttributes[2];
-
-            if (projectAttributes[3] == "true")
-            {
-                this->released = true;
-            }
-            else
-            {
-                this->released = false;
-            }
-
-            if (projectAttributes[4] == "true")
-            {
-                this->playingInTheatres = true;
-            }
-            else
-            {
-                this->playingInTheatres = false;
-            }
-
-            this->materials = projectMaterials;
+        Project::AddMaterials(std::vector<Material::Material> materials)
+        {
+            this->materials = materials;
         }
 
         Project::Project(std::string & title)
