@@ -122,10 +122,12 @@ std::vector<std::shared_ptr<Material::Material>> createMaterials(std::ifstream& 
 
                 currentMeterial->populateFromFile(id, title, format, audioFormat, runTime, language, retailPrice, subtitles, frameAspect);
 
-                projectMaterials.push_back(currentMaterial);
+                materials.push_back(currentMaterial);
             }
         }
     }
+
+    return materials;
 }
 
 std::vector<TrekStar::Project::Project> importProjects(std::string fileDirectory, std::vector<std::string> files)
@@ -153,8 +155,9 @@ std::vector<TrekStar::Project::Project> importProjects(std::string fileDirectory
             else
             {
                 currentProject = createProject(dataFile);
-                currentMaterial = Material::MaterialFactory::Create(
                 projects.push_back(currentProject);
+
+                currentProject->AddMaterials(createMaterials(dataFile));
             }
         }
     }
