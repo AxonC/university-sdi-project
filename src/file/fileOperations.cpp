@@ -108,24 +108,24 @@ std::vector<std::shared_ptr<Material::Material>> createMaterials(std::ifstream& 
             std::string::size_type pos = line.find('|');
             if (line.substr(0, pos) == "Material")
             {
-                std::string id = static_cast<unsigned int>(std::stoi(materialAttributes[0]));
-                std::string title = materialAttributes[1];
-                std::string format = materialAttributes[2];
-                std::string audioFormat = materialAttributes[3];
-                std::string runTime = materialAttributes[4];
-                std::string language = materialAttributes[5];
-                unsigned long int retailPrice = std::stoul(materialAttributes[6], nullptr ,0);
-                std::string subtitles = materialAttributes[7];
-                std::string frameAspect = materialAttributes[8];
-
-                currentMaterial = Material::MaterialFactory::Create(format);
-
-                currentMeterial->populateFromFile(id, title, format, audioFormat, runTime, language, retailPrice, subtitles, frameAspect);
-
                 materials.push_back(currentMaterial);
             }
         }
     }
+
+    std::string id = static_cast<unsigned int>(std::stoi(materialAttributes[0]));
+    std::string title = materialAttributes[1];
+    std::string format = materialAttributes[2];
+    std::string audioFormat = materialAttributes[3];
+    std::string runTime = materialAttributes[4];
+    std::string language = materialAttributes[5];
+    unsigned long int retailPrice = std::stoul(materialAttributes[6], nullptr ,0);
+    std::string subtitles = materialAttributes[7];
+    std::string frameAspect = materialAttributes[8];
+
+    currentMaterial = Material::MaterialFactory::Create(format);
+
+    currentMeterial->populateFromFile(id, title, format, audioFormat, runTime, language, retailPrice, subtitles, frameAspect);
 
     return materials;
 }
