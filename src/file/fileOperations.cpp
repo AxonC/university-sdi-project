@@ -45,10 +45,9 @@ TrekStar::Project::Project createProject(std::ifstream& dataFile)
 {
     TrekStar::Project::Project aProject;
     std::vector<std::string> projectAttributes;
-    //std::vector<Material::Material> projectMaterials;
     std::string line;
 
-    while (getline(file, line))
+    while (getline(dataFile, line))
     {
         if (line[0] != '#')
         {
@@ -62,11 +61,6 @@ TrekStar::Project::Project createProject(std::ifstream& dataFile)
                     line = line.substr(pos + 1);
                 }
             }
-//            else if (line.substr(0, pos) == "Material")
-//            {
-//                Material::Material aMaterial = Material::Material(line);
-//                projectMaterials.push_back(aMaterial);
-//            }
         }
     }
 
@@ -95,14 +89,49 @@ TrekStar::Project::Project createProject(std::ifstream& dataFile)
         playingInTheatres = false;
     }
 
-    aProject = Project::Project(title, summary, released, playingInTheatres);
+    aProject = TrekStar::Project::Project(title, summary, released, playingInTheatres);
 
     return aProject;
+}
+
+std::vector<std::shared_ptr<Material::Material>> createMaterials(std::ifstream& dataFile)
+{
+    std::vector<std::shared_ptr<Material::Material>> materials;
+    std::shared_ptr<Material::Material> currentMaterial;
+    std::vector<std::string> materialAttributes;
+    std::string line;
+
+    while (getline(dataFile, line))
+    {
+        if (line[0] != '#')
+        {
+            std::string::size_type pos = line.find('|');
+            if (line.substr(0, pos) == "Material")
+            {
+                std::string id = static_cast<unsigned int>(std::stoi(materialAttributes[0]));
+                std::string title = materialAttributes[1];
+                std::string format = materialAttributes[2];
+                std::string audioFormat = materialAttributes[3];
+                std::string runTime = materialAttributes[4];
+                std::string language = materialAttributes[5];
+                unsigned long int retailPrice = std::stoul(materialAttributes[6], nullptr ,0);
+                std::string subtitles = materialAttributes[7];
+                std::string frameAspect = materialAttributes[8];
+
+                currentMaterial = Material::MaterialFactory::Create(format);
+
+                currentMeterial->populateFromFile(id, title, format, audioFormat, runTime, language, retailPrice, subtitles, frameAspect);
+
+                projectMaterials.push_back(currentMaterial);
+            }
+        }
+    }
 }
 
 std::vector<TrekStar::Project::Project> importProjects(std::string fileDirectory, std::vector<std::string> files)
 {
     TrekStar::Project::Project currentProject;
+    std::shared_ptr<Material::Material> currentMaterial;
     std::vector<TrekStar::Project::Project> projects;
 
     for (std::vector<std::string>::iterator it = files.begin() ; it != files.end(); ++it) {
@@ -124,6 +153,7 @@ std::vector<TrekStar::Project::Project> importProjects(std::string fileDirectory
             else
             {
                 currentProject = createProject(dataFile);
+                currentMaterial = Material::MaterialFactory::Create(
                 projects.push_back(currentProject);
             }
         }
