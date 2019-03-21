@@ -94,6 +94,9 @@ namespace TrekStar {
 
         std::vector<std::shared_ptr<Material::Material>> createMaterials(std::ifstream& dataFile)
         {
+            dataFile.clear();                  // clear fail and eof bits
+            dataFile.seekg(0, std::ios::beg);  // go back to the start
+
             std::vector<std::shared_ptr<Material::Material>> materials;
             std::shared_ptr<Material::Material> currentMaterial;
             std::vector<std::string> materialAttributes;
@@ -101,28 +104,27 @@ namespace TrekStar {
 
             while (getline(dataFile, line))
             {
-                if (line[0] != '#')
+                if (line[0] != '#' && !line.empty())
                 {
                     std::string::size_type pos = line.find('|');
                     if (line.substr(0, pos) == "Material")
                     {
-                        materials.push_back(currentMaterial);
-
                         while (pos != std::string::npos)
                         {
                             pos = line.find('|');
                             materialAttributes.push_back(line.substr(0, pos));
                             line = line.substr(pos + 1);
                         }
+
+                        currentMaterial = Material::MaterialFactory::Create(materialAttributes.at(3));
+                        currentMaterial->PopulateFromFile(materialAttributes);
+
+                        materials.push_back(currentMaterial);
                     }
                 }
             }
 
-            for (const auto &material: materials)
-            {
-                currentMaterial = Material::MaterialFactory::Create(material->GetFormat());
-                currentMaterial->PopulateFromFile(materialAttributes);
-            }
+            dataFile.close();
 
             return materials;
         }
