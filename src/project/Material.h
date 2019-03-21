@@ -1,7 +1,3 @@
-//
-// Created by Matt Robinson on 2019-03-04.
-//
-
 #ifndef TREKSTAR_MATERIAL_H
 #define TREKSTAR_MATERIAL_H
 
@@ -14,7 +10,7 @@ namespace TrekStar {
          */
         class Material
         {
-            private:
+            protected:
                 unsigned int id;
                 std::string title;
                 std::string format;
@@ -28,9 +24,9 @@ namespace TrekStar {
                 Material() = default;
                 explicit Material(std::string materialLine);
                 explicit Material(unsigned int id, const std::string & title);
-                ~Material() = default;
+                virtual ~Material() = default;
 
-                virtual void PopulateFromFile(std::string materialLine) = 0;
+                virtual void PopulateFromFile(const std::vector<std::string> &) = 0;
 
                 int GetId() const;
                 std::string GetTitle() const;

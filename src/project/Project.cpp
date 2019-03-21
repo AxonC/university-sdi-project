@@ -14,15 +14,18 @@ namespace TrekStar {
             this->playingInTheatres = playingInTheatres;
         }
 
-        void Project::AddMaterials(std::vector<std::shared_ptr<Material::Material>> materials)
+        void Project::AddMaterials(const std::vector<std::shared_ptr<Material::Material>> & materials)
         {
-            this->materials = materials;
+            for(const auto &material: materials)
+            {
+//                std::shared_ptr<Material::Material> a = std::make_shared<Material::Material>(*material);
+                this->materials.push_back(material);
+            }
         }
 
         Project::Project(std::string & title)
         {
             this->title = title;
-            materials = {};
         }
 
         Project::Project(const std::string & name, const std::string & summary, bool released)
@@ -64,7 +67,7 @@ namespace TrekStar {
             return this->released && !this->playingInTheatres;
         }
 
-        bool Project::AddMaterials(Material::Material & material)
+        bool Project::AddMaterials(std::shared_ptr<Material::Material> & material)
         {
             if (!this->CanAddMaterial()) {
                 return false;
@@ -75,7 +78,7 @@ namespace TrekStar {
             return true;
         }
 
-        void Project::RemoveMaterial(Material::Material &material)
+        void Project::RemoveMaterial(std::shared_ptr<Material::Material> &material)
         {
             auto search = std::find(materials.begin(), materials.end(), material);
 
@@ -86,7 +89,7 @@ namespace TrekStar {
             materials.erase(search);
         }
 
-        std::vector<Material::Material> Project::GetMaterials() const
+        std::vector<std::shared_ptr<Material::Material>> Project::GetMaterials() const
         {
             return materials;
         }

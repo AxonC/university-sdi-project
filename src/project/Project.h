@@ -15,37 +15,38 @@ namespace TrekStar {
          */
         class Project
         {
-            public:
-                Project() = default;
-                explicit Project(std::string title, std::string summary, bool released, bool playingInTheatres);
-                void AddMaterials(std::vector<std::shared_ptr<Material::Material>> materials);
-                explicit Project(std::string & title);
-                explicit Project(const std::string & title, const std::string & summary, bool released = false);
-                ~Project();
+        public:
+            Project() = default;
+            explicit Project(std::string title, std::string summary, bool released, bool playingInTheatres);
+            explicit Project(std::string & title);
+            explicit Project(const std::string & title, const std::string & summary, bool released = false);
+            ~Project();
 
-                std::string GetTitle() const;
-                std::string GetSummary() const;
-                bool GetReleased() const;
-                bool GetPlayingInTheatres() const;
+            std::string GetTitle() const;
 
-                void SetSummary(const std::string & contents);
+            std::string GetSummary() const;
+             bool GetReleased() const;
+            bool GetPlayingInTheatres() const;
+            void SetSummary(const std::string & contents);
 
-                std::pair<std::string, std::string> GetTitleSummary() const;
+            std::pair<std::string, std::string> GetTitleSummary() const;
 
-                bool AddMaterials(Material::Material & material);
-                std::vector<Material::Material> GetMaterials() const;
-                void RemoveMaterial(Material::Material & material);
+            void AddMaterials(const std::vector<std::shared_ptr<Material::Material>> & materials);
 
-                void ReleaseProject();
+            bool AddMaterials(std::shared_ptr<Material::Material> & material);
+            std::vector<std::shared_ptr<Material::Material>> GetMaterials() const;
+            void RemoveMaterial(std::shared_ptr<Material::Material> & material);
 
-            private:
-                bool CanAddMaterial() const;
+            void ReleaseProject();
 
-                std::string title;
-                std::string summary;
-                std::vector<Material::Material> materials;
-                bool released{false};
-                bool playingInTheatres{false};
+        private:
+            bool CanAddMaterial() const;
+
+            std::string title;
+            std::string summary;
+            std::vector<std::shared_ptr<Material::Material>> materials;
+            bool released{false};
+            bool playingInTheatres{false};
         };
     }
 }

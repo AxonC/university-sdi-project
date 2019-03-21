@@ -25,11 +25,11 @@ namespace TrekStar {
             std::vector<std::string> bonusFeatures;             // for short films or directors comments
         public:
             DVD();
-            ~DVD();
 
             std::vector<std::string> GetAdditionalLanguageTracks() const;
             std::vector<std::string> GetAdditionalSubtitleTracks() const;
             std::vector<std::string> GetBonusFeatures() const;
+            void PopulateFromFile(const std::vector<std::string> &) override;
         };
     }
 }

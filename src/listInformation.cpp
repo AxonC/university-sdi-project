@@ -6,20 +6,22 @@
 #include <iostream>
 #include "project/Project.h"
 
+using TrekStar::Project::Project;
+using TrekStar::Material::Material;
+
 void listProjects(std::vector<TrekStar::Project::Project> projects)
 {
     int projectNum = 1;
-    for (std::vector<TrekStar::Project::Project>::iterator it = projects.begin() ; it != projects.end(); ++it) {
+
+    for(const auto &project: projects) {
         std::cout << std::string(80, '-') << std::endl;
         std::cout << "Project " << projectNum << std::endl;
         std::cout << std::string(80, '-') << std::endl;
 
-        std::cout << "Title               : " << it->GetTitle() << std::endl;
-        std::cout << "Summary             : " << it->GetSummary() << std::endl;
-        std::cout << "Released            : " << it->GetReleased() << std::endl;
-        std::cout << "Playing in theatres : " << it->GetPlayingInTheatres() << std::endl;
-
-        projectNum++;
+        std::cout << "Title               : " << project.GetTitle() << std::endl;
+        std::cout << "Summary             : " << project.GetSummary() << std::endl;
+        std::cout << "Released            : " << project.GetReleased() << std::endl;
+        std::cout << "Playing in theatres : " << project.GetPlayingInTheatres() << std::endl;
     }
 }
 
@@ -27,23 +29,21 @@ void listProjects(std::vector<TrekStar::Project::Project> projects)
 void listMaterials(std::vector<TrekStar::Project::Project> projects, std::string projectNumString)
 {
     int projectNum = std::stoi(projectNumString);
-    std::vector<TrekStar::Material::Material> materials = projects[projectNum - 1].GetMaterials();
+    std::vector<std::shared_ptr<TrekStar::Material::Material>> materials = projects[projectNum - 1].GetMaterials();
 
-    int materialNum = 1;
-    for (std::vector<TrekStar::Material::Material>::iterator it = materials.begin() ; it != materials.end(); ++it) {
+    for(const auto &material: materials)
+    {
         std::cout << std::string(80, '-') << std::endl;
-        std::cout << "Material " << it->GetId() << " for Project " << projectNum << std::endl;
+        std::cout << "Material " << material->GetId() << " for Project " << projectNum << std::endl;
         std::cout << std::string(80, '-') << std::endl;
 
-        std::cout << "Title        : " << it->GetTitle() << std::endl;
-        std::cout << "Format       : " << it->GetFormat() << std::endl;
-        std::cout << "Audio format : " << it->GetAudioFormat() << std::endl;
-        std::cout << "Run time     : " << it->GetRunTime() << std::endl;
-        std::cout << "Language     : " << it->GetLanguage() << std::endl;
-        std::cout << "Retail price : " << it->GetRetailPrice() << std::endl;
-        std::cout << "Subtitles    : " << it->GetSubtitles() << std::endl;
-        std::cout << "Frame aspect : " << it->GetFrameAspect() << std::endl;
-
-        materialNum++;
+        std::cout << "Title        : " << material->GetTitle() << std::endl;
+        std::cout << "Format       : " << material->GetFormat() << std::endl;
+        std::cout << "Audio format : " << material->GetAudioFormat() << std::endl;
+        std::cout << "Run time     : " << material->GetRunTime() << std::endl;
+        std::cout << "Language     : " << material->GetLanguage() << std::endl;
+        std::cout << "Retail price : " << material->GetRetailPrice() << std::endl;
+        std::cout << "Subtitles    : " << material->GetSubtitles() << std::endl;
+        std::cout << "Frame aspect : " << material->GetFrameAspect() << std::endl;
     }
 }
