@@ -18,7 +18,6 @@ namespace TrekStar {
         {
             for(const auto &material: materials)
             {
-//                std::shared_ptr<Material::Material> a = std::make_shared<Material::Material>(*material);
                 this->materials.push_back(material);
             }
         }

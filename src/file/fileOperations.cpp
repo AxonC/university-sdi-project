@@ -107,12 +107,22 @@ namespace TrekStar {
                     if (line.substr(0, pos) == "Material")
                     {
                         materials.push_back(currentMaterial);
+
+                        while (pos != std::string::npos)
+                        {
+                            pos = line.find('|');
+                            materialAttributes.push_back(line.substr(0, pos));
+                            line = line.substr(pos + 1);
+                        }
                     }
                 }
             }
 
-            currentMaterial = Material::MaterialFactory::Create(materialAttributes.at(3));
-            currentMaterial->PopulateFromFile(materialAttributes);
+            for (const auto &material: materials)
+            {
+                currentMaterial = Material::MaterialFactory::Create(material->GetFormat());
+                currentMaterial->PopulateFromFile(materialAttributes);
+            }
 
             return materials;
         }
