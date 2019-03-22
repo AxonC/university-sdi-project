@@ -77,7 +77,7 @@ namespace TrekStar {
             return true;
         }
 
-        void Project::RemoveMaterial(const std::shared_ptr<Material::Material> &material)
+        void Project::RemoveMaterial(const std::shared_ptr<Material::Material> & material)
         {
             auto search = std::find(materials.begin(), materials.end(), material);
 

@@ -5,6 +5,12 @@ namespace TrekStar {
         /**
          *  Trekstar DVD Class Implementation
          */
+        DVD::DVD() : Material()
+        {}
+
+        DVD::DVD(unsigned int id, const std::string & title) : Material(id, title)
+        {}
+
         std::vector<std::string> DVD :: GetAdditionalLanguageTracks() const
         {
             return additionalLanguageTracks;
@@ -20,11 +26,6 @@ namespace TrekStar {
             return bonusFeatures;
         }
 
-        DVD::DVD() : Material()
-        {
-
-        }
-
         void DVD::PopulateFromFile(const std::vector<std::string> & attributes)
         {
             this->id = static_cast<unsigned int>(std::stoi(attributes.at(0)));
@@ -37,7 +38,6 @@ namespace TrekStar {
             this->subtitles = attributes.at(7);
             this->frameAspect = attributes.at(8);
         }
-        DVD::DVD(unsigned int id, const std::string & title) : Material(id, title)
-        {}
+
     }
 }
