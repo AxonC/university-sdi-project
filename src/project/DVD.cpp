@@ -37,5 +37,7 @@ namespace TrekStar {
             this->subtitles = attributes.at(7);
             this->frameAspect = attributes.at(8);
         }
+        DVD::DVD(unsigned int id, const std::string & title) : Material(id, title)
+        {}
     }
 }

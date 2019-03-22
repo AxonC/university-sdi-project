@@ -25,6 +25,7 @@ namespace TrekStar {
             std::vector<std::string> bonusFeatures;             // for short films or directors comments
         public:
             DVD();
+            DVD(unsigned int id, const std::string & title);
 
             std::vector<std::string> GetAdditionalLanguageTracks() const;
             std::vector<std::string> GetAdditionalSubtitleTracks() const;

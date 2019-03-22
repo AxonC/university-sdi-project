@@ -33,9 +33,9 @@ namespace TrekStar {
 
             void AddMaterials(const std::vector<std::shared_ptr<Material::Material>> & materials);
 
-            bool AddMaterials(std::shared_ptr<Material::Material> & material);
+            bool AddMaterials(const std::shared_ptr<Material::Material> & material);
             std::vector<std::shared_ptr<Material::Material>> GetMaterials() const;
-            void RemoveMaterial(std::shared_ptr<Material::Material> & material);
+            void RemoveMaterial(const std::shared_ptr<Material::Material> & material);
 
             void ReleaseProject();
 

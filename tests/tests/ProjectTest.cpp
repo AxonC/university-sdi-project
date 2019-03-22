@@ -5,10 +5,12 @@
 #include <algorithm>
 
 #include <project/Project.h>
-#include <project/Material.h>
+//#include <project/Material.h>
+#include <project/DVD.h>
 
 using TrekStar::Project::Project;
 using TrekStar::Material::Material;
+using TrekStar::Material::DVD;
 
 namespace TrekStarTest {
     namespace Tests {
@@ -24,6 +26,7 @@ namespace TrekStarTest {
 
             Project project;
             Project releasedProject;
+            std::shared_ptr<DVD> material = std::make_shared<DVD>();
         };
 
 
@@ -35,18 +38,16 @@ namespace TrekStarTest {
 
         TEST_F(ProjectTest, CanAddMaterialsWhenValid)
         {
-            Material material;
+            releasedProject.ReleaseProject();
 
-            project.ReleaseProject();
+            releasedProject.AddMaterials(material);
 
-            project.AddMaterials(material);
-
-            EXPECT_EQ(project.GetMaterials().size(), 1);
+            EXPECT_EQ(releasedProject.GetMaterials().size(), 1);
         }
 
         TEST_F(ProjectTest, CantAddMaterialsWhenNotReleased)
         {
-            Material material;
+            std::shared_ptr<DVD> material = std::make_shared<DVD>();
 
             project.AddMaterials(material);
 
@@ -55,19 +56,15 @@ namespace TrekStarTest {
 
         TEST_F(ProjectTest, CanRemoveMaterialWhenAssociatedWithProject)
         {
-            Material material;
-
             releasedProject.AddMaterials(material);
 
             releasedProject.RemoveMaterial(material);
 
-            EXPECT_EQ(project.GetMaterials().size(), 0);
+            EXPECT_EQ(releasedProject.GetMaterials().size(), 0);
         }
 
         TEST_F(ProjectTest, CantRemoveMaterialWhenNotAssociatedWithProject)
         {
-            Material material;
-
             ASSERT_THROW(project.RemoveMaterial(material), std::out_of_range);
         }
     }
