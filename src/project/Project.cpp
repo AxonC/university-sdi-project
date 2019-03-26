@@ -14,13 +14,7 @@ namespace TrekStar {
             this->playingInTheatres = playingInTheatres;
         }
 
-        void Project::AddMaterials(const std::vector<std::shared_ptr<Material::Material>> & materials)
-        {
-            for(const auto &material: materials)
-            {
-                this->materials.push_back(material);
-            }
-        }
+
 
         Project::Project(std::string & title)
         {
@@ -77,6 +71,18 @@ namespace TrekStar {
             return true;
         }
 
+        void Project::AddMaterials(const std::vector<std::shared_ptr<Material::Material>> & materials)
+        {
+            if (!this->CanAddMaterial()) {
+                throw "Material cannot be added.";
+            }
+
+            for(const auto &material: materials)
+            {
+                this->materials.push_back(material);
+            }
+        }
+
         void Project::RemoveMaterial(const std::shared_ptr<Material::Material> & material)
         {
             auto search = std::find(materials.begin(), materials.end(), material);
@@ -96,6 +102,16 @@ namespace TrekStar {
         void Project::ReleaseProject()
         {
             this->released = true;
+        }
+
+        std::vector<std::shared_ptr<People::Crew>> Project::GetCrew() const
+        {
+            return this->crew;
+        }
+
+        void Project::AddCrew(const std::shared_ptr<TrekStar::People::Crew> & crewMember)
+        {
+            this->crew.push_back(crewMember);
         }
     }
 }
