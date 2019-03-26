@@ -9,6 +9,7 @@
 #include <string>
 #include "Material.h"
 
+
 using TrekStar::Material::Material;
 
 namespace TrekStar {

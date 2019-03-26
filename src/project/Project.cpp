@@ -113,6 +113,17 @@ namespace TrekStar {
         {
             this->crew.push_back(crewMember);
         }
+
+        void Project::RemoveCrew(const std::shared_ptr<TrekStar::People::Crew> & crewMember)
+        {
+            auto search = std::find(crew.begin(), crew.end(), crewMember);
+
+            if(search == crew.end()) {
+                throw std::out_of_range("Crew Member not found.");
+            }
+
+            crew.erase(search);
+        }
     }
 }
 

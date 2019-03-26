@@ -8,12 +8,16 @@ namespace TrekStar {
         class Crew
         {
         public:
-            Crew();
+            Crew() = default;
+            Crew(unsigned int id, const std::string & name);
             virtual ~Crew() = default;
+
+            void SetJobTitle(const std::string &);
 
         protected:
             unsigned int id;
             std::string name;
+            std::string jobTitle;
         };
     }
 }

@@ -8,4 +8,4 @@ include_directories(../src)
 
 add_executable(tests tests.cpp exampleTest.cpp tests/ProjectTest.cpp tests/MaterialTest.cpp)
 gtest_discover_tests(tests)
-target_link_libraries(tests gtest gtest_main gmock Project Material)
+target_link_libraries(tests gtest gtest_main gmock Project Material People)

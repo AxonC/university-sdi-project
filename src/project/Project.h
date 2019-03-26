@@ -39,6 +39,7 @@ namespace TrekStar {
 
             std::vector<std::shared_ptr<People::Crew>> GetCrew() const;
             void AddCrew(const std::shared_ptr<People::Crew> &);
+            void RemoveCrew(const std::shared_ptr<People::Crew> &);
 
             void ReleaseProject();
 

@@ -5,12 +5,13 @@
 #include <algorithm>
 
 #include <project/Project.h>
-//#include <project/Material.h>
 #include <project/DVD.h>
+#include <people/Crew.h>
 
+using TrekStar::People::Crew;
+using TrekStar::Material::DVD;
 using TrekStar::Project::Project;
 using TrekStar::Material::Material;
-using TrekStar::Material::DVD;
 
 namespace TrekStarTest {
     namespace Tests {
@@ -27,6 +28,7 @@ namespace TrekStarTest {
             Project project;
             Project releasedProject;
             std::shared_ptr<DVD> material = std::make_shared<DVD>();
+            std::shared_ptr<Crew> crewMember = std::make_shared<Crew>();
         };
 
 
@@ -66,6 +68,20 @@ namespace TrekStarTest {
         TEST_F(ProjectTest, CantRemoveMaterialWhenNotAssociatedWithProject)
         {
             ASSERT_THROW(project.RemoveMaterial(material), std::out_of_range);
+        }
+
+        TEST_F(ProjectTest, CanAddACrewMemberToAProject)
+        {
+            project.AddCrew(crewMember);
+
+            EXPECT_EQ(project.GetCrew().size(), 1);
+        }
+
+        TEST_F(ProjectTest, CantRemoveACrewMemberWhenNotPresent)
+        {
+            std::shared_ptr<Crew> unassignedCrew = std::make_shared<Crew>();
+
+            ASSERT_THROW(project.RemoveCrew(unassignedCrew), std::out_of_range);
         }
     }
 }

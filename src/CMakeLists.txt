@@ -19,7 +19,7 @@ add_library(People people/Crew.cpp people/Crew.h)
 add_library(Information listInformation.cpp)
 
 add_executable(trekstar trekstar.cpp)
-target_link_libraries(trekstar Project Material File Information)
+target_link_libraries(trekstar Project People Material File Information)
 if(Boost_FOUND)
     target_link_libraries(trekstar ${Boost_LIBRARIES})
 endif()
