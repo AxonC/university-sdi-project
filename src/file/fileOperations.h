@@ -2,8 +2,8 @@
 #define TREKSTAR_FILEOPERATIONS_H
 
 #include "../project/Project.h"
-#include "../project/Material.h"
-#include "../project/MaterialFactory.h"
+#include "../material/Material.h"
+#include "../material/MaterialFactory.h"
 
 #include <iostream>
 #include <fstream>

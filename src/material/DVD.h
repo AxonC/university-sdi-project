@@ -1,7 +1,3 @@
-//
-// Created by Matt Robinson on 2019-03-15.
-//
-
 #ifndef TREKSTAR_DVD_H
 #define TREKSTAR_DVD_H
 

@@ -8,5 +8,10 @@ namespace TrekStar {
             this->id = id;
             this->name = name;
         }
+
+        void Crew::SetJobTitle(const std::string & title)
+        {
+            this->jobTitle = title;
+        }
     }
 }

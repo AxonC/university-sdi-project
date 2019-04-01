@@ -5,7 +5,7 @@
 #include <algorithm>
 
 #include <project/Project.h>
-#include <project/DVD.h>
+#include <material/DVD.h>
 #include <people/Crew.h>
 
 using TrekStar::People::Crew;

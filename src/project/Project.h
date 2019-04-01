@@ -6,7 +6,7 @@
 #include <vector>
 #include <fstream>
 
-#include "Material.h"
+#include "../material/Material.h"
 #include "../people/Crew.h"
 
 namespace TrekStar {
