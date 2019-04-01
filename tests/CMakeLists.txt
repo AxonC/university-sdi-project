@@ -6,6 +6,6 @@ find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
 include_directories(../src)
 
-add_executable(tests tests.cpp exampleTest.cpp tests/ProjectTest.cpp tests/MaterialTest.cpp)
+add_executable(tests tests.cpp exampleTest.cpp tests/ProjectTest.cpp tests/MaterialTest.cpp tests/StackTest.cpp)
 gtest_discover_tests(tests)
-target_link_libraries(tests gtest gtest_main gmock Project Material People)
+target_link_libraries(tests gtest gtest_main gmock Project Material People Structures)

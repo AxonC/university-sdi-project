@@ -18,8 +18,14 @@ add_library(File file/fileOperations.h file/fileOperations.cpp)
 add_library(People people/Crew.cpp people/Crew.h)
 add_library(Information listInformation.cpp)
 
-add_executable(trekstar trekstar.cpp)
-target_link_libraries(trekstar Project People Material File Information)
+# data structures
+add_library(Structures SHARED structures/Stack.h)
+#required to compile the header only template class
+set_target_properties(Structures PROPERTIES LINKER_LANGUAGE CXX)
+
+add_executable(trekstar trekstar.cpp structures/Stack.h)
+target_link_libraries(trekstar Project People Material File Information Structures)
+target_include_directories(trekstar PUBLIC Structures)
 if(Boost_FOUND)
     target_link_libraries(trekstar ${Boost_LIBRARIES})
 endif()
