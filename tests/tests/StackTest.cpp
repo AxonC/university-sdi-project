@@ -31,5 +31,26 @@ namespace TrekStarTests {
 
             ASSERT_TRUE(usedStack.isEmpty());
         }
+
+        TEST_F(StackTest, AnEmptyStackIsDetectedCorrectly)
+        {
+            ASSERT_FALSE(usedStack.isEmpty());
+            ASSERT_TRUE(stack.isEmpty());
+        }
+
+        TEST_F(StackTest, AStackCanBeAccessedByIndex)
+        {
+            ASSERT_EQ(usedStack[0], 1);
+        }
+
+        TEST_F(StackTest, AnExceptionIsThrownWhenNotPresent)
+        {
+            ASSERT_THROW(stack[5], std::out_of_range);
+        }
+
+        TEST_F(StackTest, UnderlyingVectorCanBeAccessed)
+        {
+            ASSERT_NO_THROW(stack.data());
+        }
     }
 }

@@ -15,7 +15,7 @@ namespace TrekStar {
             void push(T const &);
             void pop();
             bool isEmpty() const; // determines whether or not the stack is empty.
-            T& data(); // returns the underlying data structure.
+            std::vector<T> data() const; // returns the underlying data structure.
 
             T operator[](unsigned int) const;
          private:
@@ -38,7 +38,7 @@ namespace TrekStar {
         }
 
         template<class T>
-        T &Stack<T>::data() {
+        std::vector<T> Stack<T>::data() const {
             return elements;
         }
 
