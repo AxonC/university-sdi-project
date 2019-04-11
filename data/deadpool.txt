@@ -8,3 +8,5 @@ Project|Deadpool|A superhero does stuff|true|false
 # format: Material|id|title|format|audioFormat|runTime|language|retailPrice|subtitles|frameAspect
 
 Material|1|Deadpool|dvd|DTS|120|ENG|9.99|ENG|16:9
+Material|2|Deadpool|boxset|DTS|120|ENG|9.99|ENG|16:9
+Material|2|Deadpool|dvd|DTS|120|ENG|9.99|ENG|16:9
