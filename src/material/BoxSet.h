@@ -10,7 +10,7 @@ namespace TrekStar {
     namespace Material {
         class BoxSet: public Material::Material {
          public:
-            BoxSet() = default;
+            BoxSet();
             BoxSet(unsigned int id, std::string name);
 
             void AddDisks(const std::vector<std::shared_ptr<DVD>> &);
