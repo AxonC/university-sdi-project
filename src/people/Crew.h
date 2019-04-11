@@ -14,6 +14,9 @@ namespace TrekStar {
 
             void SetJobTitle(const std::string &);
 
+            std::string GetName();
+            std::string skup();
+
         protected:
             unsigned int id;
             std::string name;

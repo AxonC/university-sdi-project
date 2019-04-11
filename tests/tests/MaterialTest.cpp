@@ -2,8 +2,10 @@
 #include <gtest/gtest.h>
 
 #include <material/DVD.h>
+#include <material/BoxSet.h>
 
 using TrekStar::Material::DVD;
+using TrekStar::Material::BoxSet;
 
 namespace TrekStarTest {
     namespace Tests {
@@ -30,6 +32,11 @@ namespace TrekStarTest {
 
             ASSERT_TRUE(material != material2);
             ASSERT_FALSE(material == material2);
+        }
+
+        TEST_F(MaterialTest, DisksCanBeAddedToABoxSet)
+        {
+            BoxSet boxSet(1, "Test Boxset");
         }
     }
 }
