@@ -20,11 +20,13 @@ add_library(Information listInformation.cpp)
 
 # data structures
 add_library(Structures SHARED structures/Stack.h)
+add_library(nlohmann_json SHARED lib/json.hpp)
 #required to compile the header only template class
 set_target_properties(Structures PROPERTIES LINKER_LANGUAGE CXX)
+set_target_properties(nlohmann_json PROPERTIES LINKER_LANGUAGE CXX)
 
 add_executable(trekstar trekstar.cpp structures/Stack.h)
-target_link_libraries(trekstar Project People Material File Information Structures)
+target_link_libraries(trekstar Project People Material File Information Structures nlohmann_json)
 target_include_directories(trekstar PUBLIC Structures)
 if(Boost_FOUND)
     target_link_libraries(trekstar ${Boost_LIBRARIES})

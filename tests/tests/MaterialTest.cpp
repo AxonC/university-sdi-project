@@ -34,9 +34,14 @@ namespace TrekStarTest {
             ASSERT_FALSE(material == material2);
         }
 
-        TEST_F(MaterialTest, DisksCanBeAddedToABoxSet)
+        TEST_F(MaterialTest, DiskCanBeAddedToABoxSet)
         {
             BoxSet boxSet(1, "Test Boxset");
+            std::shared_ptr<DVD> dvd;
+
+            boxSet.AddDisk(dvd);
+
+            ASSERT_FALSE(boxSet.GetDisks().isEmpty());
         }
     }
 }

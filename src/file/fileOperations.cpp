@@ -1,6 +1,11 @@
+#include <iostream>
+
 #include "fileOperations.h"
 #include "boost/filesystem.hpp"
-#include <iostream>
+#include "../material/BoxSet.h"
+#include "../lib/json.hpp"
+
+using json = nlohmann::json;
 
 namespace TrekStar {
     namespace File {
@@ -115,6 +120,7 @@ namespace TrekStar {
 
                         if ( currentMaterial != nullptr ) {
                             currentMaterial->PopulateFromFile(materialAttributes);
+
                             materials.push_back(currentMaterial);
                         }
                     }
@@ -131,6 +137,9 @@ namespace TrekStar {
             TrekStar::Project::Project currentProject;
             std::shared_ptr<Material::Material> currentMaterial;
             std::vector<TrekStar::Project::Project> projects;
+
+            std::ifstream dataFile(files.at(0));
+            json jsonStream = json::parse(dataFile);
 
             for (std::vector<std::string>::iterator it = files.begin() ; it != files.end(); ++it)
             {
