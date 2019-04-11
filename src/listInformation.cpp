@@ -5,6 +5,7 @@
 #include <vector>
 #include <iostream>
 #include "project/Project.h"
+#include "material/DVD.h"
 
 using TrekStar::Project::Project;
 using TrekStar::Material::Material;
@@ -46,17 +47,17 @@ void listMaterials(std::vector<TrekStar::Project::Project> projects, std::string
         std::cout << "Subtitles    : " << material->GetSubtitles() << std::endl;
         std::cout << "Frame aspect : " << material->GetFrameAspect() << std::endl;
 
-        if ( material->GetFormat() == "DVD" )
+        // if material is a DVD
+        if( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::DVD>(material) )
         {
-            // TODO: Access DVD subclass methods to display specific info.
+            std::vector<std::string> additionalLanguageTracks = materialType->GetAdditionalLanguageTracks();
 
-//            std::vector<std::string> additionalLanguageTracks = material->GetAdditionalLanguageTracks();
-//
-//
-//            for(const auto &additionalLanguageTrack: additionalLanguageTracks)
-//            {
-//                std::cout <<
-//            }
+            int counter = 0;
+            for(const auto &additionalLanguageTrack: additionalLanguageTracks)
+            {
+                counter++;
+                std::cout << "Additional Language Track #" << counter << " : " << additionalLanguageTrack << std::endl;
+            }
         }
     }
 }

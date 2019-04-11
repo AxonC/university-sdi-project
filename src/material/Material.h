@@ -37,6 +37,7 @@ namespace TrekStar {
                 double GetRetailPrice() const;
                 std::string GetSubtitles() const;
                 std::string GetFrameAspect() const;
+
                 bool operator==(const Material& material) const;
                 bool operator!=(const Material& material) const;
         };
