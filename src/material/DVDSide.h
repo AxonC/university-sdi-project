@@ -1,5 +1,5 @@
-#ifndef TREKSTAR_DOUBLESIDEDVD_H
-#define TREKSTAR_DOUBLESIDEDVD_H
+#ifndef TREKSTAR_DVDSIDE_H
+#define TREKSTAR_DVDSIDE_H
 
 #include "DVD.h"
 
@@ -13,4 +13,4 @@ namespace TrekStar {
 }
 
 
-#endif //TREKSTAR_DOUBLESIDEDVD_H
+#endif //TREKSTAR_DVDSIDE_H
