@@ -153,11 +153,11 @@ namespace TrekStar {
                     else
                     {
                         currentProject = createProject(dataFile);
-                        projects.push_back(currentProject);
 
                         try
                         {
                             currentProject.AddMaterials(createMaterials(dataFile));
+                            projects.push_back(currentProject);
                         }
                         catch (std::domain_error ex)
                         {
