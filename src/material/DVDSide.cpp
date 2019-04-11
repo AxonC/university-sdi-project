@@ -14,7 +14,7 @@ namespace TrekStar {
                 theString = theString.substr(pos + 1);
             }
 
-            return tokenisedString
+            return tokenisedString;
         }
 
         DVDSide::DVDSide(std::string additionalLanguageTracks, std::string additionalSubtitleTracks, std::string bonusFeatures)
