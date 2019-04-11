@@ -28,15 +28,15 @@ namespace TrekStar {
 
         void DVD::PopulateFromFile(const std::vector<std::string> & attributes)
         {
-            this->id = static_cast<unsigned int>(std::stoi(attributes.at(0)));
-            this->title = attributes.at(1);
-            this->format = attributes.at(2);
-            this->audioFormat = attributes.at(3);
-            this->runTime = attributes.at(4);
-            this->language = attributes.at(5);
-            this->retailPrice = std::stoul(attributes.at(6), nullptr ,0);
-            this->subtitles = attributes.at(7);
-            this->frameAspect = attributes.at(8);
+            this->id = static_cast<unsigned int>(std::stoi(attributes.at(1)));
+            this->title = attributes.at(2);
+            this->format = attributes.at(3);
+            this->audioFormat = attributes.at(4);
+            this->runTime = attributes.at(5);
+            this->language = attributes.at(6);
+            this->retailPrice = std::stoul(attributes.at(7), nullptr ,0);
+            this->subtitles = attributes.at(8);
+            this->frameAspect = attributes.at(9);
         }
 
     }

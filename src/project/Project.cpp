@@ -74,7 +74,7 @@ namespace TrekStar {
         void Project::AddMaterials(const std::vector<std::shared_ptr<Material::Material>> & materials)
         {
             if (!this->CanAddMaterial()) {
-                throw "Material cannot be added.";
+                throw std::domain_error("Material cannot be added.");
             }
 
             for(const auto &material: materials)
