@@ -6,6 +6,12 @@ namespace TrekStar {
         {
             std::vector<std::string> tokenisedString;
 
+            if ( !theString.empty() && theString.find(token) == std::string::npos )
+            {
+                tokenisedString.push_back(theString);
+                return tokenisedString;
+            }
+
             std::string::size_type pos = theString.find(token);
             while (pos != std::string::npos)
             {
