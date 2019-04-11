@@ -1,7 +1,7 @@
 # Projects
 # format: Project|title|summary|released|playingInTheatres
 
-Project|Deadpool|A superhero does stuff|true|true
+Project|Deadpool|A superhero does stuff|true|false
 
 
 # Materials

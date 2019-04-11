@@ -155,7 +155,14 @@ namespace TrekStar {
                         currentProject = createProject(dataFile);
                         projects.push_back(currentProject);
 
-                        currentProject.AddMaterials(createMaterials(dataFile));
+                        try
+                        {
+                            currentProject.AddMaterials(createMaterials(dataFile));
+                        }
+                        catch (std::domain_error ex)
+                        {
+                            break;
+                        }
                     }
                 }
             }
