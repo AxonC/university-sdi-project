@@ -6,7 +6,9 @@
 namespace TrekStar {
     namespace Material {
         class DoubleSideDVD: public DVD {
-         public:
+        protected:
+            DVDSide sideTwo;
+        public:
           DoubleSideDVD() = default;
           DoubleSideDVD(unsigned int id, const std::string & name);
 

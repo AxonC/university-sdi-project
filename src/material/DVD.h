@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include "Material.h"
+#include "DVDSide.h"
 
 
 using TrekStar::Material::Material;
@@ -16,10 +17,7 @@ namespace TrekStar {
         class DVD : public Material
         {
         private:
-            std::string content;                                // DVD contents
-            std::vector<std::string> additionalLanguageTracks;  // other languages available
-            std::vector<std::string> additionalSubtitleTracks;  // any additional subtitles
-            std::vector<std::string> bonusFeatures;             // for short films or directors comments
+            DVDSide sideOne;
         public:
             DVD();
             DVD(unsigned int id, const std::string & title);
