@@ -11,7 +11,7 @@ int main()
 
     std::vector<std::string> files = TrekStar::File::readDirectory(fileDirectory);
 
-    std::vector<TrekStar::Project::Project> projects = TrekStar::File::importProjects(fileDirectory, files);
+    std::vector<TrekStar::Project::Project> projects = TrekStar::File::importProjects(files);
 
     std::cout << "Welcome to TrekStar Management System | Console" << std::endl;
     std::string command = "";

@@ -1,4 +1,6 @@
 #include "fileOperations.h"
+#include "boost/filesystem.hpp"
+#include <iostream>
 
 namespace TrekStar {
     namespace File {
@@ -13,29 +15,25 @@ namespace TrekStar {
         }
 
         // Returns a sorted vector of filename entries in a directory (given as parameter).
-        std::vector<std::string> readDirectory(const std::string& path = std::string())
+        std::vector<std::string> readDirectory(const std::string& path)
         {
             std::vector<std::string> result;
-            dirent* de;
-            DIR* dp;
-            errno = 0;
 
-            dp = opendir(path.empty() ? "." : path.c_str());
-            if (dp) {
-                while (true) {
-                    errno = 0;
-                    de = readdir(dp);
+            boost::filesystem::path p (path);
+            boost::filesystem::directory_iterator end_itr;
 
-                    if (de == NULL) {
-                        break;
-                    }
+            // cycle through the directory
+            for (boost::filesystem::directory_iterator itr(p); itr != end_itr; ++itr)
+            {
+                // If it's not a directory, list it. If you want to list directories too, just remove this check.
+                if (is_regular_file(itr->path())) {
+                    // assign current file name to current_file and echo it out to the console.
+                    std::string current_file = itr->path().string();
 
-                    result.push_back(std::string(de->d_name));
+                    result.push_back(current_file);
                 }
-
-                closedir(dp);
-                std::sort(result.begin(), result.end());
             }
+
             return result;
         }
 
@@ -129,19 +127,21 @@ namespace TrekStar {
             return materials;
         }
 
-        std::vector<TrekStar::Project::Project> importProjects(std::string fileDirectory, std::vector<std::string> files)
+        std::vector<TrekStar::Project::Project> importProjects(std::vector<std::string> files)
         {
             TrekStar::Project::Project currentProject;
             std::shared_ptr<Material::Material> currentMaterial;
             std::vector<TrekStar::Project::Project> projects;
 
-            for (std::vector<std::string>::iterator it = files.begin() ; it != files.end(); ++it) {
+            for (std::vector<std::string>::iterator it = files.begin() ; it != files.end(); ++it)
+            {
                 if (*it != "." && *it != "..")
                 {
-                    std::ifstream dataFile (fileDirectory + "/" + *it);
+                    std::ifstream dataFile (*it);
 
                     if ( ! isFileOpen(dataFile) || ! isFileOkay(dataFile) )
                     {
+
                         if ( ! isFileOpen(dataFile) )
                         {
                             std::cout << "Error: File not found." << std::endl;

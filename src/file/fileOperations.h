@@ -20,7 +20,7 @@ namespace TrekStar {
 
         std::vector<std::string> readDirectory(const std::string&);
 
-        std::vector<TrekStar::Project::Project> importProjects(std::string fileDirectory, std::vector<std::string> files);
+        std::vector<TrekStar::Project::Project> importProjects(std::vector<std::string> files);
     }
 }
 
