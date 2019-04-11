@@ -39,7 +39,6 @@ namespace TrekStar {
 
         TrekStar::Project::Project createProject(std::ifstream& dataFile)
         {
-            TrekStar::Project::Project aProject;
             std::vector<std::string> projectAttributes;
             std::string line;
 
@@ -85,9 +84,7 @@ namespace TrekStar {
                 playingInTheatres = false;
             }
 
-            aProject = TrekStar::Project::Project(title, summary, released, playingInTheatres);
-
-            return aProject;
+            return TrekStar::Project::Project(title, summary, released, playingInTheatres);
         }
 
         std::vector<std::shared_ptr<Material::Material>> createMaterials(std::ifstream& dataFile)
@@ -115,9 +112,11 @@ namespace TrekStar {
                         }
 
                         currentMaterial = Material::MaterialFactory::Create(materialAttributes.at(3));
-                        currentMaterial->PopulateFromFile(materialAttributes);
 
-                        materials.push_back(currentMaterial);
+                        if ( currentMaterial != nullptr ) {
+                            currentMaterial->PopulateFromFile(materialAttributes);
+                            materials.push_back(currentMaterial);
+                        }
                     }
                 }
             }
