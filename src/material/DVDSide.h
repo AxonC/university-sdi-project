@@ -1,7 +1,8 @@
 #ifndef TREKSTAR_DVDSIDE_H
 #define TREKSTAR_DVDSIDE_H
 
-#include "DVD.h"
+#include <string>
+#include <vector>
 
 namespace TrekStar {
     namespace Material {
@@ -14,6 +15,11 @@ namespace TrekStar {
 
         public:
             DVDSide() = default;
+            DVDSide(std::string additionalLanguageTracks, std::string additionalSubtitleTracks, std::string bonusFeatures);
+
+            std::vector<std::string> GetAdditionalLanguageTracks() const;
+            std::vector<std::string> GetAdditionalSubtitleTracks() const;
+            std::vector<std::string> GetBonusFeatures() const;
         };
     }
 }

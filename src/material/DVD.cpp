@@ -13,17 +13,17 @@ namespace TrekStar {
 
         std::vector<std::string> DVD :: GetAdditionalLanguageTracks() const
         {
-            return additionalLanguageTracks;
+            return this->sideOne.GetAdditionalLanguageTracks();
         }
 
         std::vector<std::string> DVD :: GetAdditionalSubtitleTracks() const
         {
-            return additionalSubtitleTracks;
+            return this->sideOne.GetAdditionalSubtitleTracks();
         }
 
         std::vector<std::string> DVD :: GetBonusFeatures() const
         {
-            return bonusFeatures;
+            return this->sideOne.GetBonusFeatures();
         }
 
         void DVD::PopulateFromFile(const std::vector<std::string> & attributes)
@@ -37,6 +37,12 @@ namespace TrekStar {
             this->retailPrice = std::stod(attributes.at(7));
             this->subtitles = attributes.at(8);
             this->frameAspect = attributes.at(9);
+
+            std::string additionalLanguageTracks = attributes.at(10);
+            std::string additionalSubtitleTracks = attributes.at(11);
+            std::string bonusFeatures = attributes.at(12);
+
+            this->sideOne = DVDSide(additionalLanguageTracks, additionalSubtitleTracks, bonusFeatures);
         }
 
     }
