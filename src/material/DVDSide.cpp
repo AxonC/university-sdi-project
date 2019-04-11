@@ -1,13 +1,27 @@
-#include <iostream>
 #include "DVDSide.h"
 
 namespace TrekStar {
     namespace Material {
+        std::vector<std::string> tokeniseString(std::string theString, char token)
+        {
+            std::vector<std::string> tokenisedString;
+
+            std::string::size_type pos = theString.find('|');
+            while (pos != std::string::npos)
+            {
+                pos = theString.find(token);
+                tokenisedString.push_back(theString.substr(0, pos));
+                theString = theString.substr(pos + 1);
+            }
+
+            return tokenisedString
+        }
+
         DVDSide::DVDSide(std::string additionalLanguageTracks, std::string additionalSubtitleTracks, std::string bonusFeatures)
         {
-            std::cout << additionalLanguageTracks << std::endl;
-            std::cout << additionalSubtitleTracks << std::endl;
-            std::cout << bonusFeatures << std::endl;
+            this->additionalLanguageTracks = tokeniseString(additionalLanguageTracks, ',');
+            this->additionalSubtitleTracks = tokeniseString(additionalSubtitleTracks, ',');
+            this->bonusFeatures = tokeniseString(bonusFeatures, ',');
         }
 
         std::vector<std::string> DVDSide::GetAdditionalLanguageTracks() const

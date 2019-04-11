@@ -45,5 +45,18 @@ void listMaterials(std::vector<TrekStar::Project::Project> projects, std::string
         std::cout << "Retail price : " << material->GetRetailPrice() << std::endl;
         std::cout << "Subtitles    : " << material->GetSubtitles() << std::endl;
         std::cout << "Frame aspect : " << material->GetFrameAspect() << std::endl;
+
+        if ( material->GetFormat() == "DVD" )
+        {
+            // TODO: Access DVD subclass methods to display specific info.
+
+//            std::vector<std::string> additionalLanguageTracks = material->GetAdditionalLanguageTracks();
+//
+//
+//            for(const auto &additionalLanguageTrack: additionalLanguageTracks)
+//            {
+//                std::cout <<
+//            }
+        }
     }
 }
