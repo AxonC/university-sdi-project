@@ -17,7 +17,7 @@ namespace TrekStar {
                 std::string audioFormat;
                 std::string runTime;
                 std::string language;
-                unsigned long int retailPrice; // stored in pence
+                double retailPrice; // stored in pence
                 std::string subtitles;
                 std::string frameAspect;
             public:
@@ -34,7 +34,7 @@ namespace TrekStar {
                 std::string GetAudioFormat() const;
                 std::string GetRunTime() const;
                 std::string GetLanguage() const;
-                unsigned int GetRetailPrice() const;
+                double GetRetailPrice() const;
                 std::string GetSubtitles() const;
                 std::string GetFrameAspect() const;
                 bool operator==(const Material& material) const;

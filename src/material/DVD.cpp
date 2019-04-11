@@ -34,7 +34,7 @@ namespace TrekStar {
             this->audioFormat = attributes.at(4);
             this->runTime = attributes.at(5);
             this->language = attributes.at(6);
-            this->retailPrice = std::stoul(attributes.at(7), nullptr ,0);
+            this->retailPrice = std::stod(attributes.at(7));
             this->subtitles = attributes.at(8);
             this->frameAspect = attributes.at(9);
         }

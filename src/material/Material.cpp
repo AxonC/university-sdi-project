@@ -71,7 +71,7 @@ namespace TrekStar {
             return language;
         }
 
-        unsigned int Material::GetRetailPrice() const
+        double Material::GetRetailPrice() const
         {
             return retailPrice;
         }
