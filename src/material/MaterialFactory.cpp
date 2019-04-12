@@ -2,6 +2,7 @@
 #include "BoxSet.h"
 
 #include "MaterialFactory.h"
+#include "DoubleSideDVD.h"
 
 namespace TrekStar {
     namespace Material {
@@ -9,7 +10,10 @@ namespace TrekStar {
         {
             if (materialType == "dvd") {
                 return std::make_shared<DVD>();
-            } else if (materialType == "boxset") {
+            } else if (materialType == "dsdvd") {
+                return std::make_shared<DoubleSideDVD>();
+            }
+            else if (materialType == "boxset") {
                 return std::make_shared<BoxSet>();
             }else {
                 return nullptr;

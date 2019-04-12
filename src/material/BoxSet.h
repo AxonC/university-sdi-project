@@ -15,12 +15,12 @@ namespace TrekStar {
 
             void AddDisks(const std::vector<std::shared_ptr<DVD>> &);
             void AddDisk(const std::shared_ptr<DVD> &);
-            Stack<DVD> GetDisks() const;
+            Stack<std::shared_ptr<Material>> GetDisks() const;
 
             KeyValueMap GetPresentableInformation() const override;
             void PopulateFromFile(const json &) override;
          private:
-            Stack<DVD> disks;
+            Stack<std::shared_ptr<Material>> disks;
         };
     }
 }

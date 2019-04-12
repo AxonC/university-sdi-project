@@ -1,5 +1,6 @@
 #include <iostream>
 #include "BoxSet.h"
+#include "MaterialFactory.h"
 
 namespace TrekStar {
     namespace Material {
@@ -9,8 +10,8 @@ namespace TrekStar {
 
         void BoxSet::AddDisks(const std::vector<std::shared_ptr<DVD>> & newDisks)
         {
-            for (const auto &i: newDisks) {
-                this->disks.push(*i);
+            for (const auto & disk: newDisks) {
+                this->disks.push(disk);
             }
         }
 
@@ -20,17 +21,23 @@ namespace TrekStar {
             this->format = j.at("format");
             this->retailPrice = j.at("retailPrice").get<double>();
 
-//            this->id = static_cast<unsigned int>(std::stoi(attributes.at(1)));
-//            this->title = attributes.at(2);
-//            this->retailPrice = std::stod(attributes.at(3));
+            for(const auto & dvd: j.at("dvds"))
+            {
+                std::shared_ptr<Material> currentDVD = TrekStar::Material::MaterialFactory::Create(dvd.at("format"));
+
+                std::cout << dvd << std::endl;
+                currentDVD->PopulateFromFile(dvd);
+
+                this->disks.push(currentDVD);
+            }
         }
 
         void BoxSet::AddDisk(const std::shared_ptr<DVD> & disk)
         {
-            this->disks.push(*disk);
+            this->disks.push(disk);
         }
 
-        Stack<DVD> BoxSet::GetDisks() const
+        Stack<std::shared_ptr<Material>> BoxSet::GetDisks() const
         {
             return this->disks;
         }
@@ -40,7 +47,14 @@ namespace TrekStar {
             // call the base class function to get the basic details.
             KeyValueMap information = Material::GetPresentableInformation();
 
-
+            for(const auto &disk: this->disks.data())
+            {
+                for (auto const& d : disk->GetPresentableInformation())
+                {
+                    std::cout << d.first << " - " << d.second << std::endl;
+                    information.insert(std::pair<std::string, std::string>(d.first, d.second));
+                }
+            }
 
             return information;
         }

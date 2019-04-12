@@ -28,7 +28,6 @@ namespace TrekStar {
 
         void DVD::PopulateFromFile(const json & j)
         {
-            this->id = j.at("id").get<int>();
             this->format = j.at("format");
             this->audioFormat = j.at("audioFormat");
             this->runTime = j.at("runTime").get<int>();

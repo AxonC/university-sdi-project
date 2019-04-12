@@ -15,7 +15,7 @@ namespace TrekStar {
          */
         class DVD : public Material
         {
-        private:
+        protected:
             DVDSide sideOne;
         public:
             DVD();
