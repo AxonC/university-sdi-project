@@ -42,62 +42,20 @@ namespace TrekStar {
             return result;
         }
 
-//        TrekStar::Project::Project createProject(std::ifstream& dataFile)
-//        {
-//            std::vector<std::string> projectAttributes;
-//            std::string line;
-//
-//            while (getline(dataFile, line))
-//            {
-//                if (line[0] != '#')
-//                {
-//                    std::string::size_type pos = line.find('|');
-//                    if (line.substr(0, pos) == "Project")
-//                    {
-//                        while (pos != std::string::npos)
-//                        {
-//                            pos = line.find('|');
-//                            projectAttributes.push_back(line.substr(0, pos));
-//                            line = line.substr(pos + 1);
-//                        }
-//                    }
-//                }
-//            }
-//
-//            std::string title = projectAttributes[1];
-//            std::string summary = projectAttributes[2];
-//
-//            bool released;
-//
-//            if (projectAttributes[3] == "true")
-//            {
-//                released = true;
-//            }
-//            else
-//            {
-//                released = false;
-//            }
-//
-//            bool playingInTheatres;
-//
-//            if (projectAttributes[4] == "true")
-//            {
-//                playingInTheatres = true;
-//            }
-//            else
-//            {
-//                playingInTheatres = false;
-//            }
-//
-//            return TrekStar::Project::Project(title, summary, released, playingInTheatres);
-//        }
-
         TrekStar::Project::Project createProject(const json & jsonString)
         {
-            std::string name = jsonString.at("name").get<std::string>();
-            std::string summary = jsonString["summary"].get<std::string>();
-            bool released = jsonString["released"].get<bool>();
-            bool playingInTheatres = jsonString["playingInTheatres"].get<bool>();
+            std::string summary;
+            std::string name;
+            bool released{}, playingInTheatres{};
+
+            try {
+                name = jsonString.at("name").get<std::string>();
+                summary = jsonString.at("summary").get<std::string>();
+                released = jsonString.at("released").get<bool>();
+                playingInTheatres = jsonString.at("playingInTheatres").get<bool>();
+            } catch (json::out_of_range & e) {
+                std::cout << e.what();
+            }
 
             return TrekStar::Project::Project(name, summary, released, playingInTheatres);
         }
