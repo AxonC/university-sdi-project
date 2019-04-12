@@ -6,8 +6,9 @@
       "released": true,
       "playingInTheatres": false
     },
-    "materials": {
-      "1" : {
+    "materials": [
+      {
+        "id": 1,
         "format": "dvd",
         "audioFormat": "DTS",
         "runTime": 120,
@@ -15,10 +16,18 @@
         "retailPrice": 9.99,
         "subtitles": "ENG",
         "frameAspect": "16:9",
-        "additionalLanguageTracks": ["FRA", "GER"],
-        "additionalSubtitleTracks": ["FRA", "GER"],
-        "bonusFeatures": ["Director's Comments"]
+        "additionalLanguageTracks": [
+          "FRA",
+          "GER"
+        ],
+        "additionalSubtitleTracks": [
+          "FRA",
+          "GER"
+        ],
+        "bonusFeatures": [
+          "Director's Comments"
+        ]
       }
-    }
+    ]
   }
 }

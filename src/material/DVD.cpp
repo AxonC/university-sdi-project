@@ -28,6 +28,7 @@ namespace TrekStar {
 
         void DVD::PopulateFromFile(const json & j)
         {
+            this->id = j.at("id").get<int>();
             this->format = j.at("format");
             this->audioFormat = j.at("audioFormat");
             this->runTime = j.at("runTime").get<int>();
@@ -58,22 +59,6 @@ namespace TrekStar {
             }
 
             this->sideOne = DVDSide(additionalLanguageTracks, additionalSubtitleTracks, bonusFeatures);
-
-//            this->id = static_cast<unsigned int>(std::stoi(attributes.at(1)));
-//            this->title = attributes.at(2);
-//            this->format = attributes.at(3);
-//            this->audioFormat = attributes.at(4);
-//            this->runTime = attributes.at(5);
-//            this->language = attributes.at(6);
-//            this->retailPrice = std::stod(attributes.at(7));
-//            this->subtitles = attributes.at(8);
-//            this->frameAspect = attributes.at(9);
-//
-//            std::string additionalLanguageTracks = attributes.at(10);
-//            std::string additionalSubtitleTracks = attributes.at(11);
-//            std::string bonusFeatures = attributes.at(12);
-//
-//            this->sideOne = DVDSide(additionalLanguageTracks, additionalSubtitleTracks, bonusFeatures);
         }
 
     }
