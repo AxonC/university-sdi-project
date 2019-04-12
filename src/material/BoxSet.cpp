@@ -34,6 +34,16 @@ namespace TrekStar {
         {
             return this->disks;
         }
+
+        KeyValueMap BoxSet::GetPresentableInformation() const
+        {
+            // call the base class function to get the basic details.
+            KeyValueMap information = Material::GetPresentableInformation();
+
+
+
+            return information;
+        }
     }
 }
 

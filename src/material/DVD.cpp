@@ -66,28 +66,22 @@ namespace TrekStar {
             // call the base class function to get the basic details.
             KeyValueMap information = Material::GetPresentableInformation();
 
-            std::vector<std::string> additionalLanguageTracks = this->GetAdditionalLanguageTracks();
             int counter = 0;
-
-            for(const auto &additionalLanguageTrack: additionalLanguageTracks)
+            for(const auto &additionalLanguageTrack: this->GetAdditionalLanguageTracks())
             {
                 counter++;
                 information.insert ( std::pair<std::string, std::string>("Additional Language Track #" + std::to_string(counter), additionalLanguageTrack) );
             }
 
-            std::vector<std::string> additionalSubtitleTracks = this->GetAdditionalSubtitleTracks();
             counter = 0;
-
-            for(const auto &additionalSubtitleTrack: additionalSubtitleTracks)
+            for(const auto &additionalSubtitleTrack: this->GetAdditionalSubtitleTracks())
             {
                 counter++;
                 information.insert ( std::pair<std::string, std::string>("Additional Subtitle Track #" + std::to_string(counter), additionalSubtitleTrack) );
             }
 
-            std::vector<std::string> bonusFeatures = this->GetBonusFeatures();
             counter = 0;
-
-            for(const auto &bonusFeature: bonusFeatures)
+            for(const auto &bonusFeature: this->GetBonusFeatures())
             {
                 counter++;
                 information.insert ( std::pair<std::string, std::string>("Bonus Feature #" + std::to_string(counter), bonusFeature) );

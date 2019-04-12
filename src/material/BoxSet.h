@@ -17,6 +17,7 @@ namespace TrekStar {
             void AddDisk(const std::shared_ptr<DVD> &);
             Stack<DVD> GetDisks() const;
 
+            KeyValueMap GetPresentableInformation() const override;
             void PopulateFromFile(const json &) override;
          private:
             Stack<DVD> disks;
