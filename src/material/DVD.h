@@ -25,6 +25,7 @@ namespace TrekStar {
             std::vector<std::string> GetAdditionalSubtitleTracks() const;
             std::vector<std::string> GetBonusFeatures() const;
 
+            KeyValueMap GetPresentableInformation() const override;
             void PopulateFromFile(const json &) override;
         };
     }

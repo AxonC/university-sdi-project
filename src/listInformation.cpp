@@ -1,13 +1,9 @@
-//
-// Created by Matt Robinson on 2019-03-18.
-//
-
 #include <vector>
 #include <map>
 #include <iostream>
-#include "project/Project.h"
-#include "material/MaterialPresenter.h"
+
 #include "material/DVD.h"
+#include "project/Project.h"
 
 using TrekStar::Project::Project;
 using TrekStar::Material::Material;
@@ -40,7 +36,7 @@ void listMaterials(std::vector<TrekStar::Project::Project> projects, std::string
         std::cout << "Material " << material->GetId() << " for Project " << projectNum << std::endl;
         std::cout << std::string(80, '-') << std::endl;
 
-        std::map<std::string, std::string> materialData = TrekStar::Material::MaterialPresenter::GetInformation(material);
+        std::map<std::string, std::string> materialData = material->GetPresentableInformation();
 
         std::cout << "Title : " << projects.at(projectNum - 1).GetTitle() << std::endl;
 

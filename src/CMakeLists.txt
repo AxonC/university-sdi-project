@@ -13,7 +13,7 @@ if(Boost_FOUND)
 endif()
 
 add_library(Project project/Project.cpp project/Project.h project/ProjectController.cpp project/ProjectController.h)
-add_library(Material material/Material.h material/Material.cpp material/MaterialPresenter.h material/MaterialPresenter.cpp material/DVDSide.h material/DVDSide.cpp material/DVD.h material/DVD.cpp material/MaterialFactory.cpp material/MaterialFactory.h material/BoxSet.h material/BoxSet.cpp  material/SingleSideDVD.cpp material/SingleSideDVD.h material/DoubleSideDVD.cpp material/DoubleSideDVD.h)
+add_library(Material material/Material.h material/Material.cpp material/DVDSide.h material/DVDSide.cpp material/DVD.h material/DVD.cpp material/MaterialFactory.h material/MaterialFactory.cpp material/BoxSet.h material/BoxSet.cpp  material/SingleSideDVD.cpp material/SingleSideDVD.h material/DoubleSideDVD.cpp material/DoubleSideDVD.h)
 add_library(File file/fileOperations.h file/fileOperations.cpp)
 add_library(People people/Crew.cpp people/Crew.h)
 add_library(Information listInformation.cpp)

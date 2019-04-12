@@ -95,5 +95,20 @@ namespace TrekStar {
         {
             return this->GetId() != material.GetId();
         }
+
+        KeyValueMap Material::GetPresentableInformation() const
+        {
+            return
+                {
+                    {"ID", std::to_string(this->GetId())},
+                    {"Format", this->GetFormat()},
+                    {"Audio Format", this->GetAudioFormat()},
+                    {"Run Time", std::to_string(this->GetRunTime())},
+                    {"Language", this->GetLanguage()},
+                    {"Retail Price", std::to_string(this->GetRetailPrice())},
+                    {"Subtitles", this->GetSubtitles()},
+                    {"Frame Aspect", this->GetFrameAspect()}
+                };
+        }
     }
 }

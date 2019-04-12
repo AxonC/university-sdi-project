@@ -5,6 +5,7 @@
 #include "../lib/json.hpp"
 
 using json = nlohmann::json;
+using KeyValueMap = std::map<std::string, std::string>;
 
 namespace TrekStar {
     namespace Material {
@@ -29,6 +30,7 @@ namespace TrekStar {
                 explicit Material(unsigned int id, const std::string & title);
                 virtual ~Material() = default;
 
+                virtual KeyValueMap GetPresentableInformation() const;
                 virtual void PopulateFromFile(const json &) = 0;
 
                 int GetId() const;
