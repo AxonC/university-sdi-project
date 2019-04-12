@@ -10,7 +10,7 @@ namespace TrekStar {
             SingleSideDVD() = default;
             SingleSideDVD(unsigned int id, const std::string & name);
 
-            void PopulateFromFile(const std::vector<std::string> &) override;
+            void PopulateFromFile(const json &) override;
         };
     }
 }

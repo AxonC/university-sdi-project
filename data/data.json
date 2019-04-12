@@ -8,7 +8,16 @@
     },
     "materials": {
       "1" : {
-        "type": "dvd"
+        "format": "dvd",
+        "audioFormat": "DTS",
+        "runTime": 120,
+        "language": "ENG",
+        "retailPrice": 9.99,
+        "subtitles": "ENG",
+        "frameAspect": "16:9",
+        "additionalLanguageTracks": ["FRA", "GER"],
+        "additionalSubtitleTracks": ["FRA", "GER"],
+        "bonusFeatures": ["Director's Comments"]
       }
     }
   }

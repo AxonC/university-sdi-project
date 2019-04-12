@@ -13,11 +13,11 @@ namespace TrekStar {
             }
         }
 
-        void BoxSet::PopulateFromFile(const std::vector<std::string> & attributes)
+        void BoxSet::PopulateFromFile(const json & j)
         {
-            this->id = static_cast<unsigned int>(std::stoi(attributes.at(1)));
-            this->title = attributes.at(2);
-            this->retailPrice = std::stod(attributes.at(3));
+//            this->id = static_cast<unsigned int>(std::stoi(attributes.at(1)));
+//            this->title = attributes.at(2);
+//            this->retailPrice = std::stod(attributes.at(3));
         }
 
         void BoxSet::AddDisk(const std::shared_ptr<DVD> & disk)

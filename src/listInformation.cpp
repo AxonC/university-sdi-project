@@ -38,7 +38,7 @@ void listMaterials(std::vector<TrekStar::Project::Project> projects, std::string
         std::cout << "Material " << material->GetId() << " for Project " << projectNum << std::endl;
         std::cout << std::string(80, '-') << std::endl;
 
-        std::cout << "Title        : " << material->GetTitle() << std::endl;
+        std::cout << "Title        : " << projects.at(projectNum - 1).GetTitle() << std::endl;
         std::cout << "Format       : " << material->GetFormat() << std::endl;
         std::cout << "Audio format : " << material->GetAudioFormat() << std::endl;
         std::cout << "Run time     : " << material->GetRunTime() << std::endl;

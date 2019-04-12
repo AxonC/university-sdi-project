@@ -6,7 +6,6 @@
 #include "Material.h"
 #include "DVDSide.h"
 
-
 using TrekStar::Material::Material;
 
 namespace TrekStar {
@@ -26,7 +25,7 @@ namespace TrekStar {
             std::vector<std::string> GetAdditionalSubtitleTracks() const;
             std::vector<std::string> GetBonusFeatures() const;
 
-            void PopulateFromFile(const std::vector<std::string> &) override;
+            void PopulateFromFile(const json &) override;
         };
     }
 }

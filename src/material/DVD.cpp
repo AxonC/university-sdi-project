@@ -26,23 +26,31 @@ namespace TrekStar {
             return this->sideOne.GetBonusFeatures();
         }
 
-        void DVD::PopulateFromFile(const std::vector<std::string> & attributes)
+        void DVD::PopulateFromFile(const json & j)
         {
-            this->id = static_cast<unsigned int>(std::stoi(attributes.at(1)));
-            this->title = attributes.at(2);
-            this->format = attributes.at(3);
-            this->audioFormat = attributes.at(4);
-            this->runTime = attributes.at(5);
-            this->language = attributes.at(6);
-            this->retailPrice = std::stod(attributes.at(7));
-            this->subtitles = attributes.at(8);
-            this->frameAspect = attributes.at(9);
+            this->format = j.at("format");
+            this->audioFormat = j.at("audioFormat");
+            this->runTime = j.at("runTime").get<int>();
+            this->language = j.at("language");
+            this->retailPrice = j.at("retailPrice").get<double>();
+            this->subtitles = j.at("subtitles");
+            this->frameAspect = j.at("frameAspect");
 
-            std::string additionalLanguageTracks = attributes.at(10);
-            std::string additionalSubtitleTracks = attributes.at(11);
-            std::string bonusFeatures = attributes.at(12);
-
-            this->sideOne = DVDSide(additionalLanguageTracks, additionalSubtitleTracks, bonusFeatures);
+//            this->id = static_cast<unsigned int>(std::stoi(attributes.at(1)));
+//            this->title = attributes.at(2);
+//            this->format = attributes.at(3);
+//            this->audioFormat = attributes.at(4);
+//            this->runTime = attributes.at(5);
+//            this->language = attributes.at(6);
+//            this->retailPrice = std::stod(attributes.at(7));
+//            this->subtitles = attributes.at(8);
+//            this->frameAspect = attributes.at(9);
+//
+//            std::string additionalLanguageTracks = attributes.at(10);
+//            std::string additionalSubtitleTracks = attributes.at(11);
+//            std::string bonusFeatures = attributes.at(12);
+//
+//            this->sideOne = DVDSide(additionalLanguageTracks, additionalSubtitleTracks, bonusFeatures);
         }
 
     }

@@ -98,20 +98,20 @@ namespace TrekStar {
         {
             MaterialVector materials;
             std::shared_ptr<Material::Material> currentMaterial;
-            std::string type;
+            std::string format;
 
             for (auto && value: jsonString) {
                 std::vector<std::string> object;
-                type = value.at("type");
+                format = value.at("format");
 
-                currentMaterial = Material::MaterialFactory::Create(type);
+                currentMaterial = Material::MaterialFactory::Create(format);
 
                 if (currentMaterial != nullptr) {
                     // TODO: Add serializable stuff to Materials
-//                    currentMaterial->PopulateFromFile();
+                    currentMaterial->PopulateFromFile(value);
                     materials.push_back(currentMaterial);
                 } else {
-                    throw std::domain_error("Material type is not supported.");
+                    throw std::domain_error("Material format is not supported.");
                 }
             }
 

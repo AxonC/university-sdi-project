@@ -2,6 +2,9 @@
 #define TREKSTAR_MATERIAL_H
 
 #include <string>
+#include "../lib/json.hpp"
+
+using json = nlohmann::json;
 
 namespace TrekStar {
     namespace Material {
@@ -15,7 +18,7 @@ namespace TrekStar {
                 std::string title;
                 std::string format;
                 std::string audioFormat;
-                std::string runTime;
+                int runTime;
                 std::string language;
                 double retailPrice; // stored in pence
                 std::string subtitles;
@@ -26,13 +29,13 @@ namespace TrekStar {
                 explicit Material(unsigned int id, const std::string & title);
                 virtual ~Material() = default;
 
-                virtual void PopulateFromFile(const std::vector<std::string> &) = 0;
+                virtual void PopulateFromFile(const json &) = 0;
 
                 int GetId() const;
                 std::string GetTitle() const;
                 std::string GetFormat() const;
                 std::string GetAudioFormat() const;
-                std::string GetRunTime() const;
+                int GetRunTime() const;
                 std::string GetLanguage() const;
                 double GetRetailPrice() const;
                 std::string GetSubtitles() const;
