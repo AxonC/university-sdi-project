@@ -42,54 +42,64 @@ namespace TrekStar {
             return result;
         }
 
-        TrekStar::Project::Project createProject(std::ifstream& dataFile)
+//        TrekStar::Project::Project createProject(std::ifstream& dataFile)
+//        {
+//            std::vector<std::string> projectAttributes;
+//            std::string line;
+//
+//            while (getline(dataFile, line))
+//            {
+//                if (line[0] != '#')
+//                {
+//                    std::string::size_type pos = line.find('|');
+//                    if (line.substr(0, pos) == "Project")
+//                    {
+//                        while (pos != std::string::npos)
+//                        {
+//                            pos = line.find('|');
+//                            projectAttributes.push_back(line.substr(0, pos));
+//                            line = line.substr(pos + 1);
+//                        }
+//                    }
+//                }
+//            }
+//
+//            std::string title = projectAttributes[1];
+//            std::string summary = projectAttributes[2];
+//
+//            bool released;
+//
+//            if (projectAttributes[3] == "true")
+//            {
+//                released = true;
+//            }
+//            else
+//            {
+//                released = false;
+//            }
+//
+//            bool playingInTheatres;
+//
+//            if (projectAttributes[4] == "true")
+//            {
+//                playingInTheatres = true;
+//            }
+//            else
+//            {
+//                playingInTheatres = false;
+//            }
+//
+//            return TrekStar::Project::Project(title, summary, released, playingInTheatres);
+//        }
+
+        TrekStar::Project::Project createProject(const json & jsonString)
         {
-            std::vector<std::string> projectAttributes;
-            std::string line;
+            std::string name = jsonString.at("name").get<std::string>();
+            std::string summary = jsonString["summary"].get<std::string>();
+            bool released = jsonString["released"].get<bool>();
+            bool playingInTheatres = jsonString["playingInTheatres"].get<bool>();
 
-            while (getline(dataFile, line))
-            {
-                if (line[0] != '#')
-                {
-                    std::string::size_type pos = line.find('|');
-                    if (line.substr(0, pos) == "Project")
-                    {
-                        while (pos != std::string::npos)
-                        {
-                            pos = line.find('|');
-                            projectAttributes.push_back(line.substr(0, pos));
-                            line = line.substr(pos + 1);
-                        }
-                    }
-                }
-            }
-
-            std::string title = projectAttributes[1];
-            std::string summary = projectAttributes[2];
-
-            bool released;
-
-            if (projectAttributes[3] == "true")
-            {
-                released = true;
-            }
-            else
-            {
-                released = false;
-            }
-
-            bool playingInTheatres;
-
-            if (projectAttributes[4] == "true")
-            {
-                playingInTheatres = true;
-            }
-            else
-            {
-                playingInTheatres = false;
-            }
-
-            return TrekStar::Project::Project(title, summary, released, playingInTheatres);
+            return TrekStar::Project::Project(name, summary, released, playingInTheatres);
         }
 
         std::vector<std::shared_ptr<Material::Material>> createMaterials(std::ifstream& dataFile)
@@ -141,40 +151,49 @@ namespace TrekStar {
             std::ifstream dataFile(files.at(0));
             json jsonStream = json::parse(dataFile);
 
-            for (std::vector<std::string>::iterator it = files.begin() ; it != files.end(); ++it)
+            for (json::iterator it = jsonStream.begin(); it != jsonStream.end(); ++it)
             {
-                if (*it != "." && *it != "..")
+                // ensure that there is a key called details
+                if (it->find("details") != it->end())
                 {
-                    std::ifstream dataFile (*it);
-
-                    if ( ! isFileOpen(dataFile) || ! isFileOkay(dataFile) )
-                    {
-
-                        if ( ! isFileOpen(dataFile) )
-                        {
-                            std::cout << "Error: File not found." << std::endl;
-                        }
-                        if ( ! isFileOkay(dataFile) )
-                        {
-                            std::cout << "Error: There was an error reading the file, it may be corrupted." << std::endl;
-                        }
-                    }
-                    else
-                    {
-                        currentProject = createProject(dataFile);
-
-                        try
-                        {
-                            currentProject.AddMaterials(createMaterials(dataFile));
-                            projects.push_back(currentProject);
-                        }
-                        catch (std::domain_error ex)
-                        {
-                            break;
-                        }
-                    }
+                    currentProject = createProject(it->at("details"));
                 }
             }
+
+//            for (std::vector<std::string>::iterator it = files.begin() ; it != files.end(); ++it)
+//            {
+//                if (*it != "." && *it != "..")
+//                {
+//                    std::ifstream dataFile (*it);
+//
+//                    if ( ! isFileOpen(dataFile) || ! isFileOkay(dataFile) )
+//                    {
+//
+//                        if ( ! isFileOpen(dataFile) )
+//                        {
+//                            std::cout << "Error: File not found." << std::endl;
+//                        }
+//                        if ( ! isFileOkay(dataFile) )
+//                        {
+//                            std::cout << "Error: There was an error reading the file, it may be corrupted." << std::endl;
+//                        }
+//                    }
+//                    else
+//                    {
+//                        currentProject = createProject(dataFile);
+//
+//                        try
+//                        {
+//                            currentProject.AddMaterials(createMaterials(dataFile));
+//                            projects.push_back(currentProject);
+//                        }
+//                        catch (std::domain_error ex)
+//                        {
+//                            break;
+//                        }
+//                    }
+//                }
+//            }
 
             return projects;
         }

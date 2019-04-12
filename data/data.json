@@ -1,8 +1,10 @@
 {
   "1": {
-    "name": "Deadpool",
-    "type": "dvd",
-    "format": "DTS",
-    "retail_price": 9.99
+    "details" : {
+      "name": "Deadpool",
+      "summary": "A super hero does stuff",
+      "released": true,
+      "playingInTheatres": false
+    }
   }
 }
