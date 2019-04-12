@@ -44,20 +44,14 @@ namespace TrekStar {
 
         TrekStar::Project::Project createProject(const json & jsonString)
         {
-            std::string summary;
-            std::string name;
-            bool released{}, playingInTheatres{};
-
+            TrekStar::Project::SerialisedProject serialised;
             try {
-                name = jsonString.at("name").get<std::string>();
-                summary = jsonString.at("summary").get<std::string>();
-                released = jsonString.at("released").get<bool>();
-                playingInTheatres = jsonString.at("playingInTheatres").get<bool>();
-            } catch (json::out_of_range & e) {
-                std::cout << e.what();
+                serialised = jsonString.get<TrekStar::Project::SerialisedProject>();
+            } catch (json::out_of_range & ) {
+                //
             }
 
-            return TrekStar::Project::Project(name, summary, released, playingInTheatres);
+            return TrekStar::Project::Project(serialised);
         }
 
         std::vector<std::shared_ptr<Material::Material>> createMaterials(std::ifstream& dataFile)
@@ -100,6 +94,28 @@ namespace TrekStar {
             return materials;
         }
 
+        MaterialVector createMaterials(const json & jsonString)
+        {
+            MaterialVector materials;
+            std::shared_ptr<Material::Material> currentMaterial;
+            std::string type;
+
+            for (auto && value: jsonString) {
+                std::vector<std::string> object;
+                type = value.at("type");
+
+                currentMaterial = Material::MaterialFactory::Create(type);
+
+                if (currentMaterial != nullptr) {
+                    // TODO: Add serializable stuff to Materials
+//                    currentMaterial->PopulateFromFile();
+                    materials.push_back(currentMaterial);
+                }
+            }
+
+            return materials;
+        }
+
         std::vector<TrekStar::Project::Project> importProjects(std::vector<std::string> files)
         {
             TrekStar::Project::Project currentProject;
@@ -109,13 +125,19 @@ namespace TrekStar {
             std::ifstream dataFile(files.at(0));
             json jsonStream = json::parse(dataFile);
 
-            for (json::iterator it = jsonStream.begin(); it != jsonStream.end(); ++it)
-            {
+            for (auto &it : jsonStream) {
                 // ensure that there is a key called details
-                if (it->find("details") != it->end())
+                if (it.find("details") != it.end())
                 {
-                    currentProject = createProject(it->at("details"));
+                    currentProject = createProject(it.at("details"));
                 }
+
+                if (it.find("materials") != it.end())
+                {
+                    currentProject.AddMaterials(createMaterials(it.at("materials")));
+                }
+
+                projects.push_back(currentProject);
             }
 
 //            for (std::vector<std::string>::iterator it = files.begin() ; it != files.end(); ++it)

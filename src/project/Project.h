@@ -8,9 +8,19 @@
 
 #include "../material/Material.h"
 #include "../people/Crew.h"
+#include "../lib/json.hpp"
+
+using json = nlohmann::json;
 
 namespace TrekStar {
     namespace Project {
+        struct SerialisedProject {
+            std::string title;
+            std::string summary;
+            bool released;
+            bool playingInTheatres;
+        };
+
         /**
          *  Trekstar Film Project Class
          */
@@ -21,6 +31,7 @@ namespace TrekStar {
             explicit Project(std::string title, std::string summary, bool released, bool playingInTheatres);
             explicit Project(std::string & title);
             explicit Project(const std::string & title, const std::string & summary, bool released = false);
+            explicit Project(const SerialisedProject & project);
             ~Project();
 
             std::string GetTitle() const;
@@ -53,6 +64,10 @@ namespace TrekStar {
             bool released{false};
             bool playingInTheatres{false};
         };
+
+
+        void to_json(json & json, const Project & project);
+        void from_json(const json & json, SerialisedProject & project);
     }
 }
 

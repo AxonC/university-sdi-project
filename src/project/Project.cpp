@@ -14,8 +14,6 @@ namespace TrekStar {
             this->playingInTheatres = playingInTheatres;
         }
 
-
-
         Project::Project(std::string & title)
         {
             this->title = title;
@@ -26,6 +24,14 @@ namespace TrekStar {
             this->title = name;
             this->summary = summary;
             this->released = released;
+        }
+
+        Project::Project(const SerialisedProject & project)
+        {
+            this->title = project.title;
+            this->summary = project.summary;
+            this->released = project.released;
+            this->playingInTheatres = project.playingInTheatres;
         }
 
         Project::~Project() = default;
@@ -123,6 +129,14 @@ namespace TrekStar {
             }
 
             crew.erase(search);
+        }
+
+        void from_json(const json & json, SerialisedProject & project)
+        {
+            json.at("title").get_to(project.title);
+            json.at("summary").get_to(project.summary);
+            json.at("released").get_to(project.released);
+            json.at("playingInTheatres").get_to(project.playingInTheatres);
         }
     }
 }
