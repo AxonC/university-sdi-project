@@ -27,6 +27,54 @@
         "bonusFeatures": [
           "Director's Comments"
         ]
+      },
+      {
+        "id": 2,
+        "format": "boxset",
+        "retailPrice": 25.99,
+        "dvds":
+        [
+          {
+            "order": 0,
+            "format": "dvd",
+            "audioFormat": "DTS",
+            "runTime": 90,
+            "language": "GER",
+            "subtitles": "GER",
+            "frameAspect": "4:3",
+            "additionalLanguageTracks": [
+              "ENG",
+              "SPA"
+            ],
+            "additionalSubtitleTracks": [
+              "ENG",
+              "SPA"
+            ],
+            "bonusFeatures": [
+              "Audition Tapes"
+            ]
+          },
+          {
+            "order": 1,
+            "format": "dvd",
+            "audioFormat": "DTS",
+            "runTime": 160,
+            "language": "ENG",
+            "subtitles": "ENG",
+            "frameAspect": "4:3",
+            "additionalLanguageTracks": [
+              "GER",
+              "SPA"
+            ],
+            "additionalSubtitleTracks": [
+              "GER",
+              "SPA"
+            ],
+            "bonusFeatures": [
+              "Outtakes"
+            ]
+          }
+        ]
       }
     ]
   }
