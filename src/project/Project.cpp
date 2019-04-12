@@ -131,6 +131,21 @@ namespace TrekStar {
             crew.erase(search);
         }
 
+        SerialisedProject Project::ExportToSerialised() const
+        {
+            return SerialisedProject{this->title, this->summary, this->released, this->playingInTheatres};
+        }
+
+        void to_json(json &j, const SerialisedProject & project)
+        {
+            j = json{
+                {"title", project.title},
+                {"summary", project.summary},
+                {"released", project.released},
+                {"playingInTheatres", project.released}
+            };
+        }
+
         void from_json(const json & json, SerialisedProject & project)
         {
             json.at("title").get_to(project.title);

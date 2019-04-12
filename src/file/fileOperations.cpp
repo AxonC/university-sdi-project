@@ -48,7 +48,7 @@ namespace TrekStar {
             try {
                 serialised = jsonString.get<TrekStar::Project::SerialisedProject>();
             } catch (json::out_of_range & ) {
-                //
+                // TODO: Conceputalise exception logic
             }
 
             return TrekStar::Project::Project(serialised);
@@ -110,6 +110,8 @@ namespace TrekStar {
                     // TODO: Add serializable stuff to Materials
 //                    currentMaterial->PopulateFromFile();
                     materials.push_back(currentMaterial);
+                } else {
+                    throw std::domain_error("Material type is not supported.");
                 }
             }
 

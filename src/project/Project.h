@@ -54,6 +54,8 @@ namespace TrekStar {
 
             void ReleaseProject();
 
+            SerialisedProject ExportToSerialised() const;
+
         private:
             bool CanAddMaterial() const;
 
@@ -66,7 +68,7 @@ namespace TrekStar {
         };
 
 
-        void to_json(json & json, const Project & project);
+        void to_json(json & j, const SerialisedProject & project);
         void from_json(const json & json, SerialisedProject & project);
     }
 }
