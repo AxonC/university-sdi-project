@@ -15,7 +15,7 @@ namespace TrekStar {
 
         public:
             DVDSide() = default;
-            DVDSide(std::string additionalLanguageTracks, std::string additionalSubtitleTracks, std::string bonusFeatures);
+            DVDSide(std::vector<std::string> additionalLanguageTracks, std::vector<std::string> additionalSubtitleTracks, std::vector<std::string> bonusFeatures);
 
             std::vector<std::string> GetAdditionalLanguageTracks() const;
             std::vector<std::string> GetAdditionalSubtitleTracks() const;

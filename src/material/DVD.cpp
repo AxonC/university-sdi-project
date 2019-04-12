@@ -36,6 +36,29 @@ namespace TrekStar {
             this->subtitles = j.at("subtitles");
             this->frameAspect = j.at("frameAspect");
 
+            json additionalLanguageTracksJSON = j.at("additionalLanguageTracks");
+            std::vector<std::string> additionalLanguageTracks;
+
+            for (json::iterator it = additionalLanguageTracksJSON.begin(); it != additionalLanguageTracksJSON.end(); ++it) {
+                additionalLanguageTracks.push_back(*it);
+            }
+
+            json additionalSubtitleTracksJSON = j.at("additionalSubtitleTracks");
+            std::vector<std::string> additionalSubtitleTracks;
+
+            for (json::iterator it = additionalSubtitleTracksJSON.begin(); it != additionalSubtitleTracksJSON.end(); ++it) {
+                additionalSubtitleTracks.push_back(*it);
+            }
+
+            json bonusFeaturesJSON = j.at("bonusFeatures");
+            std::vector<std::string> bonusFeatures;
+
+            for (json::iterator it = bonusFeaturesJSON.begin(); it != bonusFeaturesJSON.end(); ++it) {
+                bonusFeatures.push_back(*it);
+            }
+
+            this->sideOne = DVDSide(additionalLanguageTracks, additionalSubtitleTracks, bonusFeatures);
+
 //            this->id = static_cast<unsigned int>(std::stoi(attributes.at(1)));
 //            this->title = attributes.at(2);
 //            this->format = attributes.at(3);
