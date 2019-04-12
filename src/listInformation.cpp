@@ -48,38 +48,5 @@ void listMaterials(std::vector<TrekStar::Project::Project> projects, std::string
         {
             std::cout << m.first << " : " << m.second << std::endl;
         }
-
-        // if material is a DVD
-        if( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::DVD>(material) )
-        {
-            std::vector<std::string> additionalLanguageTracks = materialType->GetAdditionalLanguageTracks();
-            int counter = 0;
-
-            for(const auto &additionalLanguageTrack: additionalLanguageTracks)
-            {
-                counter++;
-                std::cout << "Additional Language Track #" << counter << " : " << additionalLanguageTrack << std::endl;
-            }
-
-
-            std::vector<std::string> additionalSubtitleTracks = materialType->GetAdditionalSubtitleTracks();
-            counter = 0;
-
-            for(const auto &additionalSubtitleTrack: additionalSubtitleTracks)
-            {
-                counter++;
-                std::cout << "Additional Subtitle Track #" << counter << " : " << additionalSubtitleTrack << std::endl;
-            }
-
-
-            std::vector<std::string> bonusFeatures = materialType->GetBonusFeatures();
-            counter = 0;
-
-            for(const auto &bonusFeature: bonusFeatures)
-            {
-                counter++;
-                std::cout << "Bonus Feature #" << counter << " : " << bonusFeature << std::endl;
-            }
-        }
     }
 }

@@ -4,6 +4,8 @@
 
 #include <string>
 #include "MaterialPresenter.h"
+#include "DVD.h"
+#include "BoxSet.h"
 
 namespace TrekStar {
     namespace Material {
@@ -12,29 +14,72 @@ namespace TrekStar {
             std::map<std::string, std::string> materialData;
             std::string materialType = material->GetFormat();
 
-            if (materialType == "dvd")
+            // if material is a DVD
+            if( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::DVD>(material) )
             {
                 materialData =
                 {
-                    {"ID", std::to_string(material->GetId())},
-                    {"Format", material->GetFormat()},
-                    {"Audio Format", material->GetAudioFormat()},
-                    {"Run Time", std::to_string(material->GetRunTime())},
-                    {"Language", material->GetLanguage()},
-                    {"Retail Price", std::to_string(material->GetRetailPrice())},
-                    {"Subtitles", material->GetSubtitles()},
-                    {"Frame Aspect", material->GetFrameAspect()}
+                    {"ID", std::to_string(materialType->GetId())},
+                    {"Format", materialType->GetFormat()},
+                    {"Audio Format", materialType->GetAudioFormat()},
+                    {"Run Time", std::to_string(materialType->GetRunTime())},
+                    {"Language", materialType->GetLanguage()},
+                    {"Retail Price", std::to_string(materialType->GetRetailPrice())},
+                    {"Subtitles", materialType->GetSubtitles()},
+                    {"Frame Aspect", materialType->GetFrameAspect()}
+                };
+
+
+                std::vector<std::string> additionalLanguageTracks = materialType->GetAdditionalLanguageTracks();
+                int counter = 0;
+
+                for(const auto &additionalLanguageTrack: additionalLanguageTracks)
+                {
+                    counter++;
+                    materialData.insert ( std::pair<std::string, std::string>("Additional Language Track #" + std::to_string(counter), additionalLanguageTrack) );
+                }
+
+
+                std::vector<std::string> additionalSubtitleTracks = materialType->GetAdditionalSubtitleTracks();
+                counter = 0;
+
+                for(const auto &additionalSubtitleTrack: additionalSubtitleTracks)
+                {
+                    counter++;
+                    materialData.insert ( std::pair<std::string, std::string>("Additional Subtitle Track #" + std::to_string(counter), additionalSubtitleTrack) );
+                }
+
+
+                std::vector<std::string> bonusFeatures = materialType->GetBonusFeatures();
+                counter = 0;
+
+                for(const auto &bonusFeature: bonusFeatures)
+                {
+                    counter++;
+                    materialData.insert ( std::pair<std::string, std::string>("Bonus Feature #" + std::to_string(counter), bonusFeature) );
+                }
+
+                return materialData;
+            }
+            else if ( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::BoxSet>(material) )
+            {
+                materialData =
+                {
+                        {"ID", std::to_string(materialType->GetId())},
+                        {"Format", materialType->GetFormat()},
+                        {"Audio Format", materialType->GetAudioFormat()},
+                        {"Run Time", std::to_string(materialType->GetRunTime())},
+                        {"Language", materialType->GetLanguage()},
+                        {"Retail Price", std::to_string(materialType->GetRetailPrice())},
+                        {"Subtitles", materialType->GetSubtitles()},
+                        {"Frame Aspect", materialType->GetFrameAspect()}
                 };
 
                 return materialData;
             }
-            else if (materialType == "boxset")
-            {
-
-            }
             else
             {
-
+                return materialData;
             }
         }
     }
