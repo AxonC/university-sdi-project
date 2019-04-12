@@ -14,22 +14,21 @@ namespace TrekStar {
             std::map<std::string, std::string> materialData;
             std::string materialType = material->GetFormat();
 
+            materialData =
+            {
+                {"ID", std::to_string(material->GetId())},
+                {"Format", material->GetFormat()},
+                {"Audio Format", material->GetAudioFormat()},
+                {"Run Time", std::to_string(material->GetRunTime())},
+                {"Language", material->GetLanguage()},
+                {"Retail Price", std::to_string(material->GetRetailPrice())},
+                {"Subtitles", material->GetSubtitles()},
+                {"Frame Aspect", material->GetFrameAspect()}
+            };
+
             // if material is a DVD
             if( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::DVD>(material) )
             {
-                materialData =
-                {
-                    {"ID", std::to_string(materialType->GetId())},
-                    {"Format", materialType->GetFormat()},
-                    {"Audio Format", materialType->GetAudioFormat()},
-                    {"Run Time", std::to_string(materialType->GetRunTime())},
-                    {"Language", materialType->GetLanguage()},
-                    {"Retail Price", std::to_string(materialType->GetRetailPrice())},
-                    {"Subtitles", materialType->GetSubtitles()},
-                    {"Frame Aspect", materialType->GetFrameAspect()}
-                };
-
-
                 std::vector<std::string> additionalLanguageTracks = materialType->GetAdditionalLanguageTracks();
                 int counter = 0;
 
@@ -58,29 +57,17 @@ namespace TrekStar {
                     counter++;
                     materialData.insert ( std::pair<std::string, std::string>("Bonus Feature #" + std::to_string(counter), bonusFeature) );
                 }
-
-                return materialData;
             }
             else if ( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::BoxSet>(material) )
             {
-                materialData =
-                {
-                        {"ID", std::to_string(materialType->GetId())},
-                        {"Format", materialType->GetFormat()},
-                        {"Audio Format", materialType->GetAudioFormat()},
-                        {"Run Time", std::to_string(materialType->GetRunTime())},
-                        {"Language", materialType->GetLanguage()},
-                        {"Retail Price", std::to_string(materialType->GetRetailPrice())},
-                        {"Subtitles", materialType->GetSubtitles()},
-                        {"Frame Aspect", materialType->GetFrameAspect()}
-                };
 
-                return materialData;
             }
             else
             {
-                return materialData;
+
             }
+
+            return materialData;
         }
     }
 }
