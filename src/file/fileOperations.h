@@ -11,17 +11,16 @@
 #include "../material/Material.h"
 #include "../material/MaterialFactory.h"
 
+using ProjectVector = std::vector<TrekStar::Project::Project>;
 using MaterialVector = std::vector<std::shared_ptr<TrekStar::Material::Material>>;
 
 namespace TrekStar {
     namespace File {
-        bool isFileOpen(std::ifstream& file);
+        TrekStar::Project::Project createProject(const json &);
 
-        bool isFileOkay(std::ifstream& file);
+        MaterialVector createMaterials(const json &);
 
-        std::vector<std::string> readDirectory(const std::string&);
-
-        std::vector<TrekStar::Project::Project> importProjects(std::vector<std::string> files);
+        ProjectVector importProjects(std::vector<std::string>);
     }
 }
 

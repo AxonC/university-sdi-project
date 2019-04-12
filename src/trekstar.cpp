@@ -7,11 +7,9 @@
 
 int main()
 {
-    std::string fileDirectory = boost::filesystem::current_path().parent_path().parent_path().string() + "/data";
+    std::string fileDirectory = boost::filesystem::current_path().parent_path().parent_path().string() + "/data/";
 
-    std::vector<std::string> files = TrekStar::File::readDirectory(fileDirectory);
-
-    std::vector<TrekStar::Project::Project> projects = TrekStar::File::importProjects(files);
+    std::vector<TrekStar::Project::Project> projects = TrekStar::File::importProjects(fileDirectory + "data.json");
 
     std::cout << "Welcome to TrekStar Management System | Console" << std::endl;
     std::string command = "";
