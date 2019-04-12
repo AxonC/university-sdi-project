@@ -3,8 +3,10 @@
 //
 
 #include <vector>
+#include <map>
 #include <iostream>
 #include "project/Project.h"
+#include "material/MaterialPresenter.h"
 #include "material/DVD.h"
 
 using TrekStar::Project::Project;
@@ -38,14 +40,14 @@ void listMaterials(std::vector<TrekStar::Project::Project> projects, std::string
         std::cout << "Material " << material->GetId() << " for Project " << projectNum << std::endl;
         std::cout << std::string(80, '-') << std::endl;
 
-        std::cout << "Title        : " << projects.at(projectNum - 1).GetTitle() << std::endl;
-        std::cout << "Format       : " << material->GetFormat() << std::endl;
-        std::cout << "Audio format : " << material->GetAudioFormat() << std::endl;
-        std::cout << "Run time     : " << material->GetRunTime() << std::endl;
-        std::cout << "Language     : " << material->GetLanguage() << std::endl;
-        std::cout << "Retail price : " << material->GetRetailPrice() << std::endl;
-        std::cout << "Subtitles    : " << material->GetSubtitles() << std::endl;
-        std::cout << "Frame aspect : " << material->GetFrameAspect() << std::endl;
+        std::map<std::string, std::string> materialData = TrekStar::Material::MaterialPresenter::GetInformation(material);
+
+        std::cout << "Title : " << projects.at(projectNum - 1).GetTitle() << std::endl;
+
+        for (auto const& m : materialData)
+        {
+            std::cout << m.first << " : " << m.second << std::endl;
+        }
 
         // if material is a DVD
         if( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::DVD>(material) )

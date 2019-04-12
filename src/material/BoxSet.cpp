@@ -1,3 +1,4 @@
+#include <iostream>
 #include "BoxSet.h"
 
 namespace TrekStar {
@@ -15,6 +16,10 @@ namespace TrekStar {
 
         void BoxSet::PopulateFromFile(const json & j)
         {
+            this->id = j.at("id").get<int>();
+            this->format = j.at("format");
+            this->retailPrice = j.at("retailPrice").get<double>();
+
 //            this->id = static_cast<unsigned int>(std::stoi(attributes.at(1)));
 //            this->title = attributes.at(2);
 //            this->retailPrice = std::stod(attributes.at(3));
