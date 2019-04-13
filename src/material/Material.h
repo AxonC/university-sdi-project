@@ -9,6 +9,17 @@ using KeyValueMap = std::map<std::string, std::string>;
 
 namespace TrekStar {
     namespace Material {
+        struct SerialisedMaterial {
+            std::string title;
+            std::string format;
+            std::string audioFormat;
+            int runTime;
+            std::string language;
+            double retailPrice;
+            std::string subtitles;
+            std::string frameAspect;
+        };
+
         /**
          *  Trekstar Material Class
          */
@@ -43,9 +54,14 @@ namespace TrekStar {
                 std::string GetSubtitles() const;
                 std::string GetFrameAspect() const;
 
+                SerialisedMaterial ExportToSerialised() const;
+
                 bool operator==(const Material& material) const;
                 bool operator!=(const Material& material) const;
         };
+
+        json to_json(const SerialisedMaterial & material);
+        void from_json(const json & json, SerialisedMaterial & material);
     }
 }
 

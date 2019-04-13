@@ -10,6 +10,10 @@ using TrekStar::Material::Material;
 
 namespace TrekStar {
     namespace Material {
+        struct SerialisedDVD {
+            std::vector<std::string> additionalLanguageTracks;
+        };
+
         /**
          *  Trekstar DVD Class
          */
@@ -28,6 +32,9 @@ namespace TrekStar {
             KeyValueMap GetPresentableInformation() const override;
             void PopulateFromFile(const json &) override;
         };
+
+        json to_json(const SerialisedDVD & dvd);
+        void from_json(const json & json, SerialisedDVD & dvd);
     }
 }
 

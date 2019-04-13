@@ -136,14 +136,17 @@ namespace TrekStar {
             return SerialisedProject{this->title, this->summary, this->released, this->playingInTheatres};
         }
 
-        void to_json(json &j, const SerialisedProject & project)
+        json to_json(const SerialisedProject & project)
         {
-            j = json{
+            json j = json
+            {
                 {"title", project.title},
                 {"summary", project.summary},
                 {"released", project.released},
                 {"playingInTheatres", project.released}
             };
+
+            return j;
         }
 
         void from_json(const json & json, SerialisedProject & project)

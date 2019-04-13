@@ -61,6 +61,20 @@ namespace TrekStar {
             return frameAspect;
         }
 
+        SerialisedMaterial Material::ExportToSerialised() const
+        {
+            return SerialisedMaterial {
+                this->title,
+                this->format,
+                this->audioFormat,
+                this->runTime,
+                this->language,
+                this->retailPrice,
+                this->subtitles,
+                this->frameAspect
+            };
+        }
+
         bool Material::operator==(const Material &material) const
         {
             return this->GetId() == material.GetId();
@@ -83,6 +97,35 @@ namespace TrekStar {
                     {"Subtitles", this->GetSubtitles()},
                     {"Frame Aspect", this->GetFrameAspect()}
                 };
+        }
+
+        json to_json(const SerialisedMaterial & material)
+        {
+            json j = json
+            {
+                {"title", material.title},
+                {"format", material.format},
+                {"audioFormat", material.audioFormat},
+                {"runTime", material.runTime},
+                {"language", material.language},
+                {"retailPrice", material.retailPrice},
+                {"subtitles", material.subtitles},
+                {"frameAspect", material.frameAspect}
+            };
+
+            return j;
+        }
+
+        void from_json(const json & json, SerialisedMaterial & material)
+        {
+            json.at("title").get_to(material.title);
+            json.at("format").get_to(material.format);
+            json.at("audioFormat").get_to(material.audioFormat);
+            json.at("runTime").get_to(material.runTime);
+            json.at("language").get_to(material.language);
+            json.at("retailPrice").get_to(material.retailPrice);
+            json.at("subtitles").get_to(material.subtitles);
+            json.at("frameAspect").get_to(material.frameAspect);
         }
     }
 }

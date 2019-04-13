@@ -1,10 +1,10 @@
-#include <fstream>
 #include <boost/filesystem/operations.hpp>
 #include <boost/filesystem/path.hpp>
 
 #include "file/fileOperations.cpp"
 #include "listInformation.cpp"
 #include "addInformation.cpp"
+#include "saveInformation.cpp"
 
 int main()
 {
@@ -39,6 +39,10 @@ int main()
         else if ( command.substr(0, pos) == "addp" )
         {
             addProject(projects, command.substr(pos + 1));
+        }
+        else if ( command.substr(0, pos) == "save" )
+        {
+            save(projects, fileDirectory + "saveData.json");
         }
     }
 

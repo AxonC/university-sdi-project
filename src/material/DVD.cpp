@@ -72,5 +72,23 @@ namespace TrekStar {
             return information;
         }
 
+//        json to_json(const SerialisedDVD & dvd)
+//        {
+//            json j = TrekStar::Material::to_json(material);
+//
+//            j +=
+//            {
+//                {"title", material.title},
+//                {"format", material.format},
+//                {"audioFormat", material.audioFormat},
+//                {"runTime", material.runTime},
+//                {"language", material.language},
+//                {"retailPrice", material.retailPrice},
+//                {"subtitles", material.subtitles},
+//                {"frameAspect", material.frameAspect}
+//            };
+//
+//            return j;
+//        }
     }
 }

@@ -16,7 +16,7 @@ add_library(Project project/Project.cpp project/Project.h project/ProjectControl
 add_library(Material material/Material.h material/Material.cpp material/DVDSide.h material/DVDSide.cpp material/DVD.h material/DVD.cpp material/MaterialFactory.h material/MaterialFactory.cpp material/BoxSet.h material/BoxSet.cpp  material/SingleSideDVD.cpp material/SingleSideDVD.h material/DoubleSideDVD.cpp material/DoubleSideDVD.h)
 add_library(File file/fileOperations.h file/fileOperations.cpp)
 add_library(People people/Crew.cpp people/Crew.h)
-add_library(Information listInformation.cpp addInformation.cpp)
+add_library(Information listInformation.cpp addInformation.cpp saveInformation.cpp)
 
 # data structures
 add_library(Structures SHARED structures/Stack.h)
