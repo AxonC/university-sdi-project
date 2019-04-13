@@ -9,7 +9,18 @@
     },
     "materials": [
         {
+            "additionalLanguageTracks": [
+                "FRA",
+                "GER"
+            ],
+            "additionalSubtitleTracks": [
+                "FRA",
+                "GER"
+            ],
             "audioFormat": "DTS",
+            "bonusFeatures": [
+                "Director's Comments"
+            ],
             "format": "dvd",
             "frameAspect": "16:9",
             "language": "ENG",
@@ -29,7 +40,18 @@
             "title": ""
         },
         {
+            "additionalLanguageTracks": [
+                "SPA",
+                "GER"
+            ],
+            "additionalSubtitleTracks": [
+                "SPA",
+                "GER"
+            ],
             "audioFormat": "DTS",
+            "bonusFeatures": [
+                "Bonus Features"
+            ],
             "format": "dsdvd",
             "frameAspect": "4:3",
             "language": "ENG",

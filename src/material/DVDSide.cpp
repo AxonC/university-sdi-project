@@ -54,5 +54,14 @@ namespace TrekStar {
 
             return information;
         }
+
+        SerialisedDVDSide DVDSide::ExportToSerialised() const
+        {
+            return SerialisedDVDSide {
+                this->additionalLanguageTracks,
+                this->additionalSubtitleTracks,
+                this->bonusFeatures
+            };
+        }
     }
 }

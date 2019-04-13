@@ -10,6 +10,12 @@ using KeyValueMap = std::map<std::string, std::string>;
 
 namespace TrekStar {
     namespace Material {
+        struct SerialisedDVDSide {
+            std::vector<std::string> additionalLanguageTracks;
+            std::vector<std::string> additionalSubtitleTracks;
+            std::vector<std::string> bonusFeatures;
+        };
+
         class DVDSide {
         protected:
             std::string content;                                // DVD contents
@@ -28,6 +34,8 @@ namespace TrekStar {
             std::vector<std::string> GetAdditionalLanguageTracks() const;
             std::vector<std::string> GetAdditionalSubtitleTracks() const;
             std::vector<std::string> GetBonusFeatures() const;
+
+            SerialisedDVDSide ExportToSerialised() const;
         };
     }
 }
