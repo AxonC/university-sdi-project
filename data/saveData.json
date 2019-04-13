@@ -1,0 +1,42 @@
+{
+    "1": {
+        "details": {
+            "playingInTheatres": true,
+            "released": true,
+            "summary": "A super hero does stuff",
+            "title": "Deadpool"
+        }
+    },
+    "materials": [
+        {
+            "audioFormat": "DTS",
+            "format": "dvd",
+            "frameAspect": "16:9",
+            "language": "ENG",
+            "retailPrice": 9.99,
+            "runTime": 120,
+            "subtitles": "ENG",
+            "title": ""
+        },
+        {
+            "audioFormat": "",
+            "format": "boxset",
+            "frameAspect": "",
+            "language": "",
+            "retailPrice": 25.99,
+            "runTime": 0,
+            "subtitles": "",
+            "title": ""
+        },
+        {
+            "audioFormat": "DTS",
+            "format": "dsdvd",
+            "frameAspect": "4:3",
+            "language": "ENG",
+            "retailPrice": 55.98,
+            "runTime": 326,
+            "subtitles": "",
+            "title": ""
+        }
+    ]
+}
