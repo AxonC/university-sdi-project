@@ -35,24 +35,24 @@ namespace TrekStar {
             for(auto & it: this->additionalLanguageTracks)
             {
                 counter++;
-                information.insert(std::pair<std::string, std::string>("Additional Language Track" + std::to_string(counter), it));
+                information.insert(std::pair<std::string, std::string>("Additional Language Track " + std::to_string(counter), it));
             }
 
             counter = 0;
             for(auto & it: this->additionalSubtitleTracks)
             {
                 counter++;
-                information.insert(std::pair<std::string, std::string>("Additional Subtitle Track" + std::to_string(counter), it));
+                information.insert(std::pair<std::string, std::string>("Additional Subtitle Track " + std::to_string(counter), it));
             }
 
             counter = 0;
             for(auto & it: this->bonusFeatures)
             {
                 counter++;
-                information.insert(std::pair<std::string, std::string>("Bonus Features" + std::to_string(counter), it));
+                information.insert(std::pair<std::string, std::string>("Bonus Features " + std::to_string(counter), it));
             }
 
-            return {};
+            return information;
         }
     }
 }

@@ -1,4 +1,5 @@
 #include "DVD.h"
+#include <iostream>
 
 namespace TrekStar {
     namespace Material {
@@ -65,7 +66,8 @@ namespace TrekStar {
             // call the base class function to get the basic details.
             KeyValueMap information = Material::GetPresentableInformation();
 
-            information.emplace(this->sideOne.GetPresentableInformation());
+            KeyValueMap sideOne = this->sideOne.GetPresentableInformation();
+            information.insert(sideOne.begin(), sideOne.end());
 
             return information;
         }

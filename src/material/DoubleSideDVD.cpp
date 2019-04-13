@@ -1,4 +1,5 @@
 #include "DoubleSideDVD.h"
+#include <iostream>
 
 namespace TrekStar {
     namespace Material {
@@ -53,9 +54,12 @@ namespace TrekStar {
         KeyValueMap DoubleSideDVD::GetPresentableInformation() const
         {
             KeyValueMap information = Material::GetPresentableInformation();
-//
-            information.emplace(this->sideOne.GetPresentableInformation());
-            information.emplace(this->sideTwo.GetPresentableInformation());
+
+            KeyValueMap sideOne = this->sideOne.GetPresentableInformation();
+            information.insert(sideOne.begin(), sideOne.end());
+
+            KeyValueMap sideTwo = this->sideTwo.GetPresentableInformation();
+            information.insert(sideTwo.begin(), sideTwo.end());
 
             return information;
         }
