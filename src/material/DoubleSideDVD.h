@@ -12,6 +12,7 @@ namespace TrekStar {
           DoubleSideDVD() = default;
           DoubleSideDVD(unsigned int id, const std::string & name);
 
+          KeyValueMap GetPresentableInformation() const override;
           void PopulateFromFile(const json &) override;
         };
     }

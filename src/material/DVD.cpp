@@ -39,25 +39,25 @@ namespace TrekStar {
             json additionalLanguageTracksJSON = j.at("additionalLanguageTracks");
             std::vector<std::string> additionalLanguageTracks;
 
-            for (json::iterator it = additionalLanguageTracksJSON.begin(); it != additionalLanguageTracksJSON.end(); ++it) {
-                additionalLanguageTracks.push_back(*it);
+            for (auto &it : additionalLanguageTracksJSON) {
+                additionalLanguageTracks.push_back(it);
             }
 
             json additionalSubtitleTracksJSON = j.at("additionalSubtitleTracks");
             std::vector<std::string> additionalSubtitleTracks;
 
-            for (json::iterator it = additionalSubtitleTracksJSON.begin(); it != additionalSubtitleTracksJSON.end(); ++it) {
-                additionalSubtitleTracks.push_back(*it);
+            for (auto &it : additionalSubtitleTracksJSON) {
+                additionalSubtitleTracks.push_back(it);
             }
 
             json bonusFeaturesJSON = j.at("bonusFeatures");
             std::vector<std::string> bonusFeatures;
 
-            for (json::iterator it = bonusFeaturesJSON.begin(); it != bonusFeaturesJSON.end(); ++it) {
-                bonusFeatures.push_back(*it);
+            for (auto &it : bonusFeaturesJSON) {
+                bonusFeatures.push_back(it);
             }
 
-            this->sideOne = DVDSide(additionalLanguageTracks, additionalSubtitleTracks, bonusFeatures);
+            this->sideOne = DVDSide(j.at("content"), additionalLanguageTracks, additionalSubtitleTracks, bonusFeatures);
         }
 
         KeyValueMap DVD::GetPresentableInformation() const
@@ -65,26 +65,7 @@ namespace TrekStar {
             // call the base class function to get the basic details.
             KeyValueMap information = Material::GetPresentableInformation();
 
-            int counter = 0;
-            for(const auto &additionalLanguageTrack: this->GetAdditionalLanguageTracks())
-            {
-                counter++;
-                information.insert ( std::pair<std::string, std::string>("Additional Language Track #" + std::to_string(counter), additionalLanguageTrack) );
-            }
-
-            counter = 0;
-            for(const auto &additionalSubtitleTrack: this->GetAdditionalSubtitleTracks())
-            {
-                counter++;
-                information.insert ( std::pair<std::string, std::string>("Additional Subtitle Track #" + std::to_string(counter), additionalSubtitleTrack) );
-            }
-
-            counter = 0;
-            for(const auto &bonusFeature: this->GetBonusFeatures())
-            {
-                counter++;
-                information.insert ( std::pair<std::string, std::string>("Bonus Feature #" + std::to_string(counter), bonusFeature) );
-            }
+            information.emplace(this->sideOne.GetPresentableInformation());
 
             return information;
         }

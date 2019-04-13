@@ -9,37 +9,55 @@ namespace TrekStar {
 
         void DoubleSideDVD::PopulateFromFile(const json & j)
         {
-            this->id = j.at("id").get<int>();
             this->format = j.at("format");
             this->audioFormat = j.at("audioFormat");
             this->runTime = j.at("runTime").get<int>();
             this->language = j.at("language");
             this->retailPrice = j.at("retailPrice").get<double>();
-            this->subtitles = j.at("subtitles");
             this->frameAspect = j.at("frameAspect");
 
-            json additionalLanguageTracksJSON = j.at("additionalLanguageTracks");
-            std::vector<std::string> additionalLanguageTracks;
+            json sides = j.at("sides");
 
-            for (json::iterator it = additionalLanguageTracksJSON.begin(); it != additionalLanguageTracksJSON.end(); ++it) {
-                additionalLanguageTracks.push_back(*it);
+            std::vector<DVDSide> dvdSides;
+
+            for (const auto & side: sides)
+            {
+                if (sides.size() > 2) {
+                    break; // no more than two sides allowed.
+                }
+
+                std::string content = side.at("content");
+                StringVector languageTracks;
+                StringVector subtitleTracks;
+                StringVector bonusFeatures;
+
+                for (auto &it : side.at("additionalLanguageTracks")) {
+                    languageTracks.push_back(it);
+                }
+
+                for (auto & it: side.at("additionalSubtitleTracks")) {
+                    subtitleTracks.push_back(it);
+                }
+
+                for (auto & it: side.at("bonusFeatures")) {
+                    bonusFeatures.push_back(it);
+                }
+
+                dvdSides.emplace_back(content, languageTracks, subtitleTracks, bonusFeatures);
             }
 
-            json additionalSubtitleTracksJSON = j.at("additionalSubtitleTracks");
-            std::vector<std::string> additionalSubtitleTracks;
+            this->sideOne = dvdSides.at(0);
+            this->sideTwo = dvdSides.at(1);
+        }
 
-            for (json::iterator it = additionalSubtitleTracksJSON.begin(); it != additionalSubtitleTracksJSON.end(); ++it) {
-                additionalSubtitleTracks.push_back(*it);
-            }
+        KeyValueMap DoubleSideDVD::GetPresentableInformation() const
+        {
+            KeyValueMap information = Material::GetPresentableInformation();
+//
+            information.emplace(this->sideOne.GetPresentableInformation());
+            information.emplace(this->sideTwo.GetPresentableInformation());
 
-            json bonusFeaturesJSON = j.at("bonusFeatures");
-            std::vector<std::string> bonusFeatures;
-
-            for (json::iterator it = bonusFeaturesJSON.begin(); it != bonusFeaturesJSON.end(); ++it) {
-                bonusFeatures.push_back(*it);
-            }
-
-            this->sideOne = DVDSide(additionalLanguageTracks, additionalSubtitleTracks, bonusFeatures);
+            return information;
         }
     }
 }

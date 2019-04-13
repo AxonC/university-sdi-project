@@ -1,12 +1,16 @@
 #ifndef TREKSTAR_DVDSIDE_H
 #define TREKSTAR_DVDSIDE_H
 
+#include <map>
 #include <string>
 #include <vector>
 
+using StringVector = std::vector<std::string>;
+using KeyValueMap = std::map<std::string, std::string>;
+
 namespace TrekStar {
     namespace Material {
-        class DVDSide{
+        class DVDSide {
         protected:
             std::string content;                                // DVD contents
             std::vector<std::string> additionalLanguageTracks;  // other languages available
@@ -15,8 +19,12 @@ namespace TrekStar {
 
         public:
             DVDSide() = default;
-            DVDSide(std::vector<std::string> additionalLanguageTracks, std::vector<std::string> additionalSubtitleTracks, std::vector<std::string> bonusFeatures);
+            DVDSide(const std::string & content,
+                    StringVector additionalLanguageTracks,
+                    StringVector additionalSubtitleTracks,
+                    StringVector bonusFeatures);
 
+            KeyValueMap GetPresentableInformation() const;
             std::vector<std::string> GetAdditionalLanguageTracks() const;
             std::vector<std::string> GetAdditionalSubtitleTracks() const;
             std::vector<std::string> GetBonusFeatures() const;

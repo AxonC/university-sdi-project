@@ -9,6 +9,7 @@
     "materials": [
       {
         "id": 1,
+        "content": "big movie",
         "format": "dvd",
         "audioFormat": "DTS",
         "runTime": 120,
@@ -35,6 +36,7 @@
         "dvds":
         [
           {
+            "content": "movie",
             "format": "dvd",
             "audioFormat": "DTS",
             "runTime": 90,
@@ -55,6 +57,7 @@
             ]
           },
           {
+            "content": "episode 1",
             "format": "dvd",
             "audioFormat": "DTS",
             "runTime": 160,
@@ -72,6 +75,44 @@
             ],
             "bonusFeatures": [
               "Outtakes"
+            ]
+          }
+        ]
+      },
+      {
+        "format": "dsdvd",
+        "audioFormat": "DTS",
+        "runTime": 326,
+        "language": "ENG",
+        "retailPrice": 55.98,
+        "frameAspect": "4:3",
+        "sides": [
+          {
+            "content": "part1",
+            "additionalLanguageTracks": [
+              "SPA",
+              "GER"
+            ],
+            "additionalSubtitleTracks": [
+              "SPA",
+              "GER"
+            ],
+            "bonusFeatures": [
+              "Bonus Features"
+            ]
+          },
+          {
+            "content": "part 2",
+            "additionalLanguageTracks": [
+              "SPA",
+              "GER"
+            ],
+            "additionalSubtitleTracks": [
+              "SPA",
+              "GER"
+            ],
+            "bonusFeatures": [
+              "Bonus Features"
             ]
           }
         ]

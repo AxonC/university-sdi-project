@@ -2,29 +2,9 @@
 
 namespace TrekStar {
     namespace Material {
-//        std::vector<std::string> tokeniseString(std::string theString, char token)
-//        {
-//            std::vector<std::string> tokenisedString;
-//
-//            if ( !theString.empty() && theString.find(token) == std::string::npos )
-//            {
-//                tokenisedString.push_back(theString);
-//                return tokenisedString;
-//            }
-//
-//            std::string::size_type pos = theString.find(token);
-//            while (pos != std::string::npos)
-//            {
-//                pos = theString.find(token);
-//                tokenisedString.push_back(theString.substr(0, pos));
-//                theString = theString.substr(pos + 1);
-//            }
-//
-//            return tokenisedString;
-//        }
-
-        DVDSide::DVDSide(std::vector<std::string> additionalLanguageTracks, std::vector<std::string> additionalSubtitleTracks, std::vector<std::string> bonusFeatures)
+        DVDSide::DVDSide(const std::string & content, StringVector additionalLanguageTracks, StringVector additionalSubtitleTracks, StringVector bonusFeatures)
         {
+            this->content = content;
             this->additionalLanguageTracks = additionalLanguageTracks;
             this->additionalSubtitleTracks = additionalSubtitleTracks;
             this->bonusFeatures = bonusFeatures;
@@ -43,6 +23,36 @@ namespace TrekStar {
         std::vector<std::string> DVDSide::GetBonusFeatures() const
         {
             return this->bonusFeatures;
+        }
+
+        KeyValueMap DVDSide::GetPresentableInformation() const
+        {
+            KeyValueMap information;
+
+            information.insert(std::pair<std::string, std::string>("Content", this->content));
+
+            int counter = 0;
+            for(auto & it: this->additionalLanguageTracks)
+            {
+                counter++;
+                information.insert(std::pair<std::string, std::string>("Additional Language Track" + std::to_string(counter), it));
+            }
+
+            counter = 0;
+            for(auto & it: this->additionalSubtitleTracks)
+            {
+                counter++;
+                information.insert(std::pair<std::string, std::string>("Additional Subtitle Track" + std::to_string(counter), it));
+            }
+
+            counter = 0;
+            for(auto & it: this->bonusFeatures)
+            {
+                counter++;
+                information.insert(std::pair<std::string, std::string>("Bonus Features" + std::to_string(counter), it));
+            }
+
+            return {};
         }
     }
 }
