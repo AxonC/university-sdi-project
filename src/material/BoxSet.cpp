@@ -44,10 +44,11 @@ namespace TrekStar {
 
         KeyValueMap BoxSet::GetPresentableInformation() const
         {
-            // call the base class function to get the basic details.
-            KeyValueMap information = Material::GetPresentableInformation();
-
-            return information;
+            return
+                {
+                    {"Format", this->GetFormat()},
+                    {"Retail Price", std::to_string(this->GetRetailPrice())}
+                };
         }
 
         KeyValueMapVector BoxSet::GetPresentableDiskInformation() const
