@@ -77,10 +77,11 @@ namespace TrekStar {
             return information;
         }
 
-        json to_json(const SerialisedDVDSide & dvd, std::shared_ptr<Material> materialObject)
+        json to_json(const SerialisedDVDSide & dvd, const std::shared_ptr<Material> & materialObject)
         {
             json j = TrekStar::Material::to_json(materialObject->ExportToSerialised());
 
+            j["content"] = dvd.content;
             j["additionalLanguageTracks"] = dvd.additionalLanguageTracks;
             j["additionalSubtitleTracks"] = dvd.additionalSubtitleTracks;
             j["bonusFeatures"] = dvd.bonusFeatures;

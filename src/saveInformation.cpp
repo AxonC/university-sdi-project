@@ -6,6 +6,7 @@
 #include "project/Project.h"
 #include "material/Material.h"
 #include "material/DVD.h"
+#include "material/DoubleSideDVD.h"
 
 #include "lib/json.hpp"
 using json = nlohmann::json;
@@ -28,8 +29,11 @@ void save(std::vector<TrekStar::Project::Project> projects, std::string filePath
     json materialArray;
     for (const auto & m: projects.at(0).GetMaterials())
     {
-        // if material is a DVD
-        if( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::DVD>(m) )
+        if( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::DoubleSideDVD>(m) )
+        {
+            materialArray.push_back(TrekStar::Material::to_json(materialType->ExportToSerialised(), m));
+        }
+        else if( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::DVD>(m) )
         {
             materialArray.push_back(TrekStar::Material::to_json(materialType->ExportToSerialised(), m));
         }

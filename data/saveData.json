@@ -21,6 +21,7 @@
             "bonusFeatures": [
                 "Director's Comments"
             ],
+            "content": "big movie",
             "format": "dvd",
             "frameAspect": "16:9",
             "language": "ENG",
@@ -40,23 +41,42 @@
             "title": ""
         },
         {
-            "additionalLanguageTracks": [
-                "SPA",
-                "GER"
-            ],
-            "additionalSubtitleTracks": [
-                "SPA",
-                "GER"
-            ],
             "audioFormat": "DTS",
-            "bonusFeatures": [
-                "Bonus Features"
-            ],
             "format": "dsdvd",
             "frameAspect": "4:3",
             "language": "ENG",
             "retailPrice": 55.98,
             "runTime": 326,
+            "sides": [
+                {
+                    "additionalLanguageTracks": [
+                        "SPA",
+                        "GER"
+                    ],
+                    "additionalSubtitleTracks": [
+                        "SPA",
+                        "GER"
+                    ],
+                    "bonusFeatures": [
+                        "Bonus Features"
+                    ],
+                    "content": "part1"
+                },
+                {
+                    "additionalLanguageTracks": [
+                        "SPA",
+                        "GER"
+                    ],
+                    "additionalSubtitleTracks": [
+                        "SPA",
+                        "GER"
+                    ],
+                    "bonusFeatures": [
+                        "Bonus Features"
+                    ],
+                    "content": "part 2"
+                }
+            ],
             "subtitles": "",
             "title": ""
         }

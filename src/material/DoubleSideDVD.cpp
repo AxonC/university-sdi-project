@@ -63,6 +63,38 @@ namespace TrekStar {
 
             return information;
         }
+
+        std::vector<SerialisedDVDSide> DoubleSideDVD::ExportToSerialised() const
+        {
+            std::vector<SerialisedDVDSide> serialisedDVDSides;
+
+            serialisedDVDSides.push_back(this->sideOne.ExportToSerialised());
+            serialisedDVDSides.push_back(this->sideTwo.ExportToSerialised());
+
+            return serialisedDVDSides;
+        }
+
+        json to_json(const std::vector<SerialisedDVDSide> & sides, const std::shared_ptr<Material> & materialObject)
+        {
+            json j = TrekStar::Material::to_json(materialObject->ExportToSerialised());
+
+            json sidesJSON;
+            for ( const auto & side: sides )
+            {
+                json sideJSON;
+
+                sideJSON["content"] = side.content;
+                sideJSON["additionalLanguageTracks"] = side.additionalLanguageTracks;
+                sideJSON["additionalSubtitleTracks"] = side.additionalSubtitleTracks;
+                sideJSON["bonusFeatures"] = side.bonusFeatures;
+
+                sidesJSON.push_back(sideJSON);
+            }
+
+            j["sides"] = sidesJSON;
+
+            return j;
+        }
     }
 }
 
