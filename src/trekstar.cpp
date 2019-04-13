@@ -4,6 +4,7 @@
 
 #include "file/fileOperations.cpp"
 #include "listInformation.cpp"
+#include "addInformation.cpp"
 
 int main()
 {
@@ -19,6 +20,7 @@ int main()
         std::cout << "Available commands: " << std::endl;
         std::cout << " list projects  - lsp" << std::endl;
         std::cout << " list materials - lsm [project number]" << std::endl;
+        std::cout << " add project    - addp [project title]" << std::endl;
         std::cout << " quit           - q" << std::endl;
 
         std::cout << "> ";
@@ -33,6 +35,10 @@ int main()
         else if ( command.substr(0, pos) == "lsm" )
         {
             listMaterials(projects, command.substr(pos + 1));
+        }
+        else if ( command.substr(0, pos) == "addp" )
+        {
+            addProject(projects, command.substr(pos + 1));
         }
     }
 
