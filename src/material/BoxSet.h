@@ -5,6 +5,7 @@
 #include "DVD.h"
 
 using TrekStar::Structures::Stack;
+using KeyValueMapVector = std::vector<std::map<std::string, std::string>>;
 
 namespace TrekStar {
     namespace Material {
@@ -18,6 +19,7 @@ namespace TrekStar {
             Stack<std::shared_ptr<Material>> GetDisks() const;
 
             KeyValueMap GetPresentableInformation() const override;
+            KeyValueMapVector GetPresentableDiskInformation() const;
             void PopulateFromFile(const json &) override;
          private:
             Stack<std::shared_ptr<Material>> disks;

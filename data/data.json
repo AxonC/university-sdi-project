@@ -35,7 +35,6 @@
         "dvds":
         [
           {
-            "order": 0,
             "format": "dvd",
             "audioFormat": "DTS",
             "runTime": 90,
@@ -56,7 +55,6 @@
             ]
           },
           {
-            "order": 1,
             "format": "dvd",
             "audioFormat": "DTS",
             "runTime": 160,

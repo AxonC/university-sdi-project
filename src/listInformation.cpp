@@ -4,6 +4,7 @@
 
 #include "material/DVD.h"
 #include "project/Project.h"
+#include "material/BoxSet.h"
 
 using TrekStar::Project::Project;
 using TrekStar::Material::Material;
@@ -40,9 +41,22 @@ void listMaterials(std::vector<TrekStar::Project::Project> projects, std::string
 
         std::cout << "Title : " << projects.at(projectNum - 1).GetTitle() << std::endl;
 
-        for (auto const& m : materialData)
+        for (auto const & m : materialData)
         {
             std::cout << m.first << " : " << m.second << std::endl;
+        }
+
+        if (auto materialType = std::dynamic_pointer_cast<TrekStar::Material::BoxSet>(material))
+        {
+            std::vector<std::map<std::string, std::string>> diskData = materialType->GetPresentableDiskInformation();
+
+            for(const auto & d: diskData)
+            {
+                for(const auto & m: d)
+                {
+                    std::cout << m.first << " : " << m.second << std::endl;
+                }
+            }
         }
     }
 }

@@ -47,13 +47,22 @@ namespace TrekStar {
             // call the base class function to get the basic details.
             KeyValueMap information = Material::GetPresentableInformation();
 
+            return information;
+        }
+
+        KeyValueMapVector BoxSet::GetPresentableDiskInformation() const
+        {
+            KeyValueMapVector information;
+
             for(const auto &disk: this->disks.data())
             {
+                KeyValueMap diskInformation;
                 for (auto const& d : disk->GetPresentableInformation())
                 {
-                    std::cout << d.first << " - " << d.second << std::endl;
-                    information.insert(std::pair<std::string, std::string>(d.first, d.second));
+                    diskInformation.insert(std::pair<std::string, std::string>(d.first, d.second));
                 }
+
+                information.push_back(diskInformation);
             }
 
             return information;
