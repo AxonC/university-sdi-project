@@ -38,12 +38,13 @@ void save(std::vector<TrekStar::Project::Project> projects, const std::string & 
         {
             if( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::DoubleSideDVD>(m) )
             {
-                json j = *m->ExportToSerialised();
+                // return a SerialisedDoubleSideDVD -> json
+                json j = *materialType->ExportToSerialised();
                 materialArray.push_back(j);
             }
             else if( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::DVD>(m) )
             {
-                json j = *m->ExportToSerialised();
+                json j = *materialType->ExportToSerialised();
                 materialArray.push_back(j);
             }
             else if( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::BoxSet>(m) )

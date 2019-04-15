@@ -67,7 +67,7 @@ namespace TrekStar {
 
         void to_json(json & j, const SerialisedDVDSide & serialisedDVDSide)
         {
-
+            j = {"test", "testing"};
         }
     }
 }

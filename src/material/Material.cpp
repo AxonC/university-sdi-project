@@ -112,7 +112,7 @@ namespace TrekStar {
                 {"language", material.language},
                 {"retailPrice", material.retailPrice},
                 {"subtitles", material.subtitles},
-                {"frameAspect", material.frameAspect}
+                {"frameAspect", material.frameAspect},
             };
         }
 

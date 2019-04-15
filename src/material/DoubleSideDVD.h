@@ -5,7 +5,6 @@
 
 namespace TrekStar {
     namespace Material {
-
         struct SerialisedDoubleSideDVD: virtual SerialisedMaterial {
             explicit SerialisedDoubleSideDVD(const SerialisedMaterial & baseMaterial, const std::vector<SerialisedDVDSide> & sides)
             : SerialisedMaterial(baseMaterial) {

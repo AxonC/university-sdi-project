@@ -71,7 +71,9 @@ namespace TrekStar {
             serialisedDVDSides.push_back(this->sideOne.ExportToSerialised());
             serialisedDVDSides.push_back(this->sideTwo.ExportToSerialised());
 
-            return std::make_shared<SerialisedMaterial>(SerialisedDoubleSideDVD(*serialisedMaterial, serialisedDVDSides));
+            SerialisedDoubleSideDVD doubleSideDVD(*serialisedMaterial, serialisedDVDSides);
+
+            return std::make_shared<SerialisedDoubleSideDVD>(doubleSideDVD);
         }
 
         void to_json(json & j, const SerialisedDoubleSideDVD & serialisedDoubleSideDVD)
@@ -89,7 +91,7 @@ namespace TrekStar {
                 sidesJSON.push_back(sideJSON);
             }
 
-            j["sides"] = sidesJSON;
+            j["sides"] = serialisedDoubleSideDVD.sides;
 
         }
     }
