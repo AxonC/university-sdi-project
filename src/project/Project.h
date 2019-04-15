@@ -11,6 +11,8 @@
 #include "../lib/json.hpp"
 
 using json = nlohmann::json;
+using TrekStar::People::Crew;
+using TrekStar::People::SerializedCrew;
 
 namespace TrekStar {
     namespace Project {
@@ -19,6 +21,7 @@ namespace TrekStar {
             std::string summary;
             bool released;
             bool playingInTheatres;
+            std::vector<std::shared_ptr<Crew>> crew;
         };
 
         /**
@@ -28,9 +31,9 @@ namespace TrekStar {
         {
         public:
             Project() = default;
-            explicit Project(std::string title, std::string summary, bool released, bool playingInTheatres);
+            Project(std::string title, std::string summary, bool released, bool playingInTheatres);
+            Project(const std::string & title, const std::string & summary, bool released = false);
             explicit Project(std::string & title);
-            explicit Project(const std::string & title, const std::string & summary, bool released = false);
             explicit Project(const SerialisedProject & project);
             ~Project();
 
@@ -50,6 +53,7 @@ namespace TrekStar {
 
             std::vector<std::shared_ptr<People::Crew>> GetCrew() const;
             void AddCrew(const std::shared_ptr<People::Crew> &);
+            void AddCrew(const std::vector<std::shared_ptr<Crew>> & crew);
             void RemoveCrew(const std::shared_ptr<People::Crew> &);
 
             void ReleaseProject();

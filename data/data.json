@@ -117,6 +117,13 @@
           }
         ]
       }
+    ],
+    "crew": [
+      {
+        "id": 1,
+        "name": "Bob Bobson",
+        "jobTitle": "Director"
+      }
     ]
   }
 }

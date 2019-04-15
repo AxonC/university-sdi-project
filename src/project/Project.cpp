@@ -136,6 +136,14 @@ namespace TrekStar {
             return SerialisedProject{this->title, this->summary, this->released, this->playingInTheatres};
         }
 
+        void Project::AddCrew(const std::vector<std::shared_ptr<Crew>> &crew)
+        {
+            for(const auto & crewMember: crew)
+            {
+                this->crew.push_back(crewMember);
+            }
+        }
+
         json to_json(const SerialisedProject & project)
         {
             json j = json
@@ -151,10 +159,22 @@ namespace TrekStar {
 
         void from_json(const json & json, SerialisedProject & project)
         {
+            std::string title = json.at("title");
             json.at("title").get_to(project.title);
             json.at("summary").get_to(project.summary);
             json.at("released").get_to(project.released);
             json.at("playingInTheatres").get_to(project.playingInTheatres);
+//
+//            std::vector<std::shared_ptr<Crew>> crewVector;
+//            auto crewString = json.at("crew");
+//
+//            for(auto && item : crewString)
+//            {
+//                std::shared_ptr<TrekStar::People::Crew> newCrew = std::make_shared<Crew>(item.get<TrekStar::People::SerializedCrew>());
+//                crewVector.push_back(newCrew);
+//            }
+//
+//            project.crew = crewVector;
         }
     }
 }

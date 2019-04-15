@@ -44,6 +44,19 @@ namespace TrekStar {
             return materials;
         }
 
+        CrewVector createCrew(const json & jsonString)
+        {
+            CrewVector crewVector;
+
+            for(auto && item : jsonString)
+            {
+                std::shared_ptr<TrekStar::People::Crew> newCrew = std::make_shared<Crew>(item.get<TrekStar::People::SerializedCrew>());
+                crewVector.push_back(newCrew);
+            }
+
+            return crewVector;
+        }
+
         ProjectVector importProjects(std::string filePath)
         {
             TrekStar::Project::Project currentProject;
@@ -58,6 +71,11 @@ namespace TrekStar {
                 if (it.find("details") != it.end())
                 {
                     currentProject = createProject(it.at("details"));
+                }
+
+                if(it.find("crew") != it.end())
+                {
+                    currentProject.AddCrew(createCrew(it.at("crew")));
                 }
 
                 if (it.find("materials") != it.end())

@@ -13,6 +13,7 @@
 
 using ProjectVector = std::vector<TrekStar::Project::Project>;
 using MaterialVector = std::vector<std::shared_ptr<TrekStar::Material::Material>>;
+using CrewVector = std::vector<std::shared_ptr<TrekStar::People::Crew>>;
 
 namespace TrekStar {
     namespace File {

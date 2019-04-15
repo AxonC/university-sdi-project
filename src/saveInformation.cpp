@@ -45,6 +45,14 @@ void save(std::vector<TrekStar::Project::Project> projects, std::string filePath
 
     toWriteJSON["materials"] = materialArray;
 
+    json crewArray;
+    for (const auto & crew: projects.at(0).GetCrew())
+    {
+        crewArray.push_back(TrekStar::People::to_json(crew->ExportToSerialized()));
+    }
+
+    toWriteJSON["crew"] = crewArray;
+
     std::ofstream JSONfile(filePath);
     JSONfile << std::setw(4) << toWriteJSON << std::endl;
     JSONfile.close();
