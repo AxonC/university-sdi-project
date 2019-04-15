@@ -5,11 +5,13 @@
 
 namespace TrekStar {
     namespace Material {
-        struct SerialisedDoubleSideDVD: virtual SerialisedMaterial {
-            explicit SerialisedDoubleSideDVD(const SerialisedMaterial & baseMaterial, const std::vector<SerialisedDVDSide> & sides)
-            : SerialisedMaterial(baseMaterial) {
+        struct SerialisedDoubleSideDVD {
+            explicit SerialisedDoubleSideDVD(const SerialisedMaterial & baseMaterial, const std::vector<SerialisedDVDSide> & sides){
+
                 this->sides = sides;
+                this->material = baseMaterial;
             }
+            SerialisedMaterial material;
             std::vector<SerialisedDVDSide> sides;
         };
 
@@ -21,7 +23,7 @@ namespace TrekStar {
           DoubleSideDVD(unsigned int id, const std::string & name);
 
           KeyValueMapVector GetPresentableDiskInformation() const;
-          std::shared_ptr<SerialisedMaterial> ExportToSerialised() const override;
+          std::shared_ptr<SerialisedDoubleSideDVD> ExportToSerialised() const;
           void PopulateFromFile(const json &) override;
         };
 

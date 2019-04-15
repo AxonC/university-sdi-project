@@ -55,7 +55,7 @@ namespace TrekStar {
                 std::string GetSubtitles() const;
                 std::string GetFrameAspect() const;
 
-                virtual std::shared_ptr<SerialisedMaterial> ExportToSerialised() const;
+                std::shared_ptr<SerialisedMaterial> ExportToSerialised() const;
 
                 bool operator==(const Material& material) const;
                 bool operator!=(const Material& material) const;

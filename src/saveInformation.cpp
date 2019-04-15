@@ -42,20 +42,20 @@ void save(std::vector<TrekStar::Project::Project> projects, const std::string & 
                 json j = *materialType->ExportToSerialised();
                 materialArray.push_back(j);
             }
-            else if( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::DVD>(m) )
-            {
-                json j = *materialType->ExportToSerialised();
-                materialArray.push_back(j);
-            }
-            else if( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::BoxSet>(m) )
-            {
-//                json j = materialType;
+//            else if( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::DVD>(m) )
+//            {
+//                json j = *materialType->ExportToSerialised();
 //                materialArray.push_back(j);
-            }
-            else
-            {
-//                materialArray.push_back(TrekStar::Material::to_json(m->ExportToSerialised()));
-            }
+//            }
+//            else if( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::BoxSet>(m) )
+//            {
+////                json j = materialType;
+////                materialArray.push_back(j);
+//            }
+//            else
+//            {
+////                materialArray.push_back(TrekStar::Material::to_json(m->ExportToSerialised()));
+//            }
         }
 
         currentProjectJSON["materials"] = materialArray;

@@ -63,7 +63,7 @@ namespace TrekStar {
             return information;
         }
 
-        std::shared_ptr<SerialisedMaterial> DoubleSideDVD::ExportToSerialised() const
+        std::shared_ptr<SerialisedDoubleSideDVD> DoubleSideDVD::ExportToSerialised() const
         {
             std::shared_ptr<SerialisedMaterial> serialisedMaterial = Material::ExportToSerialised();
             std::vector<SerialisedDVDSide> serialisedDVDSides;
