@@ -7,14 +7,19 @@
 
 using json = nlohmann::json;
 
-namespace TrekStar {
-    namespace File {
+namespace TrekStar
+{
+    namespace File
+    {
         TrekStar::Project::Project createProject(const json & jsonString)
         {
             TrekStar::Project::SerialisedProject serialised;
-            try {
+            try
+            {
                 serialised = jsonString.get<TrekStar::Project::SerialisedProject>();
-            } catch (json::out_of_range & ) {
+            }
+            catch ( json::out_of_range & )
+            {
                 // TODO: Conceputalise exception logic
             }
 
@@ -27,16 +32,20 @@ namespace TrekStar {
             std::shared_ptr<Material::Material> currentMaterial;
             std::string format;
 
-            for (auto && value: jsonString) {
+            for ( auto && value: jsonString )
+            {
                 std::vector<std::string> object;
                 format = value.at("format");
 
                 currentMaterial = Material::MaterialFactory::Create(format);
 
-                if (currentMaterial != nullptr) {
+                if ( currentMaterial != nullptr )
+                {
                     currentMaterial->PopulateFromFile(value);
                     materials.push_back(currentMaterial);
-                } else {
+                }
+                else
+                {
                     throw std::domain_error("Material format is not supported.");
                 }
             }
@@ -48,7 +57,7 @@ namespace TrekStar {
         {
             CrewVector crewVector;
 
-            for(auto && item : jsonString)
+            for ( auto && item : jsonString )
             {
                 std::shared_ptr<TrekStar::People::Crew> newCrew = std::make_shared<Crew>(item.get<TrekStar::People::SerializedCrew>());
                 crewVector.push_back(newCrew);
@@ -66,19 +75,20 @@ namespace TrekStar {
             std::ifstream dataFile(filePath);
             json jsonStream = json::parse(dataFile);
 
-            for (auto &it : jsonStream) {
+            for ( auto &it : jsonStream)
+            {
                 // ensure that there is a key called details
-                if (it.find("details") != it.end())
+                if ( it.find("details") != it.end() )
                 {
                     currentProject = createProject(it.at("details"));
                 }
 
-                if(it.find("crew") != it.end())
+                if ( it.find("crew") != it.end() )
                 {
                     currentProject.AddCrew(createCrew(it.at("crew")));
                 }
 
-                if (it.find("materials") != it.end())
+                if ( it.find("materials") != it.end() )
                 {
                     currentProject.AddMaterials(createMaterials(it.at("materials")));
                 }
@@ -90,5 +100,3 @@ namespace TrekStar {
         }
     }
 }
-
-
