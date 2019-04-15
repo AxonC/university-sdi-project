@@ -7,11 +7,13 @@
 
 using TrekStar::Material::Material;
 
-namespace TrekStar {
-    namespace Material {
+namespace TrekStar
+{
+    namespace Material
+    {
         class MaterialFactory
         {
-         public:
+        public:
             MaterialFactory() = default;
             ~MaterialFactory() = default;
 

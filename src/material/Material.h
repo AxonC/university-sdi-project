@@ -8,9 +8,12 @@ using json = nlohmann::json;
 using KeyValueMap = std::map<std::string, std::string>;
 using KeyValueMapVector = std::vector<KeyValueMap>;
 
-namespace TrekStar {
-    namespace Material {
-        struct SerialisedMaterial {
+namespace TrekStar
+{
+    namespace Material
+    {
+        struct SerialisedMaterial
+        {
             std::string title;
             std::string format;
             std::string audioFormat;
@@ -26,39 +29,39 @@ namespace TrekStar {
          */
         class Material
         {
-            protected:
-                unsigned int id;
-                std::string title;
-                std::string format;
-                std::string audioFormat;
-                int runTime;
-                std::string language;
-                double retailPrice; // stored in pence
-                std::string subtitles;
-                std::string frameAspect;
-            public:
-                Material() = default;
-                explicit Material(std::string materialLine);
-                explicit Material(unsigned int id, const std::string & title);
-                virtual ~Material() = default;
+        protected:
+            unsigned int id;
+            std::string title;
+            std::string format;
+            std::string audioFormat;
+            int runTime;
+            std::string language;
+            double retailPrice; // stored in pence
+            std::string subtitles;
+            std::string frameAspect;
+        public:
+            Material() = default;
+            explicit Material(std::string materialLine);
+            explicit Material(unsigned int id, const std::string & title);
+            virtual ~Material() = default;
 
-                virtual KeyValueMap GetPresentableInformation() const;
-                virtual void PopulateFromFile(const json &) = 0;
+            virtual void PopulateFromFile(const json &) = 0;
 
-                int GetId() const;
-                std::string GetTitle() const;
-                std::string GetFormat() const;
-                std::string GetAudioFormat() const;
-                int GetRunTime() const;
-                std::string GetLanguage() const;
-                double GetRetailPrice() const;
-                std::string GetSubtitles() const;
-                std::string GetFrameAspect() const;
+            int GetId() const;
+            std::string GetTitle() const;
+            std::string GetFormat() const;
+            std::string GetAudioFormat() const;
+            int GetRunTime() const;
+            std::string GetLanguage() const;
+            double GetRetailPrice() const;
+            std::string GetSubtitles() const;
+            std::string GetFrameAspect() const;
+            virtual KeyValueMap GetPresentableInformation() const;
 
-                std::shared_ptr<SerialisedMaterial> ExportToSerialised() const;
+            std::shared_ptr<SerialisedMaterial> ExportToSerialised() const;
 
-                bool operator==(const Material& material) const;
-                bool operator!=(const Material& material) const;
+            bool operator==(const Material& material) const;
+            bool operator!=(const Material& material) const;
         };
 
         void to_json(json & j, const SerialisedMaterial & material);

@@ -10,16 +10,20 @@ using json = nlohmann::json;
 using StringVector = std::vector<std::string>;
 using KeyValueMap = std::map<std::string, std::string>;
 
-namespace TrekStar {
-    namespace Material {
-        struct SerialisedDVDSide {
+namespace TrekStar
+{
+    namespace Material
+    {
+        struct SerialisedDVDSide
+        {
             std::string content;
             std::vector<std::string> additionalLanguageTracks;
             std::vector<std::string> additionalSubtitleTracks;
             std::vector<std::string> bonusFeatures;
         };
 
-        class DVDSide {
+        class DVDSide
+        {
         protected:
             std::string content;                                // DVD contents
             std::vector<std::string> additionalLanguageTracks;  // other languages available
@@ -33,15 +37,13 @@ namespace TrekStar {
                     StringVector additionalSubtitleTracks,
                     StringVector bonusFeatures);
 
-            KeyValueMap GetPresentableInformation() const;
             std::vector<std::string> GetAdditionalLanguageTracks() const;
             std::vector<std::string> GetAdditionalSubtitleTracks() const;
             std::vector<std::string> GetBonusFeatures() const;
+            KeyValueMap GetPresentableInformation() const;
 
             SerialisedDVDSide ExportToSerialised() const;
         };
-
-        void to_json(json & j, const SerialisedDVDSide & serialisedDVDSide);
     }
 }
 

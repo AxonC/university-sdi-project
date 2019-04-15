@@ -1,16 +1,53 @@
 #include "DVD.h"
 #include <iostream>
 
-namespace TrekStar {
-    namespace Material {
+namespace TrekStar
+{
+    namespace Material
+    {
         /**
          *  Trekstar DVD Class Implementation
          */
-        DVD::DVD() : Material()
-        {}
+        DVD::DVD() : Material() {}
 
-        DVD::DVD(unsigned int id, const std::string & title) : Material(id, title)
-        {}
+        DVD::DVD(unsigned int id, const std::string & title) : Material(id, title) {}
+
+        void DVD::PopulateFromFile(const json & j)
+        {
+            this->format = j.at("format");
+            this->audioFormat = j.at("audioFormat");
+            this->runTime = j.at("runTime").get<int>();
+            this->language = j.at("language");
+            this->retailPrice = j.at("retailPrice").get<double>();
+            this->subtitles = j.at("subtitles");
+            this->frameAspect = j.at("frameAspect");
+
+            json additionalLanguageTracksJSON = j.at("additionalLanguageTracks");
+            std::vector<std::string> additionalLanguageTracks;
+
+            for ( auto &it : additionalLanguageTracksJSON )
+            {
+                additionalLanguageTracks.push_back(it);
+            }
+
+            json additionalSubtitleTracksJSON = j.at("additionalSubtitleTracks");
+            std::vector<std::string> additionalSubtitleTracks;
+
+            for ( auto &it : additionalSubtitleTracksJSON )
+            {
+                additionalSubtitleTracks.push_back(it);
+            }
+
+            json bonusFeaturesJSON = j.at("bonusFeatures");
+            std::vector<std::string> bonusFeatures;
+
+            for ( auto &it : bonusFeaturesJSON )
+            {
+                bonusFeatures.push_back(it);
+            }
+
+            this->sideOne = DVDSide(j.at("content"), additionalLanguageTracks, additionalSubtitleTracks, bonusFeatures);
+        }
 
         std::vector<std::string> DVD :: GetAdditionalLanguageTracks() const
         {
@@ -27,49 +64,6 @@ namespace TrekStar {
             return this->sideOne.GetBonusFeatures();
         }
 
-        std::shared_ptr<SerialisedDVD> DVD::ExportToSerialised() const
-        {
-            std::shared_ptr<SerialisedMaterial> serialisedMaterial = Material::ExportToSerialised();
-
-            SerialisedDVD doubleSideDVD(*serialisedMaterial, this->sideOne.ExportToSerialised());
-
-            return std::make_shared<SerialisedDVD>(doubleSideDVD);
-        }
-
-        void DVD::PopulateFromFile(const json & j)
-        {
-            this->format = j.at("format");
-            this->audioFormat = j.at("audioFormat");
-            this->runTime = j.at("runTime").get<int>();
-            this->language = j.at("language");
-            this->retailPrice = j.at("retailPrice").get<double>();
-            this->subtitles = j.at("subtitles");
-            this->frameAspect = j.at("frameAspect");
-
-            json additionalLanguageTracksJSON = j.at("additionalLanguageTracks");
-            std::vector<std::string> additionalLanguageTracks;
-
-            for (auto &it : additionalLanguageTracksJSON) {
-                additionalLanguageTracks.push_back(it);
-            }
-
-            json additionalSubtitleTracksJSON = j.at("additionalSubtitleTracks");
-            std::vector<std::string> additionalSubtitleTracks;
-
-            for (auto &it : additionalSubtitleTracksJSON) {
-                additionalSubtitleTracks.push_back(it);
-            }
-
-            json bonusFeaturesJSON = j.at("bonusFeatures");
-            std::vector<std::string> bonusFeatures;
-
-            for (auto &it : bonusFeaturesJSON) {
-                bonusFeatures.push_back(it);
-            }
-
-            this->sideOne = DVDSide(j.at("content"), additionalLanguageTracks, additionalSubtitleTracks, bonusFeatures);
-        }
-
         KeyValueMap DVD::GetPresentableInformation() const
         {
             // call the base class function to get the basic details.
@@ -79,6 +73,15 @@ namespace TrekStar {
             information.insert(sideOne.begin(), sideOne.end());
 
             return information;
+        }
+
+        std::shared_ptr<SerialisedDVD> DVD::ExportToSerialised() const
+        {
+            std::shared_ptr<SerialisedMaterial> serialisedMaterial = Material::ExportToSerialised();
+
+            SerialisedDVD doubleSideDVD(*serialisedMaterial, this->sideOne.ExportToSerialised());
+
+            return std::make_shared<SerialisedDVD>(doubleSideDVD);
         }
 
         void to_json(json & j, const SerialisedDVD & dvd)

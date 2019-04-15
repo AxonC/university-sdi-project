@@ -4,18 +4,26 @@
 #include "MaterialFactory.h"
 #include "DoubleSideDVD.h"
 
-namespace TrekStar {
-    namespace Material {
+namespace TrekStar
+{
+    namespace Material
+    {
         std::shared_ptr<Material> MaterialFactory::Create(const std::string & materialType)
         {
-            if (materialType == "dvd") {
+            if ( materialType == "dvd" )
+            {
                 return std::make_shared<DVD>();
-            } else if (materialType == "dsdvd") {
+            }
+            else if ( materialType == "dsdvd" )
+            {
                 return std::make_shared<DoubleSideDVD>();
             }
-            else if (materialType == "boxset") {
+            else if ( materialType == "boxset" )
+            {
                 return std::make_shared<BoxSet>();
-            }else {
+            }
+            else
+            {
                 return nullptr;
             }
         }

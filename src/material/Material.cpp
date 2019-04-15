@@ -5,8 +5,10 @@
 #include "Material.h"
 #include <vector>
 
-namespace TrekStar {
-    namespace Material {
+namespace TrekStar
+{
+    namespace Material
+    {
         /**
           *  Trekstar Material Class Implementation
         */
@@ -61,33 +63,6 @@ namespace TrekStar {
             return frameAspect;
         }
 
-        std::shared_ptr<SerialisedMaterial> Material::ExportToSerialised() const
-        {
-            SerialisedMaterial serialisedMaterial =
-            {
-                this->title,
-                this->format,
-                this->audioFormat,
-                this->runTime,
-                this->language,
-                this->retailPrice,
-                this->subtitles,
-                this->frameAspect
-            };
-
-            return std::make_shared<SerialisedMaterial>(serialisedMaterial);
-        }
-
-        bool Material::operator==(const Material &material) const
-        {
-            return this->GetId() == material.GetId();
-        }
-
-        bool Material::operator!=(const Material &material) const
-        {
-            return this->GetId() != material.GetId();
-        }
-
         KeyValueMap Material::GetPresentableInformation() const
         {
             return
@@ -102,18 +77,45 @@ namespace TrekStar {
                 };
         }
 
+        std::shared_ptr<SerialisedMaterial> Material::ExportToSerialised() const
+        {
+            SerialisedMaterial serialisedMaterial =
+                {
+                    this->title,
+                    this->format,
+                    this->audioFormat,
+                    this->runTime,
+                    this->language,
+                    this->retailPrice,
+                    this->subtitles,
+                    this->frameAspect
+                };
+
+            return std::make_shared<SerialisedMaterial>(serialisedMaterial);
+        }
+
+        bool Material::operator==(const Material &material) const
+        {
+            return this->GetId() == material.GetId();
+        }
+
+        bool Material::operator!=(const Material &material) const
+        {
+            return this->GetId() != material.GetId();
+        }
+
         void to_json(json & j, const SerialisedMaterial & material)
         {
             j =
-            {
-                {"format", material.format},
-                {"audioFormat", material.audioFormat},
-                {"runTime", material.runTime},
-                {"language", material.language},
-                {"retailPrice", material.retailPrice},
-                {"subtitles", material.subtitles},
-                {"frameAspect", material.frameAspect},
-            };
+                {
+                    {"format", material.format},
+                    {"audioFormat", material.audioFormat},
+                    {"runTime", material.runTime},
+                    {"language", material.language},
+                    {"retailPrice", material.retailPrice},
+                    {"subtitles", material.subtitles},
+                    {"frameAspect", material.frameAspect},
+                };
         }
 
         void from_json(const json & json, SerialisedMaterial & material)

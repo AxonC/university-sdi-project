@@ -14,9 +14,12 @@ using json = nlohmann::json;
 using TrekStar::People::Crew;
 using TrekStar::People::SerializedCrew;
 
-namespace TrekStar {
-    namespace Project {
-        struct SerialisedProject {
+namespace TrekStar
+{
+    namespace Project
+    {
+        struct SerialisedProject
+        {
             std::string title;
             std::string summary;
             bool released;
@@ -29,6 +32,15 @@ namespace TrekStar {
          */
         class Project
         {
+        private:
+            std::string title;
+            std::string summary;
+            std::vector<std::shared_ptr<Material::Material>> materials;
+            std::vector<std::shared_ptr<People::Crew>> crew;
+            bool released = false;
+            bool playingInTheatres = false;
+            bool CanAddMaterial() const;
+
         public:
             Project() = default;
             Project(std::string title, std::string summary, bool released, bool playingInTheatres);
@@ -38,17 +50,15 @@ namespace TrekStar {
             ~Project();
 
             std::string GetTitle() const;
-
             std::string GetSummary() const;
+            std::vector<std::shared_ptr<Material::Material>> GetMaterials() const;
             bool GetReleased() const;
             bool GetPlayingInTheatres() const;
-            void SetSummary(const std::string & contents);
-
             std::pair<std::string, std::string> GetTitleSummary() const;
+
 
             void AddMaterials(const std::vector<std::shared_ptr<Material::Material>> & materials);
             bool AddMaterials(const std::shared_ptr<Material::Material> & material);
-            std::vector<std::shared_ptr<Material::Material>> GetMaterials() const;
             void RemoveMaterial(const std::shared_ptr<Material::Material> & material);
 
             std::vector<std::shared_ptr<People::Crew>> GetCrew() const;
@@ -59,18 +69,7 @@ namespace TrekStar {
             void ReleaseProject();
 
             SerialisedProject ExportToSerialised() const;
-
-        private:
-            bool CanAddMaterial() const;
-
-            std::string title;
-            std::string summary;
-            std::vector<std::shared_ptr<Material::Material>> materials;
-            std::vector<std::shared_ptr<People::Crew>> crew;
-            bool released{false};
-            bool playingInTheatres{false};
         };
-
 
         void to_json(json & j, const SerialisedProject & project);
         void from_json(const json & json, SerialisedProject & project);

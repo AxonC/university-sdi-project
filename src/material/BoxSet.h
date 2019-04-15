@@ -7,10 +7,12 @@
 using TrekStar::Structures::Stack;
 using KeyValueMapVector = std::vector<std::map<std::string, std::string>>;
 
-namespace TrekStar {
-    namespace Material {
-        struct SerialisedBoxSet {
-            SerialisedBoxSet() = default;
+namespace TrekStar
+{
+    namespace Material
+    {
+        struct SerialisedBoxSet
+        {
             explicit SerialisedBoxSet(const SerialisedMaterial & baseMaterial, const std::vector<std::shared_ptr<Material>> & dvds)
             {
                 this->dvds = dvds;
@@ -20,21 +22,25 @@ namespace TrekStar {
             std::vector<std::shared_ptr<Material>> dvds;
         };
 
-        class BoxSet: public Material::Material {
-         public:
+        class BoxSet: public Material::Material
+        {
+        private:
+            Stack<std::shared_ptr<Material>> disks;
+
+        public:
             BoxSet() = default;
             BoxSet(unsigned int id, std::string name);
 
+            void PopulateFromFile(const json &) override;
+
             void AddDisks(const std::vector<std::shared_ptr<DVD>> &);
             void AddDisk(const std::shared_ptr<DVD> &);
-            Stack<std::shared_ptr<Material>> GetDisks() const;
 
-            std::shared_ptr<SerialisedBoxSet> ExportToSerialised();
+            Stack<std::shared_ptr<Material>> GetDisks() const;
             KeyValueMap GetPresentableInformation() const override;
             KeyValueMapVector GetPresentableDiskInformation() const;
-            void PopulateFromFile(const json &) override;
-         private:
-            Stack<std::shared_ptr<Material>> disks;
+
+            std::shared_ptr<SerialisedBoxSet> ExportToSerialised();
         };
 
         void to_json(json & j, const SerialisedBoxSet & serialisedBoxSet);

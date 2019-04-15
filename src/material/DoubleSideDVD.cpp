@@ -1,7 +1,9 @@
 #include "DoubleSideDVD.h"
 
-namespace TrekStar {
-    namespace Material {
+namespace TrekStar
+{
+    namespace Material
+    {
         DoubleSideDVD::DoubleSideDVD(unsigned int id, const std::string &name) : DVD(id, name)
         {}
 
@@ -18,9 +20,10 @@ namespace TrekStar {
 
             std::vector<DVDSide> dvdSides;
 
-            for (const auto & side: sides)
+            for ( const auto & side: sides )
             {
-                if (sides.size() > 2) {
+                if ( sides.size() > 2 )
+                {
                     break; // no more than two sides allowed.
                 }
 
@@ -29,15 +32,18 @@ namespace TrekStar {
                 StringVector subtitleTracks;
                 StringVector bonusFeatures;
 
-                for (auto &it : side.at("additionalLanguageTracks")) {
+                for ( auto &it : side.at("additionalLanguageTracks") )
+                {
                     languageTracks.push_back(it);
                 }
 
-                for (auto & it: side.at("additionalSubtitleTracks")) {
+                for ( auto & it: side.at("additionalSubtitleTracks") )
+                {
                     subtitleTracks.push_back(it);
                 }
 
-                for (auto & it: side.at("bonusFeatures")) {
+                for ( auto & it: side.at("bonusFeatures") )
+                {
                     bonusFeatures.push_back(it);
                 }
 

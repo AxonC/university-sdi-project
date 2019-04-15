@@ -4,8 +4,10 @@
 
 #include "ProjectController.h"
 
-namespace TrekStar {
-    namespace Project {
+namespace TrekStar
+{
+    namespace Project
+    {
 
     }
 }

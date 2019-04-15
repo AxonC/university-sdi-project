@@ -4,11 +4,13 @@
 #include <vector>
 #include <initializer_list>
 
-namespace TrekStar {
-    namespace Structures {
+namespace TrekStar
+{
+    namespace Structures
+    {
         template <class T>
         class Stack {
-         public:
+        public:
             Stack() = default;
             Stack(std::initializer_list<T> initialElements): elements(initialElements) {};
 
@@ -18,7 +20,7 @@ namespace TrekStar {
             std::vector<T> data() const; // returns the underlying data structure.
 
             T operator[](unsigned int) const;
-         private:
+        private:
             std::vector<T> elements;
         };
 
@@ -38,6 +40,11 @@ namespace TrekStar {
         }
 
         template<class T>
+        bool Stack<T>::isEmpty() const {
+            return elements.empty();
+        }
+
+        template<class T>
         std::vector<T> Stack<T>::data() const {
             return elements;
         }
@@ -45,11 +52,6 @@ namespace TrekStar {
         template<class T>
         T Stack<T>::operator[](unsigned int index) const {
             return elements.at(index);
-        }
-
-        template<class T>
-        bool Stack<T>::isEmpty() const {
-            return elements.empty();
         }
     }
 }

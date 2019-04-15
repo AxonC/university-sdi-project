@@ -4,8 +4,10 @@
 
 #include "Project.h"
 
-namespace TrekStar {
-    namespace Project {
+namespace TrekStar
+{
+    namespace Project
+    {
         Project::Project(std::string title, std::string summary, bool released, bool playingInTheatres)
         {
             this->title = title;
@@ -14,16 +16,16 @@ namespace TrekStar {
             this->playingInTheatres = playingInTheatres;
         }
 
-        Project::Project(std::string & title)
-        {
-            this->title = title;
-        }
-
         Project::Project(const std::string & name, const std::string & summary, bool released)
         {
             this->title = name;
             this->summary = summary;
             this->released = released;
+        }
+
+        Project::Project(std::string & title)
+        {
+            this->title = title;
         }
 
         Project::Project(const SerialisedProject & project)
@@ -46,6 +48,11 @@ namespace TrekStar {
             return this->summary;
         }
 
+        std::vector<std::shared_ptr<Material::Material>> Project::GetMaterials() const
+        {
+            return materials;
+        }
+
         bool Project::GetReleased() const
         {
             return this->released;
@@ -61,14 +68,23 @@ namespace TrekStar {
             return {this->title, this->GetSummary()};
         }
 
-        bool Project::CanAddMaterial() const
+        void Project::AddMaterials(const std::vector<std::shared_ptr<Material::Material>> & materials)
         {
-            return this->released && !this->playingInTheatres;
+            if ( !this->CanAddMaterial() )
+            {
+                throw std::domain_error("Material cannot be added.");
+            }
+
+            for ( const auto &material: materials )
+            {
+                this->materials.push_back(material);
+            }
         }
 
         bool Project::AddMaterials(const std::shared_ptr<Material::Material> & material)
         {
-            if (!this->CanAddMaterial()) {
+            if ( !this->CanAddMaterial() )
+            {
                 return false;
             }
 
@@ -77,37 +93,16 @@ namespace TrekStar {
             return true;
         }
 
-        void Project::AddMaterials(const std::vector<std::shared_ptr<Material::Material>> & materials)
-        {
-            if (!this->CanAddMaterial()) {
-                throw std::domain_error("Material cannot be added.");
-            }
-
-            for(const auto &material: materials)
-            {
-                this->materials.push_back(material);
-            }
-        }
-
         void Project::RemoveMaterial(const std::shared_ptr<Material::Material> & material)
         {
             auto search = std::find(materials.begin(), materials.end(), material);
 
-            if(search == materials.end()) {
+            if ( search == materials.end() )
+            {
                 throw std::out_of_range("Material not found.");
             }
 
             materials.erase(search);
-        }
-
-        std::vector<std::shared_ptr<Material::Material>> Project::GetMaterials() const
-        {
-            return materials;
-        }
-
-        void Project::ReleaseProject()
-        {
-            this->released = true;
         }
 
         std::vector<std::shared_ptr<People::Crew>> Project::GetCrew() const
@@ -120,39 +115,56 @@ namespace TrekStar {
             this->crew.push_back(crewMember);
         }
 
+        void Project::AddCrew(const std::vector<std::shared_ptr<Crew>> &crew)
+        {
+            for ( const auto & crewMember: crew )
+            {
+                this->crew.push_back(crewMember);
+            }
+        }
+
         void Project::RemoveCrew(const std::shared_ptr<TrekStar::People::Crew> & crewMember)
         {
             auto search = std::find(crew.begin(), crew.end(), crewMember);
 
-            if(search == crew.end()) {
+            if ( search == crew.end() )
+            {
                 throw std::out_of_range("Crew Member not found.");
             }
 
             crew.erase(search);
         }
 
-        SerialisedProject Project::ExportToSerialised() const
+        void Project::ReleaseProject()
         {
-            return SerialisedProject{this->title, this->summary, this->released, this->playingInTheatres};
+            this->released = true;
         }
 
-        void Project::AddCrew(const std::vector<std::shared_ptr<Crew>> &crew)
+        SerialisedProject Project::ExportToSerialised() const
         {
-            for(const auto & crewMember: crew)
-            {
-                this->crew.push_back(crewMember);
-            }
+            return SerialisedProject
+                {
+                    this->title,
+                    this->summary,
+                    this->released,
+                    this->playingInTheatres
+                };
+        }
+
+        bool Project::CanAddMaterial() const
+        {
+            return this->released && !this->playingInTheatres;
         }
 
         void to_json(json & j, const SerialisedProject & project)
         {
             j = json
-            {
-                {"title", project.title},
-                {"summary", project.summary},
-                {"released", project.released},
-                {"playingInTheatres", project.playingInTheatres}
-            };
+                {
+                    {"title", project.title},
+                    {"summary", project.summary},
+                    {"released", project.released},
+                    {"playingInTheatres", project.playingInTheatres}
+                };
         }
 
         void from_json(const json & json, SerialisedProject & project)

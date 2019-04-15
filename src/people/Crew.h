@@ -6,9 +6,12 @@
 
 using json = nlohmann::json;
 
-namespace TrekStar {
-    namespace People {
-        struct SerializedCrew {
+namespace TrekStar
+{
+    namespace People
+    {
+        struct SerializedCrew
+        {
             unsigned int id;
             std::string name;
             std::string jobTitle;
@@ -16,23 +19,22 @@ namespace TrekStar {
 
         class Crew
         {
+        protected:
+            unsigned int id;
+            std::string name;
+            std::string jobTitle;
+
         public:
             Crew() = default;
             explicit Crew(const SerializedCrew & crew);
             Crew(unsigned int id, const std::string & name, const std::string & jobTitle);
             virtual ~Crew() = default;
 
+            std::string GetName();
+
             void SetJobTitle(const std::string &);
 
-            std::string GetName();
-            std::string skup();
-
             SerializedCrew ExportToSerialized() const;
-
-        protected:
-            unsigned int id;
-            std::string name;
-            std::string jobTitle;
         };
 
         json to_json(const SerializedCrew & crew);

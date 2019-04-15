@@ -3,10 +3,13 @@
 
 #include "Project.h"
 
-namespace TrekStar {
-    namespace Project {
-        class ProjectController {
-         public:
+namespace TrekStar
+{
+    namespace Project
+    {
+        class ProjectController
+        {
+        public:
             ProjectController() = default;
             ~ProjectController() = default;
 

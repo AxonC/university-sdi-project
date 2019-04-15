@@ -2,16 +2,11 @@
 #include "MaterialFactory.h"
 #include "DoubleSideDVD.h"
 
-namespace TrekStar {
-    namespace Material {
+namespace TrekStar
+{
+    namespace Material
+    {
         BoxSet::BoxSet(unsigned int id, std::string name) : Material(id, name) {}
-
-        void BoxSet::AddDisks(const std::vector<std::shared_ptr<DVD>> & newDisks)
-        {
-            for (const auto & disk: newDisks) {
-                this->disks.push(disk);
-            }
-        }
 
         void BoxSet::PopulateFromFile(const json & j)
         {
@@ -19,13 +14,21 @@ namespace TrekStar {
             this->format = j.at("format");
             this->retailPrice = j.at("retailPrice").get<double>();
 
-            for(const auto & dvd: j.at("dvds"))
+            for ( const auto & dvd: j.at("dvds") )
             {
                 std::shared_ptr<Material> currentDVD = TrekStar::Material::MaterialFactory::Create(dvd.at("format"));
 
                 currentDVD->PopulateFromFile(dvd);
 
                 this->disks.push(currentDVD);
+            }
+        }
+
+        void BoxSet::AddDisks(const std::vector<std::shared_ptr<DVD>> & newDisks)
+        {
+            for ( const auto & disk: newDisks )
+            {
+                this->disks.push(disk);
             }
         }
 
@@ -52,12 +55,15 @@ namespace TrekStar {
         {
             KeyValueMapVector information;
 
-            for(const auto & disk: this->disks.data())
+            for ( const auto & disk: this->disks.data() )
             {
-                if ( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::DoubleSideDVD>(disk) ) {
+                if ( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::DoubleSideDVD>(disk) )
+                {
                     auto info = materialType->GetPresentableDiskInformation();
                     information.insert(information.end(), info.begin(), info.end());
-                } else if ( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::DVD>(disk) ) {
+                }
+                else if ( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::DVD>(disk) )
+                {
                     information.push_back(materialType->GetPresentableInformation());
                 }
             }

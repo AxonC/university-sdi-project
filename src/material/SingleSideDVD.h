@@ -3,10 +3,12 @@
 
 #include "DVD.h"
 
-namespace TrekStar {
-    namespace Material {
+namespace TrekStar
+{
+    namespace Material
+    {
         class SingleSideDVD: public DVD {
-         public:
+        public:
             SingleSideDVD() = default;
             SingleSideDVD(unsigned int id, const std::string & name);
 
