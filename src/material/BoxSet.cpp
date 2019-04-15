@@ -6,8 +6,6 @@ namespace TrekStar
 {
     namespace Material
     {
-        BoxSet::BoxSet(unsigned int id, std::string name) : Material(id, name) {}
-
         void BoxSet::PopulateFromFile(const json & j)
         {
             this->id = j.at("id").get<int>();

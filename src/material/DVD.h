@@ -32,7 +32,6 @@ namespace TrekStar
             DVDSide sideOne;
         public:
             DVD();
-            DVD(unsigned int id, const std::string & title);
 
             void PopulateFromFile(const json &) override;
 

@@ -14,7 +14,6 @@ namespace TrekStar
     {
         struct SerialisedMaterial
         {
-            std::string title;
             std::string format;
             std::string audioFormat;
             int runTime;
@@ -31,7 +30,6 @@ namespace TrekStar
         {
         protected:
             unsigned int id;
-            std::string title;
             std::string format;
             std::string audioFormat;
             int runTime;
@@ -42,13 +40,11 @@ namespace TrekStar
         public:
             Material() = default;
             explicit Material(std::string materialLine);
-            explicit Material(unsigned int id, const std::string & title);
             virtual ~Material() = default;
 
             virtual void PopulateFromFile(const json &) = 0;
 
             int GetId() const;
-            std::string GetTitle() const;
             std::string GetFormat() const;
             std::string GetAudioFormat() const;
             int GetRunTime() const;

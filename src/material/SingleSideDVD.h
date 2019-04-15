@@ -10,7 +10,6 @@ namespace TrekStar
         class SingleSideDVD: public DVD {
         public:
             SingleSideDVD() = default;
-            SingleSideDVD(unsigned int id, const std::string & name);
 
             void PopulateFromFile(const json &) override;
         };

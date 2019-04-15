@@ -29,7 +29,6 @@ namespace TrekStar
 
         public:
             BoxSet() = default;
-            BoxSet(unsigned int id, std::string name);
 
             void PopulateFromFile(const json &) override;
 

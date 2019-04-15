@@ -12,20 +12,9 @@ namespace TrekStar
         /**
           *  Trekstar Material Class Implementation
         */
-        Material::Material(unsigned int id, const std::string & title)
-        {
-            this->id = id;
-            this->title = title;
-        }
-
         int Material::GetId() const
         {
             return id;
-        }
-
-        std::string Material::GetTitle() const
-        {
-            return title;
         }
 
         std::string Material::GetFormat() const
@@ -81,7 +70,6 @@ namespace TrekStar
         {
             SerialisedMaterial serialisedMaterial =
                 {
-                    this->title,
                     this->format,
                     this->audioFormat,
                     this->runTime,

@@ -25,7 +25,6 @@ namespace TrekStar
 
         public:
           DoubleSideDVD() = default;
-          DoubleSideDVD(unsigned int id, const std::string & name);
 
           void PopulateFromFile(const json &) override;
 

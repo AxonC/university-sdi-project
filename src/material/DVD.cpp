@@ -10,8 +10,6 @@ namespace TrekStar
          */
         DVD::DVD() : Material() {}
 
-        DVD::DVD(unsigned int id, const std::string & title) : Material(id, title) {}
-
         void DVD::PopulateFromFile(const json & j)
         {
             this->format = j.at("format");
