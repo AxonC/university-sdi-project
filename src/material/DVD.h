@@ -10,6 +10,15 @@ using TrekStar::Material::Material;
 
 namespace TrekStar {
     namespace Material {
+        struct SerialisedDVD: virtual SerialisedMaterial
+        {
+            SerialisedDVD(const SerialisedMaterial & baseMaterial, const SerialisedDVDSide & dvdSide) : SerialisedMaterial(baseMaterial)
+            {
+                sideOne = dvdSide;
+            }
+            SerialisedDVDSide sideOne;
+        };
+
         /**
          *  Trekstar DVD Class
          */
@@ -25,14 +34,14 @@ namespace TrekStar {
             std::vector<std::string> GetAdditionalSubtitleTracks() const;
             std::vector<std::string> GetBonusFeatures() const;
 
-            SerialisedDVDSide ExportToSerialised() const;
+            std::shared_ptr<SerialisedMaterial> ExportToSerialised() const override;
 
             KeyValueMap GetPresentableInformation() const override;
             void PopulateFromFile(const json &) override;
         };
 
-        json to_json(const SerialisedDVDSide & dvd, const std::shared_ptr<Material> & materialObject);
-        void from_json(const json & json, SerialisedDVDSide & dvd);
+        void to_json(json & j, const SerialisedDVD & dvd);
+        void from_json(const json & j, SerialisedDVD & dvd);
     }
 }
 

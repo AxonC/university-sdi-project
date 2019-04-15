@@ -7,8 +7,6 @@ namespace TrekStar {
     namespace Material {
         BoxSet::BoxSet(unsigned int id, std::string name) : Material(id, name) {}
 
-        BoxSet::BoxSet() : Material() {}
-
         void BoxSet::AddDisks(const std::vector<std::shared_ptr<DVD>> & newDisks)
         {
             for (const auto & disk: newDisks) {
@@ -68,6 +66,33 @@ namespace TrekStar {
 
             return information;
         }
+
+        SerialisedBoxSet BoxSet::ExportToSerialised()
+        {
+            SerialisedBoxSet boxSet;
+
+            boxSet.dvds = this->GetDisks().data();
+
+            return boxSet;
+        }
+
+//        void TrekStar::Material::to_json(const SerialisedBoxSet &dvd, const std::shared_ptr<Material> &materialObject)
+//        {
+////            json j = TrekStar::Material::to_json(materialObject->ExportToSerialised());
+//
+//            json dvds;
+//            for(auto & singleDvd: dvd.dvds)
+//            {
+//                json i;
+//
+//                if ( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::DoubleSideDVD>(singleDvd) )
+//                {
+//                    i = TrekStar::Material::to_json(materialType->ExportToSerialised(), singleDvd);
+//                }
+//            }
+//
+//            j["dvds"] = dvds;
+//        }
     }
 }
 

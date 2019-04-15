@@ -4,7 +4,9 @@
 #include <map>
 #include <string>
 #include <vector>
+#include "../lib/json.hpp"
 
+using json = nlohmann::json;
 using StringVector = std::vector<std::string>;
 using KeyValueMap = std::map<std::string, std::string>;
 
@@ -38,6 +40,8 @@ namespace TrekStar {
 
             SerialisedDVDSide ExportToSerialised() const;
         };
+
+        void to_json(json & j, const SerialisedDVDSide & serialisedDVDSide);
     }
 }
 

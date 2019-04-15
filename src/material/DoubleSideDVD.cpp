@@ -1,12 +1,9 @@
 #include "DoubleSideDVD.h"
-#include <iostream>
 
 namespace TrekStar {
     namespace Material {
         DoubleSideDVD::DoubleSideDVD(unsigned int id, const std::string &name) : DVD(id, name)
-        {
-
-        }
+        {}
 
         void DoubleSideDVD::PopulateFromFile(const json & j)
         {
@@ -82,7 +79,7 @@ namespace TrekStar {
             json sidesJSON;
             for ( const auto & side: serialisedDoubleSideDVD.sides )
             {
-                json sideJSON;
+                json sideJSON = side;
 
                 sideJSON["content"] = side.content;
                 sideJSON["additionalLanguageTracks"] = side.additionalLanguageTracks;

@@ -64,5 +64,10 @@ namespace TrekStar {
                 this->bonusFeatures
             };
         }
+
+        void to_json(json & j, const SerialisedDVDSide & serialisedDVDSide)
+        {
+
+        }
     }
 }

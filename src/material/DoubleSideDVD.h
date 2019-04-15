@@ -26,7 +26,7 @@ namespace TrekStar {
           void PopulateFromFile(const json &) override;
         };
 
-        void to_json(const std::vector<SerialisedDVDSide> & sides, const std::shared_ptr<Material> & materialObject);
+        void to_json(json & j, const SerialisedDoubleSideDVD & serialisedDoubleSideDVD);
     }
 }
 

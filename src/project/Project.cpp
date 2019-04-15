@@ -151,7 +151,7 @@ namespace TrekStar {
                 {"title", project.title},
                 {"summary", project.summary},
                 {"released", project.released},
-                {"playingInTheatres", project.released}
+                {"playingInTheatres", project.playingInTheatres}
             };
         }
 

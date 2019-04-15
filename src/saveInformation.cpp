@@ -23,8 +23,12 @@ void save(std::vector<TrekStar::Project::Project> projects, const std::string & 
         counter++;
         json currentProjectJSON;
 
+        auto a = project.ExportToSerialised();
+
         // gets a serialised version of project and writes it to the json string (returns type SerialisedProject.
         currentProjectJSON["details"] = project.ExportToSerialised();
+
+        std::cout << currentProjectJSON["details"];
 
         toWriteJSON[std::to_string(counter)] = currentProjectJSON;
 
@@ -39,7 +43,8 @@ void save(std::vector<TrekStar::Project::Project> projects, const std::string & 
             }
             else if( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::DVD>(m) )
             {
-//                materialArray.push_back(TrekStar::Material::to_json(materialType->ExportToSerialised(), m));
+                json j = *m->ExportToSerialised();
+                materialArray.push_back(j);
             }
             else if( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::BoxSet>(m) )
             {
