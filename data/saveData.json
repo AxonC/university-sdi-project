@@ -1,84 +1,91 @@
 {
     "1": {
+        "crew": [
+            {
+                "id": 1,
+                "jobTitle": "Director",
+                "name": "Bob Bobson"
+            }
+        ],
         "details": {
             "playingInTheatres": true,
             "released": true,
             "summary": "A super hero does stuff",
             "title": "Deadpool"
-        }
-    },
-    "materials": [
-        {
-            "additionalLanguageTracks": [
-                "FRA",
-                "GER"
-            ],
-            "additionalSubtitleTracks": [
-                "FRA",
-                "GER"
-            ],
-            "audioFormat": "DTS",
-            "bonusFeatures": [
-                "Director's Comments"
-            ],
-            "content": "big movie",
-            "format": "dvd",
-            "frameAspect": "16:9",
-            "language": "ENG",
-            "retailPrice": 9.99,
-            "runTime": 120,
-            "subtitles": "ENG",
-            "title": ""
         },
-        {
-            "audioFormat": "",
-            "format": "boxset",
-            "frameAspect": "",
-            "language": "",
-            "retailPrice": 25.99,
-            "runTime": 0,
-            "subtitles": "",
-            "title": ""
-        },
-        {
-            "audioFormat": "DTS",
-            "format": "dsdvd",
-            "frameAspect": "4:3",
-            "language": "ENG",
-            "retailPrice": 55.98,
-            "runTime": 326,
-            "sides": [
-                {
-                    "additionalLanguageTracks": [
-                        "SPA",
-                        "GER"
-                    ],
-                    "additionalSubtitleTracks": [
-                        "SPA",
-                        "GER"
-                    ],
-                    "bonusFeatures": [
-                        "Bonus Features"
-                    ],
-                    "content": "part1"
-                },
-                {
-                    "additionalLanguageTracks": [
-                        "SPA",
-                        "GER"
-                    ],
-                    "additionalSubtitleTracks": [
-                        "SPA",
-                        "GER"
-                    ],
-                    "bonusFeatures": [
-                        "Bonus Features"
-                    ],
-                    "content": "part 2"
-                }
-            ],
-            "subtitles": "",
-            "title": ""
-        }
-    ]
+        "materials": [
+            {
+                "additionalLanguageTracks": [
+                    "FRA",
+                    "GER"
+                ],
+                "additionalSubtitleTracks": [
+                    "FRA",
+                    "GER"
+                ],
+                "audioFormat": "DTS",
+                "bonusFeatures": [
+                    "Director's Comments"
+                ],
+                "content": "big movie",
+                "format": "dvd",
+                "frameAspect": "16:9",
+                "language": "ENG",
+                "retailPrice": 9.99,
+                "runTime": 120,
+                "subtitles": "ENG",
+                "title": ""
+            },
+            {
+                "audioFormat": "",
+                "format": "boxset",
+                "frameAspect": "",
+                "language": "",
+                "retailPrice": 25.99,
+                "runTime": 0,
+                "subtitles": "",
+                "title": ""
+            },
+            {
+                "audioFormat": "DTS",
+                "format": "dsdvd",
+                "frameAspect": "4:3",
+                "language": "ENG",
+                "retailPrice": 55.98,
+                "runTime": 326,
+                "sides": [
+                    {
+                        "additionalLanguageTracks": [
+                            "SPA",
+                            "GER"
+                        ],
+                        "additionalSubtitleTracks": [
+                            "SPA",
+                            "GER"
+                        ],
+                        "bonusFeatures": [
+                            "Bonus Features"
+                        ],
+                        "content": "part1"
+                    },
+                    {
+                        "additionalLanguageTracks": [
+                            "SPA",
+                            "GER"
+                        ],
+                        "additionalSubtitleTracks": [
+                            "SPA",
+                            "GER"
+                        ],
+                        "bonusFeatures": [
+                            "Bonus Features"
+                        ],
+                        "content": "part 2"
+                    }
+                ],
+                "subtitles": "",
+                "title": ""
+            }
+        ]
+    }
 }
