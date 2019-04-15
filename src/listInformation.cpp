@@ -9,6 +9,11 @@
 using TrekStar::Project::Project;
 using TrekStar::Material::Material;
 
+/**
+    Prints to standard output the projects.
+
+    @param vector of projects.
+*/
 void listProjects(std::vector<TrekStar::Project::Project> projects)
 {
     int projectNum = 1;
@@ -27,6 +32,12 @@ void listProjects(std::vector<TrekStar::Project::Project> projects)
 }
 
 
+/**
+    Prints to standard output the materials for a given project.
+
+    @param vector of projects.
+    @param string containing the project number.
+*/
 void listMaterials(std::vector<TrekStar::Project::Project> projects, std::string projectNumString)
 {
     int projectNum = std::stoi(projectNumString);

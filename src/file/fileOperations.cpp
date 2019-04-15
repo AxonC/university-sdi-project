@@ -11,6 +11,12 @@ namespace TrekStar
 {
     namespace File
     {
+        /**
+            Creates a new project.
+
+            @param json string containing serialised data for a single project.
+            @return object containing the created project.
+        */
         TrekStar::Project::Project createProject(const json & jsonString)
         {
             TrekStar::Project::SerialisedProject serialised;
@@ -26,6 +32,13 @@ namespace TrekStar
             return TrekStar::Project::Project(serialised);
         }
 
+
+        /**
+            Creates a number of materials.
+
+            @param json string containing serialised data for multiple material.
+            @return vector of created materials.
+        */
         MaterialVector createMaterials(const json & jsonString)
         {
             MaterialVector materials;
@@ -53,6 +66,13 @@ namespace TrekStar
             return materials;
         }
 
+
+        /**
+            Creates a new of crew.
+
+            @param json string containing serialised data for multiple crew.
+            @return vector of created crew.
+        */
         CrewVector createCrew(const json & jsonString)
         {
             CrewVector crewVector;
@@ -66,6 +86,13 @@ namespace TrekStar
             return crewVector;
         }
 
+
+        /**
+            Obtains project information from a file.
+
+            @param string containing the file path of the JSON file.
+            @return a vector of projects obtained from the JSON file.
+        */
         ProjectVector importProjects(std::string filePath)
         {
             TrekStar::Project::Project currentProject;

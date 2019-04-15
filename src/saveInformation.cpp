@@ -12,6 +12,12 @@
 
 using json = nlohmann::json;
 
+/**
+    Saves the current state of projects/materials to a JSON file.
+
+    @param vector of projects.
+    @param file path to JSON output.
+*/
 void save(std::vector<TrekStar::Project::Project> projects, const std::string & filePath)
 {
     json toWriteJSON;
