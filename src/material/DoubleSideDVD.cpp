@@ -66,22 +66,21 @@ namespace TrekStar {
             return information;
         }
 
-        std::vector<SerialisedDVDSide> DoubleSideDVD::ExportToSerialised() const
+        std::shared_ptr<SerialisedMaterial> DoubleSideDVD::ExportToSerialised() const
         {
+            std::shared_ptr<SerialisedMaterial> serialisedMaterial = Material::ExportToSerialised();
             std::vector<SerialisedDVDSide> serialisedDVDSides;
 
             serialisedDVDSides.push_back(this->sideOne.ExportToSerialised());
             serialisedDVDSides.push_back(this->sideTwo.ExportToSerialised());
 
-            return serialisedDVDSides;
+            return std::make_shared<SerialisedMaterial>(SerialisedDoubleSideDVD(*serialisedMaterial, serialisedDVDSides));
         }
 
-        json to_json(const std::vector<SerialisedDVDSide> & sides, const std::shared_ptr<Material> & materialObject)
+        void to_json(json & j, const SerialisedDoubleSideDVD & serialisedDoubleSideDVD)
         {
-            json j = TrekStar::Material::to_json(materialObject->ExportToSerialised());
-
             json sidesJSON;
-            for ( const auto & side: sides )
+            for ( const auto & side: serialisedDoubleSideDVD.sides )
             {
                 json sideJSON;
 
@@ -95,7 +94,6 @@ namespace TrekStar {
 
             j["sides"] = sidesJSON;
 
-            return j;
         }
     }
 }

@@ -61,9 +61,10 @@ namespace TrekStar {
             return frameAspect;
         }
 
-        SerialisedMaterial Material::ExportToSerialised() const
+        std::shared_ptr<SerialisedMaterial> Material::ExportToSerialised() const
         {
-            return SerialisedMaterial {
+            SerialisedMaterial serialisedMaterial =
+            {
                 this->title,
                 this->format,
                 this->audioFormat,
@@ -73,6 +74,8 @@ namespace TrekStar {
                 this->subtitles,
                 this->frameAspect
             };
+
+            return std::make_shared<SerialisedMaterial>(serialisedMaterial);
         }
 
         bool Material::operator==(const Material &material) const
@@ -99,9 +102,9 @@ namespace TrekStar {
                 };
         }
 
-        json to_json(const SerialisedMaterial & material)
+        void to_json(json & j, const SerialisedMaterial & material)
         {
-            json j = json
+            j =
             {
                 {"title", material.title},
                 {"format", material.format},
@@ -112,8 +115,6 @@ namespace TrekStar {
                 {"subtitles", material.subtitles},
                 {"frameAspect", material.frameAspect}
             };
-
-            return j;
         }
 
         void from_json(const json & json, SerialisedMaterial & material)

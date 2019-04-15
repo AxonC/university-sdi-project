@@ -55,13 +55,13 @@ namespace TrekStar {
                 std::string GetSubtitles() const;
                 std::string GetFrameAspect() const;
 
-                SerialisedMaterial ExportToSerialised() const;
+                virtual std::shared_ptr<SerialisedMaterial> ExportToSerialised() const;
 
                 bool operator==(const Material& material) const;
                 bool operator!=(const Material& material) const;
         };
 
-        json to_json(const SerialisedMaterial & material);
+        void to_json(json & j, const SerialisedMaterial & material);
         void from_json(const json & json, SerialisedMaterial & material);
     }
 }
