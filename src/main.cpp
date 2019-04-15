@@ -1,6 +1,3 @@
-#include <boost/filesystem/operations.hpp>
-#include <boost/filesystem/path.hpp>
-
 #include "file/fileOperations.cpp"
 #include "information/listInformation.h"
 #include "information/addInformation.h"
@@ -8,9 +5,7 @@
 
 int main()
 {
-    std::string fileDirectory = boost::filesystem::current_path().parent_path().parent_path().string() + "/data/";
-
-    std::vector<TrekStar::Project::Project> projects = TrekStar::File::importProjects(fileDirectory + "data.json");
+    std::vector<TrekStar::Project::Project> projects = TrekStar::File::importProjects("../../data/data.json");
 
     std::cout << "Welcome to TrekStar Management System | Console" << std::endl;
     std::cout << std::endl;
@@ -48,7 +43,7 @@ int main()
         }
         else if ( command.substr(0, pos) == "save" )
         {
-            TrekStar::Information::save(projects, fileDirectory + "saveData.json");
+            TrekStar::Information::save(projects, "../../data/saveData.json");
         }
     }
 
