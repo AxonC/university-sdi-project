@@ -2,9 +2,9 @@
 #include <boost/filesystem/path.hpp>
 
 #include "file/fileOperations.cpp"
-#include "listInformation.cpp"
-#include "addInformation.cpp"
-#include "saveInformation.cpp"
+#include "../information/listInformation.cpp"
+#include "../information/addInformation.cpp"
+#include "../information/saveInformation.cpp"
 
 int main()
 {
@@ -36,19 +36,19 @@ int main()
         }
         else if ( command.substr(0, pos) == "lsp" )
         {
-            listProjects(projects);
+            TrekStar::Information::listProjects(projects);
         }
         else if ( command.substr(0, pos) == "lsm" )
         {
-            listMaterials(projects, command.substr(pos + 1));
+            TrekStar::Information::listMaterials(projects, command.substr(pos + 1));
         }
         else if ( command.substr(0, pos) == "addp" )
         {
-            addProject(projects, command.substr(pos + 1));
+            TrekStar::Information::addProject(projects, command.substr(pos + 1));
         }
         else if ( command.substr(0, pos) == "save" )
         {
-            save(projects, fileDirectory + "saveData.json");
+            TrekStar::Information::save(projects, fileDirectory + "saveData.json");
         }
     }
 
