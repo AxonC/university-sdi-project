@@ -72,7 +72,7 @@ namespace TrekStar {
         };
 
 
-        json to_json(const SerialisedProject & project);
+        void to_json(json & j, const SerialisedProject & project);
         void from_json(const json & json, SerialisedProject & project);
     }
 }
