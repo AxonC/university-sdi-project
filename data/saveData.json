@@ -16,20 +16,41 @@
         "materials": [
             {
                 "audioFormat": "DTS",
-                "format": "dvd",
-                "frameAspect": "16:9",
-                "language": "ENG",
-                "retailPrice": 9.99,
-                "runTime": 120,
-                "subtitles": "ENG"
-            },
-            {
-                "audioFormat": "DTS",
                 "format": "dsdvd",
                 "frameAspect": "4:3",
                 "language": "ENG",
                 "retailPrice": 55.98,
                 "runTime": 326,
+                "sides": [
+                    {
+                        "additionalLanguageTracks": [
+                            "SPA",
+                            "GER"
+                        ],
+                        "additionalSubtitleTracks": [
+                            "SPA",
+                            "GER"
+                        ],
+                        "bonusFeatures": [
+                            "Bonus Features"
+                        ],
+                        "content": "part1"
+                    },
+                    {
+                        "additionalLanguageTracks": [
+                            "SPA",
+                            "GER"
+                        ],
+                        "additionalSubtitleTracks": [
+                            "SPA",
+                            "GER"
+                        ],
+                        "bonusFeatures": [
+                            "Bonus Features"
+                        ],
+                        "content": "part 2"
+                    }
+                ],
                 "subtitles": ""
             }
         ]

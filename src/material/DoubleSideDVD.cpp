@@ -78,10 +78,18 @@ namespace TrekStar {
 
         void to_json(json & j, const SerialisedDoubleSideDVD & serialisedDoubleSideDVD)
         {
+            j["format"] = serialisedDoubleSideDVD.material.format;
+            j["audioFormat"] = serialisedDoubleSideDVD.material.audioFormat;
+            j["runTime"] = serialisedDoubleSideDVD.material.runTime;
+            j["language"] = serialisedDoubleSideDVD.material.language;
+            j["retailPrice"] = serialisedDoubleSideDVD.material.retailPrice;
+            j["subtitles"] = serialisedDoubleSideDVD.material.subtitles;
+            j["frameAspect"] = serialisedDoubleSideDVD.material.frameAspect;
+
             json sidesJSON;
             for ( const auto & side: serialisedDoubleSideDVD.sides )
             {
-                json sideJSON = side;
+                json sideJSON;
 
                 sideJSON["content"] = side.content;
                 sideJSON["additionalLanguageTracks"] = side.additionalLanguageTracks;
@@ -91,8 +99,7 @@ namespace TrekStar {
                 sidesJSON.push_back(sideJSON);
             }
 
-            j["sides"] = serialisedDoubleSideDVD.sides;
-
+            j["sides"] = sidesJSON;
         }
     }
 }
