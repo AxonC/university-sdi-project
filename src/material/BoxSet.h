@@ -9,10 +9,16 @@ using KeyValueMapVector = std::vector<std::map<std::string, std::string>>;
 
 namespace TrekStar {
     namespace Material {
-        struct SerialisedBoxSet : public SerialisedMaterial {
-            std::vector<std::shared_ptr<TrekStar::Material::Material>> dvds;
+        struct SerialisedBoxSet {
+            SerialisedBoxSet() = default;
+            explicit SerialisedBoxSet(const SerialisedMaterial & baseMaterial, const std::vector<std::shared_ptr<Material>> & dvds)
+            {
+                this->dvds = dvds;
+                this->material = baseMaterial;
+            }
+            SerialisedMaterial material;
+            std::vector<std::shared_ptr<Material>> dvds;
         };
-
 
         class BoxSet: public Material::Material {
          public:
@@ -23,7 +29,7 @@ namespace TrekStar {
             void AddDisk(const std::shared_ptr<DVD> &);
             Stack<std::shared_ptr<Material>> GetDisks() const;
 
-            SerialisedBoxSet ExportToSerialised();
+            std::shared_ptr<SerialisedBoxSet> ExportToSerialised();
             KeyValueMap GetPresentableInformation() const override;
             KeyValueMapVector GetPresentableDiskInformation() const;
             void PopulateFromFile(const json &) override;
@@ -31,7 +37,7 @@ namespace TrekStar {
             Stack<std::shared_ptr<Material>> disks;
         };
 
-        void to_json(const SerialisedBoxSet & dvd, const std::shared_ptr<Material> & materialObject);
+        void to_json(json & j, const SerialisedBoxSet & serialisedBoxSet);
         void from_json(const json & json, SerialisedBoxSet & dvd);
     }
 }

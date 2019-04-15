@@ -36,25 +36,25 @@ void save(std::vector<TrekStar::Project::Project> projects, const std::string & 
         json materialArray;
         for (auto && m: project.GetMaterials())
         {
-            if( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::DoubleSideDVD>(m) )
+            if ( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::DoubleSideDVD>(m) )
             {
                 // return a SerialisedDoubleSideDVD -> json
                 json j = *materialType->ExportToSerialised();
                 materialArray.push_back(j);
             }
-            else if( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::DVD>(m) )
+            else if ( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::DVD>(m) )
             {
                 json j = *materialType->ExportToSerialised();
                 materialArray.push_back(j);
             }
-//            else if( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::BoxSet>(m) )
-//            {
-////                json j = materialType;
-////                materialArray.push_back(j);
-//            }
+            else if ( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::BoxSet>(m) )
+            {
+                json j = *materialType->ExportToSerialised();
+                materialArray.push_back(j);
+            }
 //            else
 //            {
-////                materialArray.push_back(TrekStar::Material::to_json(m->ExportToSerialised()));
+//                materialArray.push_back(TrekStar::Material::to_json(m->ExportToSerialised()));
 //            }
         }
 

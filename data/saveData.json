@@ -36,6 +36,57 @@
                 "subtitles": "ENG"
             },
             {
+                "disks": [
+                    {
+                        "audioFormat": "DTS",
+                        "format": "dvd",
+                        "frameAspect": "4:3",
+                        "language": "GER",
+                        "retailPrice": 25.99,
+                        "runTime": 90,
+                        "subtitles": "GER"
+                    },
+                    {
+                        "audioFormat": "DTS",
+                        "format": "dvd",
+                        "frameAspect": "4:3",
+                        "language": "ENG",
+                        "retailPrice": 25.99,
+                        "runTime": 160,
+                        "subtitles": "ENG"
+                    },
+                    {
+                        "additionalLanguageTracks": [
+                            [
+                                "SPA",
+                                "GER"
+                            ]
+                        ],
+                        "additionalSubtitleTracks": [
+                            [
+                                "SPA",
+                                "GER"
+                            ]
+                        ],
+                        "audioFormat": "DTS",
+                        "bonusFeatures": [
+                            [
+                                "Bonus Features"
+                            ]
+                        ],
+                        "format": "dsdvd",
+                        "frameAspect": "4:3",
+                        "language": "ENG",
+                        "retailPrice": 25.99,
+                        "runTime": 420,
+                        "subtitles": ""
+                    }
+                ],
+                "format": "boxset",
+                "language": "",
+                "retailPrice": 25.99
+            },
+            {
                 "audioFormat": "DTS",
                 "format": "dsdvd",
                 "frameAspect": "4:3",

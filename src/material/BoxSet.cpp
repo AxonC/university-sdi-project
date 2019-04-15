@@ -1,4 +1,3 @@
-#include <iostream>
 #include "BoxSet.h"
 #include "MaterialFactory.h"
 #include "DoubleSideDVD.h"
@@ -24,7 +23,6 @@ namespace TrekStar {
             {
                 std::shared_ptr<Material> currentDVD = TrekStar::Material::MaterialFactory::Create(dvd.at("format"));
 
-                std::cout << dvd << std::endl;
                 currentDVD->PopulateFromFile(dvd);
 
                 this->disks.push(currentDVD);
@@ -67,32 +65,60 @@ namespace TrekStar {
             return information;
         }
 
-        SerialisedBoxSet BoxSet::ExportToSerialised()
+        std::shared_ptr<SerialisedBoxSet> BoxSet::ExportToSerialised()
         {
-            SerialisedBoxSet boxSet;
+            std::shared_ptr<SerialisedMaterial> serialisedMaterial = Material::ExportToSerialised();
+            std::vector<std::shared_ptr<Material>> dvds;
 
-            boxSet.dvds = this->GetDisks().data();
+            for ( const auto & dvd: this->disks.data() )
+            {
+                dvds.push_back(dvd);
+            }
 
-            return boxSet;
+            SerialisedBoxSet boxSet(*serialisedMaterial, dvds);
+
+            return std::make_shared<SerialisedBoxSet>(boxSet);
         }
 
-//        void TrekStar::Material::to_json(const SerialisedBoxSet &dvd, const std::shared_ptr<Material> &materialObject)
-//        {
-////            json j = TrekStar::Material::to_json(materialObject->ExportToSerialised());
-//
-//            json dvds;
-//            for(auto & singleDvd: dvd.dvds)
-//            {
-//                json i;
-//
-//                if ( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::DoubleSideDVD>(singleDvd) )
-//                {
-//                    i = TrekStar::Material::to_json(materialType->ExportToSerialised(), singleDvd);
-//                }
-//            }
-//
-//            j["dvds"] = dvds;
-//        }
+        void to_json(json & j, const SerialisedBoxSet & serialisedBoxSet)
+        {
+            j["format"] = serialisedBoxSet.material.format;
+            j["language"] = serialisedBoxSet.material.language;
+            j["retailPrice"] = serialisedBoxSet.material.retailPrice;
+
+            json dvdsJSON;
+            for ( const auto & dvd: serialisedBoxSet.dvds )
+            {
+                json dvdJSON;
+
+                dvdJSON["format"] = dvd->GetFormat();
+                dvdJSON["audioFormat"] = dvd->GetAudioFormat();
+                dvdJSON["runTime"] = dvd->GetRunTime();
+                dvdJSON["language"] = dvd->GetLanguage();
+                dvdJSON["retailPrice"] = dvd->GetRetailPrice();
+                dvdJSON["subtitles"] = dvd->GetSubtitles();
+                dvdJSON["frameAspect"] = dvd->GetFrameAspect();
+
+                if ( auto castedDVD = std::dynamic_pointer_cast<TrekStar::Material::DoubleSideDVD>(dvd) )
+                {
+                    dvdJSON["additionalLanguageTracks"].push_back(castedDVD->GetAdditionalLanguageTracks());
+                    dvdJSON["additionalSubtitleTracks"].push_back(castedDVD->GetAdditionalSubtitleTracks());
+                    dvdJSON["bonusFeatures"].push_back(castedDVD->GetBonusFeatures());
+                }
+                else if ( auto castedDVD = std::dynamic_pointer_cast<TrekStar::Material::DoubleSideDVD>(dvd) )
+                {
+
+                }
+                else
+                {
+                    // TO DO: handle incorrect DVD type
+                }
+
+                dvdsJSON.push_back(dvdJSON);
+            }
+
+            j["disks"] = dvdsJSON;
+        }
     }
 }
 
