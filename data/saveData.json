@@ -15,6 +15,27 @@
         },
         "materials": [
             {
+                "additionalLanguageTracks": [
+                    "FRA",
+                    "GER"
+                ],
+                "additionalSubtitleTracks": [
+                    "FRA",
+                    "GER"
+                ],
+                "audioFormat": "DTS",
+                "bonusFeatures": [
+                    "Director's Comments"
+                ],
+                "content": "big movie",
+                "format": "dvd",
+                "frameAspect": "16:9",
+                "language": "ENG",
+                "retailPrice": 9.99,
+                "runTime": 120,
+                "subtitles": "ENG"
+            },
+            {
                 "audioFormat": "DTS",
                 "format": "dsdvd",
                 "frameAspect": "4:3",

@@ -27,11 +27,13 @@ namespace TrekStar {
             return this->sideOne.GetBonusFeatures();
         }
 
-        std::shared_ptr<SerialisedMaterial> DVD::ExportToSerialised() const
+        std::shared_ptr<SerialisedDVD> DVD::ExportToSerialised() const
         {
             std::shared_ptr<SerialisedMaterial> serialisedMaterial = Material::ExportToSerialised();
 
-            return std::make_shared<SerialisedMaterial>(SerialisedDVD(*serialisedMaterial, this->sideOne.ExportToSerialised()));
+            SerialisedDVD doubleSideDVD(*serialisedMaterial, this->sideOne.ExportToSerialised());
+
+            return std::make_shared<SerialisedDVD>(doubleSideDVD);
         }
 
         void DVD::PopulateFromFile(const json & j)
@@ -81,6 +83,14 @@ namespace TrekStar {
 
         void to_json(json & j, const SerialisedDVD & dvd)
         {
+            j["format"] = dvd.material.format;
+            j["audioFormat"] = dvd.material.audioFormat;
+            j["runTime"] = dvd.material.runTime;
+            j["language"] = dvd.material.language;
+            j["retailPrice"] = dvd.material.retailPrice;
+            j["subtitles"] = dvd.material.subtitles;
+            j["frameAspect"] = dvd.material.frameAspect;
+
             j["content"] = dvd.sideOne.content;
             j["additionalLanguageTracks"] = dvd.sideOne.additionalLanguageTracks;
             j["additionalSubtitleTracks"] = dvd.sideOne.additionalSubtitleTracks;
