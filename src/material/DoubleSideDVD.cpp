@@ -51,15 +51,17 @@ namespace TrekStar {
             this->sideTwo = dvdSides.at(1);
         }
 
-        KeyValueMap DoubleSideDVD::GetPresentableInformation() const
+        KeyValueMapVector DoubleSideDVD::GetPresentableDiskInformation() const
         {
-            KeyValueMap information = Material::GetPresentableInformation();
+            KeyValueMapVector information;
+
+            information.push_back(Material::GetPresentableInformation());
 
             KeyValueMap sideOne = this->sideOne.GetPresentableInformation();
-            information.insert(sideOne.begin(), sideOne.end());
+            information.push_back(sideOne);
 
             KeyValueMap sideTwo = this->sideTwo.GetPresentableInformation();
-            information.insert(sideTwo.begin(), sideTwo.end());
+            information.push_back(sideTwo);
 
             return information;
         }

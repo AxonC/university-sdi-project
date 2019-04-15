@@ -1,6 +1,7 @@
 #include <iostream>
 #include "BoxSet.h"
 #include "MaterialFactory.h"
+#include "DoubleSideDVD.h"
 
 namespace TrekStar {
     namespace Material {
@@ -55,15 +56,14 @@ namespace TrekStar {
         {
             KeyValueMapVector information;
 
-            for(const auto &disk: this->disks.data())
+            for(const auto & disk: this->disks.data())
             {
-                KeyValueMap diskInformation;
-                for (auto const& d : disk->GetPresentableInformation())
-                {
-                    diskInformation.insert(std::pair<std::string, std::string>(d.first, d.second));
+                if ( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::DoubleSideDVD>(disk) ) {
+                    auto info = materialType->GetPresentableDiskInformation();
+                    information.insert(information.end(), info.begin(), info.end());
+                } else if ( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::DVD>(disk) ) {
+                    information.push_back(materialType->GetPresentableInformation());
                 }
-
-                information.push_back(diskInformation);
             }
 
             return information;

@@ -6,6 +6,7 @@
 
 using json = nlohmann::json;
 using KeyValueMap = std::map<std::string, std::string>;
+using KeyValueMapVector = std::vector<KeyValueMap>;
 
 namespace TrekStar {
     namespace Material {
