@@ -2,9 +2,9 @@
 #include <boost/filesystem/path.hpp>
 
 #include "file/fileOperations.cpp"
-#include "../information/listInformation.cpp"
-#include "../information/addInformation.cpp"
-#include "../information/saveInformation.cpp"
+#include "information/listInformation.h"
+#include "information/addInformation.h"
+#include "information/saveInformation.h"
 
 int main()
 {
