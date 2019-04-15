@@ -37,6 +37,7 @@ namespace TrekStar
                     StringVector additionalSubtitleTracks,
                     StringVector bonusFeatures);
 
+            std::string GetContent() const;
             std::vector<std::string> GetAdditionalLanguageTracks() const;
             std::vector<std::string> GetAdditionalSubtitleTracks() const;
             std::vector<std::string> GetBonusFeatures() const;

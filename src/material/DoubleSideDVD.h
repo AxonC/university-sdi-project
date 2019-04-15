@@ -28,6 +28,7 @@ namespace TrekStar
 
           void PopulateFromFile(const json &) override;
 
+          std::vector<DVDSide> GetSides() const;
           KeyValueMapVector GetPresentableDiskInformation() const;
 
           std::shared_ptr<SerialisedDoubleSideDVD> ExportToSerialised() const;

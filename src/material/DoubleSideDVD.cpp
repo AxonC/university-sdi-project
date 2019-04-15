@@ -29,7 +29,7 @@ namespace TrekStar
                 StringVector subtitleTracks;
                 StringVector bonusFeatures;
 
-                for ( auto &it : side.at("additionalLanguageTracks") )
+                for ( auto & it : side.at("additionalLanguageTracks") )
                 {
                     languageTracks.push_back(it);
                 }
@@ -49,6 +49,11 @@ namespace TrekStar
 
             this->sideOne = dvdSides.at(0);
             this->sideTwo = dvdSides.at(1);
+        }
+
+        std::vector<DVDSide> DoubleSideDVD::GetSides() const
+        {
+            return {this->sideOne, this->sideTwo};
         }
 
         KeyValueMapVector DoubleSideDVD::GetPresentableDiskInformation() const

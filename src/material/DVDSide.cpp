@@ -12,6 +12,11 @@ namespace TrekStar
             this->bonusFeatures = bonusFeatures;
         }
 
+        std::string DVDSide::GetContent() const
+        {
+            return content;
+        };
+
         std::vector<std::string> DVDSide::GetAdditionalLanguageTracks() const
         {
             return this->additionalLanguageTracks;

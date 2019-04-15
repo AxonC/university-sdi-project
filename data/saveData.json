@@ -56,29 +56,58 @@
                         "subtitles": "ENG"
                     },
                     {
-                        "additionalLanguageTracks": [
-                            [
-                                "SPA",
-                                "GER"
-                            ]
-                        ],
-                        "additionalSubtitleTracks": [
-                            [
-                                "SPA",
-                                "GER"
-                            ]
-                        ],
                         "audioFormat": "DTS",
-                        "bonusFeatures": [
-                            [
-                                "Bonus Features"
-                            ]
-                        ],
                         "format": "dsdvd",
                         "frameAspect": "4:3",
                         "language": "ENG",
                         "retailPrice": 25.99,
                         "runTime": 420,
+                        "sides": [
+                            {
+                                "additionalLanguageTracks": [
+                                    [
+                                        "SPA",
+                                        "GER"
+                                    ]
+                                ],
+                                "additionalSubtitleTracks": [
+                                    [
+                                        "SPA",
+                                        "GER"
+                                    ]
+                                ],
+                                "bonusFeatures": [
+                                    [
+                                        "Bonus Features"
+                                    ]
+                                ],
+                                "content": [
+                                    "episode 1"
+                                ]
+                            },
+                            {
+                                "additionalLanguageTracks": [
+                                    [
+                                        "SPA",
+                                        "GER"
+                                    ]
+                                ],
+                                "additionalSubtitleTracks": [
+                                    [
+                                        "SPA",
+                                        "GER"
+                                    ]
+                                ],
+                                "bonusFeatures": [
+                                    [
+                                        "HAHAHAHAHA Features"
+                                    ]
+                                ],
+                                "content": [
+                                    "episode 2"
+                                ]
+                            }
+                        ],
                         "subtitles": ""
                     }
                 ],

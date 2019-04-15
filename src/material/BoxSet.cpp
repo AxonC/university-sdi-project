@@ -105,13 +105,27 @@ namespace TrekStar
 
                 if ( auto castedDVD = std::dynamic_pointer_cast<TrekStar::Material::DoubleSideDVD>(dvd) )
                 {
-                    dvdJSON["additionalLanguageTracks"].push_back(castedDVD->GetAdditionalLanguageTracks());
-                    dvdJSON["additionalSubtitleTracks"].push_back(castedDVD->GetAdditionalSubtitleTracks());
-                    dvdJSON["bonusFeatures"].push_back(castedDVD->GetBonusFeatures());
+                    json dvdSides;
+
+                    for ( const auto & side: castedDVD->GetSides() )
+                    {
+                        json dvdSide;
+
+                        dvdSide["content"].push_back(side.GetContent());
+                        dvdSide["additionalLanguageTracks"].push_back(side.GetAdditionalLanguageTracks());
+                        dvdSide["additionalSubtitleTracks"].push_back(side.GetAdditionalSubtitleTracks());
+                        dvdSide["bonusFeatures"].push_back(side.GetBonusFeatures());
+
+                        dvdSides.push_back(dvdSide);
+                    }
+
+                    dvdJSON["sides"] = dvdSides;
                 }
                 else if ( auto castedDVD = std::dynamic_pointer_cast<TrekStar::Material::DoubleSideDVD>(dvd) )
                 {
-
+                    dvdJSON["additionalLanguageTracks"].push_back(castedDVD->GetAdditionalLanguageTracks());
+                    dvdJSON["additionalSubtitleTracks"].push_back(castedDVD->GetAdditionalSubtitleTracks());
+                    dvdJSON["bonusFeatures"].push_back(castedDVD->GetBonusFeatures());
                 }
                 else
                 {
