@@ -38,11 +38,10 @@ namespace TrekStar
             Prints to standard output the materials for a given project.
 
             @param vector of projects.
-            @param string containing the project number.
+            @param integer containing the project number.
         */
-        void listMaterials(std::vector<TrekStar::Project::Project> projects, std::string projectNumString)
+        void listMaterials(std::vector<TrekStar::Project::Project> projects, int projectNum)
         {
-            int projectNum = std::stoi(projectNumString);
             std::vector<std::shared_ptr<TrekStar::Material::Material>> materials = projects[projectNum - 1].GetMaterials();
 
             for ( const auto &material: materials )

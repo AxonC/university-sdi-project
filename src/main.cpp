@@ -1,3 +1,4 @@
+#include "command/CommandHandler.h"
 #include "file/fileOperations.cpp"
 #include "information/listInformation.h"
 #include "information/addInformation.h"
@@ -11,39 +12,65 @@ int main()
     std::cout << std::endl;
     std::cout << "Type 'help' to see all available commands" << std::endl;
 
-    std::string command = "";
-    while ( command != "q" && command != "quit" )
+    TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
+        {
+            {"help", "view available commands"},
+            {"lsp",  "list projects"},
+            {"lsm",  "list materials"},
+            {"addp", "add project"},
+            {"save", "save all data to file"},
+            {"q",    "quit project"}
+        }
+    );
+
+    std::string commandInput;
+    while ( commandInput != "q" && commandInput != "quit" )
     {
         std::cout << std::endl;
         std::cout << "> ";
-        std::getline(std::cin, command);
+        std::getline(std::cin, commandInput);
 
-        std::string::size_type pos = command.find(' ');
+        StringPair tokenisedCommand = commandHandler.tokeniseCommand(commandInput);
 
-        if ( command.substr(0, pos) == "help" )
+        if ( commandHandler.isValidCommand(tokenisedCommand.first) )
         {
-            std::cout << "Available commands: " << std::endl;
-            std::cout << " list projects  - lsp" << std::endl;
-            std::cout << " list materials - lsm [project number]" << std::endl;
-            std::cout << " add project    - addp [project title]" << std::endl;
-            std::cout << " save all data  - save" << std::endl;
-            std::cout << " quit           - q" << std::endl;
+            if ( tokenisedCommand.first == "help" )
+            {
+                std::cout << "Available commands: " << std::endl;
+
+                for ( const auto & currentCommand : commandHandler.GetCommands() )
+                {
+                    std::cout << currentCommand.first << " - " << currentCommand.second << std::endl;
+                }
+            }
+            else if ( tokenisedCommand.first == "lsp" )
+            {
+                TrekStar::Information::listProjects(projects);
+            }
+            else if ( tokenisedCommand.first == "lsm" )
+            {
+                try
+                {
+                    TrekStar::Information::listMaterials(projects, commandHandler.getIntegerValue(tokenisedCommand.second));
+                }
+                catch ( std::invalid_argument )
+                {
+                    std::cout << "Invalid parameter, please try again." << std::endl;
+                }
+            }
+            else if ( tokenisedCommand.first == "addp" )
+            {
+                TrekStar::Information::addProject(projects, tokenisedCommand.second);
+
+            }
+            else if ( tokenisedCommand.first == "save" )
+            {
+                TrekStar::Information::save(projects, "../../data/saveData.json");
+            }
         }
-        else if ( command.substr(0, pos) == "lsp" )
+        else
         {
-            TrekStar::Information::listProjects(projects);
-        }
-        else if ( command.substr(0, pos) == "lsm" )
-        {
-            TrekStar::Information::listMaterials(projects, command.substr(pos + 1));
-        }
-        else if ( command.substr(0, pos) == "addp" )
-        {
-            TrekStar::Information::addProject(projects, command.substr(pos + 1));
-        }
-        else if ( command.substr(0, pos) == "save" )
-        {
-            TrekStar::Information::save(projects, "../../data/saveData.json");
+            std::cout << "'" << tokenisedCommand.first << "'" << " is not a valid command. Type 'help' to see all available commands" << std::endl;
         }
     }
 
