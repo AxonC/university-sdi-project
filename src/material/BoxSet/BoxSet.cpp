@@ -1,6 +1,6 @@
 #include "BoxSet.h"
-#include "MaterialFactory.h"
-#include "DoubleSideDVD.h"
+#include "../MaterialFactory/MaterialFactory.h"
+#include "../DoubleSideDVD/DoubleSideDVD.h"
 
 namespace TrekStar
 {

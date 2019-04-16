@@ -1,10 +1,10 @@
 #include "MaterialFactory.h"
 
-#include "DVD.h"
-#include "DoubleSideDVD.h"
-#include "BoxSet.h"
-#include "Bluray.h"
-#include "VHS.h"
+#include "../DVD/DVD.h"
+#include "../DoubleSideDVD/DoubleSideDVD.h"
+#include "../BoxSet/BoxSet.h"
+#include "../Bluray/Bluray.h"
+#include "../VHS/VHS.h"
 
 namespace TrekStar
 {

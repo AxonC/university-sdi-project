@@ -2,10 +2,10 @@
 #define SDI_PROJECT_SAVEINFORMATION_H
 
 #include "../project/Project.h"
-#include "../material/Material.h"
-#include "../material/DVD.h"
-#include "../material/DoubleSideDVD.h"
-#include "../material/BoxSet.h"
+#include "../material/Material/Material.h"
+#include "../material/DVD/DVD.h"
+#include "../material/DoubleSideDVD/DoubleSideDVD.h"
+#include "../material/BoxSet/BoxSet.h"
 
 namespace TrekStar
 {

@@ -1,7 +1,7 @@
 #ifndef SDI_PROJECT_BLURAY_H
 #define SDI_PROJECT_BLURAY_H
 
-#include "DVD.h"
+#include "../DVD/DVD.h"
 
 namespace TrekStar
 {

@@ -1,5 +1,5 @@
 #include "fileOperations.h"
-#include "../material/BoxSet.h"
+#include "../material/BoxSet/BoxSet.h"
 #include "../lib/json.hpp"
 
 using json = nlohmann::json;

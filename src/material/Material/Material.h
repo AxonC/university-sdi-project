@@ -2,7 +2,7 @@
 #define TREKSTAR_MATERIAL_H
 
 #include <string>
-#include "../lib/json.hpp"
+#include "../../lib/json.hpp"
 
 using json = nlohmann::json;
 using KeyValueMap = std::map<std::string, std::string>;

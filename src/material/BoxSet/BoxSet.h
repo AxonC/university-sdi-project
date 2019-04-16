@@ -1,8 +1,8 @@
 #ifndef TREKSTAR_BOXSET_H
 #define TREKSTAR_BOXSET_H
 
-#include "../structures/Stack.h"
-#include "DVD.h"
+#include "../../structures/Stack.h"
+#include "../DVD/DVD.h"
 
 using TrekStar::Structures::Stack;
 using KeyValueMapVector = std::vector<std::map<std::string, std::string>>;

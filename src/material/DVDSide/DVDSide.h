@@ -4,7 +4,7 @@
 #include <map>
 #include <string>
 #include <vector>
-#include "../lib/json.hpp"
+#include "../../lib/json.hpp"
 
 using json = nlohmann::json;
 using StringVector = std::vector<std::string>;

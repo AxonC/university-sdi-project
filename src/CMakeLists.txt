@@ -6,14 +6,14 @@ include_directories( ${MY_SOURCE_DIR}/project ${MY_SOURCE_DIR}/material ${MY_SOU
 
 # classes
 add_library(Project project/Project.cpp project/Project.h project/ProjectController.cpp project/ProjectController.h)
-add_library(Material material/Material.h material/Material.cpp)
-add_library(MaterialFactory material/MaterialFactory.h material/MaterialFactory.cpp)
-add_library(DVDSide material/DVDSide.h material/DVDSide.cpp)
-add_library(DVD material/DVD.h material/DVD.cpp)
-add_library(DoubleSideDVD material/DoubleSideDVD.h material/DoubleSideDVD.cpp)
-add_library(Bluray material/Bluray.h material/Bluray.cpp material/VHS.cpp material/VHS.h)
-add_library(BoxSet material/BoxSet.h material/BoxSet.cpp)
-add_library(VHS material/VHS.h material/VHS.cpp)
+add_library(Material material/Material/Material.h material/Material/Material.cpp)
+add_library(MaterialFactory material/MaterialFactory/MaterialFactory.h material/MaterialFactory/MaterialFactory.cpp)
+add_library(DVDSide material/DVDSide/DVDSide.h material/DVDSide/DVDSide.cpp)
+add_library(DVD material/DVD/DVD.h material/DVD/DVD.cpp)
+add_library(DoubleSideDVD material/DoubleSideDVD/DoubleSideDVD.h material/DoubleSideDVD/DoubleSideDVD.cpp)
+add_library(Bluray material/Bluray/Bluray.h material/Bluray/Bluray.cpp material/VHS/VHS.cpp material/VHS/VHS.h)
+add_library(BoxSet material/BoxSet/BoxSet.h material/BoxSet/BoxSet.cpp)
+add_library(VHS material/VHS/VHS.h material/VHS/VHS.cpp)
 add_library(People people/Crew.cpp people/Crew.h)
 add_library(Command command/CommandHandler.h command/CommandHandler.cpp)
 
