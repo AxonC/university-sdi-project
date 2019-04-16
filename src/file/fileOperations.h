@@ -20,7 +20,7 @@ namespace TrekStar
 
         MaterialVector createMaterials(const json &);
 
-        ProjectVector importProjects(std::vector<std::string>);
+        ProjectVector importProjects(const std::string &);
     }
 }
 

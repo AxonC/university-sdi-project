@@ -90,7 +90,7 @@ namespace TrekStar
             @param string containing the file path of the JSON file.
             @return a vector of projects obtained from the JSON file.
         */
-        ProjectVector importProjects(std::string filePath)
+        ProjectVector importProjects(const std::string & filePath)
         {
             TrekStar::Project::Project currentProject;
             std::shared_ptr<Material::Material> currentMaterial;

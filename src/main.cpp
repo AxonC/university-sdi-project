@@ -1,5 +1,5 @@
 #include "command/CommandHandler.h"
-#include "file/fileOperations.cpp"
+#include "file/fileOperations.h"
 #include "information/listInformation.h"
 #include "information/addInformation.h"
 #include "information/saveInformation.h"

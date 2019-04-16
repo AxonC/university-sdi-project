@@ -1,6 +1,8 @@
 #ifndef SDI_PROJECT_LISTINFORMATION_H
 #define SDI_PROJECT_LISTINFORMATION_H
 
+#include <iostream>
+
 #include "../material/DVD.h"
 #include "../project/Project.h"
 #include "../material/BoxSet.h"
