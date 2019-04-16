@@ -4,6 +4,7 @@
 
 #include "listInformation.h"
 #include "../project/ProjectController.h"
+#include "../material/VHS/VHSController.h"
 
 using TrekStar::Project::Project;
 using TrekStar::Project::ProjectController;

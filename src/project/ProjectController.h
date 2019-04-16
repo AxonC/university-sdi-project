@@ -16,6 +16,7 @@ namespace TrekStar
         {
         private:
             Project model;
+
         public:
             ProjectController() = default;
             ~ProjectController() = default;
