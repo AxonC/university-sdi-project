@@ -4,7 +4,11 @@
       "title": "Deadpool",
       "summary": "A super hero does stuff",
       "released": true,
-      "playingInTheatres": false
+      "playingInTheatres": false,
+      "keywords": [
+        "Action",
+        "Superhero"
+      ]
     },
     "materials": [
       {

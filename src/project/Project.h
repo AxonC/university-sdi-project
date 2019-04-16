@@ -24,6 +24,7 @@ namespace TrekStar
             std::string summary;
             bool released;
             bool playingInTheatres;
+            std::vector<std::string> keywords;
             std::vector<std::shared_ptr<Crew>> crew;
         };
 
@@ -36,16 +37,15 @@ namespace TrekStar
             std::string title;
             std::string summary;
             std::vector<std::shared_ptr<Material::Material>> materials;
-            std::vector<std::shared_ptr<People::Crew>> crew;
             bool released = false;
             bool playingInTheatres = false;
+            std::vector<std::string> keywords;
+            std::vector<std::shared_ptr<People::Crew>> crew;
             bool CanAddMaterial() const;
 
         public:
             Project() = default;
-            Project(std::string title, std::string summary, bool released, bool playingInTheatres);
-            Project(const std::string & title, const std::string & summary, bool released = false);
-            explicit Project(std::string & title);
+            Project(const std::string & title, const std::string & summary, bool released, bool playingInTheatres, const std::vector<std::string> & keywords);
             explicit Project(const SerialisedProject & project);
             ~Project();
 
@@ -55,7 +55,6 @@ namespace TrekStar
             bool GetReleased() const;
             bool GetPlayingInTheatres() const;
             std::pair<std::string, std::string> GetTitleSummary() const;
-
 
             void AddMaterials(const std::vector<std::shared_ptr<Material::Material>> & materials);
             bool AddMaterials(const std::shared_ptr<Material::Material> & material);

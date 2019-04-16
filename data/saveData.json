@@ -8,6 +8,10 @@
             }
         ],
         "details": {
+            "keywords": [
+                "Action",
+                "Superhero"
+            ],
             "playingInTheatres": false,
             "released": true,
             "summary": "A super hero does stuff",

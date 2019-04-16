@@ -1,31 +1,16 @@
-#include <iostream>
-#include <algorithm>
-#include <sstream>     // for std::stringstream
-
 #include "Project.h"
 
 namespace TrekStar
 {
     namespace Project
     {
-        Project::Project(std::string title, std::string summary, bool released, bool playingInTheatres)
+        Project::Project(const std::string & title, const std::string & summary, bool released, bool playingInTheatres, const std::vector<std::string> & keywords)
         {
             this->title = title;
             this->summary = summary;
             this->released = released;
             this->playingInTheatres = playingInTheatres;
-        }
-
-        Project::Project(const std::string & name, const std::string & summary, bool released)
-        {
-            this->title = name;
-            this->summary = summary;
-            this->released = released;
-        }
-
-        Project::Project(std::string & title)
-        {
-            this->title = title;
+            this->keywords = keywords;
         }
 
         Project::Project(const SerialisedProject & project)
@@ -34,6 +19,7 @@ namespace TrekStar
             this->summary = project.summary;
             this->released = project.released;
             this->playingInTheatres = project.playingInTheatres;
+            this->keywords = project.keywords;
         }
 
         Project::~Project() = default;
@@ -147,7 +133,8 @@ namespace TrekStar
                     this->title,
                     this->summary,
                     this->released,
-                    this->playingInTheatres
+                    this->playingInTheatres,
+                    this->keywords
                 };
         }
 
@@ -163,17 +150,18 @@ namespace TrekStar
                     {"title", project.title},
                     {"summary", project.summary},
                     {"released", project.released},
-                    {"playingInTheatres", project.playingInTheatres}
+                    {"playingInTheatres", project.playingInTheatres},
+                    {"keywords", project.keywords}
                 };
         }
 
         void from_json(const json & json, SerialisedProject & project)
         {
-            std::string title = json.at("title");
             json.at("title").get_to(project.title);
             json.at("summary").get_to(project.summary);
             json.at("released").get_to(project.released);
             json.at("playingInTheatres").get_to(project.playingInTheatres);
+            json.at("keywords").get_to(project.keywords);
         }
     }
 }
