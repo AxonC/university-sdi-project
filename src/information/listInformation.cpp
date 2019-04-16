@@ -3,8 +3,10 @@
 #include <iostream>
 
 #include "listInformation.h"
+#include "../project/ProjectController.h"
 
 using TrekStar::Project::Project;
+using TrekStar::Project::ProjectController;
 using TrekStar::Material::Material;
 
 namespace TrekStar
@@ -26,10 +28,12 @@ namespace TrekStar
                 std::cout << "Project " << projectNum << std::endl;
                 std::cout << std::string(80, '-') << std::endl;
 
-                std::cout << "Title               : " << project.GetTitle() << std::endl;
-                std::cout << "Summary             : " << project.GetSummary() << std::endl;
-                std::cout << "Released            : " << project.GetReleased() << std::endl;
-                std::cout << "Playing in theatres : " << project.GetPlayingInTheatres() << std::endl;
+                Project::ProjectView currentProject = ProjectController::Show(project);
+
+                std::cout << "Title               : " << currentProject.data.title << std::endl;
+                std::cout << "Summary             : " << currentProject.data.summary << std::endl;
+                std::cout << "Released            : " << currentProject.data.released << std::endl;
+                std::cout << "Playing in theatres : " << currentProject.data.playingInTheatres << std::endl;
             }
         }
 

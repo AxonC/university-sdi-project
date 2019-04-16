@@ -17,6 +17,8 @@ add_library(VHS material/VHS.h material/VHS.cpp)
 add_library(People people/Crew.cpp people/Crew.h)
 add_library(Command command/CommandHandler.h command/CommandHandler.cpp)
 
+add_library(Model Model.h Model.cpp)
+
 # functions
 add_library(File file/fileOperations.h file/fileOperations.cpp)
 add_library(Information information/listInformation.h information/addInformation.h information/saveInformation.h information/listInformation.cpp information/addInformation.cpp information/saveInformation.cpp)
@@ -30,5 +32,5 @@ set_target_properties(Structures PROPERTIES LINKER_LANGUAGE CXX)
 set_target_properties(nlohmann_json PROPERTIES LINKER_LANGUAGE CXX)
 
 add_executable(trekstar main.cpp)
-target_link_libraries(trekstar Project People Command Material MaterialFactory DVDSide DVD DoubleSideDVD Bluray BoxSet File Information Structures nlohmann_json)
+target_link_libraries(trekstar Project People Command Material MaterialFactory DVDSide DVD DoubleSideDVD Bluray BoxSet File Information Model Structures nlohmann_json)
 target_include_directories(trekstar PUBLIC Structures)

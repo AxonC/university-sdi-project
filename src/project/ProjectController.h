@@ -7,14 +7,20 @@ namespace TrekStar
 {
     namespace Project
     {
+        struct ProjectView
+        {
+            SerialisedProject data;
+        };
+
         class ProjectController
         {
+        private:
+            Project model;
         public:
             ProjectController() = default;
             ~ProjectController() = default;
 
-            Project FindOrFail(unsigned int id);
-            void Persist(const Project &);
+            static ProjectView Show(const Project & project);
         };
     }
 }
