@@ -11,7 +11,7 @@ add_library(MaterialFactory material/MaterialFactory.h material/MaterialFactory.
 add_library(DVDSide material/DVDSide.h material/DVDSide.cpp)
 add_library(DVD material/DVD.h material/DVD.cpp)
 add_library(DoubleSideDVD material/DoubleSideDVD.h material/DoubleSideDVD.cpp)
-add_library(Bluray material/Bluray.h material/BoxSet.cpp)
+add_library(Bluray material/Bluray.h material/Bluray.cpp)
 add_library(BoxSet material/BoxSet.h material/BoxSet.cpp)
 add_library(People people/Crew.cpp people/Crew.h)
 add_library(Command command/CommandHandler.h command/CommandHandler.cpp)

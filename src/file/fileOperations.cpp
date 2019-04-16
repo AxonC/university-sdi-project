@@ -1,7 +1,4 @@
-#include <iostream>
-
 #include "fileOperations.h"
-#include "boost/filesystem.hpp"
 #include "../material/BoxSet.h"
 #include "../lib/json.hpp"
 

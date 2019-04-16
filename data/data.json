@@ -34,10 +34,32 @@
                 "content": "big movie",
                 "format": "dvd",
                 "frameAspect": "16:9",
-                "id": 0,
+                "id": 1,
                 "language": "ENG",
                 "retailPrice": 9.99,
                 "runTime": 120,
+                "subtitles": "ENG"
+            },
+            {
+                "additionalLanguageTracks": [
+                    "FRA",
+                    "GER"
+                ],
+                "additionalSubtitleTracks": [
+                    "FRA",
+                    "GER"
+                ],
+                "audioFormat": "Dolby",
+                "bonusFeatures": [
+                    "Director's Comments"
+                ],
+                "content": "big big movie",
+                "format": "bluray",
+                "frameAspect": "16:9",
+                "id": 2,
+                "language": "ENG",
+                "retailPrice": 13.99,
+                "runTime": 655,
                 "subtitles": "ENG"
             },
             {
