@@ -6,7 +6,13 @@ include_directories( ${MY_SOURCE_DIR}/project ${MY_SOURCE_DIR}/material ${MY_SOU
 
 # classes
 add_library(Project project/Project.cpp project/Project.h project/ProjectController.cpp project/ProjectController.h)
-add_library(Material material/Material.h material/Material.cpp material/DVDSide.h material/DVDSide.cpp material/DVD.h material/DVD.cpp material/MaterialFactory.h material/MaterialFactory.cpp material/BoxSet.h material/BoxSet.cpp material/DoubleSideDVD.cpp material/DoubleSideDVD.h)
+add_library(Material material/Material.h material/Material.cpp)
+add_library(MaterialFactory material/MaterialFactory.h material/MaterialFactory.cpp)
+add_library(DVDSide material/DVDSide.h material/DVDSide.cpp)
+add_library(DVD material/DVD.h material/DVD.cpp)
+add_library(DoubleSideDVD material/DoubleSideDVD.h material/DoubleSideDVD.cpp)
+add_library(Bluray material/Bluray.h material/BoxSet.cpp)
+add_library(BoxSet material/BoxSet.h material/BoxSet.cpp)
 add_library(People people/Crew.cpp people/Crew.h)
 add_library(Command command/CommandHandler.h command/CommandHandler.cpp)
 
@@ -23,5 +29,5 @@ set_target_properties(Structures PROPERTIES LINKER_LANGUAGE CXX)
 set_target_properties(nlohmann_json PROPERTIES LINKER_LANGUAGE CXX)
 
 add_executable(trekstar main.cpp)
-target_link_libraries(trekstar Project People Command Material File Information Structures nlohmann_json)
+target_link_libraries(trekstar Project People Command Material MaterialFactory DVDSide DVD DoubleSideDVD Bluray BoxSet File Information Structures nlohmann_json)
 target_include_directories(trekstar PUBLIC Structures)
