@@ -1,9 +1,10 @@
+#include "MaterialFactory.h"
+
 #include "DVD.h"
+#include "DoubleSideDVD.h"
 #include "BoxSet.h"
 #include "Bluray.h"
-
-#include "MaterialFactory.h"
-#include "DoubleSideDVD.h"
+#include "VHS.h"
 
 namespace TrekStar
 {
@@ -23,9 +24,13 @@ namespace TrekStar
             {
                 return std::make_shared<BoxSet>();
             }
-            else if ( materialType == "bluray")
+            else if ( materialType == "bluray" )
             {
                 return std::make_shared<Bluray>();
+            }
+            else if ( materialType == "vhs" )
+            {
+                return std::make_shared<VHS>();
             }
             else
             {

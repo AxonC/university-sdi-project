@@ -63,6 +63,18 @@
                 "subtitles": "ENG"
             },
             {
+                "audioFormat": "Dolby",
+                "content": "small movie 1",
+                "format": "vhs",
+                "frameAspect": "16:9",
+                "id": 3,
+                "language": "ENG",
+                "retailPrice": 1.99,
+                "runTime": 25,
+                "subtitles": "ENG",
+                "audioTrack": "track 1"
+            },
+            {
                 "dvds": [
                     {
                         "additionalLanguageTracks": [
