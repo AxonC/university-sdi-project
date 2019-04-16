@@ -1,11 +1,8 @@
 #ifndef TREKSTAR_FILEOPERATIONS_H
 #define TREKSTAR_FILEOPERATIONS_H
 
-#include <iostream>
 #include <fstream>
 #include <vector>
-#include <dirent.h>
-#include <sys/types.h>
 
 #include "../project/Project.h"
 #include "../material/Material.h"

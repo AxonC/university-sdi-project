@@ -1,7 +1,5 @@
 #include "CommandHandler.h"
 
-#include <iostream>
-
 namespace TrekStar
 {
     namespace Command

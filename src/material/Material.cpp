@@ -1,7 +1,3 @@
-//
-// Created by Matt Robinson on 2019-03-04.
-//
-
 #include "Material.h"
 #include <vector>
 

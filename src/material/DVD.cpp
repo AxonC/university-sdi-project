@@ -1,5 +1,4 @@
 #include "DVD.h"
-#include <iostream>
 
 namespace TrekStar
 {
