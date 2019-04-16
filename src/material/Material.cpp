@@ -70,6 +70,7 @@ namespace TrekStar
         {
             SerialisedMaterial serialisedMaterial =
                 {
+                    this->id,
                     this->format,
                     this->audioFormat,
                     this->runTime,
@@ -96,6 +97,7 @@ namespace TrekStar
         {
             j =
                 {
+                    {"id", material.id},
                     {"format", material.format},
                     {"audioFormat", material.audioFormat},
                     {"runTime", material.runTime},
@@ -108,6 +110,7 @@ namespace TrekStar
 
         void from_json(const json & json, SerialisedMaterial & material)
         {
+            json.at("id").get_to(material.id);
             json.at("format").get_to(material.format);
             json.at("audioFormat").get_to(material.audioFormat);
             json.at("runTime").get_to(material.runTime);

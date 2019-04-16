@@ -14,6 +14,7 @@ namespace TrekStar
     {
         struct SerialisedMaterial
         {
+            unsigned int id;
             std::string format;
             std::string audioFormat;
             int runTime;

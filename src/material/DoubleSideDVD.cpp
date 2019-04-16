@@ -86,6 +86,7 @@ namespace TrekStar
 
         void to_json(json & j, const SerialisedDoubleSideDVD & serialisedDoubleSideDVD)
         {
+            j["id"] = serialisedDoubleSideDVD.material.id;
             j["format"] = serialisedDoubleSideDVD.material.format;
             j["audioFormat"] = serialisedDoubleSideDVD.material.audioFormat;
             j["runTime"] = serialisedDoubleSideDVD.material.runTime;

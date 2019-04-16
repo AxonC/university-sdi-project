@@ -86,6 +86,7 @@ namespace TrekStar
 
         void to_json(json & j, const SerialisedBoxSet & serialisedBoxSet)
         {
+            j["id"] = serialisedBoxSet.material.id;
             j["format"] = serialisedBoxSet.material.format;
             j["language"] = serialisedBoxSet.material.language;
             j["retailPrice"] = serialisedBoxSet.material.retailPrice;
@@ -111,21 +112,22 @@ namespace TrekStar
                     {
                         json dvdSide;
 
-                        dvdSide["content"].push_back(side.GetContent());
-                        dvdSide["additionalLanguageTracks"].push_back(side.GetAdditionalLanguageTracks());
-                        dvdSide["additionalSubtitleTracks"].push_back(side.GetAdditionalSubtitleTracks());
-                        dvdSide["bonusFeatures"].push_back(side.GetBonusFeatures());
+                        dvdSide["content"] = side.GetContent();
+                        dvdSide["additionalLanguageTracks"] = side.GetAdditionalLanguageTracks();
+                        dvdSide["additionalSubtitleTracks"] = side.GetAdditionalSubtitleTracks();
+                        dvdSide["bonusFeatures"] = side.GetBonusFeatures();
 
                         dvdSides.push_back(dvdSide);
                     }
 
                     dvdJSON["sides"] = dvdSides;
                 }
-                else if ( auto castedDVD = std::dynamic_pointer_cast<TrekStar::Material::DoubleSideDVD>(dvd) )
+                else if ( auto castedDVD = std::dynamic_pointer_cast<TrekStar::Material::DVD>(dvd) )
                 {
-                    dvdJSON["additionalLanguageTracks"].push_back(castedDVD->GetAdditionalLanguageTracks());
-                    dvdJSON["additionalSubtitleTracks"].push_back(castedDVD->GetAdditionalSubtitleTracks());
-                    dvdJSON["bonusFeatures"].push_back(castedDVD->GetBonusFeatures());
+                    dvdJSON["content"] = castedDVD->GetSide().GetContent();
+                    dvdJSON["additionalLanguageTracks"] = castedDVD->GetAdditionalLanguageTracks();
+                    dvdJSON["additionalSubtitleTracks"] = castedDVD->GetAdditionalSubtitleTracks();
+                    dvdJSON["bonusFeatures"] = castedDVD->GetBonusFeatures();
                 }
                 else
                 {
@@ -135,7 +137,7 @@ namespace TrekStar
                 dvdsJSON.push_back(dvdJSON);
             }
 
-            j["disks"] = dvdsJSON;
+            j["dvds"] = dvdsJSON;
         }
     }
 }

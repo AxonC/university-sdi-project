@@ -47,19 +47,24 @@ namespace TrekStar
             this->sideOne = DVDSide(j.at("content"), additionalLanguageTracks, additionalSubtitleTracks, bonusFeatures);
         }
 
-        std::vector<std::string> DVD :: GetAdditionalLanguageTracks() const
+        std::vector<std::string> DVD::GetAdditionalLanguageTracks() const
         {
             return this->sideOne.GetAdditionalLanguageTracks();
         }
 
-        std::vector<std::string> DVD :: GetAdditionalSubtitleTracks() const
+        std::vector<std::string> DVD::GetAdditionalSubtitleTracks() const
         {
             return this->sideOne.GetAdditionalSubtitleTracks();
         }
 
-        std::vector<std::string> DVD :: GetBonusFeatures() const
+        std::vector<std::string> DVD::GetBonusFeatures() const
         {
             return this->sideOne.GetBonusFeatures();
+        }
+
+        DVDSide DVD::GetSide() const
+        {
+            return this->sideOne;
         }
 
         KeyValueMap DVD::GetPresentableInformation() const
@@ -84,6 +89,7 @@ namespace TrekStar
 
         void to_json(json & j, const SerialisedDVD & dvd)
         {
+            j["id"] = dvd.material.id;
             j["format"] = dvd.material.format;
             j["audioFormat"] = dvd.material.audioFormat;
             j["runTime"] = dvd.material.runTime;

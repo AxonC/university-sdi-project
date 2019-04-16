@@ -38,6 +38,7 @@ namespace TrekStar
             std::vector<std::string> GetAdditionalLanguageTracks() const;
             std::vector<std::string> GetAdditionalSubtitleTracks() const;
             std::vector<std::string> GetBonusFeatures() const;
+            DVDSide GetSide() const;
 
             KeyValueMap GetPresentableInformation() const override;
 

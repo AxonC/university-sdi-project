@@ -6,7 +6,9 @@
 
 int main()
 {
-    std::vector<TrekStar::Project::Project> projects = TrekStar::File::importProjects("../../data/data.json");
+    const std::string FILE_PATH = "../../data/data.json";
+
+    std::vector<TrekStar::Project::Project> projects = TrekStar::File::importProjects(FILE_PATH);
 
     std::cout << "Welcome to TrekStar Management System | Console" << std::endl;
     std::cout << std::endl;
@@ -65,7 +67,7 @@ int main()
             }
             else if ( tokenisedCommand.first == "save" )
             {
-                TrekStar::Information::save(projects, "../../data/saveData.json");
+                TrekStar::Information::save(projects, FILE_PATH);
             }
         }
         else
