@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>main.qml</file>
         <file>debug/moc_backend.cpp</file>
         <file>debug/moc_predefs.h</file>
         <file>debug/qrc_qml.cpp</file>
