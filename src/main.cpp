@@ -10,6 +10,8 @@
 #include <QSettings>
 #include <QQuickStyle>
 #include <QIcon>
+#include <QObject>
+#include <QString>
 
 #include "GUI/backend.h"
 
