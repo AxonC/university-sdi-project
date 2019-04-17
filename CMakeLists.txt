@@ -4,6 +4,6 @@ project(Trekstar)
 set(CMAKE_CXX_STANDARD 11)
 
 add_subdirectory(src)
-add_subdirectory(tests)
+#add_subdirectory(tests)
 
-enable_testing()
+#enable_testing()
