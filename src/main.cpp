@@ -4,7 +4,16 @@
 #include "information/addInformation.h"
 #include "information/saveInformation.h"
 
-int main()
+#include <QGuiApplication>
+#include <QQmlApplicationEngine>
+#include <QQmlContext>
+#include <QSettings>
+#include <QQuickStyle>
+#include <QIcon>
+
+#include "GUI/backend.h"
+
+void runCommandLine()
 {
     const std::string FILE_PATH = "../../data/data.json";
 
@@ -15,14 +24,14 @@ int main()
     std::cout << "Type 'help' to see all available commands" << std::endl;
 
     TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
-        {
-            {"help", "view available commands"},
-            {"lsp",  "list projects"},
-            {"lsm",  "list materials"},
-            {"addp", "add project"},
-            {"save", "save all data to file"},
-            {"q",    "quit project"}
-        }
+            {
+                    {"help", "view available commands"},
+                    {"lsp",  "list projects"},
+                    {"lsm",  "list materials"},
+                    {"addp", "add project"},
+                    {"save", "save all data to file"},
+                    {"q",    "quit project"}
+            }
     );
 
     std::string commandInput;
@@ -75,6 +84,39 @@ int main()
             std::cout << "'" << tokenisedCommand.first << "'" << " is not a valid command. Type 'help' to see all available commands" << std::endl;
         }
     }
+}
 
-    return 0;
+int main(int argc, char *argv[])
+{
+    runCommandLine();
+
+    QGuiApplication::setApplicationName("TrekstarGUI");
+    QGuiApplication::setOrganizationName("NTU");
+    QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+
+    QGuiApplication app(argc, argv);
+
+    QIcon::setThemeName("trekstar");
+
+    qmlRegisterType<BackEnd>("io.qt.examples.backend", 1, 0, "BackEnd");
+
+    QQuickStyle::setStyle("Material");
+
+
+    QSettings settings;
+    QString style = QQuickStyle::name();
+    if (!style.isEmpty())
+        settings.setValue("style", style);
+    else
+        QQuickStyle::setStyle(settings.value("style").toString());
+
+    QQmlApplicationEngine engine;
+    engine.addImportPath("GUI/");
+    //engine.addImportPath("GUI/");
+    engine.rootContext()->setContextProperty("availableStyles", QQuickStyle::availableStyles());
+    engine.load(QUrl("../GUI/main.qml"));
+    if (engine.rootObjects().isEmpty())
+        return -1;
+
+    return app.exec();
 }
