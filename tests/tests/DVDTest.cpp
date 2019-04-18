@@ -6,6 +6,7 @@
 
 using TrekStar::Material::DVD;
 using TrekStar::Material::BoxSet;
+using ::testing::ElementsAre;
 
 namespace TrekStarTest {
     namespace Tests {
@@ -36,12 +37,20 @@ namespace TrekStarTest {
             DVD material;
         };
 
-        TEST_F(DVDTest, CorrectlyImportsFromFile)
+        TEST_F(DVDTest, ImportsDVDSpecificInformationFromFile)
         {
-            ASSERT_EQ("big movie", material.GetSide().GetContent());
-            ASSERT_EQ("DTS", material.GetAudioFormat());
-            ASSERT_EQ("ENG", material.GetLanguage());
-            ASSERT_EQ(120, material.GetRunTime());
+            EXPECT_THAT(material.GetSide().GetAdditionalLanguageTracks(), ElementsAre("FRA", "GER"));
+            EXPECT_THAT(material.GetSide().GetAdditionalSubtitleTracks(), ElementsAre("FRA", "GER"));
+            EXPECT_THAT(material.GetSide().GetBonusFeatures(), ElementsAre("Directors Comments"));
+        }
+
+        TEST_F(DVDTest, CanBeExportedToSerialisedType)
+        {
+            auto serialised = material.ExportToSerialised();
+
+            ASSERT_EQ("big movie", serialised->sideOne.content);
+            ASSERT_EQ("dvd", serialised->material.format);
+            ASSERT_EQ("ENG", serialised->material.language);
         }
     }
 }
