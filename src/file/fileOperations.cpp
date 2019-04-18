@@ -1,6 +1,7 @@
 #include "fileOperations.h"
 #include "../material/BoxSet/BoxSet.h"
 #include "../lib/json.hpp"
+#include <iostream>
 
 using json = nlohmann::json;
 
@@ -97,7 +98,14 @@ namespace TrekStar
             ProjectVector projects;
 
             std::ifstream dataFile(filePath);
-            json jsonStream = json::parse(dataFile);
+			json jsonStream;
+			try {
+				jsonStream = json::parse(dataFile);
+			}
+			catch (json::parse_error &e)
+			{
+				std::cerr << e.what() << std::endl;
+			}
 
             for ( auto &it : jsonStream)
             {
