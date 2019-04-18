@@ -7,7 +7,7 @@
 #include <fstream>
 
 #include "../Model.h"
-#include "../lib/jsonß.hpp"
+#include "../lib/json.hpp"
 #include "../people/Crew.h"
 #include "../material/Material/Material.h"
 
