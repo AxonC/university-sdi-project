@@ -5,7 +5,7 @@
 #include <algorithm>
 
 #include <project/Project.h>
-#include <material/DVD.h>
+#include <material/DVD/DVD.h>
 #include <people/Crew.h>
 
 using TrekStar::People::Crew;
@@ -19,8 +19,8 @@ namespace TrekStarTest {
         {
         public:
             // Default state of a project every time a test is ran.
-            ProjectTest() : project("Project", "A summary of a project"),
-                            releasedProject("Project 2", "A summary of a project")
+            ProjectTest() : project("Project", "A summary of a project", false, true, {"hello", "keyword"}),
+                            releasedProject("Project 2", "A summary of a project", true, false, {"keyword", "keyword 2"})
             {
                 releasedProject.ReleaseProject();
             }
