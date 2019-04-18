@@ -16,7 +16,7 @@ namespace TrekStar
             ConsoleMessageView(Model* &, Controller* &);
             ~ConsoleMessageView() = default;
 
-            virtual void Present() const = 0;
+            virtual void Present() = 0;
 
             void SetModel(Model* &);
             void SetController(Controller* &);

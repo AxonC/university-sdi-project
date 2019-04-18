@@ -15,7 +15,7 @@ namespace TrekStar
         public:
             ProjectListView(Project & model, Controller* controller);
 
-            void Present() const override;
+            void Present() override;
 
             Project* GetModel() override;
         };

@@ -13,9 +13,9 @@ namespace TrekStar
             this->SetController(controller);
         }
 
-        void ProjectListView::Present() const
+        void ProjectListView::Present()
         {
-            std::cout << this->GetModel()->;
+            std::cout << this->GetModel()->GetTitle();
         }
 
         Project* ProjectListView::GetModel() {
