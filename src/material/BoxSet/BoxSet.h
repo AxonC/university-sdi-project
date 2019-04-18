@@ -22,7 +22,7 @@ namespace TrekStar
             std::vector<std::shared_ptr<Material>> dvds;
         };
 
-        class BoxSet: public Material::Material
+        class BoxSet: public Material
         {
         private:
             Stack<std::shared_ptr<Material>> disks;
