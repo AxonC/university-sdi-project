@@ -21,7 +21,7 @@ namespace TrekStar
             void SetModel(Model* &);
             void SetController(Controller* &);
 
-            virtual Model* GetModel();
+            virtual Model* GetModel() = 0;
         protected:
             Model* model;
             Controller* controller;

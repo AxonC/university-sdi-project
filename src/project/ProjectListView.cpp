@@ -18,7 +18,8 @@ namespace TrekStar
             std::cout << this->GetModel()->GetTitle();
         }
 
-        Project* ProjectListView::GetModel() {
+        Project* ProjectListView::GetModel()
+        {
             return dynamic_cast<Project *>(this->model);
         }
     }
