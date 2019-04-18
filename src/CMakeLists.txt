@@ -24,13 +24,11 @@ add_library(File file/fileOperations.h file/fileOperations.cpp)
 add_library(Information information/listInformation.h information/addInformation.h information/saveInformation.h information/listInformation.cpp information/addInformation.cpp information/saveInformation.cpp view/ConsoleMessageView.cpp view/ConsoleMessageView.h)
 
 # data structures
-add_library(Structures SHARED structures/Stack.h)
-add_library(nlohmann_json SHARED lib/json.hpp)
+add_library(Structures INTERFACE)
+target_include_directories(Structures INTERFACE structures/Stack.h)
 
-# required to compile the header only template class
-set_target_properties(Structures PROPERTIES LINKER_LANGUAGE CXX)
-set_target_properties(nlohmann_json PROPERTIES LINKER_LANGUAGE CXX)
+add_library(nlohmann_json INTERFACE)
+target_include_directories(nlohmann_json INTERFACE lib/json.hpp)
 
 add_executable(trekstar main.cpp)
 target_link_libraries(trekstar Project People Command Material MaterialFactory DVDSide DVD DoubleSideDVD Bluray BoxSet File Information Model Structures nlohmann_json)
-target_include_directories(trekstar PUBLIC Structures)
