@@ -5,7 +5,9 @@ namespace TrekStar
 {
     class Model
     {
-
+     public:
+        Model() = default;
+        virtual ~Model() = default;
     };
 }
 

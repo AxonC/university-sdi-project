@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 11)
 include_directories( ${MY_SOURCE_DIR}/project ${MY_SOURCE_DIR}/material ${MY_SOURCE_DIR}/people ${MY_SOURCE_DIR}/structures ${MY_SOURCE_DIR}/file ${MY_SOURCE_DIR}/information )
 
 # classes
-add_library(Project project/Project.cpp project/Project.h project/ProjectController.cpp project/ProjectController.h)
+add_library(Project project/Project.cpp project/Project.h project/ProjectController.cpp project/ProjectController.h project/ProjectListView.cpp project/ProjectListView.h)
 add_library(Material material/Material/Material.h material/Material/Material.cpp)
 add_library(MaterialFactory material/MaterialFactory/MaterialFactory.h material/MaterialFactory/MaterialFactory.cpp)
 add_library(DVDSide material/DVDSide/DVDSide.h material/DVDSide/DVDSide.cpp)

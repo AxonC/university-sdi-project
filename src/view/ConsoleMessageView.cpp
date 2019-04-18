@@ -15,7 +15,7 @@ namespace TrekStar
             this->controller = controller;
         }
 
-        Model* ConsoleMessageView::GetModel() {
+        Model* ConsoleMessageView::GetModel() const {
             return this->model;
         }
     }

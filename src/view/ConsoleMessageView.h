@@ -11,20 +11,20 @@ namespace TrekStar
     {
         class ConsoleMessageView
         {
-            public:
-                ConsoleMessageView() = default;
-                ~ConsoleMessageView() = default;
-                ConsoleMessageView(Model* &, Controller* &);
+        public:
+            ConsoleMessageView() = default;
+            ConsoleMessageView(Model* &, Controller* &);
+            ~ConsoleMessageView() = default;
 
-                virtual void Present() const = 0;
+            virtual void Present() const = 0;
 
-                void SetModel(Model* &);
-                void SetController(Controller* &);
+            void SetModel(Model* &);
+            void SetController(Controller* &);
 
-                Model* GetModel();
-            private:
-                Model* model;
-                Controller* controller;
+            virtual Model* GetModel();
+        protected:
+            Model* model;
+            Controller* controller;
         };
     }
 }
