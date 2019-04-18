@@ -113,10 +113,10 @@ int main(int argc, char *argv[])
         QQuickStyle::setStyle(settings.value("style").toString());
 
     QQmlApplicationEngine engine;
-    engine.addImportPath("GUI/");
+    engine.addImportPath("../../src/GUI/");
     //engine.addImportPath("GUI/");
     engine.rootContext()->setContextProperty("availableStyles", QQuickStyle::availableStyles());
-    engine.load(QUrl("../GUI/main.qml"));
+    engine.load(QUrl("../../src/GUI/main.qml"));
     if (engine.rootObjects().isEmpty())
         return -1;
 
