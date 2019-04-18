@@ -2,6 +2,7 @@
 #define TREKSTAR_PROJECTCONTROLLER_H
 
 #include "Project.h"
+#include "../Controller.h"
 
 namespace TrekStar
 {
@@ -12,7 +13,7 @@ namespace TrekStar
             SerialisedProject data;
         };
 
-        class ProjectController
+        class ProjectController : public Controller
         {
         private:
             Project model;

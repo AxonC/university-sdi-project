@@ -47,6 +47,18 @@ int main()
             }
             else if ( tokenisedCommand.first == "lsp" )
             {
+                // call the list method on the project controller
+                // ProjectController(projects)
+                // ProjectController.List();
+                // ProjectListView -> ConsoleMessageView
+                // ProjectListView cout << view.GetMessage()
+
+                // ProjectController(projects)
+                // ProjectController.Show(id, const Project)
+                // Show { find me the project with the id of 1
+                // return me the project view, injecting in that project
+                // then just returning that view as a string
+
                 TrekStar::Information::listProjects(projects);
             }
             else if ( tokenisedCommand.first == "lsm" )

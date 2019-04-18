@@ -17,11 +17,11 @@ add_library(VHS material/VHS/VHS.h material/VHS/VHS.cpp)
 add_library(People people/Crew.cpp people/Crew.h)
 add_library(Command command/CommandHandler.h command/CommandHandler.cpp)
 
-add_library(Model Model.h Model.cpp)
+add_library(Model Model.h Model.cpp Controller.cpp Controller.h)
 
 # functions
 add_library(File file/fileOperations.h file/fileOperations.cpp)
-add_library(Information information/listInformation.h information/addInformation.h information/saveInformation.h information/listInformation.cpp information/addInformation.cpp information/saveInformation.cpp)
+add_library(Information information/listInformation.h information/addInformation.h information/saveInformation.h information/listInformation.cpp information/addInformation.cpp information/saveInformation.cpp view/ConsoleMessageView.cpp view/ConsoleMessageView.h)
 
 # data structures
 add_library(Structures SHARED structures/Stack.h)
