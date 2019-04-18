@@ -186,12 +186,12 @@ ApplicationWindow {
                 }
             }
 
-//            Image {
-//                id: arrow
-//                source: "../GUI/images/arrow.png"
-//                anchors.left: parent.left
-//                anchors.bottom: parent.bottom
-//            }
+          Image {
+                id: arrow
+                source: "../../src/GUI/images/arrow.png"
+                anchors.left: parent.left
+                anchors.bottom: parent.bottom
+            }
         }
     }
 
