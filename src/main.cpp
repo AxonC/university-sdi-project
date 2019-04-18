@@ -4,18 +4,7 @@
 #include "information/addInformation.h"
 #include "information/saveInformation.h"
 
-#include <QGuiApplication>
-#include <QQmlApplicationEngine>
-#include <QQmlContext>
-#include <QSettings>
-#include <QQuickStyle>
-#include <QIcon>
-#include <QObject>
-#include <QString>
-
-#include "GUI/backend.h"
-
-void runCommandLine()
+int main()
 {
     const std::string FILE_PATH = "../../data/data.json";
 
@@ -86,39 +75,6 @@ void runCommandLine()
             std::cout << "'" << tokenisedCommand.first << "'" << " is not a valid command. Type 'help' to see all available commands" << std::endl;
         }
     }
-}
 
-int main(int argc, char *argv[])
-{
-    runCommandLine();
-
-    QGuiApplication::setApplicationName("TrekstarGUI");
-    QGuiApplication::setOrganizationName("NTU");
-    QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-
-    QGuiApplication app(argc, argv);
-
-    QIcon::setThemeName("trekstar");
-
-    qmlRegisterType<BackEnd>("io.qt.examples.backend", 1, 0, "BackEnd");
-
-    QQuickStyle::setStyle("Material");
-
-
-    QSettings settings;
-    QString style = QQuickStyle::name();
-    if (!style.isEmpty())
-        settings.setValue("style", style);
-    else
-        QQuickStyle::setStyle(settings.value("style").toString());
-
-    QQmlApplicationEngine engine;
-    engine.addImportPath("../../src/GUI/");
-    //engine.addImportPath("GUI/");
-    engine.rootContext()->setContextProperty("availableStyles", QQuickStyle::availableStyles());
-    engine.load(QUrl("../../src/GUI/main.qml"));
-    if (engine.rootObjects().isEmpty())
-        return -1;
-
-    return app.exec();
+    return 0;
 }
