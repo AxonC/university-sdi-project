@@ -6,9 +6,10 @@
 #include <vector>
 #include <fstream>
 
-#include "../material/Material/Material.h"
+#include "../Model.h"
+#include "../lib/jsonß.hpp"
 #include "../people/Crew.h"
-#include "../lib/json.hpp"
+#include "../material/Material/Material.h"
 
 using json = nlohmann::json;
 using TrekStar::People::Crew;
@@ -31,7 +32,7 @@ namespace TrekStar
         /**
          *  Trekstar Film Project Class
          */
-        class Project
+        class Project: public Model
         {
         private:
             std::string title;
