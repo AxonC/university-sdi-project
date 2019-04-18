@@ -52,8 +52,8 @@ add_library(File file/fileOperations.h file/fileOperations.cpp)
 add_library(Information information/listInformation.h information/addInformation.h information/saveInformation.h information/listInformation.cpp information/addInformation.cpp information/saveInformation.cpp)
 
 # data structures
-add_library(Structures SHARED structures/Stack.h)
-add_library(nlohmann_json SHARED lib/json.hpp)
+add_library(Structures structures/Stack.h)
+add_library(nlohmann_json lib/json.hpp)
 
 # required to compile the header only template class
 set_target_properties(Structures PROPERTIES LINKER_LANGUAGE CXX)
