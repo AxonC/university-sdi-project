@@ -4,10 +4,12 @@
 
 #include "listInformation.h"
 #include "../project/ProjectController.h"
+#include "../project/ProjectListView.h"
 #include "../material/VHS/VHSController.h"
 
 using TrekStar::Project::Project;
 using TrekStar::Project::ProjectController;
+using TrekStar::Project::ProjectListView;
 using TrekStar::Material::Material;
 
 namespace TrekStar
@@ -21,16 +23,25 @@ namespace TrekStar
         */
         void listProjects(std::vector<TrekStar::Project::Project> projects)
         {
-            int projectNum = 1;
-
-            for ( const auto &project: projects )
+            for ( auto &project: projects )
             {
-                std::cout << std::string(80, '-') << std::endl;
-                std::cout << "Project " << projectNum << std::endl;
-                std::cout << std::string(80, '-') << std::endl;
+                // call the list method on the project controller
+                // ProjectController(projects)
+                // ProjectController.List();
+                // ProjectListView -> ConsoleMessageView
+                // ProjectListView cout << view.GetMessage()
+
+                // ProjectController(projects)
+                // ProjectController.Show(id, const Project)
+                // Show { find me the project with the id of 1
+                // return me the project view, injecting in that project
+                // then just returning that view as a string
+
+                //ProjectListView currentProject = ProjectListView(project, ProjectController());
 
                 Project::ProjectView currentProject = ProjectController::Show(project);
 
+                std::cout << "ID                  : " << currentProject.data.id << std::endl;
                 std::cout << "Title               : " << currentProject.data.title << std::endl;
                 std::cout << "Summary             : " << currentProject.data.summary << std::endl;
                 std::cout << "Released            : " << currentProject.data.released << std::endl;

@@ -15,6 +15,7 @@ namespace TrekStar
 
         Project::Project(const SerialisedProject & project)
         {
+            this->id = project.id;
             this->title = project.title;
             this->summary = project.summary;
             this->released = project.released;
@@ -23,6 +24,11 @@ namespace TrekStar
         }
 
         Project::~Project() = default;
+
+        unsigned int Project::GetId() const
+        {
+            return this->id;
+        }
 
         std::string Project::GetTitle() const
         {
@@ -130,6 +136,7 @@ namespace TrekStar
         {
             return SerialisedProject
                 {
+                    this->id,
                     this->title,
                     this->summary,
                     this->released,
@@ -147,6 +154,7 @@ namespace TrekStar
         {
             j = json
                 {
+                    {"id", project.id},
                     {"title", project.title},
                     {"summary", project.summary},
                     {"released", project.released},
@@ -157,6 +165,7 @@ namespace TrekStar
 
         void from_json(const json & json, SerialisedProject & project)
         {
+            json.at("id").get_to(project.id);
             json.at("title").get_to(project.title);
             json.at("summary").get_to(project.summary);
             json.at("released").get_to(project.released);

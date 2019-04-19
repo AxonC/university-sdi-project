@@ -21,6 +21,7 @@ namespace TrekStar
     {
         struct SerialisedProject
         {
+            unsigned int id;
             std::string title;
             std::string summary;
             bool released;
@@ -35,6 +36,7 @@ namespace TrekStar
         class Project: public Model
         {
         private:
+            unsigned int id;
             std::string title;
             std::string summary;
             std::vector<std::shared_ptr<Material::Material>> materials;
@@ -50,6 +52,7 @@ namespace TrekStar
             explicit Project(const SerialisedProject & project);
             ~Project();
 
+            unsigned int GetId() const;
             std::string GetTitle() const;
             std::string GetSummary() const;
             std::vector<std::shared_ptr<Material::Material>> GetMaterials() const;
