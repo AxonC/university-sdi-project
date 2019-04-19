@@ -1,12 +1,26 @@
-//
-// Created by Matt Robinson on 2019-04-19.
-//
-
 #ifndef TREKSTAR_MATERIALVIEW_H
 #define TREKSTAR_MATERIALVIEW_H
 
-class MaterialView {
+#include "../ConsoleMessageView.h"
+#include "../../model/material/Material.h"
 
-};
+using TrekStar::View::ConsoleMessageView;
+
+namespace TrekStar
+{
+    namespace Material
+    {
+        class MaterialView : public ConsoleMessageView
+        {
+        public:
+            MaterialView() = default;
+            MaterialView(Material & model);
+
+            void Present() override;
+
+            Material* GetModel() override;
+        };
+    }
+}
 
 #endif //TREKSTAR_MATERIALVIEW_H

@@ -5,27 +5,35 @@
 #ifndef SDI_PROJECT_VHSCONTROLLER_H
 #define SDI_PROJECT_VHSCONTROLLER_H
 
-#include "../../model/material/VHS.h"
+#include <memory>
+
+#include "../../model/material/Material.h"
+#include "../../view/material/MaterialView.h"
 
 namespace TrekStar
 {
     namespace Material
     {
-        struct VHSView
-        {
-            SerialisedVHS data;
-        };
+//        struct MaterialView
+//        {
+//            SerialisedMaterial data;
+//        };
 
-        class VHSController
+        class MaterialController
         {
         private:
-            VHS model;
+            std::shared_ptr<Material> model;
+            MaterialView view;
 
         public:
-            VHSController() = default;
-            ~VHSController() = default;
+            MaterialController() = default;
+            MaterialController(const std::shared_ptr<Material> & model, const MaterialView & view);
+            ~MaterialController() = default;
 
-            static VHSView Show(const VHS & vhs);
+            void SetModel(const std::shared_ptr<Material> & model);
+            void SetView(const MaterialView & view);
+
+            void ShowAll();
         };
     }
 }

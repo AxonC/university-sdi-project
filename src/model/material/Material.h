@@ -2,6 +2,7 @@
 #define TREKSTAR_MATERIAL_H
 
 #include <string>
+#include "../../Model.h"
 #include "../../lib/json.hpp"
 
 using json = nlohmann::json;
@@ -27,7 +28,7 @@ namespace TrekStar
         /**
          *  Trekstar Material Class
          */
-        class Material
+        class Material : public Model
         {
         protected:
             unsigned int id;

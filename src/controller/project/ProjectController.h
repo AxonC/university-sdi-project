@@ -9,11 +9,6 @@ namespace TrekStar
 {
     namespace Project
     {
-//        struct ProjectView
-//        {
-//            SerialisedProject data;
-//        };
-
         class ProjectController : public Controller
         {
         private:

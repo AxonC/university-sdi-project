@@ -3,14 +3,17 @@
 #include <iostream>
 
 #include "listInformation.h"
-#include "../controller/project/ProjectController.h"
 #include "../view/project/ProjectView.h"
-#include "../controller/material/VHSController.h"
+#include "../controller/project/ProjectController.h"
+#include "../view/material/MaterialView.h"
+#include "../controller/material/MaterialController.h"
 
 using TrekStar::Project::Project;
 using TrekStar::Project::ProjectController;
 using TrekStar::Project::ProjectView;
 using TrekStar::Material::Material;
+using TrekStar::Material::MaterialController;
+using TrekStar::Material::MaterialView;
 
 namespace TrekStar
 {
@@ -55,33 +58,39 @@ namespace TrekStar
         {
             std::vector<std::shared_ptr<TrekStar::Material::Material>> materials = projects[projectNum - 1].GetMaterials();
 
-            for ( const auto &material: materials )
+            for ( const auto & material: materials )
             {
-                std::cout << std::string(80, '-') << std::endl;
-                std::cout << "Material " << material->GetId() << " for Project " << projectNum << std::endl;
-                std::cout << std::string(80, '-') << std::endl;
+                MaterialView view = MaterialView(*material);
+                MaterialController controller(material, view);
 
-                std::map<std::string, std::string> materialData = material->GetPresentableInformation();
+                controller.ShowAll();
 
-                std::cout << "Title : " << projects.at(projectNum - 1).GetTitle() << std::endl;
 
-                for ( const auto & m : materialData )
-                {
-                    std::cout << m.first << " : " << m.second << std::endl;
-                }
-
-                if ( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::BoxSet>(material) )
-                {
-                    std::vector<std::map<std::string, std::string>> diskData = materialType->GetPresentableDiskInformation();
-
-                    for ( const auto & d: diskData )
-                    {
-                        for ( const auto & m: d )
-                        {
-                            std::cout << m.first << " : " << m.second << std::endl;
-                        }
-                    }
-                }
+//                std::cout << std::string(80, '-') << std::endl;
+//                std::cout << "Material " << material->GetId() << " for Project " << projectNum << std::endl;
+//                std::cout << std::string(80, '-') << std::endl;
+//
+//                std::map<std::string, std::string> materialData = material->GetPresentableInformation();
+//
+//                std::cout << "Title : " << projects.at(projectNum - 1).GetTitle() << std::endl;
+//
+//                for ( const auto & m : materialData )
+//                {
+//                    std::cout << m.first << " : " << m.second << std::endl;
+//                }
+//
+//                if ( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::BoxSet>(material) )
+//                {
+//                    std::vector<std::map<std::string, std::string>> diskData = materialType->GetPresentableDiskInformation();
+//
+//                    for ( const auto & d: diskData )
+//                    {
+//                        for ( const auto & m: d )
+//                        {
+//                            std::cout << m.first << " : " << m.second << std::endl;
+//                        }
+//                    }
+//                }
             }
         }
     }
