@@ -15,18 +15,18 @@ add_library(MaterialFactory_Model model/material/MaterialFactory.h model/materia
 add_library(VHS_Model model/material/VHS.h model/material/VHS.cpp)
 add_library(Crew_Model model/people/Crew.h model/people/Crew.cpp)
 add_library(Project_Model model/project/Project.h model/project/Project.cpp)
-#link_libraries(Models Bluray_Model BoxSet_Model DoubleSideDVD_Model DVD_Model DVDSide_Model Material_Model MaterialFactor_Model VHS_Model Crew_Model Project_Model)
+target_link_libraries(Bluray_Model BoxSet_Model DoubleSideDVD_Model DVD_Model DVDSide_Model Material_Model MaterialFactory_Model VHS_Model Crew_Model Project_Model)
 
 # views
 add_library(ConsoleMessage_View view/ConsoleMessageView.h view/ConsoleMessageView.cpp)
 add_library(Project_View view/ProjectView.h view/ProjectView.cpp)
-#link_libraries(Views ConsoleMessage_View Project_View)
+target_link_libraries(ConsoleMessage_View Project_View)
 
 # controllers
 add_library(Controller controller/Controller.h controller/Controller.cpp)
 add_library(Project_Controller controller/ProjectController.h controller/ProjectController.cpp)
 add_library(VHS_Controller controller/VHSController.h controller/VHSController.cpp)
-#link_libraries(Controllers Controller Project_Controller VHS_Controller)
+target_link_libraries(Controller Project_Controller VHS_Controller)
 
 # functions
 add_library(File file/fileOperations.h file/fileOperations.cpp)
@@ -41,4 +41,4 @@ add_library(nlohmann_json INTERFACE)
 target_include_directories(nlohmann_json INTERFACE lib/json.hpp)
 
 add_executable(trekstar main.cpp)
-target_link_libraries(trekstar Bluray_Model BoxSet_Model DoubleSideDVD_Model DVD_Model DVDSide_Model Material_Model MaterialFactory_Model VHS_Model Crew_Model Project_Model ConsoleMessage_View Project_View Controller Project_Controller VHS_Controller File Information CommandHandler structures nlohmann_json)
+target_link_libraries(trekstar Bluray_Model ConsoleMessage_View Controller File Information CommandHandler structures nlohmann_json)
