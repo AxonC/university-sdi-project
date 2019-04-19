@@ -1,18 +1,18 @@
 #include <iostream>
 
-#include "ProjectListView.h"
+#include "ProjectView.h"
 
 namespace TrekStar
 {
     namespace Project
     {
-        ProjectListView::ProjectListView(Project & model)
+        ProjectView::ProjectView(Project & model)
         : ConsoleMessageView()
         {
             this->model = &model;
         }
 
-        void ProjectListView::Present()
+        void ProjectView::Present()
         {
             std::cout << std::string(80, '-') << std::endl;
             std::cout << "Project " << this->GetModel()->GetId() << std::endl;
@@ -23,7 +23,7 @@ namespace TrekStar
             std::cout << "Playing in theatres : " << this->GetModel()->GetPlayingInTheatres() << std::endl;
         }
 
-        Project* ProjectListView::GetModel()
+        Project* ProjectView::GetModel()
         {
             return dynamic_cast<Project *>(this->model);
         }

@@ -55,8 +55,8 @@ int main()
                 // call the list method on the project controller
                 // ProjectController(projects)
                 // ProjectController.List();
-                // ProjectListView -> ConsoleMessageView
-                // ProjectListView cout << view.GetMessage()
+                // ProjectView -> ConsoleMessageView
+                // ProjectView cout << view.GetMessage()
 
                 // ProjectController(projects)
                 // ProjectController.Show(id, const Project)

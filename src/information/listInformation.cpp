@@ -4,12 +4,12 @@
 
 #include "listInformation.h"
 #include "../project/ProjectController.h"
-#include "../project/ProjectListView.h"
+#include "../project/ProjectView.h"
 #include "../material/VHS/VHSController.h"
 
 using TrekStar::Project::Project;
 using TrekStar::Project::ProjectController;
-using TrekStar::Project::ProjectListView;
+using TrekStar::Project::ProjectView;
 using TrekStar::Material::Material;
 
 namespace TrekStar
@@ -28,8 +28,8 @@ namespace TrekStar
                 // call the list method on the project controller
                 // ProjectController(projects)
                 // ProjectController.List();
-                // ProjectListView -> ConsoleMessageView
-                // ProjectListView cout << view.GetMessage()
+                // ProjectView -> ConsoleMessageView
+                // ProjectView cout << view.GetMessage()
 
                 // ProjectController(projects)
                 // ProjectController.Show(id, const Project)
@@ -37,8 +37,10 @@ namespace TrekStar
                 // return me the project view, injecting in that project
                 // then just returning that view as a string
 
-                ProjectListView currentProject = ProjectListView(project);
-                currentProject.Present();
+                ProjectView view(project);
+                ProjectController controller(project, view);
+
+                controller.ListProjects();
             }
         }
 

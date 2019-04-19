@@ -10,10 +10,11 @@ namespace TrekStar
 {
     namespace Project
     {
-        class ProjectListView : public ConsoleMessageView
+        class ProjectView : public ConsoleMessageView
         {
         public:
-            ProjectListView(Project & model);
+            ProjectView() = default;
+            ProjectView(Project & model);
 
             void Present() override;
 
