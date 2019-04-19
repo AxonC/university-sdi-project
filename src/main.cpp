@@ -75,7 +75,7 @@ int main()
         }
         else
         {
-            std::cout << "'" << tokenisedCommand.first << "'" << " is not a valid command. Type 'help' to see all available commands" << std::endl;
+            std::cout << "'" << tokenisedCommand.first << "'" << " is not a valid command. Type 'help' to see all available commands." << std::endl;
         }
     }
 

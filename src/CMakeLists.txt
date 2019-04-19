@@ -31,7 +31,7 @@ target_link_libraries(Controller Project_Controller Material_Controller)
 
 # functions
 add_library(File file/fileOperations.h file/fileOperations.cpp)
-add_library(Information information/listInformation.h information/addInformation.h information/saveInformation.h information/listInformation.cpp information/addInformation.cpp information/saveInformation.cpp view/ConsoleMessageView.cpp view/ConsoleMessageView.h)
+add_library(Information information/listInformation.h information/addInformation.h information/saveInformation.h information/listInformation.cpp information/addInformation.cpp information/saveInformation.cpp information/SequentialBrowser.h information/SequentialBrowser.cpp view/ConsoleMessageView.cpp view/ConsoleMessageView.h)
 add_library(CommandHandler command/CommandHandler.h command/CommandHandler.cpp)
 
 # data structures
