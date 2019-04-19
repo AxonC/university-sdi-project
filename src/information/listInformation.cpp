@@ -46,12 +46,56 @@ namespace TrekStar
         {
             std::vector<std::shared_ptr<TrekStar::Material::Material>> materials = projects[projectNum - 1].GetMaterials();
 
-            for ( const auto & material: materials )
-            {
-                MaterialView view = MaterialView(*material);
-                MaterialController controller(material, view);
+            std::string userInput;
+            unsigned int currentMaterial = 0;
+            bool error = false;
 
-                controller.ShowAll();
+            while ( userInput != "b" )
+            {
+                if ( !error )
+                {
+                    const auto material = materials.at(currentMaterial);
+                    MaterialView view = MaterialView(*material);
+                    MaterialController controller(material, view);
+                    controller.ShowAll();
+                }
+
+                std::cout << std::string(80, '-') << std::endl;
+                std::cout << "n - next material, p - previous material, b - go back" << std::endl;
+                std::cout << std::string(80, '-') << std::endl;
+                std::cout << "> ";
+                std::cin >> userInput;
+
+                if ( userInput == "n" )
+                {
+                    if ( currentMaterial + 1 == materials.size() )
+                    {
+                        std::cout << "No more materials to show..." << std::endl;
+                        error = true;
+                    }
+                    else
+                    {
+                        error = false;
+                        currentMaterial++;
+                    }
+                }
+                else if ( userInput == "p" )
+                {
+                    if ( currentMaterial < 1 )
+                    {
+                        std::cout << "No previous materials to show..." << std::endl;
+                        error = true;
+                    }
+                    else
+                    {
+                        error = false;
+                        currentMaterial--;
+                    }
+                }
+                else
+                {
+                    break;
+                }
             }
         }
     }
