@@ -37,15 +37,8 @@ namespace TrekStar
                 // return me the project view, injecting in that project
                 // then just returning that view as a string
 
-                //ProjectListView currentProject = ProjectListView(project, ProjectController());
-
-                Project::ProjectView currentProject = ProjectController::Show(project);
-
-                std::cout << "ID                  : " << currentProject.data.id << std::endl;
-                std::cout << "Title               : " << currentProject.data.title << std::endl;
-                std::cout << "Summary             : " << currentProject.data.summary << std::endl;
-                std::cout << "Released            : " << currentProject.data.released << std::endl;
-                std::cout << "Playing in theatres : " << currentProject.data.playingInTheatres << std::endl;
+                ProjectListView currentProject = ProjectListView(project);
+                currentProject.Present();
             }
         }
 

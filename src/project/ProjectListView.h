@@ -13,7 +13,7 @@ namespace TrekStar
         class ProjectListView : public ConsoleMessageView
         {
         public:
-            ProjectListView(Project & model, Controller* controller);
+            ProjectListView(Project & model);
 
             void Present() override;
 

@@ -6,11 +6,10 @@ namespace TrekStar
 {
     namespace Project
     {
-        ProjectListView::ProjectListView(Project & model, TrekStar::Controller *controller)
+        ProjectListView::ProjectListView(Project & model)
         : ConsoleMessageView()
         {
             this->model = &model;
-            this->SetController(controller);
         }
 
         void ProjectListView::Present()
