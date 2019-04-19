@@ -28,18 +28,6 @@ namespace TrekStar
         {
             for ( auto &project: projects )
             {
-                // call the list method on the project controller
-                // ProjectController(projects)
-                // ProjectController.List();
-                // ProjectView -> ConsoleMessageView
-                // ProjectView cout << view.GetMessage()
-
-                // ProjectController(projects)
-                // ProjectController.Show(id, const Project)
-                // Show { find me the project with the id of 1
-                // return me the project view, injecting in that project
-                // then just returning that view as a string
-
                 ProjectView view(project);
                 ProjectController controller(project, view);
 
@@ -64,33 +52,6 @@ namespace TrekStar
                 MaterialController controller(material, view);
 
                 controller.ShowAll();
-
-
-//                std::cout << std::string(80, '-') << std::endl;
-//                std::cout << "Material " << material->GetId() << " for Project " << projectNum << std::endl;
-//                std::cout << std::string(80, '-') << std::endl;
-//
-//                std::map<std::string, std::string> materialData = material->GetPresentableInformation();
-//
-//                std::cout << "Title : " << projects.at(projectNum - 1).GetTitle() << std::endl;
-//
-//                for ( const auto & m : materialData )
-//                {
-//                    std::cout << m.first << " : " << m.second << std::endl;
-//                }
-//
-//                if ( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::BoxSet>(material) )
-//                {
-//                    std::vector<std::map<std::string, std::string>> diskData = materialType->GetPresentableDiskInformation();
-//
-//                    for ( const auto & d: diskData )
-//                    {
-//                        for ( const auto & m: d )
-//                        {
-//                            std::cout << m.first << " : " << m.second << std::endl;
-//                        }
-//                    }
-//                }
             }
         }
     }

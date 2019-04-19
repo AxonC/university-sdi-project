@@ -11,8 +11,6 @@ int main()
 	std::cout << "Enter file path to JSON: ";
 	std::cin >> FILE_PATH;
 
-    //const std::string FILE_PATH = "../data/data.json";
-
     std::vector<TrekStar::Project::Project> projects = TrekStar::File::importProjects(FILE_PATH);
 
     std::cout << "Welcome to TrekStar Management System | Console" << std::endl;
@@ -52,18 +50,6 @@ int main()
             }
             else if ( tokenisedCommand.first == "lsp" )
             {
-                // call the list method on the project controller
-                // ProjectController(projects)
-                // ProjectController.List();
-                // ProjectView -> ConsoleMessageView
-                // ProjectView cout << view.GetMessage()
-
-                // ProjectController(projects)
-                // ProjectController.Show(id, const Project)
-                // Show { find me the project with the id of 1
-                // return me the project view, injecting in that project
-                // then just returning that view as a string
-
                 TrekStar::Information::listProjects(projects);
             }
             else if ( tokenisedCommand.first == "lsm" )
