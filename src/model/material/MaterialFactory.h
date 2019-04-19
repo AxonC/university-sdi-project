@@ -3,7 +3,7 @@
 
 #include <memory>
 
-#include "../Material/Material.h"
+#include "Material.h"
 
 using TrekStar::Material::Material;
 

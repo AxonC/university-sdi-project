@@ -3,9 +3,9 @@
 
 #include <iostream>
 
-#include "../material/DVD/DVD.h"
-#include "../project/Project.h"
-#include "../material/BoxSet/BoxSet.h"
+#include "../model/material/DVD.h"
+#include "../model/project/Project.h"
+#include "../model/material/BoxSet.h"
 
 namespace TrekStar
 {

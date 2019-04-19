@@ -6,10 +6,10 @@
 #include <vector>
 #include <fstream>
 
-#include "../Model.h"
-#include "../lib/json.hpp"
+#include "../../Model.h"
+#include "../../lib/json.hpp"
 #include "../people/Crew.h"
-#include "../material/Material/Material.h"
+#include "../material/Material.h"
 
 using json = nlohmann::json;
 using TrekStar::People::Crew;

@@ -2,7 +2,7 @@
 #define TREKSTAR_CREW_H
 
 #include <string>
-#include "../lib/json.hpp"
+#include "../../lib/json.hpp"
 
 using json = nlohmann::json;
 

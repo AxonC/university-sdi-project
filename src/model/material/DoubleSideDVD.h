@@ -1,7 +1,7 @@
 #ifndef TREKSTAR_DOUBLESIDEDVD_H
 #define TREKSTAR_DOUBLESIDEDVD_H
 
-#include "../DVD/DVD.h"
+#include "DVD.h"
 
 namespace TrekStar
 {

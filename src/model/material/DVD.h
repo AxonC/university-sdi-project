@@ -3,8 +3,8 @@
 
 #include <vector>
 #include <string>
-#include "../Material/Material.h"
-#include "../DVDSide/DVDSide.h"
+#include "Material.h"
+#include "DVDSide.h"
 
 using TrekStar::Material::Material;
 

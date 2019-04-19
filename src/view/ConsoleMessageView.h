@@ -3,7 +3,7 @@
 
 #include <string>
 #include "../Model.h"
-#include "../Controller.h"
+#include "../controller/Controller.h"
 
 namespace TrekStar
 {

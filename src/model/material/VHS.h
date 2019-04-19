@@ -1,7 +1,7 @@
 #ifndef TREKSTAR_VHS_H
 #define TREKSTAR_VHS_H
 
-#include "../Material/Material.h"
+#include "Material.h"
 
 namespace TrekStar {
     namespace Material {

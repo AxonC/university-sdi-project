@@ -1,5 +1,5 @@
 #include "fileOperations.h"
-#include "../material/BoxSet/BoxSet.h"
+#include "../model/material/BoxSet.h"
 #include "../lib/json.hpp"
 #include <iostream>
 

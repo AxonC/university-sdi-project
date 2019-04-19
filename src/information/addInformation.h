@@ -1,7 +1,7 @@
 #ifndef SDI_PROJECT_ADDINFORMATION_H
 #define SDI_PROJECT_ADDINFORMATION_H
 
-#include "../project/Project.h"
+#include "../model/project/Project.h"
 
 namespace TrekStar
 {
