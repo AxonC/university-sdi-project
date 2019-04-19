@@ -17,7 +17,6 @@ namespace TrekStar
 
         public:
             ProjectController() = default;
-            //ProjectController(Project & model, ProjectView & view);
             ProjectController(const Project & model, const ProjectView & view);
             ~ProjectController() = default;
 

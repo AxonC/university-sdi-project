@@ -4,12 +4,6 @@ namespace TrekStar
 {
     namespace Project
     {
-//        ProjectController::ProjectController(Project & model, ProjectView & view)
-//        {
-//            this->model = model;
-//            this->view = view;
-//        }
-
         ProjectController::ProjectController(const Project &model, const ProjectView & view)
         {
             this->SetModel(model);

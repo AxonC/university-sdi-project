@@ -13,7 +13,6 @@ namespace TrekStar
         void MaterialController::SetModel(const std::shared_ptr<Material> & model)
         {
             this->model = model;
-            //this->model = std::make_shared<Material>(model);
         }
 
         void MaterialController::SetView(const MaterialView & view)

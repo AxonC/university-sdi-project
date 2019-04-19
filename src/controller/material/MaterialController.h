@@ -14,11 +14,6 @@ namespace TrekStar
 {
     namespace Material
     {
-//        struct MaterialView
-//        {
-//            SerialisedMaterial data;
-//        };
-
         class MaterialController
         {
         private:
