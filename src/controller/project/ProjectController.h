@@ -1,9 +1,9 @@
 #ifndef TREKSTAR_PROJECTCONTROLLER_H
 #define TREKSTAR_PROJECTCONTROLLER_H
 
-#include "../model/project/Project.h"
-#include "../view/ProjectView.h"
-#include "Controller.h"
+#include "../../model/project/Project.h"
+#include "../../view/project/ProjectView.h"
+#include "../Controller.h"
 
 namespace TrekStar
 {

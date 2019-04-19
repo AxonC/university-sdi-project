@@ -19,13 +19,13 @@ target_link_libraries(Bluray_Model BoxSet_Model DoubleSideDVD_Model DVD_Model DV
 
 # views
 add_library(ConsoleMessage_View view/ConsoleMessageView.h view/ConsoleMessageView.cpp)
-add_library(Project_View view/ProjectView.h view/ProjectView.cpp)
+add_library(Project_View view/project/ProjectView.h view/project/ProjectView.cpp)
 target_link_libraries(ConsoleMessage_View Project_View)
 
 # controllers
 add_library(Controller controller/Controller.h controller/Controller.cpp)
-add_library(Project_Controller controller/ProjectController.h controller/ProjectController.cpp)
-add_library(VHS_Controller controller/VHSController.h controller/VHSController.cpp)
+add_library(Project_Controller controller/project/ProjectController.h controller/project/ProjectController.cpp)
+add_library(VHS_Controller controller/material/VHSController.h controller/material/VHSController.cpp)
 target_link_libraries(Controller Project_Controller VHS_Controller)
 
 # functions

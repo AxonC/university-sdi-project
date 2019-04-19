@@ -3,9 +3,9 @@
 #include <iostream>
 
 #include "listInformation.h"
-#include "../controller/ProjectController.h"
-#include "../view/ProjectView.h"
-#include "../controller/VHSController.h"
+#include "../controller/project/ProjectController.h"
+#include "../view/project/ProjectView.h"
+#include "../controller/material/VHSController.h"
 
 using TrekStar::Project::Project;
 using TrekStar::Project::ProjectController;

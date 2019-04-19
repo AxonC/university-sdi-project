@@ -5,7 +5,7 @@
 #ifndef SDI_PROJECT_VHSCONTROLLER_H
 #define SDI_PROJECT_VHSCONTROLLER_H
 
-#include "../model/material/VHS.h"
+#include "../../model/material/VHS.h"
 
 namespace TrekStar
 {
