@@ -25,18 +25,18 @@ namespace TrekStar
                 std::cout << m.first << " : " << m.second << std::endl;
             }
 
-//            if ( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::BoxSet>(this->GetModel()) )
-//            {
-//                std::vector<std::map<std::string, std::string>> diskData = materialType->GetPresentableDiskInformation();
-//
-//                for ( const auto & d: diskData )
-//                {
-//                    for ( const auto & m: d )
-//                    {
-//                        std::cout << m.first << " : " << m.second << std::endl;
-//                    }
-//                }
-//            }
+            if ( auto materialType = dynamic_cast<TrekStar::Material::BoxSet *>(this->model) )
+            {
+                std::vector<std::map<std::string, std::string>> diskData = materialType->GetPresentableDiskInformation();
+
+                for ( const auto & d: diskData )
+                {
+                    for ( const auto & m: d )
+                    {
+                        std::cout << m.first << " : " << m.second << std::endl;
+                    }
+                }
+            }
         }
 
         Material* MaterialView::GetModel()
