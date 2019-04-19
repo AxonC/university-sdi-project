@@ -28,11 +28,11 @@ namespace TrekStar
         void listProjects(std::vector<TrekStar::Project::Project> projects)
         {
             std::string userInput;
-            int currentProject;
+            int currentProject = 0;
 
             while ( userInput != "b" )
             {
-                SequentialBrowser sequentialBrowser(projects.size(), userInput);
+                SequentialBrowser sequentialBrowser(projects.size(), currentProject, userInput);
 
                 currentProject = sequentialBrowser.GetItemNumber();
 
@@ -60,11 +60,11 @@ namespace TrekStar
             std::vector<std::shared_ptr<TrekStar::Material::Material>> materials = projects[projectNum - 1].GetMaterials();
 
             std::string userInput;
-            int currentMaterial;
+            int currentMaterial = 0;
 
             while ( userInput != "b" )
             {
-                SequentialBrowser sequentialBrowser(materials.size(), userInput);
+                SequentialBrowser sequentialBrowser(materials.size(), currentMaterial, userInput);
 
                 currentMaterial = sequentialBrowser.GetItemNumber();
 

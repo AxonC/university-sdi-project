@@ -1,13 +1,15 @@
 #include "SequentialBrowser.h"
 #include <algorithm>
+#include <iostream>
 
 namespace TrekStar
 {
     namespace Information
     {
-        SequentialBrowser::SequentialBrowser(unsigned int noOfItems, const std::string & command)
+        SequentialBrowser::SequentialBrowser(unsigned int noOfItems, unsigned int currentItem, const std::string & command)
         {
             this->noOfItems = noOfItems;
+            this->currentItem = currentItem;
             this->command = command;
         }
 
@@ -18,18 +20,19 @@ namespace TrekStar
 
         unsigned int SequentialBrowser::GetItemNumber()
         {
+            std::cout << "DEBUG DEBUG DEBUG = " << this->command << std::endl;
             if ( this->command == "n" )
             {
                 if ( this->currentItem + 1 != this->noOfItems )
                 {
-                    return this->currentItem++;
+                    this->currentItem++;
                 }
             }
             else if ( this->command == "p" )
             {
                 if ( this->currentItem >= 1 )
                 {
-                    return this->currentItem--;
+                    this->currentItem--;
                 }
             }
 
