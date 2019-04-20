@@ -6,7 +6,7 @@
 #include <vector>
 #include <fstream>
 
-#include "../../Model.h"
+#include "../Model.h"
 #include "../../lib/json.hpp"
 #include "../people/Crew.h"
 #include "../material/Material.h"

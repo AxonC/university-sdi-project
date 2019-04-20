@@ -2,7 +2,7 @@
 #define TREKSTAR_CONSOLEMESSAGEVIEW_H
 
 #include <string>
-#include "../Model.h"
+#include "../model/Model.h"
 #include "../controller/Controller.h"
 #include "ViewInterface.h"
 

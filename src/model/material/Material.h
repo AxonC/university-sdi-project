@@ -2,7 +2,7 @@
 #define TREKSTAR_MATERIAL_H
 
 #include <string>
-#include "../../Model.h"
+#include "../Model.h"
 #include "../../lib/json.hpp"
 
 using json = nlohmann::json;
