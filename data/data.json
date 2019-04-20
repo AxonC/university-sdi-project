@@ -42,6 +42,16 @@
                 "subtitles": "ENG"
             },
             {
+                "audioFormat": "Dolby",
+                "format": "vhs",
+                "frameAspect": "16:9",
+                "id": 0,
+                "language": "ENG",
+                "retailPrice": 1.99,
+                "runTime": 25,
+                "subtitles": "ENG"
+            },
+            {
                 "additionalLanguageTracks": [
                     "FRA",
                     "GER"

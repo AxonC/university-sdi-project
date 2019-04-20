@@ -4,6 +4,11 @@
 #include <iomanip>
 
 #include "saveInformation.h"
+#include "../model/material/Material.h"
+#include "../model/material/DVD.h"
+#include "../model/material/DoubleSideDVD.h"
+#include "../model/material/BoxSet.h"
+#include "../model/material/VHS.h"
 
 #include "../lib/json.hpp"
 
@@ -39,7 +44,13 @@ namespace TrekStar
                 json materialArray;
                 for ( auto && m: project.GetMaterials() )
                 {
-                    if ( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::DoubleSideDVD>(m) )
+                    if ( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::VHS>(m) )
+                    {
+                        // return a SerialisedDoubleSideDVD -> json
+                        json j = *materialType->ExportToSerialised();
+                        materialArray.push_back(j);
+                    }
+                    else if ( auto materialType = std::dynamic_pointer_cast<TrekStar::Material::DoubleSideDVD>(m) )
                     {
                         // return a SerialisedDoubleSideDVD -> json
                         json j = *materialType->ExportToSerialised();
