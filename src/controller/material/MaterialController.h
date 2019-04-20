@@ -6,13 +6,13 @@
 #include "../../model/material/Material.h"
 #include "../../view/material/MaterialView.h"
 #include "../../model/material/MaterialInterface.h"
-#include "../Controller.h"
+#include "../BaseController.h"
 
 namespace TrekStar
 {
     namespace Material
     {
-        class MaterialController : public Controller
+        class MaterialController : public BaseController
         {
         private:
             MaterialInterface* model;

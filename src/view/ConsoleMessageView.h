@@ -3,9 +3,10 @@
 
 #include <string>
 #include "../model/Model.h"
-#include "../controller/Controller.h"
+#include "../controller/ControllerInterface.h"
 #include "ViewInterface.h"
 
+using TrekStar::Controller::ControllerInterface;
 using TrekStar::View::ViewInterface;
 
 namespace TrekStar
@@ -14,18 +15,18 @@ namespace TrekStar
     {
         class ConsoleMessageView: public ViewInterface
         {
+        protected:
+            Model* model;
+            ControllerInterface* controller;
         public:
             ConsoleMessageView() = default;
-            ConsoleMessageView(Model* &, Controller* &);
+            ConsoleMessageView(Model* &, ControllerInterface* &);
             ~ConsoleMessageView() = default;
 
             virtual void SetModel(Model* &);
-            virtual void SetController(Controller* &);
+            virtual void SetController(ControllerInterface* &);
 
             virtual Model* GetModel() = 0;
-        protected:
-            Model* model;
-            Controller* controller;
         };
     }
 }

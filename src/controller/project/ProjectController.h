@@ -4,13 +4,13 @@
 #include "../../model/project/Project.h"
 #include "../../view/project/ProjectView.h"
 #include "../../model/project/ProjectInterface.h"
-#include "../Controller.h"
+#include "../BaseController.h"
 
 namespace TrekStar
 {
     namespace Project
     {
-        class ProjectController : public Controller
+        class ProjectController : public BaseController
         {
         private:
             ProjectInterface* model;
@@ -22,7 +22,7 @@ namespace TrekStar
             ~ProjectController() = default;
 
             void SetModel(ProjectInterface* & model);
-            void SetView(ConsoleMessageView* & view);
+            //void SetView(ConsoleMessageView* & view);
 
             void ShowAll();
         };

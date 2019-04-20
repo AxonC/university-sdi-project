@@ -4,13 +4,13 @@ namespace TrekStar
 {
     namespace View
     {
-        ConsoleMessageView::ConsoleMessageView(Model* & model, Controller* & controller)
+        ConsoleMessageView::ConsoleMessageView(Model* & model, ControllerInterface* & controller)
         {
             this->model = model;
             this->controller = controller;
         }
 
-        void ConsoleMessageView::SetController(Controller* & controller)
+        void ConsoleMessageView::SetController(ControllerInterface* & controller)
         {
             this->controller = controller;
         }

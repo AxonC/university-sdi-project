@@ -15,10 +15,10 @@ namespace TrekStar
             this->model = model;
         }
 
-        void ProjectController::SetView(ConsoleMessageView* & view)
-        {
-            this->view = view;
-        }
+//        void ProjectController::SetView(ConsoleMessageView* & view)
+//        {
+//            this->view = view;
+//        }
 
         void ProjectController::ShowAll()
         {

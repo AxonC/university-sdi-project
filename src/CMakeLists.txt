@@ -24,7 +24,7 @@ add_library(Material_View view/material/MaterialView.h view/material/MaterialVie
 target_link_libraries(ConsoleMessage_View Project_View Material_View)
 
 # controllers
-add_library(Controller controller/Controller.h controller/Controller.cpp)
+add_library(Controller controller/BaseController.h controller/BaseController.cpp controller/ControllerInterface.h)
 add_library(Project_Controller controller/project/ProjectController.h controller/project/ProjectController.cpp)
 add_library(Material_Controller controller/material/MaterialController.h controller/material/MaterialController.cpp)
 target_link_libraries(Controller Project_Controller Material_Controller)
