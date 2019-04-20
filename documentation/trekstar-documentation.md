@@ -25,6 +25,8 @@ titlepage-rule-height: 1
 - [State Diagram](#state-diagram)
 - [Component Diagram](#component-diagram)
 - [Deployment Diagram](#deployment-diagram)
+	- [Individual Installation](#individual-installation)
+	- [Company-Wide Installation](#company-wide-installation)
 - [Design Pattern](#design-pattern)
 - [Planned Architecture](#planned-architecture)
 - [Included C++ Libraries](#included-c-libraries)
@@ -53,14 +55,12 @@ titlepage-rule-height: 1
 
 # System Description
 
-The Trekstar system has been developed for TrekStar Pictures, the system will allow TrekStar Pictures
-to create and manage projects.
+The Trekstar system has been developed in order to allow TrekStar Pictures to accomplish the following
 
-```c++
-int main() {
-
-}
-```
+- Create and Manage Projects including any relevant metadata
+- Create and Manage Project Materials (single-sided DVDs, Blu-rays, etc)
+- Create Projects that are "unreleased" and cannot be modified once created
+- Include details in regards to the crew working on a Project
 
 \newpage
 
@@ -91,9 +91,30 @@ Include state diagram here
 
 Include component diagram here
 
+\newpage
+
 # Deployment Diagram
 
-Include deployment diagram here
+There are two possible deployment scenarios for the TrekStar management system, these being:
+
+1. An indivdual user will have the TrekStar project management system installed on their machine, using a locally stored JSON Database.
+2. TrekStar Pictures will release the TrekStar project management system company-wide, using a shared JSON Database for each installation.
+
+These two deployments are different due to the change in the data storage location, in which the latter will support company-wide collaboration through the application. 
+
+However, no matter where the application is installed the following Operating Systems are supported:
+
+* Windows
+* Mac OS
+* Linux
+
+On the following pages you can find a visual representation of the aformentioned Deployment scenarios.
+
+## Individual Installation
+![Visual Representation of Individual TrekStar installation](deployment-diagrams/trekstar-individual-installation.png)
+
+## Company-Wide Installation
+![Visual Represenation of Company-Wide TrekStar installation](deployment-diagrams/trekstar-company-installation.png)
 
 \newpage
 
