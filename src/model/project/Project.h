@@ -38,6 +38,7 @@ namespace TrekStar
         private:
             unsigned int id;
             std::string title;
+            std::string lowercaseTitle;  // for searching
             std::string summary;
             std::vector<std::shared_ptr<Material::Material>> materials;
             bool released = false;
@@ -54,6 +55,7 @@ namespace TrekStar
 
             unsigned int GetId() const;
             std::string GetTitle() const;
+            std::string GetLowercaseTitle() const;
             std::string GetSummary() const;
             std::vector<std::shared_ptr<Material::Material>> GetMaterials() const;
             bool GetReleased() const;
@@ -77,6 +79,9 @@ namespace TrekStar
             bool operator<(const Project & project) const;
             bool operator>=(const Project & project) const;
             bool operator<=(const Project & project) const;
+
+            bool operator==(const std::string & title) const;
+            bool operator<(const std::string & title) const;
         };
 
         void to_json(json & j, const SerialisedProject & project);

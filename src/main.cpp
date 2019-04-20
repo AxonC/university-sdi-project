@@ -18,7 +18,8 @@ int main()
             {
                     {"help", "view available commands"},
                     {"lsp",  "list projects"},
-                    {"lsm",  "list materials"},
+                    {"sp",   "<criteria> search projects"},
+                    {"lsm",  "<project id> list materials"},
                     {"addp", "add project"},
                     {"save", "save all data to file"},
                     {"q",    "quit project"}
@@ -48,6 +49,10 @@ int main()
             else if ( tokenisedCommand.first == "lsp" )
             {
                 TrekStar::Information::listProjects(projects);
+            }
+            else if ( tokenisedCommand.first == "sp" )
+            {
+                TrekStar::Information::searchProjects(projects, tokenisedCommand.second);
             }
             else if ( tokenisedCommand.first == "lsm" )
             {

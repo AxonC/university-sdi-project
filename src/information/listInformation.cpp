@@ -1,10 +1,12 @@
 #include <vector>
 #include <map>
 #include <iostream>
+#include <algorithm>
 
 #include "listInformation.h"
 #include "SequentialBrowser.h"
 #include "../algorithms/MergeSort.h"
+#include "../algorithms/BinarySearch.h"
 #include "../view/project/ProjectView.h"
 #include "../controller/project/ProjectController.h"
 #include "../view/material/MaterialView.h"
@@ -48,6 +50,26 @@ namespace TrekStar
                 std::cout << std::string(80, '-') << std::endl;
                 std::cout << "> ";
                 std::cin >> userInput;
+            }
+        }
+
+
+        void searchProjects(std::vector<TrekStar::Project::Project> & projects, std::string searchCriteria)
+        {
+            TrekStar::Algorithms::mergeSort(projects);
+
+            std::transform(searchCriteria.begin(), searchCriteria.end(), searchCriteria.begin(), ::tolower);
+            unsigned int projectIndex = TrekStar::Algorithms::binarySearch(projects, searchCriteria);
+
+            if ( projectIndex == -1 )
+            {
+                std::cout << "'" << searchCriteria << "' could not be found..." << std::endl;
+            }
+            else
+            {
+                ProjectView view(projects.at(projectIndex));
+                ProjectController controller(projects.at(projectIndex), view);
+                controller.ListProjects();
             }
         }
 

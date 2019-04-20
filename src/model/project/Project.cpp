@@ -1,5 +1,7 @@
 #include "Project.h"
 
+#include <algorithm>
+
 namespace TrekStar
 {
     namespace Project
@@ -17,6 +19,8 @@ namespace TrekStar
         {
             this->id = project.id;
             this->title = project.title;
+            this->lowercaseTitle = project.title;
+            std::transform(this->lowercaseTitle.begin(), this->lowercaseTitle.end(), this->lowercaseTitle.begin(), ::tolower);
             this->summary = project.summary;
             this->released = project.released;
             this->playingInTheatres = project.playingInTheatres;
@@ -33,6 +37,11 @@ namespace TrekStar
         std::string Project::GetTitle() const
         {
             return this->title;
+        }
+
+        std::string Project::GetLowercaseTitle() const
+        {
+            return this->lowercaseTitle;
         }
 
         std::string Project::GetSummary() const
@@ -168,6 +177,16 @@ namespace TrekStar
         bool Project::operator<=(const Project & project) const
         {
             return this->GetTitle() <= project.GetTitle();
+        }
+
+        bool Project::operator==(const std::string & title) const
+        {
+            return this->GetLowercaseTitle() == title;
+        }
+
+        bool Project::operator<(const std::string & title) const
+        {
+            return this->GetTitle() < title;
         }
 
         void to_json(json & j, const SerialisedProject & project)

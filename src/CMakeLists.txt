@@ -31,6 +31,8 @@ target_link_libraries(Controller Project_Controller Material_Controller)
 
 # algorithms
 add_library(MergeSort algorithms/MergeSort.h algorithms/MergeSort.cpp)
+add_library(BinarySearch algorithms/BinarySearch.h algorithms/BinarySearch.cpp)
+target_link_libraries(MergeSort BinarySearch)
 
 # functions
 add_library(File file/fileOperations.h file/fileOperations.cpp)
