@@ -1,8 +1,8 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
-#include <material/DVD/DVD.h>
-#include <material/BoxSet/BoxSet.h>
+#include <model/material/DVD.h>
+#include <model/material/BoxSet.h>
 
 using TrekStar::Material::DVD;
 using TrekStar::Material::BoxSet;

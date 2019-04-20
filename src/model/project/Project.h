@@ -10,6 +10,7 @@
 #include "../../lib/json.hpp"
 #include "../people/Crew.h"
 #include "../material/Material.h"
+#include "ProjectInterface.h"
 
 using json = nlohmann::json;
 using TrekStar::People::Crew;
@@ -33,10 +34,10 @@ namespace TrekStar
         /**
          *  Trekstar Film Project Class
          */
-        class Project: public Model
+        class Project: public ProjectInterface
         {
         private:
-            unsigned int id;
+            unsigned int id{0};
             std::string title;
             std::string lowercaseTitle;  // for searching
             std::string summary;
@@ -51,15 +52,14 @@ namespace TrekStar
             Project() = default;
             Project(const std::string & title, const std::string & summary, bool released, bool playingInTheatres, const std::vector<std::string> & keywords);
             explicit Project(const SerialisedProject & project);
-            ~Project();
+            virtual ~Project();
 
-            unsigned int GetId() const;
-            std::string GetTitle() const;
-            std::string GetLowercaseTitle() const;
-            std::string GetSummary() const;
+            unsigned int GetId() const override;
+            std::string GetTitle() const final;
+            std::string GetSummary() const override;
             std::vector<std::shared_ptr<Material::Material>> GetMaterials() const;
-            bool GetReleased() const;
-            bool GetPlayingInTheatres() const;
+            bool GetReleased() const override;
+            bool GetPlayingInTheatres() const override;
             std::pair<std::string, std::string> GetTitleSummary() const;
 
             void AddMaterials(const std::vector<std::shared_ptr<Material::Material>> & materials);

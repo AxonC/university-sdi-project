@@ -14,7 +14,7 @@ namespace TrekStar
         {
         public:
             MaterialView() = default;
-            MaterialView(Material & model);
+            explicit MaterialView(Material & model);
 
             void Present() override;
 

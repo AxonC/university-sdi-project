@@ -6,7 +6,7 @@ namespace TrekStar
 {
     namespace Project
     {
-        ProjectView::ProjectView(Project & model)
+        ProjectView::ProjectView(ProjectInterface& model)
         : ConsoleMessageView()
         {
             this->model = &model;
@@ -14,18 +14,20 @@ namespace TrekStar
 
         void ProjectView::Present()
         {
+            auto model = this->GetModel();
+
             std::cout << std::string(80, '-') << std::endl;
-            std::cout << "Project " << this->GetModel()->GetId() << std::endl;
+            std::cout << "Project " << std::to_string(model->GetId()) << std::endl;
             std::cout << std::string(80, '-') << std::endl;
-            std::cout << "Title               : " << this->GetModel()->GetTitle() << std::endl;
-            std::cout << "Summary             : " << this->GetModel()->GetSummary() << std::endl;
-            std::cout << "Released            : " << this->GetModel()->GetReleased() << std::endl;
-            std::cout << "Playing in theatres : " << this->GetModel()->GetPlayingInTheatres() << std::endl;
+            std::cout << "Title               : " << model->GetTitle() << std::endl;
+            std::cout << "Summary             : " << model->GetSummary() << std::endl;
+            std::cout << "Released            : " << model->GetReleased() << std::endl;
+            std::cout << "Playing in theatres : " << model->GetPlayingInTheatres() << std::endl;
         }
 
-        Project* ProjectView::GetModel()
+        ProjectInterface* ProjectView::GetModel()
         {
-            return dynamic_cast<Project *>(this->model);
+            return dynamic_cast<ProjectInterface*>(this->model);
         }
     }
 }
