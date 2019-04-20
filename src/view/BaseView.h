@@ -1,5 +1,5 @@
-#ifndef TREKSTAR_CONSOLEMESSAGEVIEW_H
-#define TREKSTAR_CONSOLEMESSAGEVIEW_H
+#ifndef TREKSTAR_BASEVIEW_H
+#define TREKSTAR_BASEVIEW_H
 
 #include <string>
 #include "../model/Model.h"
@@ -13,16 +13,16 @@ namespace TrekStar
 {
     namespace View
     {
-        class ConsoleMessageView: public ViewInterface
+        class BaseView: public ViewInterface
         {
         protected:
             Model* model;
             ControllerInterface* controller;
 
         public:
-            ConsoleMessageView() = default;
-            ConsoleMessageView(Model* &, ControllerInterface* &);
-            ~ConsoleMessageView() = default;
+            BaseView() = default;
+            BaseView(Model* &, ControllerInterface* &);
+            ~BaseView() = default;
 
             virtual void SetModel(Model* &);
             virtual void SetController(ControllerInterface* &);
@@ -32,4 +32,4 @@ namespace TrekStar
     }
 }
 
-#endif //TREKSTAR_CONSOLEMESSAGEVIEW_H
+#endif //TREKSTAR_BASEVIEW_H

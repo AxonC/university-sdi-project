@@ -1,16 +1,16 @@
 #ifndef TREKSTAR_MATERIALVIEW_H
 #define TREKSTAR_MATERIALVIEW_H
 
-#include "../ConsoleMessageView.h"
+#include "../BaseView.h"
 #include "../../model/material/Material.h"
 
-using TrekStar::View::ConsoleMessageView;
+using TrekStar::View::BaseView;
 
 namespace TrekStar
 {
     namespace Material
     {
-        class MaterialView : public ConsoleMessageView
+        class MaterialView : public BaseView
         {
         public:
             MaterialView() = default;

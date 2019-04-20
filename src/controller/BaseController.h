@@ -3,9 +3,9 @@
 
 #include "ControllerInterface.h"
 #include "../model/Model.h"
-#include "../view/ConsoleMessageView.h"
+#include "../view/BaseView.h"
 
-using TrekStar::View::ConsoleMessageView;
+using TrekStar::View::BaseView;
 
 namespace TrekStar
 {

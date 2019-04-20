@@ -7,7 +7,7 @@ namespace TrekStar
 {
     namespace Material
     {
-        MaterialView::MaterialView(MaterialInterface & model) : ConsoleMessageView()
+        MaterialView::MaterialView(MaterialInterface & model) : BaseView()
         {
             this->model = &model;
         }

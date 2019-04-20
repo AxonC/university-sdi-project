@@ -20,16 +20,16 @@ add_library(Project_Model model/project/Project.h model/project/Project.cpp mode
 target_link_libraries(trekstar Bluray_Model BoxSet_Model DoubleSideDVD_Model DVD_Model DVDSide_Model Material_Model MaterialFactory_Model VHS_Model Crew_Model Project_Model)
 
 # views
-add_library(ConsoleMessage_View view/ConsoleMessageView.h view/ConsoleMessageView.cpp view/ViewInterface.h)
+add_library(BaseView view/BaseView.h view/BaseView.cpp view/ViewInterface.h)
 add_library(Project_View view/project/ProjectView.h view/project/ProjectView.cpp)
 add_library(Material_View view/material/MaterialView.h view/material/MaterialView.cpp)
-target_link_libraries(trekstar ConsoleMessage_View Project_View Material_View)
+target_link_libraries(trekstar BaseView Project_View Material_View)
 
 # controllers
-add_library(Controller controller/BaseController.h controller/BaseController.cpp controller/ControllerInterface.h)
+add_library(BaseController controller/BaseController.h controller/BaseController.cpp controller/ControllerInterface.h)
 add_library(Project_Controller controller/project/ProjectController.h controller/project/ProjectController.cpp)
 add_library(Material_Controller controller/material/MaterialController.h controller/material/MaterialController.cpp)
-target_link_libraries(trekstar Controller Project_Controller Material_Controller)
+target_link_libraries(trekstar BaseController Project_Controller Material_Controller)
 
 # algorithms
 add_library(MergeSort algorithms/MergeSort.h algorithms/MergeSort.cpp)
@@ -38,7 +38,7 @@ target_link_libraries(trekstar MergeSort BinarySearch)
 
 # functions
 add_library(File file/fileOperations.h file/fileOperations.cpp)
-add_library(Information information/listInformation.h information/addInformation.h information/saveInformation.h information/listInformation.cpp information/addInformation.cpp information/saveInformation.cpp information/SequentialBrowser.h information/SequentialBrowser.cpp view/ConsoleMessageView.cpp view/ConsoleMessageView.h)
+add_library(Information information/listInformation.h information/addInformation.h information/saveInformation.h information/listInformation.cpp information/addInformation.cpp information/saveInformation.cpp information/SequentialBrowser.h information/SequentialBrowser.cpp view/BaseView.cpp view/BaseView.h)
 add_library(CommandHandler command/CommandHandler.h command/CommandHandler.cpp)
 target_link_libraries(trekstar File Information CommandHandler)
 
