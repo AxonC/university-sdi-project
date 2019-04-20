@@ -43,6 +43,7 @@
             },
             {
                 "audioFormat": "Dolby",
+                "audioTrack": "Track 1",
                 "format": "vhs",
                 "frameAspect": "16:9",
                 "id": 0,

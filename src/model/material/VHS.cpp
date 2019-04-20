@@ -36,6 +36,15 @@ namespace TrekStar {
             return information;
         }
 
+        std::shared_ptr<SerialisedVHS> VHS::ExportToSerialised() const
+        {
+            std::shared_ptr<SerialisedMaterial> serialisedMaterial = Material::ExportToSerialised();
+
+            SerialisedVHS vhs(*serialisedMaterial, this->audioTrack);
+
+            return std::make_shared<SerialisedVHS>(vhs);
+        }
+
         void to_json(json & j, const SerialisedVHS & serialisedVHS)
         {
             j["id"] = serialisedVHS.material.id;
