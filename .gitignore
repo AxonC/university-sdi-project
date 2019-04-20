@@ -2,6 +2,8 @@
 cmake-build-debug/*
 src/cmake-build-debug/*
 *_autogen/
+x64-Release/*
+bin/*
 .vs/*
 *.a
 *.app
