@@ -24,7 +24,7 @@ namespace TrekStar
             void SetModel(ProjectInterface* & model);
             void SetView(ConsoleMessageView* & view);
 
-            void ListProjects();
+            void ShowAll();
         };
     }
 }

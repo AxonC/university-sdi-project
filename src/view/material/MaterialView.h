@@ -14,11 +14,11 @@ namespace TrekStar
         {
         public:
             MaterialView() = default;
-            explicit MaterialView(Material & model);
+            explicit MaterialView(MaterialInterface & model);
 
             void Present() override;
 
-            Material* GetModel() override;
+            MaterialInterface* GetModel() override;
         };
     }
 }

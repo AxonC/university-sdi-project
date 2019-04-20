@@ -14,7 +14,7 @@ namespace TrekStar
         {
         public:
             ProjectView() = default;
-            explicit ProjectView(ProjectInterface& model);
+            explicit ProjectView(ProjectInterface & model);
 
             void Present() override;
 

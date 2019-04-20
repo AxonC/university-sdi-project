@@ -6,8 +6,7 @@ namespace TrekStar
 {
     namespace Project
     {
-        ProjectView::ProjectView(ProjectInterface& model)
-        : ConsoleMessageView()
+        ProjectView::ProjectView(ProjectInterface& model) : ConsoleMessageView()
         {
             this->model = &model;
         }

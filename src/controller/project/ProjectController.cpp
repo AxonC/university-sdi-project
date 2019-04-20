@@ -10,7 +10,7 @@ namespace TrekStar
             this->view = &view;
         }
 
-        void ProjectController::SetModel(ProjectInterface* &model)
+        void ProjectController::SetModel(ProjectInterface* & model)
         {
             this->model = model;
         }
@@ -20,7 +20,7 @@ namespace TrekStar
             this->view = view;
         }
 
-        void ProjectController::ListProjects()
+        void ProjectController::ShowAll()
         {
             this->view->Present();
         }

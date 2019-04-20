@@ -43,7 +43,7 @@ namespace TrekStar
 
                 ProjectView view(projects.at(currentProject));
                 ProjectController controller(projects.at(currentProject), view);
-                controller.ListProjects();
+                controller.ShowAll();
 
                 std::cout << std::string(80, '-') << std::endl;
                 std::cout << "n - next project, p - previous project, b - go back" << std::endl;
@@ -69,7 +69,7 @@ namespace TrekStar
             {
                 ProjectView view(projects.at(projectIndex));
                 ProjectController controller(projects.at(projectIndex), view);
-                controller.ListProjects();
+                controller.ShowAll();
             }
         }
 
@@ -95,7 +95,7 @@ namespace TrekStar
 
                 const auto material = materials.at(currentMaterial);
                 MaterialView view = MaterialView(*material);
-                MaterialController controller(material, view);
+                MaterialController controller(*material, view);
                 controller.ShowAll();
 
                 std::cout << std::string(80, '-') << std::endl;
