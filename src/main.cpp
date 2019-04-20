@@ -6,10 +6,7 @@
 
 int main()
 {
-	std::string FILE_PATH;
-
-	std::cout << "Enter file path to JSON: ";
-	std::cin >> FILE_PATH;
+	const std::string FILE_PATH = "../data/data.json";
 
     std::vector<TrekStar::Project::Project> projects = TrekStar::File::importProjects(FILE_PATH);
 
