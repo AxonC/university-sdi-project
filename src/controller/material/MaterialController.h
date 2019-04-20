@@ -23,9 +23,6 @@ namespace TrekStar
             MaterialController(MaterialInterface & model, ViewInterface & view);
             ~MaterialController() = default;
 
-            void SetModel(MaterialInterface* & model);
-            void SetView(ConsoleMessageView* & view);
-
             void ShowAll();
         };
     }
