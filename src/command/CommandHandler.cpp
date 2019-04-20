@@ -1,3 +1,5 @@
+#include <iostream>
+
 #include "CommandHandler.h"
 
 namespace TrekStar
@@ -30,5 +32,13 @@ namespace TrekStar
         {
             return this->commands;
         }
+
+        void CommandHandler::displayCommands() const
+        {
+            for ( const auto & currentCommand : this->commands )
+            {
+                std::cout << currentCommand.first << " - " << currentCommand.second << std::endl;
+            }
+        };
     }
 }

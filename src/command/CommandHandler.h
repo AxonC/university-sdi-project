@@ -24,6 +24,7 @@ namespace TrekStar
             StringPair tokeniseCommand(const std::string & command) const;
             int getIntegerValue(const std::string & commandOpcode) const;
             StringMap GetCommands() const;
+            void displayCommands() const;
         };
     }
 }

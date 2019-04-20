@@ -35,7 +35,7 @@
                 "content": "big movie",
                 "format": "dvd",
                 "frameAspect": "16:9",
-                "id": 1,
+                "id": 0,
                 "language": "ENG",
                 "retailPrice": 9.99,
                 "runTime": 120,
@@ -57,23 +57,11 @@
                 "content": "big big movie",
                 "format": "bluray",
                 "frameAspect": "16:9",
-                "id": 2,
+                "id": 0,
                 "language": "ENG",
                 "retailPrice": 13.99,
                 "runTime": 655,
                 "subtitles": "ENG"
-            },
-            {
-                "audioFormat": "Dolby",
-                "content": "small movie 1",
-                "format": "vhs",
-                "frameAspect": "16:9",
-                "id": 3,
-                "language": "ENG",
-                "retailPrice": 1.99,
-                "runTime": 25,
-                "subtitles": "ENG",
-                "audioTrack": "track 1"
             },
             {
                 "dvds": [
@@ -242,7 +230,7 @@
                 "content": "big movie",
                 "format": "dvd",
                 "frameAspect": "16:9",
-                "id": 1,
+                "id": 0,
                 "language": "ENG",
                 "retailPrice": 9.99,
                 "runTime": 120,
@@ -264,23 +252,11 @@
                 "content": "big big movie",
                 "format": "bluray",
                 "frameAspect": "16:9",
-                "id": 2,
+                "id": 0,
                 "language": "ENG",
                 "retailPrice": 13.99,
                 "runTime": 655,
                 "subtitles": "ENG"
-            },
-            {
-                "audioFormat": "Dolby",
-                "content": "small movie 1",
-                "format": "vhs",
-                "frameAspect": "16:9",
-                "id": 3,
-                "language": "ENG",
-                "retailPrice": 1.99,
-                "runTime": 25,
-                "subtitles": "ENG",
-                "audioTrack": "track 1"
             },
             {
                 "dvds": [
@@ -449,7 +425,7 @@
                 "content": "big movie",
                 "format": "dvd",
                 "frameAspect": "16:9",
-                "id": 1,
+                "id": 0,
                 "language": "ENG",
                 "retailPrice": 9.99,
                 "runTime": 120,
@@ -471,23 +447,11 @@
                 "content": "big big movie",
                 "format": "bluray",
                 "frameAspect": "16:9",
-                "id": 2,
+                "id": 0,
                 "language": "ENG",
                 "retailPrice": 13.99,
                 "runTime": 655,
                 "subtitles": "ENG"
-            },
-            {
-                "audioFormat": "Dolby",
-                "content": "small movie 1",
-                "format": "vhs",
-                "frameAspect": "16:9",
-                "id": 3,
-                "language": "ENG",
-                "retailPrice": 1.99,
-                "runTime": 25,
-                "subtitles": "ENG",
-                "audioTrack": "track 1"
             },
             {
                 "dvds": [
@@ -656,7 +620,7 @@
                 "content": "big movie",
                 "format": "dvd",
                 "frameAspect": "16:9",
-                "id": 1,
+                "id": 0,
                 "language": "ENG",
                 "retailPrice": 9.99,
                 "runTime": 120,
@@ -678,23 +642,11 @@
                 "content": "big big movie",
                 "format": "bluray",
                 "frameAspect": "16:9",
-                "id": 2,
+                "id": 0,
                 "language": "ENG",
                 "retailPrice": 13.99,
                 "runTime": 655,
                 "subtitles": "ENG"
-            },
-            {
-                "audioFormat": "Dolby",
-                "content": "small movie 1",
-                "format": "vhs",
-                "frameAspect": "16:9",
-                "id": 3,
-                "language": "ENG",
-                "retailPrice": 1.99,
-                "runTime": 25,
-                "subtitles": "ENG",
-                "audioTrack": "track 1"
             },
             {
                 "dvds": [
