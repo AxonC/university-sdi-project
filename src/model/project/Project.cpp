@@ -150,6 +150,26 @@ namespace TrekStar
             return this->released && !this->playingInTheatres;
         }
 
+        bool Project::operator>(const Project & project) const
+        {
+            return this->GetTitle() > project.GetTitle();
+        }
+
+        bool Project::operator<(const Project & project) const
+        {
+            return this->GetTitle() < project.GetTitle();
+        }
+
+        bool Project::operator>=(const Project & project) const
+        {
+            return this->GetTitle() >= project.GetTitle();
+        }
+
+        bool Project::operator<=(const Project & project) const
+        {
+            return this->GetTitle() <= project.GetTitle();
+        }
+
         void to_json(json & j, const SerialisedProject & project)
         {
             j = json

@@ -30,7 +30,7 @@ add_library(Material_Controller controller/material/MaterialController.h control
 target_link_libraries(Controller Project_Controller Material_Controller)
 
 # algorithms
-add_library(LinearSearch algorithms/LinearSearch.h algorithms/LinearSearch.cpp)
+add_library(MergeSort algorithms/MergeSort.h algorithms/MergeSort.cpp)
 
 # functions
 add_library(File file/fileOperations.h file/fileOperations.cpp)
@@ -45,4 +45,4 @@ add_library(nlohmann_json INTERFACE)
 target_include_directories(nlohmann_json INTERFACE lib/json.hpp)
 
 add_executable(trekstar main.cpp)
-target_link_libraries(trekstar Bluray_Model ConsoleMessage_View Controller LinearSearch File Information CommandHandler structures nlohmann_json)
+target_link_libraries(trekstar Bluray_Model ConsoleMessage_View Controller MergeSort File Information CommandHandler structures nlohmann_json)

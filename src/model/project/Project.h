@@ -72,6 +72,11 @@ namespace TrekStar
             void ReleaseProject();
 
             SerialisedProject ExportToSerialised() const;
+
+            bool operator>(const Project & project) const;
+            bool operator<(const Project & project) const;
+            bool operator>=(const Project & project) const;
+            bool operator<=(const Project & project) const;
         };
 
         void to_json(json & j, const SerialisedProject & project);

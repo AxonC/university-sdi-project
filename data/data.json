@@ -205,5 +205,626 @@
                 "subtitles": ""
             }
         ]
+    },
+    "2": {
+        "crew": [
+            {
+                "id": 1,
+                "jobTitle": "Director",
+                "name": "Bob Bobson"
+            }
+        ],
+        "details": {
+            "id": 1,
+            "keywords": [
+                "Action",
+                "Superhero"
+            ],
+            "playingInTheatres": false,
+            "released": true,
+            "summary": "A super hero does stuff again",
+            "title": "Deadpool 2"
+        },
+        "materials": [
+            {
+                "additionalLanguageTracks": [
+                    "FRA",
+                    "GER"
+                ],
+                "additionalSubtitleTracks": [
+                    "FRA",
+                    "GER"
+                ],
+                "audioFormat": "DTS",
+                "bonusFeatures": [
+                    "Director's Comments"
+                ],
+                "content": "big movie",
+                "format": "dvd",
+                "frameAspect": "16:9",
+                "id": 1,
+                "language": "ENG",
+                "retailPrice": 9.99,
+                "runTime": 120,
+                "subtitles": "ENG"
+            },
+            {
+                "additionalLanguageTracks": [
+                    "FRA",
+                    "GER"
+                ],
+                "additionalSubtitleTracks": [
+                    "FRA",
+                    "GER"
+                ],
+                "audioFormat": "Dolby",
+                "bonusFeatures": [
+                    "Director's Comments"
+                ],
+                "content": "big big movie",
+                "format": "bluray",
+                "frameAspect": "16:9",
+                "id": 2,
+                "language": "ENG",
+                "retailPrice": 13.99,
+                "runTime": 655,
+                "subtitles": "ENG"
+            },
+            {
+                "audioFormat": "Dolby",
+                "content": "small movie 1",
+                "format": "vhs",
+                "frameAspect": "16:9",
+                "id": 3,
+                "language": "ENG",
+                "retailPrice": 1.99,
+                "runTime": 25,
+                "subtitles": "ENG",
+                "audioTrack": "track 1"
+            },
+            {
+                "dvds": [
+                    {
+                        "additionalLanguageTracks": [
+                            "ENG",
+                            "SPA"
+                        ],
+                        "additionalSubtitleTracks": [
+                            "ENG",
+                            "SPA"
+                        ],
+                        "audioFormat": "DTS",
+                        "bonusFeatures": [
+                            "Audition Tapes"
+                        ],
+                        "content": "movie",
+                        "format": "dvd",
+                        "frameAspect": "4:3",
+                        "language": "GER",
+                        "retailPrice": 25.99,
+                        "runTime": 90,
+                        "subtitles": "GER"
+                    },
+                    {
+                        "additionalLanguageTracks": [
+                            "GER",
+                            "SPA"
+                        ],
+                        "additionalSubtitleTracks": [
+                            "GER",
+                            "SPA"
+                        ],
+                        "audioFormat": "DTS",
+                        "bonusFeatures": [
+                            "Outtakes"
+                        ],
+                        "content": "episode 1",
+                        "format": "dvd",
+                        "frameAspect": "4:3",
+                        "language": "ENG",
+                        "retailPrice": 25.99,
+                        "runTime": 160,
+                        "subtitles": "ENG"
+                    },
+                    {
+                        "audioFormat": "DTS",
+                        "format": "dsdvd",
+                        "frameAspect": "4:3",
+                        "language": "ENG",
+                        "retailPrice": 25.99,
+                        "runTime": 420,
+                        "sides": [
+                            {
+                                "additionalLanguageTracks": [
+                                    "SPA",
+                                    "GER"
+                                ],
+                                "additionalSubtitleTracks": [
+                                    "SPA",
+                                    "GER"
+                                ],
+                                "bonusFeatures": [
+                                    "Bonus Features"
+                                ],
+                                "content": "episode 1"
+                            },
+                            {
+                                "additionalLanguageTracks": [
+                                    "SPA",
+                                    "GER"
+                                ],
+                                "additionalSubtitleTracks": [
+                                    "SPA",
+                                    "GER"
+                                ],
+                                "bonusFeatures": [
+                                    "HAHAHAHAHA Features"
+                                ],
+                                "content": "episode 2"
+                            }
+                        ],
+                        "subtitles": ""
+                    }
+                ],
+                "format": "boxset",
+                "id": 2,
+                "language": "",
+                "retailPrice": 25.99
+            },
+            {
+                "audioFormat": "DTS",
+                "format": "dsdvd",
+                "frameAspect": "4:3",
+                "id": 0,
+                "language": "ENG",
+                "retailPrice": 55.98,
+                "runTime": 326,
+                "sides": [
+                    {
+                        "additionalLanguageTracks": [
+                            "SPA",
+                            "GER"
+                        ],
+                        "additionalSubtitleTracks": [
+                            "SPA",
+                            "GER"
+                        ],
+                        "bonusFeatures": [
+                            "Bonus Features"
+                        ],
+                        "content": "part1"
+                    },
+                    {
+                        "additionalLanguageTracks": [
+                            "SPA",
+                            "GER"
+                        ],
+                        "additionalSubtitleTracks": [
+                            "SPA",
+                            "GER"
+                        ],
+                        "bonusFeatures": [
+                            "Bonus Features"
+                        ],
+                        "content": "part 2"
+                    }
+                ],
+                "subtitles": ""
+            }
+        ]
+    },
+    "3": {
+        "crew": [
+            {
+                "id": 1,
+                "jobTitle": "Director",
+                "name": "Bob Bobson"
+            }
+        ],
+        "details": {
+            "id": 1,
+            "keywords": [
+                "Action",
+                "Superhero"
+            ],
+            "playingInTheatres": false,
+            "released": true,
+            "summary": "A super hero does stuff again",
+            "title": "A Great Movie"
+        },
+        "materials": [
+            {
+                "additionalLanguageTracks": [
+                    "FRA",
+                    "GER"
+                ],
+                "additionalSubtitleTracks": [
+                    "FRA",
+                    "GER"
+                ],
+                "audioFormat": "DTS",
+                "bonusFeatures": [
+                    "Director's Comments"
+                ],
+                "content": "big movie",
+                "format": "dvd",
+                "frameAspect": "16:9",
+                "id": 1,
+                "language": "ENG",
+                "retailPrice": 9.99,
+                "runTime": 120,
+                "subtitles": "ENG"
+            },
+            {
+                "additionalLanguageTracks": [
+                    "FRA",
+                    "GER"
+                ],
+                "additionalSubtitleTracks": [
+                    "FRA",
+                    "GER"
+                ],
+                "audioFormat": "Dolby",
+                "bonusFeatures": [
+                    "Director's Comments"
+                ],
+                "content": "big big movie",
+                "format": "bluray",
+                "frameAspect": "16:9",
+                "id": 2,
+                "language": "ENG",
+                "retailPrice": 13.99,
+                "runTime": 655,
+                "subtitles": "ENG"
+            },
+            {
+                "audioFormat": "Dolby",
+                "content": "small movie 1",
+                "format": "vhs",
+                "frameAspect": "16:9",
+                "id": 3,
+                "language": "ENG",
+                "retailPrice": 1.99,
+                "runTime": 25,
+                "subtitles": "ENG",
+                "audioTrack": "track 1"
+            },
+            {
+                "dvds": [
+                    {
+                        "additionalLanguageTracks": [
+                            "ENG",
+                            "SPA"
+                        ],
+                        "additionalSubtitleTracks": [
+                            "ENG",
+                            "SPA"
+                        ],
+                        "audioFormat": "DTS",
+                        "bonusFeatures": [
+                            "Audition Tapes"
+                        ],
+                        "content": "movie",
+                        "format": "dvd",
+                        "frameAspect": "4:3",
+                        "language": "GER",
+                        "retailPrice": 25.99,
+                        "runTime": 90,
+                        "subtitles": "GER"
+                    },
+                    {
+                        "additionalLanguageTracks": [
+                            "GER",
+                            "SPA"
+                        ],
+                        "additionalSubtitleTracks": [
+                            "GER",
+                            "SPA"
+                        ],
+                        "audioFormat": "DTS",
+                        "bonusFeatures": [
+                            "Outtakes"
+                        ],
+                        "content": "episode 1",
+                        "format": "dvd",
+                        "frameAspect": "4:3",
+                        "language": "ENG",
+                        "retailPrice": 25.99,
+                        "runTime": 160,
+                        "subtitles": "ENG"
+                    },
+                    {
+                        "audioFormat": "DTS",
+                        "format": "dsdvd",
+                        "frameAspect": "4:3",
+                        "language": "ENG",
+                        "retailPrice": 25.99,
+                        "runTime": 420,
+                        "sides": [
+                            {
+                                "additionalLanguageTracks": [
+                                    "SPA",
+                                    "GER"
+                                ],
+                                "additionalSubtitleTracks": [
+                                    "SPA",
+                                    "GER"
+                                ],
+                                "bonusFeatures": [
+                                    "Bonus Features"
+                                ],
+                                "content": "episode 1"
+                            },
+                            {
+                                "additionalLanguageTracks": [
+                                    "SPA",
+                                    "GER"
+                                ],
+                                "additionalSubtitleTracks": [
+                                    "SPA",
+                                    "GER"
+                                ],
+                                "bonusFeatures": [
+                                    "HAHAHAHAHA Features"
+                                ],
+                                "content": "episode 2"
+                            }
+                        ],
+                        "subtitles": ""
+                    }
+                ],
+                "format": "boxset",
+                "id": 2,
+                "language": "",
+                "retailPrice": 25.99
+            },
+            {
+                "audioFormat": "DTS",
+                "format": "dsdvd",
+                "frameAspect": "4:3",
+                "id": 0,
+                "language": "ENG",
+                "retailPrice": 55.98,
+                "runTime": 326,
+                "sides": [
+                    {
+                        "additionalLanguageTracks": [
+                            "SPA",
+                            "GER"
+                        ],
+                        "additionalSubtitleTracks": [
+                            "SPA",
+                            "GER"
+                        ],
+                        "bonusFeatures": [
+                            "Bonus Features"
+                        ],
+                        "content": "part1"
+                    },
+                    {
+                        "additionalLanguageTracks": [
+                            "SPA",
+                            "GER"
+                        ],
+                        "additionalSubtitleTracks": [
+                            "SPA",
+                            "GER"
+                        ],
+                        "bonusFeatures": [
+                            "Bonus Features"
+                        ],
+                        "content": "part 2"
+                    }
+                ],
+                "subtitles": ""
+            }
+        ]
+    },
+    "4": {
+        "crew": [
+            {
+                "id": 1,
+                "jobTitle": "Director",
+                "name": "Bob Bobson"
+            }
+        ],
+        "details": {
+            "id": 1,
+            "keywords": [
+                "Action",
+                "Superhero"
+            ],
+            "playingInTheatres": false,
+            "released": true,
+            "summary": "A super hero does stuff again",
+            "title": "Back To The Future"
+        },
+        "materials": [
+            {
+                "additionalLanguageTracks": [
+                    "FRA",
+                    "GER"
+                ],
+                "additionalSubtitleTracks": [
+                    "FRA",
+                    "GER"
+                ],
+                "audioFormat": "DTS",
+                "bonusFeatures": [
+                    "Director's Comments"
+                ],
+                "content": "big movie",
+                "format": "dvd",
+                "frameAspect": "16:9",
+                "id": 1,
+                "language": "ENG",
+                "retailPrice": 9.99,
+                "runTime": 120,
+                "subtitles": "ENG"
+            },
+            {
+                "additionalLanguageTracks": [
+                    "FRA",
+                    "GER"
+                ],
+                "additionalSubtitleTracks": [
+                    "FRA",
+                    "GER"
+                ],
+                "audioFormat": "Dolby",
+                "bonusFeatures": [
+                    "Director's Comments"
+                ],
+                "content": "big big movie",
+                "format": "bluray",
+                "frameAspect": "16:9",
+                "id": 2,
+                "language": "ENG",
+                "retailPrice": 13.99,
+                "runTime": 655,
+                "subtitles": "ENG"
+            },
+            {
+                "audioFormat": "Dolby",
+                "content": "small movie 1",
+                "format": "vhs",
+                "frameAspect": "16:9",
+                "id": 3,
+                "language": "ENG",
+                "retailPrice": 1.99,
+                "runTime": 25,
+                "subtitles": "ENG",
+                "audioTrack": "track 1"
+            },
+            {
+                "dvds": [
+                    {
+                        "additionalLanguageTracks": [
+                            "ENG",
+                            "SPA"
+                        ],
+                        "additionalSubtitleTracks": [
+                            "ENG",
+                            "SPA"
+                        ],
+                        "audioFormat": "DTS",
+                        "bonusFeatures": [
+                            "Audition Tapes"
+                        ],
+                        "content": "movie",
+                        "format": "dvd",
+                        "frameAspect": "4:3",
+                        "language": "GER",
+                        "retailPrice": 25.99,
+                        "runTime": 90,
+                        "subtitles": "GER"
+                    },
+                    {
+                        "additionalLanguageTracks": [
+                            "GER",
+                            "SPA"
+                        ],
+                        "additionalSubtitleTracks": [
+                            "GER",
+                            "SPA"
+                        ],
+                        "audioFormat": "DTS",
+                        "bonusFeatures": [
+                            "Outtakes"
+                        ],
+                        "content": "episode 1",
+                        "format": "dvd",
+                        "frameAspect": "4:3",
+                        "language": "ENG",
+                        "retailPrice": 25.99,
+                        "runTime": 160,
+                        "subtitles": "ENG"
+                    },
+                    {
+                        "audioFormat": "DTS",
+                        "format": "dsdvd",
+                        "frameAspect": "4:3",
+                        "language": "ENG",
+                        "retailPrice": 25.99,
+                        "runTime": 420,
+                        "sides": [
+                            {
+                                "additionalLanguageTracks": [
+                                    "SPA",
+                                    "GER"
+                                ],
+                                "additionalSubtitleTracks": [
+                                    "SPA",
+                                    "GER"
+                                ],
+                                "bonusFeatures": [
+                                    "Bonus Features"
+                                ],
+                                "content": "episode 1"
+                            },
+                            {
+                                "additionalLanguageTracks": [
+                                    "SPA",
+                                    "GER"
+                                ],
+                                "additionalSubtitleTracks": [
+                                    "SPA",
+                                    "GER"
+                                ],
+                                "bonusFeatures": [
+                                    "HAHAHAHAHA Features"
+                                ],
+                                "content": "episode 2"
+                            }
+                        ],
+                        "subtitles": ""
+                    }
+                ],
+                "format": "boxset",
+                "id": 2,
+                "language": "",
+                "retailPrice": 25.99
+            },
+            {
+                "audioFormat": "DTS",
+                "format": "dsdvd",
+                "frameAspect": "4:3",
+                "id": 0,
+                "language": "ENG",
+                "retailPrice": 55.98,
+                "runTime": 326,
+                "sides": [
+                    {
+                        "additionalLanguageTracks": [
+                            "SPA",
+                            "GER"
+                        ],
+                        "additionalSubtitleTracks": [
+                            "SPA",
+                            "GER"
+                        ],
+                        "bonusFeatures": [
+                            "Bonus Features"
+                        ],
+                        "content": "part1"
+                    },
+                    {
+                        "additionalLanguageTracks": [
+                            "SPA",
+                            "GER"
+                        ],
+                        "additionalSubtitleTracks": [
+                            "SPA",
+                            "GER"
+                        ],
+                        "bonusFeatures": [
+                            "Bonus Features"
+                        ],
+                        "content": "part 2"
+                    }
+                ],
+                "subtitles": ""
+            }
+        ]
     }
 }

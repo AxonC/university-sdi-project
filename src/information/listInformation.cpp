@@ -4,7 +4,7 @@
 
 #include "listInformation.h"
 #include "SequentialBrowser.h"
-#include "../algorithms/LinearSearch.h"
+#include "../algorithms/MergeSort.h"
 #include "../view/project/ProjectView.h"
 #include "../controller/project/ProjectController.h"
 #include "../view/material/MaterialView.h"
@@ -26,10 +26,12 @@ namespace TrekStar
 
             @param vector of projects.
         */
-        void listProjects(std::vector<TrekStar::Project::Project> projects)
+        void listProjects(std::vector<TrekStar::Project::Project> & projects)
         {
             std::string userInput;
             int currentProject = 0;
+
+            TrekStar::Algorithms::mergeSort(projects);
 
             while ( userInput != "b" )
             {
