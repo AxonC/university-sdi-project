@@ -116,7 +116,7 @@ namespace TrekStarTest {
             EXPECT_CALL(mockProject, GetPlayingInTheatres()).Times(1);
 
             ProjectController controller(mockProject, projectView);
-            controller.ListProjects();
+            controller.ShowAll();
         }
     }
 }
