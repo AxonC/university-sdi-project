@@ -8,7 +8,7 @@ namespace TrekStar
         /**
           *  Trekstar Material Class Implementation
         */
-        int Material::GetId() const
+        unsigned int Material::GetId() const
         {
             return id;
         }

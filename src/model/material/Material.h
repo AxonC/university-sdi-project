@@ -3,6 +3,7 @@
 
 #include <string>
 #include "../Model.h"
+#include "MaterialInterface.h"
 #include "../../lib/json.hpp"
 
 using json = nlohmann::json;
@@ -28,7 +29,7 @@ namespace TrekStar
         /**
          *  Trekstar Material Class
          */
-        class Material : public Model
+        class Material : public MaterialInterface
         {
         protected:
             unsigned int id;
@@ -46,15 +47,15 @@ namespace TrekStar
 
             virtual void PopulateFromFile(const json &) = 0;
 
-            int GetId() const;
-            std::string GetFormat() const;
-            std::string GetAudioFormat() const;
-            int GetRunTime() const;
-            std::string GetLanguage() const;
-            double GetRetailPrice() const;
-            std::string GetSubtitles() const;
-            std::string GetFrameAspect() const;
-            virtual KeyValueMap GetPresentableInformation() const;
+            unsigned int GetId() const override;
+            std::string GetFormat() const override;
+            std::string GetAudioFormat() const override;
+            int GetRunTime() const override;
+            std::string GetLanguage() const override;
+            double GetRetailPrice() const override;
+            std::string GetSubtitles() const override;
+            std::string GetFrameAspect() const override;
+            KeyValueMap GetPresentableInformation() const override;
 
             std::shared_ptr<SerialisedMaterial> ExportToSerialised() const;
 
