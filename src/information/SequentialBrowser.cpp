@@ -20,7 +20,6 @@ namespace TrekStar
 
         unsigned int SequentialBrowser::GetItemNumber()
         {
-            std::cout << "DEBUG DEBUG DEBUG = " << this->command << std::endl;
             if ( this->command == "n" )
             {
                 if ( this->currentItem + 1 != this->noOfItems )

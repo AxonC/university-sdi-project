@@ -4,6 +4,7 @@
 
 #include "listInformation.h"
 #include "SequentialBrowser.h"
+#include "../algorithms/LinearSearch.h"
 #include "../view/project/ProjectView.h"
 #include "../controller/project/ProjectController.h"
 #include "../view/material/MaterialView.h"

@@ -29,6 +29,9 @@ add_library(Project_Controller controller/project/ProjectController.h controller
 add_library(Material_Controller controller/material/MaterialController.h controller/material/MaterialController.cpp)
 target_link_libraries(Controller Project_Controller Material_Controller)
 
+# algorithms
+add_library(LinearSearch algorithms/LinearSearch.h algorithms/LinearSearch.cpp)
+
 # functions
 add_library(File file/fileOperations.h file/fileOperations.cpp)
 add_library(Information information/listInformation.h information/addInformation.h information/saveInformation.h information/listInformation.cpp information/addInformation.cpp information/saveInformation.cpp information/SequentialBrowser.h information/SequentialBrowser.cpp view/ConsoleMessageView.cpp view/ConsoleMessageView.h)
@@ -42,4 +45,4 @@ add_library(nlohmann_json INTERFACE)
 target_include_directories(nlohmann_json INTERFACE lib/json.hpp)
 
 add_executable(trekstar main.cpp)
-target_link_libraries(trekstar Bluray_Model ConsoleMessage_View Controller File Information CommandHandler structures nlohmann_json)
+target_link_libraries(trekstar Bluray_Model ConsoleMessage_View Controller LinearSearch File Information CommandHandler structures nlohmann_json)
