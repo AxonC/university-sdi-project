@@ -15,7 +15,6 @@ namespace TrekStar
                             {"lsp",  "list projects"},
                             {"sp",   "<criteria> search projects"},
                             {"lsm",  "<project id> list materials"},
-                            {"save", "save all data to file"},
                             {"b",    "go back"}
                     }
             );
@@ -50,10 +49,6 @@ namespace TrekStar
                         {
                             std::cout << "Invalid parameter, please try again." << std::endl;
                         }
-                    }
-                    else if ( tokenisedCommand.first == "save" )
-                    {
-                        TrekStar::Information::save(projects, FILE_PATH);
                     }
                 }
                 else
