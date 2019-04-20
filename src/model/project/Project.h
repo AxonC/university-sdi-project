@@ -56,6 +56,7 @@ namespace TrekStar
 
             unsigned int GetId() const override;
             std::string GetTitle() const final;
+            std::string GetLowercaseTitle() const;
             std::string GetSummary() const override;
             std::vector<std::shared_ptr<Material::Material>> GetMaterials() const;
             bool GetReleased() const override;
