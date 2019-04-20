@@ -1,7 +1,7 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
-#include <material/DVD/DVD.h>
+#include <model/material/DVD.h>
 
 using TrekStar::Material::DVD;
 

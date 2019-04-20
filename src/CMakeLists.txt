@@ -14,11 +14,11 @@ add_library(Material_Model model/material/Material.h model/material/Material.cpp
 add_library(MaterialFactory_Model model/material/MaterialFactory.h model/material/MaterialFactory.cpp)
 add_library(VHS_Model model/material/VHS.h model/material/VHS.cpp)
 add_library(Crew_Model model/people/Crew.h model/people/Crew.cpp)
-add_library(Project_Model model/project/Project.h model/project/Project.cpp)
+add_library(Project_Model model/project/Project.h model/project/Project.cpp model/project/ProjectInterface.h)
 target_link_libraries(Bluray_Model BoxSet_Model DoubleSideDVD_Model DVD_Model DVDSide_Model Material_Model MaterialFactory_Model VHS_Model Crew_Model Project_Model)
 
 # views
-add_library(ConsoleMessage_View view/ConsoleMessageView.h view/ConsoleMessageView.cpp)
+add_library(ConsoleMessage_View view/ConsoleMessageView.h view/ConsoleMessageView.cpp view/ViewInterface.h)
 add_library(Project_View view/project/ProjectView.h view/project/ProjectView.cpp)
 add_library(Material_View view/material/MaterialView.h view/material/MaterialView.cpp)
 target_link_libraries(ConsoleMessage_View Project_View Material_View)

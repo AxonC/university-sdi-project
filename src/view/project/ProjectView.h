@@ -14,11 +14,11 @@ namespace TrekStar
         {
         public:
             ProjectView() = default;
-            ProjectView(Project & model);
+            explicit ProjectView(ProjectInterface& model);
 
             void Present() override;
 
-            Project* GetModel() override;
+            ProjectInterface* GetModel() override;
         };
     }
 }

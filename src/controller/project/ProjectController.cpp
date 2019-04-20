@@ -4,25 +4,25 @@ namespace TrekStar
 {
     namespace Project
     {
-        ProjectController::ProjectController(const Project &model, const ProjectView & view)
+        ProjectController::ProjectController(ProjectInterface & model, ViewInterface & view)
         {
-            this->SetModel(model);
-            this->SetView(view);
+            this->model = &model;
+            this->view = &view;
         }
 
-        void ProjectController::SetModel(const Project & model)
+        void ProjectController::SetModel(ProjectInterface* &model)
         {
             this->model = model;
         }
 
-        void ProjectController::SetView(const ProjectView & view)
+        void ProjectController::SetView(ConsoleMessageView* & view)
         {
             this->view = view;
         }
 
         void ProjectController::ListProjects()
         {
-            this->view.Present();
+            this->view->Present();
         }
     }
 }
