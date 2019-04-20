@@ -12,19 +12,12 @@ namespace TrekStar
     {
         class ProjectController : public BaseController
         {
-        private:
-            ProjectInterface* model;
-            ViewInterface* view;
-
         public:
             ProjectController() = default;
             ProjectController(ProjectInterface & model, ViewInterface & view);
             ~ProjectController() = default;
 
-            void SetModel(ProjectInterface* & model);
-            //void SetView(ConsoleMessageView* & view);
-
-            void ShowAll();
+            void ShowAll() override;
         };
     }
 }

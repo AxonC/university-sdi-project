@@ -2,7 +2,7 @@
 
 namespace TrekStar
 {
-    BaseController::BaseController(Model* & model, ConsoleMessageView* & view)
+    BaseController::BaseController(Model* & model, ViewInterface* & view)
     {
         this->model = model;
         this->view = view;
@@ -13,7 +13,7 @@ namespace TrekStar
         this->model = model;
     }
 
-    void BaseController::SetView(ConsoleMessageView* & view)
+    void BaseController::SetView(ViewInterface* & view)
     {
         this->view = view;
     }

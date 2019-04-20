@@ -18,6 +18,7 @@ namespace TrekStar
         protected:
             Model* model;
             ControllerInterface* controller;
+
         public:
             ConsoleMessageView() = default;
             ConsoleMessageView(Model* &, ControllerInterface* &);

@@ -13,17 +13,15 @@ namespace TrekStar
     {
     protected:
         Model* model;
-        ConsoleMessageView* view;
+        ViewInterface* view;
 
     public:
         BaseController() = default;
-        BaseController(Model* & model, ConsoleMessageView* & view);
+        BaseController(Model* &, ViewInterface* &);
         ~BaseController() = default;
 
-        void SetModel(Model* & model);
-        void SetView(ConsoleMessageView* & view);
-
-        virtual void ShowAll() = 0;
+        virtual void SetModel(Model* &);
+        virtual void SetView(ViewInterface* &);
     };
 }
 
