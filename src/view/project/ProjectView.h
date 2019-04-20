@@ -1,20 +1,20 @@
 #ifndef TREKSTAR_PROJECTLISTVIEW_H
 #define TREKSTAR_PROJECTLISTVIEW_H
 
-#include "../ConsoleMessageView.h"
+#include "../BaseView.h"
 #include "../../model/project/Project.h"
 
-using TrekStar::View::ConsoleMessageView;
+using TrekStar::View::BaseView;
 
 namespace TrekStar
 {
     namespace Project
     {
-        class ProjectView : public ConsoleMessageView
+        class ProjectView : public BaseView
         {
         public:
             ProjectView() = default;
-            explicit ProjectView(ProjectInterface& model);
+            explicit ProjectView(ProjectInterface & model);
 
             void Present() override;
 

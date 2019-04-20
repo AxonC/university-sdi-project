@@ -4,25 +4,15 @@ namespace TrekStar
 {
     namespace Material
     {
-        MaterialController::MaterialController(const std::shared_ptr<Material> & model, const MaterialView & view)
+        MaterialController::MaterialController(MaterialInterface & model, ViewInterface & view) : BaseController()
         {
-            this->SetModel(model);
-            this->SetView(view);
-        }
-
-        void MaterialController::SetModel(const std::shared_ptr<Material> & model)
-        {
-            this->model = model;
-        }
-
-        void MaterialController::SetView(const MaterialView & view)
-        {
-            this->view = view;
+            this->model = &model;
+            this->view = &view;
         }
 
         void MaterialController::ShowAll()
         {
-            this->view.Present();
+            this->view->Present();
         }
     }
 }

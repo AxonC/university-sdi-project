@@ -1,21 +1,21 @@
-#include "ConsoleMessageView.h"
+#include "BaseView.h"
 
 namespace TrekStar
 {
     namespace View
     {
-        ConsoleMessageView::ConsoleMessageView(Model* & model, Controller* & controller)
+        BaseView::BaseView(Model* & model, ControllerInterface* & controller)
         {
             this->model = model;
             this->controller = controller;
         }
 
-        void ConsoleMessageView::SetController(Controller* & controller)
+        void BaseView::SetController(ControllerInterface* & controller)
         {
             this->controller = controller;
         }
 
-        void ConsoleMessageView::SetModel(Model* & model)
+        void BaseView::SetModel(Model* & model)
         {
             this->model = model;
         }

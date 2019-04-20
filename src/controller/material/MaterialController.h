@@ -5,24 +5,23 @@
 
 #include "../../model/material/Material.h"
 #include "../../view/material/MaterialView.h"
+#include "../../model/material/MaterialInterface.h"
+#include "../BaseController.h"
 
 namespace TrekStar
 {
     namespace Material
     {
-        class MaterialController
+        class MaterialController : public BaseController
         {
         private:
-            std::shared_ptr<Material> model;
-            MaterialView view;
+            MaterialInterface* model;
+            ViewInterface* view;
 
         public:
             MaterialController() = default;
-            MaterialController(const std::shared_ptr<Material> & model, const MaterialView & view);
+            MaterialController(MaterialInterface & model, ViewInterface & view);
             ~MaterialController() = default;
-
-            void SetModel(const std::shared_ptr<Material> & model);
-            void SetView(const MaterialView & view);
 
             void ShowAll();
         };

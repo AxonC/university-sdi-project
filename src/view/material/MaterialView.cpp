@@ -7,7 +7,7 @@ namespace TrekStar
 {
     namespace Material
     {
-        MaterialView::MaterialView(Material & model) : ConsoleMessageView()
+        MaterialView::MaterialView(MaterialInterface & model) : BaseView()
         {
             this->model = &model;
         }
@@ -39,9 +39,9 @@ namespace TrekStar
             }
         }
 
-        Material* MaterialView::GetModel()
+        MaterialInterface* MaterialView::GetModel()
         {
-            return dynamic_cast<Material *>(this->model);
+            return dynamic_cast<MaterialInterface*>(this->model);
         }
     }
 }
