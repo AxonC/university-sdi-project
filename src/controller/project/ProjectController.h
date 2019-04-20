@@ -22,6 +22,4 @@ namespace TrekStar
     }
 }
 
-
-
 #endif //TREKSTAR_PROJECTCONTROLLER_H
