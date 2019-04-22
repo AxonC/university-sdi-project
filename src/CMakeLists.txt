@@ -39,8 +39,8 @@ set(File file/fileOperations.h file/fileOperations.cpp)
 set(Information information/listInformation.h information/addInformation.h information/saveInformation.h information/listInformation.cpp information/addInformation.cpp information/saveInformation.cpp information/SequentialBrowser.h information/SequentialBrowser.cpp view/BaseView.cpp view/BaseView.h)
 set(CommandHandler command/CommandHandler.h command/CommandHandler.cpp)
 set(ViewMode command/viewMode.h command/viewMode.cpp)
-set(MaintainenceMode command/maintainenceMode.h command/maintainenceMode.cpp)
-add_library(Functions ${File} ${Information} ${CommandHandler} ${ViewMode} ${MaintainenceMode})
+set(MaintenanceMode command/maintenanceMode.h command/maintenanceMode.cpp)
+add_library(Functions ${File} ${Information} ${CommandHandler} ${ViewMode} ${MaintenanceMode})
 
 # data structures
 add_library(structures INTERFACE)

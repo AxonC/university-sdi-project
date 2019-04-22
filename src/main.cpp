@@ -2,7 +2,7 @@
 
 #include "command/CommandHandler.h"
 #include "command/viewMode.h"
-#include "command/maintainenceMode.h"
+#include "command/maintenanceMode.h"
 #include "file/fileOperations.h"
 
 int main()
@@ -18,7 +18,7 @@ int main()
     TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
             {
                     {1, "view mode"},
-                    {2, "maintainence mode"},
+                    {2, "maintenance mode"},
                     {3, "quit"}
             },
             "Main Menu"
@@ -37,7 +37,7 @@ int main()
                 TrekStar::Command::viewMode(FILE_PATH, projects);
                 break;
             case 2 :
-                TrekStar::Command::maintainenceMode(FILE_PATH, projects);
+                TrekStar::Command::maintenanceMode(FILE_PATH, projects);
                 break;
             default :
                 break;

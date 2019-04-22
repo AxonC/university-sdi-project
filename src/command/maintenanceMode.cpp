@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "maintainenceMode.h"
+#include "maintenanceMode.h"
 #include "CommandHandler.h"
 #include "../information/addInformation.h"
 #include "../information/saveInformation.h"
@@ -9,7 +9,7 @@ namespace TrekStar
 {
     namespace Command
     {
-        void maintainenceMode(const std::string & FILE_PATH, std::vector<TrekStar::Project::Project> & projects)
+        void maintenanceMode(const std::string & FILE_PATH, std::vector<TrekStar::Project::Project> & projects)
         {
             TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
                     {
@@ -17,10 +17,10 @@ namespace TrekStar
                             {2, "save changes to file"},
                             {3, "go back"}
                     },
-                    "Maintainence Mode"
+                    "Maintenance Mode"
             );
 
-            int commandInput;
+            int commandInput  = 0;
             while ( commandInput != 3 )
             {
                 commandHandler.displayCommands();

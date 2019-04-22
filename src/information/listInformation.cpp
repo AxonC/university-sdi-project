@@ -115,7 +115,7 @@ namespace TrekStar
 
             std::vector<std::shared_ptr<TrekStar::Material::Material>> materials = projects[projectNum - 1].GetMaterials();
 
-            int commandInput;
+            int commandInput = 0;
             int currentMaterial = 0;
 
             while ( commandInput != 3 )
