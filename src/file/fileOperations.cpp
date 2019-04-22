@@ -98,7 +98,8 @@ namespace TrekStar
 
             std::ifstream dataFile(filePath);
 			json jsonStream;
-			try {
+			try
+			{
 				jsonStream = json::parse(dataFile);
 			}
 			catch (json::parse_error &e)
@@ -106,7 +107,7 @@ namespace TrekStar
 				std::cerr << e.what() << std::endl;
 			}
 
-            for ( auto &it : jsonStream)
+            for ( auto &it : jsonStream )
             {
                 // ensure that there is a key called details
                 if ( it.find("details") != it.end() )
