@@ -34,12 +34,13 @@ namespace TrekStar
             }
         }
 
+
         /**
             Prints to standard output the projects.
 
             @param vector of projects.
         */
-        void listProjects(std::vector<TrekStar::Project::Project> & projects)
+        void listProjects(std::vector<TrekStar::Project::Project> & projects, bool sortByTitle)
         {
             TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
                     {
@@ -50,7 +51,10 @@ namespace TrekStar
                     "List Projects"
             );
 
-            TrekStar::Algorithms::mergeSort(projects);
+            if ( sortByTitle )
+            {
+                TrekStar::Algorithms::mergeSort(projects);
+            }
 
             int commandInput = 0;
             int currentProject = 0;
@@ -102,7 +106,7 @@ namespace TrekStar
             @param vector of projects.
             @param integer containing the project number.
         */
-        void listMaterials(std::vector<TrekStar::Project::Project> projects, int projectNum)
+        void listMaterials(std::vector<TrekStar::Project::Project> & projects, int projectNum)
         {
             TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
                     {

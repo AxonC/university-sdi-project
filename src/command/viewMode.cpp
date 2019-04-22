@@ -29,10 +29,24 @@ namespace TrekStar
 
                 if ( commandHandler.isValidCommand(commandInput) )
                 {
+                    std::string sortByTitleString;
+                    bool sortByTitle;
+
                     switch ( commandInput )
                     {
                         case 1 :
-                            TrekStar::Information::listProjects(projects);
+                            sortByTitleString;
+                            sortByTitle = false;
+                            std::cout << "Sort by title? (y/n): ";
+                            std::cin >> sortByTitleString;
+                            commandHandler.clearConsole();
+
+                            if ( sortByTitleString == "y" )
+                            {
+                                sortByTitle = true;
+                            }
+
+                            TrekStar::Information::listProjects(projects, sortByTitle);
                             break;
                         case 2 :
                             TrekStar::Information::searchProjects(projects);
