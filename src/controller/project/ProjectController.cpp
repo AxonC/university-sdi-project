@@ -12,7 +12,12 @@ namespace TrekStar
 
         void ProjectController::ShowAll()
         {
-            this->view->Present();
+            this->view->PresentAll();
+        }
+
+        void ProjectController::ShowList()
+        {
+            this->view->PresentList();
         }
     }
 }

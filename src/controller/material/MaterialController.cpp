@@ -12,7 +12,12 @@ namespace TrekStar
 
         void MaterialController::ShowAll()
         {
-            this->view->Present();
+            this->view->PresentAll();
+        }
+
+        void MaterialController::ShowList()
+        {
+
         }
     }
 }

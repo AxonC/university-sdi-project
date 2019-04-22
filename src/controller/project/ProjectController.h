@@ -18,6 +18,7 @@ namespace TrekStar
             ~ProjectController() = default;
 
             void ShowAll() override;
+            void ShowList() override;
         };
     }
 }

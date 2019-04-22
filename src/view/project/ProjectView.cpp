@@ -11,9 +11,7 @@ namespace TrekStar
             this->model = &model;
         }
 
-
-
-        void ProjectView::Present()
+        void ProjectView::PresentAll()
         {
             auto model = this->GetModel();
 
@@ -47,6 +45,15 @@ namespace TrekStar
             }
             std::cout << std::endl;
         }
+
+        void ProjectView::PresentList()
+        {
+            auto model = this->GetModel();
+
+            std::cout << "ID: " << std::to_string(model->GetId()) << ", ";
+            std::cout << "Title: " << model->GetTitle() << std::endl;
+        }
+
 
         ProjectInterface* ProjectView::GetModel()
         {

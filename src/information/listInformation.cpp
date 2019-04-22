@@ -24,6 +24,16 @@ namespace TrekStar
 {
     namespace Information
     {
+        void displayAllProjects(std::vector<TrekStar::Project::Project> & projects)
+        {
+            for ( auto & project: projects )
+            {
+                ProjectView view(project);
+                ProjectController controller(project, view);
+                controller.ShowList();
+            }
+        }
+
         /**
             Prints to standard output the projects.
 
@@ -40,10 +50,10 @@ namespace TrekStar
                     "List Projects"
             );
 
-            int commandInput;
-            int currentProject = 0;
-
             TrekStar::Algorithms::mergeSort(projects);
+
+            int commandInput = 0;
+            int currentProject = 0;
 
             while ( commandInput != 3 )
             {

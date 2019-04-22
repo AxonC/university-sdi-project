@@ -24,7 +24,7 @@ int main()
             "Main Menu"
     );
 
-    int commandInput;
+    int commandInput = 0;
     while ( commandInput != 3 )
     {
         commandHandler.displayCommands();
@@ -40,7 +40,7 @@ int main()
                 TrekStar::Command::maintainenceMode(FILE_PATH, projects);
                 break;
             default :
-                std::cout << "Invalid command..." << std::endl;
+                break;
         }
     }
 

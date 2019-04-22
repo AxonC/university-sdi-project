@@ -12,7 +12,7 @@ namespace TrekStar
             this->model = &model;
         }
 
-        void MaterialView::Present()
+        void MaterialView::PresentAll()
         {
             std::cout << std::string(80, '-') << std::endl;
             std::cout << "Material " << this->GetModel()->GetId() << std::endl;
@@ -37,6 +37,11 @@ namespace TrekStar
                     }
                 }
             }
+        }
+
+        void MaterialView::PresentList()
+        {
+
         }
 
         MaterialInterface* MaterialView::GetModel()

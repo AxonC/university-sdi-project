@@ -10,6 +10,7 @@ namespace TrekStar
         public:
             virtual ~ControllerInterface() = default;
             virtual void ShowAll() = 0;
+            virtual void ShowList() = 0;
         };
     }
 }

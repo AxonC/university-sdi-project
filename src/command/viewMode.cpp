@@ -40,7 +40,16 @@ namespace TrekStar
                         case 3 :
                             try
                             {
-                                TrekStar::Information::listMaterials(projects, 1);
+                                std::cout << std::string(80, '-') << std::endl;
+                                TrekStar::Information::displayAllProjects(projects);
+                                std::cout << std::string(80, '-') << std::endl;
+
+                                int projectID;
+                                std::cout << "Project ID: ";
+                                std::cin >> projectID;
+                                commandHandler.clearConsole();
+
+                                TrekStar::Information::listMaterials(projects, projectID);
                             }
                             catch ( std::invalid_argument & )
                             {
@@ -48,7 +57,7 @@ namespace TrekStar
                             }
                             break;
                         default :
-                            std::cout << "Invalid command..." << std::endl;
+                            break;
                     }
                 }
                 else

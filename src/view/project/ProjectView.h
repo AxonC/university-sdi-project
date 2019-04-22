@@ -18,7 +18,8 @@ namespace TrekStar
             ProjectView() = default;
             explicit ProjectView(ProjectInterface & model);
 
-            void Present() override;
+            void PresentAll() override;
+            void PresentList() override;
 
             ProjectInterface* GetModel() override;
         };

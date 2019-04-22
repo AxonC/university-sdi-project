@@ -11,6 +11,8 @@ namespace TrekStar
 {
     namespace Information
     {
+        void displayAllProjects(std::vector<TrekStar::Project::Project> & projects);
+
         void listProjects(std::vector<TrekStar::Project::Project> & projects);
 
         void searchProjects(std::vector<TrekStar::Project::Project> & projects);
