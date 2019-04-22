@@ -69,6 +69,11 @@ namespace TrekStar
             return this->keywords;
         };
 
+        std::vector<std::string> Project::GetMaterialFormats() const
+        {
+            return this->materialFormats;
+        };
+
         std::pair<std::string, std::string> Project::GetTitleSummary() const
         {
             return {this->title, this->GetSummary()};
@@ -81,20 +86,23 @@ namespace TrekStar
                 throw std::domain_error("Material cannot be added.");
             }
 
+            std::string materialFormat;
             for ( const auto &material: materials )
             {
+                this->AddMaterialFormat(material->GetFormat());
                 this->materials.push_back(material);
             }
         }
 
-        bool Project::AddMaterials(const std::shared_ptr<Material::Material> & material)
+        bool Project::AddMaterial(const std::shared_ptr<Material::Material> & material)
         {
             if ( !this->CanAddMaterial() )
             {
                 return false;
             }
 
-            materials.push_back(material);
+            this->AddMaterialFormat(material->GetFormat());
+            this->materials.push_back(material);
 
             return true;
         }
@@ -121,7 +129,7 @@ namespace TrekStar
             this->crew.push_back(crewMember);
         }
 
-        void Project::AddCrew(const std::vector<std::shared_ptr<Crew>> &crew)
+        void Project::AddCrew(const std::vector<std::shared_ptr<Crew>> & crew)
         {
             for ( const auto & crewMember: crew )
             {
@@ -162,6 +170,19 @@ namespace TrekStar
         bool Project::CanAddMaterial() const
         {
             return this->released && !this->playingInTheatres;
+        }
+
+        bool Project::MaterialFormatExists(const std::string & materialFormat) const
+        {
+            return std::find(this->materialFormats.begin(), this->materialFormats.end(), materialFormat) != this->materialFormats.end();
+        }
+
+        void Project::AddMaterialFormat(const std::string & materialFormat)
+        {
+            if ( !MaterialFormatExists(materialFormat) )
+            {
+                this->materialFormats.push_back(materialFormat);
+            }
         }
 
         bool Project::operator>(const Project & project) const

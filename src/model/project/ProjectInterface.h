@@ -20,6 +20,7 @@ namespace TrekStar
             virtual bool GetReleased() const = 0;
             virtual bool GetPlayingInTheatres() const = 0;
             virtual std::vector<std::string> GetKeywords() const = 0;
+            virtual std::vector<std::string> GetMaterialFormats() const = 0;
         };
     }
 }

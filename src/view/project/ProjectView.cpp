@@ -11,6 +11,8 @@ namespace TrekStar
             this->model = &model;
         }
 
+
+
         void ProjectView::Present()
         {
             auto model = this->GetModel();
@@ -24,11 +26,24 @@ namespace TrekStar
             std::cout << "Playing in theatres : " << model->GetPlayingInTheatres() << std::endl;
 
             std::cout << "Keywords            : ";
-            std::vector<std::string> keywords = model->GetKeywords();
-            if ( !keywords.empty() )
+            if ( model->GetKeywords().empty() )
             {
-                std::copy(std::begin(keywords), std::prev(std::end(keywords)), std::ostream_iterator<std::string>(std::cout, ", "));
-                std::cout << keywords.back();
+                std::cout << "No keywords...";
+            }
+            else
+            {
+                this->DisplayVectorAsCSV(model->GetKeywords());
+            }
+            std::cout << std::endl;
+
+            std::cout << "Available on        : ";
+            if ( model->GetMaterialFormats().empty() )
+            {
+                std::cout << "No material formats...";
+            }
+            else
+            {
+                this->DisplayVectorAsCSV(model->GetMaterialFormats());
             }
             std::cout << std::endl;
         }
@@ -36,6 +51,15 @@ namespace TrekStar
         ProjectInterface* ProjectView::GetModel()
         {
             return dynamic_cast<ProjectInterface*>(this->model);
+        }
+
+        void ProjectView::DisplayVectorAsCSV(const std::vector<std::string> & stringVector)
+        {
+            if ( !stringVector.empty() )
+            {
+                std::copy(std::begin(stringVector), std::prev(std::end(stringVector)), std::ostream_iterator<std::string>(std::cout, ", "));
+                std::cout << stringVector.back();
+            }
         }
     }
 }

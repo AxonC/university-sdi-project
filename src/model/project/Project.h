@@ -39,14 +39,17 @@ namespace TrekStar
         private:
             unsigned int id{0};
             std::string title;
-            std::string lowercaseTitle;  // for searching
+            std::string lowercaseTitle;                                  // for searching
             std::string summary;
             std::vector<std::shared_ptr<Material::Material>> materials;
+            std::vector<std::string> materialFormats;                    // holds only the format of each material
             bool released = false;
             bool playingInTheatres = false;
             std::vector<std::string> keywords;
             std::vector<std::shared_ptr<People::Crew>> crew;
             bool CanAddMaterial() const;
+            bool MaterialFormatExists(const std::string & materialFormat) const;
+            void AddMaterialFormat(const std::string & materialFormat);
 
         public:
             Project() = default;
@@ -62,10 +65,11 @@ namespace TrekStar
             bool GetReleased() const override;
             bool GetPlayingInTheatres() const override;
             std::vector<std::string> GetKeywords() const override;
+            std::vector<std::string> GetMaterialFormats() const override;
             std::pair<std::string, std::string> GetTitleSummary() const;
 
             void AddMaterials(const std::vector<std::shared_ptr<Material::Material>> & materials);
-            bool AddMaterials(const std::shared_ptr<Material::Material> & material);
+            bool AddMaterial(const std::shared_ptr<Material::Material> & material);
             void RemoveMaterial(const std::shared_ptr<Material::Material> & material);
 
             std::vector<std::shared_ptr<People::Crew>> GetCrew() const;

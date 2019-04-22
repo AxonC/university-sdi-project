@@ -12,6 +12,8 @@ namespace TrekStar
     {
         class ProjectView : public BaseView
         {
+        private:
+            void DisplayVectorAsCSV(const std::vector<std::string> & stringVector);
         public:
             ProjectView() = default;
             explicit ProjectView(ProjectInterface & model);
