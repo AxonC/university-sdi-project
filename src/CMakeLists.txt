@@ -31,7 +31,7 @@ add_library(Controllers ${BaseController} ${Project_Controller} ${Material_Contr
 
 # algorithms
 set(MergeSort algorithms/MergeSort.h algorithms/MergeSort.cpp)
-set(BinarySearch algorithms/BinarySearch.h algorithms/BinarySearch.cpp)
+set(BinarySearch algorithms/BinarySearch.h algorithms/BinarySearch.cpp logger/ChangeLogger.cpp logger/ChangeLogger.h)
 add_library(Algorithms ${MergeSort} ${BinarySearch})
 
 # functions
@@ -40,13 +40,16 @@ set(Information information/listInformation.h information/addInformation.h infor
 set(CommandHandler command/CommandHandler.h command/CommandHandler.cpp)
 set(ViewMode command/viewMode.h command/viewMode.cpp)
 set(MaintainenceMode command/maintainenceMode.h command/maintainenceMode.cpp)
-add_library(Functions ${File} ${Information} ${CommandHandler} ${ViewMode} ${MaintainenceMode})
+set(Logger logger/LoggerInterface.h logger/ChangeLogger.cpp logger/ChangeLogger.h)
+add_library(Functions ${File} ${Logger} ${Information} ${CommandHandler} ${ViewMode} ${MaintainenceMode})
 
 # data structures
 add_library(structures INTERFACE)
 target_include_directories(structures INTERFACE structures/Stack.h)
 add_library(nlohmann_json INTERFACE)
 target_include_directories(nlohmann_json INTERFACE lib/json.hpp)
+add_library(spdlog INTERFACE)
+target_include_directories(spdlog INTERFACE lib/spdlog/include)
 
 add_executable(trekstar main.cpp)
 target_link_libraries(trekstar Models Views Controllers Algorithms Functions structures nlohmann_json)
