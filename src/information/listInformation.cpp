@@ -11,6 +11,7 @@
 #include "../controller/project/ProjectController.h"
 #include "../view/material/MaterialView.h"
 #include "../controller/material/MaterialController.h"
+#include "../command/CommandHandler.h"
 
 using TrekStar::Project::Project;
 using TrekStar::Project::ProjectController;
@@ -30,14 +31,23 @@ namespace TrekStar
         */
         void listProjects(std::vector<TrekStar::Project::Project> & projects)
         {
-            std::string userInput;
+            TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
+                    {
+                            {1, "next project"},
+                            {2, "previous project"},
+                            {3, "go back"}
+                    },
+                    "List Projects"
+            );
+
+            int commandInput;
             int currentProject = 0;
 
             TrekStar::Algorithms::mergeSort(projects);
 
-            while ( userInput != "b" )
+            while ( commandInput != 3 )
             {
-                SequentialBrowser sequentialBrowser(projects.size(), currentProject, userInput);
+                SequentialBrowser sequentialBrowser(projects.size(), currentProject, commandInput);
 
                 currentProject = sequentialBrowser.GetItemNumber();
 
@@ -45,17 +55,19 @@ namespace TrekStar
                 ProjectController controller(projects.at(currentProject), view);
                 controller.ShowAll();
 
-                std::cout << std::string(80, '-') << std::endl;
-                std::cout << "n - next project, p - previous project, b - go back" << std::endl;
-                std::cout << std::string(80, '-') << std::endl;
-                std::cout << "> ";
-                std::cin >> userInput;
+                commandHandler.displayCommands();
+                commandInput = commandHandler.getUserInput();
+                commandHandler.clearConsole();
             }
         }
 
 
-        void searchProjects(std::vector<TrekStar::Project::Project> & projects, std::string searchCriteria)
+        void searchProjects(std::vector<TrekStar::Project::Project> & projects)
         {
+            std::string searchCriteria;
+            std::cout << "Project title: ";
+            std::cin >> searchCriteria;
+
             TrekStar::Algorithms::mergeSort(projects);
 
             std::transform(searchCriteria.begin(), searchCriteria.end(), searchCriteria.begin(), ::tolower);
@@ -82,14 +94,23 @@ namespace TrekStar
         */
         void listMaterials(std::vector<TrekStar::Project::Project> projects, int projectNum)
         {
+            TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
+                    {
+                            {1, "next material"},
+                            {2, "previous material"},
+                            {3, "go back"}
+                    },
+                    "List Materials"
+            );
+
             std::vector<std::shared_ptr<TrekStar::Material::Material>> materials = projects[projectNum - 1].GetMaterials();
 
-            std::string userInput;
+            int commandInput;
             int currentMaterial = 0;
 
-            while ( userInput != "b" )
+            while ( commandInput != 3 )
             {
-                SequentialBrowser sequentialBrowser(materials.size(), currentMaterial, userInput);
+                SequentialBrowser sequentialBrowser(materials.size(), currentMaterial, commandInput);
 
                 currentMaterial = sequentialBrowser.GetItemNumber();
 
@@ -98,11 +119,9 @@ namespace TrekStar
                 MaterialController controller(*material, view);
                 controller.ShowAll();
 
-                std::cout << std::string(80, '-') << std::endl;
-                std::cout << "n - next material, p - previous material, b - go back" << std::endl;
-                std::cout << std::string(80, '-') << std::endl;
-                std::cout << "> ";
-                std::cin >> userInput;
+                commandHandler.displayCommands();
+                commandInput = commandHandler.getUserInput();
+                commandHandler.clearConsole();
             }
         }
     }

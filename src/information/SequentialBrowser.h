@@ -13,11 +13,11 @@ namespace TrekStar
         private:
             unsigned int noOfItems;
             unsigned int currentItem;
-            std::string command;
-            std::vector<std::string> validCommands = {"n", "p", "b"};
+            int command;
+            std::vector<int> validCommands = {1, 2};
         public:
             SequentialBrowser() = default;
-            SequentialBrowser(unsigned int noOfItems, unsigned int currentItem, const std::string & userInput);
+            SequentialBrowser(unsigned int noOfItems, unsigned int currentItem, const int & commandInput);
             ~SequentialBrowser() = default;
 
             bool isValidCommand();

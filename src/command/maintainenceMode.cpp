@@ -13,36 +13,34 @@ namespace TrekStar
         {
             TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
                     {
-                            {"addp", "<title> add project"},
-                            {"save", "save changes to file"},
-                            {"b",    "go back"}
-                    }
+                            {1, "add project"},
+                            {2, "save changes to file"},
+                            {3, "go back"}
+                    },
+                    "Maintainence Mode"
             );
 
-            std::string commandInput;
-            while ( commandInput != "b" )
+            int commandInput;
+            while ( commandInput != 3 )
             {
                 commandHandler.displayCommands();
-                std::cout << std::endl;
-                std::cout << "> ";
-                std::getline(std::cin, commandInput);
+                commandInput = commandHandler.getUserInput();
+                commandHandler.clearConsole();
 
-                StringPair tokenisedCommand = commandHandler.tokeniseCommand(commandInput);
-
-                if ( commandHandler.isValidCommand(tokenisedCommand.first) )
+                if ( commandHandler.isValidCommand(commandInput) )
                 {
-                    if ( tokenisedCommand.first == "addp" )
+                    if ( commandInput == 1 )
                     {
                         TrekStar::Information::addProject(projects);
                     }
-                    else if ( tokenisedCommand.first == "save" )
+                    else if ( commandInput == 2 )
                     {
                         TrekStar::Information::save(projects, FILE_PATH);
                     }
                 }
                 else
                 {
-                    std::cout << "'" << tokenisedCommand.first << "'" << " is not a valid command. Type 'help' to see all available commands." << std::endl;
+                    std::cout << "Invalid command..." << std::endl;
                 }
             }
         }
