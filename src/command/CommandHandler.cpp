@@ -39,9 +39,25 @@ namespace TrekStar
 
         int CommandHandler::getUserInput() const
         {
-            int commandInput;
-            std::cout << "> ";
-            std::cin >> commandInput;
+            bool validCommand = false;
+            int commandInput = 0;
+
+            while ( !validCommand )
+            {
+                std::cout << "> ";
+                std::cin >> commandInput;
+
+                if ( !std::cin.fail() && isValidCommand(commandInput) )
+                {
+                    validCommand = true;
+                }
+                else
+                {
+                    std::cout << "Invalid command..." << std::endl;
+                    std::cin.clear();
+                    std::cin.ignore(256,'\n');
+                }
+            }
 
             return commandInput;
         }
