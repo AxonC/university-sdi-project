@@ -94,7 +94,6 @@ namespace TrekStar
         ProjectVector importProjects(const std::string & filePath)
         {
             TrekStar::Project::Project currentProject;
-            std::shared_ptr<Material::Material> currentMaterial;
             ProjectVector projects;
 
             std::ifstream dataFile(filePath);
