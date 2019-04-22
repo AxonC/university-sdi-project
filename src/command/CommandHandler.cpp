@@ -24,9 +24,9 @@ namespace TrekStar
             std::cout << std::string(80,'-') << std::endl;
             for ( const auto & currentCommand : this->commands )
             {
-                std::cout << currentCommand.first << " - " << currentCommand.second << ", ";
+                std::cout << currentCommand.first << " - " << currentCommand.second << std::endl;
             }
-            std::cout << std::endl << std::string(80,'-') << std::endl;
+            std::cout << std::string(80,'-') << std::endl;
         }
 
         void CommandHandler::clearConsole() const
