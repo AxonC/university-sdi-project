@@ -6,7 +6,7 @@ namespace TrekStar
 {
     namespace Command
     {
-        CommandHandler::CommandHandler(const std::map<std::string, std::string> & commands)
+        CommandHandler::CommandHandler(const StringMap & commands)
         {
             this->commands = commands;
         }
@@ -28,17 +28,14 @@ namespace TrekStar
             return std::stoi(commandOpcode);
         }
 
-        std::map<std::string, std::string> CommandHandler::GetCommands() const
-        {
-            return this->commands;
-        }
-
         void CommandHandler::displayCommands() const
         {
+            std::cout << std::string(80,'-') << std::endl;
             for ( const auto & currentCommand : this->commands )
             {
-                std::cout << currentCommand.first << " - " << currentCommand.second << std::endl;
+                std::cout << currentCommand.first << " - " << currentCommand.second << ", ";
             }
+            std::cout << std::endl << std::string(80,'-') << std::endl;
         };
     }
 }

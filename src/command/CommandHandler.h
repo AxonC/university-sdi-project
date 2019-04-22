@@ -2,10 +2,10 @@
 #define SDI_PROJECT_COMMANDHANDLER_H
 
 #include <string>
-#include <map>
+#include <unordered_map>
 #include <vector>
 
-using StringMap = std::map<std::string, std::string>;
+using StringMap = std::unordered_map<std::string, std::string>;
 using StringPair = std::pair<std::string, std::string>;
 
 namespace TrekStar
@@ -23,7 +23,6 @@ namespace TrekStar
             bool isValidCommand(const std::string & command) const;
             StringPair tokeniseCommand(const std::string & command) const;
             int getIntegerValue(const std::string & commandOpcode) const;
-            StringMap GetCommands() const;
             void displayCommands() const;
         };
     }
