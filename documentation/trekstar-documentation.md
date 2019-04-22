@@ -16,6 +16,7 @@ titlepage-rule-height: 1
 
 - [Table of Contents](#table-of-contents)
 - [Todo - **_remove me before submission pls_**](#todo---remove-me-before-submission-pls)
+	- [User Guide](#user-guide)
 - [Contributions](#contributions)
 	- [Callum Axon (N0727303)](#callum-axon-n0727303)
 	- [Callum Carney (N0741707)](#callum-carney-n0741707)
@@ -48,14 +49,19 @@ titlepage-rule-height: 1
 		- [Using Remove Projects](#using-remove-projects)
 - [Conclusion](#conclusion)
 - [Appendix](#appendix)
+	- [Managing group work](#managing-group-work)
+	- [Meeting Minutes](#meeting-minutes)
 
 \newpage
 
 # Todo - **_remove me before submission pls_**
-- [Using List Materials](#using-list-materials) requires screenshot that shows projectid listings when id issue is resolved.
-- [Using Maintenance Mode](#using-maintenance-mode) requires screenshot of the maintenance main menu when remove project is added.
-- User guide details required for when the application is able to manage crew and materials/projects fully.
-- Update [Using Add Project](#using-add-project) to reflect changes to saving a project.
+
+## User Guide
+  - [Using List Materials](#using-list-materials) requires screenshot that shows projectid listings when id issue is resolved.
+  - [Using Maintenance Mode](#using-maintenance-mode) requires screenshot of the maintenance main menu when remove project is added.
+  - User guide details required for when the application is able to manage crew and materials/projects fully.
+  - Update [Using Add Project](#using-add-project) to reflect changes to saving a project.
+
 \newpage
 
 # Contributions
@@ -297,7 +303,7 @@ Once on this screen, you can use the following keyboard inputs to navigate aroun
 Once you have entered the Add Project functionality you will be asked to enter the following information:
 
 
-Project Title, this is the name that you want your project to be called. Any value is accepted.
+Firstly, you will be asked to enter the Project Title, this is the name that you want your project to be called. Any value is accepted.
 
 ![Visual representation of the application asking for a Project Title](images/user-guide/maintenance-mode/add-project-title.png)
 
@@ -336,5 +342,22 @@ scalability, etc. design of system complexity using e.g. big O- notation).
 \newpage
 
 # Appendix
+
+## Managing group work
+
+
+## Meeting Minutes
+
+During group meetings a member was nominated to write minutes, these minutes were an important factor during the development of the application as they allowed us to go back and check what work we have all be allocated. On the following pages you can find the minutes for the aformentioned meetings.
+
+![Meeting 1 - Minutes](images/meeting-minutes/meeting-1.png)
+
+![Meeting 2 - Minutes](images/meeting-minutes/meeting-2.png)
+
+![Meeting 3 - Minutes](images/meeting-minutes/meeting-3.png)
+
+![Meeting 4 - Minutes](images/meeting-minutes/meeting-4.png)
+
+![Meeting 5 - Minutes](images/meeting-minutes/meeting-5.png)
 
 \newpage
