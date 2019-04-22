@@ -22,6 +22,15 @@ namespace TrekStar
             std::cout << "Summary             : " << model->GetSummary() << std::endl;
             std::cout << "Released            : " << model->GetReleased() << std::endl;
             std::cout << "Playing in theatres : " << model->GetPlayingInTheatres() << std::endl;
+
+            std::cout << "Keywords            : ";
+            std::vector<std::string> keywords = model->GetKeywords();
+            if ( !keywords.empty() )
+            {
+                std::copy(std::begin(keywords), std::prev(std::end(keywords)), std::ostream_iterator<std::string>(std::cout, ", "));
+                std::cout << keywords.back();
+            }
+            std::cout << std::endl;
         }
 
         ProjectInterface* ProjectView::GetModel()

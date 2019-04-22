@@ -64,6 +64,11 @@ namespace TrekStar
             return this->playingInTheatres;
         }
 
+        std::vector<std::string> Project::GetKeywords() const
+        {
+            return this->keywords;
+        };
+
         std::pair<std::string, std::string> Project::GetTitleSummary() const
         {
             return {this->title, this->GetSummary()};

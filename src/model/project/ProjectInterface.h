@@ -2,6 +2,7 @@
 #define TREKSTAR_PROJECTINTERFACE_H
 
 #include <string>
+#include <vector>
 
 #include "../Model.h"
 
@@ -18,6 +19,7 @@ namespace TrekStar
             virtual std::string GetSummary() const = 0;
             virtual bool GetReleased() const = 0;
             virtual bool GetPlayingInTheatres() const = 0;
+            virtual std::vector<std::string> GetKeywords() const = 0;
         };
     }
 }

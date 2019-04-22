@@ -61,6 +61,7 @@ namespace TrekStar
             std::vector<std::shared_ptr<Material::Material>> GetMaterials() const;
             bool GetReleased() const override;
             bool GetPlayingInTheatres() const override;
+            std::vector<std::string> GetKeywords() const override;
             std::pair<std::string, std::string> GetTitleSummary() const;
 
             void AddMaterials(const std::vector<std::shared_ptr<Material::Material>> & materials);
