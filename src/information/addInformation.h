@@ -7,7 +7,7 @@ namespace TrekStar
 {
     namespace Information
     {
-        void addProject(std::vector<TrekStar::Project::Project> projects, std::string projectTitle);
+        void addProject(std::vector<TrekStar::Project::Project> & projects);
     }
 }
 

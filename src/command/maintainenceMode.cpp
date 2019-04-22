@@ -2,6 +2,7 @@
 
 #include "maintainenceMode.h"
 #include "CommandHandler.h"
+#include "../information/addInformation.h"
 #include "../information/saveInformation.h"
 
 namespace TrekStar
@@ -32,7 +33,7 @@ namespace TrekStar
                 {
                     if ( tokenisedCommand.first == "addp" )
                     {
-                        TrekStar::Information::addProject(projects, tokenisedCommand.second);
+                        TrekStar::Information::addProject(projects);
                     }
                     else if ( tokenisedCommand.first == "save" )
                     {

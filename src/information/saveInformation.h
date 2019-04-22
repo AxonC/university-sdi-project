@@ -7,7 +7,7 @@ namespace TrekStar
 {
     namespace Information
     {
-        void save(std::vector<TrekStar::Project::Project> projects, const std::string & filePath);
+        void save(std::vector<TrekStar::Project::Project> & projects, const std::string & filePath);
     }
 }
 

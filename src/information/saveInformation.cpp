@@ -24,7 +24,7 @@ namespace TrekStar
             @param vector of projects.
             @param file path to JSON output.
         */
-        void save(std::vector<TrekStar::Project::Project> projects, const std::string & filePath)
+        void save(std::vector<TrekStar::Project::Project> & projects, const std::string & filePath)
         {
             json toWriteJSON;
 
