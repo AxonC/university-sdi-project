@@ -119,6 +119,11 @@ namespace TrekStar
             materials.erase(search);
         }
 
+        bool Project::CanAddMaterial() const
+        {
+            return this->released && !this->playingInTheatres;
+        }
+
         std::vector<std::shared_ptr<People::Crew>> Project::GetCrew() const
         {
             return this->crew;
@@ -165,11 +170,6 @@ namespace TrekStar
                     this->playingInTheatres,
                     this->keywords
                 };
-        }
-
-        bool Project::CanAddMaterial() const
-        {
-            return this->released && !this->playingInTheatres;
         }
 
         bool Project::MaterialFormatExists(const std::string & materialFormat) const

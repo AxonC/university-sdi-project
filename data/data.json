@@ -805,5 +805,20 @@
             "title": "test"
         },
         "materials": null
+    },
+    "6": {
+        "crew": null,
+        "details": {
+            "id": 0,
+            "keywords": [
+                "lol",
+                "lol2"
+            ],
+            "playingInTheatres": true,
+            "released": true,
+            "summary": "a",
+            "title": "tseting"
+        },
+        "materials": null
     }
 }

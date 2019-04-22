@@ -47,7 +47,6 @@ namespace TrekStar
             bool playingInTheatres = false;
             std::vector<std::string> keywords;
             std::vector<std::shared_ptr<People::Crew>> crew;
-            bool CanAddMaterial() const;
             bool MaterialFormatExists(const std::string & materialFormat) const;
             void AddMaterialFormat(const std::string & materialFormat);
 
@@ -71,6 +70,7 @@ namespace TrekStar
             void AddMaterials(const std::vector<std::shared_ptr<Material::Material>> & materials);
             bool AddMaterial(const std::shared_ptr<Material::Material> & material);
             void RemoveMaterial(const std::shared_ptr<Material::Material> & material);
+            bool CanAddMaterial() const;
 
             std::vector<std::shared_ptr<People::Crew>> GetCrew() const;
             void AddCrew(const std::shared_ptr<People::Crew> &);
