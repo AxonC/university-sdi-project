@@ -28,9 +28,9 @@ int main()
 
     TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
             {
-                    {1, "view mode"},
-                    {2, "maintenance mode"},
-                    {3, "quit"}
+                    {1, "View Mode"},
+                    {2, "Maintenance Mode"},
+                    {3, "Quit"}
             },
             "Main Menu"
     );

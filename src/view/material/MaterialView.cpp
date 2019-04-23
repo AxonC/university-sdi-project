@@ -188,7 +188,7 @@ namespace TrekStar
                             {5, "Edit Subtitles"},
                             {6, "Edit Frame Aspect"},
                             {7, "Edit Packaging"},
-                            {8, "CANCEL"}
+                            {8, "Cancel"}
                     },
                     "Update Material"
             );

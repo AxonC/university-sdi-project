@@ -44,9 +44,9 @@ namespace TrekStar
         {
             TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
                     {
-                            {1, "next project"},
-                            {2, "previous project"},
-                            {3, "go back"}
+                            {1, "Next Project"},
+                            {2, "Previous Project"},
+                            {3, "Cancel"}
                     },
                     "List Projects"
             );
@@ -111,9 +111,9 @@ namespace TrekStar
         {
             TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
                     {
-                            {1, "next material"},
-                            {2, "previous material"},
-                            {3, "go back"}
+                            {1, "Next Material"},
+                            {2, "Previous Material"},
+                            {3, "Cancel"}
                     },
                     "List Materials"
             );

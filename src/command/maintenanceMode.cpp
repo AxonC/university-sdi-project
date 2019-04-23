@@ -15,10 +15,10 @@ namespace TrekStar
         {
             TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
                     {
-                            {1, "add project"},
-                            {2, "update project"},
-                            {3, "update materials for a project"},
-                            {4, "go back"}
+                            {1, "Add Project"},
+                            {2, "Update Project"},
+                            {3, "Update Project Materials"},
+                            {4, "Cancel"}
                     },
                     "Maintenance Mode"
             );

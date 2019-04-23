@@ -166,7 +166,7 @@ namespace TrekStar
                             {3, "Edit Released"},
                             {4, "Edit PlayingInTheatres"},
                             {5, "Edit Existing Keywords"},
-                            {6, "CANCEL"}
+                            {6, "Cancel"}
                     },
                     "Update Project"
             );
