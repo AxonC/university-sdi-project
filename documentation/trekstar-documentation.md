@@ -17,9 +17,9 @@ titlepage-rule-height: 1
 - [Todo - **_remove me before submission pls_**](#todo---remove-me-before-submission-pls)
 	- [User Guide](#user-guide)
 - [Contributions](#contributions)
-	- [Callum Axon (N0727303)](#callum-axon-n0727303)
-	- [Callum Carney (N0741707)](#callum-carney-n0741707)
-	- [Matthew Robinson (N0724629)](#matthew-robinson-n0724629)
+	- [Callum Axon (N0727303) - Member A](#callum-axon-n0727303---member-a)
+	- [Callum Carney (N0741707) - Member C](#callum-carney-n0741707---member-c)
+	- [Matthew Robinson (N0724629) - Member B](#matthew-robinson-n0724629---member-b)
 - [System Description](#system-description)
 - [Class Diagram](#class-diagram)
 	- [Cohesion and Coupling Considerations](#cohesion-and-coupling-considerations)
@@ -68,14 +68,22 @@ titlepage-rule-height: 1
 
 # Contributions
 
-## Callum Axon (N0727303)
-* Stuff
+## Callum Axon (N0727303) - Member A
+* Class Diagram
+* A description of how cohesion and coupling have been considered in the class design
+* An explanation of the internal data structures used and the reason for the choices.
+  
+## Callum Carney (N0741707) - Member C
+* Component Diagrams
+* Deployment Diagrams
+* Screenshots of User Interface
 
-## Callum Carney (N0741707)
-* Other Stuff
+## Matthew Robinson (N0724629) - Member B
+* Sequence diagram
+* State machine diagram
+* An explanation of the search or sorting algorithm used
 
-## Matthew Robinson (N0724629)
-* More Stuff
+All other contributions have been completed as part of a group effort.
 
 \newpage
 
