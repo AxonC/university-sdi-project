@@ -7,8 +7,8 @@ namespace TrekStar
 {
     namespace Command
     {
-        static std::string GetStringInput();
-        static bool GetBoolInput();
+        std::string GetStringInput();
+        bool GetBoolInput();
     }
 }
 
