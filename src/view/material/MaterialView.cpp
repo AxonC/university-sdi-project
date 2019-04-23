@@ -49,22 +49,6 @@ namespace TrekStar
             std::cout << "Format: " << model->GetFormat() << std::endl;
         }
 
-        std::string MaterialView::GetNewFormat()
-        {
-            std::string currentFormat = this->GetModel()->GetFormat();
-
-            if ( currentFormat.empty() )
-            {
-                std::cout << "Format: ";
-            }
-            else
-            {
-                std::cout << "Title [current: " << currentFormat << "]: ";
-            }
-
-            return TrekStar::Command::GetStringInput();
-        }
-
         std::string MaterialView::GetNewAudioFormat()
         {
             std::string currentAudioFormat = this->GetModel()->GetAudioFormat();

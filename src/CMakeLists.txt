@@ -8,7 +8,7 @@ include_directories(${MY_SOURCE_DIR}/model ${MY_SOURCE_DIR}/controller ${MY_SOUR
 set(Bluray_Model model/material/Bluray.h model/material/Bluray.cpp)
 set(BoxSet_Model model/material/BoxSet.h model/material/BoxSet.cpp)
 set(DoubleSideDVD_Model model/material/DoubleSideDVD.h model/material/DoubleSideDVD.cpp)
-set(DVD_Model model/material/DVD.h model/material/DVD.cpp)
+set(DVD_Model model/material/DVD.h model/material/DVD.cpp model/material/DVDInterface.h)
 set(DVDSide_Model model/material/DVDSide.h model/material/DVDSide.cpp)
 set(Material_Model model/material/Material.h model/material/Material.cpp model/material/MaterialInterface.h)
 set(MaterialFactory_Model model/material/MaterialFactory.h model/material/MaterialFactory.cpp)
@@ -22,13 +22,15 @@ add_library(Models ${Base_Model} ${Bluray_Model} ${BoxSet_Model} ${DoubleSideDVD
 set(Base_View view/BaseView.h view/BaseView.cpp view/ViewInterface.h)
 set(Project_View view/project/ProjectView.h view/project/ProjectView.cpp)
 set(Material_View view/material/MaterialView.h view/material/MaterialView.cpp)
-add_library(Views ${Base_View} ${Project_View} ${Material_View})
+set(DVD_View view/material/DVDView.h view/material/DVDView.cpp)
+add_library(Views ${Base_View} ${Project_View} ${Material_View} ${DVD_View})
 
 # controllers
 set(BaseController controller/BaseController.h controller/BaseController.cpp controller/ControllerInterface.h)
 set(Project_Controller controller/project/ProjectController.h controller/project/ProjectController.cpp)
 set(Material_Controller controller/material/MaterialController.h controller/material/MaterialController.cpp)
-add_library(Controllers ${BaseController} ${Project_Controller} ${Material_Controller})
+set(DVD_Controller controller/material/DVDController.h controller/material/DVDController.cpp)
+add_library(Controllers ${BaseController} ${Project_Controller} ${Material_Controller} ${DVD_Controller})
 
 # algorithms
 set(MergeSort algorithms/MergeSort.h algorithms/MergeSort.cpp)

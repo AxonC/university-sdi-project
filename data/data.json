@@ -216,18 +216,18 @@
         "materials": [
             {
                 "additionalLanguageTracks": [
-                    "FRA",
+                    "SPA",
                     "GER"
                 ],
                 "additionalSubtitleTracks": [
                     "FRA",
-                    "GER"
+                    "SPA"
                 ],
                 "audioFormat": "DTS",
                 "bonusFeatures": [
                     "Director's Comments"
                 ],
-                "content": "big movie",
+                "content": "big video",
                 "format": "dvd",
                 "frameAspect": "16:9",
                 "id": 0,

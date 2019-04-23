@@ -35,5 +35,36 @@ namespace TrekStar
             std::cin >> input;
             return input;
         }
+
+        std::vector<std::string> GetStringVectorInput(unsigned int noOfElements, std::string name)
+        {
+            std::vector<std::string> input;
+
+            std::string inputValue;
+
+            for ( int i = 0; i < noOfElements; i++ )
+            {
+                std::cout << name << " #" << i + 1 << ": ";
+                std::cin.ignore();
+                std::getline(std::cin, inputValue);
+
+                input.push_back(inputValue);
+            }
+
+            return input;
+        }
+
+        unsigned int GetIndexInput(unsigned int vectorSize, const std::string & name)
+        {
+            unsigned int input = 0;
+
+            while ( input < 1 || input > vectorSize )
+            {
+                std::cout << "Keyword # [1 - " << vectorSize << "]: ";
+                std::cin >> input;
+            }
+
+            return input - 1;
+        }
     }
 }

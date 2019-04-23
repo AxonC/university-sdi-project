@@ -52,6 +52,11 @@ namespace TrekStar
             }
         }
 
+        MaterialInterface* MaterialController::GetModel()
+        {
+            return this->model;
+        }
+
         MaterialView* MaterialController::GetView()
         {
             return dynamic_cast<MaterialView*>(this->view);

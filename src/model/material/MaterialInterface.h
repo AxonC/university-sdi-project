@@ -13,7 +13,7 @@ namespace TrekStar
     namespace Material
     {
      class MaterialInterface : public TrekStar::Model
-        {
+     {
         public:
             virtual ~MaterialInterface() = default;
             virtual unsigned int GetId() const = 0;
