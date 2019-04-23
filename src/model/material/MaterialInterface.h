@@ -25,6 +25,7 @@ namespace TrekStar
             virtual double GetRetailPrice() const = 0;
             virtual std::string GetSubtitles() const = 0;
             virtual std::string GetFrameAspect() const = 0;
+            virtual std::string GetPackaging() const = 0;
             virtual KeyValueMap GetPresentableInformation() const = 0;
         };
     }

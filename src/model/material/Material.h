@@ -24,6 +24,7 @@ namespace TrekStar
             double retailPrice;
             std::string subtitles;
             std::string frameAspect;
+            std::string packaging;
         };
 
         /**
@@ -40,9 +41,9 @@ namespace TrekStar
             double retailPrice; // stored in pence
             std::string subtitles;
             std::string frameAspect;
+            std::string packaging;
         public:
             Material() = default;
-            explicit Material(std::string materialLine);
             virtual ~Material() = default;
 
             virtual void PopulateFromFile(const json &) = 0;
@@ -55,6 +56,7 @@ namespace TrekStar
             double GetRetailPrice() const override;
             std::string GetSubtitles() const override;
             std::string GetFrameAspect() const override;
+            std::string GetPackaging() const override;
             KeyValueMap GetPresentableInformation() const override;
 
             std::shared_ptr<SerialisedMaterial> ExportToSerialised() const;

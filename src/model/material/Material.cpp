@@ -10,42 +10,47 @@ namespace TrekStar
         */
         unsigned int Material::GetId() const
         {
-            return id;
+            return this->id;
         }
 
         std::string Material::GetFormat() const
         {
-            return format;
+            return this->format;
         }
 
         std::string Material::GetAudioFormat() const
         {
-            return audioFormat;
+            return this->audioFormat;
         }
 
         int Material::GetRunTime() const
         {
-            return runTime;
+            return this->runTime;
         }
 
         std::string Material::GetLanguage() const
         {
-            return language;
+            return this->language;
         }
 
         double Material::GetRetailPrice() const
         {
-            return retailPrice;
+            return this->retailPrice;
         }
 
         std::string Material::GetSubtitles() const
         {
-            return subtitles;
+            return this->subtitles;
         }
 
         std::string Material::GetFrameAspect() const
         {
-            return frameAspect;
+            return this->frameAspect;
+        }
+
+        std::string Material::GetPackaging() const
+        {
+            return this->packaging;
         }
 
         KeyValueMap Material::GetPresentableInformation() const
@@ -58,7 +63,8 @@ namespace TrekStar
                     {"Language", this->GetLanguage()},
                     {"Retail Price", std::to_string(this->GetRetailPrice())},
                     {"Subtitles", this->GetSubtitles()},
-                    {"Frame Aspect", this->GetFrameAspect()}
+                    {"Frame Aspect", this->GetFrameAspect()},
+                    {"Packaging", this->GetPackaging()}
                 };
         }
 
@@ -73,7 +79,8 @@ namespace TrekStar
                     this->language,
                     this->retailPrice,
                     this->subtitles,
-                    this->frameAspect
+                    this->frameAspect,
+                    this->packaging
                 };
 
             return std::make_shared<SerialisedMaterial>(serialisedMaterial);
