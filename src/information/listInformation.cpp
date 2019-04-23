@@ -80,7 +80,8 @@ namespace TrekStar
         {
             std::string searchCriteria;
             std::cout << "Project title: ";
-            std::cin >> searchCriteria;
+            std::cin.ignore();
+            std::getline(std::cin, searchCriteria);
 
             TrekStar::Algorithms::mergeSort(projects);
 
