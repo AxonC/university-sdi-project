@@ -17,14 +17,13 @@ void maintenanceMode(const std::string & FILE_PATH, std::vector<TrekStar::Projec
             {
                     {1, "add project"},
                     {2, "update project"},
-                    {3, "save changes to file"},
-                    {4, "go back"}
+                    {3, "go back"}
             },
             "Maintenance Mode"
     );
 
     int commandInput  = 0;
-    while ( commandInput != 4 )
+    while ( commandInput != 3 )
     {
         commandHandler.displayCommands();
         commandInput = commandHandler.getUserInput();
@@ -48,10 +47,6 @@ void maintenanceMode(const std::string & FILE_PATH, std::vector<TrekStar::Projec
                 commandHandler.clearConsole();
 
                 TrekStar::Information::updateProject(projects, projectID);
-            }
-            else if ( commandInput == 3 )
-            {
-                TrekStar::Information::save(projects, FILE_PATH);
             }
         }
         else

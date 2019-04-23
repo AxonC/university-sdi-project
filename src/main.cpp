@@ -3,6 +3,7 @@
 #include "command/CommandHandler.h"
 #include "command/viewMode.h"
 #include "command/maintenanceMode.h"
+#include "information/saveInformation.h"
 #include "file/fileOperations.h"
 
 #include "spdlog/spdlog.h"
@@ -47,6 +48,8 @@ int main()
                 break;
         }
     }
+
+    TrekStar::Information::save(projects, FILE_PATH);
 
     return 0;
 }
