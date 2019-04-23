@@ -21,6 +21,8 @@ namespace TrekStar
             void PresentAll() override;
             void PresentList() override;
 
+            std::string GetNewTitle();
+
             ProjectInterface* GetModel() override;
         };
     }

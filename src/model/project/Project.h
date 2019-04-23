@@ -67,6 +67,8 @@ namespace TrekStar
             std::vector<std::string> GetMaterialFormats() const override;
             std::pair<std::string, std::string> GetTitleSummary() const;
 
+            void SetTitle(const std::string & title) override;
+
             void AddMaterials(const std::vector<std::shared_ptr<Material::Material>> & materials);
             bool AddMaterial(const std::shared_ptr<Material::Material> & material);
             void RemoveMaterial(const std::shared_ptr<Material::Material> & material);

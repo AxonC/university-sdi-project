@@ -54,6 +54,17 @@ namespace TrekStar
             std::cout << "Title: " << model->GetTitle() << std::endl;
         }
 
+        std::string ProjectView::GetNewTitle()
+        {
+            std::string title;
+
+            auto model = this->GetModel();
+
+            std::cout << "Title [current: " << model->GetTitle() << "] :";
+            std::cin >> title;
+
+            return title;
+        }
 
         ProjectInterface* ProjectView::GetModel()
         {

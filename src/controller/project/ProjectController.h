@@ -19,6 +19,8 @@ namespace TrekStar
 
             void ShowAll() override;
             void ShowList() override;
+
+            void UpdateTitle();
         };
     }
 }
