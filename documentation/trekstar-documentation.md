@@ -3,6 +3,7 @@ title: "Software Design and Implementation"
 author: [Callum Axon (N0727303), Callum Carney (N0741707), Matthew Robinson (N0724629)]
 subtitle: "TrekStar Software System"
 lang: "en"
+logo: "./images/ntu-logo.png"
 linkcolor: darkgray
 titlepage: true
 titlepage-color: "06386e"
