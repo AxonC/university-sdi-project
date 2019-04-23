@@ -16,7 +16,8 @@ namespace TrekStar
             MaterialView() = default;
             explicit MaterialView(MaterialInterface & model);
 
-            void Present() override;
+            void PresentAll() override;
+            void PresentList() override;
 
             MaterialInterface* GetModel() override;
         };

@@ -2,7 +2,7 @@
 
 #include "command/CommandHandler.h"
 #include "command/viewMode.h"
-#include "command/maintainenceMode.h"
+#include "command/maintenanceMode.h"
 #include "file/fileOperations.h"
 
 int main()
@@ -18,27 +18,30 @@ int main()
 
     TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
             {
-                    {"v", "view mode"},
-                    {"m", "maintainence mode"},
-                    {"q", "quit"}
-            }
+                    {1, "view mode"},
+                    {2, "maintenance mode"},
+                    {3, "quit"}
+            },
+            "Main Menu"
     );
 
-    std::string commandInput;
-    while ( commandInput != "q" && commandInput != "quit" )
+    int commandInput = 0;
+    while ( commandInput != 3 )
     {
         commandHandler.displayCommands();
-        std::cout << std::endl;
-        std::cout << "> ";
-        std::getline(std::cin, commandInput);
+        commandInput = commandHandler.getUserInput();
+        commandHandler.clearConsole();
 
-        if ( commandInput == "v" )
+        switch ( commandInput )
         {
-            TrekStar::Command::viewMode(FILE_PATH, projects);
-        }
-        else if ( commandInput == "m" )
-        {
-            TrekStar::Command::maintainenceMode(FILE_PATH, projects);
+            case 1 :
+                TrekStar::Command::viewMode(FILE_PATH, projects);
+                break;
+            case 2 :
+                TrekStar::Command::maintenanceMode(FILE_PATH, projects);
+                break;
+            default :
+                break;
         }
     }
 

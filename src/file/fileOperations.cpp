@@ -120,7 +120,7 @@ namespace TrekStar
                     currentProject.AddCrew(createCrew(it.at("crew")));
                 }
 
-                if ( it.find("materials") != it.end() )
+                if ( it.find("materials") != it.end() && currentProject.CanAddMaterial() )
                 {
                     currentProject.AddMaterials(createMaterials(it.at("materials")));
                 }

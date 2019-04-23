@@ -6,36 +6,60 @@ namespace TrekStar
 {
     namespace Command
     {
-        CommandHandler::CommandHandler(const StringMap & commands)
+        CommandHandler::CommandHandler(const IntegerStringMap & commands, const std::string & currentAction)
         {
             this->commands = commands;
+            this->currentAction = currentAction;
         }
 
-        bool CommandHandler::isValidCommand(const std::string & command) const
+        bool CommandHandler::isValidCommand(const int & command) const
         {
             return this->commands.find(command) != this->commands.end();
-        }
-
-        StringPair CommandHandler::tokeniseCommand(const std::string & command) const
-        {
-            std::string::size_type pos = command.find(' ');
-
-            return std::make_pair<std::string, std::string>(command.substr(0, pos), command.substr(pos + 1));
-        }
-
-        int CommandHandler::getIntegerValue(const std::string & commandOpcode) const
-        {
-            return std::stoi(commandOpcode);
         }
 
         void CommandHandler::displayCommands() const
         {
             std::cout << std::string(80,'-') << std::endl;
+            std::cout << this->currentAction << std::endl;
+            std::cout << std::string(80,'-') << std::endl;
             for ( const auto & currentCommand : this->commands )
             {
-                std::cout << currentCommand.first << " - " << currentCommand.second << ", ";
+                std::cout << currentCommand.first << " - " << currentCommand.second << std::endl;
             }
-            std::cout << std::endl << std::string(80,'-') << std::endl;
-        };
+            std::cout << std::string(80,'-') << std::endl;
+        }
+
+        void CommandHandler::clearConsole() const
+        {
+            for ( int i = 0; i < 100; i++ )
+            {
+                std::cout << '\n';
+            }
+        }
+
+        int CommandHandler::getUserInput() const
+        {
+            bool validCommand = false;
+            int commandInput = 0;
+
+            while ( !validCommand )
+            {
+                std::cout << "> ";
+                std::cin >> commandInput;
+
+                if ( !std::cin.fail() && isValidCommand(commandInput) )
+                {
+                    validCommand = true;
+                }
+                else
+                {
+                    std::cout << "Invalid command..." << std::endl;
+                    std::cin.clear();
+                    std::cin.ignore(256,'\n');
+                }
+            }
+
+            return commandInput;
+        }
     }
 }

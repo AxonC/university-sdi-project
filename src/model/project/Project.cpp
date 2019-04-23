@@ -79,6 +79,33 @@ namespace TrekStar
             return {this->title, this->GetSummary()};
         }
 
+        void Project::SetTitle(const std::string & title)
+        {
+            this->title = title;
+            this->lowercaseTitle = title;
+            std::transform(this->lowercaseTitle.begin(), this->lowercaseTitle.end(), this->lowercaseTitle.begin(), ::tolower);
+        }
+
+        void Project::SetSummary(const std::string & summary)
+        {
+            this->summary = summary;
+        }
+
+        void Project::SetReleased(const bool & released)
+        {
+            this->released = released;
+        }
+
+        void Project::SetPlayingInTheatres(const bool & playingInTheatres)
+        {
+            this->playingInTheatres = playingInTheatres;
+        }
+
+        void Project::SetKeyword(const unsigned int & keywordNo, const std::string & keyword)
+        {
+            this->keywords.at(keywordNo) = keyword;
+        }
+
         void Project::AddMaterials(const std::vector<std::shared_ptr<Material::Material>> & materials)
         {
             if ( !this->CanAddMaterial() )
@@ -121,6 +148,11 @@ namespace TrekStar
             materials.erase(search);
 
             spdlog::get("logger")->info("Material " + std::to_string(material->GetId()) + " was removed from project " + this->GetTitle());
+        }
+
+        bool Project::CanAddMaterial() const
+        {
+            return this->released && !this->playingInTheatres;
         }
 
         std::vector<std::shared_ptr<People::Crew>> Project::GetCrew() const
@@ -169,11 +201,6 @@ namespace TrekStar
                     this->playingInTheatres,
                     this->keywords
                 };
-        }
-
-        bool Project::CanAddMaterial() const
-        {
-            return this->released && !this->playingInTheatres;
         }
 
         bool Project::MaterialFormatExists(const std::string & materialFormat) const

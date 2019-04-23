@@ -12,48 +12,71 @@ namespace TrekStar
         {
             TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
                     {
-                            {"lsp",  "list projects"},
-                            {"sp",   "<criteria> search projects"},
-                            {"lsm",  "<project id> list materials"},
-                            {"b",    "go back"}
-                    }
+                            {1, "list projects"},
+                            {2, "search projects"},
+                            {3, "list materials"},
+                            {4, "go back"}
+                    },
+                    "View Mode"
             );
 
-            std::string commandInput;
-            while ( commandInput != "b" )
+            int commandInput = 0;
+            while ( commandInput != 4 )
             {
                 commandHandler.displayCommands();
-                std::cout << std::endl;
-                std::cout << "> ";
-                std::getline(std::cin, commandInput);
+                commandInput = commandHandler.getUserInput();
+                commandHandler.clearConsole();
 
-                StringPair tokenisedCommand = commandHandler.tokeniseCommand(commandInput);
-
-                if ( commandHandler.isValidCommand(tokenisedCommand.first) )
+                if ( commandHandler.isValidCommand(commandInput) )
                 {
-                    if ( tokenisedCommand.first == "lsp" )
+                    std::string sortByTitleString;
+                    bool sortByTitle;
+
+                    switch ( commandInput )
                     {
-                        TrekStar::Information::listProjects(projects);
-                    }
-                    else if ( tokenisedCommand.first == "sp" )
-                    {
-                        TrekStar::Information::searchProjects(projects, tokenisedCommand.second);
-                    }
-                    else if ( tokenisedCommand.first == "lsm" )
-                    {
-                        try
-                        {
-                            TrekStar::Information::listMaterials(projects, commandHandler.getIntegerValue(tokenisedCommand.second));
-                        }
-                        catch ( std::invalid_argument )
-                        {
-                            std::cout << "Invalid parameter, please try again." << std::endl;
-                        }
+                        case 1 :
+                            sortByTitleString;
+                            sortByTitle = false;
+                            std::cout << "Sort by title? (y/n): ";
+                            std::cin >> sortByTitleString;
+                            commandHandler.clearConsole();
+
+                            if ( sortByTitleString == "y" )
+                            {
+                                sortByTitle = true;
+                            }
+
+                            TrekStar::Information::listProjects(projects, sortByTitle);
+                            break;
+                        case 2 :
+                            TrekStar::Information::searchProjects(projects);
+                            break;
+                        case 3 :
+                            try
+                            {
+                                std::cout << std::string(80, '-') << std::endl;
+                                TrekStar::Information::displayAllProjects(projects);
+                                std::cout << std::string(80, '-') << std::endl;
+
+                                int projectID;
+                                std::cout << "Project ID: ";
+                                std::cin >> projectID;
+                                commandHandler.clearConsole();
+
+                                TrekStar::Information::listMaterials(projects, projectID);
+                            }
+                            catch ( std::invalid_argument & )
+                            {
+                                std::cout << "Invalid parameter, please try again." << std::endl;
+                            }
+                            break;
+                        default :
+                            break;
                     }
                 }
                 else
                 {
-                    std::cout << "'" << tokenisedCommand.first << "'" << " is not a valid command. Type 'help' to see all available commands." << std::endl;
+                    std::cout << "Invalid command..." << std::endl << std::endl;
                 }
             }
         }

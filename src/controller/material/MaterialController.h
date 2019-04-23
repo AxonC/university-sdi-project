@@ -23,7 +23,8 @@ namespace TrekStar
             MaterialController(MaterialInterface & model, ViewInterface & view);
             ~MaterialController() = default;
 
-            void ShowAll();
+            void ShowAll() override;
+            void ShowList() override;
         };
     }
 }

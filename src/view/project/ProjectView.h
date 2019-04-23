@@ -13,12 +13,24 @@ namespace TrekStar
         class ProjectView : public BaseView
         {
         private:
-            void DisplayVectorAsCSV(const std::vector<std::string> & stringVector);
+            static void DisplayVectorAsCSV(const std::vector<std::string> & stringVector);
+            static std::string GetStringInput();
+            static bool GetBoolInput();
         public:
             ProjectView() = default;
             explicit ProjectView(ProjectInterface & model);
 
-            void Present() override;
+            void PresentAll() override;
+            void PresentList() override;
+
+            void PresentKeywords();
+
+            std::string GetNewTitle();
+            std::string GetNewSummary();
+            bool GetNewReleased();
+            bool GetNewPlayingInTheatres();
+            unsigned int GetKeywordNo();
+            std::string GetNewKeyword(const unsigned int & keywordNo);
 
             ProjectInterface* GetModel() override;
         };

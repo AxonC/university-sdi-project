@@ -11,7 +11,7 @@ class MockProjectView: public ProjectView
 {
 public:
     explicit MockProjectView(ProjectInterface& model) : ProjectView(model) {}
-    MOCK_METHOD0(Present, void());
+    MOCK_METHOD0(PresentAll, void());
     MOCK_METHOD0(GetModel, ProjectInterface*());
 };
 

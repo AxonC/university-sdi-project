@@ -6,7 +6,7 @@ namespace TrekStar
 {
     namespace Information
     {
-        SequentialBrowser::SequentialBrowser(unsigned int noOfItems, unsigned int currentItem, const std::string & command)
+        SequentialBrowser::SequentialBrowser(unsigned int noOfItems, unsigned int currentItem, const int & command)
         {
             this->noOfItems = noOfItems;
             this->currentItem = currentItem;
@@ -20,14 +20,14 @@ namespace TrekStar
 
         unsigned int SequentialBrowser::GetItemNumber()
         {
-            if ( this->command == "n" )
+            if ( this->command == 1 )
             {
                 if ( this->currentItem + 1 != this->noOfItems )
                 {
                     this->currentItem++;
                 }
             }
-            else if ( this->command == "p" )
+            else if ( this->command == 2 )
             {
                 if ( this->currentItem >= 1 )
                 {

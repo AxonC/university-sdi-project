@@ -9,7 +9,8 @@ namespace TrekStar
         {
         public:
             virtual ~ViewInterface() = default;
-            virtual void Present() = 0;
+            virtual void PresentAll() = 0;
+            virtual void PresentList() = 0;
         };
     }
 }

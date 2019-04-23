@@ -11,11 +11,13 @@ namespace TrekStar
 {
     namespace Information
     {
-        void listProjects(std::vector<TrekStar::Project::Project> & projects);
+        void displayAllProjects(std::vector<TrekStar::Project::Project> & projects);
 
-        void searchProjects(std::vector<TrekStar::Project::Project> & projects, std::string searchCriteria);
+        void listProjects(std::vector<TrekStar::Project::Project> & projects, bool sortByTitle);
 
-        void listMaterials(std::vector<TrekStar::Project::Project> projects, int projectNum);
+        void searchProjects(std::vector<TrekStar::Project::Project> & projects);
+
+        void listMaterials(std::vector<TrekStar::Project::Project> & projects, int projectNum);
     }
 }
 
