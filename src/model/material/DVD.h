@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include "Material.h"
+#include "DVDInterface.h"
 #include "DVDSide.h"
 
 using TrekStar::Material::Material;
@@ -26,21 +27,27 @@ namespace TrekStar
         /**
          *  Trekstar DVD Class
          */
-        class DVD : public Material
+        class DVD : public Material, public DVDInterface
         {
         protected:
             DVDSide sideOne;
         public:
             DVD();
 
-            void PopulateFromFile(const json &) override;
+            void PopulateFromFile(const json &);
 
+            std::string GetContent() const override;
             std::vector<std::string> GetAdditionalLanguageTracks() const;
             std::vector<std::string> GetAdditionalSubtitleTracks() const;
             std::vector<std::string> GetBonusFeatures() const;
             DVDSide GetSide() const;
 
             KeyValueMap GetPresentableInformation() const override;
+
+            void SetContent(const std::string & content) override;
+            void SetAdditionalLanguageTracks(const std::vector<std::string> & additionalLanguageTracks) override;
+            void SetAdditionalSubtitleTracks(const std::vector<std::string> & additionalSubtitleTracks) override;
+            void SetBonusFeatures(const std::vector<std::string> & bonusFeatures) override;
 
             std::shared_ptr<SerialisedDVD> ExportToSerialised() const;
         };

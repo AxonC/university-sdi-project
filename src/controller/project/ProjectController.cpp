@@ -2,9 +2,12 @@
 
 #include "../../view/material/MaterialView.h"
 #include "../material/MaterialController.h"
+#include "../material/DVDController.h"
 
 using TrekStar::Material::MaterialView;
 using TrekStar::Material::MaterialController;
+using TrekStar::Material::DVDView;
+using TrekStar::Material::DVDController;
 
 namespace TrekStar
 {
@@ -68,11 +71,22 @@ namespace TrekStar
             {
                 if ( *material == this->GetView()->GetMaterialSelection() )
                 {
-                    MaterialView view(*material);
-                    MaterialController controller(*material, view);
+                    if ( auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::DVD>(material) )
+                    {
+                        DVDView view(*castedMaterial);
+                        DVDController controller(*castedMaterial, view);
 
-                    controller.Update();
-                    break;
+                        controller.Update();
+                        break;
+                    }
+                    else
+                    {
+                        MaterialView view(*material);
+                        MaterialController controller(*material, view);
+
+                        controller.Update();
+                        break;
+                    }
                 }
             }
         }

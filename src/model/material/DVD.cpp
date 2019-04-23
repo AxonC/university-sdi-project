@@ -46,6 +46,11 @@ namespace TrekStar
             this->sideOne = DVDSide(j.at("content"), additionalLanguageTracks, additionalSubtitleTracks, bonusFeatures);
         }
 
+        std::string DVD::GetContent() const
+        {
+            return this->sideOne.GetContent();
+        }
+
         std::vector<std::string> DVD::GetAdditionalLanguageTracks() const
         {
             return this->sideOne.GetAdditionalLanguageTracks();
@@ -75,6 +80,26 @@ namespace TrekStar
             information.insert(sideOne.begin(), sideOne.end());
 
             return information;
+        }
+
+        void DVD::SetContent(const std::string & content)
+        {
+            this->sideOne.SetContent(content);
+        }
+
+        void DVD::SetAdditionalLanguageTracks(const std::vector<std::string> & additionalLanguageTracks)
+        {
+            this->sideOne.SetAdditionalLanguageTracks(additionalLanguageTracks);
+        }
+
+        void DVD::SetAdditionalSubtitleTracks(const std::vector<std::string> & additionalSubtitleTracks)
+        {
+            this->sideOne.SetAdditionalSubtitleTracks(additionalSubtitleTracks);
+        }
+
+        void DVD::SetBonusFeatures(const std::vector<std::string> & bonusFeatures)
+        {
+            this->sideOne.SetBonusFeatures(bonusFeatures);
         }
 
         std::shared_ptr<SerialisedDVD> DVD::ExportToSerialised() const

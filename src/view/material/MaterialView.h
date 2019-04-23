@@ -19,7 +19,6 @@ namespace TrekStar
             void PresentAll() override;
             void PresentList() override;
 
-            std::string GetNewFormat();
             std::string GetNewAudioFormat();
             int GetNewRunTime();
             std::string GetNewLanguage();
@@ -28,7 +27,7 @@ namespace TrekStar
             std::string GetNewFrameAspect();
             std::string GetNewPackaging();
 
-            unsigned int GetUpdateOption();
+            virtual unsigned int GetUpdateOption();
 
             MaterialInterface* GetModel() override;
         };

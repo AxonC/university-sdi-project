@@ -43,6 +43,11 @@ namespace TrekStar
             std::vector<std::string> GetBonusFeatures() const;
             KeyValueMap GetPresentableInformation() const;
 
+            void SetContent(const std::string & content);
+            void SetAdditionalLanguageTracks(const std::vector<std::string> & additionalLanguageTracks);
+            void SetAdditionalSubtitleTracks(const std::vector<std::string> & additionalSubtitleTracks);
+            void SetBonusFeatures(const std::vector<std::string> & bonusFeatures);
+
             SerialisedDVDSide ExportToSerialised() const;
         };
     }

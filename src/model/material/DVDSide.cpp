@@ -62,6 +62,26 @@ namespace TrekStar
             return information;
         }
 
+        void DVDSide::SetContent(const std::string & content)
+        {
+            this->content = content;
+        }
+
+        void DVDSide::SetAdditionalLanguageTracks(const std::vector<std::string> & additionalLanguageTracks)
+        {
+            this->additionalLanguageTracks = additionalLanguageTracks;
+        }
+
+        void DVDSide::SetAdditionalSubtitleTracks(const std::vector<std::string> & additionalSubtitleTracks)
+        {
+            this->additionalSubtitleTracks = additionalSubtitleTracks;
+        }
+
+        void DVDSide::SetBonusFeatures(const std::vector<std::string> & bonusFeatures)
+        {
+            this->bonusFeatures = bonusFeatures;
+        }
+
         SerialisedDVDSide DVDSide::ExportToSerialised() const
         {
             return SerialisedDVDSide
