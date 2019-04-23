@@ -32,8 +32,8 @@ titlepage-rule-height: 1
 	- [Company-Wide Installation](#company-wide-installation)
 - [Design Pattern](#design-pattern)
 - [Planned Architecture](#planned-architecture)
-- [Included C++ Libraries (GitHub Link)](#included-c-libraries-github-link)
-	- [JSON for C++](#json-for-c)
+- [Included C++ Libraries](#included-c-libraries)
+	- [JSON for C++ (GitHub Link)](#json-for-c-github-link)
 	- [GTest (GitHub Link)](#gtest-github-link)
 	- [spdlog (GitHub Link)](#spdlog-github-link)
 - [Internal Data Structures](#internal-data-structures)
@@ -159,11 +159,11 @@ the identified utility tree, you need to explain the reason).
 
 \newpage
 
-# Included C++ Libraries ([GitHub Link](https://github.com/nlohmann/json))
+# Included C++ Libraries
 
-Within the TrekStar project management application we have used some C++ Libraries for parsing data, providing access to unit tests and including core functionality that would otherwise not be present. Below you can find an exaplaination of the included C++ libraries and why we chose to use them within the project:
+Within the TrekStar project management application we have used some C++ Libraries for parsing data, providing access to unit tests and including core functionality that would otherwise not be present. Below you can find an exaplaination of the included C++ libraries and why we chose to use them:
 
-## JSON for C++
+## JSON for C++ ([GitHub Link](https://github.com/nlohmann/json))
 We decided to use the JSON for C++ library within the application because we are using JSON as our database to store all of the users data. The JSON for C++ library allows us to parse JSON data, request data based on certain keys within a JSON Array or Object and create new JSON Arrays or Objects to be inserted into the database. The JSON for C++ library is quite easily the most feature complete and well documented library for parsing and creating JSON in C++, this was the main driving force behind using this library as we required something that is reliable and suitable for the applications use cases.
 
 ## GTest ([GitHub Link](https://github.com/google/googletest))
