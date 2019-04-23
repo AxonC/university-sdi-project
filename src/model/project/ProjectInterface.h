@@ -24,6 +24,9 @@ namespace TrekStar
 
             virtual void SetTitle(const std::string & title) = 0;
             virtual void SetSummary(const std::string & summary) = 0;
+            virtual void SetReleased(const bool & released) = 0;
+            virtual void SetPlayingInTheatres(const bool & playingInTheatres) = 0;
+            virtual void SetKeyword(const unsigned int & keywordNo, const std::string & keyword) = 0;
         };
     }
 }

@@ -15,6 +15,7 @@ namespace TrekStar
         private:
             static void DisplayVectorAsCSV(const std::vector<std::string> & stringVector);
             static std::string GetStringInput();
+            static bool GetBoolInput();
         public:
             ProjectView() = default;
             explicit ProjectView(ProjectInterface & model);
@@ -22,8 +23,14 @@ namespace TrekStar
             void PresentAll() override;
             void PresentList() override;
 
+            void PresentKeywords();
+
             std::string GetNewTitle();
             std::string GetNewSummary();
+            bool GetNewReleased();
+            bool GetNewPlayingInTheatres();
+            unsigned int GetKeywordNo();
+            std::string GetNewKeyword(const unsigned int & keywordNo);
 
             ProjectInterface* GetModel() override;
         };

@@ -20,7 +20,7 @@ namespace TrekStar
                             {2, "Edit Summary"},
                             {3, "Edit Released"},
                             {4, "Edit PlayingInTheatres"},
-                            {5, "Edit Keywords"},
+                            {5, "Edit Existing Keywords"},
                             {6, "CANCEL"}
                     },
                     "Update Project"
@@ -51,6 +51,15 @@ namespace TrekStar
                     break;
                 case 2:
                     controller.UpdateSummary();
+                    break;
+                case 3:
+                    controller.UpdateReleased();
+                    break;
+                case 4:
+                    controller.UpdatePlayingInTheatres();
+                    break;
+                case 5:
+                    controller.UpdateKeyword();
                     break;
                 default:
                     break;

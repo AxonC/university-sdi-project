@@ -91,6 +91,21 @@ namespace TrekStar
             this->summary = summary;
         }
 
+        void Project::SetReleased(const bool & released)
+        {
+            this->released = released;
+        }
+
+        void Project::SetPlayingInTheatres(const bool & playingInTheatres)
+        {
+            this->playingInTheatres = playingInTheatres;
+        }
+
+        void Project::SetKeyword(const unsigned int & keywordNo, const std::string & keyword)
+        {
+            this->keywords.at(keywordNo) = keyword;
+        }
+
         void Project::AddMaterials(const std::vector<std::shared_ptr<Material::Material>> & materials)
         {
             if ( !this->CanAddMaterial() )

@@ -54,6 +54,16 @@ namespace TrekStar
             std::cout << "Title: " << model->GetTitle() << std::endl;
         }
 
+        void ProjectView::PresentKeywords()
+        {
+            unsigned int counter = 0;
+            for ( const auto & keyword: this->GetModel()->GetKeywords() )
+            {
+                counter++;
+                std::cout << "Keyword #" << counter << ": " << keyword << std::endl;
+            }
+        }
+
         std::string ProjectView::GetNewTitle()
         {
             std::cout << "Title [current: " << this->GetModel()->GetTitle() << "]: ";
@@ -66,12 +76,43 @@ namespace TrekStar
             return this->GetStringInput();
         }
 
+        bool ProjectView::GetNewReleased()
+        {
+            std::cout << "Released [current: " << this->GetModel()->GetReleased() << "]: ";
+            return this->GetBoolInput();
+        }
+
+        bool ProjectView::GetNewPlayingInTheatres()
+        {
+            std::cout << "Released [current: " << this->GetModel()->GetPlayingInTheatres() << "]: ";
+            return this->GetBoolInput();
+        }
+
+        unsigned int ProjectView::GetKeywordNo()
+        {
+            unsigned int keywordNo = 0;
+
+            while ( keywordNo < 1 || keywordNo > this->GetModel()->GetKeywords().size() )
+            {
+                std::cout << "Keyword # [1 - " << this->GetModel()->GetKeywords().size() << "]: ";
+                std::cin >> keywordNo;
+            }
+
+            return keywordNo - 1;
+        }
+
+        std::string ProjectView::GetNewKeyword(const unsigned int & keywordNo)
+        {
+            std::cout << "Keyword #" << keywordNo << " [current: " << this->GetModel()->GetKeywords().at(keywordNo) << "]: ";
+            return this->GetStringInput();
+        }
+
         ProjectInterface* ProjectView::GetModel()
         {
             return dynamic_cast<ProjectInterface*>(this->model);
         }
 
-        static void ProjectView::DisplayVectorAsCSV(const std::vector<std::string> & stringVector)
+        void ProjectView::DisplayVectorAsCSV(const std::vector<std::string> & stringVector)
         {
             if ( !stringVector.empty() )
             {
@@ -80,7 +121,7 @@ namespace TrekStar
             }
         }
 
-        static std::string ProjectView::GetStringInput()
+        std::string ProjectView::GetStringInput()
         {
             std::string input;
 
@@ -88,6 +129,19 @@ namespace TrekStar
             std::getline(std::cin, input);
 
             return input;
+        }
+
+        bool ProjectView::GetBoolInput()
+        {
+            std::string input;
+
+            while ( input != "y" && input != "n" )
+            {
+                std::cin.ignore();
+                std::getline(std::cin, input);
+            }
+
+            return input == "y";
         }
     }
 }
