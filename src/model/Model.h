@@ -5,10 +5,11 @@ namespace TrekStar
 {
     class Model
     {
-     public:
+    public:
         Model() = default;
         virtual ~Model() = default;
     };
+
 }
 
 #endif //SDI_PROJECT_MODEL_H

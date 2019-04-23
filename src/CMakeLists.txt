@@ -15,7 +15,8 @@ set(MaterialFactory_Model model/material/MaterialFactory.h model/material/Materi
 set(VHS_Model model/material/VHS.h model/material/VHS.cpp)
 set(Crew_Model model/people/Crew.h model/people/Crew.cpp)
 set(Project_Model model/project/Project.h model/project/Project.cpp model/project/ProjectInterface.h)
-add_library(Models ${Bluray_Model} ${BoxSet_Model} ${DoubleSideDVD_Model} ${DVD_Model} ${DVDSide_Model} ${Material_Model} ${MaterialFactory_Model} ${VHS_Model} ${Crew_Model} ${Project_Model})
+set(Base_Model model/Model.h model/Model.cpp)
+add_library(Models ${Base_Model} ${Bluray_Model} ${BoxSet_Model} ${DoubleSideDVD_Model} ${DVD_Model} ${DVDSide_Model} ${Material_Model} ${MaterialFactory_Model} ${VHS_Model} ${Crew_Model} ${Project_Model})
 
 # views
 set(Base_View view/BaseView.h view/BaseView.cpp view/ViewInterface.h)
@@ -47,6 +48,9 @@ add_library(structures INTERFACE)
 target_include_directories(structures INTERFACE structures/Stack.h)
 add_library(nlohmann_json INTERFACE)
 target_include_directories(nlohmann_json INTERFACE lib/json.hpp)
+
+include_directories(lib/)
+#target_include_directories(spdlog INTERFACE ${MY_SOURCE_DIR}/lib/spdlog/include/spdlog)
 
 add_executable(trekstar main.cpp)
 target_link_libraries(trekstar Models Views Controllers Algorithms Functions structures nlohmann_json)
