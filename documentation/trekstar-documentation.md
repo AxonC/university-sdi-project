@@ -48,7 +48,21 @@ titlepage-rule-height: 1
 		- [Using List Materials](#using-list-materials)
 	- [Using Maintenance Mode](#using-maintenance-mode)
 		- [Using Add Project](#using-add-project)
-		- [Using Remove Projects](#using-remove-projects)
+		- [Using Update Project](#using-update-project)
+			- [Edit Title](#edit-title)
+			- [Edit Summary](#edit-summary)
+			- [Edit Released](#edit-released)
+			- [Edit Playing In Theaters](#edit-playing-in-theaters)
+			- [Edit Existing Keywords](#edit-existing-keywords)
+		- [Using Update Project Materials](#using-update-project-materials)
+			- [Edit Audio Format](#edit-audio-format)
+			- [Edit Run Time](#edit-run-time)
+			- [Edit Language](#edit-language)
+			- [Edit Retail Price](#edit-retail-price)
+			- [Edit Subtitles](#edit-subtitles)
+			- [Edit Frame Aspect](#edit-frame-aspect)
+			- [Edit Packaging](#edit-packaging)
+		- [Using Remove Project](#using-remove-project)
 - [Conclusion](#conclusion)
 - [Appendix](#appendix)
 	- [Managing group work](#managing-group-work)
@@ -59,10 +73,14 @@ titlepage-rule-height: 1
 # Todo - **_remove me before submission pls_**
 
 ## User Guide
-  - [Using List Materials](#using-list-materials) requires screenshot that shows projectid listings when id issue is resolved.
   - [Using Maintenance Mode](#using-maintenance-mode) requires screenshot of the maintenance main menu when remove project is added.
   - User guide details required for when the application is able to manage crew and materials/projects fully.
   - Update [Using Add Project](#using-add-project) to reflect changes to saving a project.
+  - Add back in image that shows keywords when adding a project when this is reimplemented.
+  - Change all figure values where text is CHANGEFIGUREVALUE once all images added.
+  - Complete [Using Update Project Materials](#using-update-project-materials) once the material id bug has been fixed.
+  - Resolve image issue on [Edit Packaging](#edit-packaging) once bugs have been fixed
+  - Look into new line for  # # # # headers
 
 \newpage
 
@@ -171,16 +189,16 @@ the identified utility tree, you need to explain the reason).
 Within the TrekStar project management application we have used some C++ Libraries for parsing data, providing access to unit tests and including core functionality that would otherwise not be present. Below you can find an explanation of the included C++ libraries and why we chose to use them:
 
 ## JSON for C++ ([GitHub Link](https://github.com/nlohmann/json))
-We decided to use the JSON for C++ library within the application because we are using JSON as our database to store all of the users data. The JSON for C++ library allows us to parse JSON data, request data based on certain keys within a JSON Array or Object and create new JSON Arrays or Objects to be inserted into the database. The JSON for C++ library is quite easily the most feature complete and well documented library for parsing and creating JSON in C++, this was the main driving force behind using this library as we required something that is reliable and suitable for the applications use cases.
+It was decided to use the JSON for C++ library within the application because we are using JSON as our database to store all of the users data. The JSON for C++ library allows us to parse JSON data, request data based on certain keys within a JSON Array or Object and create new JSON Arrays or Objects to be inserted into the database. The JSON for C++ library is quite easily the most feature complete and well documented library for parsing and creating JSON in C++, this was the main driving force behind using this library as we required something that is reliable and suitable for the applications use cases.
 
 ## GTest ([GitHub Link](https://github.com/google/googletest))
-We decided to use GTest as our primary unit testing library within the application, whilst we could have used Boost for unit testing, we decided that GTest had the following advantages which solidified our decision to use GTest:
+It was decided to use GTest as our primary unit testing library within the application, whilst we could have used Boost for unit testing, we decided that GTest had the following advantages which solidified our decision to use GTest:
 
 - GTest is much more lightweight when compared to Boost, while GTest is specifically a testing library, Boost has more functionality that also needs to be imported to allow for the Unit Testing section of the library to function, consequently making it larger and less lightweight.
 - When compared to other Unit Testing libraries there are more features that we can make use of in the project within GTest, for example, we can use GTests ability to mock objects, this is useful when we need to test the interaction between objects as we can achieve this more efficiently when compared to other libraries. We can also avoid duplication of test setup (creating objects, etc) within each unit test by specifying test fixtures which can be referenced within the unit tests.
 
 ## spdlog ([GitHub Link](https://github.com/gabime/spdlog))
-We decided to use spdlog for our logger library, when compared to other libraries spdlog is lightweight, fast and only requires header imports to get started. spdlog also supports all of the operating systems that our application has been developed to work on, which is an important feature to have.
+It was decided to use spdlog for our logger library, when compared to other libraries spdlog is lightweight, fast and only requires header imports to get started. spdlog also supports all of the operating systems that our application has been developed to work on, which is an important feature to have.
 
 spdlog also allows us to easily generate the required daily reports based on the data we pass from the JSON database, the simplicity of this library was an important consideration as it allows future developers to quickly understand how this function works incase a new feature or bug needs to be added/fixed.
 
@@ -188,7 +206,11 @@ spdlog also allows us to easily generate the required daily reports based on the
 
 # Internal Data Structures
 
-Include explanation of what internal data structures were used.
+During the design phase of the TrekStar project management application it was decided that an internal data structure of Stack would be used. While there are pros and cons to each data structure, ultimately it was decided that the Stack data structure fit the best with the requirements of our application, you can find the in-depth reasoning behind the decision to use Stack below:
+
+- The Stack data structure allows for the sequential ordering of disks, and make sense within our use cases. For example, if you have a box set of 4 disks and you would like to add a new disk, its likely that the new disk will be the latest episode, therefore it will be inserted sequentially at the end of the list. Another example would be when a user would like to remove a disk from a boxset, it is unlikely that you will want to remove the 3rd episode within the boxset, however if the 3rd episode was to be removed then the 4th episode (the last one in the underlying vector) can be removed allowing for the 3rd episode to then be removed, therefore the Stack data structure is still appropriate.
+- Another advantage to the Stack data structure is that data can be accessed quicker sequentially, this is because you can iterate though the underlying vectors data finding items that a requested.
+- A final advantage to the Stack data structure is that it uses general programming through the use of templating, as a consequence to this, the Stack data structure supports multiple types.
 
 \newpage
 
@@ -217,7 +239,7 @@ Some of the constraints that we have in place are:
 - Developers must never commit broken code that could impede the efficiency of other developers, if a commit is required a new branch should be created.
 - If there are known bugs, developers must log these within the GitHub Issues to ensure that other developers know that it is know/being worked on incase they come across it.
 
-We are confident that these constraints will allow us to develop the application with fewer interruptions and ensure that only high quality, tested code is being pushed to the repository. 
+Our group is confident that these constraints will allow us to develop the application with fewer interruptions and ensure that only high quality, tested code is being pushed to the repository. 
 
 \newpage
 
@@ -258,7 +280,7 @@ Once on this screen, you can use the following keyboard inputs to navigate aroun
 | 1     | Inputting this value will cause the application to list projects                   | [Listing Projects](#using-list-projects)       |
 | 2     | Inputting this value will cause the application to enter search mode for materials | [Using Search Projects](#using-search-projects) |
 | 3     | Inputting this value will cause the application to list materials                  | [Listing Materials](#using-list-materials) |
-| 4     | Inputting this value will cause the application to navigate back to the [Main Menu](#using-the-main-menu)  | Not required           |
+| 4     | Inputting this value will cause the application to navigate back to the main menu | [Main Menu](#using-the-main-menu)         |
 
 \newpage
 
@@ -327,9 +349,10 @@ Once on this screen, you can use the following keyboard inputs to navigate aroun
 | Input Value | Command Action                                                                     | Information Link                               |
 | :----------: | ------------------------------------------------------------------------- | ---------------------------------------------- |
 | 1     | Inputting this value will cause the application to enter add project             | [Adding Projects](#using-add-project)       |
-| 2     | Inputting this value will cause the application to enter remove project | [Removing Projects](#using-remove-projects) |
-| 3     | Inputting this value will cause the application to save all changes to the database           | Not required |
-| 4     | Inputting this value will cause the application to navigate back to the [Main Menu](#using-the-main-menu)  | Not required           |
+| 2     | Inputting this value will cause the application to enter update project | [Updating Projects](#using-update-project) |
+| 3     | Inputting this value will cause the application to enter update project materials| [Updating Project Materials](#using-update-project-materials) |
+| 4     | Inputting this value will cause the application to enter remove project | [Removing Projects](#using-remove-project) |
+| 5     | Inputting this value will cause the application to navigate back to the main menu  | [Main Menu](#using-the-main-menu)         |
 
 \newpage
 
@@ -338,9 +361,13 @@ Once on this screen, you can use the following keyboard inputs to navigate aroun
 Once you have entered the Add Project functionality you will be asked to enter the following information:
 
 
-Firstly, you will be asked to enter the Project Title, this is the name that you want your project to be called. Any value is accepted.
+Firstly, you need to enter the Project Title, this is the name that you want your project to be called. Any value is accepted.
 
 ![Visual representation of the application asking for a Project Title](images/user-guide/maintenance-mode/add-project-title.png)
+
+Next, you will be asked for a project summary. Any value is accepted.
+
+![Visual representation of the application asking for Project Summary](images/user-guide/maintenance-mode/add-project-summary.png)
 
 Next, you will be asked if the project has been released. Only the values _`y`_ and _`n`_ are accepted. With _`y`_ confirming that the project has been released and _`n`_ confirming that the project has not been released.
 
@@ -354,7 +381,7 @@ Next, you will be asked how many keywords you would like associating with the pr
 
 ![Visual representation of the application asking how many keywords should be associated with the project](images/user-guide/maintenance-mode/add-project-keywords-amount.png)
 
-Finally, you will be asked what keywords you would like associated with the project, the amount of keywords requests depends on the previously entered numeric value. Any value is accepted.
+Finally, you will be asked what keywords you would like associated with the project, the amount of keyword requests depends on the previously entered numeric value. Any value is accepted.
 
 ![Visual representation of the application asking for a keyword](images/user-guide/maintenance-mode/add-project-keywords.png)
 
@@ -362,7 +389,203 @@ As you can see in Figure 16, there are more options available to you, these are 
 
 \newpage
 
-### Using Remove Projects
+### Using Update Project
+
+Once you have entered the Update Project functionality you will be asked to enter the following information:
+
+Firstly, you need to enter a Project ID, this must be a numeric value, you can find the accepted Project IDs above the input location, select an ID from this list.
+
+![Visual representation of selecting a Project ID to update the project for](images/user-guide/maintenance-mode/update-project-select-id.png)
+
+Next, you will be presented with multiple options, you can use the following keyboard inputs to update certain aspects of the project, to find out more about each update, click the associated information link.
+
+| Input Value | Command Action                                                                     | Information Link                               |
+| :----------: | ------------------------------------------------------------------------- | ---------------------------------------------- |
+| 1     | Inputting this value will cause the application to enter edit title             | [Edit Title](#edit-title)    |
+| 2     | Inputting this value will cause the application to enter edit summary | [Edit Summary](#edit-summary) |
+| 3     | Inputting this value will cause the application to enter edit released | [Edit Released](#edit-released) |
+| 4     | Inputting this value will cause the application to enter edit playing in theatres | [Edit Playing In Theatres](#edit-playing-in-theaters) |
+| 4     | Inputting this value will cause the application to enter edit existing keywords | [Edit Existing Keywords](#edit-existing-keywords) |
+| 5     | Inputting this value will cause the application to navigate back to the maintenance mode menu  | [Maintenance Mode Menu](#using-maintenance-mode) |
+
+\newpage
+
+#### Edit Title
+
+Once you have entered the Edit Title functionality you will be asked to enter the following information:
+
+You need to enter the new Project Title, this is the new name that you want your project to be called. Any value is accepted.
+
+![Visual representation of the application asking for a new Project Title](images/user-guide/maintenance-mode/update-project-title.png)
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+
+\newpage
+
+#### Edit Summary
+
+Once you have entered the Edit Summary functionality you will be asked to enter the following information:
+
+You need to enter the new Project Summary, this is the new summary that you want your project to have. Any value is accepted.
+
+![Visual representation of the application asking for a new Project Summary](images/user-guide/maintenance-mode/update-project-summary.png)
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+
+\newpage
+
+#### Edit Released
+
+Once you have entered the Edit Released functionality you will be asked to enter the following information:
+
+You need to enter the new Released value, this is the new released state that you want your project to have. Only the values _`y`_ and _`n`_ are accepted. With _`y`_ confirming that the project is released and _`n`_ confirming that the project is not released.
+
+![Visual representation of the application asking for a new Released value](images/user-guide/maintenance-mode/update-project-released.png)
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+
+\newpage
+
+#### Edit Playing In Theaters
+
+Once you have entered the Edit Playing In Theaters functionality you will be asked to enter the following information:
+
+You need to enter the new playing in theatres value, this is the new playing in theaters state that you want your project to have. Only the values _`y`_ and _`n`_ are accepted. With _`y`_ confirming that the project will be playing in theatres and _`n`_ confirming that the project will not be playing in theatres.
+
+![Visual representation of the application asking for a new Project Title](images/user-guide/maintenance-mode/update-project-playing-in-theaters.png)
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+
+\newpage
+
+#### Edit Existing Keywords
+
+Once you have entered the Edit Existing Keywords functionality you will be asked to enter the following information:
+
+You need to enter the keyword identifier you wish to update, you can find the identifier in the provided list, an example of this can be seen below:
+
+![Visual representation of the application showing the current Keywork identifiers](images/user-guide/maintenance-mode/update-project-select-keyword.png)
+
+Once you have inputted a valid keyword identifier you will be asked to enter your new Keyword, any value is accepted.
+
+![Visual representation of the application asking for a new keyword](images/user-guide/maintenance-mode/update-project-keyword.png)
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+
+\newpage
+
+### Using Update Project Materials
+
+Once you have entered the Update Project Materials functionality you will be asked to enter the following information:
+
+Firstly, you need to enter a Project ID, this must be a numeric value, you can find the accepted Project IDs above the input location, select an ID from this list.
+
+![Visual representation of selecting a Project ID to proceed with selecting a material to update](images/user-guide/maintenance-mode/update-project-select-id.png)
+
+Next, you will be asked to enter the material identifer you wish to update within the previously selected project, you can find the identifier in the provided list, an example of this can be found below:
+
+![Visual representation of selecting a Material ID to update the material for](images/user-guide/maintenance-mode/update-project-material-select-material-id.png)
+
+Next, you will be presented with multiple options, you can use the following keyboard inputs to update certain aspects of the material, to find out more about each update, click the associated information link.
+
+| Input Value | Command Action                                                                     | Information Link                               |
+| :----------: | ------------------------------------------------------------------------- | ---------------------------------------------- |
+| 1     | Inputting this value will cause the application to enter edit audio format         | [Edit Audio Format](#edit-audio-format)    |
+| 2     | Inputting this value will cause the application to enter edit run time | [Edit Run Time](#edit-run-time) |
+| 3     | Inputting this value will cause the application to enter edit language | [Edit Language](#edit-language) |
+| 4     | Inputting this value will cause the application to enter edit retail price | [Edit Retail Price](#edit-retail-price) |
+| 5     | Inputting this value will cause the application to enter edit subtitles | [Edit Subtitles](#edit-subtitles) |
+| 6     | Inputting this value will cause the application to enter edit frame aspect | [Edit Frame Aspect](#edit-frame-aspect) |
+| 7     | Inputting this value will cause the application to enter edit packaging | [Edit Packaging](#edit-packaging) |
+| 8     | Inputting this value will cause the application to navigate back to the maintenance mode menu  | [Maintenance Mode Menu](#using-maintenance-mode)      |
+
+\newpage
+
+#### Edit Audio Format
+
+Once you have entered the Audio Format functionality you will be asked to enter the following information:
+
+You need to enter the new Audio Format, this is the new audio format that you want your material to have. Any value is accepted.
+
+![Visual representation of the application asking for a new Audio Format](images/user-guide/maintenance-mode/update-project-material-audio-format.png)
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+
+\newpage
+
+#### Edit Run Time
+
+Once you have entered the Edit Run Time functionality you will be asked to enter the following information:
+
+You need to enter the new Run Time, this is the new run time that you want your material to have. Any numeric value is accepted.
+
+![Visual representation of the application asking for a new Run Time](images/user-guide/maintenance-mode/update-project-material-run-time.png)
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+
+\newpage
+
+#### Edit Language
+
+Once you have entered the Edit Language functionality you will be asked to enter the following information:
+
+You need to enter the new Language, this is the new language that you want your material to have. Any value is accepted.
+
+![Visual representation of the application asking for a new Language](images/user-guide/maintenance-mode/update-project-material-language.png)
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+
+\newpage
+
+#### Edit Retail Price
+
+Once you have entered the Edit Retail Price functionality you will be asked to enter the following information:
+
+You need to enter the new Retail Price, this is the new retail price that you want your material to have. Any numeric value is accepted.
+
+![Visual representation of the application asking for a new Retail Price](images/user-guide/maintenance-mode/update-project-material-retail-price.png)
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+
+\newpage
+
+#### Edit Subtitles
+
+Once you have entered the Edit Subtitles functionality you will be asked to enter the following information:
+
+You need to enter the new Subtitles, this is the new subtitles that you want your material to have. Any value is accepted.
+
+![Visual representation of the application asking for new Subtitles](images/user-guide/maintenance-mode/update-project-material-subtitles.png)
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+
+\newpage
+
+#### Edit Frame Aspect
+
+Once you have entered the Edit Frame Aspect functionality you will be asked to enter the following information:
+
+You need to enter the new Frame Aspect, this is the new frame aspect that you want your material to have. Any value is accepted.
+
+![Visual representation of the application asking for a new Frame Aspect](images/user-guide/maintenance-mode/update-project-material-frame-aspect.png)
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+
+\newpage
+
+#### Edit Packaging
+
+Once you have entered the Edit Packaging functionality you will be asked to enter the following information:
+
+You need to enter the new Packaging details, this is the new packaging information that you want your material to have. Any value is accepted.
+
+![Visual representation of the application asking for new Packaging information](images/user-guide/maintenance-mode/update-project-material-packaging.png)
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+
+\newpage
+
+### Using Remove Project
 
 todo
 
@@ -405,4 +628,4 @@ During group meetings a member was nominated to write minutes, these minutes wer
 
 ![Meeting 5 - Minutes](images/meeting-minutes/meeting-5.png)
 
-\newpage
+![Meeting 6 - Minutes](images/meeting-minutes/meeting-6.png)

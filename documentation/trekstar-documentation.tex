@@ -373,12 +373,14 @@
   \begin{itemize}
   \tightlist
   \item
-    \protect\hyperlink{callum-axon-n0727303}{Callum Axon (N0727303)}
+    \protect\hyperlink{callum-axon-n0727303---member-a}{Callum Axon
+    (N0727303) - Member A}
   \item
-    \protect\hyperlink{callum-carney-n0741707}{Callum Carney (N0741707)}
+    \protect\hyperlink{callum-carney-n0741707---member-c}{Callum Carney
+    (N0741707) - Member C}
   \item
-    \protect\hyperlink{matthew-robinson-n0724629}{Matthew Robinson
-    (N0724629)}
+    \protect\hyperlink{matthew-robinson-n0724629---member-b}{Matthew
+    Robinson (N0724629) - Member B}
   \end{itemize}
 \item
   \protect\hyperlink{system-description}{System Description}
@@ -463,7 +465,46 @@
     \item
       \protect\hyperlink{using-add-project}{Using Add Project}
     \item
-      \protect\hyperlink{using-remove-projects}{Using Remove Projects}
+      \protect\hyperlink{using-update-project}{Using Update Project}
+
+      \begin{itemize}
+      \tightlist
+      \item
+        \protect\hyperlink{edit-title}{Edit Title}
+      \item
+        \protect\hyperlink{edit-summary}{Edit Summary}
+      \item
+        \protect\hyperlink{edit-released}{Edit Released}
+      \item
+        \protect\hyperlink{edit-playing-in-theaters}{Edit Playing In
+        Theaters}
+      \item
+        \protect\hyperlink{edit-existing-keywords}{Edit Existing
+        Keywords}
+      \end{itemize}
+    \item
+      \protect\hyperlink{using-update-project-materials}{Using Update
+      Project Materials}
+
+      \begin{itemize}
+      \tightlist
+      \item
+        \protect\hyperlink{edit-audio-format}{Edit Audio Format}
+      \item
+        \protect\hyperlink{edit-run-time}{Edit Run Time}
+      \item
+        \protect\hyperlink{edit-language}{Edit Language}
+      \item
+        \protect\hyperlink{edit-retail-price}{Edit Retail Price}
+      \item
+        \protect\hyperlink{edit-subtitles}{Edit Subtitles}
+      \item
+        \protect\hyperlink{edit-frame-aspect}{Edit Frame Aspect}
+      \item
+        \protect\hyperlink{edit-packaging}{Edit Packaging}
+      \end{itemize}
+    \item
+      \protect\hyperlink{using-remove-project}{Using Remove Project}
     \end{itemize}
   \end{itemize}
 \item
@@ -493,10 +534,6 @@ pls}}}{Todo - remove me before submission pls}}\label{todo---remove-me-before-su
 \begin{itemize}
 \tightlist
 \item
-  \protect\hyperlink{using-list-materials}{Using List Materials}
-  requires screenshot that shows projectid listings when id issue is
-  resolved.
-\item
   \protect\hyperlink{using-maintenance-mode}{Using Maintenance Mode}
   requires screenshot of the maintenance main menu when remove project
   is added.
@@ -506,6 +543,20 @@ pls}}}{Todo - remove me before submission pls}}\label{todo---remove-me-before-su
 \item
   Update \protect\hyperlink{using-add-project}{Using Add Project} to
   reflect changes to saving a project.
+\item
+  Add back in image that shows keywords when adding a project when this
+  is reimplemented.
+\item
+  Change all figure values where text is CHANGEFIGUREVALUE once all
+  images added.
+\item
+  Complete \protect\hyperlink{using-update-project-materials}{Using
+  Update Project Materials} once the material id bug has been fixed.
+\item
+  Resolve image issue on \protect\hyperlink{edit-packaging}{Edit
+  Packaging} once bugs have been fixed
+\item
+  Look into new line for \# \# \# \# headers
 \end{itemize}
 
 \newpage
@@ -513,33 +564,51 @@ pls}}}{Todo - remove me before submission pls}}\label{todo---remove-me-before-su
 \hypertarget{contributions}{%
 \section{Contributions}\label{contributions}}
 
-\hypertarget{callum-axon-n0727303}{%
-\subsection{Callum Axon (N0727303)}\label{callum-axon-n0727303}}
+\hypertarget{callum-axon-n0727303---member-a}{%
+\subsection{Callum Axon (N0727303) - Member
+A}\label{callum-axon-n0727303---member-a}}
 
 \begin{itemize}
 \tightlist
 \item
-  Stuff
+  Class Diagram
+\item
+  A description of how cohesion and coupling have been considered in the
+  class design
+\item
+  An explanation of the internal data structures used and the reason for
+  the choices.
 \end{itemize}
 
-\hypertarget{callum-carney-n0741707}{%
-\subsection{Callum Carney (N0741707)}\label{callum-carney-n0741707}}
+\hypertarget{callum-carney-n0741707---member-c}{%
+\subsection{Callum Carney (N0741707) - Member
+C}\label{callum-carney-n0741707---member-c}}
 
 \begin{itemize}
 \tightlist
 \item
-  Other Stuff
+  Component Diagrams
+\item
+  Deployment Diagrams
+\item
+  Screenshots of User Interface
 \end{itemize}
 
-\hypertarget{matthew-robinson-n0724629}{%
-\subsection{Matthew Robinson
-(N0724629)}\label{matthew-robinson-n0724629}}
+\hypertarget{matthew-robinson-n0724629---member-b}{%
+\subsection{Matthew Robinson (N0724629) - Member
+B}\label{matthew-robinson-n0724629---member-b}}
 
 \begin{itemize}
 \tightlist
 \item
-  More Stuff
+  Sequence diagram
+\item
+  State machine diagram
+\item
+  An explanation of the search or sorting algorithm used
 \end{itemize}
+
+All other contributions have been completed as part of a group effort.
 
 \newpage
 
@@ -687,7 +756,7 @@ use them:
 (\href{https://github.com/nlohmann/json}{GitHub
 Link})}{JSON for C++ (GitHub Link)}}\label{json-for-c-github-link}}
 
-We decided to use the JSON for C++ library within the application
+It was decided to use the JSON for C++ library within the application
 because we are using JSON as our database to store all of the users
 data. The JSON for C++ library allows us to parse JSON data, request
 data based on certain keys within a JSON Array or Object and create new
@@ -702,8 +771,8 @@ that is reliable and suitable for the applications use cases.
 (\href{https://github.com/google/googletest}{GitHub
 Link})}{GTest (GitHub Link)}}\label{gtest-github-link}}
 
-We decided to use GTest as our primary unit testing library within the
-application, whilst we could have used Boost for unit testing, we
+It was decided to use GTest as our primary unit testing library within
+the application, whilst we could have used Boost for unit testing, we
 decided that GTest had the following advantages which solidified our
 decision to use GTest:
 
@@ -731,11 +800,11 @@ decision to use GTest:
 (\href{https://github.com/gabime/spdlog}{GitHub
 Link})}{spdlog (GitHub Link)}}\label{spdlog-github-link}}
 
-We decided to use spdlog for our logger library, when compared to other
-libraries spdlog is lightweight, fast and only requires header imports
-to get started. spdlog also supports all of the operating systems that
-our application has been developed to work on, which is an important
-feature to have.
+It was decided to use spdlog for our logger library, when compared to
+other libraries spdlog is lightweight, fast and only requires header
+imports to get started. spdlog also supports all of the operating
+systems that our application has been developed to work on, which is an
+important feature to have.
 
 spdlog also allows us to easily generate the required daily reports
 based on the data we pass from the JSON database, the simplicity of this
@@ -748,7 +817,36 @@ needs to be added/fixed.
 \hypertarget{internal-data-structures}{%
 \section{Internal Data Structures}\label{internal-data-structures}}
 
-Include explanation of what internal data structures were used.
+During the design phase of the TrekStar project management application
+it was decided that an internal data structure of Stack would be used.
+While there are pros and cons to each data structure, ultimately it was
+decided that the Stack data structure fit the best with the requirements
+of our application, you can find the in-depth reasoning behind the
+decision to use Stack below:
+
+\begin{itemize}
+\tightlist
+\item
+  The Stack data structure allows for the sequential ordering of disks,
+  and make sense within our use cases. For example, if you have a box
+  set of 4 disks and you would like to add a new disk, its likely that
+  the new disk will be the latest episode, therefore it will be inserted
+  sequentially at the end of the list. Another example would be when a
+  user would like to remove a disk from a boxset, it is unlikely that
+  you will want to remove the 3rd episode within the boxset, however if
+  the 3rd episode was to be removed then the 4th episode (the last one
+  in the underlying vector) can be removed allowing for the 3rd episode
+  to then be removed, therefore the Stack data structure is still
+  appropriate.
+\item
+  Another advantage to the Stack data structure is that data can be
+  accessed quicker sequentially, this is because you can iterate though
+  the underlying vectors data finding items that a requested.
+\item
+  A final advantage to the Stack data structure is that it uses general
+  programming through the use of templating, as a consequence to this,
+  the Stack data structure supports multiple types.
+\end{itemize}
 
 \newpage
 
@@ -806,9 +904,9 @@ Some of the constraints that we have in place are:
   worked on incase they come across it.
 \end{itemize}
 
-We are confident that these constraints will allow us to develop the
-application with fewer interruptions and ensure that only high quality,
-tested code is being pushed to the repository.
+Our group is confident that these constraints will allow us to develop
+the application with fewer interruptions and ensure that only high
+quality, tested code is being pushed to the repository.
 
 \newpage
 
@@ -940,9 +1038,9 @@ Inputting this value will cause the application to list materials\strut
 4\strut
 \end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
 Inputting this value will cause the application to navigate back to the
-\protect\hyperlink{using-the-main-menu}{Main Menu}\strut
+main menu\strut
 \end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
-Not required\strut
+\protect\hyperlink{using-the-main-menu}{Main Menu}\strut
 \end{minipage}\tabularnewline
 \bottomrule
 \end{longtable}
@@ -1141,26 +1239,35 @@ project\strut
 \begin{minipage}[t]{0.08\columnwidth}\centering
 2\strut
 \end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
-Inputting this value will cause the application to enter remove
+Inputting this value will cause the application to enter update
 project\strut
 \end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
-\protect\hyperlink{using-remove-projects}{Removing Projects}\strut
+\protect\hyperlink{using-update-project}{Updating Projects}\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.08\columnwidth}\centering
 3\strut
 \end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
-Inputting this value will cause the application to save all changes to
-the database\strut
+Inputting this value will cause the application to enter update project
+materials\strut
 \end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
-Not required\strut
+\protect\hyperlink{using-update-project-materials}{Updating Project
+Materials}\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.08\columnwidth}\centering
 4\strut
 \end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
-Inputting this value will cause the application to navigate back to the
-\protect\hyperlink{using-the-main-menu}{Main Menu}\strut
+Inputting this value will cause the application to enter remove
+project\strut
 \end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
-Not required\strut
+\protect\hyperlink{using-remove-project}{Removing Projects}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to navigate back to the
+main menu\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{using-the-main-menu}{Main Menu}\strut
 \end{minipage}\tabularnewline
 \bottomrule
 \end{longtable}
@@ -1173,14 +1280,23 @@ Not required\strut
 Once you have entered the Add Project functionality you will be asked to
 enter the following information:
 
-Firstly, you will be asked to enter the Project Title, this is the name
-that you want your project to be called. Any value is accepted.
+Firstly, you need to enter the Project Title, this is the name that you
+want your project to be called. Any value is accepted.
 
 \begin{figure}
 \centering
 \includegraphics{images/user-guide/maintenance-mode/add-project-title.png}
 \caption{Visual representation of the application asking for a Project
 Title}
+\end{figure}
+
+Next, you will be asked for a project summary. Any value is accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/add-project-summary.png}
+\caption{Visual representation of the application asking for Project
+Summary}
 \end{figure}
 
 Next, you will be asked if the project has been released. Only the
@@ -1219,7 +1335,7 @@ keywords should be associated with the project}
 \end{figure}
 
 Finally, you will be asked what keywords you would like associated with
-the project, the amount of keywords requests depends on the previously
+the project, the amount of keyword requests depends on the previously
 entered numeric value. Any value is accepted.
 
 \begin{figure}
@@ -1237,8 +1353,525 @@ this user guide.
 
 \newpage
 
-\hypertarget{using-remove-projects}{%
-\subsubsection{Using Remove Projects}\label{using-remove-projects}}
+\hypertarget{using-update-project}{%
+\subsubsection{Using Update Project}\label{using-update-project}}
+
+Once you have entered the Update Project functionality you will be asked
+to enter the following information:
+
+Firstly, you need to enter a Project ID, this must be a numeric value,
+you can find the accepted Project IDs above the input location, select
+an ID from this list.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-select-id.png}
+\caption{Visual representation of selecting a Project ID to update the
+project for}
+\end{figure}
+
+Next, you will be presented with multiple options, you can use the
+following keyboard inputs to update certain aspects of the project, to
+find out more about each update, click the associated information link.
+
+\begin{longtable}[]{@{}cll@{}}
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\centering
+Input Value\strut
+\end{minipage} & \begin{minipage}[b]{0.51\columnwidth}\raggedright
+Command Action\strut
+\end{minipage} & \begin{minipage}[b]{0.32\columnwidth}\raggedright
+Information Link\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.08\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter edit
+title\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{edit-title}{Edit Title}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter edit
+summary\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{edit-summary}{Edit Summary}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter edit
+released\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{edit-released}{Edit Released}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter edit playing in
+theatres\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{edit-playing-in-theaters}{Edit Playing In
+Theatres}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter edit existing
+keywords\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{edit-existing-keywords}{Edit Existing Keywords}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to navigate back to the
+maintenance mode menu\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode Menu}\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\newpage
+
+\hypertarget{edit-title}{%
+\paragraph{Edit Title}\label{edit-title}}
+
+Once you have entered the Edit Title functionality you will be asked to
+enter the following information:
+
+You need to enter the new Project Title, this is the new name that you
+want your project to be called. Any value is accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-title.png}
+\caption{Visual representation of the application asking for a new
+Project Title}
+\end{figure}
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options
+available to you, these are the options associated with
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
+you can find more information by reading the
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
+this user guide.
+
+\newpage
+
+\hypertarget{edit-summary}{%
+\paragraph{Edit Summary}\label{edit-summary}}
+
+Once you have entered the Edit Summary functionality you will be asked
+to enter the following information:
+
+You need to enter the new Project Summary, this is the new summary that
+you want your project to have. Any value is accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-summary.png}
+\caption{Visual representation of the application asking for a new
+Project Summary}
+\end{figure}
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options
+available to you, these are the options associated with
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
+you can find more information by reading the
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
+this user guide.
+
+\newpage
+
+\hypertarget{edit-released}{%
+\paragraph{Edit Released}\label{edit-released}}
+
+Once you have entered the Edit Released functionality you will be asked
+to enter the following information:
+
+You need to enter the new Released value, this is the new released state
+that you want your project to have. Only the values \emph{\texttt{y}}
+and \emph{\texttt{n}} are accepted. With \emph{\texttt{y}} confirming
+that the project is released and \emph{\texttt{n}} confirming that the
+project is not released.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-released.png}
+\caption{Visual representation of the application asking for a new
+Released value}
+\end{figure}
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options
+available to you, these are the options associated with
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
+you can find more information by reading the
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
+this user guide.
+
+\newpage
+
+\hypertarget{edit-playing-in-theaters}{%
+\paragraph{Edit Playing In Theaters}\label{edit-playing-in-theaters}}
+
+Once you have entered the Edit Playing In Theaters functionality you
+will be asked to enter the following information:
+
+You need to enter the new playing in theatres value, this is the new
+playing in theaters state that you want your project to have. Only the
+values \emph{\texttt{y}} and \emph{\texttt{n}} are accepted. With
+\emph{\texttt{y}} confirming that the project will be playing in
+theatres and \emph{\texttt{n}} confirming that the project will not be
+playing in theatres.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-playing-in-theaters.png}
+\caption{Visual representation of the application asking for a new
+Project Title}
+\end{figure}
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options
+available to you, these are the options associated with
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
+you can find more information by reading the
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
+this user guide.
+
+\newpage
+
+\hypertarget{edit-existing-keywords}{%
+\paragraph{Edit Existing Keywords}\label{edit-existing-keywords}}
+
+Once you have entered the Edit Existing Keywords functionality you will
+be asked to enter the following information:
+
+You need to enter the keyword identifier you wish to update, you can
+find the identifier in the provided list, an example of this can be seen
+below:
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-select-keyword.png}
+\caption{Visual representation of the application showing the current
+Keywork identifiers}
+\end{figure}
+
+Once you have inputted a valid keyword identifier you will be asked to
+enter your new Keyword, any value is accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-keyword.png}
+\caption{Visual representation of the application asking for a new
+keyword}
+\end{figure}
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options
+available to you, these are the options associated with
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
+you can find more information by reading the
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
+this user guide.
+
+\newpage
+
+\hypertarget{using-update-project-materials}{%
+\subsubsection{Using Update Project
+Materials}\label{using-update-project-materials}}
+
+Once you have entered the Update Project Materials functionality you
+will be asked to enter the following information:
+
+Firstly, you need to enter a Project ID, this must be a numeric value,
+you can find the accepted Project IDs above the input location, select
+an ID from this list.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-select-id.png}
+\caption{Visual representation of selecting a Project ID to proceed with
+selecting a material to update}
+\end{figure}
+
+Next, you will be asked to enter the material identifer you wish to
+update within the previously selected project, you can find the
+identifier in the provided list, an example of this can be found below:
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-material-select-material-id.png}
+\caption{Visual representation of selecting a Material ID to update the
+material for}
+\end{figure}
+
+Next, you will be presented with multiple options, you can use the
+following keyboard inputs to update certain aspects of the material, to
+find out more about each update, click the associated information link.
+
+\begin{longtable}[]{@{}cll@{}}
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\centering
+Input Value\strut
+\end{minipage} & \begin{minipage}[b]{0.51\columnwidth}\raggedright
+Command Action\strut
+\end{minipage} & \begin{minipage}[b]{0.32\columnwidth}\raggedright
+Information Link\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.08\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter edit audio
+format\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{edit-audio-format}{Edit Audio Format}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter edit run
+time\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{edit-run-time}{Edit Run Time}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter edit
+language\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{edit-language}{Edit Language}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter edit retail
+price\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{edit-retail-price}{Edit Retail Price}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter edit
+subtitles\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{edit-subtitles}{Edit Subtitles}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter edit frame
+aspect\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{edit-frame-aspect}{Edit Frame Aspect}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+7\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter edit
+packaging\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{edit-packaging}{Edit Packaging}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+8\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to navigate back to the
+maintenance mode menu\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode Menu}\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\newpage
+
+\hypertarget{edit-audio-format}{%
+\paragraph{Edit Audio Format}\label{edit-audio-format}}
+
+Once you have entered the Audio Format functionality you will be asked
+to enter the following information:
+
+You need to enter the new Audio Format, this is the new audio format
+that you want your material to have. Any value is accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-material-audio-format.png}
+\caption{Visual representation of the application asking for a new Audio
+Format}
+\end{figure}
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options
+available to you, these are the options associated with
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
+you can find more information by reading the
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
+this user guide.
+
+\newpage
+
+\hypertarget{edit-run-time}{%
+\paragraph{Edit Run Time}\label{edit-run-time}}
+
+Once you have entered the Edit Run Time functionality you will be asked
+to enter the following information:
+
+You need to enter the new Run Time, this is the new run time that you
+want your material to have. Any numeric value is accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-material-run-time.png}
+\caption{Visual representation of the application asking for a new Run
+Time}
+\end{figure}
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options
+available to you, these are the options associated with
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
+you can find more information by reading the
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
+this user guide.
+
+\newpage
+
+\hypertarget{edit-language}{%
+\paragraph{Edit Language}\label{edit-language}}
+
+Once you have entered the Edit Language functionality you will be asked
+to enter the following information:
+
+You need to enter the new Language, this is the new language that you
+want your material to have. Any value is accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-material-language.png}
+\caption{Visual representation of the application asking for a new
+Language}
+\end{figure}
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options
+available to you, these are the options associated with
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
+you can find more information by reading the
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
+this user guide.
+
+\newpage
+
+\hypertarget{edit-retail-price}{%
+\paragraph{Edit Retail Price}\label{edit-retail-price}}
+
+Once you have entered the Edit Retail Price functionality you will be
+asked to enter the following information:
+
+You need to enter the new Retail Price, this is the new retail price
+that you want your material to have. Any numeric value is accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-material-retail-price.png}
+\caption{Visual representation of the application asking for a new
+Retail Price}
+\end{figure}
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options
+available to you, these are the options associated with
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
+you can find more information by reading the
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
+this user guide.
+
+\newpage
+
+\hypertarget{edit-subtitles}{%
+\paragraph{Edit Subtitles}\label{edit-subtitles}}
+
+Once you have entered the Edit Subtitles functionality you will be asked
+to enter the following information:
+
+You need to enter the new Subtitles, this is the new subtitles that you
+want your material to have. Any value is accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-material-subtitles.png}
+\caption{Visual representation of the application asking for new
+Subtitles}
+\end{figure}
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options
+available to you, these are the options associated with
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
+you can find more information by reading the
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
+this user guide.
+
+\newpage
+
+\hypertarget{edit-frame-aspect}{%
+\paragraph{Edit Frame Aspect}\label{edit-frame-aspect}}
+
+Once you have entered the Edit Frame Aspect functionality you will be
+asked to enter the following information:
+
+You need to enter the new Frame Aspect, this is the new frame aspect
+that you want your material to have. Any value is accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-material-frame-aspect.png}
+\caption{Visual representation of the application asking for a new Frame
+Aspect}
+\end{figure}
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options
+available to you, these are the options associated with
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
+you can find more information by reading the
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
+this user guide.
+
+\newpage
+
+\hypertarget{edit-packaging}{%
+\paragraph{Edit Packaging}\label{edit-packaging}}
+
+Once you have entered the Edit Packaging functionality you will be asked
+to enter the following information:
+
+You need to enter the new Packaging details, this is the new packaging
+information that you want your material to have. Any value is accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-material-packaging.png}
+\caption{Visual representation of the application asking for new
+Packaging information}
+\end{figure}
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options
+available to you, these are the options associated with
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
+you can find more information by reading the
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
+this user guide.
+
+\newpage
+
+\hypertarget{using-remove-project}{%
+\subsubsection{Using Remove Project}\label{using-remove-project}}
 
 todo
 
@@ -1345,6 +1978,10 @@ the aforementioned meetings.
 \caption{Meeting 5 - Minutes}
 \end{figure}
 
-\newpage
+\begin{figure}
+\centering
+\includegraphics{images/meeting-minutes/meeting-6.png}
+\caption{Meeting 6 - Minutes}
+\end{figure}
 
 \end{document}
