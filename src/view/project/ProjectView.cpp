@@ -66,25 +66,57 @@ namespace TrekStar
 
         std::string ProjectView::GetNewTitle()
         {
-            std::cout << "Title [current: " << this->GetModel()->GetTitle() << "]: ";
+            std::string currentTitle = this->GetModel()->GetTitle();
+
+            if ( currentTitle.empty() )
+            {
+                std::cout << "Title: ";
+            }
+            else
+            {
+                std::cout << "Title [current: " << currentTitle << "]: ";
+            }
+
             return this->GetStringInput();
         }
 
         std::string ProjectView::GetNewSummary()
         {
-            std::cout << "Summary [current: " << this->GetModel()->GetSummary() << "]: ";
+            std::string currentSummary = this->GetModel()->GetSummary();
+
+            if ( currentSummary.empty() )
+            {
+                std::cout << "Summary: ";
+            }
+            else
+            {
+                std::cout << "Summary [current: " << currentSummary << "]: ";
+            }
+
             return this->GetStringInput();
         }
 
         bool ProjectView::GetNewReleased()
         {
-            std::cout << "Released [current: " << this->GetModel()->GetReleased() << "]: ";
+            std::string released = "no";
+            if ( this->GetModel()->GetReleased() )
+            {
+                released = "yes";
+            }
+
+            std::cout << "Released [current: " << released << "]: ";
             return this->GetBoolInput();
         }
 
         bool ProjectView::GetNewPlayingInTheatres()
         {
-            std::cout << "Released [current: " << this->GetModel()->GetPlayingInTheatres() << "]: ";
+            std::string playingInTheatres = "no";
+            if ( this->GetModel()->GetPlayingInTheatres() )
+            {
+                playingInTheatres = "yes";
+            }
+
+            std::cout << "Playing In Theatres [current: " << playingInTheatres << "]: ";
             return this->GetBoolInput();
         }
 
@@ -133,17 +165,15 @@ namespace TrekStar
 
         bool ProjectView::GetBoolInput()
         {
-            std::string input;
+            char input;
 
-            while ( input != "y" && input != "n" )
+            do
             {
-                std::cin.ignore();
-                std::getline(std::cin, input);
+                std::cin >> input;
             }
+            while( !std::cin.fail() && input != 'y' && input != 'n' );
 
-            return input == "y";
+            return input == 'y';
         }
     }
 }
-
-

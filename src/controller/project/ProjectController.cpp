@@ -48,6 +48,14 @@ namespace TrekStar
             this->GetModel()->SetKeyword(keywordNo, this->GetView()->GetNewKeyword(keywordNo));
         }
 
+        void ProjectController::UpdateAll()
+        {
+            this->UpdateTitle();
+            this->UpdateSummary();
+            this->UpdateReleased();
+            this->UpdatePlayingInTheatres();
+        }
+
         ProjectInterface* ProjectController::GetModel()
         {
             return dynamic_cast<ProjectInterface*>(this->model);

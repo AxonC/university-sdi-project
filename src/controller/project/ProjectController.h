@@ -28,6 +28,7 @@ namespace TrekStar
             void UpdateReleased();
             void UpdatePlayingInTheatres();
             void UpdateKeyword();
+            void UpdateAll();
         };
     }
 }
