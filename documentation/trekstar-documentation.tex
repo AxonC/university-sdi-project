@@ -90,11 +90,24 @@
 \hypersetup{
   pdftitle={Software Design and Implementation},
   pdfauthor={Callum Axon (N0727303); Callum Carney (N0741707); Matthew Robinson (N0724629)},
-  hidelinks,
+  colorlinks=true,
+  linkcolor=darkgray,
+  filecolor=default-filecolor,
+  citecolor=default-citecolor,
+  urlcolor=default-urlcolor,
   breaklinks=true,
   pdfcreator={LaTeX via pandoc with the Eisvogel template}}
 \urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=2.5cm,includehead=true,includefoot=true,centering]{geometry}
+\usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
 \usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -232,6 +245,33 @@
 % tables
 %
 
+\definecolor{table-row-color}{HTML}{F5F5F5}
+\definecolor{table-rule-color}{HTML}{999999}
+
+%\arrayrulecolor{black!40}
+\arrayrulecolor{table-rule-color}     % color of \toprule, \midrule, \bottomrule
+\setlength\heavyrulewidth{0.3ex}      % thickness of \toprule, \bottomrule
+\renewcommand{\arraystretch}{1.3}     % spacing (padding)
+
+% Reset rownum counter so that each table
+% starts with the same row colors.
+% https://tex.stackexchange.com/questions/170637/restarting-rowcolors
+\let\oldlongtable\longtable
+\let\endoldlongtable\endlongtable
+\renewenvironment{longtable}{
+\rowcolors{3}{}{table-row-color!100}  % row color
+\oldlongtable} {
+\endoldlongtable
+\global\rownum=0\relax}
+
+% Unfortunately the colored cells extend beyond the edge of the 
+% table because pandoc uses @-expressions (@{}) like so: 
+%
+% \begin{longtable}[]{@{}ll@{}}
+% \end{longtable}
+%
+% https://en.wikibooks.org/wiki/LaTeX/Tables#.40-expressions
+
 %
 % remove paragraph indention
 %
@@ -319,6 +359,15 @@
 \item
   \protect\hyperlink{table-of-contents}{Table of Contents}
 \item
+  \protect\hyperlink{todo---remove-me-before-submission-pls}{Todo -
+  \textbf{\emph{remove me before submission pls}}}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \protect\hyperlink{user-guide}{User Guide}
+  \end{itemize}
+\item
   \protect\hyperlink{contributions}{Contributions}
 
   \begin{itemize}
@@ -376,10 +425,76 @@
   Prodcedure}
 \item
   \protect\hyperlink{user-manual}{User Manual}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \protect\hyperlink{software-introduction}{Software Introduction}
+  \item
+    \protect\hyperlink{using-the-main-menu}{Using the Main Menu}
+  \item
+    \protect\hyperlink{using-view-mode}{Using View Mode}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \protect\hyperlink{using-list-projects}{Using List Projects}
+    \item
+      \protect\hyperlink{using-search-projects}{Using Search Projects}
+    \item
+      \protect\hyperlink{using-list-materials}{Using List Materials}
+    \end{itemize}
+  \item
+    \protect\hyperlink{using-maintenance-mode}{Using Maintenance Mode}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \protect\hyperlink{using-add-project}{Using Add Project}
+    \item
+      \protect\hyperlink{using-remove-projects}{Using Remove Projects}
+    \end{itemize}
+  \end{itemize}
 \item
   \protect\hyperlink{conclusion}{Conclusion}
 \item
   \protect\hyperlink{appendix}{Appendix}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \protect\hyperlink{managing-group-work}{Managing group work}
+  \item
+    \protect\hyperlink{meeting-minutes}{Meeting Minutes}
+  \end{itemize}
+\end{itemize}
+
+\newpage
+
+\hypertarget{todo---remove-me-before-submission-pls}{%
+\section{\texorpdfstring{Todo - \textbf{\emph{remove me before
+submission
+pls}}}{Todo - remove me before submission pls}}\label{todo---remove-me-before-submission-pls}}
+
+\hypertarget{user-guide}{%
+\subsection{User Guide}\label{user-guide}}
+
+\begin{itemize}
+\tightlist
+\item
+  \protect\hyperlink{using-list-materials}{Using List Materials}
+  requires screenshot that shows projectid listings when id issue is
+  resolved.
+\item
+  \protect\hyperlink{using-maintenance-mode}{Using Maintenance Mode}
+  requires screenshot of the maintenance main menu when remove project
+  is added.
+\item
+  User guide details required for when the application is able to manage
+  crew and materials/projects fully.
+\item
+  Update \protect\hyperlink{using-add-project}{Using Add Project} to
+  reflect changes to saving a project.
 \end{itemize}
 
 \newpage
@@ -515,7 +630,7 @@ aformentioned Deployment scenarios.
 
 \begin{figure}
 \centering
-\includegraphics{deployment-diagrams/trekstar-individual-installation.png}
+\includegraphics{images/deployment-diagrams/trekstar-individual-installation.png}
 \caption{Visual Representation of Individual TrekStar installation}
 \end{figure}
 
@@ -524,7 +639,7 @@ aformentioned Deployment scenarios.
 
 \begin{figure}
 \centering
-\includegraphics{deployment-diagrams/trekstar-company-installation.png}
+\includegraphics{images/deployment-diagrams/trekstar-company-installation.png}
 \caption{Visual Represenation of Company-Wide TrekStar installation}
 \end{figure}
 
@@ -586,7 +701,432 @@ Include explaination of software testing procedure here.
 \hypertarget{user-manual}{%
 \section{User Manual}\label{user-manual}}
 
-Include user manual here
+\hypertarget{software-introduction}{%
+\subsection{Software Introduction}\label{software-introduction}}
+
+The Trekstar project management application has been developed for
+TrekStar Pictures and allows them to create and manage Projects along
+with their associated product materials and metadata. This guide will
+cover how to use the core features of the application, which includes:
+
+\begin{itemize}
+\tightlist
+\item
+  Using the main menu
+\item
+  Using view mode
+\item
+  Using maintenance mode
+\end{itemize}
+
+\hypertarget{using-the-main-menu}{%
+\subsection{Using the Main Menu}\label{using-the-main-menu}}
+
+To use the Main Menu, open the application and you will be presented
+with the following screen
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/main-menu/using-the-main-menu.png}
+\caption{Visual representation of the Main Menu}
+\end{figure}
+
+Once on this screen, you can use the following keyboard inputs to
+navigate around the application, to find out more about each feature,
+click the associated information link.
+
+\begin{longtable}[]{@{}cll@{}}
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\centering
+Input Value\strut
+\end{minipage} & \begin{minipage}[b]{0.50\columnwidth}\raggedright
+Command Action\strut
+\end{minipage} & \begin{minipage}[b]{0.33\columnwidth}\raggedright
+Information Link\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.08\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.50\columnwidth}\raggedright
+Inputting this value will cause the application to enter View Mode\strut
+\end{minipage} & \begin{minipage}[t]{0.33\columnwidth}\raggedright
+\protect\hyperlink{using-view-mode}{Using View Mode}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.50\columnwidth}\raggedright
+Inputting this value will cause the application to enter Maintenance
+Mode\strut
+\end{minipage} & \begin{minipage}[t]{0.33\columnwidth}\raggedright
+\protect\hyperlink{using-maintenance-mode}{Using Maintenance Mode}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.50\columnwidth}\raggedright
+Inputting this value will cause the application to safely exit\strut
+\end{minipage} & \begin{minipage}[t]{0.33\columnwidth}\raggedright
+Not required\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\newpage
+
+\hypertarget{using-view-mode}{%
+\subsection{Using View Mode}\label{using-view-mode}}
+
+Once you have reached the View Mode page you will be presented with the
+following screen
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/view-mode/using-view-mode.png}
+\caption{Visual representation of View Mode}
+\end{figure}
+
+Once on this screen, you can use the following keyboard inputs to
+navigate around view mode, to find out more about each feature, click
+the associated information link.
+
+\begin{longtable}[]{@{}cll@{}}
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\centering
+Input Value\strut
+\end{minipage} & \begin{minipage}[b]{0.51\columnwidth}\raggedright
+Command Action\strut
+\end{minipage} & \begin{minipage}[b]{0.32\columnwidth}\raggedright
+Information Link\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.08\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to list projects\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{using-list-projects}{Listing Projects}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter search mode for
+materials\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{using-search-projects}{Using Search Projects}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to list materials\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{using-list-materials}{Listing Materials}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to navigate back to the
+\protect\hyperlink{using-the-main-menu}{Main Menu}\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+Not required\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\newpage
+
+\hypertarget{using-list-projects}{%
+\subsubsection{Using List Projects}\label{using-list-projects}}
+
+Once you have entered the List Projects functionality you will be asked
+if you wish to sort all of the projects by their title, you can enter
+\emph{\texttt{y}} to confirm that you wish for the projects to be order
+by their titles and \emph{\texttt{n}} to decline.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/view-mode/sort-by-title.png}
+\caption{Visual representation of the application asking if you wish to
+sort by title}
+\end{figure}
+
+You will now see the projects that are held within your applications
+database, you can see an example of this below.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/view-mode/listed-projects.png}
+\caption{Visual representation of project listings}
+\end{figure}
+
+As you can see in Figure 6, there are more options avaliable to you,
+these options allow you to navigate through the projects. You can see
+the associated input actions below.
+
+\begin{longtable}[]{@{}cl@{}}
+\toprule
+\begin{minipage}[b]{0.13\columnwidth}\centering
+Input Value\strut
+\end{minipage} & \begin{minipage}[b]{0.81\columnwidth}\raggedright
+Command Action\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.13\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.81\columnwidth}\raggedright
+This will cause the application to move onto the next project in the
+database\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.13\columnwidth}\centering
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.81\columnwidth}\raggedright
+This will cause the application to move onto the previous project in the
+database\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.13\columnwidth}\centering
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.81\columnwidth}\raggedright
+This will cause the application to navigate back to
+\protect\hyperlink{using-view-mode}{View Mode}\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\newpage
+
+\hypertarget{using-search-projects}{%
+\subsubsection{Using Search Projects}\label{using-search-projects}}
+
+Once you have entered the Search Projects functionality you will be
+asked to input a search query, this can be any value and data will only
+be returned if there is an associated project title held within the
+database.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/view-mode/project-title-search.png}
+\caption{Visual representation of the application asking for a search
+query}
+\end{figure}
+
+You will now see the associated projects that matched to your search
+query, you can see an example of this below.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/view-mode/project-search-term.png}
+\caption{Visual representation of a project being discovered from a
+search query}
+\end{figure}
+
+As you can see in Figure 8, there are more options avaliable to you,
+these are the options associated with
+\protect\hyperlink{using-view-mode}{View Mode}, therefore you can find
+more information by reading the \protect\hyperlink{using-view-mode}{View
+Mode} section of this user guide.
+
+\newpage
+
+\hypertarget{using-list-materials}{%
+\subsubsection{Using List Materials}\label{using-list-materials}}
+
+Once you have entered the List Materials functionality you will be asked
+to input a Project ID, this must be a numeric value, you can find the
+accepted Project IDs above the input location, select an ID from this
+list.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/view-mode/list-materials-project-id.png}
+\caption{Visual representation of selecting a Project ID to list
+materials for}
+\end{figure}
+
+You will now see the materials linked to the requested project that are
+held within your applications database, you can see an example of this
+below.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/view-mode/listed-materials.png}
+\caption{Visual representation of material listings}
+\end{figure}
+
+As you can see in Figure 10, there are more options avaliable to you,
+these options allow you to navigate through the materials. You can see
+the associated input actions below.
+
+\begin{longtable}[]{@{}cl@{}}
+\toprule
+\begin{minipage}[b]{0.13\columnwidth}\centering
+Input Value\strut
+\end{minipage} & \begin{minipage}[b]{0.81\columnwidth}\raggedright
+Command Action\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.13\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.81\columnwidth}\raggedright
+This will cause the application to move onto the next material in the
+database\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.13\columnwidth}\centering
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.81\columnwidth}\raggedright
+This will cause the application to move onto the previous material in
+the database\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.13\columnwidth}\centering
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.81\columnwidth}\raggedright
+This will cause the application to navigate back to
+\protect\hyperlink{using-view-mode}{View Mode}\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\newpage
+
+\hypertarget{using-maintenance-mode}{%
+\subsection{Using Maintenance Mode}\label{using-maintenance-mode}}
+
+Once you have reached the Maintenance Mode page you will be presented
+with the following screen
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/view-mode/using-maintenance-mode.png}
+\caption{Visual representation of Maintenance Mode}
+\end{figure}
+
+Once on this screen, you can use the following keyboard inputs to
+navigate around maintenance mode, to find out more about each feature,
+click the associated information link.
+
+\begin{longtable}[]{@{}cll@{}}
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\centering
+Input Value\strut
+\end{minipage} & \begin{minipage}[b]{0.51\columnwidth}\raggedright
+Command Action\strut
+\end{minipage} & \begin{minipage}[b]{0.32\columnwidth}\raggedright
+Information Link\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.08\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter add
+project\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{using-add-project}{Adding Projects}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter remove
+project\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{using-remove-projects}{Removing Projects}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to save all changes to
+the database\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+Not required\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to navigate back to the
+\protect\hyperlink{using-the-main-menu}{Main Menu}\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+Not required\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\newpage
+
+\hypertarget{using-add-project}{%
+\subsubsection{Using Add Project}\label{using-add-project}}
+
+Once you have entered the Add Project functionality you will be asked to
+enter the following information:
+
+Firstly, you will be asked to enter the Project Title, this is the name
+that you want your project to be called. Any value is accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/add-project-title.png}
+\caption{Visual representation of the application asking for a Project
+Title}
+\end{figure}
+
+Next, you will be asked if the project has been released. Only the
+values \emph{\texttt{y}} and \emph{\texttt{n}} are accepted. With
+\emph{\texttt{y}} confirming that the project has been released and
+\emph{\texttt{n}} confirming that the project has not been released.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/add-project-released.png}
+\caption{Visual representation of the application asking if the project
+has been released}
+\end{figure}
+
+Next, you will be asked if the project will be playing in theaters. Only
+the values \emph{\texttt{y}} and \emph{\texttt{n}} are accepted. With
+\emph{\texttt{y}} confirming that the project will be playing in
+theatres and \emph{\texttt{n}} confirming that the project will not be
+playing in theatres.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/add-project-theatres.png}
+\caption{Visual representation of the application asking if the project
+will be playing in theatres}
+\end{figure}
+
+Next, you will be asked how many keywords you would like associating
+with the project. Any numeric value is accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/add-project-keywords-amount.png}
+\caption{Visual representation of the application asking how many
+keywords should be associated with the project}
+\end{figure}
+
+Finally, you will be asked what keywords you would like associated with
+the project, the amount of keywords requests depends on the previously
+entered numeric value. Any value is accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/add-project-keywords.png}
+\caption{Visual representation of the application asking for a keyword}
+\end{figure}
+
+As you can see in Figure 16, there are more options avaliable to you,
+these are the options associated with
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
+you can find more information by reading the
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
+this user guide.
+
+\newpage
+
+\hypertarget{using-remove-projects}{%
+\subsubsection{Using Remove Projects}\label{using-remove-projects}}
+
+todo
 
 \newpage
 
@@ -602,6 +1142,48 @@ design of system complexity using e.g.~big O- notation).
 
 \hypertarget{appendix}{%
 \section{Appendix}\label{appendix}}
+
+\hypertarget{managing-group-work}{%
+\subsection{Managing group work}\label{managing-group-work}}
+
+\hypertarget{meeting-minutes}{%
+\subsection{Meeting Minutes}\label{meeting-minutes}}
+
+During group meetings a member was nominated to write minutes, these
+minutes were an important factor during the development of the
+application as they allowed us to go back and check what work we have
+all be allocated. On the following pages you can find the minutes for
+the aformentioned meetings.
+
+\begin{figure}
+\centering
+\includegraphics{images/meeting-minutes/meeting-1.png}
+\caption{Meeting 1 - Minutes}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{images/meeting-minutes/meeting-2.png}
+\caption{Meeting 2 - Minutes}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{images/meeting-minutes/meeting-3.png}
+\caption{Meeting 3 - Minutes}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{images/meeting-minutes/meeting-4.png}
+\caption{Meeting 4 - Minutes}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{images/meeting-minutes/meeting-5.png}
+\caption{Meeting 5 - Minutes}
+\end{figure}
 
 \newpage
 
