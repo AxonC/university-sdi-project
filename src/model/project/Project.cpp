@@ -240,6 +240,11 @@ namespace TrekStar
             return this->GetTitle() <= project.GetTitle();
         }
 
+        bool Project::operator==(unsigned int id) const
+        {
+            return this->GetId() == id;
+        }
+
         bool Project::operator==(const std::string & title) const
         {
             return this->GetSearchableTitle() == title;

@@ -92,6 +92,7 @@ namespace TrekStar
             bool operator>=(const Project & project) const;
             bool operator<=(const Project & project) const;
 
+            bool operator==(const unsigned int id) const;
             bool operator==(const std::string & title) const;
             bool operator<(const std::string & title) const;
         };

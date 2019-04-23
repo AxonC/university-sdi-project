@@ -97,6 +97,12 @@ namespace TrekStar
                 ProjectView view(projects.at(projectIndex));
                 ProjectController controller(projects.at(projectIndex), view);
                 controller.ShowAll();
+
+                std::cout << "Show materials for this project? (y/n): ";
+                if ( TrekStar::Command::GetBoolInput() )
+                {
+                    listMaterials(projects, projectIndex);
+                }
             }
         }
 
@@ -118,7 +124,15 @@ namespace TrekStar
                     "List Materials"
             );
 
-            std::vector<std::shared_ptr<TrekStar::Material::Material>> materials = projects[projectNum - 1].GetMaterials();
+            std::vector<std::shared_ptr<TrekStar::Material::Material>> materials;
+
+            for ( const auto & project: projects )
+            {
+                if ( project == projectNum)
+                {
+                    materials = project.GetMaterials();
+                }
+            }
 
             int commandInput = 0;
             int currentMaterial = 0;

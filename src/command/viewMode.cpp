@@ -2,6 +2,7 @@
 
 #include "viewMode.h"
 #include "CommandHandler.h"
+#include "userInput.h"
 #include "../information/saveInformation.h"
 
 namespace TrekStar
@@ -14,14 +15,13 @@ namespace TrekStar
                     {
                             {1, "List Projects"},
                             {2, "Search Projects"},
-                            {3, "List Materials"},
-                            {4, "Cancel"}
+                            {3, "Cancel"}
                     },
                     "View Mode"
             );
 
             int commandInput = 0;
-            while ( commandInput != 4 )
+            while ( commandInput != 3 )
             {
                 commandHandler.displayCommands();
                 commandInput = commandHandler.getUserInput();
@@ -35,40 +35,12 @@ namespace TrekStar
                     switch ( commandInput )
                     {
                         case 1 :
-                            sortByTitleString;
-                            sortByTitle = false;
-                            std::cout << "Sort by title? (y/n): ";
-                            std::cin >> sortByTitleString;
                             commandHandler.clearConsole();
-
-                            if ( sortByTitleString == "y" )
-                            {
-                                sortByTitle = true;
-                            }
-
-                            TrekStar::Information::listProjects(projects, sortByTitle);
+                            std::cout << "Sort by title? (y/n): ";
+                            TrekStar::Information::listProjects(projects, TrekStar::Command::GetBoolInput());
                             break;
                         case 2 :
                             TrekStar::Information::searchProjects(projects);
-                            break;
-                        case 3 :
-                            try
-                            {
-                                std::cout << std::string(80, '-') << std::endl;
-                                TrekStar::Information::displayAllProjects(projects);
-                                std::cout << std::string(80, '-') << std::endl;
-
-                                int projectID;
-                                std::cout << "Project ID: ";
-                                std::cin >> projectID;
-                                commandHandler.clearConsole();
-
-                                TrekStar::Information::listMaterials(projects, projectID);
-                            }
-                            catch ( std::invalid_argument & )
-                            {
-                                std::cout << "Invalid parameter, please try again." << std::endl;
-                            }
                             break;
                         default :
                             break;
