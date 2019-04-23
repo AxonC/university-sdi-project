@@ -8,6 +8,7 @@
 int main()
 {
 	const std::string FILE_PATH = "../data/data.json";
+    auto logger = spdlog::daily_logger_mt("logger", "../logs/changes.txt", 23, 59);
 
     std::vector<TrekStar::Project::Project> projects = TrekStar::File::importProjects(FILE_PATH);
 

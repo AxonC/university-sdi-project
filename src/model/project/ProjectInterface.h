@@ -10,7 +10,7 @@ namespace TrekStar
 {
     namespace Project
     {
-        class ProjectInterface : public Model
+        class ProjectInterface : public TrekStar::Model
         {
         public:
             virtual ~ProjectInterface() = default;

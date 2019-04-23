@@ -1,0 +1,20 @@
+[2019-04-23 12:22:36.898] [logger] [info] Material 0was added to projectDeadpool
+[2019-04-23 12:22:36.898] [logger] [info] Material 0was added to projectDeadpool
+[2019-04-23 12:22:36.898] [logger] [info] Material 0was added to projectDeadpool
+[2019-04-23 12:22:36.898] [logger] [info] Material 2was added to projectDeadpool
+[2019-04-23 12:22:36.898] [logger] [info] Material 0was added to projectDeadpool
+[2019-04-23 12:22:36.899] [logger] [info] Material 0was added to projectDeadpool 2
+[2019-04-23 12:22:36.899] [logger] [info] Material 0was added to projectDeadpool 2
+[2019-04-23 12:22:36.899] [logger] [info] Material 2was added to projectDeadpool 2
+[2019-04-23 12:22:36.899] [logger] [info] Material 0was added to projectDeadpool 2
+[2019-04-23 12:22:36.900] [logger] [info] Material 0was added to projectA Great Movie
+[2019-04-23 12:22:36.900] [logger] [info] Material 0was added to projectA Great Movie
+[2019-04-23 12:22:36.900] [logger] [info] Material 2was added to projectA Great Movie
+[2019-04-23 12:22:36.900] [logger] [info] Material 0was added to projectA Great Movie
+[2019-04-23 12:22:36.900] [logger] [info] Material 0was added to projectBack To The Future
+[2019-04-23 12:22:36.900] [logger] [info] Material 0was added to projectBack To The Future
+[2019-04-23 12:22:36.900] [logger] [info] Material 2was added to projectBack To The Future
+[2019-04-23 12:22:36.901] [logger] [info] Material 0was added to projectBack To The Future
+[2019-04-23 12:22:44.218] [logger] [info] tresting
+[2019-04-23 12:22:46.934] [logger] [info] tresting
+[2019-04-23 12:22:46.934] [logger] [info] tresting

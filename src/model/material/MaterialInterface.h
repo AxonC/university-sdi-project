@@ -8,11 +8,12 @@
 
 using KeyValueMap = std::map<std::string, std::string>;
 
+
 namespace TrekStar
 {
     namespace Material
     {
-        class MaterialInterface : public Model
+     class MaterialInterface : public TrekStar::Model
         {
         public:
             virtual ~MaterialInterface() = default;
