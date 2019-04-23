@@ -33,6 +33,8 @@ namespace TrekStar
             unsigned int GetKeywordNo();
             std::string GetNewKeyword(const unsigned int & keywordNo);
 
+            unsigned int GetProjectUpdateOption();
+
             ProjectInterface* GetModel() override;
         };
     }

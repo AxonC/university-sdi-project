@@ -18,18 +18,6 @@ namespace TrekStar
     {
         void updateProject(std::vector<TrekStar::Project::Project> & projects, int projectID)
         {
-            TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
-                    {
-                            {1, "Edit Title"},
-                            {2, "Edit Summary"},
-                            {3, "Edit Released"},
-                            {4, "Edit PlayingInTheatres"},
-                            {5, "Edit Existing Keywords"},
-                            {6, "CANCEL"}
-                    },
-                    "Update Project"
-            );
-
             ProjectController controller;
 
             for ( auto & project: projects )
@@ -42,30 +30,7 @@ namespace TrekStar
                 }
             }
 
-            commandHandler.displayCommands();
-            int commandInput = commandHandler.getUserInput();
-            commandHandler.clearConsole();
-
-            switch ( commandInput )
-            {
-                case 1:
-                    controller.UpdateTitle();
-                    break;
-                case 2:
-                    controller.UpdateSummary();
-                    break;
-                case 3:
-                    controller.UpdateReleased();
-                    break;
-                case 4:
-                    controller.UpdatePlayingInTheatres();
-                    break;
-                case 5:
-                    controller.UpdateKeyword();
-                    break;
-                default:
-                    break;
-            }
+            controller.UpdateProject();
         }
 
         void updateMaterials(std::vector<TrekStar::Project::Project> & projects, int projectID)

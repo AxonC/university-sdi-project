@@ -20,6 +20,45 @@ namespace TrekStar
             this->view->PresentList();
         }
 
+        void ProjectController::UpdateProject()
+        {
+            unsigned int commandInput = this->GetView()->GetProjectUpdateOption();
+
+            switch ( commandInput )
+            {
+            case 1:
+                this->UpdateTitle();
+                break;
+            case 2:
+                this->UpdateSummary();
+                break;
+            case 3:
+                this->UpdateReleased();
+                break;
+            case 4:
+                this->UpdatePlayingInTheatres();
+                break;
+            case 5:
+                this->UpdateKeyword();
+                break;
+            default:
+                break;
+            }
+        }
+
+        void ProjectController::UpdateAll()
+        {
+            this->UpdateTitle();
+            this->UpdateSummary();
+            this->UpdateReleased();
+            this->UpdatePlayingInTheatres();
+        }
+
+        void ProjectController::UpdateMaterials()
+        {
+            this->GetView()->PresentMaterialsList();
+        }
+
         void ProjectController::UpdateTitle()
         {
             this->GetModel()->SetTitle(this->GetView()->GetNewTitle());
@@ -46,19 +85,6 @@ namespace TrekStar
 
             unsigned int keywordNo = this->GetView()->GetKeywordNo();
             this->GetModel()->SetKeyword(keywordNo, this->GetView()->GetNewKeyword(keywordNo));
-        }
-
-        void ProjectController::UpdateAll()
-        {
-            this->UpdateTitle();
-            this->UpdateSummary();
-            this->UpdateReleased();
-            this->UpdatePlayingInTheatres();
-        }
-
-        void ProjectController::UpdateMaterials()
-        {
-            this->GetView()->PresentMaterialsList();
         }
 
         ProjectInterface* ProjectController::GetModel()

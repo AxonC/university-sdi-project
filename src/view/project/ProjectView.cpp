@@ -3,6 +3,7 @@
 #include "ProjectView.h"
 #include "../material/MaterialView.h"
 #include "../../controller/material/MaterialController.h"
+#include "../../command/CommandHandler.h"
 
 using TrekStar::Material::MaterialController;
 using TrekStar::Material::MaterialView;
@@ -153,6 +154,27 @@ namespace TrekStar
         {
             std::cout << "Keyword #" << keywordNo << " [current: " << this->GetModel()->GetKeywords().at(keywordNo) << "]: ";
             return this->GetStringInput();
+        }
+
+        unsigned int ProjectView::GetProjectUpdateOption()
+        {
+            TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
+                    {
+                            {1, "Edit Title"},
+                            {2, "Edit Summary"},
+                            {3, "Edit Released"},
+                            {4, "Edit PlayingInTheatres"},
+                            {5, "Edit Existing Keywords"},
+                            {6, "CANCEL"}
+                    },
+                    "Update Project"
+            );
+
+            commandHandler.displayCommands();
+            int commandInput = commandHandler.getUserInput();
+            commandHandler.clearConsole();
+
+            return commandInput;
         }
 
         ProjectInterface* ProjectView::GetModel()
