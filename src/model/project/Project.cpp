@@ -1,6 +1,8 @@
+#include <algorithm>
+
 #include "Project.h"
 
-#include <algorithm>
+#include <iostream>
 
 namespace TrekStar
 {
@@ -19,8 +21,9 @@ namespace TrekStar
         {
             this->id = project.id;
             this->title = project.title;
-            this->lowercaseTitle = project.title;
-            std::transform(this->lowercaseTitle.begin(), this->lowercaseTitle.end(), this->lowercaseTitle.begin(), ::tolower);
+            this->searchableTitle = project.title;
+            this->searchableTitle.erase(remove_if(this->searchableTitle.begin(), this->searchableTitle.end(), isspace), this->searchableTitle.end());
+            std::transform(this->searchableTitle.begin(), this->searchableTitle.end(), this->searchableTitle.begin(), ::tolower);
             this->summary = project.summary;
             this->released = project.released;
             this->playingInTheatres = project.playingInTheatres;
@@ -39,9 +42,9 @@ namespace TrekStar
             return this->title;
         }
 
-        std::string Project::GetLowercaseTitle() const
+        std::string Project::GetSearchableTitle() const
         {
-            return this->lowercaseTitle;
+            return this->searchableTitle;
         }
 
         std::string Project::GetSummary() const
@@ -67,12 +70,12 @@ namespace TrekStar
         std::vector<std::string> Project::GetKeywords() const
         {
             return this->keywords;
-        };
+        }
 
         std::vector<std::string> Project::GetMaterialFormats() const
         {
             return this->materialFormats;
-        };
+        }
 
         std::pair<std::string, std::string> Project::GetTitleSummary() const
         {
@@ -82,8 +85,9 @@ namespace TrekStar
         void Project::SetTitle(const std::string & title)
         {
             this->title = title;
-            this->lowercaseTitle = title;
-            std::transform(this->lowercaseTitle.begin(), this->lowercaseTitle.end(), this->lowercaseTitle.begin(), ::tolower);
+            this->searchableTitle = title;
+            this->searchableTitle.erase(remove_if(this->searchableTitle.begin(), this->searchableTitle.end(), isspace), this->searchableTitle.end());
+            std::transform(this->searchableTitle.begin(), this->searchableTitle.end(), this->searchableTitle.begin(), ::tolower);
         }
 
         void Project::SetSummary(const std::string & summary)
@@ -238,12 +242,12 @@ namespace TrekStar
 
         bool Project::operator==(const std::string & title) const
         {
-            return this->GetLowercaseTitle() == title;
+            return this->GetSearchableTitle() == title;
         }
 
         bool Project::operator<(const std::string & title) const
         {
-            return this->GetTitle() < title;
+            return this->GetSearchableTitle() < title;
         }
 
         void to_json(json & j, const SerialisedProject & project)

@@ -39,7 +39,7 @@ namespace TrekStar
         private:
             unsigned int id{0};
             std::string title;
-            std::string lowercaseTitle;                                  // for searching
+            std::string searchableTitle;                                  // for searching
             std::string summary;
             std::vector<std::shared_ptr<Material::Material>> materials;
             std::vector<std::string> materialFormats;                    // holds only the format of each material
@@ -58,7 +58,7 @@ namespace TrekStar
 
             unsigned int GetId() const override;
             std::string GetTitle() const final;
-            std::string GetLowercaseTitle() const;
+            std::string GetSearchableTitle() const;
             std::string GetSummary() const override;
             std::vector<std::shared_ptr<Material::Material>> GetMaterials() const override;
             bool GetReleased() const override;

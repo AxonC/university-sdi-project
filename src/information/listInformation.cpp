@@ -85,6 +85,7 @@ namespace TrekStar
 
             TrekStar::Algorithms::mergeSort(projects);
 
+            searchCriteria.erase(remove_if(searchCriteria.begin(), searchCriteria.end(), isspace), searchCriteria.end());
             std::transform(searchCriteria.begin(), searchCriteria.end(), searchCriteria.begin(), ::tolower);
             unsigned int projectIndex = TrekStar::Algorithms::binarySearch(projects, searchCriteria);
 
