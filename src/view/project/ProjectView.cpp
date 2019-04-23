@@ -164,7 +164,7 @@ namespace TrekStar
                             {1, "Edit Title"},
                             {2, "Edit Summary"},
                             {3, "Edit Released"},
-                            {4, "Edit PlayingInTheatres"},
+                            {4, "Edit Playing In Theatres"},
                             {5, "Edit Existing Keywords"},
                             {6, "Cancel"}
                     },
