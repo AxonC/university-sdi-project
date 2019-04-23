@@ -413,7 +413,18 @@
 \item
   \protect\hyperlink{planned-architecture}{Planned Architecture}
 \item
-  \protect\hyperlink{included-c-libraries}{Included C++ Libraries}
+  \protect\hyperlink{included-c-libraries-github-link}{Included C++
+  Libraries (GitHub Link)}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \protect\hyperlink{json-for-c}{JSON for C++}
+  \item
+    \protect\hyperlink{gtest-github-link}{GTest (GitHub Link)}
+  \item
+    \protect\hyperlink{spdlog-github-link}{spdlog (GitHub Link)}
+  \end{itemize}
 \item
   \protect\hyperlink{internal-data-structures}{Internal Data Structures}
 \item
@@ -662,10 +673,75 @@ utility tree, you need to explain the reason).
 
 \newpage
 
-\hypertarget{included-c-libraries}{%
-\section{Included C++ Libraries}\label{included-c-libraries}}
+\hypertarget{included-c-libraries-github-link}{%
+\section{\texorpdfstring{Included C++ Libraries
+(\href{https://github.com/nlohmann/json}{GitHub
+Link})}{Included C++ Libraries (GitHub Link)}}\label{included-c-libraries-github-link}}
 
-Include explaination of any C++ Libraries used
+Within the TrekStar project management application we have used some C++
+Libraries for parsing data, providing access to unit tests and including
+core functionality that would otherwise not be present. Below you can
+find an exaplaination of the included C++ libraries and why we chose to
+use them within the project:
+
+\hypertarget{json-for-c}{%
+\subsection{JSON for C++}\label{json-for-c}}
+
+We decided to use the JSON for C++ library within the application
+because we are using JSON as our database to store all of the users
+data. The JSON for C++ library allows us to parse JSON data, request
+data based on certain keys within a JSON Array or Object and create new
+JSON Arrays or Objects to be inserted into the database. The JSON for
+C++ library is quite easily the most feature complete and well
+documented library for parsing and creating JSON in C++, this was the
+main driving force behind using this library as we required something
+that is reliable and suitable for the applications use cases.
+
+\hypertarget{gtest-github-link}{%
+\subsection{\texorpdfstring{GTest
+(\href{https://github.com/google/googletest}{GitHub
+Link})}{GTest (GitHub Link)}}\label{gtest-github-link}}
+
+We decided to use GTest as our primary unit testing library within the
+application, whilst we could have used Boost for unit testing, we
+decided that GTest had the following advantages which solidifed our
+decision to use GTest:
+
+\begin{itemize}
+\tightlist
+\item
+  GTest is much more lightweight when compared to Boost, while GTest is
+  specifically a testing library, Boost has more functionality that also
+  needs to be imported to allow for the Unit Testing section of the
+  library to function, consequently making it larger and less
+  lighweight.
+\item
+  When compared to other Unit Testing libraries there are more features
+  that we can make use of in the project within GTest, for example, we
+  can use GTests ability to mock objects, this is useful when we need to
+  test the interaction between objects as we can achieve this more
+  efficiently when compared to other libraries. We can also avoid
+  duplication of test setup (creating objects, etc) within each unit
+  test by specifying test fixtures which can be referenced within the
+  unit tests.
+\end{itemize}
+
+\hypertarget{spdlog-github-link}{%
+\subsection{\texorpdfstring{spdlog
+(\href{https://github.com/gabime/spdlog}{GitHub
+Link})}{spdlog (GitHub Link)}}\label{spdlog-github-link}}
+
+We decided to use spdlog for our logger library, when compared to other
+libraries spdlog is lightweight, fast and only requires header imports
+to get started. spdlog also supports all of the operating systems that
+our application has been developed to work on, which is an important
+feature to have.
+
+spdlog also allows us to easily generate the required daily reports
+based on the data we pass from the JSON database, the simplicity of this
+library was an important consideration as it allows future developers to
+quickly understand how this function works incase a new feature or bug
+needs to be added/fixed.
 
 \newpage
 
@@ -1147,9 +1223,9 @@ design of system complexity using e.g.~big O- notation).
 \subsection{Managing group work}\label{managing-group-work}}
 
 Whilst working on this project our group used a multitude of methods to
-ensure that we were collaborating effiiciently and getting the most
+ensure that we were collaborating efficiently and getting the most
 amount of work completed as possible, these methods included, but are
-not limited to
+not limited to:
 
 \begin{itemize}
 \tightlist
@@ -1174,7 +1250,7 @@ enjoyable, being able to distrubute the workload across group members
 was an important aspect to the project and allowed us to complete it
 efficiently. We have all taken learning points from this experience that
 could be applied to the workplace, or even in our upcoming placements.
-For example
+For example:
 
 \begin{itemize}
 \tightlist

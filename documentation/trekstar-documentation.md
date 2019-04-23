@@ -32,7 +32,10 @@ titlepage-rule-height: 1
 	- [Company-Wide Installation](#company-wide-installation)
 - [Design Pattern](#design-pattern)
 - [Planned Architecture](#planned-architecture)
-- [Included C++ Libraries](#included-c-libraries)
+- [Included C++ Libraries (GitHub Link)](#included-c-libraries-github-link)
+	- [JSON for C++](#json-for-c)
+	- [GTest (GitHub Link)](#gtest-github-link)
+	- [spdlog (GitHub Link)](#spdlog-github-link)
 - [Internal Data Structures](#internal-data-structures)
 - [Search/Sorting Algorithm](#searchsorting-algorithm)
 - [UI Screenshots](#ui-screenshots)
@@ -156,9 +159,23 @@ the identified utility tree, you need to explain the reason).
 
 \newpage
 
-# Included C++ Libraries
+# Included C++ Libraries ([GitHub Link](https://github.com/nlohmann/json))
 
-Include explaination of any C++ Libraries used
+Within the TrekStar project management application we have used some C++ Libraries for parsing data, providing access to unit tests and including core functionality that would otherwise not be present. Below you can find an exaplaination of the included C++ libraries and why we chose to use them within the project:
+
+## JSON for C++
+We decided to use the JSON for C++ library within the application because we are using JSON as our database to store all of the users data. The JSON for C++ library allows us to parse JSON data, request data based on certain keys within a JSON Array or Object and create new JSON Arrays or Objects to be inserted into the database. The JSON for C++ library is quite easily the most feature complete and well documented library for parsing and creating JSON in C++, this was the main driving force behind using this library as we required something that is reliable and suitable for the applications use cases.
+
+## GTest ([GitHub Link](https://github.com/google/googletest))
+We decided to use GTest as our primary unit testing library within the application, whilst we could have used Boost for unit testing, we decided that GTest had the following advantages which solidifed our decision to use GTest:
+
+- GTest is much more lightweight when compared to Boost, while GTest is specifically a testing library, Boost has more functionality that also needs to be imported to allow for the Unit Testing section of the library to function, consequently making it larger and less lighweight.
+- When compared to other Unit Testing libraries there are more features that we can make use of in the project within GTest, for example, we can use GTests ability to mock objects, this is useful when we need to test the interaction between objects as we can achieve this more efficiently when compared to other libraries. We can also avoid duplication of test setup (creating objects, etc) within each unit test by specifying test fixtures which can be referenced within the unit tests.
+
+## spdlog ([GitHub Link](https://github.com/gabime/spdlog))
+We decided to use spdlog for our logger library, when compared to other libraries spdlog is lightweight, fast and only requires header imports to get started. spdlog also supports all of the operating systems that our application has been developed to work on, which is an important feature to have.
+
+spdlog also allows us to easily generate the required daily reports based on the data we pass from the JSON database, the simplicity of this library was an important consideration as it allows future developers to quickly understand how this function works incase a new feature or bug needs to be added/fixed.
 
 \newpage
 
@@ -345,12 +362,12 @@ scalability, etc. design of system complexity using e.g. big O- notation).
 
 ## Managing group work
 
- Whilst working on this project our group used a multitude of methods to ensure that we were collaborating effiiciently and getting the most amount of work completed as possible, these methods included, but are not limited to
+ Whilst working on this project our group used a multitude of methods to ensure that we were collaborating efficiently and getting the most amount of work completed as possible, these methods included, but are not limited to:
 
  - Using Facebook Messenger to converse with other group members about certain aspects of the program or documentation, this allowed us to keep in touch and ensure we were on track with the workload.
  - Using GitHub to its full potential, this includes the use of GitHub Issues and Pull Requests in conjunction with code reviews for each major feature. Whenever a bug or issue was discovered the group member that uncovered the issue would create a GitHub issue. If the bug was within another group members individual work then that member would be added as a participant so that they could fix the issue. Once large features were added to the program, pull requests were used with each group member being requested to review the code before merging into the master branch.
 
-Overall, our experience of working as a group has been productive and enjoyable, being able to distrubute the workload across group members was an important aspect to the project and allowed us to complete it efficiently. We have all taken learning points from this experience that could be applied to the workplace, or even in our upcoming placements. For example
+Overall, our experience of working as a group has been productive and enjoyable, being able to distrubute the workload across group members was an important aspect to the project and allowed us to complete it efficiently. We have all taken learning points from this experience that could be applied to the workplace, or even in our upcoming placements. For example:
 
 - The use of GitHub's features (such as pull requests, issues and code reviewing) will be an excellent skill to have within the workplace, as more often than not, organisations will have some sort of code review system/Quality Assurance (QA) procedure in place and being able to understand how this all works without training will show that you are a competent employee.
 - The use of a messaging platform was also important, sometimes organisations have employees working accross the globe and having the ability to efficiently collaborate on messaging systems (such as Slack) is an important skill to have. 
