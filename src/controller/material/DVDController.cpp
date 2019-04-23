@@ -16,9 +16,25 @@ namespace TrekStar
         void DVDController::UpdateAdditionalLanguageTracks()
         {
             this->GetView()->PresentAdditionalLanguageTracks();
-2
+
             unsigned int additionalLanguageTrackNo = this->GetView()->GetAdditionalLanguageTrackNo();
             this->GetModel()->SetAdditionalLanguageTrack(additionalLanguageTrackNo, this->GetView()->GetNewAdditionalLanguageTrack(additionalLanguageTrackNo));
+        }
+
+        void DVDController::UpdateAdditionalSubtitleTracks()
+        {
+            this->GetView()->PresentAdditionalSubtitleTracks();
+
+            unsigned int additionalSubtitleTrackNo = this->GetView()->GetAdditionalSubtitleTrackNo();
+            this->GetModel()->SetAdditionalSubtitleTrack(additionalSubtitleTrackNo, this->GetView()->GetNewAdditionalSubtitleTrack(additionalSubtitleTrackNo));
+        }
+
+        void DVDController::UpdateBonusFeatures()
+        {
+            this->GetView()->PresentBonusFeatures();
+
+            unsigned int additionalSubtitleTrackNo = this->GetView()->GetBonusFeatureNo();
+            this->GetModel()->SetAdditionalSubtitleTrack(additionalSubtitleTrackNo, this->GetView()->GetNewBonusFeature(additionalSubtitleTrackNo));
         }
 
         void DVDController::Update()
@@ -53,6 +69,12 @@ namespace TrekStar
                 break;
             case 9:
                 this->UpdateAdditionalLanguageTracks();
+                break;
+            case 10:
+                this->UpdateAdditionalSubtitleTracks();
+                break;
+            case 11:
+                this->UpdateBonusFeatures();
                 break;
             default:
                 break;

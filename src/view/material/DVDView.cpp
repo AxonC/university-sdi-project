@@ -39,7 +39,9 @@ namespace TrekStar
                             {7, "Edit Packaging"},
                             {8, "Edit Content"},
                             {9, "Edit Additional Language Tracks"},
-                            {10, "Cancel"}
+                            {10, "Edit Additional Subtitle Tracks"},
+                            {11, "Edit Bonus Features"},
+                            {12, "Cancel"}
                     },
                     "Update DVD"
             );
@@ -54,6 +56,16 @@ namespace TrekStar
         unsigned int DVDView::GetAdditionalLanguageTrackNo()
         {
             return TrekStar::Command::GetIndexInput(this->GetModel()->GetAdditionalLanguageTracks().size(), "Additional Language Track");
+        }
+
+        unsigned int DVDView::GetAdditionalSubtitleTrackNo()
+        {
+            return TrekStar::Command::GetIndexInput(this->GetModel()->GetAdditionalLanguageTracks().size(), "Additional Subtitle Track");
+        }
+
+        unsigned int DVDView::GetBonusFeatureNo()
+        {
+            return TrekStar::Command::GetIndexInput(this->GetModel()->GetAdditionalLanguageTracks().size(), "Bonus Feature");
         }
 
         void DVDView::PresentAdditionalLanguageTracks()
@@ -89,6 +101,18 @@ namespace TrekStar
         std::string DVDView::GetNewAdditionalLanguageTrack(const unsigned int & additionalLanguageTrackNo)
         {
             std::cout << "Additional Language Track #" << additionalLanguageTrackNo << " [current: " << this->GetModel()->GetAdditionalLanguageTracks().at(additionalLanguageTrackNo) << "]: ";
+            return TrekStar::Command::GetStringInput();
+        }
+
+        std::string DVDView::GetNewAdditionalSubtitleTrack(const unsigned int & additionalSubtitleTrackNo)
+        {
+            std::cout << "Additional Subtitle Track #" << additionalSubtitleTrackNo << " [current: " << this->GetModel()->GetAdditionalSubtitleTracks().at(additionalSubtitleTrackNo) << "]: ";
+            return TrekStar::Command::GetStringInput();
+        }
+
+        std::string DVDView::GetNewBonusFeature(const unsigned int & bonusFeatureNo)
+        {
+            std::cout << "Bonus Feature #" << bonusFeatureNo << " [current: " << this->GetModel()->GetAdditionalSubtitleTracks().at(bonusFeatureNo) << "]: ";
             return TrekStar::Command::GetStringInput();
         }
 
