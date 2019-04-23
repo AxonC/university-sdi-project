@@ -14,6 +14,7 @@ namespace TrekStar
         {
         private:
             void UpdateContent();
+            void UpdateAdditionalLanguageTracks();
 
             DVDView* GetView() override;
             DVD* GetModel() override;

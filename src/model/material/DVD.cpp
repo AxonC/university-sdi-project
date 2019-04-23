@@ -102,6 +102,21 @@ namespace TrekStar
             this->sideOne.SetBonusFeatures(bonusFeatures);
         }
 
+        void DVD::SetAdditionalLanguageTrack(unsigned int index, const std::string & languageTrack)
+        {
+            this->sideOne.SetAdditionalLanguageTrack(index, languageTrack);
+        }
+
+        void DVD::SetAdditionalSubtitleTrack(unsigned int index, const std::string & subtitleTrack)
+        {
+            this->sideOne.SetAdditionalSubtitleTrack(index, subtitleTrack);
+        }
+
+        void DVD::SetBonusFeature(unsigned int index, const std::string & bonusFeature)
+        {
+            this->sideOne.SetBonusFeature(index, bonusFeature);
+        }
+
         std::shared_ptr<SerialisedDVD> DVD::ExportToSerialised() const
         {
             std::shared_ptr<SerialisedMaterial> serialisedMaterial = Material::ExportToSerialised();

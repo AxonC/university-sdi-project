@@ -23,6 +23,9 @@ namespace TrekStar
             virtual void SetAdditionalLanguageTracks(const std::vector<std::string> & additionalLanguageTracks) = 0;
             virtual void SetAdditionalSubtitleTracks(const std::vector<std::string> & additionalSubtitleTracks) = 0;
             virtual void SetBonusFeatures(const std::vector<std::string> & bonusFeatures) = 0;
+            virtual void SetAdditionalLanguageTrack(unsigned int index, const std::string & languageTrack) = 0;
+            virtual void SetAdditionalSubtitleTrack(unsigned int index, const std::string & subtitleTrack) = 0;
+            virtual void SetBonusFeature(unsigned int index, const std::string & bonusFeature) = 0;
         };
     }
 }

@@ -19,6 +19,13 @@ namespace TrekStar
 
             std::string GetNewContent();
             unsigned int GetUpdateOption() override;
+            unsigned int GetAdditionalLanguageTrackNo();
+
+            void PresentAdditionalLanguageTracks();
+            void PresentAdditionalSubtitleTracks();
+            void PresentBonusFeatures();
+
+            std::string GetNewAdditionalLanguageTrack(const unsigned int & additionalLanguageTrackNo);
         };
     }
 }

@@ -153,15 +153,7 @@ namespace TrekStar
 
         unsigned int ProjectView::GetKeywordNo()
         {
-            unsigned int keywordNo = 0;
-
-            while ( keywordNo < 1 || keywordNo > this->GetModel()->GetKeywords().size() )
-            {
-                std::cout << "Keyword # [1 - " << this->GetModel()->GetKeywords().size() << "]: ";
-                std::cin >> keywordNo;
-            }
-
-            return keywordNo - 1;
+            return TrekStar::Command::GetIndexInput(this->GetModel()->GetKeywords().size(), "Keyword");
         }
 
         std::string ProjectView::GetNewKeyword(const unsigned int & keywordNo)

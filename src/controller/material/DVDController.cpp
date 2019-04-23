@@ -13,6 +13,14 @@ namespace TrekStar
             this->GetModel()->SetContent(this->GetView()->GetNewContent());
         }
 
+        void DVDController::UpdateAdditionalLanguageTracks()
+        {
+            this->GetView()->PresentAdditionalLanguageTracks();
+2
+            unsigned int additionalLanguageTrackNo = this->GetView()->GetAdditionalLanguageTrackNo();
+            this->GetModel()->SetAdditionalLanguageTrack(additionalLanguageTrackNo, this->GetView()->GetNewAdditionalLanguageTrack(additionalLanguageTrackNo));
+        }
+
         void DVDController::Update()
         {
             unsigned int commandInput = this->GetView()->GetUpdateOption();
@@ -42,6 +50,9 @@ namespace TrekStar
                 break;
             case 8:
                 this->UpdateContent();
+                break;
+            case 9:
+                this->UpdateAdditionalLanguageTracks();
                 break;
             default:
                 break;
