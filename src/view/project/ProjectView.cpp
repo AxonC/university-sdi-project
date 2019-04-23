@@ -22,13 +22,26 @@ namespace TrekStar
         {
             auto model = this->GetModel();
 
+            std::string released = "no";
+            std::string playingInTheatres = "no";
+
+            if ( model->GetReleased() )
+            {
+                released = "yes";
+            }
+
+            if ( model->GetPlayingInTheatres() )
+            {
+                playingInTheatres = "yes";
+            }
+
             std::cout << std::string(80, '-') << std::endl;
             std::cout << "Project " << std::to_string(model->GetId()) << std::endl;
             std::cout << std::string(80, '-') << std::endl;
             std::cout << "Title               : " << model->GetTitle() << std::endl;
             std::cout << "Summary             : " << model->GetSummary() << std::endl;
-            std::cout << "Released            : " << model->GetReleased() << std::endl;
-            std::cout << "Playing in theatres : " << model->GetPlayingInTheatres() << std::endl;
+            std::cout << "Released            : " << released << std::endl;
+            std::cout << "Playing in theatres : " << playingInTheatres << std::endl;
 
             std::cout << "Keywords            : ";
             if ( model->GetKeywords().empty() )
