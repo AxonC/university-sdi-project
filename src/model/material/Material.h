@@ -36,9 +36,9 @@ namespace TrekStar
             unsigned int id;
             std::string format;
             std::string audioFormat;
-            int runTime;
+            int runTime = 0;
             std::string language;
-            double retailPrice; // stored in pence
+            double retailPrice = 0; // stored in pence
             std::string subtitles;
             std::string frameAspect;
             std::string packaging;
@@ -58,6 +58,14 @@ namespace TrekStar
             std::string GetFrameAspect() const override;
             std::string GetPackaging() const override;
             KeyValueMap GetPresentableInformation() const override;
+
+            void SetAudioFormat(const std::string & audioFormat) override;
+            void SetRunTime(const int & runTime) override;
+            void SetLanguage(const std::string & language) override;
+            void SetRetailPrice(const double & retailPrice) override;
+            void SetSubtitles(const std::string & subtitles) override;
+            void SetFrameAspect(const std::string & frameAspect) override;
+            void SetPackaging(const std::string & packaging) override;
 
             std::shared_ptr<SerialisedMaterial> ExportToSerialised() const;
 

@@ -28,5 +28,12 @@ namespace TrekStar
 
             return input == 'y';
         }
+
+        int GetIntInput()
+        {
+            int input;
+            std::cin >> input;
+            return input;
+        }
     }
 }

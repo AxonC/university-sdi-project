@@ -68,6 +68,41 @@ namespace TrekStar
                 };
         }
 
+        void Material::SetAudioFormat(const std::string & audioFormat)
+        {
+            this->audioFormat = audioFormat;
+        }
+
+        void Material::SetRunTime(const int & runTime)
+        {
+            this->runTime = runTime;
+        }
+
+        void Material::SetLanguage(const std::string & language)
+        {
+            this->language = language;
+        }
+
+        void Material::SetRetailPrice(const double & retailPrice)
+        {
+            this->retailPrice = retailPrice;
+        }
+
+        void Material::SetSubtitles(const std::string & subtitles)
+        {
+            this->subtitles = subtitles;
+        }
+
+        void Material::SetFrameAspect(const std::string & frameAspect)
+        {
+            this->frameAspect = frameAspect;
+        }
+
+        void Material::SetPackaging(const std::string & packaging)
+        {
+            this->packaging = packaging;
+        }
+
         std::shared_ptr<SerialisedMaterial> Material::ExportToSerialised() const
         {
             SerialisedMaterial serialisedMaterial =

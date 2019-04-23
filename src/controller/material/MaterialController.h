@@ -18,6 +18,16 @@ namespace TrekStar
             MaterialInterface* model;
             ViewInterface* view;
 
+            MaterialView* GetView();
+
+            void UpdateAudioFormat();
+            void UpdateRunTime();
+            void UpdateLanguage();
+            void UpdateRetailPrice();
+            void UpdateSubtitles();
+            void UpdateFrameAspect();
+            void UpdatePackaging();
+
         public:
             MaterialController() = default;
             MaterialController(MaterialInterface & model, ViewInterface & view);
@@ -27,8 +37,6 @@ namespace TrekStar
             void ShowList() override;
 
             void Update();
-
-            MaterialView* GetView();
         };
     }
 }

@@ -9,6 +9,7 @@ namespace TrekStar
     {
         std::string GetStringInput();
         bool GetBoolInput();
+        int GetIntInput();
     }
 }
 

@@ -19,6 +19,15 @@ namespace TrekStar
             void PresentAll() override;
             void PresentList() override;
 
+            std::string GetNewFormat();
+            std::string GetNewAudioFormat();
+            int GetNewRunTime();
+            std::string GetNewLanguage();
+            double GetNewRetailPrice();
+            std::string GetNewSubtitles();
+            std::string GetNewFrameAspect();
+            std::string GetNewPackaging();
+
             unsigned int GetUpdateOption();
 
             MaterialInterface* GetModel() override;
