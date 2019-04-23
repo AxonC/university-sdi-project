@@ -1,7 +1,6 @@
 ---
 title: "Software Design and Implementation"
 author: [Callum Axon (N0727303), Callum Carney (N0741707), Matthew Robinson (N0724629)]
-date: "2019-04-28"
 subtitle: "TrekStar Software System"
 lang: "en"
 linkcolor: darkgray
