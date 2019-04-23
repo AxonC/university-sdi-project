@@ -4,6 +4,7 @@
 #include "../material/MaterialView.h"
 #include "../../controller/material/MaterialController.h"
 #include "../../command/CommandHandler.h"
+#include "../../command/userInput.h"
 
 using TrekStar::Material::MaterialController;
 using TrekStar::Material::MaterialView;
@@ -94,7 +95,7 @@ namespace TrekStar
                 std::cout << "Title [current: " << currentTitle << "]: ";
             }
 
-            return this->GetStringInput();
+            return TrekStar::Command::GetStringInput();
         }
 
         std::string ProjectView::GetNewSummary()
@@ -110,7 +111,7 @@ namespace TrekStar
                 std::cout << "Summary [current: " << currentSummary << "]: ";
             }
 
-            return this->GetStringInput();
+            return TrekStar::Command::GetStringInput();
         }
 
         bool ProjectView::GetNewReleased()
@@ -122,7 +123,7 @@ namespace TrekStar
             }
 
             std::cout << "Released [current: " << released << "]: ";
-            return this->GetBoolInput();
+            return TrekStar::Command::GetBoolInput();
         }
 
         bool ProjectView::GetNewPlayingInTheatres()
@@ -134,7 +135,7 @@ namespace TrekStar
             }
 
             std::cout << "Playing In Theatres [current: " << playingInTheatres << "]: ";
-            return this->GetBoolInput();
+            return TrekStar::Command::GetBoolInput();
         }
 
         unsigned int ProjectView::GetKeywordNo()
@@ -153,7 +154,7 @@ namespace TrekStar
         std::string ProjectView::GetNewKeyword(const unsigned int & keywordNo)
         {
             std::cout << "Keyword #" << keywordNo << " [current: " << this->GetModel()->GetKeywords().at(keywordNo) << "]: ";
-            return this->GetStringInput();
+            return TrekStar::Command::GetStringInput();
         }
 
         unsigned int ProjectView::GetUpdateOption()
@@ -199,29 +200,6 @@ namespace TrekStar
                 std::copy(std::begin(stringVector), std::prev(std::end(stringVector)), std::ostream_iterator<std::string>(std::cout, ", "));
                 std::cout << stringVector.back();
             }
-        }
-
-        std::string ProjectView::GetStringInput()
-        {
-            std::string input;
-
-            std::cin.ignore();
-            std::getline(std::cin, input);
-
-            return input;
-        }
-
-        bool ProjectView::GetBoolInput()
-        {
-            char input;
-
-            do
-            {
-                std::cin >> input;
-            }
-            while( !std::cin.fail() && input != 'y' && input != 'n' );
-
-            return input == 'y';
         }
     }
 }

@@ -39,9 +39,10 @@ add_library(Algorithms ${MergeSort} ${BinarySearch})
 set(File file/fileOperations.h file/fileOperations.cpp)
 set(Information information/listInformation.h information/listInformation.cpp information/addInformation.h information/addInformation.cpp information/saveInformation.h information/saveInformation.cpp information/updateInformation.h information/updateInformation.cpp information/SequentialBrowser.h information/SequentialBrowser.cpp view/BaseView.cpp view/BaseView.h)
 set(CommandHandler command/CommandHandler.h command/CommandHandler.cpp)
+set(UserInput command/userInput.h command/userInput.cpp)
 set(ViewMode command/viewMode.h command/viewMode.cpp)
 set(MaintenanceMode command/maintenanceMode.h command/maintenanceMode.cpp)
-add_library(Functions ${File} ${Information} ${CommandHandler} ${ViewMode} ${MaintenanceMode})
+add_library(Functions ${File} ${Information} ${CommandHandler} ${UserInput} ${ViewMode} ${MaintenanceMode})
 
 # data structures
 add_library(structures INTERFACE)

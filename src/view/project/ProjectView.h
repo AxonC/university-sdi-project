@@ -14,8 +14,6 @@ namespace TrekStar
         {
         private:
             static void DisplayVectorAsCSV(const std::vector<std::string> & stringVector);
-            static std::string GetStringInput();
-            static bool GetBoolInput();
         public:
             ProjectView() = default;
             explicit ProjectView(ProjectInterface & model);
