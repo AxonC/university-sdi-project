@@ -541,9 +541,6 @@ pls}}}{Todo - remove me before submission pls}}\label{todo---remove-me-before-su
   User guide details required for when the application is able to manage
   crew and materials/projects fully.
 \item
-  Update \protect\hyperlink{using-add-project}{Using Add Project} to
-  reflect changes to saving a project.
-\item
   Add back in image that shows keywords when adding a project when this
   is reimplemented.
 \item
@@ -571,6 +568,8 @@ A}\label{callum-axon-n0727303---member-a}}
 \begin{itemize}
 \tightlist
 \item
+  Implementation of the internal data structure for the application
+\item
   Class Diagram
 \item
   A description of how cohesion and coupling have been considered in the
@@ -587,11 +586,13 @@ C}\label{callum-carney-n0741707---member-c}}
 \begin{itemize}
 \tightlist
 \item
+  Implementation of the data structure for the application
+\item
   Component Diagrams
 \item
   Deployment Diagrams
 \item
-  Screenshots of User Interface
+  An explanation of the search or sorting algorithm used
 \end{itemize}
 
 \hypertarget{matthew-robinson-n0724629---member-b}{%
@@ -601,11 +602,13 @@ B}\label{matthew-robinson-n0724629---member-b}}
 \begin{itemize}
 \tightlist
 \item
+  Implementation of the Console Interface for the application
+\item
   Sequence diagram
 \item
   State machine diagram
 \item
-  An explanation of the search or sorting algorithm used
+  Screenshots of the User Interface
 \end{itemize}
 
 All other contributions have been completed as part of a group effort.
@@ -1023,19 +1026,12 @@ Inputting this value will cause the application to list projects\strut
 2\strut
 \end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
 Inputting this value will cause the application to enter search mode for
-materials\strut
+projects\strut
 \end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
 \protect\hyperlink{using-search-projects}{Using Search Projects}\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.08\columnwidth}\centering
 3\strut
-\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
-Inputting this value will cause the application to list materials\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
-\protect\hyperlink{using-list-materials}{Listing Materials}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.08\columnwidth}\centering
-4\strut
 \end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
 Inputting this value will cause the application to navigate back to the
 main menu\strut
@@ -1071,9 +1067,9 @@ database, you can see an example of this below.
 \caption{Visual representation of project listings}
 \end{figure}
 
-As you can see in Figure 6, there are more options available to you,
-these options allow you to navigate through the projects. You can see
-the associated input actions below.
+As you can see in Figure CHANGEFIGUREVALUE, there are more options
+available to you, these options allow you to navigate through the
+projects. You can see the associated input actions below.
 
 \begin{longtable}[]{@{}cl@{}}
 \toprule
@@ -1132,8 +1128,36 @@ query, you can see an example of this below.
 search query}
 \end{figure}
 
-As you can see in Figure 8, there are more options available to you,
-these are the options associated with
+As you can see in Figure CHANGEFIGUREVALUE, there is the option to
+display the associated materials for this project, you can enter
+\emph{\texttt{y}} to confirm that you wish to view the materials for the
+associated project, which will bring up the following information:
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/view-mode/project-search-materials-accept.png}
+\caption{Visual representation of a projects materials being displayed}
+\end{figure}
+
+As you can see in CHANGEFIGUREVALUE, there are more options available to
+you, these are the options associated with
+\protect\hyperlink{using-view-mode}{View Mode}, therefore you can find
+more information by reading the \protect\hyperlink{using-view-mode}{View
+Mode} section of this user guide.
+
+You can also enter \emph{\texttt{n}} to confirm that you do not want to
+view the materials for the associated project, which will bring up the
+following information:
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/view-mode/project-search-materials-decline.png}
+\caption{Visual representation of a projects materials not being
+displayed}
+\end{figure}
+
+As you can see in CHANGEFIGUREVALUE, there are more options available to
+you, these are the options associated with
 \protect\hyperlink{using-view-mode}{View Mode}, therefore you can find
 more information by reading the \protect\hyperlink{using-view-mode}{View
 Mode} section of this user guide.
@@ -1344,8 +1368,8 @@ entered numeric value. Any value is accepted.
 \caption{Visual representation of the application asking for a keyword}
 \end{figure}
 
-As you can see in Figure 16, there are more options available to you,
-these are the options associated with
+As you can see in CHANGEFIGUREVALUE, there are more options available to
+you, these are the options associated with
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
 you can find more information by reading the
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of

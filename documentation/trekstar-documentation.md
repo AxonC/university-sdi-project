@@ -75,13 +75,11 @@ titlepage-rule-height: 1
 ## User Guide
   - [Using Maintenance Mode](#using-maintenance-mode) requires screenshot of the maintenance main menu when remove project is added.
   - User guide details required for when the application is able to manage crew and materials/projects fully.
-  - Update [Using Add Project](#using-add-project) to reflect changes to saving a project.
   - Add back in image that shows keywords when adding a project when this is reimplemented.
   - Change all figure values where text is CHANGEFIGUREVALUE once all images added.
   - Complete [Using Update Project Materials](#using-update-project-materials) once the material id bug has been fixed.
   - Resolve image issue on [Edit Packaging](#edit-packaging) once bugs have been fixed
   - Look into new line for  # # # # headers
-  - Change user guide to include information about the new way to display materials.
 
 \newpage
 
@@ -297,7 +295,7 @@ You will now see the projects that are held within your applications database, y
 
 ![Visual representation of project listings](images/user-guide/view-mode/listed-projects.png)
 
-As you can see in Figure 6, there are more options available to you, these options allow you to navigate through the projects. You can see the associated input actions below.
+As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these options allow you to navigate through the projects. You can see the associated input actions below.
 
 | Input Value | Command Action                                                                
 | :----------: | ------------------------------------------------------------------------- |
@@ -317,7 +315,7 @@ You will now see the associated projects that matched to your search query, you 
 
 ![Visual representation of a project being discovered from a search query](images/user-guide/view-mode/project-search-term.png)
 
-As you can see in Figure 8, there is the option to display the associated materials for this project, you can enter _`y`_ to confirm that you wish to view the materials for the associated project, which will bring up the following information:
+As you can see in Figure CHANGEFIGUREVALUE, there is the option to display the associated materials for this project, you can enter _`y`_ to confirm that you wish to view the materials for the associated project, which will bring up the following information:
 
 ![Visual representation of a projects materials being displayed](images/user-guide/view-mode/project-search-materials-accept.png)
 
@@ -398,7 +396,7 @@ Finally, you will be asked what keywords you would like associated with the proj
 
 ![Visual representation of the application asking for a keyword](images/user-guide/maintenance-mode/add-project-keywords.png)
 
-As you can see in Figure 16, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+As you can see in CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
 \newpage
 
