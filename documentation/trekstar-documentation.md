@@ -81,25 +81,29 @@ titlepage-rule-height: 1
   - Complete [Using Update Project Materials](#using-update-project-materials) once the material id bug has been fixed.
   - Resolve image issue on [Edit Packaging](#edit-packaging) once bugs have been fixed
   - Look into new line for  # # # # headers
+  - Change user guide to include information about the new way to display materials.
 
 \newpage
 
 # Contributions
 
 ## Callum Axon (N0727303) - Member A
+* Implementation of the internal data structure for the application
 * Class Diagram
 * A description of how cohesion and coupling have been considered in the class design
 * An explanation of the internal data structures used and the reason for the choices.
   
 ## Callum Carney (N0741707) - Member C
+* Implementation of the data structure for the application
 * Component Diagrams
 * Deployment Diagrams
-* Screenshots of User Interface
+* An explanation of the search or sorting algorithm used
 
 ## Matthew Robinson (N0724629) - Member B
+* Implementation of the Console Interface for the application
 * Sequence diagram
 * State machine diagram
-* An explanation of the search or sorting algorithm used
+* Screenshots of the User Interface
 
 All other contributions have been completed as part of a group effort.
 
@@ -278,9 +282,8 @@ Once on this screen, you can use the following keyboard inputs to navigate aroun
 | Input Value | Command Action                                                                     | Information Link                               |
 | :----------: | ------------------------------------------------------------------------- | ---------------------------------------------- |
 | 1     | Inputting this value will cause the application to list projects                   | [Listing Projects](#using-list-projects)       |
-| 2     | Inputting this value will cause the application to enter search mode for materials | [Using Search Projects](#using-search-projects) |
-| 3     | Inputting this value will cause the application to list materials                  | [Listing Materials](#using-list-materials) |
-| 4     | Inputting this value will cause the application to navigate back to the main menu | [Main Menu](#using-the-main-menu)         |
+| 2     | Inputting this value will cause the application to enter search mode for projects | [Using Search Projects](#using-search-projects) |
+| 3     | Inputting this value will cause the application to navigate back to the main menu | [Main Menu](#using-the-main-menu)         |
 
 \newpage
 
@@ -314,7 +317,17 @@ You will now see the associated projects that matched to your search query, you 
 
 ![Visual representation of a project being discovered from a search query](images/user-guide/view-mode/project-search-term.png)
 
-As you can see in Figure 8, there are more options available to you, these are the options associated with [View Mode](#using-view-mode), therefore you can find more information by reading the [View Mode](#using-view-mode) section of this user guide.
+As you can see in Figure 8, there is the option to display the associated materials for this project, you can enter _`y`_ to confirm that you wish to view the materials for the associated project, which will bring up the following information:
+
+![Visual representation of a projects materials being displayed](images/user-guide/view-mode/project-search-materials-accept.png)
+
+As you can see in CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [View Mode](#using-view-mode), therefore you can find more information by reading the [View Mode](#using-view-mode) section of this user guide.
+
+You can also enter _`n`_ to confirm that you do not want to view the materials for the associated project, which will bring up the following information:
+
+![Visual representation of a projects materials not being displayed](images/user-guide/view-mode/project-search-materials-decline.png)
+
+As you can see in CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [View Mode](#using-view-mode), therefore you can find more information by reading the [View Mode](#using-view-mode) section of this user guide.
 
 \newpage
 
