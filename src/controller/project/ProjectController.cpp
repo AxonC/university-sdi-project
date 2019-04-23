@@ -1,5 +1,11 @@
 #include "ProjectController.h"
 
+#include "../../view/material/MaterialView.h"
+#include "../material/MaterialController.h"
+
+using TrekStar::Material::MaterialView;
+using TrekStar::Material::MaterialController;
+
 namespace TrekStar
 {
     namespace Project
@@ -22,7 +28,7 @@ namespace TrekStar
 
         void ProjectController::UpdateProject()
         {
-            unsigned int commandInput = this->GetView()->GetProjectUpdateOption();
+            unsigned int commandInput = this->GetView()->GetUpdateOption();
 
             switch ( commandInput )
             {
@@ -57,6 +63,18 @@ namespace TrekStar
         void ProjectController::UpdateMaterials()
         {
             this->GetView()->PresentMaterialsList();
+
+            for ( const auto & material: this->GetModel()->GetMaterials() )
+            {
+                if ( *material == this->GetView()->GetMaterialSelection() )
+                {
+                    MaterialView view(*material);
+                    MaterialController controller(*material, view);
+
+                    controller.Update();
+                    break;
+                }
+            }
         }
 
         void ProjectController::UpdateTitle()

@@ -19,5 +19,15 @@ namespace TrekStar
         {
             this->view->PresentList();
         }
+
+        void MaterialController::Update()
+        {
+            this->GetView()->GetUpdateOption();
+        }
+
+        MaterialView* MaterialController::GetView()
+        {
+            return dynamic_cast<MaterialView*>(this->view);
+        }
     }
 }

@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "MaterialView.h"
+#include "../../command/CommandHandler.h"
 #include "../../model/material/BoxSet.h"
 
 namespace TrekStar
@@ -45,6 +46,30 @@ namespace TrekStar
 
             std::cout << "ID: " << std::to_string(model->GetId()) << ", ";
             std::cout << "Format: " << model->GetFormat() << std::endl;
+        }
+
+        unsigned int MaterialView::GetUpdateOption()
+        {
+            TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
+                    {
+                            {1, "Edit Format"},
+                            {2, "Edit Audio Format"},
+                            {3, "Edit Run Time"},
+                            {4, "Edit Language"},
+                            {5, "Edit Retail Price"},
+                            {6, "Edit Subtitles"},
+                            {7, "Edit Frame Aspect"},
+                            {8, "Edit Packaging"},
+                            {9, "CANCEL"}
+                    },
+                    "Update Material"
+            );
+
+            commandHandler.displayCommands();
+            int commandInput = commandHandler.getUserInput();
+            commandHandler.clearConsole();
+
+            return commandInput;
         }
 
         MaterialInterface* MaterialView::GetModel()

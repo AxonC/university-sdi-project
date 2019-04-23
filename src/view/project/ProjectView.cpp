@@ -156,7 +156,7 @@ namespace TrekStar
             return this->GetStringInput();
         }
 
-        unsigned int ProjectView::GetProjectUpdateOption()
+        unsigned int ProjectView::GetUpdateOption()
         {
             TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
                     {
@@ -175,6 +175,16 @@ namespace TrekStar
             commandHandler.clearConsole();
 
             return commandInput;
+        }
+
+        unsigned int ProjectView::GetMaterialSelection()
+        {
+            unsigned int materialSelection;
+
+            std::cout << "Material ID: ";
+            std::cin >> materialSelection;
+
+            return materialSelection;
         }
 
         ProjectInterface* ProjectView::GetModel()

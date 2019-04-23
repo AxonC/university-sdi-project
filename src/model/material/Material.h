@@ -61,6 +61,7 @@ namespace TrekStar
 
             std::shared_ptr<SerialisedMaterial> ExportToSerialised() const;
 
+            bool operator==(const unsigned int & id) const override;
             bool operator==(const Material& material) const;
             bool operator!=(const Material& material) const;
         };

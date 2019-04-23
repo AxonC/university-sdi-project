@@ -86,6 +86,11 @@ namespace TrekStar
             return std::make_shared<SerialisedMaterial>(serialisedMaterial);
         }
 
+        bool Material::operator==(const unsigned int & id) const
+        {
+            return this->GetId() == id;
+        }
+
         bool Material::operator==(const Material &material) const
         {
             return this->GetId() == material.GetId();

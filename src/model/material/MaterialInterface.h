@@ -26,6 +26,8 @@ namespace TrekStar
             virtual std::string GetFrameAspect() const = 0;
             virtual std::string GetPackaging() const = 0;
             virtual KeyValueMap GetPresentableInformation() const = 0;
+
+            virtual bool operator==(const unsigned int & id) const = 0;
         };
     }
 }

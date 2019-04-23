@@ -25,6 +25,10 @@ namespace TrekStar
 
             void ShowAll() override;
             void ShowList() override;
+
+            void Update();
+
+            MaterialView* GetView();
         };
     }
 }

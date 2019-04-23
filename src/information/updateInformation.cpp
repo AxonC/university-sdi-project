@@ -35,21 +35,6 @@ namespace TrekStar
 
         void updateMaterials(std::vector<TrekStar::Project::Project> & projects, int projectID)
         {
-            TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
-                    {
-                            {1, "Edit Format"},
-                            {2, "Edit Audio Format"},
-                            {3, "Edit Run Time"},
-                            {4, "Edit Language"},
-                            {5, "Edit Retail Price"},
-                            {6, "Edit Subtitles"},
-                            {7, "Edit Frame Aspect"},
-                            {8, "Edit Packaging"},
-                            {9, "CANCEL"}
-                    },
-                    "Update Material"
-            );
-
             ProjectController controller;
 
             for ( auto & project: projects )

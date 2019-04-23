@@ -19,6 +19,8 @@ namespace TrekStar
             void PresentAll() override;
             void PresentList() override;
 
+            unsigned int GetUpdateOption();
+
             MaterialInterface* GetModel() override;
         };
     }
