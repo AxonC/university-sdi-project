@@ -12,6 +12,7 @@
 #include "../view/material/MaterialView.h"
 #include "../controller/material/MaterialController.h"
 #include "../command/CommandHandler.h"
+#include "../command/userInput.h"
 
 using TrekStar::Project::Project;
 using TrekStar::Project::ProjectController;
@@ -78,10 +79,8 @@ namespace TrekStar
 
         void searchProjects(std::vector<TrekStar::Project::Project> & projects)
         {
-            std::string searchCriteria;
-            std::cout << "Project title: ";
-            std::cin.ignore();
-            std::getline(std::cin, searchCriteria);
+            std::cout << "Title: ";
+            std::string searchCriteria = TrekStar::Command::GetStringInput();
 
             TrekStar::Algorithms::mergeSort(projects);
 
@@ -91,7 +90,7 @@ namespace TrekStar
 
             if ( projectIndex == -1 )
             {
-                std::cout << "'" << searchCriteria << "' could not be found..." << std::endl;
+                std::cout << "Project could not be found..." << std::endl;
             }
             else
             {
