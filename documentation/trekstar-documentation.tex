@@ -432,8 +432,8 @@
 \item
   \protect\hyperlink{ui-screenshots}{UI Screenshots}
 \item
-  \protect\hyperlink{software-testing-prodcedure}{Software Testing
-  Prodcedure}
+  \protect\hyperlink{software-testing-procedure}{Software Testing
+  Procedure}
 \item
   \protect\hyperlink{user-manual}{User Manual}
 
@@ -609,7 +609,7 @@ system, these being:
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  An indivdual user will have the TrekStar project management system
+  An individual user will have the TrekStar project management system
   installed on their machine, using a locally stored JSON Database.
 \item
   TrekStar Pictures will release the TrekStar project management system
@@ -634,7 +634,7 @@ Operating Systems are supported:
 \end{itemize}
 
 On the following pages you can find a visual representation of the
-aformentioned Deployment scenarios.
+aforementioned Deployment scenarios.
 
 \hypertarget{individual-installation}{%
 \subsection{Individual Installation}\label{individual-installation}}
@@ -651,7 +651,7 @@ aformentioned Deployment scenarios.
 \begin{figure}
 \centering
 \includegraphics{images/deployment-diagrams/trekstar-company-installation.png}
-\caption{Visual Represenation of Company-Wide TrekStar installation}
+\caption{Visual Representation of Company-Wide TrekStar installation}
 \end{figure}
 
 \newpage
@@ -659,7 +659,7 @@ aformentioned Deployment scenarios.
 \hypertarget{design-pattern}{%
 \section{Design Pattern}\label{design-pattern}}
 
-Include explaination of any design patterns used
+Include explanation of any design patterns used
 
 \newpage
 
@@ -679,7 +679,7 @@ utility tree, you need to explain the reason).
 Within the TrekStar project management application we have used some C++
 Libraries for parsing data, providing access to unit tests and including
 core functionality that would otherwise not be present. Below you can
-find an exaplaination of the included C++ libraries and why we chose to
+find an explanation of the included C++ libraries and why we chose to
 use them:
 
 \hypertarget{json-for-c-github-link}{%
@@ -704,7 +704,7 @@ Link})}{GTest (GitHub Link)}}\label{gtest-github-link}}
 
 We decided to use GTest as our primary unit testing library within the
 application, whilst we could have used Boost for unit testing, we
-decided that GTest had the following advantages which solidifed our
+decided that GTest had the following advantages which solidified our
 decision to use GTest:
 
 \begin{itemize}
@@ -714,7 +714,7 @@ decision to use GTest:
   specifically a testing library, Boost has more functionality that also
   needs to be imported to allow for the Unit Testing section of the
   library to function, consequently making it larger and less
-  lighweight.
+  lightweight.
 \item
   When compared to other Unit Testing libraries there are more features
   that we can make use of in the project within GTest, for example, we
@@ -748,14 +748,14 @@ needs to be added/fixed.
 \hypertarget{internal-data-structures}{%
 \section{Internal Data Structures}\label{internal-data-structures}}
 
-Include explaination of what internal data structures were used.
+Include explanation of what internal data structures were used.
 
 \newpage
 
 \hypertarget{searchsorting-algorithm}{%
 \section{Search/Sorting Algorithm}\label{searchsorting-algorithm}}
 
-Include explaination of the search/sorting algo used.
+Include explanation of the search/sorting algo used.
 
 \newpage
 
@@ -766,11 +766,49 @@ Include screenshots of console app here.
 
 \newpage
 
-\hypertarget{software-testing-prodcedure}{%
-\section{Software Testing
-Prodcedure}\label{software-testing-prodcedure}}
+\hypertarget{software-testing-procedure}{%
+\section{Software Testing Procedure}\label{software-testing-procedure}}
 
-Include explaination of software testing procedure here.
+Software Testing is an important part of the SDLC and within our project
+we have multiple constraints in place to ensure that tested, bug-free
+code is committed to the GitHub repository. Committing working code to
+the repository is important for a number of reasons, with some of these
+being:
+
+\begin{itemize}
+\tightlist
+\item
+  Developers will never pull broken code that will lead to a slow down
+  in development.
+\item
+  Developers will never have to fix someone elses broken code, avoiding
+  time wasted on parts of the application that is not allocated to that
+  developers.
+\item
+  In case of a rollback, the repository will always be in a good state,
+  which helps to avoid further rollbacks.
+\end{itemize}
+
+Some of the constraints that we have in place are:
+
+\begin{itemize}
+\tightlist
+\item
+  Developers will only commit code that has the associated unit tests
+  created and those unit tests must pass.
+\item
+  Developers must never commit broken code that could impede the
+  efficiency of other developers, if a commit is required a new branch
+  should be created.
+\item
+  If there are known bugs, developers must log these within the GitHub
+  Issues to ensure that other developers know that it is know/being
+  worked on incase they come across it.
+\end{itemize}
+
+We are confident that these constraints will allow us to develop the
+application with fewer interruptions and ensure that only high quality,
+tested code is being pushed to the repository.
 
 \newpage
 
@@ -935,7 +973,7 @@ database, you can see an example of this below.
 \caption{Visual representation of project listings}
 \end{figure}
 
-As you can see in Figure 6, there are more options avaliable to you,
+As you can see in Figure 6, there are more options available to you,
 these options allow you to navigate through the projects. You can see
 the associated input actions below.
 
@@ -996,7 +1034,7 @@ query, you can see an example of this below.
 search query}
 \end{figure}
 
-As you can see in Figure 8, there are more options avaliable to you,
+As you can see in Figure 8, there are more options available to you,
 these are the options associated with
 \protect\hyperlink{using-view-mode}{View Mode}, therefore you can find
 more information by reading the \protect\hyperlink{using-view-mode}{View
@@ -1029,7 +1067,7 @@ below.
 \caption{Visual representation of material listings}
 \end{figure}
 
-As you can see in Figure 10, there are more options avaliable to you,
+As you can see in Figure 10, there are more options available to you,
 these options allow you to navigate through the materials. You can see
 the associated input actions below.
 
@@ -1190,7 +1228,7 @@ entered numeric value. Any value is accepted.
 \caption{Visual representation of the application asking for a keyword}
 \end{figure}
 
-As you can see in Figure 16, there are more options avaliable to you,
+As you can see in Figure 16, there are more options available to you,
 these are the options associated with
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
 you can find more information by reading the
@@ -1246,7 +1284,7 @@ not limited to:
 \end{itemize}
 
 Overall, our experience of working as a group has been productive and
-enjoyable, being able to distrubute the workload across group members
+enjoyable, being able to distribute the workload across group members
 was an important aspect to the project and allowed us to complete it
 efficiently. We have all taken learning points from this experience that
 could be applied to the workplace, or even in our upcoming placements.
@@ -1263,7 +1301,7 @@ For example:
   a competent employee.
 \item
   The use of a messaging platform was also important, sometimes
-  organisations have employees working accross the globe and having the
+  organisations have employees working across the globe and having the
   ability to efficiently collaborate on messaging systems (such as
   Slack) is an important skill to have.
 \end{itemize}
@@ -1275,7 +1313,7 @@ During group meetings a member was nominated to write minutes, these
 minutes were an important factor during the development of the
 application as they allowed us to go back and check what work we have
 all be allocated. On the following pages you can find the minutes for
-the aformentioned meetings.
+the aforementioned meetings.
 
 \begin{figure}
 \centering

@@ -38,7 +38,7 @@ titlepage-rule-height: 1
 - [Internal Data Structures](#internal-data-structures)
 - [Search/Sorting Algorithm](#searchsorting-algorithm)
 - [UI Screenshots](#ui-screenshots)
-- [Software Testing Prodcedure](#software-testing-prodcedure)
+- [Software Testing Procedure](#software-testing-procedure)
 - [User Manual](#user-manual)
 	- [Software Introduction](#software-introduction)
 	- [Using the Main Menu](#using-the-main-menu)
@@ -123,7 +123,7 @@ Include component diagram here
 
 There are two possible deployment scenarios for the TrekStar management system, these being:
 
-1. An indivdual user will have the TrekStar project management system installed on their machine, using a locally stored JSON Database.
+1. An individual user will have the TrekStar project management system installed on their machine, using a locally stored JSON Database.
 2. TrekStar Pictures will release the TrekStar project management system company-wide, using a shared JSON Database for each installation.
 
 These two deployments are different due to the change in the data storage location, in which the latter will support company-wide collaboration through the application. 
@@ -134,19 +134,19 @@ However, no matter where the application is installed the following Operating Sy
 * Mac OS
 * Linux
 
-On the following pages you can find a visual representation of the aformentioned Deployment scenarios.
+On the following pages you can find a visual representation of the aforementioned Deployment scenarios.
 
 ## Individual Installation
 ![Visual Representation of Individual TrekStar installation](images/deployment-diagrams/trekstar-individual-installation.png)
 
 ## Company-Wide Installation
-![Visual Represenation of Company-Wide TrekStar installation](images/deployment-diagrams/trekstar-company-installation.png)
+![Visual Representation of Company-Wide TrekStar installation](images/deployment-diagrams/trekstar-company-installation.png)
 
 \newpage
 
 # Design Pattern
 
-Include explaination of any design patterns used
+Include explanation of any design patterns used
 
 \newpage
 
@@ -160,15 +160,15 @@ the identified utility tree, you need to explain the reason).
 
 # Included C++ Libraries
 
-Within the TrekStar project management application we have used some C++ Libraries for parsing data, providing access to unit tests and including core functionality that would otherwise not be present. Below you can find an exaplaination of the included C++ libraries and why we chose to use them:
+Within the TrekStar project management application we have used some C++ Libraries for parsing data, providing access to unit tests and including core functionality that would otherwise not be present. Below you can find an explanation of the included C++ libraries and why we chose to use them:
 
 ## JSON for C++ ([GitHub Link](https://github.com/nlohmann/json))
 We decided to use the JSON for C++ library within the application because we are using JSON as our database to store all of the users data. The JSON for C++ library allows us to parse JSON data, request data based on certain keys within a JSON Array or Object and create new JSON Arrays or Objects to be inserted into the database. The JSON for C++ library is quite easily the most feature complete and well documented library for parsing and creating JSON in C++, this was the main driving force behind using this library as we required something that is reliable and suitable for the applications use cases.
 
 ## GTest ([GitHub Link](https://github.com/google/googletest))
-We decided to use GTest as our primary unit testing library within the application, whilst we could have used Boost for unit testing, we decided that GTest had the following advantages which solidifed our decision to use GTest:
+We decided to use GTest as our primary unit testing library within the application, whilst we could have used Boost for unit testing, we decided that GTest had the following advantages which solidified our decision to use GTest:
 
-- GTest is much more lightweight when compared to Boost, while GTest is specifically a testing library, Boost has more functionality that also needs to be imported to allow for the Unit Testing section of the library to function, consequently making it larger and less lighweight.
+- GTest is much more lightweight when compared to Boost, while GTest is specifically a testing library, Boost has more functionality that also needs to be imported to allow for the Unit Testing section of the library to function, consequently making it larger and less lightweight.
 - When compared to other Unit Testing libraries there are more features that we can make use of in the project within GTest, for example, we can use GTests ability to mock objects, this is useful when we need to test the interaction between objects as we can achieve this more efficiently when compared to other libraries. We can also avoid duplication of test setup (creating objects, etc) within each unit test by specifying test fixtures which can be referenced within the unit tests.
 
 ## spdlog ([GitHub Link](https://github.com/gabime/spdlog))
@@ -180,13 +180,13 @@ spdlog also allows us to easily generate the required daily reports based on the
 
 # Internal Data Structures
 
-Include explaination of what internal data structures were used.
+Include explanation of what internal data structures were used.
 
 \newpage
 
 # Search/Sorting Algorithm
 
-Include explaination of the search/sorting algo used.
+Include explanation of the search/sorting algo used.
 
 \newpage
 
@@ -196,9 +196,20 @@ Include screenshots of console app here.
 
 \newpage
 
-# Software Testing Prodcedure
+# Software Testing Procedure
+Software Testing is an important part of the SDLC and within our project we have multiple constraints in place to ensure that tested, bug-free code is committed to the GitHub repository. Committing working code to the repository is important for a number of reasons, with some of these being:
 
-Include explaination of software testing procedure here.
+- Developers will never pull broken code that will lead to a slow down in development.
+- Developers will never have to fix someone elses broken code, avoiding time wasted on parts of the application that is not allocated to that developers.
+- In case of a rollback, the repository will always be in a good state, which helps to avoid further rollbacks.
+
+Some of the constraints that we have in place are:
+
+- Developers will only commit code that has the associated unit tests created and those unit tests must pass.
+- Developers must never commit broken code that could impede the efficiency of other developers, if a commit is required a new branch should be created.
+- If there are known bugs, developers must log these within the GitHub Issues to ensure that other developers know that it is know/being worked on incase they come across it.
+
+We are confident that these constraints will allow us to develop the application with fewer interruptions and ensure that only high quality, tested code is being pushed to the repository. 
 
 \newpage
 
@@ -253,7 +264,7 @@ You will now see the projects that are held within your applications database, y
 
 ![Visual representation of project listings](images/user-guide/view-mode/listed-projects.png)
 
-As you can see in Figure 6, there are more options avaliable to you, these options allow you to navigate through the projects. You can see the associated input actions below.
+As you can see in Figure 6, there are more options available to you, these options allow you to navigate through the projects. You can see the associated input actions below.
 
 | Input Value | Command Action                                                                
 | :----------: | ------------------------------------------------------------------------- |
@@ -273,7 +284,7 @@ You will now see the associated projects that matched to your search query, you 
 
 ![Visual representation of a project being discovered from a search query](images/user-guide/view-mode/project-search-term.png)
 
-As you can see in Figure 8, there are more options avaliable to you, these are the options associated with [View Mode](#using-view-mode), therefore you can find more information by reading the [View Mode](#using-view-mode) section of this user guide.
+As you can see in Figure 8, there are more options available to you, these are the options associated with [View Mode](#using-view-mode), therefore you can find more information by reading the [View Mode](#using-view-mode) section of this user guide.
 
 \newpage
 
@@ -287,7 +298,7 @@ You will now see the materials linked to the requested project that are held wit
 
 ![Visual representation of material listings](images/user-guide/view-mode/listed-materials.png)
 
-As you can see in Figure 10, there are more options avaliable to you, these options allow you to navigate through the materials. You can see the associated input actions below.
+As you can see in Figure 10, there are more options available to you, these options allow you to navigate through the materials. You can see the associated input actions below.
 
 | Input Value | Command Action                                                                
 | :----------: | ------------------------------------------------------------------------- |
@@ -339,7 +350,7 @@ Finally, you will be asked what keywords you would like associated with the proj
 
 ![Visual representation of the application asking for a keyword](images/user-guide/maintenance-mode/add-project-keywords.png)
 
-As you can see in Figure 16, there are more options avaliable to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+As you can see in Figure 16, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
 \newpage
 
@@ -366,15 +377,15 @@ scalability, etc. design of system complexity using e.g. big O- notation).
  - Using Facebook Messenger to converse with other group members about certain aspects of the program or documentation, this allowed us to keep in touch and ensure we were on track with the workload.
  - Using GitHub to its full potential, this includes the use of GitHub Issues and Pull Requests in conjunction with code reviews for each major feature. Whenever a bug or issue was discovered the group member that uncovered the issue would create a GitHub issue. If the bug was within another group members individual work then that member would be added as a participant so that they could fix the issue. Once large features were added to the program, pull requests were used with each group member being requested to review the code before merging into the master branch.
 
-Overall, our experience of working as a group has been productive and enjoyable, being able to distrubute the workload across group members was an important aspect to the project and allowed us to complete it efficiently. We have all taken learning points from this experience that could be applied to the workplace, or even in our upcoming placements. For example:
+Overall, our experience of working as a group has been productive and enjoyable, being able to distribute the workload across group members was an important aspect to the project and allowed us to complete it efficiently. We have all taken learning points from this experience that could be applied to the workplace, or even in our upcoming placements. For example:
 
 - The use of GitHub's features (such as pull requests, issues and code reviewing) will be an excellent skill to have within the workplace, as more often than not, organisations will have some sort of code review system/Quality Assurance (QA) procedure in place and being able to understand how this all works without training will show that you are a competent employee.
-- The use of a messaging platform was also important, sometimes organisations have employees working accross the globe and having the ability to efficiently collaborate on messaging systems (such as Slack) is an important skill to have. 
+- The use of a messaging platform was also important, sometimes organisations have employees working across the globe and having the ability to efficiently collaborate on messaging systems (such as Slack) is an important skill to have. 
 
 
 ## Meeting Minutes
 
-During group meetings a member was nominated to write minutes, these minutes were an important factor during the development of the application as they allowed us to go back and check what work we have all be allocated. On the following pages you can find the minutes for the aformentioned meetings.
+During group meetings a member was nominated to write minutes, these minutes were an important factor during the development of the application as they allowed us to go back and check what work we have all be allocated. On the following pages you can find the minutes for the aforementioned meetings.
 
 ![Meeting 1 - Minutes](images/meeting-minutes/meeting-1.png)
 
