@@ -10,7 +10,6 @@
 #include "../people/Crew.h"
 #include "../material/Material.h"
 #include "ProjectInterface.h"
-#include "../../logger/Logger.h"
 #include "spdlog/spdlog.h"
 
 using json = nlohmann::json;

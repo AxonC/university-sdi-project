@@ -5,6 +5,9 @@
 #include "command/maintenanceMode.h"
 #include "file/fileOperations.h"
 
+#include "spdlog/spdlog.h"
+#include "spdlog/sinks/daily_file_sink.h"
+
 int main()
 {
 	const std::string FILE_PATH = "../data/data.json";
