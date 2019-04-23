@@ -16,9 +16,15 @@ int main()
 
     std::vector<TrekStar::Project::Project> projects = TrekStar::File::importProjects(FILE_PATH);
 
-    std::cout << "Welcome to TrekStar Management System | Console" << std::endl;
-    std::cout << std::endl;
-    std::cout << "Type 'help' to see all available commands" << std::endl;
+    std::cout << std::string(80,'-') << std::endl;
+    std::cout << "######## ########  ######## ##    ##  ######  ########    ###    ########  \n"
+                 "   ##    ##     ## ##       ##   ##  ##    ##    ##      ## ##   ##     ## \n"
+                 "   ##    ##     ## ##       ##  ##   ##          ##     ##   ##  ##     ## \n"
+                 "   ##    ########  ######   #####     ######     ##    ##     ## ########  \n"
+                 "   ##    ##   ##   ##       ##  ##         ##    ##    ######### ##   ##   \n"
+                 "   ##    ##    ##  ##       ##   ##  ##    ##    ##    ##     ## ##    ##  \n"
+                 "   ##    ##     ## ######## ##    ##  ######     ##    ##     ## ##     ## \n";
+    std::cout << std::string(80,'-') << std::endl << std::endl;
 
     TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
             {
