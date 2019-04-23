@@ -44,9 +44,16 @@ namespace TrekStar
             int commandInput = commandHandler.getUserInput();
             commandHandler.clearConsole();
 
-            if ( commandInput == 1 )
+            switch ( commandInput )
             {
-                controller.UpdateTitle();
+                case 1:
+                    controller.UpdateTitle();
+                    break;
+                case 2:
+                    controller.UpdateSummary();
+                    break;
+                default:
+                    break;
             }
         }
     }

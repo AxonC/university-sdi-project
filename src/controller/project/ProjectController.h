@@ -21,6 +21,7 @@ namespace TrekStar
             void ShowList() override;
 
             void UpdateTitle();
+            void UpdateSummary();
         };
     }
 }

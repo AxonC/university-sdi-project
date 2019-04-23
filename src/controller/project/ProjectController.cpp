@@ -23,8 +23,13 @@ namespace TrekStar
         void ProjectController::UpdateTitle()
         {
             auto model = dynamic_cast<ProjectInterface*>(this->model);
-
             model->SetTitle(dynamic_cast<ProjectView*>(this->view)->GetNewTitle());
+        }
+
+        void ProjectController::UpdateSummary()
+        {
+            auto model = dynamic_cast<ProjectInterface*>(this->model);
+            model->SetSummary(dynamic_cast<ProjectView*>(this->view)->GetNewSummary());
         }
     }
 }

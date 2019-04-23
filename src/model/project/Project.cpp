@@ -86,6 +86,11 @@ namespace TrekStar
             std::transform(this->lowercaseTitle.begin(), this->lowercaseTitle.end(), this->lowercaseTitle.begin(), ::tolower);
         }
 
+        void Project::SetSummary(const std::string & summary)
+        {
+            this->summary = summary;
+        }
+
         void Project::AddMaterials(const std::vector<std::shared_ptr<Material::Material>> & materials)
         {
             if ( !this->CanAddMaterial() )

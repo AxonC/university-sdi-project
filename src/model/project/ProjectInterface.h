@@ -23,6 +23,7 @@ namespace TrekStar
             virtual std::vector<std::string> GetMaterialFormats() const = 0;
 
             virtual void SetTitle(const std::string & title) = 0;
+            virtual void SetSummary(const std::string & summary) = 0;
         };
     }
 }

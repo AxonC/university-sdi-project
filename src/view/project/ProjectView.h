@@ -13,7 +13,8 @@ namespace TrekStar
         class ProjectView : public BaseView
         {
         private:
-            void DisplayVectorAsCSV(const std::vector<std::string> & stringVector);
+            static void DisplayVectorAsCSV(const std::vector<std::string> & stringVector);
+            static std::string GetStringInput();
         public:
             ProjectView() = default;
             explicit ProjectView(ProjectInterface & model);
@@ -22,6 +23,7 @@ namespace TrekStar
             void PresentList() override;
 
             std::string GetNewTitle();
+            std::string GetNewSummary();
 
             ProjectInterface* GetModel() override;
         };

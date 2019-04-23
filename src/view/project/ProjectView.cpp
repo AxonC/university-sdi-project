@@ -56,14 +56,14 @@ namespace TrekStar
 
         std::string ProjectView::GetNewTitle()
         {
-            std::string title;
+            std::cout << "Title [current: " << this->GetModel()->GetTitle() << "]: ";
+            return this->GetStringInput();
+        }
 
-            auto model = this->GetModel();
-
-            std::cout << "Title [current: " << model->GetTitle() << "] :";
-            std::cin >> title;
-
-            return title;
+        std::string ProjectView::GetNewSummary()
+        {
+            std::cout << "Summary [current: " << this->GetModel()->GetSummary() << "]: ";
+            return this->GetStringInput();
         }
 
         ProjectInterface* ProjectView::GetModel()
@@ -71,13 +71,23 @@ namespace TrekStar
             return dynamic_cast<ProjectInterface*>(this->model);
         }
 
-        void ProjectView::DisplayVectorAsCSV(const std::vector<std::string> & stringVector)
+        static void ProjectView::DisplayVectorAsCSV(const std::vector<std::string> & stringVector)
         {
             if ( !stringVector.empty() )
             {
                 std::copy(std::begin(stringVector), std::prev(std::end(stringVector)), std::ostream_iterator<std::string>(std::cout, ", "));
                 std::cout << stringVector.back();
             }
+        }
+
+        static std::string ProjectView::GetStringInput()
+        {
+            std::string input;
+
+            std::cin.ignore();
+            std::getline(std::cin, input);
+
+            return input;
         }
     }
 }
