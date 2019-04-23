@@ -8,7 +8,6 @@
 
 using KeyValueMap = std::map<std::string, std::string>;
 
-
 namespace TrekStar
 {
     namespace Material

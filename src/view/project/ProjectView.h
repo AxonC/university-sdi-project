@@ -24,6 +24,7 @@ namespace TrekStar
             void PresentList() override;
 
             void PresentKeywords();
+            void PresentMaterialsList();
 
             std::string GetNewTitle();
             std::string GetNewSummary();
@@ -31,6 +32,8 @@ namespace TrekStar
             bool GetNewPlayingInTheatres();
             unsigned int GetKeywordNo();
             std::string GetNewKeyword(const unsigned int & keywordNo);
+
+            unsigned int GetProjectUpdateOption();
 
             ProjectInterface* GetModel() override;
         };

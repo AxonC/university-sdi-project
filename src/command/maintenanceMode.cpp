@@ -9,51 +9,65 @@
 
 namespace TrekStar
 {
-namespace Command
-{
-void maintenanceMode(const std::string & FILE_PATH, std::vector<TrekStar::Project::Project> & projects)
-{
-    TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
-            {
-                    {1, "add project"},
-                    {2, "update project"},
-                    {3, "go back"}
-            },
-            "Maintenance Mode"
-    );
-
-    int commandInput  = 0;
-    while ( commandInput != 3 )
+    namespace Command
     {
-        commandHandler.displayCommands();
-        commandInput = commandHandler.getUserInput();
-        commandHandler.clearConsole();
-
-        if ( commandHandler.isValidCommand(commandInput) )
+        void maintenanceMode(const std::string & FILE_PATH, std::vector<TrekStar::Project::Project> & projects)
         {
-            if ( commandInput == 1 )
-            {
-                TrekStar::Information::addProject(projects);
-            }
-            else if ( commandInput == 2 )
-            {
-                std::cout << std::string(80, '-') << std::endl;
-                TrekStar::Information::displayAllProjects(projects);
-                std::cout << std::string(80, '-') << std::endl;
+            TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
+                    {
+                            {1, "add project"},
+                            {2, "update project"},
+                            {3, "update materials for a project"},
+                            {4, "go back"}
+                    },
+                    "Maintenance Mode"
+            );
 
-                int projectID;
-                std::cout << "Project ID: ";
-                std::cin >> projectID;
+            int commandInput  = 0;
+            while ( commandInput != 4 )
+            {
+                commandHandler.displayCommands();
+                commandInput = commandHandler.getUserInput();
                 commandHandler.clearConsole();
 
-                TrekStar::Information::updateProject(projects, projectID);
+                if ( commandHandler.isValidCommand(commandInput) )
+                {
+                    if ( commandInput == 1 )
+                    {
+                        TrekStar::Information::addProject(projects);
+                    }
+                    else if ( commandInput == 2 )
+                    {
+                        std::cout << std::string(80, '-') << std::endl;
+                        TrekStar::Information::displayAllProjects(projects);
+                        std::cout << std::string(80, '-') << std::endl;
+
+                        int projectID;
+                        std::cout << "Project ID: ";
+                        std::cin >> projectID;
+                        commandHandler.clearConsole();
+
+                        TrekStar::Information::updateProject(projects, projectID);
+                    }
+                    else if ( commandInput == 3 )
+                    {
+                        std::cout << std::string(80, '-') << std::endl;
+                        TrekStar::Information::displayAllProjects(projects);
+                        std::cout << std::string(80, '-') << std::endl;
+
+                        int projectID;
+                        std::cout << "Project ID: ";
+                        std::cin >> projectID;
+                        commandHandler.clearConsole();
+
+                        TrekStar::Information::updateMaterials(projects, projectID);
+                    }
+                }
+                else
+                {
+                    std::cout << "Invalid command..." << std::endl;
+                }
             }
         }
-        else
-        {
-            std::cout << "Invalid command..." << std::endl;
-        }
     }
-}
-}
 }

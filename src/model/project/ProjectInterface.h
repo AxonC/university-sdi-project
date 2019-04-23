@@ -17,6 +17,7 @@ namespace TrekStar
             virtual unsigned int GetId() const = 0;
             virtual std::string GetTitle() const = 0;
             virtual std::string GetSummary() const = 0;
+            virtual std::vector<std::shared_ptr<Material::Material>> GetMaterials() const = 0;
             virtual bool GetReleased() const = 0;
             virtual bool GetPlayingInTheatres() const = 0;
             virtual std::vector<std::string> GetKeywords() const = 0;

@@ -60,7 +60,7 @@ namespace TrekStar
             std::string GetTitle() const final;
             std::string GetLowercaseTitle() const;
             std::string GetSummary() const override;
-            std::vector<std::shared_ptr<Material::Material>> GetMaterials() const;
+            std::vector<std::shared_ptr<Material::Material>> GetMaterials() const override;
             bool GetReleased() const override;
             bool GetPlayingInTheatres() const override;
             std::vector<std::string> GetKeywords() const override;
