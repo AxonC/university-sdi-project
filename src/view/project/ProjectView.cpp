@@ -1,6 +1,11 @@
 #include <iostream>
 
 #include "ProjectView.h"
+#include "../material/MaterialView.h"
+#include "../../controller/material/MaterialController.h"
+
+using TrekStar::Material::MaterialController;
+using TrekStar::Material::MaterialView;
 
 namespace TrekStar
 {
@@ -61,6 +66,17 @@ namespace TrekStar
             {
                 counter++;
                 std::cout << "Keyword #" << counter << ": " << keyword << std::endl;
+            }
+        }
+
+        void ProjectView::PresentMaterialsList()
+        {
+            for ( const auto & material: this->GetModel()->GetMaterials() )
+            {
+                MaterialView view(*material);
+                MaterialController controller(*material, view);
+
+                controller.ShowList();
             }
         }
 

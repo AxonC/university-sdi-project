@@ -56,6 +56,11 @@ namespace TrekStar
             this->UpdatePlayingInTheatres();
         }
 
+        void ProjectController::UpdateMaterials()
+        {
+            this->GetView()->PresentMaterialsList();
+        }
+
         ProjectInterface* ProjectController::GetModel()
         {
             return dynamic_cast<ProjectInterface*>(this->model);

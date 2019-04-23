@@ -17,7 +17,7 @@ namespace TrekStar
 
         void MaterialController::ShowList()
         {
-
+            this->view->PresentList();
         }
     }
 }

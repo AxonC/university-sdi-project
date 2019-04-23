@@ -24,6 +24,7 @@ namespace TrekStar
             void PresentList() override;
 
             void PresentKeywords();
+            void PresentMaterialsList();
 
             std::string GetNewTitle();
             std::string GetNewSummary();
