@@ -54,9 +54,7 @@ namespace TrekStar
                         TrekStar::Information::displayAllProjects(projects);
                         std::cout << std::string(80, '-') << std::endl;
 
-                        int projectID;
-                        std::cout << "Project ID: ";
-                        std::cin >> projectID;
+                        int projectID = TrekStar::Command::GetIndexInput(projects.size(), "Project ID");
                         commandHandler.clearConsole();
 
                         TrekStar::Information::updateMaterials(projects, projectID);
