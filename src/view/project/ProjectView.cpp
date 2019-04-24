@@ -158,7 +158,7 @@ namespace TrekStar
 
         std::string ProjectView::GetNewKeyword(const unsigned int & keywordNo)
         {
-            std::cout << "Keyword #" << keywordNo << " [current: " << this->GetModel()->GetKeywords().at(keywordNo) << "]: ";
+            std::cout << "Keyword #" << keywordNo + 1 << " [current: " << this->GetModel()->GetKeywords().at(keywordNo) << "]: ";
             return TrekStar::Command::GetStringInput();
         }
 

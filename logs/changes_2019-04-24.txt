@@ -1,0 +1,17 @@
+[2019-04-24 13:17:39.545] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-24 13:17:39.545] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-24 13:17:39.545] [logger] [info] Material 3 was added to project A Great Movie
+[2019-04-24 13:17:39.545] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-24 13:17:39.545] [logger] [info] Material 0 was added to project Back To The Future
+[2019-04-24 13:17:39.545] [logger] [info] Material 0 was added to project Back To The Future
+[2019-04-24 13:17:39.545] [logger] [info] Material 3 was added to project Back To The Future
+[2019-04-24 13:17:39.545] [logger] [info] Material 0 was added to project Back To The Future
+[2019-04-24 13:17:39.546] [logger] [info] Material 0 was added to project Deadpool
+[2019-04-24 13:17:39.546] [logger] [info] Material 0 was added to project Deadpool
+[2019-04-24 13:17:39.546] [logger] [info] Material 0 was added to project Deadpool
+[2019-04-24 13:17:39.546] [logger] [info] Material 4 was added to project Deadpool
+[2019-04-24 13:17:39.546] [logger] [info] Material 0 was added to project Deadpool
+[2019-04-24 13:17:39.546] [logger] [info] Material 0 was added to project Superheroes
+[2019-04-24 13:17:39.546] [logger] [info] Material 0 was added to project Superheroes
+[2019-04-24 13:17:39.546] [logger] [info] Material 2 was added to project Superheroes
+[2019-04-24 13:17:39.546] [logger] [info] Material 0 was added to project Superheroes
