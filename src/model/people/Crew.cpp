@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Crew.h"
 
 namespace TrekStar
@@ -33,9 +34,9 @@ namespace TrekStar
                 };
         }
 
-        json to_json(const SerializedCrew &crew)
+        void to_json(json & j, const SerializedCrew &crew)
         {
-            return
+            j = json
                 {
                     {"id", crew.id},
                     {"name", crew.name},

@@ -1,8 +1,7 @@
 #ifndef TREKSTAR_CREW_H
 #define TREKSTAR_CREW_H
 
-#include <string>
-#include "../../lib/json.hpp"
+#include "pch.h"
 
 using json = nlohmann::json;
 
@@ -37,7 +36,7 @@ namespace TrekStar
             SerializedCrew ExportToSerialized() const;
         };
 
-        json to_json(const SerializedCrew & crew);
+        void to_json(json & j, const SerializedCrew & crew);
         void from_json(const json & json, SerializedCrew & crew);
     }
 }

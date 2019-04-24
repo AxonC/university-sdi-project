@@ -1,10 +1,15 @@
 #ifndef TREKSTAR_PROJECTINTERFACE_H
 #define TREKSTAR_PROJECTINTERFACE_H
 
-#include <string>
-#include <vector>
-
 #include "../Model.h"
+
+namespace TrekStar
+{
+    namespace Material
+    {
+        class Material;
+    } // namespace Material
+} // namespace TrekStar
 
 namespace TrekStar
 {
@@ -13,7 +18,7 @@ namespace TrekStar
         class ProjectInterface : public TrekStar::Model
         {
         public:
-            virtual ~ProjectInterface() = default;
+            ~ProjectInterface() override = default;
             virtual unsigned int GetId() const = 0;
             virtual std::string GetTitle() const = 0;
             virtual std::string GetSummary() const = 0;

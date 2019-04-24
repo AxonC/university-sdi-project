@@ -2,6 +2,7 @@
 #define TREKSTAR_STACK_H
 
 #include <vector>
+#include <stdexcept>
 #include <initializer_list>
 
 namespace TrekStar

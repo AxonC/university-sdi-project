@@ -1,8 +1,6 @@
 #ifndef TREKSTAR_MATERIALFACTORY_H
 #define TREKSTAR_MATERIALFACTORY_H
 
-#include <memory>
-
 #include "Material.h"
 
 using TrekStar::Material::Material;

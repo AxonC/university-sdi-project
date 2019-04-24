@@ -1,6 +1,8 @@
 #ifndef SDI_PROJECT_MODEL_H
 #define SDI_PROJECT_MODEL_H
 
+#include "pch.h"
+
 namespace TrekStar
 {
     class Model

@@ -1,8 +1,6 @@
 #ifndef TREKSTAR_DVD_H
 #define TREKSTAR_DVD_H
 
-#include <vector>
-#include <string>
 #include "Material.h"
 #include "DVDInterface.h"
 #include "DVDSide.h"

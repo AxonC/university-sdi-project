@@ -1,6 +1,5 @@
+#include "pch.h"
 #include "SequentialBrowser.h"
-#include <algorithm>
-#include <iostream>
 
 namespace TrekStar
 {

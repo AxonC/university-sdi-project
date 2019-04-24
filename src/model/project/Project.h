@@ -1,20 +1,31 @@
 #ifndef PROJECT_PROJECT_H
 #define PROJECT_PROJECT_H
-
-#include <string>
-#include <utility>
-#include <vector>
-#include <fstream>
-
-#include "../../lib/json.hpp"
-#include "../people/Crew.h"
-#include "../material/Material.h"
 #include "ProjectInterface.h"
-#include "spdlog/spdlog.h"
 
 using json = nlohmann::json;
-using TrekStar::People::Crew;
-using TrekStar::People::SerializedCrew;
+
+namespace TrekStar
+{
+    namespace People
+    {
+        class Crew;
+        class SerializedCrew;
+    } // namespace People
+} // namespace TrekStar
+
+namespace TrekStar
+{
+    namespace People
+    {
+        class Crew;
+        class SerializedCrew;
+    } // namespace People
+
+    namespace Material
+    {
+        class Material;
+    }
+} // namespace TrekStar
 
 namespace TrekStar
 {
@@ -28,7 +39,7 @@ namespace TrekStar
             bool released;
             bool playingInTheatres;
             std::vector<std::string> keywords;
-            std::vector<std::shared_ptr<Crew>> crew;
+            std::vector<std::shared_ptr<People::Crew>> crew;
         };
 
         /**
@@ -54,10 +65,10 @@ namespace TrekStar
             Project() = default;
             Project(const std::string & title, const std::string & summary, bool released, bool playingInTheatres, const std::vector<std::string> & keywords);
             explicit Project(const SerialisedProject & project);
-            virtual ~Project();
+            ~Project() final;
 
             unsigned int GetId() const override;
-            std::string GetTitle() const final;
+            std::string GetTitle() const override;
             std::string GetSearchableTitle() const;
             std::string GetSummary() const override;
             std::vector<std::shared_ptr<Material::Material>> GetMaterials() const override;
@@ -80,7 +91,7 @@ namespace TrekStar
 
             std::vector<std::shared_ptr<People::Crew>> GetCrew() const;
             void AddCrew(const std::shared_ptr<People::Crew> &);
-            void AddCrew(const std::vector<std::shared_ptr<Crew>> & crew);
+            void AddCrew(const std::vector<std::shared_ptr<People::Crew>> & crew);
             void RemoveCrew(const std::shared_ptr<People::Crew> &);
 
             void ReleaseProject();
@@ -92,7 +103,7 @@ namespace TrekStar
             bool operator>=(const Project & project) const;
             bool operator<=(const Project & project) const;
 
-            bool operator==(const unsigned int id) const;
+            bool operator==(unsigned int id) const;
             bool operator==(const std::string & title) const;
             bool operator<(const std::string & title) const;
         };

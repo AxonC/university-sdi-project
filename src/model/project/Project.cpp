@@ -1,8 +1,8 @@
-#include <algorithm>
-
+#include "pch.h"
 #include "Project.h"
 
-#include <iostream>
+#include "../people/Crew.h"
+#include "../material/Material.h"
 
 namespace TrekStar
 {
@@ -169,7 +169,7 @@ namespace TrekStar
             this->crew.push_back(crewMember);
         }
 
-        void Project::AddCrew(const std::vector<std::shared_ptr<Crew>> & crew)
+        void Project::AddCrew(const std::vector<std::shared_ptr<People::Crew>> & crew)
         {
             for ( const auto & crewMember: crew )
             {

@@ -1,9 +1,11 @@
+#include "pch.h"
 #include "fileOperations.h"
-#include "../model/material/BoxSet.h"
-#include "../lib/json.hpp"
-#include <iostream>
 
-using json = nlohmann::json;
+#include "../model/project/Project.h"
+#include "../model/material/Material.h"
+#include "../model/material/MaterialFactory.h"
+#include "../model/people/Crew.h"
+#include "../model/material/BoxSet.h"
 
 namespace TrekStar
 {
@@ -15,19 +17,19 @@ namespace TrekStar
             @param json string containing serialised data for a single project.
             @return object containing the created project.
         */
-        TrekStar::Project::Project createProject(const json & jsonString)
+        Project::Project createProject(const json & jsonString)
         {
-            TrekStar::Project::SerialisedProject serialised;
+            Project::SerialisedProject serialised = Project::SerialisedProject();
             try
             {
-                serialised = jsonString.get<TrekStar::Project::SerialisedProject>();
+                serialised = jsonString.get<Project::SerialisedProject>();
             }
             catch ( json::out_of_range & )
             {
-                // TODO: Conceputalise exception logic
+                // TODO: Concept exception logic
             }
 
-            return TrekStar::Project::Project(serialised);
+            return Project::Project(serialised);
         }
 
 
@@ -77,7 +79,7 @@ namespace TrekStar
 
             for ( auto && item : jsonString )
             {
-                std::shared_ptr<TrekStar::People::Crew> newCrew = std::make_shared<Crew>(item.get<TrekStar::People::SerializedCrew>());
+                std::shared_ptr<People::Crew> newCrew = std::make_shared<People::Crew>(item.get<People::SerializedCrew>());
                 crewVector.push_back(newCrew);
             }
 

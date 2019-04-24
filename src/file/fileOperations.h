@@ -1,12 +1,26 @@
 #ifndef TREKSTAR_FILEOPERATIONS_H
 #define TREKSTAR_FILEOPERATIONS_H
 
-#include <fstream>
-#include <vector>
+using json = nlohmann::json;
 
-#include "../model/project/Project.h"
-#include "../model/material/Material.h"
-#include "../model/material/MaterialFactory.h"
+namespace TrekStar
+{
+    namespace Project
+    {
+        class Project;
+    } // namespace Project
+
+    namespace Material
+    {
+        class Material;
+    } // namespace Material
+
+    namespace People
+    {
+        class Crew;
+        struct SerializedCrew;
+    }
+} // namespace TrekStar
 
 using ProjectVector = std::vector<TrekStar::Project::Project>;
 using MaterialVector = std::vector<std::shared_ptr<TrekStar::Material::Material>>;
@@ -16,7 +30,7 @@ namespace TrekStar
 {
     namespace File
     {
-        TrekStar::Project::Project createProject(const json &);
+        Project::Project createProject(const json &);
 
         MaterialVector createMaterials(const json &);
 
