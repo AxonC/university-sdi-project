@@ -44,21 +44,28 @@ namespace TrekStar
                         TrekStar::Information::displayAllProjects(projects);
                         std::cout << std::string(80, '-') << std::endl;
 
-                        int projectID = TrekStar::Command::GetIndexInput(projects.size(), "Project ID");
+                        int projectIndex = TrekStar::Command::GetIndexInput(projects.size(), "Project ID");
                         commandHandler.clearConsole();
 
                         if ( commandInput == 3 )
                         {
-                            TrekStar::Information::updateProject(projects, projectID);
+                            TrekStar::Information::updateProject(projects, projectIndex);
                         }
                         else
                         {
-                            TrekStar::Information::updateMaterials(projects, projectID);
+                            TrekStar::Information::updateMaterials(projects, projectIndex);
                         }
                     }
                     else if ( commandInput == 4 )
                     {
-                        
+                        std::cout << std::string(80, '-') << std::endl;
+                        TrekStar::Information::displayAllProjects(projects);
+                        std::cout << std::string(80, '-') << std::endl;
+
+                        int projectIndex = TrekStar::Command::GetIndexInput(projects.size(), "Project ID");
+                        commandHandler.clearConsole();
+
+                        projects.erase(projects.begin() + projectIndex);
                     }
                 }
                 else
