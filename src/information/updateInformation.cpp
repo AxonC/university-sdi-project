@@ -18,35 +18,19 @@ namespace TrekStar
     {
         void updateProject(std::vector<TrekStar::Project::Project> & projects, int projectID)
         {
-            ProjectController controller;
+            TrekStar::Project::Project currentProject = projects.at(projectID);
 
-            for ( auto & project: projects )
-            {
-                if ( project.GetId() == projectID )
-                {
-                    ProjectView view(project);
-                    controller = ProjectController(project, view);
-                    break;
-                }
-            }
-
+            ProjectView view(currentProject);
+            ProjectController controller(currentProject, view);
             controller.UpdateProject();
         }
 
         void updateMaterials(std::vector<TrekStar::Project::Project> & projects, int projectID)
         {
-            ProjectController controller;
+            TrekStar::Project::Project currentProject = projects.at(projectID);
 
-            for ( auto & project: projects )
-            {
-                if ( project.GetId() == projectID )
-                {
-                    ProjectView view(project);
-                    controller = ProjectController(project, view);
-                    break;
-                }
-            }
-
+            ProjectView view(currentProject);
+            ProjectController controller(currentProject, view);
             controller.UpdateMaterials();
         }
     }

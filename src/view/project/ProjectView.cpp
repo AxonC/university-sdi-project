@@ -70,7 +70,6 @@ namespace TrekStar
         {
             auto model = this->GetModel();
 
-            std::cout << "ID: " << std::to_string(model->GetId()) << ", ";
             std::cout << "Title: " << model->GetTitle() << std::endl;
         }
 

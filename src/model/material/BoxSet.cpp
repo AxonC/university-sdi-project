@@ -8,7 +8,6 @@ namespace TrekStar
     {
         void BoxSet::PopulateFromFile(const json & j)
         {
-            this->id = j.at("id").get<int>();
             this->format = j.at("format");
             this->retailPrice = j.at("retailPrice").get<double>();
 

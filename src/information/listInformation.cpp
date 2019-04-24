@@ -27,8 +27,11 @@ namespace TrekStar
     {
         void displayAllProjects(std::vector<TrekStar::Project::Project> & projects)
         {
+            unsigned int counter = 0;
             for ( auto & project: projects )
             {
+                counter++;
+                std::cout << "[" << counter << "]: ";
                 ProjectView view(project);
                 ProjectController controller(project, view);
                 controller.ShowList();

@@ -32,3 +32,11 @@
 [2019-04-24 13:23:45.112] [logger] [info] Material 0 was added to project Superheroes
 [2019-04-24 13:23:45.112] [logger] [info] Material 2 was added to project Superheroes
 [2019-04-24 13:23:45.112] [logger] [info] Material 0 was added to project Superheroes
+[2019-04-24 13:49:08.190] [logger] [info] Material 1 was added to project A Great Movie
+[2019-04-24 13:49:08.191] [logger] [info] Material 2 was added to project A Great Movie
+[2019-04-24 13:49:08.191] [logger] [info] Material 3 was added to project A Great Movie
+[2019-04-24 13:49:08.191] [logger] [info] Material 3 was added to project A Great Movie
+[2019-04-24 13:50:38.012] [logger] [info] Material 1 was added to project A Great Movie
+[2019-04-24 13:50:38.012] [logger] [info] Material 2 was added to project A Great Movie
+[2019-04-24 13:50:38.012] [logger] [info] Material 3 was added to project A Great Movie
+[2019-04-24 13:50:38.012] [logger] [info] Material 3 was added to project A Great Movie
