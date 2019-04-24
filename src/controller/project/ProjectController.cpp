@@ -67,27 +67,21 @@ namespace TrekStar
         {
             this->GetView()->PresentMaterialsList();
 
-            for ( const auto & material: this->GetModel()->GetMaterials() )
+            auto material = this->GetModel()->GetMaterials().at(this->GetView()->GetMaterialSelection());
+
+            if ( auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::DVD>(material) )
             {
-                if ( *material == this->GetView()->GetMaterialSelection() )
-                {
-                    if ( auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::DVD>(material) )
-                    {
-                        DVDView view(*castedMaterial);
-                        DVDController controller(*castedMaterial, view);
+                DVDView view(*castedMaterial);
+                DVDController controller(*castedMaterial, view);
 
-                        controller.Update();
-                        break;
-                    }
-                    else
-                    {
-                        MaterialView view(*material);
-                        MaterialController controller(*material, view);
+                controller.Update();
+            }
+            else
+            {
+                MaterialView view(*material);
+                MaterialController controller(*material, view);
 
-                        controller.Update();
-                        break;
-                    }
-                }
+                controller.Update();
             }
         }
 

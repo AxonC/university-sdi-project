@@ -85,8 +85,11 @@ namespace TrekStar
 
         void ProjectView::PresentMaterialsList()
         {
+            unsigned int counter = 0;
             for ( const auto & material: this->GetModel()->GetMaterials() )
             {
+                counter++;
+                std::cout << "[" << counter << "]: ";
                 MaterialView view(*material);
                 MaterialController controller(*material, view);
 
@@ -184,12 +187,7 @@ namespace TrekStar
 
         unsigned int ProjectView::GetMaterialSelection()
         {
-            unsigned int materialSelection;
-
-            std::cout << "Material ID: ";
-            std::cin >> materialSelection;
-
-            return materialSelection;
+            return TrekStar::Command::GetIndexInput(this->GetModel()->GetMaterials().size(), "Material ID");
         }
 
         ProjectInterface* ProjectView::GetModel()
