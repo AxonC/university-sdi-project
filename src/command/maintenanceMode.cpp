@@ -47,7 +47,7 @@ namespace TrekStar
                         int projectIndex = TrekStar::Command::GetIndexInput(projects.size(), "Project ID");
                         commandHandler.clearConsole();
 
-                        if ( commandInput == 3 )
+                        if ( commandInput == 2 )
                         {
                             TrekStar::Information::updateProject(projects, projectIndex);
                         }
