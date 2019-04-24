@@ -7,7 +7,7 @@ include_directories(${MY_SOURCE_DIR}/model ${MY_SOURCE_DIR}/controller ${MY_SOUR
 # models
 set(Bluray_Model model/material/Bluray.h model/material/Bluray.cpp)
 set(BoxSet_Model model/material/BoxSet.h model/material/BoxSet.cpp)
-set(DoubleSideDVD_Model model/material/DoubleSideDVD.h model/material/DoubleSideDVD.cpp)
+set(DoubleSideDVD_Model model/material/DoubleSideDVD.h model/material/DoubleSideDVD.cpp model/material/DoubleSideDVDInterface.h)
 set(DVD_Model model/material/DVD.h model/material/DVD.cpp model/material/DVDInterface.h)
 set(DVDSide_Model model/material/DVDSide.h model/material/DVDSide.cpp)
 set(Material_Model model/material/Material.h model/material/Material.cpp model/material/MaterialInterface.h)

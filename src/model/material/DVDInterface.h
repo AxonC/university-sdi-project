@@ -4,10 +4,6 @@
 #include <string>
 #include <map>
 
-#include "MaterialInterface.h"
-
-using KeyValueMap = std::map<std::string, std::string>;
-
 namespace TrekStar
 {
     namespace Material

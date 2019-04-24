@@ -2,6 +2,7 @@
 #define TREKSTAR_DOUBLESIDEDVD_H
 
 #include "DVD.h"
+#include "DoubleSideDVDInterface.h"
 
 namespace TrekStar
 {
@@ -18,7 +19,7 @@ namespace TrekStar
             std::vector<SerialisedDVDSide> sides;
         };
 
-        class DoubleSideDVD: public DVD
+        class DoubleSideDVD: public DVD, public DoubleSideDVDInterface
         {
         protected:
             DVDSide sideTwo;
@@ -29,6 +30,8 @@ namespace TrekStar
           void PopulateFromFile(const json &) override;
 
           std::vector<DVDSide> GetSides() const;
+          DVDSide GetSideOne() const override;
+          DVDSide GetSideTwo() const override;
           KeyValueMapVector GetPresentableDiskInformation() const;
 
           std::shared_ptr<SerialisedDoubleSideDVD> ExportToSerialised() const;

@@ -56,6 +56,16 @@ namespace TrekStar
             return {this->sideOne, this->sideTwo};
         }
 
+        DVDSide DoubleSideDVD::GetSideOne() const
+        {
+            return this->sideOne;
+        }
+
+        DVDSide DoubleSideDVD::GetSideTwo() const
+        {
+            return this->sideTwo;
+        }
+
         KeyValueMapVector DoubleSideDVD::GetPresentableDiskInformation() const
         {
             KeyValueMapVector information;
