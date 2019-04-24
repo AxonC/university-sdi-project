@@ -16,18 +16,18 @@ namespace TrekStar
 {
     namespace Information
     {
-        void updateProject(std::vector<TrekStar::Project::Project> & projects, int projectID)
+        void updateProject(std::vector<TrekStar::Project::Project> & projects, int projectIndex)
         {
-            TrekStar::Project::Project currentProject = projects.at(projectID);
+            TrekStar::Project::Project currentProject = projects.at(projectIndex);
 
             ProjectView view(currentProject);
             ProjectController controller(currentProject, view);
             controller.UpdateProject();
         }
 
-        void updateMaterials(std::vector<TrekStar::Project::Project> & projects, int projectID)
+        void updateMaterials(std::vector<TrekStar::Project::Project> & projects, int projectIndex)
         {
-            TrekStar::Project::Project currentProject = projects.at(projectID);
+            TrekStar::Project::Project currentProject = projects.at(projectIndex);
 
             ProjectView view(currentProject);
             ProjectController controller(currentProject, view);
