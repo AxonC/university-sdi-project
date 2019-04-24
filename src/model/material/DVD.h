@@ -34,7 +34,7 @@ namespace TrekStar
         public:
             DVD();
 
-            void PopulateFromFile(const json &);
+            void PopulateFromFile(const json &) override;
 
             std::string GetContent() const override;
             std::vector<std::string> GetAdditionalLanguageTracks() const;

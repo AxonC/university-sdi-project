@@ -24,13 +24,13 @@ namespace TrekStar {
             public:
                 VHS();
 
-            std::string GetAudioTrack();
-            void SetAudioTrack(const std::string &);
+                std::string GetAudioTrack();
+                void SetAudioTrack(const std::string &);
 
-            KeyValueMap GetPresentableInformation() const override;
-            std::shared_ptr<SerialisedVHS> ExportToSerialised() const;
+                KeyValueMap GetPresentableInformation() const override;
+                std::shared_ptr<SerialisedVHS> ExportToSerialised() const;
 
-            void PopulateFromFile(const json &) override;
+                void PopulateFromFile(const json &) override;
         };
 
         void to_json(json & j, const SerialisedVHS & serialisedVHS);

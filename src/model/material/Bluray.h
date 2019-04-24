@@ -21,8 +21,6 @@ namespace TrekStar
 
         class Bluray : public DVD
         {
-            private:
-
             public:
                 Bluray();
 
