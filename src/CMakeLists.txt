@@ -24,7 +24,9 @@ set(Project_View view/project/ProjectView.h view/project/ProjectView.cpp)
 set(Material_View view/material/MaterialView.h view/material/MaterialView.cpp)
 set(DVD_View view/material/DVDView.h view/material/DVDView.cpp)
 set(DoubleSideDVD_View view/material/DoubleSideDVDView.h view/material/DoubleSideDVDView.cpp)
-add_library(Views ${Base_View} ${Project_View} ${Material_View} ${DVD_View} ${DoubleSideDVD_View})
+set(BoxSet_View view/material/BoxSetView.h view/material/BoxSetView.cpp)
+set(VHS_View view/material/VHSView.h view/material/VHSView.cpp)
+add_library(Views ${Base_View} ${Project_View} ${Material_View} ${DVD_View} ${DoubleSideDVD_View} ${BoxSet_View} ${VHS_View})
 
 # controllers
 set(BaseController controller/BaseController.h controller/BaseController.cpp controller/ControllerInterface.h)
@@ -32,7 +34,9 @@ set(Project_Controller controller/project/ProjectController.h controller/project
 set(Material_Controller controller/material/MaterialController.h controller/material/MaterialController.cpp)
 set(DVD_Controller controller/material/DVDController.h controller/material/DVDController.cpp)
 set(DoubleSideDVD_Controller controller/material/DoubleSideDVDController.h controller/material/DoubleSideDVDController.cpp)
-add_library(Controllers ${BaseController} ${Project_Controller} ${Material_Controller} ${DVD_Controller} ${DoubleSideDVD_Controller})
+set(BoxSet_Controller controller/material/BoxSetController.h controller/material/BoxSetController.cpp)
+set(VHS_Controller controller/material/VHSController.h controller/material/VHSController.cpp)
+add_library(Controllers ${BaseController} ${Project_Controller} ${Material_Controller} ${DVD_Controller} ${DoubleSideDVD_Controller} ${BoxSet_Controller} ${VHS_Controller})
 
 # algorithms
 set(MergeSort algorithms/MergeSort.h algorithms/MergeSort.cpp)
