@@ -56,6 +56,11 @@ namespace TrekStar
 
         unsigned int GetIndexInput(unsigned int vectorSize, const std::string & name)
         {
+            if ( vectorSize < 1 )
+            {
+                return 0;
+            }
+
             unsigned int input = 0;
 
             while ( input < 1 || input > vectorSize )
