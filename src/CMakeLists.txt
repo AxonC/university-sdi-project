@@ -54,5 +54,5 @@ target_include_directories(structures INTERFACE structures/)
 
 include_directories(. lib/)
 
-add_executable(trekstar main.cpp lib/json.hpp pch.h)
+add_executable(trekstar main.cpp lib/nlohmann/json.hpp pch.h)
 target_link_libraries(trekstar Models Views Controllers Algorithms Functions structures)

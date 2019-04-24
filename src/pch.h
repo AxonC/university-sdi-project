@@ -13,7 +13,7 @@
 #include <memory>
 
 // THIRD PARTY
-#include <lib/json.hpp>
+#include <lib/nlohmann/json.hpp>
 #include <lib/spdlog/spdlog.h>
 
 #endif //TREKSTAR_PCH_H
