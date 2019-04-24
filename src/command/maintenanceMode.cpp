@@ -18,9 +18,10 @@ namespace TrekStar
                     {
                             {1, "Add Project"},
                             {2, "Update Project"},
-                            {3, "Update Project Materials"},
-                            {4, "Remove Project"},
-                            {5, "Cancel"}
+                            {3, "Remove Project"},
+                            {4, "Update Project Materials"},
+                            {5, "Remove Project Materials"},
+                            {6, "Cancel"}
                     },
                     "Maintenance Mode"
             );
@@ -38,7 +39,7 @@ namespace TrekStar
                     {
                         TrekStar::Information::addProject(projects);
                     }
-                    else if ( commandInput == 2 || commandInput == 3 )
+                    else
                     {
                         std::cout << std::string(80, '-') << std::endl;
                         TrekStar::Information::displayAllProjects(projects);
@@ -51,21 +52,18 @@ namespace TrekStar
                         {
                             TrekStar::Information::updateProject(projects, projectIndex);
                         }
-                        else
+                        else if ( commandInput == 3 )
+                        {
+                            projects.erase(projects.begin() + projectIndex);
+                        }
+                        else if ( commandInput == 4 )
                         {
                             TrekStar::Information::updateMaterials(projects, projectIndex);
                         }
-                    }
-                    else if ( commandInput == 4 )
-                    {
-                        std::cout << std::string(80, '-') << std::endl;
-                        TrekStar::Information::displayAllProjects(projects);
-                        std::cout << std::string(80, '-') << std::endl;
-
-                        int projectIndex = TrekStar::Command::GetIndexInput(projects.size(), "Project ID");
-                        commandHandler.clearConsole();
-
-                        projects.erase(projects.begin() + projectIndex);
+                        else
+                        {
+                            // TO DO: Remove Project Materials.
+                        }
                     }
                 }
                 else
