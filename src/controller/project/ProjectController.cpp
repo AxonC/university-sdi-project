@@ -95,6 +95,15 @@ namespace TrekStar
             }
         }
 
+        void ProjectController::RemoveMaterial()
+        {
+            this->GetView()->PresentMaterialsList();
+
+            auto material = this->GetModel()->GetMaterials().at(this->GetView()->GetMaterialSelection());
+
+            this->GetModel()->RemoveMaterial(material);
+        }
+
         void ProjectController::UpdateTitle()
         {
             this->GetModel()->SetTitle(this->GetView()->GetNewTitle());

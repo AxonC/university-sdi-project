@@ -75,7 +75,7 @@ namespace TrekStar
 
             void AddMaterials(const std::vector<std::shared_ptr<Material::Material>> & materials);
             bool AddMaterial(const std::shared_ptr<Material::Material> & material);
-            void RemoveMaterial(const std::shared_ptr<Material::Material> & material);
+            void RemoveMaterial(const std::shared_ptr<Material::Material> & material) override;
             bool CanAddMaterial() const;
 
             std::vector<std::shared_ptr<People::Crew>> GetCrew() const;

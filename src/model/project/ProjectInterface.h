@@ -28,6 +28,8 @@ namespace TrekStar
             virtual void SetReleased(const bool & released) = 0;
             virtual void SetPlayingInTheatres(const bool & playingInTheatres) = 0;
             virtual void SetKeyword(const unsigned int & keywordNo, const std::string & keyword) = 0;
+
+            virtual void RemoveMaterial(const std::shared_ptr<Material::Material> & material) = 0;
         };
     }
 }

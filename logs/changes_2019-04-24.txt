@@ -116,3 +116,8 @@
 [2019-04-24 18:22:50.572] [logger] [info] Material 0 was added to project A Great Movie
 [2019-04-24 18:22:50.572] [logger] [info] Material 0 was added to project A Great Movie
 [2019-04-24 18:22:50.572] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-24 19:07:18.657] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-24 19:07:18.658] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-24 19:07:18.658] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-24 19:07:18.658] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-24 19:07:32.466] [logger] [info] Material 0 was removed from project A Great Movie

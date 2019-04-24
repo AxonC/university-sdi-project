@@ -24,6 +24,7 @@ namespace TrekStar
             void UpdateAll();
 
             void UpdateMaterials();
+            void RemoveMaterial();
 
         private:
             ProjectInterface* GetModel();

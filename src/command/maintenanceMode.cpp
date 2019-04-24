@@ -73,7 +73,7 @@ namespace TrekStar
                         }
                         else
                         {
-                            // TO DO: Remove Project Materials.
+                            controller.RemoveMaterial();
                         }
                     }
                 }
