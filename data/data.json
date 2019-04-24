@@ -34,7 +34,7 @@
                 ],
                 "content": "big movie",
                 "format": "dvd",
-                "frameAspect": "16:9",
+                "frameAspect": "16:10",
                 "id": 0,
                 "language": "ENG",
                 "retailPrice": 9.99,

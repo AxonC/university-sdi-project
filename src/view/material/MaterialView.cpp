@@ -150,11 +150,11 @@ namespace TrekStar
 
             if ( currentPackaging.empty() )
             {
-                std::cout << "Subtitles: ";
+                std::cout << "Packaging: ";
             }
             else
             {
-                std::cout << "Subtitles [current: " << currentPackaging << "]: ";
+                std::cout << "Packaging [current: " << currentPackaging << "]: ";
             }
 
             return TrekStar::Command::GetStringInput();
