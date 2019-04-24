@@ -19,13 +19,14 @@ namespace TrekStar
                             {1, "Add Project"},
                             {2, "Update Project"},
                             {3, "Update Project Materials"},
-                            {4, "Cancel"}
+                            {4, "Remove Project"},
+                            {5, "Cancel"}
                     },
                     "Maintenance Mode"
             );
 
             int commandInput  = 0;
-            while ( commandInput != 4 )
+            while ( commandInput != 5 )
             {
                 commandHandler.displayCommands();
                 commandInput = commandHandler.getUserInput();
@@ -37,7 +38,7 @@ namespace TrekStar
                     {
                         TrekStar::Information::addProject(projects);
                     }
-                    else if ( commandInput == 2 )
+                    else if ( commandInput == 2 || commandInput == 3 )
                     {
                         std::cout << std::string(80, '-') << std::endl;
                         TrekStar::Information::displayAllProjects(projects);
@@ -46,18 +47,18 @@ namespace TrekStar
                         int projectID = TrekStar::Command::GetIndexInput(projects.size(), "Project ID");
                         commandHandler.clearConsole();
 
-                        TrekStar::Information::updateProject(projects, projectID);
+                        if ( commandInput == 3 )
+                        {
+                            TrekStar::Information::updateProject(projects, projectID);
+                        }
+                        else
+                        {
+                            TrekStar::Information::updateMaterials(projects, projectID);
+                        }
                     }
-                    else if ( commandInput == 3 )
+                    else if ( commandInput == 4 )
                     {
-                        std::cout << std::string(80, '-') << std::endl;
-                        TrekStar::Information::displayAllProjects(projects);
-                        std::cout << std::string(80, '-') << std::endl;
-
-                        int projectID = TrekStar::Command::GetIndexInput(projects.size(), "Project ID");
-                        commandHandler.clearConsole();
-
-                        TrekStar::Information::updateMaterials(projects, projectID);
+                        
                     }
                 }
                 else
