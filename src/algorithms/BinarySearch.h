@@ -8,7 +8,7 @@ namespace TrekStar
 {
     namespace Algorithms
     {
-        int binarySearch(std::vector<TrekStar::Project::Project> & list, std::string target);
+        unsigned int binarySearch(std::vector<TrekStar::Project::Project> & list, std::string target);
     }
 }
 

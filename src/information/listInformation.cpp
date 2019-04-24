@@ -127,15 +127,7 @@ namespace TrekStar
                     "List Materials"
             );
 
-            std::vector<std::shared_ptr<TrekStar::Material::Material>> materials;
-
-            for ( const auto & project: projects )
-            {
-                if ( project == projectNum)
-                {
-                    materials = project.GetMaterials();
-                }
-            }
+            std::vector<std::shared_ptr<TrekStar::Material::Material>> materials = projects.at(projectNum).GetMaterials();
 
             int commandInput = 0;
             int currentMaterial = 0;

@@ -4,7 +4,7 @@ namespace TrekStar
 {
     namespace Algorithms
     {
-        int binarySearch(std::vector<TrekStar::Project::Project> & list, std::string target)
+        unsigned int binarySearch(std::vector<TrekStar::Project::Project> & list, std::string target)
         {
             int result = -1;
             int low = 0;
@@ -19,7 +19,7 @@ namespace TrekStar
                 {
                     result = mid;
                 }
-                else if( list[mid] < target)
+                else if( list[mid] < target )
                 {
                     low = mid + 1;
                 }
