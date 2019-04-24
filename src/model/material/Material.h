@@ -1,10 +1,8 @@
 #ifndef TREKSTAR_MATERIAL_H
 #define TREKSTAR_MATERIAL_H
 
-#include <string>
-#include "../Model.h"
+#include "pch.h"
 #include "MaterialInterface.h"
-#include "../../lib/json.hpp"
 
 using json = nlohmann::json;
 using KeyValueMap = std::map<std::string, std::string>;
@@ -44,7 +42,7 @@ namespace TrekStar
             std::string packaging;
         public:
             Material() = default;
-            virtual ~Material() = default;
+            ~Material() override = default;
 
             virtual void PopulateFromFile(const json &) = 0;
 

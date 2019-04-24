@@ -1,8 +1,7 @@
 #ifndef TREKSTAR_DVDINTERFACE_H
 #define TREKSTAR_DVDINTERFACE_H
 
-#include <string>
-#include <map>
+#include "pch.h"
 
 namespace TrekStar
 {

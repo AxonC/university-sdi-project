@@ -1,11 +1,6 @@
 #ifndef TREKSTAR_DVDSIDE_H
 #define TREKSTAR_DVDSIDE_H
 
-#include <map>
-#include <string>
-#include <vector>
-#include "../../lib/json.hpp"
-
 using json = nlohmann::json;
 using StringVector = std::vector<std::string>;
 using KeyValueMap = std::map<std::string, std::string>;

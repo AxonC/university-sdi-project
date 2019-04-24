@@ -1,9 +1,6 @@
 #ifndef TREKSTAR_SEQUENTIALBROWSER_H
 #define TREKSTAR_SEQUENTIALBROWSER_H
 
-#include <string>
-#include <vector>
-
 namespace TrekStar
 {
     namespace Information

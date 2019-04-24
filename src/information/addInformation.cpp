@@ -1,23 +1,20 @@
-#include <iostream>
-
+#include "pch.h"
 #include "addInformation.h"
+
+#include "../model/project/Project.h"
 #include "../view/project/ProjectView.h"
 #include "../controller/project/ProjectController.h"
-
-using TrekStar::Project::Project;
-using TrekStar::Project::ProjectController;
-using TrekStar::Project::ProjectView;
 
 namespace TrekStar
 {
     namespace Information
     {
-        void addProject(std::vector<TrekStar::Project::Project> & projects)
+        void addProject(std::vector<Project::Project> & projects)
         {
-            TrekStar::Project::Project currentProject;
+            Project::Project currentProject;
 
-            ProjectView view(currentProject);
-            ProjectController controller = ProjectController(currentProject, view);
+            Project::ProjectView view(currentProject);
+            Project::ProjectController controller = Project::ProjectController(currentProject, view);
 
             controller.UpdateAll();
 

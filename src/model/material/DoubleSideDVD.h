@@ -1,9 +1,8 @@
 #ifndef TREKSTAR_DOUBLESIDEDVD_H
 #define TREKSTAR_DOUBLESIDEDVD_H
 
-#include "DVD.h"
 #include "DoubleSideDVDInterface.h"
-
+#include "DVD.h"
 namespace TrekStar
 {
     namespace Material

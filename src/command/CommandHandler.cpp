@@ -1,5 +1,4 @@
-#include <iostream>
-
+#include "pch.h"
 #include "CommandHandler.h"
 
 namespace TrekStar

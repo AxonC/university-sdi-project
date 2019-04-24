@@ -1,16 +1,13 @@
-#include <map>
-#include <string>
-#include <fstream>
-#include <iomanip>
-
+#include "pch.h"
 #include "saveInformation.h"
+
+#include "../model/project/Project.h"
+#include "../model/people/Crew.h"
 #include "../model/material/Material.h"
 #include "../model/material/DVD.h"
 #include "../model/material/DoubleSideDVD.h"
 #include "../model/material/BoxSet.h"
 #include "../model/material/VHS.h"
-
-#include "../lib/json.hpp"
 
 using json = nlohmann::json;
 
@@ -73,7 +70,7 @@ namespace TrekStar
                 json crewArray;
                 for ( const auto & crew: project.GetCrew() )
                 {
-                    crewArray.push_back(TrekStar::People::to_json(crew->ExportToSerialized()));
+                    crewArray.push_back(crew->ExportToSerialized());
                 }
 
                 currentProjectJSON["crew"] = crewArray;

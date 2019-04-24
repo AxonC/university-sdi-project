@@ -1,7 +1,4 @@
-#include <vector>
-#include <map>
-#include <iostream>
-#include <algorithm>
+#include "pch.h"
 
 #include "listInformation.h"
 #include "SequentialBrowser.h"

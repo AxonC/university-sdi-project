@@ -50,12 +50,14 @@ add_library(Functions ${File} ${Information} ${CommandHandler} ${UserInput} ${Vi
 
 # data structures
 add_library(structures INTERFACE)
-target_include_directories(structures INTERFACE structures/Stack.h)
-add_library(nlohmann_json INTERFACE)
-target_include_directories(nlohmann_json INTERFACE lib/json.hpp)
+target_include_directories(structures INTERFACE structures/)
+#add_library(nlohmann_json INTERFACE)
+#target_include_directories(nlohmann_json INTERFACE lib/json.hpp)
 
-include_directories(lib/)
+include_directories(. lib/)
 #target_include_directories(spdlog INTERFACE ${MY_SOURCE_DIR}/lib/spdlog/include/spdlog)
+#add_library(json SHARED lib/json.hpp)
+#set_target_properties(json PROPERTIES LINKER_LANGUAGE CXX)
 
-add_executable(trekstar main.cpp)
-target_link_libraries(trekstar Models Views Controllers Algorithms Functions structures nlohmann_json)
+add_executable(trekstar main.cpp lib/json.hpp pch.h)
+target_link_libraries(trekstar Models Views Controllers Algorithms Functions structures)

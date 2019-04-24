@@ -1,9 +1,6 @@
 #ifndef TREKSTAR_MATERIALINTERFACE_H
 #define TREKSTAR_MATERIALINTERFACE_H
 
-#include <string>
-#include <map>
-
 #include "../Model.h"
 
 using KeyValueMap = std::map<std::string, std::string>;
@@ -15,7 +12,7 @@ namespace TrekStar
      class MaterialInterface : public TrekStar::Model
      {
         public:
-            virtual ~MaterialInterface() = default;
+            ~MaterialInterface() override = default;
             virtual unsigned int GetId() const = 0;
             virtual std::string GetFormat() const = 0;
             virtual std::string GetAudioFormat() const = 0;
