@@ -45,7 +45,7 @@ add_library(Algorithms ${MergeSort} ${BinarySearch})
 
 # functions
 set(File file/fileOperations.h file/fileOperations.cpp)
-set(Information information/listInformation.h information/listInformation.cpp information/addInformation.h information/addInformation.cpp information/saveInformation.h information/saveInformation.cpp information/updateInformation.h information/updateInformation.cpp information/SequentialBrowser.h information/SequentialBrowser.cpp view/BaseView.cpp view/BaseView.h)
+set(Information information/listInformation.h information/listInformation.cpp information/saveInformation.h information/saveInformation.cpp information/SequentialBrowser.h information/SequentialBrowser.cpp)
 set(CommandHandler command/CommandHandler.h command/CommandHandler.cpp)
 set(UserInput command/userInput.h command/userInput.cpp)
 set(ViewMode command/viewMode.h command/viewMode.cpp)

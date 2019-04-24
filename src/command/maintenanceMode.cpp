@@ -3,10 +3,11 @@
 #include "maintenanceMode.h"
 #include "CommandHandler.h"
 #include "userInput.h"
+#include "../view/project/ProjectView.h"
+#include "../controller/project/ProjectController.h"
+#include "../view/material/MaterialView.h"
+#include "../controller/material/MaterialController.h"
 #include "../information/listInformation.h"
-#include "../information/addInformation.h"
-#include "../information/saveInformation.h"
-#include "../information/updateInformation.h"
 
 namespace TrekStar
 {
@@ -26,7 +27,7 @@ namespace TrekStar
                     "Maintenance Mode"
             );
 
-            int commandInput  = 0;
+            int commandInput = 0;
             while ( commandInput != 5 )
             {
                 commandHandler.displayCommands();
@@ -37,7 +38,14 @@ namespace TrekStar
                 {
                     if ( commandInput == 1 )
                     {
-                        TrekStar::Information::addProject(projects);
+                        TrekStar::Project::Project currentProject;
+
+                        TrekStar::Project::ProjectView view(currentProject);
+                        TrekStar::Project::ProjectController controller(currentProject, view);
+
+                        controller.UpdateAll();
+
+                        projects.push_back(currentProject);
                     }
                     else
                     {
@@ -48,9 +56,12 @@ namespace TrekStar
                         int projectIndex = TrekStar::Command::GetIndexInput(projects.size(), "Project ID");
                         commandHandler.clearConsole();
 
+                        TrekStar::Project::ProjectView view(projects.at(projectIndex));
+                        TrekStar::Project::ProjectController controller(projects.at(projectIndex), view);
+
                         if ( commandInput == 2 )
                         {
-                            TrekStar::Information::updateProject(projects, projectIndex);
+                            controller.UpdateProject();
                         }
                         else if ( commandInput == 3 )
                         {
@@ -58,7 +69,7 @@ namespace TrekStar
                         }
                         else if ( commandInput == 4 )
                         {
-                            TrekStar::Information::updateMaterials(projects, projectIndex);
+                            controller.UpdateMaterials();
                         }
                         else
                         {
