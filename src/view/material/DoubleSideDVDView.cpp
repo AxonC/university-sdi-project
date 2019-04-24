@@ -42,19 +42,34 @@ namespace TrekStar
             return commandInput;
         }
 
-        unsigned int DoubleSideDVDView::GetAdditionalLanguageTrackNo()
+        unsigned int DoubleSideDVDView::GetSideOneAdditionalLanguageTrackNo()
         {
-            return TrekStar::Command::GetIndexInput(this->GetModel()->GetAdditionalLanguageTracks().size(), "Additional Language Track");
+            return TrekStar::Command::GetIndexInput(this->GetModel()->GetSideOne().GetAdditionalLanguageTracks().size(), "Additional Language Track");
         }
 
-        unsigned int DoubleSideDVDView::GetAdditionalSubtitleTrackNo()
+        unsigned int DoubleSideDVDView::GetSideOneAdditionalSubtitleTrackNo()
         {
-            return TrekStar::Command::GetIndexInput(this->GetModel()->GetAdditionalLanguageTracks().size(), "Additional Subtitle Track");
+            return TrekStar::Command::GetIndexInput(this->GetModel()->GetSideOne().GetAdditionalSubtitleTracks().size(), "Additional Subtitle Track");
         }
 
-        unsigned int DoubleSideDVDView::GetBonusFeatureNo()
+        unsigned int DoubleSideDVDView::GetSideOneBonusFeatureNo()
         {
-            return TrekStar::Command::GetIndexInput(this->GetModel()->GetAdditionalLanguageTracks().size(), "Bonus Feature");
+            return TrekStar::Command::GetIndexInput(this->GetModel()->GetSideOne().GetBonusFeatures().size(), "Bonus Feature");
+        }
+
+        unsigned int DoubleSideDVDView::GetSideTwoAdditionalLanguageTrackNo()
+        {
+            return TrekStar::Command::GetIndexInput(this->GetModel()->GetSideOne().GetAdditionalLanguageTracks().size(), "Additional Language Track");
+        }
+
+        unsigned int DoubleSideDVDView::GetSideTwoAdditionalSubtitleTrackNo()
+        {
+            return TrekStar::Command::GetIndexInput(this->GetModel()->GetSideOne().GetAdditionalSubtitleTracks().size(), "Additional Subtitle Track");
+        }
+
+        unsigned int DoubleSideDVDView::GetSideTwoBonusFeatureNo()
+        {
+            return TrekStar::Command::GetIndexInput(this->GetModel()->GetSideOne().GetBonusFeatures().size(), "Bonus Feature");
         }
 
         void DoubleSideDVDView::PresentSideOneAdditionalLanguageTracks()

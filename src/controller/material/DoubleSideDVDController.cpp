@@ -15,7 +15,7 @@ namespace TrekStar
         {
             this->GetView()->PresentSideOneAdditionalLanguageTracks();
 
-            unsigned int additionalLanguageTrackNo = this->GetView()->GetAdditionalLanguageTrackNo();
+            unsigned int additionalLanguageTrackNo = this->GetView()->GetSideOneAdditionalLanguageTrackNo();
             this->GetModel()->SetSideOneAdditionalLanguageTrack(additionalLanguageTrackNo, this->GetView()->GetNewSideOneAdditionalLanguageTrack(additionalLanguageTrackNo));
         }
 
@@ -23,7 +23,7 @@ namespace TrekStar
         {
             this->GetView()->PresentSideOneAdditionalSubtitleTracks();
 
-            unsigned int additionalSubtitleTrackNo = this->GetView()->GetAdditionalSubtitleTrackNo();
+            unsigned int additionalSubtitleTrackNo = this->GetView()->GetSideOneAdditionalSubtitleTrackNo();
             this->GetModel()->SetSideOneAdditionalSubtitleTrack(additionalSubtitleTrackNo, this->GetView()->GetNewSideOneAdditionalSubtitleTrack(additionalSubtitleTrackNo));
         }
 
@@ -31,7 +31,7 @@ namespace TrekStar
         {
             this->GetView()->PresentSideOneBonusFeatures();
 
-            unsigned int additionalSubtitleTrackNo = this->GetView()->GetBonusFeatureNo();
+            unsigned int additionalSubtitleTrackNo = this->GetView()->GetSideOneBonusFeatureNo();
             this->GetModel()->SetSideOneAdditionalSubtitleTrack(additionalSubtitleTrackNo, this->GetView()->GetNewSideOneBonusFeature(additionalSubtitleTrackNo));
         }
 
@@ -44,7 +44,7 @@ namespace TrekStar
         {
             this->GetView()->PresentSideTwoAdditionalLanguageTracks();
 
-            unsigned int additionalLanguageTrackNo = this->GetView()->GetAdditionalLanguageTrackNo();
+            unsigned int additionalLanguageTrackNo = this->GetView()->GetSideTwoAdditionalLanguageTrackNo();
             this->GetModel()->SetSideTwoAdditionalLanguageTrack(additionalLanguageTrackNo, this->GetView()->GetNewSideTwoAdditionalLanguageTrack(additionalLanguageTrackNo));
         }
 
@@ -52,7 +52,7 @@ namespace TrekStar
         {
             this->GetView()->PresentSideTwoAdditionalSubtitleTracks();
 
-            unsigned int additionalSubtitleTrackNo = this->GetView()->GetAdditionalSubtitleTrackNo();
+            unsigned int additionalSubtitleTrackNo = this->GetView()->GetSideTwoAdditionalSubtitleTrackNo();
             this->GetModel()->SetSideTwoAdditionalSubtitleTrack(additionalSubtitleTrackNo, this->GetView()->GetNewSideTwoAdditionalSubtitleTrack(additionalSubtitleTrackNo));
         }
 
@@ -60,7 +60,7 @@ namespace TrekStar
         {
             this->GetView()->PresentSideTwoBonusFeatures();
 
-            unsigned int additionalSubtitleTrackNo = this->GetView()->GetBonusFeatureNo();
+            unsigned int additionalSubtitleTrackNo = this->GetView()->GetSideTwoBonusFeatureNo();
             this->GetModel()->SetSideTwoAdditionalSubtitleTrack(additionalSubtitleTrackNo, this->GetView()->GetNewSideTwoBonusFeature(additionalSubtitleTrackNo));
         }
 

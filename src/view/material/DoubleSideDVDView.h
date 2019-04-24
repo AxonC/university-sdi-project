@@ -16,9 +16,12 @@ namespace TrekStar
 
             unsigned int GetUpdateOption() override;
 
-            unsigned int GetAdditionalLanguageTrackNo();
-            unsigned int GetAdditionalSubtitleTrackNo();
-            unsigned int GetBonusFeatureNo();
+            unsigned int GetSideOneAdditionalLanguageTrackNo();
+            unsigned int GetSideOneAdditionalSubtitleTrackNo();
+            unsigned int GetSideOneBonusFeatureNo();
+            unsigned int GetSideTwoAdditionalLanguageTrackNo();
+            unsigned int GetSideTwoAdditionalSubtitleTrackNo();
+            unsigned int GetSideTwoBonusFeatureNo();
 
             void PresentSideOneAdditionalLanguageTracks();
             void PresentSideOneAdditionalSubtitleTracks();
