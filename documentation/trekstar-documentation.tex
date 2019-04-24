@@ -487,6 +487,8 @@
         Keywords}
       \end{itemize}
     \item
+      \protect\hyperlink{using-remove-project}{Using Remove Project}
+    \item
       \protect\hyperlink{using-update-project-materials}{Using Update
       Project Materials}
 
@@ -508,7 +510,8 @@
         \protect\hyperlink{edit-packaging}{Edit Packaging}
       \end{itemize}
     \item
-      \protect\hyperlink{using-remove-project}{Using Remove Project}
+      \protect\hyperlink{using-remove-project-materials}{Using Remove
+      Project Materials}
     \end{itemize}
   \end{itemize}
 \item
@@ -590,13 +593,13 @@ C}\label{callum-carney-n0741707---member-c}}
 \begin{itemize}
 \tightlist
 \item
-  Implementation of the data structure for the application
+  Implementation of the Console Interface for the application
 \item
   Component Diagrams
 \item
   Deployment Diagrams
 \item
-  An explanation of the search or sorting algorithm used
+  Screenshots of the User Interface
 \end{itemize}
 
 \hypertarget{matthew-robinson-n0724629---member-b}{%
@@ -606,13 +609,13 @@ B}\label{matthew-robinson-n0724629---member-b}}
 \begin{itemize}
 \tightlist
 \item
-  Implementation of the Console Interface for the application
+  Implementation of the search/sorting algorithm within the application
 \item
   Sequence diagram
 \item
   State machine diagram
 \item
-  Screenshots of the User Interface
+  An explanation of the search or sorting algorithm used
 \end{itemize}
 
 All other contributions have been completed as part of a group effort.
@@ -1275,6 +1278,14 @@ project\strut
 \begin{minipage}[t]{0.08\columnwidth}\centering
 3\strut
 \end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter remove
+project\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{using-remove-projects}{Removing Projects}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
 Inputting this value will cause the application to enter update project
 materials\strut
 \end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
@@ -1282,15 +1293,16 @@ materials\strut
 Materials}\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.08\columnwidth}\centering
-4\strut
+5\strut
 \end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
-Inputting this value will cause the application to enter remove
-project\strut
+Inputting this value will cause the application to enter remove project
+materials\strut
 \end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
-\protect\hyperlink{using-remove-project}{Removing Projects}\strut
+\protect\hyperlink{using-remove-project-materials}{Removing Project
+Materials}\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.08\columnwidth}\centering
-5\strut
+6\strut
 \end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
 Inputting this value will cause the application to navigate back to the
 main menu\strut
@@ -1588,7 +1600,7 @@ below:
 \centering
 \includegraphics{images/user-guide/maintenance-mode/update-project-select-keyword.png}
 \caption{Visual representation of the application showing the current
-Keywork identifiers}
+Keyword identifiers}
 \end{figure}
 
 Once you have inputted a valid keyword identifier you will be asked to
@@ -1599,6 +1611,34 @@ enter your new Keyword, any value is accepted.
 \includegraphics{images/user-guide/maintenance-mode/update-project-keyword.png}
 \caption{Visual representation of the application asking for a new
 keyword}
+\end{figure}
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options
+available to you, these are the options associated with
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
+you can find more information by reading the
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
+this user guide.
+
+\newpage
+
+\hypertarget{using-remove-project}{%
+\subsubsection{Using Remove Project}\label{using-remove-project}}
+
+Once you have entered the Remove Project functionality you will be asked
+to enter the following information:
+
+You only need to enter a Project ID, this must be a numeric value, you
+can find the accepted Project IDs above the input location, select an ID
+from this list.
+
+Once you submit this Project ID it will be removed from the database.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/remove-project-select-id.png}
+\caption{Visual representation of selecting a Project ID to update the
+project for}
 \end{figure}
 
 As you can see in Figure CHANGEFIGUREVALUE, there are more options
@@ -1898,10 +1938,40 @@ this user guide.
 
 \newpage
 
-\hypertarget{using-remove-project}{%
-\subsubsection{Using Remove Project}\label{using-remove-project}}
+\hypertarget{using-remove-project-materials}{%
+\subsubsection{Using Remove Project
+Materials}\label{using-remove-project-materials}}
 
-todo
+Once you have entered the Remove Project functionality you will be asked
+to enter the following information:
+
+Firstly, you need to enter a Project ID, this must be a numeric value,
+you can find the accepted Project IDs above the input location, select
+an ID from this list.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/remove-project-select-id.png}
+\caption{Visual representation of selecting a Project ID to select
+Material IDs for}
+\end{figure}
+
+Once you have selected a Project ID you will be presented with the
+associated Material IDs, you need to now select a Material ID from this
+list and it must be a numeric value.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/remove-project-materials-select-id.png}
+\caption{Visual representation of selecting a MaterialID to delete}
+\end{figure}
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options
+available to you, these are the options associated with
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
+you can find more information by reading the
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
+this user guide.
 
 \newpage
 
