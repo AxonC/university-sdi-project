@@ -98,7 +98,7 @@ namespace TrekStar
 
         double MaterialView::GetNewRetailPrice()
         {
-            int currentRetailPrice = this->GetModel()->GetRunTime();
+            int currentRetailPrice = this->GetModel()->GetRetailPrice();
 
             if ( currentRetailPrice == 0 )
             {
@@ -109,7 +109,7 @@ namespace TrekStar
                 std::cout << "Retail Price [current: " << currentRetailPrice << "]: ";
             }
 
-            return TrekStar::Command::GetIntInput();
+            return TrekStar::Command::GetDoubleInput();
         }
 
         std::string MaterialView::GetNewSubtitles()

@@ -85,7 +85,7 @@ namespace TrekStar
             void SetKeyword(const unsigned int & keywordNo, const std::string & keyword) override;
 
             void AddMaterials(const std::vector<std::shared_ptr<Material::Material>> & materials);
-            bool AddMaterial(const std::shared_ptr<Material::Material> & material);
+            void AddMaterial(const std::shared_ptr<Material::Material> & material) override;
             void RemoveMaterial(const std::shared_ptr<Material::Material> & material) override;
             bool CanAddMaterial() const;
 

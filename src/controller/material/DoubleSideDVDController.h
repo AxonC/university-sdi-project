@@ -29,6 +29,7 @@ namespace TrekStar
             DoubleSideDVDController(DoubleSideDVD & model, DoubleSideDVDView & view);
 
             void Update() override;
+            void UpdateAll() override;
         };
     }
 }

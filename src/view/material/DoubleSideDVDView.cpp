@@ -150,19 +150,49 @@ namespace TrekStar
 
         std::string DoubleSideDVDView::GetNewSideOneAdditionalLanguageTrack(const unsigned int & additionalLanguageTrackNo)
         {
-            std::cout << "Additional Language Track #" << additionalLanguageTrackNo + 1 << " [current: " << this->GetModel()->GetSideOne().GetAdditionalLanguageTracks().at(additionalLanguageTrackNo) << "]: ";
+            std::vector<std::string> currentAdditionalLanguageTracks = this->GetModel()->GetSideOne().GetAdditionalLanguageTracks();
+
+            if ( currentAdditionalLanguageTracks.empty() )
+            {
+                std::cout << "Side One Additional Language Track #: ";
+            }
+            else
+            {
+                std::cout << "Side One Additional Language Track #" << additionalLanguageTrackNo + 1 << " [current: " << currentAdditionalLanguageTracks.at(additionalLanguageTrackNo) << "]: ";
+            }
+
             return TrekStar::Command::GetStringInput();
         }
 
         std::string DoubleSideDVDView::GetNewSideOneAdditionalSubtitleTrack(const unsigned int & additionalSubtitleTrackNo)
         {
-            std::cout << "Additional Subtitle Track #" << additionalSubtitleTrackNo + 1 << " [current: " << this->GetModel()->GetSideOne().GetAdditionalSubtitleTracks().at(additionalSubtitleTrackNo) << "]: ";
+            std::vector<std::string> currentAdditionalSubtitleTracks = this->GetModel()->GetSideOne().GetAdditionalSubtitleTracks();
+
+            if ( currentAdditionalSubtitleTracks.empty() )
+            {
+                std::cout << "Side One Additional Subtitle Track #: ";
+            }
+            else
+            {
+                std::cout << "Side One Additional Subtitle Track #" << additionalSubtitleTrackNo + 1 << " [current: " << currentAdditionalSubtitleTracks.at(additionalSubtitleTrackNo) << "]: ";
+            }
+
             return TrekStar::Command::GetStringInput();
         }
 
         std::string DoubleSideDVDView::GetNewSideOneBonusFeature(const unsigned int & bonusFeatureNo)
         {
-            std::cout << "Bonus Feature #" << bonusFeatureNo + 1 << " [current: " << this->GetModel()->GetSideOne().GetBonusFeatures().at(bonusFeatureNo) << "]: ";
+            std::vector<std::string> currentBonusFeatures = this->GetModel()->GetSideOne().GetBonusFeatures();
+
+            if ( currentBonusFeatures.empty() )
+            {
+                std::cout << "Side One Bonus Feature #: ";
+            }
+            else
+            {
+                std::cout << "Side One Bonus Feature Track #" << bonusFeatureNo + 1 << " [current: " << currentBonusFeatures.at(bonusFeatureNo) << "]: ";
+            }
+
             return TrekStar::Command::GetStringInput();
         }
 
@@ -184,19 +214,49 @@ namespace TrekStar
 
         std::string DoubleSideDVDView::GetNewSideTwoAdditionalLanguageTrack(const unsigned int & additionalLanguageTrackNo)
         {
-            std::cout << "Additional Language Track #" << additionalLanguageTrackNo + 1 << " [current: " << this->GetModel()->GetSideTwo().GetAdditionalLanguageTracks().at(additionalLanguageTrackNo) << "]: ";
+            std::vector<std::string> currentAdditionalLanguageTracks = this->GetModel()->GetSideTwo().GetAdditionalLanguageTracks();
+
+            if ( currentAdditionalLanguageTracks.empty() )
+            {
+                std::cout << "Side Two Additional Language Track #: ";
+            }
+            else
+            {
+                std::cout << "Side Two Additional Language Track #" << additionalLanguageTrackNo + 1 << " [current: " << currentAdditionalLanguageTracks.at(additionalLanguageTrackNo) << "]: ";
+            }
+
             return TrekStar::Command::GetStringInput();
         }
 
         std::string DoubleSideDVDView::GetNewSideTwoAdditionalSubtitleTrack(const unsigned int & additionalSubtitleTrackNo)
         {
-            std::cout << "Additional Subtitle Track #" << additionalSubtitleTrackNo + 1 << " [current: " << this->GetModel()->GetSideTwo().GetAdditionalSubtitleTracks().at(additionalSubtitleTrackNo) << "]: ";
+            std::vector<std::string> currentAdditionalSubtitleTracks = this->GetModel()->GetSideTwo().GetAdditionalSubtitleTracks();
+
+            if ( currentAdditionalSubtitleTracks.empty() )
+            {
+                std::cout << "Side Two Additional Subtitle Track #: ";
+            }
+            else
+            {
+                std::cout << "Side Two Additional Subtitle Track #" << additionalSubtitleTrackNo + 1 << " [current: " << currentAdditionalSubtitleTracks.at(additionalSubtitleTrackNo) << "]: ";
+            }
+
             return TrekStar::Command::GetStringInput();
         }
 
         std::string DoubleSideDVDView::GetNewSideTwoBonusFeature(const unsigned int & bonusFeatureNo)
         {
-            std::cout << "Bonus Feature #" << bonusFeatureNo + 1 << " [current: " << this->GetModel()->GetSideTwo().GetBonusFeatures().at(bonusFeatureNo) << "]: ";
+            std::vector<std::string> currentBonusFeatures = this->GetModel()->GetSideTwo().GetBonusFeatures();
+
+            if ( currentBonusFeatures.empty() )
+            {
+                std::cout << "Side Two Bonus Feature #: ";
+            }
+            else
+            {
+                std::cout << "Side Two Bonus Feature Track #" << bonusFeatureNo + 1 << " [current: " << currentBonusFeatures.at(bonusFeatureNo) << "]: ";
+            }
+
             return TrekStar::Command::GetStringInput();
         }
 

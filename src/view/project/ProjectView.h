@@ -30,6 +30,7 @@ namespace TrekStar
             bool GetNewPlayingInTheatres();
             unsigned int GetKeywordNo();
             std::string GetNewKeyword(const unsigned int & keywordNo);
+            std::string GetNewMaterialFormat();
 
             unsigned int GetUpdateOption();
             unsigned int GetMaterialSelection();

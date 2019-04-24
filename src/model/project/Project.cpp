@@ -118,7 +118,7 @@ namespace TrekStar
             }
 
             std::string materialFormat;
-            for ( const auto &material: materials )
+            for ( const auto & material: materials )
             {
                 this->AddMaterialFormat(material->GetFormat());
                 this->materials.push_back(material);
@@ -126,18 +126,16 @@ namespace TrekStar
             }
         }
 
-        bool Project::AddMaterial(const std::shared_ptr<Material::Material> & material)
+        void Project::AddMaterial(const std::shared_ptr<Material::Material> & material)
         {
             if ( !this->CanAddMaterial() )
             {
-                return false;
+                throw std::domain_error("Material cannot be added.");
             }
 
             this->AddMaterialFormat(material->GetFormat());
             this->materials.push_back(material);
             spdlog::get("logger")->info("Material " + std::to_string(material->GetId()) + " was added to project " + this->GetTitle());
-
-            return true;
         }
 
         void Project::RemoveMaterial(const std::shared_ptr<Material::Material> & material)

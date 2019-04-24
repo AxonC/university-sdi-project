@@ -164,6 +164,12 @@ namespace TrekStar
             return TrekStar::Command::GetStringInput();
         }
 
+        std::string ProjectView::GetNewMaterialFormat()
+        {
+            std::cout << "Material Format: ";
+            return TrekStar::Command::GetStringInput();
+        }
+
         unsigned int ProjectView::GetUpdateOption()
         {
             TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (

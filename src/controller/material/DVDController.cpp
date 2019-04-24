@@ -81,6 +81,15 @@ namespace TrekStar
             }
         }
 
+        void DVDController::UpdateAll()
+        {
+            MaterialController::UpdateAll();
+            this->UpdateContent();
+            this->UpdateAdditionalLanguageTracks();
+            this->UpdateAdditionalSubtitleTracks();
+            this->UpdateBonusFeatures();
+        }
+
         DVDView* DVDController::GetView()
         {
             return dynamic_cast<DVDView*>(MaterialController::GetView());

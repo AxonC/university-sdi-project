@@ -100,19 +100,49 @@ namespace TrekStar
 
         std::string DVDView::GetNewAdditionalLanguageTrack(const unsigned int & additionalLanguageTrackNo)
         {
-            std::cout << "Additional Language Track #" << additionalLanguageTrackNo + 1 << " [current: " << this->GetModel()->GetAdditionalLanguageTracks().at(additionalLanguageTrackNo) << "]: ";
+            std::vector<std::string> currentAdditionalLanguageTracks = this->GetModel()->GetAdditionalLanguageTracks();
+
+            if ( currentAdditionalLanguageTracks.empty() )
+            {
+                std::cout << "Additional Language Track #: ";
+            }
+            else
+            {
+                std::cout << "Additional Language Track #" << additionalLanguageTrackNo + 1 << " [current: " << currentAdditionalLanguageTracks.at(additionalLanguageTrackNo) << "]: ";
+            }
+
             return TrekStar::Command::GetStringInput();
         }
 
         std::string DVDView::GetNewAdditionalSubtitleTrack(const unsigned int & additionalSubtitleTrackNo)
         {
-            std::cout << "Additional Subtitle Track #" << additionalSubtitleTrackNo + 1 << " [current: " << this->GetModel()->GetAdditionalSubtitleTracks().at(additionalSubtitleTrackNo) << "]: ";
+            std::vector<std::string> currentAdditionalSubtitleTracks = this->GetModel()->GetAdditionalSubtitleTracks();
+
+            if ( currentAdditionalSubtitleTracks.empty() )
+            {
+                std::cout << "Additional Subtitle Track #: ";
+            }
+            else
+            {
+                std::cout << "Additional Subtitle Track #" << additionalSubtitleTrackNo + 1 << " [current: " << currentAdditionalSubtitleTracks.at(additionalSubtitleTrackNo) << "]: ";
+            }
+
             return TrekStar::Command::GetStringInput();
         }
 
         std::string DVDView::GetNewBonusFeature(const unsigned int & bonusFeatureNo)
         {
-            std::cout << "Bonus Feature #" << bonusFeatureNo + 1 << " [current: " << this->GetModel()->GetAdditionalSubtitleTracks().at(bonusFeatureNo) << "]: ";
+            std::vector<std::string> currentBonusFeatures = this->GetModel()->GetBonusFeatures();
+
+            if ( currentBonusFeatures.empty() )
+            {
+                std::cout << "Bonus Feature #: ";
+            }
+            else
+            {
+                std::cout << "Bonus Feature #" << bonusFeatureNo + 1 << " [current: " << currentBonusFeatures.at(bonusFeatureNo) << "]: ";
+            }
+
             return TrekStar::Command::GetStringInput();
         }
 

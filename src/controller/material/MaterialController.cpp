@@ -52,6 +52,17 @@ namespace TrekStar
             }
         }
 
+        void MaterialController::UpdateAll()
+        {
+            this->UpdateAudioFormat();
+            this->UpdateRunTime();
+            this->UpdateLanguage();
+            this->UpdateRetailPrice();
+            this->UpdateSubtitles();
+            this->UpdateFrameAspect();
+            this->UpdatePackaging();
+        }
+
         MaterialInterface* MaterialController::GetModel()
         {
             return this->model;

@@ -120,6 +120,19 @@ namespace TrekStar
             }
         }
 
+        void DoubleSideDVDController::UpdateAll()
+        {
+            MaterialController::UpdateAll();
+            this->UpdateSideOneContent();
+            this->UpdateSideOneAdditionalLanguageTracks();
+            this->UpdateSideOneAdditionalSubtitleTracks();
+            this->UpdateSideOneBonusFeatures();
+            this->UpdateSideTwoContent();
+            this->UpdateSideTwoAdditionalSubtitleTracks();
+            this->UpdateSideTwoAdditionalLanguageTracks();
+            this->UpdateSideTwoBonusFeatures();
+        }
+
         DoubleSideDVDView* DoubleSideDVDController::GetView()
         {
             return dynamic_cast<DoubleSideDVDView*>(MaterialController::GetView());

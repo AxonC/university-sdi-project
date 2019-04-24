@@ -36,6 +36,13 @@ namespace TrekStar
             return input;
         }
 
+        double GetDoubleInput()
+        {
+            double input;
+            std::cin >> input;
+            return input;
+        }
+
         std::vector<std::string> GetStringVectorInput(unsigned int noOfElements, std::string name)
         {
             std::vector<std::string> input;

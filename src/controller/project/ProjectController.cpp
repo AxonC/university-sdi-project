@@ -4,6 +4,7 @@
 #include "../material/MaterialController.h"
 #include "../material/DVDController.h"
 #include "../material/DoubleSideDVDController.h"
+#include "../../model/material/MaterialFactory.h"
 
 using TrekStar::Material::MaterialView;
 using TrekStar::Material::MaterialController;
@@ -64,6 +65,41 @@ namespace TrekStar
             this->UpdateSummary();
             this->UpdateReleased();
             this->UpdatePlayingInTheatres();
+        }
+
+        void ProjectController::AddMaterial()
+        {
+            std::shared_ptr<Material::Material> material = nullptr;
+
+//            while ( currentMaterial == nullptr )
+//            {
+                std::string format = this->GetView()->GetNewMaterialFormat();
+                material = Material::MaterialFactory::Create(format);
+            //}
+
+            this->GetModel()->AddMaterial(material);
+
+            if ( auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::DoubleSideDVD>(material) )
+            {
+                DoubleSideDVDView view(*castedMaterial);
+                DoubleSideDVDController controller(*castedMaterial, view);
+
+                controller.UpdateAll();
+            }
+            else if ( auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::DVD>(material) )
+            {
+                DVDView view(*castedMaterial);
+                DVDController controller(*castedMaterial, view);
+
+                controller.UpdateAll();
+            }
+            else
+            {
+                MaterialView view(*material);
+                MaterialController controller(*material, view);
+
+                controller.UpdateAll();
+            }
         }
 
         void ProjectController::UpdateMaterials()

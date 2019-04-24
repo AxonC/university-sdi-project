@@ -85,16 +85,31 @@ namespace TrekStar
 
         void DVDSide::SetAdditionalLanguageTrack(unsigned int index, const std::string & languageTrack)
         {
+            if ( index >= this->additionalLanguageTracks.size() )
+            {
+                this->additionalLanguageTracks.resize(index + 1);
+            }
+
             this->additionalLanguageTracks.at(index) = languageTrack;
         }
 
         void DVDSide::SetAdditionalSubtitleTrack(unsigned int index, const std::string & subtitleTrack)
         {
+            if ( index >= this->additionalSubtitleTracks.size() )
+            {
+                this->additionalSubtitleTracks.resize(index + 1);
+            }
+
             this->additionalSubtitleTracks.at(index) = subtitleTrack;
         }
 
         void DVDSide::SetBonusFeature(unsigned int index, const std::string & bonusFeature)
         {
+            if ( index >= this->bonusFeatures.size() )
+            {
+                this->bonusFeatures.resize(index + 1);
+            }
+
             this->bonusFeatures.at(index) = bonusFeature;
         }
 

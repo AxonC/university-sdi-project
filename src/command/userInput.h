@@ -11,6 +11,7 @@ namespace TrekStar
         std::string GetStringInput();
         bool GetBoolInput();
         int GetIntInput();
+        double GetDoubleInput();
         std::vector<std::string> GetStringVectorInput(unsigned int noOfElements, std::string name);
         unsigned int GetIndexInput(unsigned int vectorSize, const std::string & name);
     }

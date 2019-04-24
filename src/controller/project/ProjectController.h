@@ -23,6 +23,7 @@ namespace TrekStar
             void UpdateProject();
             void UpdateAll();
 
+            void AddMaterial();
             void UpdateMaterials();
             void RemoveMaterial();
 
