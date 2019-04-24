@@ -56,6 +56,7 @@ titlepage-rule-height: 1
 			- [Edit Released](#edit-released)
 			- [Edit Playing In Theaters](#edit-playing-in-theaters)
 			- [Edit Existing Keywords](#edit-existing-keywords)
+		- [Using Remove Project](#using-remove-project)
 		- [Using Update Project Materials](#using-update-project-materials)
 			- [Edit Audio Format](#edit-audio-format)
 			- [Edit Run Time](#edit-run-time)
@@ -64,7 +65,7 @@ titlepage-rule-height: 1
 			- [Edit Subtitles](#edit-subtitles)
 			- [Edit Frame Aspect](#edit-frame-aspect)
 			- [Edit Packaging](#edit-packaging)
-		- [Using Remove Project](#using-remove-project)
+		- [Using Remove Project Materials](#using-remove-project-materials)
 - [Conclusion](#conclusion)
 - [Appendix](#appendix)
 	- [Managing group work](#managing-group-work)
@@ -75,7 +76,6 @@ titlepage-rule-height: 1
 # Todo - **_remove me before submission pls_**
 
 ## User Guide
-  - [Using Maintenance Mode](#using-maintenance-mode) requires screenshot of the maintenance main menu when remove project is added.
   - User guide details required for when the application is able to manage crew and materials/projects fully.
   - Add back in image that shows keywords when adding a project when this is reimplemented.
   - Change all figure values where text is CHANGEFIGUREVALUE once all images added.
@@ -94,16 +94,16 @@ titlepage-rule-height: 1
 * An explanation of the internal data structures used and the reason for the choices.
   
 ## Callum Carney (N0741707) - Member C
-* Implementation of the data structure for the application
+* Implementation of the Console Interface for the application
 * Component Diagrams
 * Deployment Diagrams
-* An explanation of the search or sorting algorithm used
+* Screenshots of the User Interface
 
 ## Matthew Robinson (N0724629) - Member B
-* Implementation of the Console Interface for the application
+* Implementation of the search/sorting algorithm within the application
 * Sequence diagram
 * State machine diagram
-* Screenshots of the User Interface
+* An explanation of the search or sorting algorithm used
 
 All other contributions have been completed as part of a group effort.
 
@@ -355,7 +355,7 @@ As you can see in Figure 10, there are more options available to you, these opti
 
 Once you have reached the Maintenance Mode page you will be presented with the following screen
 
-![Visual representation of Maintenance Mode](images/user-guide/view-mode/using-maintenance-mode.png)
+![Visual representation of Maintenance Mode](images/user-guide/main-menu/using-maintenance-mode.png)
 
 Once on this screen, you can use the following keyboard inputs to navigate around maintenance mode, to find out more about each feature, click the associated information link.
 
@@ -363,9 +363,10 @@ Once on this screen, you can use the following keyboard inputs to navigate aroun
 | :----------: | ------------------------------------------------------------------------- | ---------------------------------------------- |
 | 1     | Inputting this value will cause the application to enter add project             | [Adding Projects](#using-add-project)       |
 | 2     | Inputting this value will cause the application to enter update project | [Updating Projects](#using-update-project) |
-| 3     | Inputting this value will cause the application to enter update project materials| [Updating Project Materials](#using-update-project-materials) |
-| 4     | Inputting this value will cause the application to enter remove project | [Removing Projects](#using-remove-project) |
-| 5     | Inputting this value will cause the application to navigate back to the main menu  | [Main Menu](#using-the-main-menu)         |
+| 3     | Inputting this value will cause the application to enter remove project | [Removing Projects](#using-remove-projects) |
+| 4     | Inputting this value will cause the application to enter update project materials| [Updating Project Materials](#using-update-project-materials) |
+| 5     | Inputting this value will cause the application to enter remove project materials | [Removing Project Materials](#using-remove-project-materials) |
+| 6     | Inputting this value will cause the application to navigate back to the main menu  | [Main Menu](#using-the-main-menu)         |
 
 \newpage
 
@@ -477,13 +478,28 @@ Once you have entered the Edit Existing Keywords functionality you will be asked
 
 You need to enter the keyword identifier you wish to update, you can find the identifier in the provided list, an example of this can be seen below:
 
-![Visual representation of the application showing the current Keywork identifiers](images/user-guide/maintenance-mode/update-project-select-keyword.png)
+![Visual representation of the application showing the current Keyword identifiers](images/user-guide/maintenance-mode/update-project-select-keyword.png)
 
 Once you have inputted a valid keyword identifier you will be asked to enter your new Keyword, any value is accepted.
 
 ![Visual representation of the application asking for a new keyword](images/user-guide/maintenance-mode/update-project-keyword.png)
 
 As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+
+\newpage
+
+### Using Remove Project
+
+Once you have entered the Remove Project functionality you will be asked to enter the following information:
+
+You only need to enter a Project ID, this must be a numeric value, you can find the accepted Project IDs above the input location, select an ID from this list.
+
+Once you submit this Project ID it will be removed from the database.
+
+![Visual representation of selecting a Project ID to update the project for](images/user-guide/maintenance-mode/remove-project-select-id.png)
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+
 
 \newpage
 
@@ -598,11 +614,22 @@ As you can see in Figure CHANGEFIGUREVALUE, there are more options available to 
 
 \newpage
 
-### Using Remove Project
+### Using Remove Project Materials
 
-todo
+Once you have entered the Remove Project functionality you will be asked to enter the following information:
+
+Firstly, you need to enter a Project ID, this must be a numeric value, you can find the accepted Project IDs above the input location, select an ID from this list.
+
+![Visual representation of selecting a Project ID to select Material IDs for](images/user-guide/maintenance-mode/remove-project-select-id.png)
+
+Once you have selected a Project ID you will be presented with the associated Material IDs, you need to now select a Material ID from this list and it must be a numeric value.
+
+![Visual representation of selecting a MaterialID to delete](images/user-guide/maintenance-mode/remove-project-materials-select-id.png)
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
 \newpage
+
 
 # Conclusion
 
