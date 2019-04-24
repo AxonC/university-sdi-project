@@ -130,7 +130,7 @@ namespace TrekStar
 
         std::string MaterialView::GetNewFrameAspect()
         {
-            std::string currentFrameAspect = this->GetModel()->GetSubtitles();
+            std::string currentFrameAspect = this->GetModel()->GetFrameAspect();
 
             if ( currentFrameAspect.empty() )
             {
