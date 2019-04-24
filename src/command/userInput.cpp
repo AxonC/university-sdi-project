@@ -60,7 +60,7 @@ namespace TrekStar
 
             while ( input < 1 || input > vectorSize )
             {
-                std::cout << "Keyword # [1 - " << vectorSize << "]: ";
+                std::cout << name << " [1 - " << vectorSize << "]: ";
                 std::cin >> input;
             }
 

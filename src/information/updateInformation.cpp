@@ -48,31 +48,6 @@ namespace TrekStar
             }
 
             controller.UpdateMaterials();
-
-//            commandHandler.displayCommands();
-//            int commandInput = commandHandler.getUserInput();
-//            commandHandler.clearConsole();
-//
-//            switch ( commandInput )
-//            {
-//                case 1:
-//                    controller.UpdateTitle();
-//                    break;
-//                case 2:
-//                    controller.UpdateSummary();
-//                    break;
-//                case 3:
-//                    controller.UpdateReleased();
-//                    break;
-//                case 4:
-//                    controller.UpdatePlayingInTheatres();
-//                    break;
-//                case 5:
-//                    controller.UpdateKeyword();
-//                    break;
-//                default:
-//                    break;
-//            }
         }
     }
 }
