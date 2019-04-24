@@ -25,16 +25,28 @@ namespace TrekStar
             DVDSide sideTwo;
 
         public:
-          DoubleSideDVD() = default;
+            DoubleSideDVD() = default;
 
-          void PopulateFromFile(const json &) override;
+            void PopulateFromFile(const json &) override;
 
-          std::vector<DVDSide> GetSides() const;
-          DVDSide GetSideOne() const override;
-          DVDSide GetSideTwo() const override;
-          KeyValueMapVector GetPresentableDiskInformation() const;
+            std::vector<DVDSide> GetSides() const;
+            DVDSide GetSideOne() const override;
+            DVDSide GetSideTwo() const override;
+            KeyValueMapVector GetPresentableDiskInformation() const;
 
-          std::shared_ptr<SerialisedDoubleSideDVD> ExportToSerialised() const;
+
+
+            void SetSideOneContent(const std::string & content);
+            void SetSideOneAdditionalLanguageTrack(unsigned int index, const std::string & languageTrack);
+            void SetSideOneAdditionalSubtitleTrack(unsigned int index, const std::string & subtitleTrack);
+            void SetSideOneBonusFeature(unsigned int index, const std::string & bonusFeature);
+
+            void SetSideTwoContent(const std::string & content);
+            void SetSideTwoAdditionalLanguageTrack(unsigned int index, const std::string & languageTrack);
+            void SetSideTwoAdditionalSubtitleTrack(unsigned int index, const std::string & subtitleTrack);
+            void SetSideTwoBonusFeature(unsigned int index, const std::string & bonusFeature);
+
+            std::shared_ptr<SerialisedDoubleSideDVD> ExportToSerialised() const;
         };
 
         void to_json(json & j, const SerialisedDoubleSideDVD & serialisedDoubleSideDVD);

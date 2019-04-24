@@ -81,6 +81,46 @@ namespace TrekStar
             return information;
         }
 
+        void DoubleSideDVD::SetSideOneContent(const std::string & content)
+        {
+            this->sideOne.SetContent(content);
+        }
+
+        void DoubleSideDVD::SetSideOneAdditionalLanguageTrack(unsigned int index, const std::string & languageTrack)
+        {
+            this->sideOne.SetAdditionalLanguageTrack(index, languageTrack);
+        }
+
+        void DoubleSideDVD::SetSideOneAdditionalSubtitleTrack(unsigned int index, const std::string & subtitleTrack)
+        {
+            this->sideOne.SetAdditionalSubtitleTrack(index, subtitleTrack);
+        }
+
+        void DoubleSideDVD::SetSideOneBonusFeature(unsigned int index, const std::string & bonusFeature)
+        {
+            this->sideOne.SetBonusFeature(index, bonusFeature);
+        }
+
+        void DoubleSideDVD::SetSideTwoContent(const std::string & content)
+        {
+            this->sideTwo.SetContent(content);
+        }
+
+        void DoubleSideDVD::SetSideTwoAdditionalLanguageTrack(unsigned int index, const std::string & languageTrack)
+        {
+            this->sideTwo.SetAdditionalLanguageTrack(index, languageTrack);
+        }
+
+        void DoubleSideDVD::SetSideTwoAdditionalSubtitleTrack(unsigned int index, const std::string & subtitleTrack)
+        {
+            this->sideTwo.SetAdditionalSubtitleTrack(index, subtitleTrack);
+        }
+
+        void DoubleSideDVD::SetSideTwoBonusFeature(unsigned int index, const std::string & bonusFeature)
+        {
+            this->sideTwo.SetBonusFeature(index, bonusFeature);
+        }
+
         std::shared_ptr<SerialisedDoubleSideDVD> DoubleSideDVD::ExportToSerialised() const
         {
             std::shared_ptr<SerialisedMaterial> serialisedMaterial = Material::ExportToSerialised();

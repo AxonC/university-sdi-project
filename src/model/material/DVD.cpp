@@ -82,11 +82,6 @@ namespace TrekStar
             return information;
         }
 
-        void DVD::SetContent(const std::string & content)
-        {
-            this->sideOne.SetContent(content);
-        }
-
         void DVD::SetAdditionalLanguageTracks(const std::vector<std::string> & additionalLanguageTracks)
         {
             this->sideOne.SetAdditionalLanguageTracks(additionalLanguageTracks);
@@ -100,6 +95,11 @@ namespace TrekStar
         void DVD::SetBonusFeatures(const std::vector<std::string> & bonusFeatures)
         {
             this->sideOne.SetBonusFeatures(bonusFeatures);
+        }
+
+        void DVD::SetContent(const std::string & content)
+        {
+            this->sideOne.SetContent(content);
         }
 
         void DVD::SetAdditionalLanguageTrack(unsigned int index, const std::string & languageTrack)

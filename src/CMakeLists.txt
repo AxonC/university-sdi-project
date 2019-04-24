@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 11)
 include_directories(${MY_SOURCE_DIR}/model ${MY_SOURCE_DIR}/controller ${MY_SOURCE_DIR}/view ${MY_SOURCE_DIR}/structures ${MY_SOURCE_DIR}/file ${MY_SOURCE_DIR}/information)
 
 # models
+set(Base_Model model/Model.h model/Model.cpp)
 set(Bluray_Model model/material/Bluray.h model/material/Bluray.cpp)
 set(BoxSet_Model model/material/BoxSet.h model/material/BoxSet.cpp)
 set(DoubleSideDVD_Model model/material/DoubleSideDVD.h model/material/DoubleSideDVD.cpp model/material/DoubleSideDVDInterface.h)
@@ -15,7 +16,6 @@ set(MaterialFactory_Model model/material/MaterialFactory.h model/material/Materi
 set(VHS_Model model/material/VHS.h model/material/VHS.cpp)
 set(Crew_Model model/people/Crew.h model/people/Crew.cpp)
 set(Project_Model model/project/Project.h model/project/Project.cpp model/project/ProjectInterface.h)
-set(Base_Model model/Model.h model/Model.cpp)
 add_library(Models ${Base_Model} ${Bluray_Model} ${BoxSet_Model} ${DoubleSideDVD_Model} ${DVD_Model} ${DVDSide_Model} ${Material_Model} ${MaterialFactory_Model} ${VHS_Model} ${Crew_Model} ${Project_Model})
 
 # views
@@ -23,14 +23,16 @@ set(Base_View view/BaseView.h view/BaseView.cpp view/ViewInterface.h)
 set(Project_View view/project/ProjectView.h view/project/ProjectView.cpp)
 set(Material_View view/material/MaterialView.h view/material/MaterialView.cpp)
 set(DVD_View view/material/DVDView.h view/material/DVDView.cpp)
-add_library(Views ${Base_View} ${Project_View} ${Material_View} ${DVD_View})
+set(DoubleSideDVD_View view/material/DoubleSideDVDView.h view/material/DoubleSideDVDView.cpp)
+add_library(Views ${Base_View} ${Project_View} ${Material_View} ${DVD_View} ${DoubleSideDVD_View})
 
 # controllers
 set(BaseController controller/BaseController.h controller/BaseController.cpp controller/ControllerInterface.h)
 set(Project_Controller controller/project/ProjectController.h controller/project/ProjectController.cpp)
 set(Material_Controller controller/material/MaterialController.h controller/material/MaterialController.cpp)
 set(DVD_Controller controller/material/DVDController.h controller/material/DVDController.cpp)
-add_library(Controllers ${BaseController} ${Project_Controller} ${Material_Controller} ${DVD_Controller})
+set(DoubleSideDVD_Controller controller/material/DoubleSideDVDController.h controller/material/DoubleSideDVDController.cpp)
+add_library(Controllers ${BaseController} ${Project_Controller} ${Material_Controller} ${DVD_Controller} ${DoubleSideDVD_Controller})
 
 # algorithms
 set(MergeSort algorithms/MergeSort.h algorithms/MergeSort.cpp)

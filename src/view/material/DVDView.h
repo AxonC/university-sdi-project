@@ -17,7 +17,6 @@ namespace TrekStar
         public:
             explicit DVDView(DVD & model);
 
-            std::string GetNewContent();
             unsigned int GetUpdateOption() override;
             unsigned int GetAdditionalLanguageTrackNo();
             unsigned int GetAdditionalSubtitleTrackNo();
@@ -27,6 +26,7 @@ namespace TrekStar
             void PresentAdditionalSubtitleTracks();
             void PresentBonusFeatures();
 
+            std::string GetNewContent();
             std::string GetNewAdditionalLanguageTrack(const unsigned int & additionalLanguageTrackNo);
             std::string GetNewAdditionalSubtitleTrack(const unsigned int & additionalSubtitleTrackNo);
             std::string GetNewBonusFeature(const unsigned int & bonusFeatureNo);

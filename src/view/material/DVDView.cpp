@@ -10,22 +10,6 @@ namespace TrekStar
     {
         DVDView::DVDView(DVD & model) : MaterialView(model) {}
 
-        std::string DVDView::GetNewContent()
-        {
-            std::string currentContent = this->GetModel()->GetContent();
-
-            if ( currentContent.empty() )
-            {
-                std::cout << "Content: ";
-            }
-            else
-            {
-                std::cout << "Content [current: " << currentContent << "]: ";
-            }
-
-            return TrekStar::Command::GetStringInput();
-        }
-
         unsigned int DVDView::GetUpdateOption()
         {
             TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
@@ -96,6 +80,22 @@ namespace TrekStar
                 counter++;
                 std::cout << "Bonus Feature #" << counter << ": " << bonusFeature << std::endl;
             }
+        }
+
+        std::string DVDView::GetNewContent()
+        {
+            std::string currentContent = this->GetModel()->GetContent();
+
+            if ( currentContent.empty() )
+            {
+                std::cout << "Content: ";
+            }
+            else
+            {
+                std::cout << "Content [current: " << currentContent << "]: ";
+            }
+
+            return TrekStar::Command::GetStringInput();
         }
 
         std::string DVDView::GetNewAdditionalLanguageTrack(const unsigned int & additionalLanguageTrackNo)

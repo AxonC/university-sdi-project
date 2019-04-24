@@ -44,10 +44,11 @@ namespace TrekStar
 
             KeyValueMap GetPresentableInformation() const override;
 
-            void SetContent(const std::string & content) override;
             void SetAdditionalLanguageTracks(const std::vector<std::string> & additionalLanguageTracks) override;
             void SetAdditionalSubtitleTracks(const std::vector<std::string> & additionalSubtitleTracks) override;
             void SetBonusFeatures(const std::vector<std::string> & bonusFeatures) override;
+
+            void SetContent(const std::string & content) override;
             void SetAdditionalLanguageTrack(unsigned int index, const std::string & languageTrack) override;
             void SetAdditionalSubtitleTrack(unsigned int index, const std::string & subtitleTrack) override;
             void SetBonusFeature(unsigned int index, const std::string & bonusFeature) override;
