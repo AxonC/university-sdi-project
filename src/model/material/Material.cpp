@@ -153,6 +153,7 @@ namespace TrekStar
                     {"retailPrice", material.retailPrice},
                     {"subtitles", material.subtitles},
                     {"frameAspect", material.frameAspect},
+                    {"packaging", material.packaging}
                 };
         }
 
@@ -166,6 +167,7 @@ namespace TrekStar
             json.at("retailPrice").get_to(material.retailPrice);
             json.at("subtitles").get_to(material.subtitles);
             json.at("frameAspect").get_to(material.frameAspect);
+            json.at("packaging").get_to(material.packaging);
         }
     }
 }

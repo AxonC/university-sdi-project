@@ -13,6 +13,7 @@ namespace TrekStar
             this->language = j.at("language");
             this->retailPrice = j.at("retailPrice").get<double>();
             this->frameAspect = j.at("frameAspect");
+            this->packaging = "Plastic";
 
             json sides = j.at("sides");
 
@@ -175,6 +176,7 @@ namespace TrekStar
             j["retailPrice"] = serialisedDoubleSideDVD.material.retailPrice;
             j["subtitles"] = serialisedDoubleSideDVD.material.subtitles;
             j["frameAspect"] = serialisedDoubleSideDVD.material.frameAspect;
+            j["packaging"] = serialisedDoubleSideDVD.material.packaging;
 
             json sidesJSON;
             for ( const auto & side: serialisedDoubleSideDVD.sides )

@@ -271,6 +271,29 @@
                 "retailPrice": 9.99,
                 "runTime": 2000,
                 "subtitles": "eng"
+            },
+            {
+                "additionalLanguageTracks": [
+                    "1",
+                    ""
+                ],
+                "additionalSubtitleTracks": [
+                    "1",
+                    ""
+                ],
+                "audioFormat": "dts",
+                "bonusFeatures": [
+                    "1",
+                    ""
+                ],
+                "content": "et",
+                "format": "dvd",
+                "frameAspect": "6:16",
+                "id": 0,
+                "language": "eng",
+                "retailPrice": 9.99,
+                "runTime": 12000,
+                "subtitles": "eng"
             }
         ]
     },

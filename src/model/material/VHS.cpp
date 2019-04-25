@@ -13,6 +13,7 @@ namespace TrekStar {
             this->retailPrice = j.at("retailPrice").get<double>();
             this->subtitles = j.at("subtitles");
             this->frameAspect = j.at("frameAspect");
+            this->packaging = j.at("packaging");
             this->audioTrack = j.at("audioTrack");
         }
 
@@ -56,6 +57,7 @@ namespace TrekStar {
             j["retailPrice"] = serialisedVHS.material.retailPrice;
             j["subtitles"] = serialisedVHS.material.subtitles;
             j["frameAspect"] = serialisedVHS.material.frameAspect;
+            j["packaging"] = serialisedVHS.material.packaging;
         }
     }
 }

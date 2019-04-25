@@ -10,6 +10,7 @@ namespace TrekStar
         {
             this->format = j.at("format");
             this->retailPrice = j.at("retailPrice").get<double>();
+            this->packaging = "Cardboard Box";
 
             for ( const auto & dvd: j.at("dvds") )
             {
@@ -102,6 +103,7 @@ namespace TrekStar
                 dvdJSON["retailPrice"] = dvd->GetRetailPrice();
                 dvdJSON["subtitles"] = dvd->GetSubtitles();
                 dvdJSON["frameAspect"] = dvd->GetFrameAspect();
+                dvdJSON["packaging"] = dvd->GetPackaging();
 
                 if ( auto castedDVD = std::dynamic_pointer_cast<TrekStar::Material::DoubleSideDVD>(dvd) )
                 {

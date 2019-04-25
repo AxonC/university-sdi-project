@@ -18,6 +18,7 @@ namespace TrekStar
             this->retailPrice = j.at("retailPrice").get<double>();
             this->subtitles = j.at("subtitles");
             this->frameAspect = j.at("frameAspect");
+            this->packaging = "Plastic";
 
             json additionalLanguageTracksJSON = j.at("additionalLanguageTracks");
             std::vector<std::string> additionalLanguageTracks;
@@ -136,6 +137,7 @@ namespace TrekStar
             j["retailPrice"] = dvd.material.retailPrice;
             j["subtitles"] = dvd.material.subtitles;
             j["frameAspect"] = dvd.material.frameAspect;
+            j["packaging"] = dvd.material.packaging;
 
             j["content"] = dvd.sideOne.content;
             j["additionalLanguageTracks"] = dvd.sideOne.additionalLanguageTracks;
