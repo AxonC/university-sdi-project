@@ -21,7 +21,7 @@ namespace TrekStar
             void ShowList() override;
 
             void UpdateProject();
-            void UpdateAll();
+            void AddNew();
 
             void AddMaterial();
             void UpdateMaterials();

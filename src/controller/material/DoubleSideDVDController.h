@@ -22,6 +22,13 @@ namespace TrekStar
             void UpdateSideTwoAdditionalSubtitleTracks();
             void UpdateSideTwoBonusFeatures();
 
+            void AddSideOneAdditionalLanguageTracks();
+            void AddSideOneAdditionalSubtitleTracks();
+            void AddSideOneBonusFeatures();
+            void AddSideTwoAdditionalLanguageTracks();
+            void AddSideTwoAdditionalSubtitleTracks();
+            void AddSideTwoBonusFeatures();
+
             DoubleSideDVDView* GetView() override;
             DoubleSideDVD* GetModel() override;
 
@@ -29,7 +36,7 @@ namespace TrekStar
             DoubleSideDVDController(DoubleSideDVD & model, DoubleSideDVDView & view);
 
             void Update() override;
-            void UpdateAll() override;
+            void AddNew() override;
         };
     }
 }

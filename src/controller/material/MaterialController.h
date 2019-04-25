@@ -36,7 +36,7 @@ namespace TrekStar
             void UpdatePackaging();
 
             virtual void Update();
-            virtual void UpdateAll();
+            virtual void AddNew();
 
             virtual MaterialInterface* GetModel();
             virtual MaterialView* GetView();

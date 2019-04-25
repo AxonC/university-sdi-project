@@ -44,7 +44,7 @@ namespace TrekStar
                         TrekStar::Project::ProjectView view(currentProject);
                         TrekStar::Project::ProjectController controller(currentProject, view);
 
-                        controller.UpdateAll();
+                        controller.AddNew();
 
                         projects.push_back(currentProject);
                     }
