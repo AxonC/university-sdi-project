@@ -19,6 +19,9 @@ namespace TrekStar
             void ShowAll() override;
             void ShowList() override;
 
+            void Update();
+            void AddNew();
+
         private:
             CrewInterface* GetModel();
             CrewView* GetView();

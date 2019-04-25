@@ -23,6 +23,29 @@ namespace TrekStar
             std::cout << "Name: " << this->GetModel()->GetName() << std::endl;
         }
 
+        void CrewController::Update()
+        {
+            unsigned int commandInput = this->GetView()->GetUpdateOption();
+
+            switch ( commandInput )
+            {
+            case 1:
+                this->UpdateName();
+                break;
+            case 2:
+                this->UpdateJobTitle();
+                break;
+            default:
+                break;
+            }
+        }
+
+        void CrewController::AddNew()
+        {
+            this->UpdateName();
+            this->UpdateJobTitle();
+        }
+
         CrewInterface* CrewController::GetModel()
         {
             return dynamic_cast<CrewInterface*>(this->model);

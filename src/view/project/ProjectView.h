@@ -23,6 +23,7 @@ namespace TrekStar
 
             void PresentKeywords();
             void PresentMaterialsList();
+            void PresentCrewList();
 
             std::string GetNewTitle();
             std::string GetNewSummary();
@@ -34,6 +35,7 @@ namespace TrekStar
 
             unsigned int GetUpdateOption();
             unsigned int GetMaterialSelection();
+            unsigned int GetCrewSelection();
 
             unsigned int GetListMaterialsOption();
             unsigned int GetCurrentMaterial(unsigned int currentMaterial, unsigned int commandInput);

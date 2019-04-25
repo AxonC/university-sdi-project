@@ -234,10 +234,9 @@ namespace TrekStar
             CrewView view(*crew);
             CrewController controller(*crew, view);
 
-//            controller.SetFormat("vhs");
-//            controller.AddNew();
-//
-//            this->GetModel()->AddCrew(crew);
+            controller.AddNew();
+
+            this->GetModel()->AddCrew(crew);
         }
 
         void ProjectController::UpdateCrew()
@@ -247,7 +246,16 @@ namespace TrekStar
 
         void ProjectController::RemoveCrew()
         {
+            if ( this->GetModel()->GetCrew().empty() )
+            {
+                this->GetView()->DisplayHasNoCrew();
+                return;
+            }
 
+            this->GetView()->PresentCrewList();
+
+            auto crew = this->GetModel()->GetCrew().at(this->GetView()->GetCrewSelection());
+            this->GetModel()->RemoveCrew(crew);
         }
 
         void ProjectController::UpdateTitle()

@@ -22,6 +22,8 @@ namespace TrekStar
             std::string GetNewName();
             unsigned int GetJobTitle();
 
+            unsigned int GetUpdateOption();
+
             CrewInterface* GetModel() override;
         };
     }

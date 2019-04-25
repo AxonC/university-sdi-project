@@ -21,6 +21,24 @@ namespace TrekStar
 
         }
 
+        unsigned int CrewView::GetUpdateOption()
+        {
+            TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
+                    {
+                            {1, "Edit Name"},
+                            {2, "Edit Job Title"},
+                            {3, "Cancel"}
+                    },
+                    "Update Crew"
+            );
+
+            commandHandler.displayCommands();
+            int commandInput = commandHandler.getUserInput();
+            commandHandler.clearConsole();
+
+            return commandInput;
+        }
+
         std::string CrewView::GetNewName()
         {
             std::string currentName = this->GetModel()->GetName();

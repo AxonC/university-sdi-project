@@ -3,12 +3,16 @@
 #include "ProjectView.h"
 #include "../material/MaterialView.h"
 #include "../../controller/material/MaterialController.h"
+#include "../people/CrewView.h"
+#include "../../controller/people/CrewController.h"
 #include "../../command/CommandHandler.h"
 #include "../../command/userInput.h"
 #include "../../information/SequentialBrowser.h"
 
 using TrekStar::Material::MaterialController;
 using TrekStar::Material::MaterialView;
+using TrekStar::People::CrewController;
+using TrekStar::People::CrewView;
 
 namespace TrekStar
 {
@@ -93,6 +97,20 @@ namespace TrekStar
                 std::cout << "[" << counter << "]: ";
                 MaterialView view(*material);
                 MaterialController controller(*material, view);
+
+                controller.ShowList();
+            }
+        }
+
+        void ProjectView::PresentCrewList()
+        {
+            unsigned int counter = 0;
+            for ( const auto & crew: this->GetModel()->GetCrew() )
+            {
+                counter++;
+                std::cout << "[" << counter << "]: ";
+                CrewView view(*crew);
+                CrewController controller(*crew, view);
 
                 controller.ShowList();
             }
@@ -224,6 +242,11 @@ namespace TrekStar
         unsigned int ProjectView::GetMaterialSelection()
         {
             return TrekStar::Command::GetIndexInput(this->GetModel()->GetMaterials().size(), "Material ID");
+        }
+
+        unsigned int ProjectView::GetCrewSelection()
+        {
+            return TrekStar::Command::GetIndexInput(this->GetModel()->GetCrew().size(), "Crew ID");
         }
 
         unsigned int ProjectView::GetListMaterialsOption()
