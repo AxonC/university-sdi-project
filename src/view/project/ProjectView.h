@@ -37,6 +37,7 @@ namespace TrekStar
 
             void DisplayCannotAddMaterial();
             void DisplayHasNoMaterials();
+            void DisplayHasNoCrew();
 
             ProjectInterface* GetModel() override;
         };

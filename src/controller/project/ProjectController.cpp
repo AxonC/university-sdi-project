@@ -168,7 +168,11 @@ namespace TrekStar
 
         void ProjectController::AddCrew()
         {
-
+            if ( this->GetModel()->GetCrew().empty() )
+            {
+                this->GetView()->DisplayHasNoCrew();
+                return;
+            }
         }
 
         void ProjectController::UpdateCrew()

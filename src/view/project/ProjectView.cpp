@@ -231,7 +231,12 @@ namespace TrekStar
 
         void ProjectView::DisplayHasNoMaterials()
         {
-            std::cout << "This project has no materials." << std::endl;
+            std::cout << "This project has no materials to display." << std::endl;
+        }
+
+        void ProjectView::DisplayHasNoCrew()
+        {
+            std::cout << "This project has no crew members to display." << std::endl;
         }
 
         ProjectInterface* ProjectView::GetModel()

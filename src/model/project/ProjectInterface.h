@@ -13,6 +13,14 @@ namespace TrekStar
 
 namespace TrekStar
 {
+    namespace People
+    {
+        class Crew;
+    } // namespace People
+} // namespace TrekStar
+
+namespace TrekStar
+{
     namespace Project
     {
         class ProjectInterface : public TrekStar::Model
@@ -33,6 +41,8 @@ namespace TrekStar
             virtual void SetReleased(const bool & released) = 0;
             virtual void SetPlayingInTheatres(const bool & playingInTheatres) = 0;
             virtual void SetKeyword(const unsigned int & keywordNo, const std::string & keyword) = 0;
+
+            virtual std::vector<std::shared_ptr<People::Crew>> GetCrew() const = 0;
 
             virtual void AddMaterial(const std::shared_ptr<Material::Material> & material) = 0;
             virtual void RemoveMaterial(const std::shared_ptr<Material::Material> & material) = 0;
