@@ -11,6 +11,90 @@ namespace TrekStar
             this->GetModel()->SetSideOneContent(this->GetView()->GetNewSideOneContent());
         }
 
+        void DoubleSideDVDController::AddSideOneAdditionalLanguageTracks()
+        {
+            unsigned int noOfAdditionalLanguageTracks = this->GetView()->GetNoOfSideOneAdditionalLanguageTracks();
+
+            std::vector<std::string> sideOneAdditionalLanguageTracks;
+
+            for ( unsigned int i = 0; i < noOfAdditionalLanguageTracks; i++ )
+            {
+                sideOneAdditionalLanguageTracks.push_back(this->GetView()->GetNewSideOneAdditionalLanguageTrack(i));
+            }
+
+            this->GetModel()->GetSideOne().SetAdditionalLanguageTracks(sideOneAdditionalLanguageTracks);
+        }
+
+        void DoubleSideDVDController::AddSideOneAdditionalSubtitleTracks()
+        {
+            unsigned int noOfAdditionalSubtitleTracks = this->GetView()->GetNoOfSideOneAdditionalSubtitleTracks();
+
+            std::vector<std::string> sideOneAdditionalSubtitleTracks;
+
+            for ( unsigned int i = 0; i < noOfAdditionalSubtitleTracks; i++ )
+            {
+                sideOneAdditionalSubtitleTracks.push_back(this->GetView()->GetNewSideOneAdditionalSubtitleTrack(i));
+            }
+
+            this->GetModel()->GetSideOne().SetAdditionalSubtitleTracks(sideOneAdditionalSubtitleTracks);
+        }
+
+        void DoubleSideDVDController::AddSideOneBonusFeatures()
+        {
+            unsigned int noOfBonusFeatures = this->GetView()->GetNoOfSideOneBonusFeatures();
+
+            std::vector<std::string> sideOneBonusFeatures;
+
+            for ( unsigned int i = 0; i < noOfBonusFeatures; i++ )
+            {
+                sideOneBonusFeatures.push_back(this->GetView()->GetNewSideOneBonusFeature(i));
+            }
+
+            this->GetModel()->GetSideOne().SetAdditionalSubtitleTracks(sideOneBonusFeatures);
+        }
+
+        void DoubleSideDVDController::AddSideTwoAdditionalLanguageTracks()
+        {
+            unsigned int noOfAdditionalLanguageTracks = this->GetView()->GetNoOfSideTwoAdditionalLanguageTracks();
+
+            std::vector<std::string> sideTwoAdditionalLanguageTracks;
+
+            for ( unsigned int i = 0; i < noOfAdditionalLanguageTracks; i++ )
+            {
+                sideTwoAdditionalLanguageTracks.push_back(this->GetView()->GetNewSideTwoAdditionalLanguageTrack(i));
+            }
+
+            this->GetModel()->GetSideTwo().SetAdditionalLanguageTracks(sideTwoAdditionalLanguageTracks);
+        }
+
+        void DoubleSideDVDController::AddSideTwoAdditionalSubtitleTracks()
+        {
+            unsigned int noOfAdditionalSubtitleTracks = this->GetView()->GetNoOfSideTwoAdditionalSubtitleTracks();
+
+            std::vector<std::string> sideTwoAdditionalSubtitleTracks;
+
+            for ( unsigned int i = 0; i < noOfAdditionalSubtitleTracks; i++ )
+            {
+                sideTwoAdditionalSubtitleTracks.push_back(this->GetView()->GetNewSideTwoAdditionalSubtitleTrack(i));
+            }
+
+            this->GetModel()->GetSideTwo().SetAdditionalSubtitleTracks(sideTwoAdditionalSubtitleTracks);
+        }
+
+        void DoubleSideDVDController::AddSideTwoBonusFeatures()
+        {
+            unsigned int noOfBonusFeatures = this->GetView()->GetNoOfSideTwoBonusFeatures();
+
+            std::vector<std::string> sideTwoBonusFeatures;
+
+            for ( unsigned int i = 0; i < noOfBonusFeatures; i++ )
+            {
+                sideTwoBonusFeatures.push_back(this->GetView()->GetNewSideTwoBonusFeature(i));
+            }
+
+            this->GetModel()->GetSideTwo().SetAdditionalSubtitleTracks(sideTwoBonusFeatures);
+        }
+
         void DoubleSideDVDController::UpdateSideOneAdditionalLanguageTracks()
         {
             this->GetView()->PresentSideOneAdditionalLanguageTracks();
@@ -120,17 +204,17 @@ namespace TrekStar
             }
         }
 
-        void DoubleSideDVDController::UpdateAll()
+        void DoubleSideDVDController::AddNew()
         {
-            MaterialController::UpdateAll();
+            MaterialController::AddNew();
             this->UpdateSideOneContent();
-            this->UpdateSideOneAdditionalLanguageTracks();
-            this->UpdateSideOneAdditionalSubtitleTracks();
-            this->UpdateSideOneBonusFeatures();
+            this->AddSideOneAdditionalLanguageTracks();
+            this->AddSideOneAdditionalSubtitleTracks();
+            this->AddSideOneBonusFeatures();
             this->UpdateSideTwoContent();
-            this->UpdateSideTwoAdditionalSubtitleTracks();
-            this->UpdateSideTwoAdditionalLanguageTracks();
-            this->UpdateSideTwoBonusFeatures();
+            this->AddSideTwoAdditionalSubtitleTracks();
+            this->AddSideTwoAdditionalLanguageTracks();
+            this->AddSideTwoBonusFeatures();
         }
 
         DoubleSideDVDView* DoubleSideDVDController::GetView()

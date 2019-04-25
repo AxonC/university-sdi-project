@@ -166,8 +166,36 @@ namespace TrekStar
 
         std::string ProjectView::GetNewMaterialFormat()
         {
-            std::cout << "Material Format: ";
-            return TrekStar::Command::GetStringInput();
+            TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
+                    {
+                            {1, "DVD"},
+                            {2, "Double Sided DVD"},
+                            {3, "Bluray"},
+                            {4, "VHS"},
+                            {5, "Box Set"}
+                    },
+                    "Material Format: "
+            );
+
+            commandHandler.displayCommands();
+            int commandInput = commandHandler.getUserInput();
+            commandHandler.clearConsole();
+
+            switch ( commandInput )
+            {
+            case 1:
+                return "dvd";
+            case 2:
+                return "dsdvd";
+            case 3:
+                return "bluray";
+            case 4:
+                return "vhs";
+            case 5:
+                return "boxset";
+            default:
+                return "dvd";
+            }
         }
 
         unsigned int ProjectView::GetUpdateOption()

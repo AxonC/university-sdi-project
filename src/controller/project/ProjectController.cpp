@@ -59,7 +59,7 @@ namespace TrekStar
             }
         }
 
-        void ProjectController::UpdateAll()
+        void ProjectController::AddNew()
         {
             this->UpdateTitle();
             this->UpdateSummary();
@@ -71,11 +71,11 @@ namespace TrekStar
         {
             std::shared_ptr<Material::Material> material = nullptr;
 
-//            while ( currentMaterial == nullptr )
-//            {
+            while ( material == nullptr )
+            {
                 std::string format = this->GetView()->GetNewMaterialFormat();
                 material = Material::MaterialFactory::Create(format);
-            //}
+            }
 
             this->GetModel()->AddMaterial(material);
 
@@ -85,7 +85,7 @@ namespace TrekStar
                 DoubleSideDVDController controller(*castedMaterial, view);
 
                 controller.SetFormat("dsdvd");
-                controller.UpdateAll();
+                controller.AddNew();
             }
             else if ( auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::DVD>(material) )
             {
@@ -93,7 +93,7 @@ namespace TrekStar
                 DVDController controller(*castedMaterial, view);
 
                 controller.SetFormat("dvd");
-                controller.UpdateAll();
+                controller.AddNew();
             }
         }
 

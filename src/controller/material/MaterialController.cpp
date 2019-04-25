@@ -52,7 +52,7 @@ namespace TrekStar
             }
         }
 
-        void MaterialController::UpdateAll()
+        void MaterialController::AddNew()
         {
             this->UpdateAudioFormat();
             this->UpdateRunTime();

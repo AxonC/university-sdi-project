@@ -23,6 +23,13 @@ namespace TrekStar
             unsigned int GetSideTwoAdditionalSubtitleTrackNo();
             unsigned int GetSideTwoBonusFeatureNo();
 
+            unsigned int GetNoOfSideOneAdditionalLanguageTracks();
+            unsigned int GetNoOfSideOneAdditionalSubtitleTracks();
+            unsigned int GetNoOfSideOneBonusFeatures();
+            unsigned int GetNoOfSideTwoAdditionalLanguageTracks();
+            unsigned int GetNoOfSideTwoAdditionalSubtitleTracks();
+            unsigned int GetNoOfSideTwoBonusFeatures();
+
             void PresentSideOneAdditionalLanguageTracks();
             void PresentSideOneAdditionalSubtitleTracks();
             void PresentSideOneBonusFeatures();

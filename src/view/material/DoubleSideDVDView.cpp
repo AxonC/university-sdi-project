@@ -72,6 +72,42 @@ namespace TrekStar
             return TrekStar::Command::GetIndexInput(this->GetModel()->GetSideOne().GetBonusFeatures().size(), "Bonus Feature");
         }
 
+        unsigned int DoubleSideDVDView::GetNoOfSideOneAdditionalLanguageTracks()
+        {
+            std::cout << "Number of Additional Language Tracks for Side One: ";
+            return TrekStar::Command::GetIntInput();
+        }
+
+        unsigned int DoubleSideDVDView::GetNoOfSideOneAdditionalSubtitleTracks()
+        {
+            std::cout << "Number of Additional Subtitle Tracks for Side One: ";
+            return TrekStar::Command::GetIntInput();
+        }
+
+        unsigned int DoubleSideDVDView::GetNoOfSideOneBonusFeatures()
+        {
+            std::cout << "Number of Bonus Features for Side One: ";
+            return TrekStar::Command::GetIntInput();
+        }
+
+        unsigned int DoubleSideDVDView::GetNoOfSideTwoAdditionalLanguageTracks()
+        {
+            std::cout << "Number of Additional Language Tracks for Side Two: ";
+            return TrekStar::Command::GetIntInput();
+        }
+
+        unsigned int DoubleSideDVDView::GetNoOfSideTwoAdditionalSubtitleTracks()
+        {
+            std::cout << "Number of Additional Subtitle Tracks for Side Two: ";
+            return TrekStar::Command::GetIntInput();
+        }
+
+        unsigned int DoubleSideDVDView::GetNoOfSideTwoBonusFeatures()
+        {
+            std::cout << "Number of Bonus Features for Side Two: ";
+            return TrekStar::Command::GetIntInput();
+        }
+
         void DoubleSideDVDView::PresentSideOneAdditionalLanguageTracks()
         {
             unsigned int counter = 0;
@@ -138,11 +174,11 @@ namespace TrekStar
 
             if ( currentContent.empty() )
             {
-                std::cout << "Content: ";
+                std::cout << "Side One Content: ";
             }
             else
             {
-                std::cout << "Content [current: " << currentContent << "]: ";
+                std::cout << "Side One Content [current: " << currentContent << "]: ";
             }
 
             return TrekStar::Command::GetStringInput();
@@ -154,7 +190,7 @@ namespace TrekStar
 
             if ( currentAdditionalLanguageTracks.empty() )
             {
-                std::cout << "Side One Additional Language Track #: ";
+                std::cout << "Side One Additional Language Track #" << additionalLanguageTrackNo + 1 << ": ";
             }
             else
             {
@@ -202,11 +238,11 @@ namespace TrekStar
 
             if ( currentContent.empty() )
             {
-                std::cout << "Content: ";
+                std::cout << "Side Two Content: ";
             }
             else
             {
-                std::cout << "Content [current: " << currentContent << "]: ";
+                std::cout << "Side Two Content [current: " << currentContent << "]: ";
             }
 
             return TrekStar::Command::GetStringInput();

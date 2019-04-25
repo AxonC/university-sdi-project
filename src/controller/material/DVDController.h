@@ -25,7 +25,7 @@ namespace TrekStar
             DVDController(DVD & model, DVDView & view);
 
             void Update() override;
-            void UpdateAll() override;
+            void AddNew() override;
         };
     }
 }

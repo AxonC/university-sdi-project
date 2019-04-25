@@ -81,9 +81,9 @@ namespace TrekStar
             }
         }
 
-        void DVDController::UpdateAll()
+        void DVDController::AddNew()
         {
-            MaterialController::UpdateAll();
+            MaterialController::AddNew();
             this->UpdateContent();
             this->UpdateAdditionalLanguageTracks();
             this->UpdateAdditionalSubtitleTracks();
