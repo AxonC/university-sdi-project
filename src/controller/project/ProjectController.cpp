@@ -4,6 +4,7 @@
 #include "../material/MaterialController.h"
 #include "../material/DVDController.h"
 #include "../material/DoubleSideDVDController.h"
+#include "../material/VHSController.h"
 #include "../../model/material/MaterialFactory.h"
 
 using TrekStar::Material::MaterialView;
@@ -12,6 +13,8 @@ using TrekStar::Material::DVDView;
 using TrekStar::Material::DVDController;
 using TrekStar::Material::DoubleSideDVDView;
 using TrekStar::Material::DoubleSideDVDController;
+using TrekStar::Material::VHSView;
+using TrekStar::Material::VHSController;
 
 namespace TrekStar
 {
@@ -87,7 +90,15 @@ namespace TrekStar
                 return;
             }
 
-            if ( auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::DoubleSideDVD>(material) )
+            if ( auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::VHS>(material) )
+            {
+                VHSView view(*castedMaterial);
+                VHSController controller(*castedMaterial, view);
+
+                controller.SetFormat("vhs");
+                controller.AddNew();
+            }
+            else if ( auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::DoubleSideDVD>(material) )
             {
                 DoubleSideDVDView view(*castedMaterial);
                 DoubleSideDVDController controller(*castedMaterial, view);
@@ -111,7 +122,14 @@ namespace TrekStar
 
             auto material = this->GetModel()->GetMaterials().at(this->GetView()->GetMaterialSelection());
 
-            if ( auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::DoubleSideDVD>(material) )
+            if ( auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::VHS>(material) )
+            {
+                VHSView view(*castedMaterial);
+                VHSController controller(*castedMaterial, view);
+
+                controller.Update();
+            }
+            else if ( auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::DoubleSideDVD>(material) )
             {
                 DoubleSideDVDView view(*castedMaterial);
                 DoubleSideDVDController controller(*castedMaterial, view);

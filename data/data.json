@@ -260,6 +260,17 @@
                 "retailPrice": 9.99,
                 "runTime": 2000,
                 "subtitles": "test"
+            },
+            {
+                "audioFormat": "dts",
+                "audioTrack": "testing",
+                "format": "vhs",
+                "frameAspect": "6:10",
+                "id": 0,
+                "language": "eng",
+                "retailPrice": 9.99,
+                "runTime": 2000,
+                "subtitles": "eng"
             }
         ]
     },

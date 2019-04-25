@@ -1,7 +1,5 @@
 #include "DVDController.h"
 
-#include <iostream>
-
 namespace TrekStar
 {
     namespace Material
