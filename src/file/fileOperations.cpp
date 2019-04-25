@@ -96,15 +96,15 @@ namespace TrekStar
         */
         BoxOfficeReportVector createBoxOfficeReports(const json & jsonString)
         {
-            BoxOfficeReportVector reports;
-
-            for ( auto && item : jsonString )
-            {
-                std::shared_ptr<Project::BoxOfficeReport> newReport = std::make_shared<Project::BoxOfficeReport>(item.get<Project::SerialisedBoxOfficeReport());
-                reports.push_back(newReport);
-            }
-
-            return reports;
+//            BoxOfficeReportVector reports;
+//
+//            for ( auto && item : jsonString )
+//            {
+//                std::shared_ptr<Project::BoxOfficeReport> newReport = std::make_shared<Project::BoxOfficeReport>(item.get<Project::SerialisedBoxOfficeReport()>);
+//                reports.push_back(newReport);
+//            }
+//
+//            return reports;
         }
 
         /**

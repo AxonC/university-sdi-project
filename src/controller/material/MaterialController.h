@@ -26,6 +26,7 @@ namespace TrekStar
             void ShowAll() override;
             void ShowList() override;
 
+            void SetFormat(const std::string & format);
             void UpdateAudioFormat();
             void UpdateRunTime();
             void UpdateLanguage();

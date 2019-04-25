@@ -68,6 +68,11 @@ namespace TrekStar
                 };
         }
 
+        void Material::SetFormat(const std::string & format)
+        {
+            this->format = format;
+        }
+
         void Material::SetAudioFormat(const std::string & audioFormat)
         {
             this->audioFormat = audioFormat;

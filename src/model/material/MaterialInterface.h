@@ -24,6 +24,7 @@ namespace TrekStar
             virtual std::string GetPackaging() const = 0;
             virtual KeyValueMap GetPresentableInformation() const = 0;
 
+            virtual void SetFormat(const std::string & format) = 0;
             virtual void SetAudioFormat(const std::string & audioFormat) = 0;
             virtual void SetRunTime(const int & runTime) = 0;
             virtual void SetLanguage(const std::string & language) = 0;

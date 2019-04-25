@@ -73,6 +73,11 @@ namespace TrekStar
             return dynamic_cast<MaterialView*>(this->view);
         }
 
+        void MaterialController::SetFormat(const std::string & format)
+        {
+            this->model->SetFormat(format);
+        }
+
         void MaterialController::UpdateAudioFormat()
         {
             this->model->SetAudioFormat(this->GetView()->GetNewAudioFormat());

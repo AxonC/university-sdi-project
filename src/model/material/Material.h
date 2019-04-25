@@ -57,6 +57,7 @@ namespace TrekStar
             std::string GetPackaging() const override;
             KeyValueMap GetPresentableInformation() const override;
 
+            void SetFormat(const std::string & format) override;
             void SetAudioFormat(const std::string & audioFormat) override;
             void SetRunTime(const int & runTime) override;
             void SetLanguage(const std::string & language) override;

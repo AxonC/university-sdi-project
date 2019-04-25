@@ -84,6 +84,7 @@ namespace TrekStar
                 DoubleSideDVDView view(*castedMaterial);
                 DoubleSideDVDController controller(*castedMaterial, view);
 
+                controller.SetFormat("dsdvd");
                 controller.UpdateAll();
             }
             else if ( auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::DVD>(material) )
@@ -91,13 +92,7 @@ namespace TrekStar
                 DVDView view(*castedMaterial);
                 DVDController controller(*castedMaterial, view);
 
-                controller.UpdateAll();
-            }
-            else
-            {
-                MaterialView view(*material);
-                MaterialController controller(*material, view);
-
+                controller.SetFormat("dvd");
                 controller.UpdateAll();
             }
         }
