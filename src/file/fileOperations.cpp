@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "fileOperations.h"
 
+#include "../model/project/BoxOfficeReport.h"
 #include "../model/project/Project.h"
 #include "../model/material/Material.h"
 #include "../model/material/MaterialFactory.h"
@@ -88,6 +89,25 @@ namespace TrekStar
 
 
         /**
+            Creates a number of BoxOfficeReports.
+
+            @param json string containing serialised data for multiple material.
+            @return vector of created BoxOfficeReports.
+        */
+        BoxOfficeReportVector createBoxOfficeReports(const json & jsonString)
+        {
+            BoxOfficeReportVector reports;
+
+            for ( auto && item : jsonString )
+            {
+                std::shared_ptr<Project::BoxOfficeReport> newReport = std::make_shared<Project::BoxOfficeReport>(item.get<Project::SerialisedBoxOfficeReport());
+                reports.push_back(newReport);
+            }
+
+            return reports;
+        }
+
+        /**
             Obtains project information from a file.
 
             @param string containing the file path of the JSON file.
@@ -127,10 +147,16 @@ namespace TrekStar
                     currentProject.AddMaterials(createMaterials(it.at("materials")));
                 }
 
+                if ( it.find("boxOfficeReports") != it.end())
+                {
+                    currentProject.AddBoxOfficeReports(createBoxOfficeReports(it.at("boxOfficeReports")));
+                }
+
                 projects.push_back(currentProject);
             }
 
             return projects;
         }
+
     }
 }
