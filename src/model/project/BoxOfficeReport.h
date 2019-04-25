@@ -23,6 +23,11 @@ namespace TrekStar
             ~BoxOfficeReport() = default;
 
             SerialisedBoxOfficeReport ExportToSerialised() const;
+
+            unsigned int GetId() const;
+            unsigned int GetWeekNumber() const;
+            double GetRevenue() const;
+            unsigned long int GetTicketsSold() const;
         private:
             unsigned int id;
             unsigned int weekNumber;

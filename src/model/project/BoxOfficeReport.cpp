@@ -18,6 +18,26 @@ namespace TrekStar
             return {this->id, this->weekNumber, this->revenue, this->ticketsSold};
         }
 
+        unsigned int BoxOfficeReport::GetId() const
+        {
+            return this->id;
+        }
+
+        unsigned int BoxOfficeReport::GetWeekNumber() const
+        {
+            return this->weekNumber;
+        }
+
+        double BoxOfficeReport::GetRevenue() const
+        {
+            return this->revenue;
+        }
+
+        unsigned long int BoxOfficeReport::GetTicketsSold() const
+        {
+            return this->ticketsSold;
+        }
+
         void to_json(json j, const SerialisedBoxOfficeReport & report)
         {
             j = json
