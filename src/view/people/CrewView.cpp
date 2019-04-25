@@ -55,9 +55,20 @@ namespace TrekStar
             return TrekStar::Command::GetStringInput();
         }
 
-        unsigned int CrewView::GetJobTitle()
+        std::string CrewView::GetNewJobTitle()
         {
+            std::string currentJobTitle = this->GetModel()->GetJobTitle();
 
+            if ( currentJobTitle.empty() )
+            {
+                std::cout << "Job Title: ";
+            }
+            else
+            {
+                std::cout << "Job Title [current: " << currentJobTitle << "]: ";
+            }
+
+            return TrekStar::Command::GetStringInput();
         }
 
         CrewInterface* CrewView::GetModel()

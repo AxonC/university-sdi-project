@@ -63,7 +63,7 @@ namespace TrekStar
 
         void CrewController::UpdateJobTitle()
         {
-            //this->GetModel()->SetJobTitle(this->GetView()->GetNewJobTitle());
+            this->GetModel()->SetJobTitle(this->GetView()->GetNewJobTitle());
         }
     }
 }

@@ -20,7 +20,7 @@ namespace TrekStar
             void PresentList() override;
 
             std::string GetNewName();
-            unsigned int GetJobTitle();
+            std::string GetNewJobTitle();
 
             unsigned int GetUpdateOption();
 
