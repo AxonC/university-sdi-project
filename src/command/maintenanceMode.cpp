@@ -23,13 +23,16 @@ namespace TrekStar
                             {4, "Add Project Materials"},
                             {5, "Update Project Materials"},
                             {6, "Remove Project Materials"},
-                            {7, "Cancel"}
+                            {7, "Add Project Crew"},
+                            {8, "Update Project Crew"},
+                            {9, "Remove Project Crew"},
+                            {10, "Cancel"}
                     },
                     "Maintenance Mode"
             );
 
             int commandInput = 0;
-            while ( commandInput != 7 )
+            while ( commandInput != 10 )
             {
                 commandHandler.displayCommands();
                 commandInput = commandHandler.getUserInput();
@@ -79,6 +82,18 @@ namespace TrekStar
                         else if ( commandInput == 6 )
                         {
                             controller.RemoveMaterial();
+                        }
+                        else if ( commandInput == 7 )
+                        {
+                            controller.AddCrew();
+                        }
+                        else if ( commandInput == 8 )
+                        {
+                            controller.UpdateCrew();
+                        }
+                        else if ( commandInput == 9 )
+                        {
+                            controller.RemoveCrew();
                         }
                     }
                 }

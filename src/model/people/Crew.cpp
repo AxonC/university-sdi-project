@@ -19,6 +19,21 @@ namespace TrekStar
             this->jobTitle = jobTitle;
         }
 
+        std::string Crew::GetName() const
+        {
+            return this->name;
+        }
+
+        std::string Crew::GetJobTitle() const
+        {
+            return this->jobTitle;
+        };
+
+        void Crew::SetName(const std::string & name)
+        {
+            this->name = name;
+        }
+
         void Crew::SetJobTitle(const std::string & title)
         {
             this->jobTitle = title;

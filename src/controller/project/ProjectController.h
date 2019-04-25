@@ -27,6 +27,10 @@ namespace TrekStar
             void UpdateMaterials();
             void RemoveMaterial();
 
+            void AddCrew();
+            void UpdateCrew();
+            void RemoveCrew();
+
         private:
             ProjectInterface* GetModel();
             ProjectView* GetView();

@@ -3,6 +3,8 @@
 
 #include "pch.h"
 
+#include "CrewInterface.h"
+
 using json = nlohmann::json;
 
 namespace TrekStar
@@ -29,9 +31,11 @@ namespace TrekStar
             Crew(unsigned int id, const std::string & name, const std::string & jobTitle);
             virtual ~Crew() = default;
 
-            std::string GetName();
+            std::string GetName() const;
+            std::string GetJobTitle() const;
 
-            void SetJobTitle(const std::string &);
+            void SetName(const std::string & name);
+            void SetJobTitle(const std::string & title);
 
             SerializedCrew ExportToSerialized() const;
         };

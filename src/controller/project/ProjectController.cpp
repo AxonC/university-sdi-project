@@ -166,6 +166,21 @@ namespace TrekStar
             this->GetModel()->RemoveMaterial(material);
         }
 
+        void ProjectController::AddCrew()
+        {
+
+        }
+
+        void ProjectController::UpdateCrew()
+        {
+
+        }
+
+        void ProjectController::RemoveCrew()
+        {
+
+        }
+
         void ProjectController::UpdateTitle()
         {
             this->GetModel()->SetTitle(this->GetView()->GetNewTitle());

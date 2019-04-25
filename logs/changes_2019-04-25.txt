@@ -147,3 +147,12 @@
 [2019-04-25 19:15:44.150] [logger] [info] Material 0 was added to project test
 [2019-04-25 19:15:44.150] [logger] [info] Material 0 was added to project test
 [2019-04-25 19:15:44.150] [logger] [info] Material 0 was added to project test
+[2019-04-25 20:50:10.016] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 20:50:10.016] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 20:50:10.016] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 20:50:10.016] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 20:50:10.016] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 20:50:10.016] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 20:50:10.016] [logger] [info] Material 0 was added to project test
+[2019-04-25 20:50:10.016] [logger] [info] Material 0 was added to project test
+[2019-04-25 20:50:10.016] [logger] [info] Material 0 was added to project test

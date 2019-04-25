@@ -1,5 +1,6 @@
 #ifndef PROJECT_PROJECT_H
 #define PROJECT_PROJECT_H
+
 #include "ProjectInterface.h"
 
 using json = nlohmann::json;

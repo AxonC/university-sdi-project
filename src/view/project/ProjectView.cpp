@@ -13,7 +13,7 @@ namespace TrekStar
 {
     namespace Project
     {
-        ProjectView::ProjectView(ProjectInterface& model) : BaseView()
+        ProjectView::ProjectView(ProjectInterface & model) : BaseView()
         {
             this->model = &model;
         }
