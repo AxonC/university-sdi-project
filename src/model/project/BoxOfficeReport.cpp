@@ -13,6 +13,14 @@ namespace TrekStar
             this->ticketsSold = ticketsSold;
         }
 
+        BoxOfficeReport::BoxOfficeReport(const SerialisedBoxOfficeReport &report)
+        {
+            this->id = report.id;
+            this->weekNumber = report.weekNumber;
+            this->revenue = report.revenue;
+            this->ticketsSold = report.ticketsSold;
+        }
+
         SerialisedBoxOfficeReport BoxOfficeReport::ExportToSerialised() const
         {
             return {this->id, this->weekNumber, this->revenue, this->ticketsSold};
@@ -37,6 +45,7 @@ namespace TrekStar
         {
             return this->ticketsSold;
         }
+
 
         void to_json(json j, const SerialisedBoxOfficeReport & report)
         {

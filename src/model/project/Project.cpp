@@ -29,6 +29,8 @@ namespace TrekStar
             this->released = project.released;
             this->playingInTheatres = project.playingInTheatres;
             this->keywords = project.keywords;
+            this->crew = project.crew;
+            this->boxOfficeReports = project.boxOfficeReports;
         }
 
         Project::~Project() = default;
@@ -202,7 +204,9 @@ namespace TrekStar
                     this->summary,
                     this->released,
                     this->playingInTheatres,
-                    this->keywords
+                    this->keywords,
+                    this->crew,
+                    this->boxOfficeReports
                 };
         }
 

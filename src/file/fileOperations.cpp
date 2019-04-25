@@ -96,15 +96,15 @@ namespace TrekStar
         */
         BoxOfficeReportVector createBoxOfficeReports(const json & jsonString)
         {
-//            BoxOfficeReportVector reports;
-//
-//            for ( auto && item : jsonString )
-//            {
-//                std::shared_ptr<Project::BoxOfficeReport> newReport = std::make_shared<Project::BoxOfficeReport>(item.get<Project::SerialisedBoxOfficeReport()>);
-//                reports.push_back(newReport);
-//            }
-//
-//            return reports;
+            BoxOfficeReportVector reports;
+
+            for ( auto && item : jsonString )
+            {
+                std::shared_ptr<Project::BoxOfficeReport> newReport = std::make_shared<Project::BoxOfficeReport>(item.get<Project::SerialisedBoxOfficeReport>());
+                reports.push_back(newReport);
+            }
+
+            return reports;
         }
 
         /**
@@ -137,6 +137,11 @@ namespace TrekStar
                     currentProject = createProject(it.at("details"));
                 }
 
+                if ( it.find("boxOfficeReports") != it.end() )
+                {
+                    currentProject.AddBoxOfficeReports(createBoxOfficeReports(it.at("boxOfficeReports")));
+                }
+
                 if ( it.find("crew") != it.end() )
                 {
                     currentProject.AddCrew(createCrew(it.at("crew")));
@@ -145,11 +150,6 @@ namespace TrekStar
                 if ( it.find("materials") != it.end() && currentProject.CanAddMaterial() )
                 {
                     currentProject.AddMaterials(createMaterials(it.at("materials")));
-                }
-
-                if ( it.find("boxOfficeReports") != it.end())
-                {
-                    currentProject.AddBoxOfficeReports(createBoxOfficeReports(it.at("boxOfficeReports")));
                 }
 
                 projects.push_back(currentProject);
