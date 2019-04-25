@@ -11,6 +11,11 @@ namespace TrekStar
             this->GetModel()->SetAudioTrack(this->GetView()->GetNewAudioTrack());
         }
 
+        void VHSController::UpdatePackaging()
+        {
+            
+        }
+
         void VHSController::Update()
         {
             unsigned int commandInput = this->GetView()->GetUpdateOption();

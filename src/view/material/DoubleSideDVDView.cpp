@@ -21,18 +21,17 @@ namespace TrekStar
                             {4, "Edit Retail Price"},
                             {5, "Edit Subtitles"},
                             {6, "Edit Frame Aspect"},
-                            {7, "Edit Packaging"},
-                            {8, "Edit Side One Content"},
-                            {9, "Edit Side One Additional Language Tracks"},
-                            {10, "Edit Side One Additional Subtitle Tracks"},
-                            {11, "Edit Side One Bonus Features"},
-                            {12, "Edit Side Two Content"},
-                            {13, "Edit Side Two Additional Language Tracks"},
-                            {14, "Edit Side Two Additional Subtitle Tracks"},
-                            {15, "Edit Side Two Bonus Features"},
-                            {16, "Cancel"}
+                            {7, "Edit Side One Content"},
+                            {8, "Edit Side One Additional Language Tracks"},
+                            {9, "Edit Side One Additional Subtitle Tracks"},
+                            {10, "Edit Side One Bonus Features"},
+                            {11, "Edit Side Two Content"},
+                            {12, "Edit Side Two Additional Language Tracks"},
+                            {13, "Edit Side Two Additional Subtitle Tracks"},
+                            {14, "Edit Side Two Bonus Features"},
+                            {15, "Cancel"}
                     },
-                    "Update DVD"
+                    "Update Double Sided DVD"
             );
 
             commandHandler.displayCommands();

@@ -44,9 +44,6 @@ namespace TrekStar
                 case 6:
                     this->UpdateFrameAspect();
                     break;
-                case 7:
-                    this->UpdatePackaging();
-                    break;
                 default:
                     break;
             }
@@ -60,7 +57,6 @@ namespace TrekStar
             this->UpdateRetailPrice();
             this->UpdateSubtitles();
             this->UpdateFrameAspect();
-            this->UpdatePackaging();
         }
 
         MaterialInterface* MaterialController::GetModel()
@@ -106,11 +102,6 @@ namespace TrekStar
         void MaterialController::UpdateFrameAspect()
         {
             this->model->SetFrameAspect(this->GetView()->GetNewFrameAspect());
-        }
-
-        void MaterialController::UpdatePackaging()
-        {
-            this->model->SetPackaging(this->GetView()->GetNewPackaging());
         }
     }
 }

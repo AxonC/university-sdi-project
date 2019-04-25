@@ -32,8 +32,7 @@ namespace TrekStar
             void UpdateLanguage();
             void UpdateRetailPrice();
             void UpdateSubtitles();
-            void UpdateFrameAspect();
-            void UpdatePackaging();
+            void UpdateFrameAspect();;
 
             virtual void Update();
             virtual void AddNew();

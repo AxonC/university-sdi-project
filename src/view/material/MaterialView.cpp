@@ -144,22 +144,6 @@ namespace TrekStar
             return TrekStar::Command::GetStringInput();
         }
 
-        std::string MaterialView::GetNewPackaging()
-        {
-            std::string currentPackaging = this->GetModel()->GetPackaging();
-
-            if ( currentPackaging.empty() )
-            {
-                std::cout << "Packaging: ";
-            }
-            else
-            {
-                std::cout << "Packaging [current: " << currentPackaging << "]: ";
-            }
-
-            return TrekStar::Command::GetStringInput();
-        }
-
         unsigned int MaterialView::GetUpdateOption()
         {
             TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
@@ -170,8 +154,7 @@ namespace TrekStar
                             {4, "Edit Retail Price"},
                             {5, "Edit Subtitles"},
                             {6, "Edit Frame Aspect"},
-                            {7, "Edit Packaging"},
-                            {8, "Cancel"}
+                            {7, "Cancel"}
                     },
                     "Update Material"
             );

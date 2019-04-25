@@ -25,7 +25,6 @@ namespace TrekStar
             double GetNewRetailPrice();
             std::string GetNewSubtitles();
             std::string GetNewFrameAspect();
-            std::string GetNewPackaging();
 
             virtual unsigned int GetUpdateOption();
 

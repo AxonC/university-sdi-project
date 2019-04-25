@@ -13,6 +13,7 @@ namespace TrekStar
         {
         private:
             void UpdateAudioTrack();
+            void UpdatePackaging();
 
             VHSView* GetView() override;
             VHS* GetModel() override;

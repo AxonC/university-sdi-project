@@ -20,12 +20,11 @@ namespace TrekStar
                             {4, "Edit Retail Price"},
                             {5, "Edit Subtitles"},
                             {6, "Edit Frame Aspect"},
-                            {7, "Edit Packaging"},
-                            {8, "Edit Content"},
-                            {9, "Edit Additional Language Tracks"},
-                            {10, "Edit Additional Subtitle Tracks"},
-                            {11, "Edit Bonus Features"},
-                            {12, "Cancel"}
+                            {7, "Edit Content"},
+                            {8, "Edit Additional Language Tracks"},
+                            {9, "Edit Additional Subtitle Tracks"},
+                            {10, "Edit Bonus Features"},
+                            {11, "Cancel"}
                     },
                     "Update DVD"
             );

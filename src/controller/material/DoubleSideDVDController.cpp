@@ -173,30 +173,27 @@ namespace TrekStar
                 this->UpdateFrameAspect();
                 break;
             case 7:
-                this->UpdatePackaging();
-                break;
-            case 8:
                 this->UpdateSideOneContent();
                 break;
-            case 9:
+            case 8:
                 this->UpdateSideOneAdditionalLanguageTracks();
                 break;
-            case 10:
+            case 9:
                 this->UpdateSideOneAdditionalSubtitleTracks();
                 break;
-            case 11:
+            case 10:
                 this->UpdateSideOneBonusFeatures();
                 break;
-            case 12:
+            case 11:
                 this->UpdateSideTwoContent();
                 break;
-            case 13:
+            case 12:
                 this->UpdateSideTwoAdditionalLanguageTracks();
                 break;
-            case 14:
+            case 13:
                 this->UpdateSideTwoAdditionalSubtitleTracks();
                 break;
-            case 15:
+            case 14:
                 this->UpdateSideTwoBonusFeatures();
                 break;
             default:
