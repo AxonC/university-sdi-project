@@ -35,6 +35,11 @@ namespace TrekStar
             unsigned int GetUpdateOption();
             unsigned int GetMaterialSelection();
 
+            unsigned int GetListMaterialsOption();
+            unsigned int GetCurrentMaterial(unsigned int currentMaterial, unsigned int commandInput);
+            unsigned int GetListCrewOption();
+            unsigned int GetCurrentCrew(unsigned int currentCrew, unsigned int commandInput);
+
             void DisplayCannotAddMaterial();
             void DisplayHasNoMaterials();
             void DisplayHasNoCrew();

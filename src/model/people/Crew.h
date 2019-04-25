@@ -18,7 +18,7 @@ namespace TrekStar
             std::string jobTitle;
         };
 
-        class Crew
+        class Crew : public CrewInterface
         {
         protected:
             unsigned int id;
@@ -31,11 +31,11 @@ namespace TrekStar
             Crew(unsigned int id, const std::string & name, const std::string & jobTitle);
             virtual ~Crew() = default;
 
-            std::string GetName() const;
-            std::string GetJobTitle() const;
+            std::string GetName() const override;
+            std::string GetJobTitle() const override;
 
-            void SetName(const std::string & name);
-            void SetJobTitle(const std::string & title);
+            void SetName(const std::string & name) override;
+            void SetJobTitle(const std::string & title) override;
 
             SerializedCrew ExportToSerialized() const;
         };

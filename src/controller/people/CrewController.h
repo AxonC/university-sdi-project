@@ -1,10 +1,8 @@
 #ifndef TREKSTAR_CREWCONTROLLER_H
 #define TREKSTAR_CREWCONTROLLER_H
 
-#ifndef TREKSTAR_PROJECTCONTROLLER_H
-#define TREKSTAR_PROJECTCONTROLLER_H
-
-#include "../../model/people/Crew.h"
+#include "../../view/people/CrewView.h"
+#include "../../model/people/CrewInterface.h"
 #include "../BaseController.h"
 
 namespace TrekStar
@@ -17,11 +15,18 @@ namespace TrekStar
             CrewController() = default;
             CrewController(CrewInterface & model, ViewInterface & view);
             ~CrewController() = default;
+
+            void ShowAll() override;
+            void ShowList() override;
+
+        private:
+            CrewInterface* GetModel();
+            CrewView* GetView();
+
+            void UpdateName();
+            void UpdateJobTitle();
         };
     }
 }
-
-#endif //TREKSTAR_PROJECTCONTROLLER_H
-
 
 #endif //TREKSTAR_CREWCONTROLLER_H

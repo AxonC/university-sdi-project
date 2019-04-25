@@ -8,6 +8,8 @@
 #include "../controller/project/ProjectController.h"
 #include "../view/material/MaterialView.h"
 #include "../controller/material/MaterialController.h"
+#include "../view/people/CrewView.h"
+#include "../controller/people/CrewController.h"
 #include "../command/CommandHandler.h"
 #include "../command/userInput.h"
 
@@ -17,6 +19,8 @@ using TrekStar::Project::ProjectView;
 using TrekStar::Material::Material;
 using TrekStar::Material::MaterialController;
 using TrekStar::Material::MaterialView;
+using TrekStar::People::CrewController;
+using TrekStar::People::CrewView;
 
 namespace TrekStar
 {
@@ -47,7 +51,9 @@ namespace TrekStar
                     {
                             {1, "Next Project"},
                             {2, "Previous Project"},
-                            {3, "Cancel"}
+                            {3, "View Materials"},
+                            {4, "View Crew"},
+                            {5, "Cancel"}
                     },
                     "List Projects"
             );
@@ -60,7 +66,7 @@ namespace TrekStar
             int commandInput = 0;
             int currentProject = 0;
 
-            while ( commandInput != 3 )
+            while ( commandInput != 5 )
             {
                 SequentialBrowser sequentialBrowser(projects.size(), currentProject, commandInput);
 
@@ -73,6 +79,15 @@ namespace TrekStar
                 commandHandler.displayCommands();
                 commandInput = commandHandler.getUserInput();
                 commandHandler.clearConsole();
+
+                if ( commandInput == 3 )
+                {
+                    controller.ListMaterials();
+                }
+                else if ( commandInput == 4 )
+                {
+                    controller.ListCrew();
+                }
             }
         }
 
@@ -101,48 +116,8 @@ namespace TrekStar
                 std::cout << "Show materials for this project? (y/n): ";
                 if ( TrekStar::Command::GetBoolInput() )
                 {
-                    listMaterials(projects, projectIndex);
+                    controller.ListMaterials();
                 }
-            }
-        }
-
-
-        /**
-            Prints to standard output the materials for a given project.
-
-            @param vector of projects.
-            @param integer containing the project number.
-        */
-        void listMaterials(std::vector<TrekStar::Project::Project> & projects, int projectNum)
-        {
-            TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
-                    {
-                            {1, "Next Material"},
-                            {2, "Previous Material"},
-                            {3, "Cancel"}
-                    },
-                    "List Materials"
-            );
-
-            std::vector<std::shared_ptr<TrekStar::Material::Material>> materials = projects.at(projectNum).GetMaterials();
-
-            int commandInput = 0;
-            int currentMaterial = 0;
-
-            while ( commandInput != 3 )
-            {
-                SequentialBrowser sequentialBrowser(materials.size(), currentMaterial, commandInput);
-
-                currentMaterial = sequentialBrowser.GetItemNumber();
-
-                const auto material = materials.at(currentMaterial);
-                MaterialView view = MaterialView(*material);
-                MaterialController controller(*material, view);
-                controller.ShowAll();
-
-                commandHandler.displayCommands();
-                commandInput = commandHandler.getUserInput();
-                commandHandler.clearConsole();
             }
         }
     }

@@ -156,3 +156,75 @@
 [2019-04-25 20:50:10.016] [logger] [info] Material 0 was added to project test
 [2019-04-25 20:50:10.016] [logger] [info] Material 0 was added to project test
 [2019-04-25 20:50:10.016] [logger] [info] Material 0 was added to project test
+[2019-04-25 21:29:58.506] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 21:29:58.506] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 21:29:58.506] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 21:29:58.506] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 21:29:58.506] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 21:29:58.506] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 21:29:58.506] [logger] [info] Material 0 was added to project test
+[2019-04-25 21:29:58.506] [logger] [info] Material 0 was added to project test
+[2019-04-25 21:29:58.506] [logger] [info] Material 0 was added to project test
+[2019-04-25 21:50:32.108] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 21:50:32.108] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 21:50:32.108] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 21:50:32.108] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 21:50:32.108] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 21:50:32.108] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 21:50:32.108] [logger] [info] Material 0 was added to project test
+[2019-04-25 21:50:32.108] [logger] [info] Material 0 was added to project test
+[2019-04-25 21:50:32.108] [logger] [info] Material 0 was added to project test
+[2019-04-25 21:52:37.854] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 21:52:37.854] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 21:52:37.854] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 21:52:37.854] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 21:52:37.854] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 21:52:37.854] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 21:52:37.854] [logger] [info] Material 0 was added to project test
+[2019-04-25 21:52:37.854] [logger] [info] Material 0 was added to project test
+[2019-04-25 21:52:37.854] [logger] [info] Material 0 was added to project test
+[2019-04-25 21:53:15.362] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 21:53:15.362] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 21:53:15.362] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 21:53:15.362] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 21:53:15.362] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 21:53:15.362] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 21:53:15.362] [logger] [info] Material 0 was added to project test
+[2019-04-25 21:53:15.362] [logger] [info] Material 0 was added to project test
+[2019-04-25 21:53:15.362] [logger] [info] Material 0 was added to project test
+[2019-04-25 21:53:47.559] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 21:53:47.559] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 21:53:47.559] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 21:53:47.559] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 21:53:47.559] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 21:53:47.559] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 21:53:47.559] [logger] [info] Material 0 was added to project test
+[2019-04-25 21:53:47.559] [logger] [info] Material 0 was added to project test
+[2019-04-25 21:53:47.559] [logger] [info] Material 0 was added to project test
+[2019-04-25 22:36:53.975] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 22:36:53.975] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 22:36:53.975] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 22:36:53.975] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 22:36:53.975] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 22:36:53.975] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 22:36:53.975] [logger] [info] Material 0 was added to project test
+[2019-04-25 22:36:53.975] [logger] [info] Material 0 was added to project test
+[2019-04-25 22:36:53.975] [logger] [info] Material 0 was added to project test
+[2019-04-25 22:37:43.831] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 22:37:43.831] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 22:37:43.831] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 22:37:43.831] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 22:37:43.831] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 22:37:43.831] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 22:37:43.831] [logger] [info] Material 0 was added to project test
+[2019-04-25 22:37:43.831] [logger] [info] Material 0 was added to project test
+[2019-04-25 22:37:43.831] [logger] [info] Material 0 was added to project test
+[2019-04-25 22:38:27.593] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 22:38:27.593] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 22:38:27.593] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 22:38:27.593] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 22:38:27.593] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 22:38:27.593] [logger] [info] Material 0 was added to project A Great Movie
+[2019-04-25 22:38:27.594] [logger] [info] Material 0 was added to project test
+[2019-04-25 22:38:27.594] [logger] [info] Material 0 was added to project test
+[2019-04-25 22:38:27.594] [logger] [info] Material 0 was added to project test

@@ -5,6 +5,8 @@
 #include "../material/DVDController.h"
 #include "../material/DoubleSideDVDController.h"
 #include "../material/VHSController.h"
+#include "../../view/people/CrewView.h"
+#include "../people/CrewController.h"
 #include "../../model/material/MaterialFactory.h"
 
 using TrekStar::Material::MaterialView;
@@ -15,6 +17,8 @@ using TrekStar::Material::DoubleSideDVDView;
 using TrekStar::Material::DoubleSideDVDController;
 using TrekStar::Material::VHSView;
 using TrekStar::Material::VHSController;
+using TrekStar::People::CrewView;
+using TrekStar::People::CrewController;
 
 namespace TrekStar
 {
@@ -57,6 +61,9 @@ namespace TrekStar
             case 5:
                 this->UpdateKeyword();
                 break;
+            case 6:
+                this->UpdateCrew();
+                break;
             default:
                 break;
             }
@@ -68,6 +75,30 @@ namespace TrekStar
             this->UpdateSummary();
             this->UpdateReleased();
             this->UpdatePlayingInTheatres();
+        }
+
+        void ProjectController::ListMaterials()
+        {
+            this->GetModel()->GetMaterials();
+
+            unsigned int currentMaterial = 0;
+            unsigned int commandInput = 0;
+
+            while ( commandInput != 3 )
+            {
+                commandInput = this->GetView()->GetListMaterialsOption();
+
+                if ( commandInput != 3 )
+                {
+                    currentMaterial = this->GetView()->GetCurrentMaterial(currentMaterial, commandInput);
+
+                    const auto material = this->GetModel()->GetMaterials().at(currentMaterial);
+
+                    MaterialView view(*material);
+                    MaterialController controller(*material, view);
+                    controller.ShowAll();
+                }
+            }
         }
 
         void ProjectController::AddMaterial()
@@ -166,6 +197,30 @@ namespace TrekStar
             this->GetModel()->RemoveMaterial(material);
         }
 
+        void ProjectController::ListCrew()
+        {
+            this->GetModel()->GetCrew();
+
+            unsigned int currentCrew = 0;
+            unsigned int commandInput = 0;
+
+            while ( commandInput != 3 )
+            {
+                commandInput = this->GetView()->GetListCrewOption();
+
+                if ( commandInput != 3 )
+                {
+                    currentCrew = this->GetView()->GetCurrentCrew(currentCrew, commandInput);
+
+                    const auto crew = this->GetModel()->GetCrew().at(currentCrew);
+
+                    CrewView view(*crew);
+                    CrewController controller(*crew, view);
+                    controller.ShowAll();
+                }
+            }
+        }
+
         void ProjectController::AddCrew()
         {
             if ( this->GetModel()->GetCrew().empty() )
@@ -173,6 +228,16 @@ namespace TrekStar
                 this->GetView()->DisplayHasNoCrew();
                 return;
             }
+
+            std::shared_ptr<People::Crew> crew;
+
+            CrewView view(*crew);
+            CrewController controller(*crew, view);
+
+//            controller.SetFormat("vhs");
+//            controller.AddNew();
+//
+//            this->GetModel()->AddCrew(crew);
         }
 
         void ProjectController::UpdateCrew()

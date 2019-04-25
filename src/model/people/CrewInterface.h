@@ -12,6 +12,11 @@ namespace TrekStar
         public:
             ~CrewInterface() override = default;
 
+            virtual std::string GetName() const = 0;
+            virtual std::string GetJobTitle() const = 0;
+
+            virtual void SetName(const std::string & name) = 0;
+            virtual void SetJobTitle(const std::string & title) = 0;
         };
     }
 }

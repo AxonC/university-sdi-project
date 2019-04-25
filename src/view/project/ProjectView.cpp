@@ -5,6 +5,7 @@
 #include "../../controller/material/MaterialController.h"
 #include "../../command/CommandHandler.h"
 #include "../../command/userInput.h"
+#include "../../information/SequentialBrowser.h"
 
 using TrekStar::Material::MaterialController;
 using TrekStar::Material::MaterialView;
@@ -207,7 +208,8 @@ namespace TrekStar
                             {3, "Edit Released"},
                             {4, "Edit Playing In Theatres"},
                             {5, "Edit Existing Keywords"},
-                            {6, "Cancel"}
+                            {6, "Edit Crew"},
+                            {7, "Cancel"}
                     },
                     "Update Project"
             );
@@ -222,6 +224,56 @@ namespace TrekStar
         unsigned int ProjectView::GetMaterialSelection()
         {
             return TrekStar::Command::GetIndexInput(this->GetModel()->GetMaterials().size(), "Material ID");
+        }
+
+        unsigned int ProjectView::GetListMaterialsOption()
+        {
+            TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
+                    {
+                            {1, "Next Material"},
+                            {2, "Previous Material"},
+                            {3, "Cancel"}
+                    },
+                    "List Materials"
+            );
+
+            commandHandler.displayCommands();
+            unsigned int commandInput = commandHandler.getUserInput();
+            commandHandler.clearConsole();
+
+            return commandInput;
+        }
+
+        unsigned int ProjectView::GetCurrentMaterial(unsigned int currentMaterial, unsigned int commandInput)
+        {
+            TrekStar::Information::SequentialBrowser sequentialBrowser(this->GetModel()->GetMaterials().size(), currentMaterial, commandInput);
+
+            return sequentialBrowser.GetItemNumber();
+        }
+
+        unsigned int ProjectView::GetListCrewOption()
+        {
+            TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
+                    {
+                            {1, "Next Crew"},
+                            {2, "Previous Crew"},
+                            {3, "Cancel"}
+                    },
+                    "List Crew"
+            );
+
+            commandHandler.displayCommands();
+            unsigned int commandInput = commandHandler.getUserInput();
+            commandHandler.clearConsole();
+
+            return commandInput;
+        }
+
+        unsigned int ProjectView::GetCurrentCrew(unsigned int currentCrew, unsigned int commandInput)
+        {
+            TrekStar::Information::SequentialBrowser sequentialBrowser(this->GetModel()->GetCrew().size(), currentCrew, commandInput);
+
+            return sequentialBrowser.GetItemNumber();
         }
 
         void ProjectView::DisplayCannotAddMaterial()

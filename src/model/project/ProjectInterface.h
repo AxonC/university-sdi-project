@@ -46,6 +46,7 @@ namespace TrekStar
 
             virtual void AddMaterial(const std::shared_ptr<Material::Material> & material) = 0;
             virtual void RemoveMaterial(const std::shared_ptr<Material::Material> & material) = 0;
+            virtual void AddCrew(const std::shared_ptr<People::Crew> &) = 0;
         };
     }
 }

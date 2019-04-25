@@ -15,6 +15,14 @@ namespace TrekStar
         public:
             CrewView() = default;
             explicit CrewView(CrewInterface & model);
+
+            void PresentAll() override;
+            void PresentList() override;
+
+            std::string GetNewName();
+            unsigned int GetJobTitle();
+
+            CrewInterface* GetModel() override;
         };
     }
 }

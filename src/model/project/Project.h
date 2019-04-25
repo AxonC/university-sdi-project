@@ -88,8 +88,8 @@ namespace TrekStar
             void RemoveMaterial(const std::shared_ptr<Material::Material> & material) override;
             bool CanAddMaterial() const;
 
-            std::vector<std::shared_ptr<People::Crew>> GetCrew() const;
-            void AddCrew(const std::shared_ptr<People::Crew> &);
+            std::vector<std::shared_ptr<People::Crew>> GetCrew() const override;
+            void AddCrew(const std::shared_ptr<People::Crew> &) override;
             void AddCrew(const std::vector<std::shared_ptr<People::Crew>> & crew);
             void RemoveCrew(const std::shared_ptr<People::Crew> &);
 
