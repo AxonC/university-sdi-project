@@ -16,6 +16,9 @@ namespace TrekStar
             unsigned int GetUpdateOption() override;
 
             std::string GetNewAudioTrack();
+            unsigned int GetNewPackaging();
+
+            void PresentPermittedPackaging();
 
         private:
             VHS* GetModel() override;

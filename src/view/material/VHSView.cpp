@@ -40,14 +40,29 @@ namespace TrekStar
 
             if ( currentAudioTrack.empty() )
             {
-                std::cout << "Content: ";
+                std::cout << "Audio Track: ";
             }
             else
             {
-                std::cout << "Content [current: " << currentAudioTrack << "]: ";
+                std::cout << "Audio Track [current: " << currentAudioTrack << "]: ";
             }
 
             return TrekStar::Command::GetStringInput();
+        }
+
+        unsigned int VHSView::GetNewPackaging()
+        {
+            return TrekStar::Command::GetIndexInput(this->GetModel()->GetPermittedPackaging().size(), "Packaging");
+        }
+
+        void VHSView::PresentPermittedPackaging()
+        {
+            unsigned int counter = 0;
+            for ( auto const & packaging: this->GetModel()->GetPermittedPackaging() )
+            {
+                counter++;
+                std::cout << "[" << counter << "] : " << packaging << std::endl;
+            }
         }
 
         VHS* VHSView::GetModel()

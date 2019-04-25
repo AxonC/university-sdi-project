@@ -20,11 +20,14 @@ namespace TrekStar {
         class VHS: public Material
         {
             private:
+                std::vector<std::string> permittedPackaging;
                 std::string audioTrack;
             public:
                 VHS();
 
                 std::string GetAudioTrack();
+                std::vector<std::string> GetPermittedPackaging() const;
+
                 void SetAudioTrack(const std::string &);
 
                 KeyValueMap GetPresentableInformation() const override;

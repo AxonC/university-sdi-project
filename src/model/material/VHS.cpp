@@ -14,12 +14,18 @@ namespace TrekStar {
             this->subtitles = j.at("subtitles");
             this->frameAspect = j.at("frameAspect");
             this->packaging = j.at("packaging");
+            this->permittedPackaging = {"Plastic", "Cardboard"};
             this->audioTrack = j.at("audioTrack");
         }
 
         std::string VHS::GetAudioTrack()
         {
             return this->audioTrack;
+        }
+
+        std::vector<std::string> VHS::GetPermittedPackaging() const
+        {
+            return this->permittedPackaging;
         }
 
         void VHS::SetAudioTrack(const std::string & audioTrack)

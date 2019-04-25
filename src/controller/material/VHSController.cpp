@@ -13,7 +13,8 @@ namespace TrekStar
 
         void VHSController::UpdatePackaging()
         {
-            
+            this->GetView()->PresentPermittedPackaging();
+            this->GetModel()->SetPackaging(this->GetModel()->GetPermittedPackaging().at(this->GetView()->GetNewPackaging()));
         }
 
         void VHSController::Update()
