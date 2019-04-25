@@ -241,7 +241,14 @@ namespace TrekStar
 
         void ProjectController::UpdateCrew()
         {
+            this->GetView()->PresentCrewList();
 
+            auto crew = this->GetModel()->GetCrew().at(this->GetView()->GetCrewSelection());
+
+            CrewView view(*crew);
+            CrewController controller(*crew, view);
+
+            controller.Update();
         }
 
         void ProjectController::RemoveCrew()
