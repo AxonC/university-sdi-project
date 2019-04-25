@@ -136,10 +136,15 @@ namespace TrekStar
 
         void ProjectController::RemoveMaterial()
         {
+            if ( this->GetModel()->GetMaterials().empty() )
+            {
+                this->GetView()->DisplayHasNoMaterials();
+                return;
+            }
+
             this->GetView()->PresentMaterialsList();
 
             auto material = this->GetModel()->GetMaterials().at(this->GetView()->GetMaterialSelection());
-
             this->GetModel()->RemoveMaterial(material);
         }
 

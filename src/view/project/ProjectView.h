@@ -36,6 +36,7 @@ namespace TrekStar
             unsigned int GetMaterialSelection();
 
             void DisplayCannotAddMaterial();
+            void DisplayHasNoMaterials();
 
             ProjectInterface* GetModel() override;
         };

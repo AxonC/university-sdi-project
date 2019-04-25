@@ -229,6 +229,11 @@ namespace TrekStar
             std::cout << "Material cannot be added to this Project." << std::endl;
         }
 
+        void ProjectView::DisplayHasNoMaterials()
+        {
+            std::cout << "This project has no materials." << std::endl;
+        }
+
         ProjectInterface* ProjectView::GetModel()
         {
             return dynamic_cast<ProjectInterface*>(this->model);
