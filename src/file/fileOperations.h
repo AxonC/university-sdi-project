@@ -8,6 +8,7 @@ namespace TrekStar
     namespace Project
     {
         class Project;
+        class BoxOfficeReport;
     } // namespace Project
 
     namespace Material
@@ -25,6 +26,7 @@ namespace TrekStar
 using ProjectVector = std::vector<TrekStar::Project::Project>;
 using MaterialVector = std::vector<std::shared_ptr<TrekStar::Material::Material>>;
 using CrewVector = std::vector<std::shared_ptr<TrekStar::People::Crew>>;
+using BoxOfficeReportVector = std::vector<std::shared_ptr<TrekStar::Project::BoxOfficeReport>>;
 
 namespace TrekStar
 {
@@ -33,6 +35,8 @@ namespace TrekStar
         Project::Project createProject(const json &);
 
         MaterialVector createMaterials(const json &);
+
+        BoxOfficeReportVector createBoxOfficeReports(const json &);
 
         ProjectVector importProjects(const std::string &);
     }

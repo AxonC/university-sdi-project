@@ -11,20 +11,16 @@ namespace TrekStar
         class Crew;
         class SerializedCrew;
     } // namespace People
-} // namespace TrekStar
-
-namespace TrekStar
-{
-    namespace People
-    {
-        class Crew;
-        class SerializedCrew;
-    } // namespace People
 
     namespace Material
     {
         class Material;
-    }
+    } // namespace Material
+
+    namespace Project
+    {
+        class BoxOfficeReport;
+    } // namespace Project
 } // namespace TrekStar
 
 namespace TrekStar
@@ -40,6 +36,7 @@ namespace TrekStar
             bool playingInTheatres;
             std::vector<std::string> keywords;
             std::vector<std::shared_ptr<People::Crew>> crew;
+            std::vector<std::shared_ptr<BoxOfficeReport>> boxOfficeReports;
         };
 
         /**
@@ -58,6 +55,7 @@ namespace TrekStar
             bool playingInTheatres = false;
             std::vector<std::string> keywords;
             std::vector<std::shared_ptr<People::Crew>> crew;
+            std::vector<std::shared_ptr<BoxOfficeReport>> boxOfficeReports;
             bool MaterialFormatExists(const std::string & materialFormat) const;
             void AddMaterialFormat(const std::string & materialFormat);
 
@@ -93,6 +91,10 @@ namespace TrekStar
             void AddCrew(const std::shared_ptr<People::Crew> &);
             void AddCrew(const std::vector<std::shared_ptr<People::Crew>> & crew);
             void RemoveCrew(const std::shared_ptr<People::Crew> &);
+
+            std::vector<std::shared_ptr<BoxOfficeReport>> GetBoxOfficeReports() const;
+            void AddBoxOfficeReport(const std::shared_ptr<BoxOfficeReport> &);
+            void AddBoxOfficeReports(const std::vector<std::shared_ptr<BoxOfficeReport>> &);
 
             void ReleaseProject();
 

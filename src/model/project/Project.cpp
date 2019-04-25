@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Project.h"
 
+#include "BoxOfficeReport.h"
 #include "../people/Crew.h"
 #include "../material/Material.h"
 
@@ -251,6 +252,24 @@ namespace TrekStar
         bool Project::operator<(const std::string & title) const
         {
             return this->GetSearchableTitle() < title;
+        }
+
+        std::vector<std::shared_ptr<BoxOfficeReport>> Project::GetBoxOfficeReports() const
+        {
+            return this->boxOfficeReports;
+        }
+
+        void Project::AddBoxOfficeReport(const std::shared_ptr<BoxOfficeReport> & report)
+        {
+            this->boxOfficeReports.push_back(report);
+        }
+
+        void Project::AddBoxOfficeReports(const std::vector<std::shared_ptr<BoxOfficeReport>> & reports)
+        {
+            for(const auto & report : reports)
+            {
+                this->boxOfficeReports.push_back(report);
+            }
         }
 
         void to_json(json & j, const SerialisedProject & project)
