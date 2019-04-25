@@ -33,13 +33,17 @@ namespace TrekStar
             DVDSide GetSideTwo() const override;
             KeyValueMapVector GetPresentableDiskInformation() const;
 
-
+            void SetSideOneAdditionalLanguageTracks(const std::vector<std::string> & additionalLanguageTracks);
+            void SetSideOneAdditionalSubtitleTracks(const std::vector<std::string> & additionalSubtitleTracks);
+            void SetSideOneBonusFeatures(const std::vector<std::string> & bonusFeatures);
+            void SetSideTwoAdditionalLanguageTracks(const std::vector<std::string> & additionalLanguageTracks);
+            void SetSideTwoAdditionalSubtitleTracks(const std::vector<std::string> & additionalSubtitleTracks);
+            void SetSideTwoBonusFeatures(const std::vector<std::string> & bonusFeatures);
 
             void SetSideOneContent(const std::string & content);
             void SetSideOneAdditionalLanguageTrack(unsigned int index, const std::string & languageTrack);
             void SetSideOneAdditionalSubtitleTrack(unsigned int index, const std::string & subtitleTrack);
             void SetSideOneBonusFeature(unsigned int index, const std::string & bonusFeature);
-
             void SetSideTwoContent(const std::string & content);
             void SetSideTwoAdditionalLanguageTrack(unsigned int index, const std::string & languageTrack);
             void SetSideTwoAdditionalSubtitleTrack(unsigned int index, const std::string & subtitleTrack);

@@ -48,7 +48,7 @@ namespace TrekStar
                 sideOneAdditionalLanguageTracks.push_back(this->GetView()->GetNewAdditionalLanguageTrack(i));
             }
 
-            this->GetModel()->GetSide().SetAdditionalLanguageTracks(sideOneAdditionalLanguageTracks);
+            this->GetModel()->SetAdditionalLanguageTracks(sideOneAdditionalLanguageTracks);
         }
 
         void DVDController::AddAdditionalSubtitleTracks()
@@ -62,7 +62,7 @@ namespace TrekStar
                 sideOneAdditionalSubtitleTracks.push_back(this->GetView()->GetNewAdditionalSubtitleTrack(i));
             }
 
-            this->GetModel()->GetSide().SetAdditionalSubtitleTracks(sideOneAdditionalSubtitleTracks);
+            this->GetModel()->SetAdditionalSubtitleTracks(sideOneAdditionalSubtitleTracks);
         }
 
         void DVDController::AddBonusFeatures()
@@ -76,7 +76,7 @@ namespace TrekStar
                 sideOneBonusFeatures.push_back(this->GetView()->GetNewBonusFeature(i));
             }
 
-            this->GetModel()->GetSide().SetAdditionalSubtitleTracks(sideOneBonusFeatures);
+            this->GetModel()->SetBonusFeatures(sideOneBonusFeatures);
         }
 
         void DVDController::Update()

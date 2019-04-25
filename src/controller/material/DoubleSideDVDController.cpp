@@ -22,7 +22,7 @@ namespace TrekStar
                 sideOneAdditionalLanguageTracks.push_back(this->GetView()->GetNewSideOneAdditionalLanguageTrack(i));
             }
 
-            this->GetModel()->GetSideOne().SetAdditionalLanguageTracks(sideOneAdditionalLanguageTracks);
+            this->GetModel()->SetSideOneAdditionalLanguageTracks(sideOneAdditionalLanguageTracks);
         }
 
         void DoubleSideDVDController::AddSideOneAdditionalSubtitleTracks()
@@ -36,7 +36,7 @@ namespace TrekStar
                 sideOneAdditionalSubtitleTracks.push_back(this->GetView()->GetNewSideOneAdditionalSubtitleTrack(i));
             }
 
-            this->GetModel()->GetSideOne().SetAdditionalSubtitleTracks(sideOneAdditionalSubtitleTracks);
+            this->GetModel()->SetSideOneAdditionalSubtitleTracks(sideOneAdditionalSubtitleTracks);
         }
 
         void DoubleSideDVDController::AddSideOneBonusFeatures()
@@ -50,7 +50,7 @@ namespace TrekStar
                 sideOneBonusFeatures.push_back(this->GetView()->GetNewSideOneBonusFeature(i));
             }
 
-            this->GetModel()->GetSideOne().SetAdditionalSubtitleTracks(sideOneBonusFeatures);
+            this->GetModel()->SetSideOneBonusFeatures(sideOneBonusFeatures);
         }
 
         void DoubleSideDVDController::AddSideTwoAdditionalLanguageTracks()
@@ -64,7 +64,7 @@ namespace TrekStar
                 sideTwoAdditionalLanguageTracks.push_back(this->GetView()->GetNewSideTwoAdditionalLanguageTrack(i));
             }
 
-            this->GetModel()->GetSideTwo().SetAdditionalLanguageTracks(sideTwoAdditionalLanguageTracks);
+            this->GetModel()->SetSideTwoAdditionalLanguageTracks(sideTwoAdditionalLanguageTracks);
         }
 
         void DoubleSideDVDController::AddSideTwoAdditionalSubtitleTracks()
@@ -78,7 +78,7 @@ namespace TrekStar
                 sideTwoAdditionalSubtitleTracks.push_back(this->GetView()->GetNewSideTwoAdditionalSubtitleTrack(i));
             }
 
-            this->GetModel()->GetSideTwo().SetAdditionalSubtitleTracks(sideTwoAdditionalSubtitleTracks);
+            this->GetModel()->SetSideTwoAdditionalSubtitleTracks(sideTwoAdditionalSubtitleTracks);
         }
 
         void DoubleSideDVDController::AddSideTwoBonusFeatures()
@@ -92,7 +92,7 @@ namespace TrekStar
                 sideTwoBonusFeatures.push_back(this->GetView()->GetNewSideTwoBonusFeature(i));
             }
 
-            this->GetModel()->GetSideTwo().SetAdditionalSubtitleTracks(sideTwoBonusFeatures);
+            this->GetModel()->SetSideTwoBonusFeatures(sideTwoBonusFeatures);
         }
 
         void DoubleSideDVDController::UpdateSideOneAdditionalLanguageTracks()

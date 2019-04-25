@@ -82,6 +82,36 @@ namespace TrekStar
             return information;
         }
 
+        void DoubleSideDVD::SetSideOneAdditionalLanguageTracks(const std::vector<std::string> & additionalLanguageTracks)
+        {
+            this->sideOne.SetAdditionalLanguageTracks(additionalLanguageTracks);
+        }
+
+        void DoubleSideDVD::SetSideOneAdditionalSubtitleTracks(const std::vector<std::string> & additionalSubtitleTracks)
+        {
+            this->sideOne.SetAdditionalSubtitleTracks(additionalSubtitleTracks);
+        }
+
+        void DoubleSideDVD::SetSideOneBonusFeatures(const std::vector<std::string> & bonusFeatures)
+        {
+            this->sideOne.SetBonusFeatures(bonusFeatures);
+        }
+
+        void DoubleSideDVD::SetSideTwoAdditionalLanguageTracks(const std::vector<std::string> & additionalLanguageTracks)
+        {
+            this->sideTwo.SetAdditionalLanguageTracks(additionalLanguageTracks);
+        }
+
+        void DoubleSideDVD::SetSideTwoAdditionalSubtitleTracks(const std::vector<std::string> & additionalSubtitleTracks)
+        {
+            this->sideTwo.SetAdditionalSubtitleTracks(additionalSubtitleTracks);
+        }
+
+        void DoubleSideDVD::SetSideTwoBonusFeatures(const std::vector<std::string> & bonusFeatures)
+        {
+            this->sideTwo.SetBonusFeatures(bonusFeatures);
+        }
+
         void DoubleSideDVD::SetSideOneContent(const std::string & content)
         {
             this->sideOne.SetContent(content);

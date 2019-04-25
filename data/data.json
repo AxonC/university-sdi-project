@@ -223,20 +223,6 @@
                 "retailPrice": 9.99,
                 "runTime": 2000,
                 "subtitles": "test"
-            },
-            {
-                "additionalLanguageTracks": [],
-                "additionalSubtitleTracks": [],
-                "audioFormat": "dts",
-                "bonusFeatures": [],
-                "content": "est",
-                "format": "dvd",
-                "frameAspect": "6:10",
-                "id": 0,
-                "language": "eng",
-                "retailPrice": 9.99,
-                "runTime": 2000,
-                "subtitles": "eng"
             }
         ]
     },
@@ -254,7 +240,28 @@
             "summary": "test",
             "title": "test"
         },
-        "materials": null
+        "materials": [
+            {
+                "additionalLanguageTracks": [
+                    "test",
+                    "est"
+                ],
+                "additionalSubtitleTracks": [
+                    "tset",
+                    "est"
+                ],
+                "audioFormat": "dts",
+                "bonusFeatures": [],
+                "content": "est",
+                "format": "dvd",
+                "frameAspect": "6",
+                "id": 0,
+                "language": "eng",
+                "retailPrice": 9.99,
+                "runTime": 2000,
+                "subtitles": "test"
+            }
+        ]
     },
     "3": {
         "crew": null,
