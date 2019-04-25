@@ -71,11 +71,11 @@ namespace TrekStar
         {
             std::shared_ptr<Material::Material> material = nullptr;
 
-//            while ( currentMaterial == nullptr )
-//            {
+            while ( material == nullptr )
+            {
                 std::string format = this->GetView()->GetNewMaterialFormat();
                 material = Material::MaterialFactory::Create(format);
-            //}
+            }
 
             this->GetModel()->AddMaterial(material);
 
