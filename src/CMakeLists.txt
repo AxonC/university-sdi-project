@@ -15,7 +15,7 @@ set(Material_Model model/material/Material.h model/material/Material.cpp model/m
 set(MaterialFactory_Model model/material/MaterialFactory.h model/material/MaterialFactory.cpp)
 set(VHS_Model model/material/VHS.h model/material/VHS.cpp)
 set(Crew_Model model/people/Crew.h model/people/Crew.cpp)
-set(Project_Model model/project/Project.h model/project/Project.cpp model/project/ProjectInterface.h)
+set(Project_Model model/project/Project.h model/project/Project.cpp model/project/ProjectInterface.h model/project/BoxOfficeReport.cpp model/project/BoxOfficeReport.h)
 add_library(Models ${Base_Model} ${Bluray_Model} ${BoxSet_Model} ${DoubleSideDVD_Model} ${DVD_Model} ${DVDSide_Model} ${Material_Model} ${MaterialFactory_Model} ${VHS_Model} ${Crew_Model} ${Project_Model})
 
 # views

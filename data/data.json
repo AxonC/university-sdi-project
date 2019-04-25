@@ -18,6 +18,15 @@
             "summary": "A super hero does stuff again",
             "title": "A Great Movie"
         },
+        "boxOfficeReports":
+        [
+            {
+                "id": 1,
+                "weekNumber": 1,
+                "ticketsSold": 23829,
+                "revenue": 43324829.25
+            }
+        ],
         "materials": [
             {
                 "additionalLanguageTracks": [
