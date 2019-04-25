@@ -25,6 +25,12 @@
                 "weekNumber": 1,
                 "ticketsSold": 23829,
                 "revenue": 43324829.25
+            },
+            {
+                "id": 2,
+                "weekNumber": 2,
+                "ticketsSold": 249043,
+                "revenue": 38429420.36
             }
         ],
         "materials": [
