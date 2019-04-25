@@ -77,7 +77,15 @@ namespace TrekStar
                 material = Material::MaterialFactory::Create(format);
             }
 
-            this->GetModel()->AddMaterial(material);
+            try
+            {
+                this->GetModel()->AddMaterial(material);
+            }
+            catch (std::domain_error &)
+            {
+                this->GetView()->DisplayCannotAddMaterial();
+                return;
+            }
 
             if ( auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::DoubleSideDVD>(material) )
             {

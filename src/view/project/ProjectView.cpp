@@ -224,6 +224,11 @@ namespace TrekStar
             return TrekStar::Command::GetIndexInput(this->GetModel()->GetMaterials().size(), "Material ID");
         }
 
+        void ProjectView::DisplayCannotAddMaterial()
+        {
+            std::cout << "Material cannot be added to this Project." << std::endl;
+        }
+
         ProjectInterface* ProjectView::GetModel()
         {
             return dynamic_cast<ProjectInterface*>(this->model);
