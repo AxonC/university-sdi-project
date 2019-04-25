@@ -206,7 +206,7 @@ namespace TrekStar
 
             if ( currentAdditionalSubtitleTracks.empty() )
             {
-                std::cout << "Side One Additional Subtitle Track #: ";
+                std::cout << "Side One Additional Subtitle Track #" << additionalSubtitleTrackNo + 1 << ": ";
             }
             else
             {
@@ -222,7 +222,7 @@ namespace TrekStar
 
             if ( currentBonusFeatures.empty() )
             {
-                std::cout << "Side One Bonus Feature #: ";
+                std::cout << "Side One Bonus Feature #" << bonusFeatureNo + 1 << ": ";
             }
             else
             {
@@ -254,7 +254,7 @@ namespace TrekStar
 
             if ( currentAdditionalLanguageTracks.empty() )
             {
-                std::cout << "Side Two Additional Language Track #: ";
+                std::cout << "Side Two Additional Language Track #" << additionalLanguageTrackNo + 1 << ": ";
             }
             else
             {
@@ -270,7 +270,7 @@ namespace TrekStar
 
             if ( currentAdditionalSubtitleTracks.empty() )
             {
-                std::cout << "Side Two Additional Subtitle Track #: ";
+                std::cout << "Side Two Additional Subtitle Track #" << additionalSubtitleTrackNo + 1 << ": ";
             }
             else
             {
@@ -286,7 +286,7 @@ namespace TrekStar
 
             if ( currentBonusFeatures.empty() )
             {
-                std::cout << "Side Two Bonus Feature #: ";
+                std::cout << "Side Two Bonus Feature #" << bonusFeatureNo + 1 << ": ";
             }
             else
             {

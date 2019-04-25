@@ -37,6 +37,48 @@ namespace TrekStar
             this->GetModel()->SetAdditionalSubtitleTrack(additionalSubtitleTrackNo, this->GetView()->GetNewBonusFeature(additionalSubtitleTrackNo));
         }
 
+        void DVDController::AddAdditionalLanguageTracks()
+        {
+            unsigned int noOfAdditionalLanguageTracks = this->GetView()->GetNoOfAdditionalLanguageTracks();
+
+            std::vector<std::string> sideOneAdditionalLanguageTracks;
+
+            for ( unsigned int i = 0; i < noOfAdditionalLanguageTracks; i++ )
+            {
+                sideOneAdditionalLanguageTracks.push_back(this->GetView()->GetNewAdditionalLanguageTrack(i));
+            }
+
+            this->GetModel()->GetSide().SetAdditionalLanguageTracks(sideOneAdditionalLanguageTracks);
+        }
+
+        void DVDController::AddAdditionalSubtitleTracks()
+        {
+            unsigned int noOfAdditionalSubtitleTracks = this->GetView()->GetNoOfAdditionalSubtitleTracks();
+
+            std::vector<std::string> sideOneAdditionalSubtitleTracks;
+
+            for ( unsigned int i = 0; i < noOfAdditionalSubtitleTracks; i++ )
+            {
+                sideOneAdditionalSubtitleTracks.push_back(this->GetView()->GetNewAdditionalSubtitleTrack(i));
+            }
+
+            this->GetModel()->GetSide().SetAdditionalSubtitleTracks(sideOneAdditionalSubtitleTracks);
+        }
+
+        void DVDController::AddBonusFeatures()
+        {
+            unsigned int noOfBonusFeatures = this->GetView()->GetNoOfBonusFeatures();
+
+            std::vector<std::string> sideOneBonusFeatures;
+
+            for ( unsigned int i = 0; i < noOfBonusFeatures; i++ )
+            {
+                sideOneBonusFeatures.push_back(this->GetView()->GetNewBonusFeature(i));
+            }
+
+            this->GetModel()->GetSide().SetAdditionalSubtitleTracks(sideOneBonusFeatures);
+        }
+
         void DVDController::Update()
         {
             unsigned int commandInput = this->GetView()->GetUpdateOption();
@@ -85,9 +127,9 @@ namespace TrekStar
         {
             MaterialController::AddNew();
             this->UpdateContent();
-            this->UpdateAdditionalLanguageTracks();
-            this->UpdateAdditionalSubtitleTracks();
-            this->UpdateBonusFeatures();
+            this->AddAdditionalLanguageTracks();
+            this->AddAdditionalSubtitleTracks();
+            this->AddBonusFeatures();
         }
 
         DVDView* DVDController::GetView()

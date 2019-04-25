@@ -52,6 +52,24 @@ namespace TrekStar
             return TrekStar::Command::GetIndexInput(this->GetModel()->GetAdditionalLanguageTracks().size(), "Bonus Feature");
         }
 
+        unsigned int DVDView::GetNoOfAdditionalLanguageTracks()
+        {
+            std::cout << "Number of Additional Language Tracks: ";
+            return TrekStar::Command::GetIntInput();
+        }
+
+        unsigned int DVDView::GetNoOfAdditionalSubtitleTracks()
+        {
+            std::cout << "Number of Additional Subtitle Tracks: ";
+            return TrekStar::Command::GetIntInput();
+        }
+
+        unsigned int DVDView::GetNoOfBonusFeatures()
+        {
+            std::cout << "Number of Bonus Features: ";
+            return TrekStar::Command::GetIntInput();
+        }
+
         void DVDView::PresentAdditionalLanguageTracks()
         {
             unsigned int counter = 0;
@@ -104,7 +122,7 @@ namespace TrekStar
 
             if ( currentAdditionalLanguageTracks.empty() )
             {
-                std::cout << "Additional Language Track #: ";
+                std::cout << "Additional Language Track #" << additionalLanguageTrackNo + 1 << ": ";
             }
             else
             {
@@ -120,7 +138,7 @@ namespace TrekStar
 
             if ( currentAdditionalSubtitleTracks.empty() )
             {
-                std::cout << "Additional Subtitle Track #: ";
+                std::cout << "Additional Subtitle Track #" << additionalSubtitleTrackNo + 1 << ": ";
             }
             else
             {
@@ -136,7 +154,7 @@ namespace TrekStar
 
             if ( currentBonusFeatures.empty() )
             {
-                std::cout << "Bonus Feature #: ";
+                std::cout << "Bonus Feature #" << bonusFeatureNo + 1 << ": ";
             }
             else
             {

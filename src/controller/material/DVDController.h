@@ -18,6 +18,10 @@ namespace TrekStar
             void UpdateAdditionalSubtitleTracks();
             void UpdateBonusFeatures();
 
+            void AddAdditionalLanguageTracks();
+            void AddAdditionalSubtitleTracks();
+            void AddBonusFeatures();
+
             DVDView* GetView() override;
             DVD* GetModel() override;
 
