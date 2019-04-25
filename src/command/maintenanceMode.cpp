@@ -38,7 +38,7 @@ namespace TrekStar
                 commandInput = commandHandler.getUserInput();
                 commandHandler.clearConsole();
 
-                if ( commandHandler.isValidCommand(commandInput) && commandInput != 7 )
+                if ( commandHandler.isValidCommand(commandInput) && commandInput != 10 )
                 {
                     if ( commandInput == 1 )
                     {
