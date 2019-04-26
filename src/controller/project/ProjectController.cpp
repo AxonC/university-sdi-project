@@ -136,6 +136,7 @@ namespace TrekStar
 
                 controller.SetFormat("dsdvd");
                 controller.AddNew();
+                _logger->info("Material " + std::to_string(castedMaterial->GetId()) + " was added to project " + std::to_string(this->GetModel()->GetId()));
             }
             else if ( auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::DVD>(material) )
             {

@@ -2,7 +2,12 @@
 
 namespace TrekStar
 {
-    BaseController::BaseController(Model* & model, ViewInterface* & view)
+    BaseController::BaseController()
+    {
+        this->_logger = spdlog::get("logger");
+    }
+
+    BaseController::BaseController(Model* & model, ViewInterface* & view) : BaseController()
     {
         this->model = model;
         this->view = view;

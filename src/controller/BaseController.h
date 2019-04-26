@@ -14,9 +14,10 @@ namespace TrekStar
     protected:
         Model* model;
         ViewInterface* view;
+        std::shared_ptr<spdlog::logger> _logger;
 
     public:
-        BaseController() = default;
+        BaseController();
         BaseController(Model* &, ViewInterface* &);
         ~BaseController() = default;
 
