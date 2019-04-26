@@ -63,7 +63,7 @@ namespace TrekStarTest {
         {
             releasedProject.ReleaseProject();
 
-            releasedProject.AddMaterials(material);
+            releasedProject.AddMaterial(material);
 
             EXPECT_EQ(releasedProject.GetMaterials().size(), 1);
         }
@@ -72,14 +72,12 @@ namespace TrekStarTest {
         {
             std::shared_ptr<DVD> material = std::make_shared<DVD>();
 
-            project.AddMaterials(material);
-
-            EXPECT_EQ(project.GetMaterials().size(), 0);
+            EXPECT_THROW(project.AddMaterial(material), std::domain_error);
         }
 
         TEST_F(ProjectTest, CanRemoveMaterialWhenAssociatedWithProject)
         {
-            releasedProject.AddMaterials(material);
+            releasedProject.AddMaterial(material);
 
             releasedProject.RemoveMaterial(material);
 
