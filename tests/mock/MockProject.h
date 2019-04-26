@@ -31,6 +31,8 @@ public:
 
     MOCK_METHOD1(AddMaterial, void(const std::shared_ptr<TrekStar::Material::Material> &));
     MOCK_METHOD1(RemoveMaterial, void(const std::shared_ptr<TrekStar::Material::Material> &));
+    MOCK_CONST_METHOD0(CanAddMaterial, bool());
+
     MOCK_METHOD1(AddCrew, void(const std::shared_ptr<TrekStar::People::Crew> &));
     MOCK_METHOD1(RemoveCrew, void(const std::shared_ptr<TrekStar::People::Crew> &));
 

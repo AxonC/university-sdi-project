@@ -80,11 +80,6 @@ namespace TrekStar
             return this->materialFormats;
         }
 
-        std::pair<std::string, std::string> Project::GetTitleSummary() const
-        {
-            return {this->title, this->GetSummary()};
-        }
-
         void Project::SetTitle(const std::string & title)
         {
             this->title = title;

@@ -75,7 +75,6 @@ namespace TrekStar
             bool GetPlayingInTheatres() const override;
             std::vector<std::string> GetKeywords() const override;
             std::vector<std::string> GetMaterialFormats() const override;
-            std::pair<std::string, std::string> GetTitleSummary() const;
 
             void SetTitle(const std::string & title) override;
             void SetSummary(const std::string & summary) override;
@@ -86,7 +85,7 @@ namespace TrekStar
             void AddMaterials(const std::vector<std::shared_ptr<Material::Material>> & materials);
             void AddMaterial(const std::shared_ptr<Material::Material> & material) override;
             void RemoveMaterial(const std::shared_ptr<Material::Material> & material) override;
-            bool CanAddMaterial() const;
+            bool CanAddMaterial() const override;
 
             std::vector<std::shared_ptr<People::Crew>> GetCrew() const override;
             void AddCrew(const std::shared_ptr<People::Crew> &) override;

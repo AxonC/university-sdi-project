@@ -54,13 +54,6 @@ namespace TrekStarTest {
             std::streambuf* storedStreambuf_;
         };
 
-
-        TEST_F(ProjectTest, CanGetPairWithTitleAndSummary)
-        {
-            ASSERT_EQ(project.GetTitleSummary().second, "A summary of a project");
-            ASSERT_EQ(project.GetTitleSummary().first, "Project");
-        }
-
         TEST_F(ProjectTest, CanAddMaterialsWhenValid)
         {
             releasedProject.ReleaseProject();
