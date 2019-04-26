@@ -3,6 +3,8 @@
 
 #include "../Model.h"
 
+#include "BoxOfficeReport.h"
+
 namespace TrekStar
 {
     namespace Material
@@ -48,6 +50,11 @@ namespace TrekStar
             virtual void RemoveMaterial(const std::shared_ptr<Material::Material> & material) = 0;
             virtual void AddCrew(const std::shared_ptr<People::Crew> &) = 0;
             virtual void RemoveCrew(const std::shared_ptr<People::Crew> &) = 0;
+
+            virtual std::vector<std::shared_ptr<BoxOfficeReport>> GetBoxOfficeReports() const = 0;
+            virtual void AddBoxOfficeReport(const std::shared_ptr<BoxOfficeReport> &) = 0;
+            virtual void AddBoxOfficeReports(const std::vector<std::shared_ptr<BoxOfficeReport>> &) = 0;
+            virtual unsigned long long int GetTotalBoxOfficeRevenue() const = 0;
         };
     }
 }

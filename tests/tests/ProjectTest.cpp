@@ -45,6 +45,8 @@ namespace TrekStarTest {
               std::cout.rdbuf(storedStreambuf_);
             }
 
+            NiceMock<MockProject> mockProject;
+
             Project project;
             Project releasedProject;
             std::shared_ptr<DVD> material = std::make_shared<DVD>();
@@ -103,17 +105,59 @@ namespace TrekStarTest {
             ASSERT_THROW(project.RemoveCrew(unassignedCrew), std::out_of_range);
         }
 
+        TEST_F(ProjectTest, BoxOfficeReportsCanBeAdded)
+        {
+            std::shared_ptr<TrekStar::Project::BoxOfficeReport> report =
+                    std::make_shared<TrekStar::Project::BoxOfficeReport>(1, 1, 5000, 500);
+
+            project.AddBoxOfficeReport(report);
+
+            ASSERT_EQ(project.GetBoxOfficeReports().size(), 1);
+        }
+
+        TEST_F(ProjectTest, TotalBoxOfficeRevenueIsCalculated)
+        {
+            std::vector<std::shared_ptr<TrekStar::Project::BoxOfficeReport>> reports
+                            {std::make_shared<TrekStar::Project::BoxOfficeReport>(1, 1, 5000, 500),
+                             std::make_shared<TrekStar::Project::BoxOfficeReport>(2, 3, 5000, 500)};
+
+            project.AddBoxOfficeReports(reports);
+
+            ASSERT_EQ(project.GetTotalBoxOfficeRevenue(), 10000);
+        }
+
+        TEST_F(ProjectTest, ReportCannotBeAddedForTheSameWeek)
+        {
+            std::shared_ptr<TrekStar::Project::BoxOfficeReport> report =
+                std::make_shared<TrekStar::Project::BoxOfficeReport>(1, 1, 5000, 500);
+
+            std::shared_ptr<TrekStar::Project::BoxOfficeReport> report2 =
+                std::make_shared<TrekStar::Project::BoxOfficeReport>(1, 1, 5000, 500);
+
+            project.AddBoxOfficeReport(report);
+
+            ASSERT_THROW(project.AddBoxOfficeReport(report2), std::domain_error);
+        }
+
+        TEST_F(ProjectTest, TwoReportsForTheSameWeekCannotBeAdded)
+        {
+            std::vector<std::shared_ptr<TrekStar::Project::BoxOfficeReport>> reports
+                {std::make_shared<TrekStar::Project::BoxOfficeReport>(1, 1, 5000, 500),
+                 std::make_shared<TrekStar::Project::BoxOfficeReport>(2, 1, 5000, 500)};
+
+            ASSERT_THROW(project.AddBoxOfficeReports(reports), std::domain_error);
+        }
+
         TEST_F(ProjectTest, ControllerPresentsProjectDetails)
         {
-            NiceMock<MockProject> mockProject;
-            ProjectView projectView(mockProject);
-
             EXPECT_CALL(mockProject, GetTitle()).Times(1);
             EXPECT_CALL(mockProject, GetSummary()).Times(1);
             EXPECT_CALL(mockProject, GetReleased()).Times(1);
             EXPECT_CALL(mockProject, GetPlayingInTheatres()).Times(1);
 
+            ProjectView projectView(mockProject);
             ProjectController controller(mockProject, projectView);
+
             controller.ShowAll();
         }
     }

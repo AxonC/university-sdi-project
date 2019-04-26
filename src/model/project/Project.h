@@ -93,9 +93,10 @@ namespace TrekStar
             void AddCrew(const std::vector<std::shared_ptr<People::Crew>> & crew);
             void RemoveCrew(const std::shared_ptr<People::Crew> &) override;
 
-            std::vector<std::shared_ptr<BoxOfficeReport>> GetBoxOfficeReports() const;
-            void AddBoxOfficeReport(const std::shared_ptr<BoxOfficeReport> &);
-            void AddBoxOfficeReports(const std::vector<std::shared_ptr<BoxOfficeReport>> &);
+            std::vector<std::shared_ptr<BoxOfficeReport>> GetBoxOfficeReports() const override;
+            void AddBoxOfficeReport(const std::shared_ptr<BoxOfficeReport> &) override;
+            void AddBoxOfficeReports(const std::vector<std::shared_ptr<BoxOfficeReport>> &) override;
+            unsigned long long int GetTotalBoxOfficeRevenue() const override;
 
             void ReleaseProject();
 

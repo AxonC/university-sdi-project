@@ -261,6 +261,14 @@ namespace TrekStar
 
         void Project::AddBoxOfficeReport(const std::shared_ptr<BoxOfficeReport> & report)
         {
+            for(const auto & existingReport: this->boxOfficeReports)
+            {
+                if (report->GetWeekNumber() == existingReport->GetWeekNumber())
+                {
+                    throw std::domain_error("Box office reports cannot be added for the same week.");
+                }
+            }
+
             this->boxOfficeReports.push_back(report);
         }
 
@@ -268,8 +276,25 @@ namespace TrekStar
         {
             for(const auto & report : reports)
             {
+                for(const auto & existingReport: this->boxOfficeReports)
+                {
+                    if (report->GetWeekNumber() == existingReport->GetWeekNumber())
+                    {
+                        throw std::domain_error("Box office reports cannot be added for the same week.");
+                    }
+                }
                 this->boxOfficeReports.push_back(report);
             }
+        }
+
+        unsigned long long int Project::GetTotalBoxOfficeRevenue() const
+        {
+            unsigned long long int initial = 0;
+
+            for (const auto & report: this->boxOfficeReports)
+                initial += report->GetRevenue();
+
+            return initial;
         }
 
         void to_json(json & j, const SerialisedProject & project)
