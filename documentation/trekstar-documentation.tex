@@ -128,6 +128,7 @@
 \usepackage{float}
 \floatplacement{figure}{H}
 
+\usepackage{pdflscape}
 \ifxetex
     % See issue https://github.com/reutenauer/polyglossia/issues/127
   \renewcommand*\familydefault{\sfdefault}
@@ -388,8 +389,6 @@
   \end{itemize}
 \item
   \protect\hyperlink{system-description}{System Description}
-\item
-  \protect\hyperlink{class-diagram}{Class Diagram}
 
   \begin{itemize}
   \tightlist
@@ -557,6 +556,9 @@ pls}}}{Todo - remove me before submission pls}}\label{todo---remove-me-before-su
   Packaging} once bugs have been fixed
 \item
   Look into new line for \# \# \# \# headers
+\item
+  Add class diagram (and any other landscape picture pages) to the TOC
+  on last save
 \end{itemize}
 
 \newpage
@@ -639,10 +641,23 @@ Pictures to accomplish the following
 
 \newpage
 
+\begin{landscape}
+
+\pagestyle{empty}
+
 \hypertarget{class-diagram}{%
 \section{Class Diagram}\label{class-diagram}}
 
-Include class diagram here.
+\begin{figure}
+    \makebox[\linewidth]{
+        \includegraphics[width=1.16\linewidth]{images/class-diagrams/class-diagram-models.jpg}
+    }
+    \caption{Class diagram} \label{fig:class_diagram}
+\end{figure}
+
+\end{landscape}
+
+\newpage
 
 \hypertarget{cohesion-and-coupling-considerations}{%
 \subsection{Cohesion and Coupling
@@ -656,7 +671,7 @@ elements of a component are directed towards a single task, within a
 single component, or to which the responsibilities of a class are
 related}.
 
-Within the design, it was important to seperate out the logic for the
+Within the design, it was important to separate out the logic for the
 presentation of the information from the business logic. We have
 achieved this using a Model - View - Controller architecture. In order
 for the views to gather data from the Models themselves, a large number
