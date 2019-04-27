@@ -13,6 +13,7 @@ titlepage-rule-color: "FFFFFF"
 titlepage-rule-height: 1
 header-includes: |
 	\usepackage{pdflscape}
+...
 
 # Table of Contents
 
@@ -33,13 +34,23 @@ header-includes: |
 	- [Company-Wide Installation](#company-wide-installation)
 - [Design Pattern](#design-pattern)
 	- [Factory Design Pattern](#factory-design-pattern)
+	- [Singleton](#singleton)
 - [Planned Architecture](#planned-architecture)
+	- [Architecture Presentation](#architecture-presentation)
+		- [Model-View-Controller](#model-view-controller)
+	- [Utility Tree](#utility-tree)
 - [Included C++ Libraries](#included-c-libraries)
 	- [JSON for C++ (GitHub Link)](#json-for-c-github-link)
 	- [GTest (GitHub Link)](#gtest-github-link)
 	- [spdlog (GitHub Link)](#spdlog-github-link)
 - [Internal Data Structures](#internal-data-structures)
 - [Search/Sorting Algorithm](#searchsorting-algorithm)
+	- [Merge Sort](#merge-sort)
+		- [Explaination](#explaination)
+		- [Justification](#justification)
+	- [Binary Search](#binary-search)
+		- [Explaination](#explaination-1)
+		- [Justification](#justification-1)
 - [UI Screenshots](#ui-screenshots)
 - [Software Testing Procedure](#software-testing-procedure)
 - [User Manual](#user-manual)
