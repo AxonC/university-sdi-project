@@ -13,7 +13,6 @@ titlepage-rule-color: "FFFFFF"
 titlepage-rule-height: 1
 header-includes: |
 	\usepackage{pdflscape}
-...
 
 # Table of Contents
 
@@ -282,13 +281,28 @@ With a large number of *materials* defined within the business rules, it was app
 
 The advantages of this pattern is that new materials types can easily be added by adding a small conditional statement in this class. This provides a level of abstraction and means that this class has only a single responsibility - to construct materials - removing this logic from the consuming object. This helps with the issue of coupling as functional cohesion is achieved. Because of the abstraction, it wouldn't mean any changes would necesarily have to occur in the consuming class.
 
+## Singleton
+
+Through the logging library spdlog, a singleton pattern was used in order to ensure a single logging instance is present within the application. This involved creating this instance as soon as the application was launched, and then accessed (using the library) within the areas of the application logging is used e.g. in the application. 
+
+A common issue with this pattern is the issue of multithreading, particularly with respect to file handling. There could be multiple components within the application 
+
 \newpage
 
 # Planned Architecture
 
-An explanation of the planned architecture and the reason of the choices according to ATAM
-(follow step 4 and 5, i.e., identify possible architecture styles and choose one with respect to
-the identified utility tree, you need to explain the reason).
+## Architecture Presentation
+
+Architecture tradeoff analysis method (ATAM) was used to decide on an arcitecture which was to be followed for the development of the Trekstar Project Management System.
+
+### Model-View-Controller
+MVC is driven by interaction. The use of Views to prompt their respective controllers to modify the model and subsequently update the view in real time fits the requirements of the Trekstar system. Models act as the data store for all of the related objects within the system. Controllers manipulate the data in the models through an exposed interface on the model objects
+
+## Utility Tree
+
+ The management of projects requires fast, realtime interaction (Top 6 Most Important Benefits of MVC Architecture, 2017). The requirements gathered from Trekstar meant that some of the data needs to be presented in a different manner (e.g. displaying the contents of a double sided DVD). Due the benefit of MVC being able to present data in multiple formats, this made it an ideal choice. One of the stretch goals of the project was to provide the user with a Graphical User Interface (GUI). By using MVC, it will be easier to produce views for a GUI rather than a console based interface as only one component of the system (the views) will need to be changed out.
+
+As previously mentioned in other sections, separating the logic for presenting and performing the business model provides benefits with regards to de-coupling and setting clear boundaries within the system. Given that the components of the MVC architecture are independent of eachother, they can be developed in isolation. Within the context of the project, where individual members are responsible for different sections of the project - e.g. one for data structures & one for the user interface - the development of these components could happen in tandem.
 
 \newpage
 
@@ -324,7 +338,57 @@ During the design phase of the TrekStar project management application it was de
 
 # Search/Sorting Algorithm
 
-Include explanation of the search/sorting algo used.
+## Merge Sort
+
+### Explaination
+
+The merge sort algorithm was used to sort a list of projects based on their title.
+
+Merge sort is a divide and conquer sorting algorithm where the list recursively partitioned in to halves, until each sublist is of length one, and therefore sorted by definition as the single project is the smallest and the largest in that sublist. The sublists are then sorted and merged into larger sublists until they are recombined into a single sorted list.
+
+The list of projects is split into two halves. Each half then goes through a similar process whereby the halves are repeatedly split until they are of length one, which is, by definition, a sorted list.
+
+The sublists in each half are then merged together by following this process until all projects are in the merged list:
+* compare the first project in the left half with the first project in the right half;
+* if the project in the left half is less than the project in the right half, add the project from the left half to the merged list and read the next project from the left half;
+* if the project in the right half is less than the project in the left half, add the project from the right half to the merged list and read the next project from the right half; and
+* once either list is empty, any remaining projects are added to the merged list.
+
+The two halves are then merged together by following the same process above until all projects are in the merged list. As merge sort is an "in-place" sorting algorithm and the list of project was passed by reference, there is no return value. The list of projects is now sorted and can be used as such from where the merge sort function was originally called.
+
+### Justification
+
+The implementation of a merge sort algorithm was determined to be necessary in order to benefit from the higher efficiency of sorting using the binary search algorithm, as described below. The merge sort algorithm was used as when compared to other alternatives, such as quick sort, merge sort is more efficient on larger datasets. While the testing was completed with small numbers of projects, it is likely that, if this software was to be used in the real world, there may be hundreds of thousands of projects sorted in the projects list.
+
+Further discussion of the time complexity of merge sort can be found in [INSERT SECTION LINK HERE].
+
+## Binary Search
+
+### Explaination
+
+Binary search algorithm was used to find a project based on its title. The merge sort algorithm described above is performed before, as the binary search has a prerequisite that the list of projects be sorted.
+
+An overload equals operator was created on the *Project* class; this was used to check if the search criteria of a project title was equal to the title attribute in the project when checking if the item at *mid* was the desired project.
+
+The binary search algorithm requires the following variables:
+* an integer variable *result* set to -1;
+* an integer variable *low* set to 0;
+* an integer variable *high* set to the index of the last project in the list; and
+* an integer variable *mid*.
+
+While the integer variable *result* is equal to -1 no project has been found that matches the search criteria, and the following steps should be taken repeatedly until a project is found or it has been determined that the project does not exist in the list:
+* calculate a midpoint by using the equation *mid = low + ((high - low) / 2)*;
+* if the project at the midpoint is equal to the search criteria, *result* can be set to this project;
+* if the project at the midpoint is less than the search criteria, set the *low* to *mid + 1*; and
+* if the project at the midpoint is greater than the search criteria, set the *high* to *mid – 1*.
+
+After these stages have been completed, the value of *result* can be returned. The subsequent code can then display that the project was not found if *-1* is returned. Otherwise, the *result* can be used as an index value to access the project in the list and display its detail to the user.
+
+### Justification
+
+A movie company, such as TrekStar, may have a large number of projects. It is important that searching these projects is efficient; the binary search algorithm avoids checking every project in the list. This is because comparisons are made to determine which half of the list the target project resides within. As a result, on each iteration, half of the project list is discarded.
+
+Further discussion of the time complexity of binary search can be found in [INSERT SECTION LINK HERE].
 
 \newpage
 
@@ -1197,3 +1261,4 @@ During group meetings a member was nominated to write minutes, these minutes wer
 
 [@tao2019]
 [@tao2018]
+[@infotech_2017]

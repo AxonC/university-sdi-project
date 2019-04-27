@@ -217,6 +217,30 @@
                 "retailPrice": 9.99,
                 "runTime": 2000,
                 "subtitles": "test"
+            },
+            {
+                "audioFormat": "dts",
+                "audioTrack": "ng",
+                "format": "vhs",
+                "frameAspect": ":2",
+                "id": 0,
+                "language": "eng",
+                "packaging": "Plastic",
+                "retailPrice": 9.99,
+                "runTime": 1000,
+                "subtitles": "eng"
+            },
+            {
+                "audioFormat": "ts",
+                "audioTrack": "ol",
+                "format": "vhs",
+                "frameAspect": ":4",
+                "id": 0,
+                "language": "eng",
+                "packaging": "Cardboard",
+                "retailPrice": 4.0,
+                "runTime": 4,
+                "subtitles": "eng"
             }
         ]
     },

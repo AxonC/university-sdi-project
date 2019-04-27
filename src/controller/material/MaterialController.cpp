@@ -4,6 +4,8 @@ namespace TrekStar
 {
     namespace Material
     {
+
+
         MaterialController::MaterialController(MaterialInterface & model, ViewInterface & view) : BaseController()
         {
             this->model = &model;

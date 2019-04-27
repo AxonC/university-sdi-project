@@ -56,6 +56,7 @@ namespace TrekStar
         {
             MaterialController::AddNew();
             this->UpdateAudioTrack();
+            this->UpdatePackaging();
         }
 
         VHSView* VHSController::GetView()
