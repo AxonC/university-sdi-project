@@ -11,10 +11,13 @@ namespace TrekStar
     {
         class BoxSetController : public MaterialController
         {
-        private:
-            BoxSetView* GetView() override;
-            BoxSet* GetModel() override;
+        public:
+            BoxSetController(BoxSet & model, BoxSetView & view);
 
+            void Update() override;
+            void AddNew() override;
+
+        private:
             void AddDisks();
             void AddDisk();
             void UpdateDisks();
@@ -22,11 +25,8 @@ namespace TrekStar
 
             std::shared_ptr<DVD> GetNewDisk();
 
-        public:
-            BoxSetController(BoxSet & model, BoxSetView & view);
-
-            void Update() override;
-            void AddNew() override;
+            BoxSetView* GetView() override;
+            BoxSet* GetModel() override;
         };
     }
 }
