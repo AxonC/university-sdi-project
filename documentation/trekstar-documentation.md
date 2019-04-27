@@ -146,14 +146,13 @@ The Trekstar system has been developed in order to allow TrekStar Pictures to ac
 
 ## Cohesion and Coupling Considerations
 
-A justification and explanation of how cohesion and coupling have been considered in the
-design. 
-
 The concept of cohesion is defined as 'the degree to which all elements of a component are directed towards a single task, within a single component, or to which the responsibilities of a class are related'.
 
 Within the design, it was important to separate out the logic for the presentation of the information from the business logic. We have achieved this using a Model - View - Controller architecture. In order for the views to gather data from the Models themselves, a large number of *so-called* getter functions are present. This is so that the models are not responsible for the presentation and **logical cohesion** does not occur. Utilising these functions also provides an example of how communicational cohesion has been considered within the design, whilst the separation of these elements has provided the situation of functional cohesion.
 
 Another example of how **logical cohesion** has been avoided is the approach taken to importing data from files. This logic is contained within its own object and the only data which is passed into their respective objects is a *serialised* version - separating the concerns surrounding the importing of files.
+
+Further details on coupling & cohesion, relating to specific design patterns, can be found in that section of the document.
 
 \newpage
 
@@ -202,7 +201,15 @@ On the following pages you can find a visual representation of the aforementione
 
 # Design Pattern
 
+## Factory Design Pattern
+
 Include explanation of any design patterns used
+
+With a large number of *materials* defined within the business rules, it was appropriate to use a **factory design pattern** to generate different material types based upon an input provided by the user. The specific implementation involved defining a return type as the base material class - allowing a covariant return type. This design pattern was possible as we have a common interface for every material. A UML representation of this pattern can be found below.
+
+![MaterialFactory UML Class Diagram](class-diagrams/material-factory.jpg)
+
+The advantages of this pattern is that new materials types can easily be added by adding a small conditional statement in this class. This provides a level of abstraction and means that this class has only a single responsibility - to construct materials - removing this logic from the consuming object. This helps with the issue of coupling as functional cohesion is achieved. Because of the abstraction, it wouldn't mean any changes would necesarily have to occur in the consuming class.
 
 \newpage
 
