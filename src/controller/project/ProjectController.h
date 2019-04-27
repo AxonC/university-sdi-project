@@ -47,6 +47,7 @@ namespace TrekStar
             void UpdateReleased();
             void UpdatePlayingInTheatres();
             void UpdateKeyword();
+            void LogMaterialAdd(const std::shared_ptr<Material::Material> & material);
         };
     }
 }
