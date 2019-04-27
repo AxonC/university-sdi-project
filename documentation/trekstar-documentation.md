@@ -13,6 +13,25 @@ titlepage-rule-color: "FFFFFF"
 titlepage-rule-height: 1
 header-includes: |
 	\usepackage{pdflscape}
+	
+references:
+- type: article-journal
+  id: Tao2019
+  author:
+  - family: Tao
+    given: T. C.
+  issued:
+    date-parts:
+    - - 2019
+      - 4
+      - 25
+	title: 'Taos book of magic'
+	abstract: Taos abstract
+  title-short: TBM
+  container-title: Nature
+  page: 2-3
+  URL: https://url.com
+  language: en-GB
 ...
 
 # Table of Contents
@@ -72,6 +91,7 @@ header-includes: |
 - [Appendix](#appendix)
 	- [Managing group work](#managing-group-work)
 	- [Meeting Minutes](#meeting-minutes)
+- [References](#references)
 
 \newpage
 
@@ -753,3 +773,7 @@ During group meetings a member was nominated to write minutes, these minutes wer
 ![Meeting 5 - Minutes](images/meeting-minutes/meeting-5.png)
 
 ![Meeting 6 - Minutes](images/meeting-minutes/meeting-6.png)
+
+# References
+
+The seminal work of [@Tao2019]
