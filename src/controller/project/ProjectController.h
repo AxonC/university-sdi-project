@@ -34,6 +34,8 @@ namespace TrekStar
             void RemoveCrew();
 
             void ListBoxOfficeReports();
+            void AddBoxOfficeReport();
+            void RemoveBoxOfficeReport();
 
             bool ActorExists(std::string & searchCriteria);
 

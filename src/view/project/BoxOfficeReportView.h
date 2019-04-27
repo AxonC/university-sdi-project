@@ -19,6 +19,7 @@ namespace TrekStar
             void PresentAll() override;
             void PresentList() override;
 
+            int GetNewWeekNumber();
             double GetNewRevenue();
             unsigned long int GetNewTicketsSold();
 

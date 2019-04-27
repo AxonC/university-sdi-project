@@ -26,19 +26,21 @@ namespace TrekStar
                             {7, "Add Project Crew"},
                             {8, "Update Project Crew"},
                             {9, "Remove Project Crew"},
-                            {10, "Cancel"}
+                            {10, "Add Box Office Report"},
+                            {11, "Remove Box Office Report"},
+                            {12, "Cancel"}
                     },
                     "Maintenance Mode"
             );
 
             int commandInput = 0;
-            while ( commandInput != 10 )
+            while ( commandInput != 12 )
             {
                 commandHandler.displayCommands();
                 commandInput = commandHandler.getUserInput();
                 commandHandler.clearConsole();
 
-                if ( commandHandler.isValidCommand(commandInput) && commandInput != 10 )
+                if ( commandHandler.isValidCommand(commandInput) && commandInput != 12 )
                 {
                     if ( commandInput == 1 )
                     {
@@ -94,6 +96,14 @@ namespace TrekStar
                         else if ( commandInput == 9 )
                         {
                             controller.RemoveCrew();
+                        }
+                        else if ( commandInput == 10 )
+                        {
+                            controller.AddBoxOfficeReport();
+                        }
+                        else if ( commandInput == 11 )
+                        {
+                            controller.RemoveBoxOfficeReport();
                         }
                     }
                 }

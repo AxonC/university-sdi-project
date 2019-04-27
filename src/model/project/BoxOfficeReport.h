@@ -11,7 +11,6 @@ namespace TrekStar
     {
         struct SerialisedBoxOfficeReport
         {
-            unsigned int id;
             unsigned int weekNumber;
             double revenue;
             unsigned long int ticketsSold;
@@ -21,18 +20,21 @@ namespace TrekStar
         {
         public:
             BoxOfficeReport() = default;
-            explicit BoxOfficeReport(unsigned int id, unsigned int weekNumber, double revenue, unsigned long int ticketsSold);
+            explicit BoxOfficeReport(unsigned int weekNumber, double revenue, unsigned long int ticketsSold);
             explicit BoxOfficeReport(const SerialisedBoxOfficeReport & report);
             ~BoxOfficeReport() = default;
 
             SerialisedBoxOfficeReport ExportToSerialised() const;
 
-            unsigned int GetId() const;
             unsigned int GetWeekNumber() const;
             double GetRevenue() const;
             unsigned long int GetTicketsSold() const;
+
+            void SetWeekNumber(unsigned int weekNumber);
+            void SetRevenue(double revenue);
+            void SetTicketsSold(unsigned long int ticketsSold);
+
         private:
-            unsigned int id;
             unsigned int weekNumber;
             double revenue;
             unsigned long int ticketsSold;

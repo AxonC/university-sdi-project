@@ -12,10 +12,13 @@ namespace TrekStar
         public:
             ~BoxOfficeReportInterface() override = default;
 
-            virtual unsigned int GetId() const = 0;
             virtual unsigned int GetWeekNumber() const = 0;
             virtual double GetRevenue() const = 0;
             virtual unsigned long int GetTicketsSold() const = 0;
+
+            virtual void SetWeekNumber(unsigned int weekNumber) = 0;
+            virtual void SetRevenue(double revenue) = 0;
+            virtual void SetTicketsSold(unsigned long int ticketsSold) = 0;
         };
     }
 }

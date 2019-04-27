@@ -1,10 +1,16 @@
 #include <iostream>
 
 #include "ProjectView.h"
+
 #include "../material/MaterialView.h"
 #include "../../controller/material/MaterialController.h"
+
 #include "../people/CrewView.h"
 #include "../../controller/people/CrewController.h"
+
+#include "../project/BoxOfficeReportView.h"
+#include "../../controller/project/BoxOfficeReportController.h"
+
 #include "../../command/CommandHandler.h"
 #include "../../command/userInput.h"
 #include "../../information/SequentialBrowser.h"
@@ -13,6 +19,8 @@ using TrekStar::Material::MaterialController;
 using TrekStar::Material::MaterialView;
 using TrekStar::People::CrewController;
 using TrekStar::People::CrewView;
+using TrekStar::Project::BoxOfficeReportController;
+using TrekStar::Project::BoxOfficeReportView;
 
 namespace TrekStar
 {
@@ -111,6 +119,20 @@ namespace TrekStar
                 std::cout << "[" << counter << "]: ";
                 CrewView view(*crew);
                 CrewController controller(*crew, view);
+
+                controller.ShowList();
+            }
+        }
+
+        void ProjectView::PresentBoxOfficeReportsList()
+        {
+            unsigned int counter = 0;
+            for ( const auto & boxOfficeReport: this->GetModel()->GetBoxOfficeReports() )
+            {
+                counter++;
+                std::cout << "[" << counter << "]: ";
+                BoxOfficeReportView view(*boxOfficeReport);
+                BoxOfficeReportController controller(*boxOfficeReport, view);
 
                 controller.ShowList();
             }

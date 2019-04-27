@@ -264,12 +264,6 @@ namespace TrekStar
 
         void ProjectController::AddCrew()
         {
-            if ( this->GetModel()->GetCrew().empty() )
-            {
-                this->GetView()->DisplayHasNoCrew();
-                return;
-            }
-
             std::shared_ptr<People::Crew> crew;
 
             CrewView view(*crew);
@@ -300,12 +294,6 @@ namespace TrekStar
 
         void ProjectController::RemoveCrew()
         {
-            if ( this->GetModel()->GetCrew().empty() )
-            {
-                this->GetView()->DisplayHasNoCrew();
-                return;
-            }
-
             if ( this->GetModel()->GetCrew().empty() )
             {
                 this->GetView()->DisplayHasNoCrew();
@@ -346,6 +334,32 @@ namespace TrekStar
                     controller.ShowAll();
                 }
             }
+        }
+
+        void ProjectController::AddBoxOfficeReport()
+        {
+            std::shared_ptr<TrekStar::Project::BoxOfficeReport> boxOfficeReport;
+
+            BoxOfficeReportView view(*boxOfficeReport);
+            BoxOfficeReportController controller(*boxOfficeReport, view);
+
+            controller.AddNew();
+
+            this->GetModel()->AddBoxOfficeReport(boxOfficeReport);
+        }
+
+        void ProjectController::RemoveBoxOfficeReport()
+        {
+            if ( this->GetModel()->GetBoxOfficeReports().empty() )
+            {
+                this->GetView()->DisplayHasNoBoxOfficeReports();
+                return;
+            }
+
+            this->GetView()->PresentBoxOfficeReportsList();
+
+            auto crew = this->GetModel()->GetCrew().at(this->GetView()->GetCrewSelection());
+            this->GetModel()->RemoveCrew(crew);
         }
 
         bool ProjectController::ActorExists(std::string & searchCriteria)

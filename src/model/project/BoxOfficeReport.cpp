@@ -5,9 +5,8 @@ namespace TrekStar
 {
     namespace Project
     {
-        BoxOfficeReport::BoxOfficeReport(unsigned int id, unsigned int weekNumber, double revenue, unsigned long int ticketsSold)
+        BoxOfficeReport::BoxOfficeReport(unsigned int weekNumber, double revenue, unsigned long int ticketsSold)
         {
-            this->id = id;
             this->weekNumber = weekNumber;
             this->revenue = revenue;
             this->ticketsSold = ticketsSold;
@@ -15,7 +14,6 @@ namespace TrekStar
 
         BoxOfficeReport::BoxOfficeReport(const SerialisedBoxOfficeReport &report)
         {
-            this->id = report.id;
             this->weekNumber = report.weekNumber;
             this->revenue = report.revenue;
             this->ticketsSold = report.ticketsSold;
@@ -23,12 +21,7 @@ namespace TrekStar
 
         SerialisedBoxOfficeReport BoxOfficeReport::ExportToSerialised() const
         {
-            return {this->id, this->weekNumber, this->revenue, this->ticketsSold};
-        }
-
-        unsigned int BoxOfficeReport::GetId() const
-        {
-            return this->id;
+            return {this->weekNumber, this->revenue, this->ticketsSold};
         }
 
         unsigned int BoxOfficeReport::GetWeekNumber() const
@@ -46,12 +39,25 @@ namespace TrekStar
             return this->ticketsSold;
         }
 
+        void BoxOfficeReport::SetWeekNumber(unsigned int weekNumber)
+        {
+            this->weekNumber = weekNumber;
+        }
+
+        void BoxOfficeReport::SetRevenue(double revenue)
+        {
+            this->revenue = revenue;
+        }
+
+        void BoxOfficeReport::SetTicketsSold(unsigned long int ticketsSold)
+        {
+            this->ticketsSold = ticketsSold;
+        }
 
         void to_json(json j, const SerialisedBoxOfficeReport & report)
         {
             j = json
                 {
-                    {"id", report.id},
                     {"weekNumber", report.weekNumber},
                     {"revenue", report.revenue},
                     {"ticketsSold", report.ticketsSold}
@@ -60,7 +66,6 @@ namespace TrekStar
 
         void from_json(const json & j, SerialisedBoxOfficeReport & report)
         {
-            j.at("id").get_to(report.id);
             j.at("weekNumber").get_to(report.weekNumber);
             j.at("revenue").get_to(report.revenue);
             j.at("ticketsSold").get_to(report.ticketsSold);

@@ -20,7 +20,13 @@ namespace TrekStar
             void ShowAll() override;
             void ShowList() override;
 
+            void AddNew();
+
         private:
+            void AddWeekNumber();
+            void AddRevenue();
+            void AddTicketsSold();
+
             BoxOfficeReportInterface* GetModel();
             BoxOfficeReportView* GetView();
         };
