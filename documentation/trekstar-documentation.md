@@ -90,22 +90,25 @@ header-includes: |
 # Contributions
 
 ## Callum Axon (N0727303) - Member A
-* Implementation of the internal data structure for the application
-* Class Diagram
-* A description of how cohesion and coupling have been considered in the class design
-* An explanation of the internal data structures used and the reason for the choices.
+* Class Diagram.
+* A description of how cohesion and coupling have been considered in the class design.
+* An explanation of the internal data structures used and the reason of the choices.
+* A justification and explanation of how cohesion and coupling have been considered in the design.
   
 ## Callum Carney (N0741707) - Member C
 * Implementation of the Console Interface for the application
-* Component Diagrams
-* Deployment Diagrams
-* Screenshots of the User Interface
+* Component diagrams.
+* Deployment diagrams.
+* Examples (screen shots) of user interface.
 
 ## Matthew Robinson (N0724629) - Member B
-* Implementation of the search/sorting algorithm within the application
-* Sequence diagram
-* State machine diagram
-* An explanation of the search or sorting algorithm used
+* A sequence diagram for a case/scenario of interest.
+* State machine diagram for a class.
+* One of the data structures - stack.
+* One of the sorting studied during the lectures - merge sort.
+* One of the searching algorithms studied during the lectures - binary search.
+* A console interface that allows user to interact with the software system.
+* An explanation of the search or sorting algorithm used and the reason of the choices. Explain how the algorithm will work in the system with detailed steps.
 
 All other contributions have been completed as part of a group effort.
 
