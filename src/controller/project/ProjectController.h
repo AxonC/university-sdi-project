@@ -33,6 +33,8 @@ namespace TrekStar
             void UpdateCrew();
             void RemoveCrew();
 
+            bool ActorExists(std::string & searchCriteria);
+
         private:
             ProjectInterface* GetModel();
             ProjectView* GetView();

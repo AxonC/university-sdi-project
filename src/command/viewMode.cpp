@@ -20,7 +20,7 @@ namespace TrekStar
                     "View Mode"
             );
 
-            int commandInput = 0;
+            unsigned int commandInput = 0;
             while ( commandInput != 3 )
             {
                 commandHandler.displayCommands();

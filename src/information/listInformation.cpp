@@ -94,29 +94,71 @@ namespace TrekStar
 
         void searchProjects(std::vector<TrekStar::Project::Project> & projects)
         {
-            std::cout << "Title: ";
-            std::string searchCriteria = TrekStar::Command::GetStringInput();
+            TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
+                    {
+                            {1, "Search by Title"},
+                            {2, "Search by Actor"},
+                            {3, "Cancel"}
+                    },
+                    "Search Projects"
+            );
 
-            TrekStar::Algorithms::mergeSort(projects);
+            commandHandler.displayCommands();
+            unsigned int commandInput = commandHandler.getUserInput();
+            commandHandler.clearConsole();
 
-            searchCriteria.erase(remove_if(searchCriteria.begin(), searchCriteria.end(), isspace), searchCriteria.end());
-            std::transform(searchCriteria.begin(), searchCriteria.end(), searchCriteria.begin(), ::tolower);
-            unsigned int projectIndex = TrekStar::Algorithms::binarySearch(projects, searchCriteria);
-
-            if ( projectIndex == -1 )
+            if ( commandInput != 3 )
             {
-                std::cout << "Project could not be found..." << std::endl;
-            }
-            else
-            {
-                ProjectView view(projects.at(projectIndex));
-                ProjectController controller(projects.at(projectIndex), view);
-                controller.ShowAll();
+                std::vector<unsigned int> projectIndicies;
 
-                std::cout << "Show materials for this project? (y/n): ";
-                if ( TrekStar::Command::GetBoolInput() )
+                if ( commandInput == 1 )
                 {
-                    controller.ListMaterials();
+                    std::cout << "Title: ";
+                    std::string searchCriteria = TrekStar::Command::GetStringInput();
+
+                    TrekStar::Algorithms::mergeSort(projects);
+
+                    searchCriteria.erase(remove_if(searchCriteria.begin(), searchCriteria.end(), isspace), searchCriteria.end());
+                    std::transform(searchCriteria.begin(), searchCriteria.end(), searchCriteria.begin(), ::tolower);
+                    projectIndicies.push_back(TrekStar::Algorithms::binarySearch(projects, searchCriteria));
+                }
+                else
+                {
+                    std::cout << "Actor: ";
+                    std::string searchCriteria = TrekStar::Command::GetStringInput();
+
+                    for ( int i = 0; i < projects.size(); i++ )
+                    {
+                        ProjectView view(projects.at(i));
+                        ProjectController controller(projects.at(i), view);
+
+                        if ( controller.ActorExists(searchCriteria) )
+                        {
+                            projectIndicies.push_back(i);
+                        }
+                    }
+                }
+
+                for ( unsigned int i = 0; i < projectIndicies.size(); i++ )
+                {
+                    unsigned int projectIndex = projectIndicies.at(i);
+
+                    if ( projectIndex == -1 )
+                    {
+                        std::cout << "Project could not be found..." << std::endl;
+                    }
+                    else
+                    {
+                        ProjectView view(projects.at(projectIndex));
+                        ProjectController controller(projects.at(projectIndex), view);
+                        controller.ShowAll();
+
+                        std::cout << std::endl << "Show materials for this project? (y/n): ";
+                        if ( TrekStar::Command::GetBoolInput() )
+                        {
+                            controller.ListMaterials();
+                        }
+                    }
                 }
             }
         }
