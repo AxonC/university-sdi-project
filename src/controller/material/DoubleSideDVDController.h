@@ -12,6 +12,12 @@ namespace TrekStar
     {
         class DoubleSideDVDController : public MaterialController
         {
+        public:
+            DoubleSideDVDController(DoubleSideDVD & model, DoubleSideDVDView & view);
+
+            void Update() override;
+            void AddNew() override;
+
         private:
             void UpdateSideOneContent();
             void UpdateSideOneAdditionalLanguageTracks();
@@ -31,12 +37,6 @@ namespace TrekStar
 
             DoubleSideDVDView* GetView() override;
             DoubleSideDVD* GetModel() override;
-
-        public:
-            DoubleSideDVDController(DoubleSideDVD & model, DoubleSideDVDView & view);
-
-            void Update() override;
-            void AddNew() override;
         };
     }
 }
