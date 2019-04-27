@@ -69,25 +69,26 @@
                 "dvds": [
                     {
                         "additionalLanguageTracks": [
-                            "ENG",
-                            "SPA"
+                            "test",
+                            "est"
                         ],
                         "additionalSubtitleTracks": [
-                            "ENG",
-                            "SPA"
+                            "test",
+                            "est"
                         ],
-                        "audioFormat": "DTS",
+                        "audioFormat": "dts",
                         "bonusFeatures": [
-                            "Audition Tapes"
+                            "test",
+                            "est"
                         ],
-                        "content": "movie",
+                        "content": "est",
                         "format": "dvd",
-                        "frameAspect": "4:3",
-                        "language": "GER",
-                        "packaging": "Plastic",
-                        "retailPrice": 25.99,
-                        "runTime": 90,
-                        "subtitles": "GER"
+                        "frameAspect": "6:10",
+                        "language": "eng",
+                        "packaging": "",
+                        "retailPrice": 9.99,
+                        "runTime": 2000,
+                        "subtitles": "eng"
                     },
                     {
                         "additionalLanguageTracks": [

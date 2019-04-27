@@ -15,6 +15,11 @@ namespace TrekStar
             BoxSetView* GetView() override;
             BoxSet* GetModel() override;
 
+            void AddDisks();
+            void UpdateDisks();
+
+            std::shared_ptr<DVD> GetNewDisk();
+
         public:
             BoxSetController(BoxSet & model, BoxSetView & view);
 

@@ -13,6 +13,15 @@ namespace TrekStar
         public:
             explicit BoxSetView(BoxSet & model);
 
+            unsigned int GetUpdateOption() override;
+
+            unsigned int GetDiskNo();
+
+            unsigned int GetNoOfDisks();
+            unsigned int GetNewDiskType();
+
+            void PresentDisks();
+
         private:
             BoxSet* GetModel() override;
         };
