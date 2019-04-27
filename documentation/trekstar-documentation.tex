@@ -671,7 +671,11 @@ elements of a component are directed towards a single task, within a
 single component, or to which the responsibilities of a class are
 related}.
 
+<<<<<<< Updated upstream
 Within the design, it was important to separate out the logic for the
+=======
+Within the design, it was important to seperate out the logic for the
+>>>>>>> Stashed changes
 presentation of the information from the business logic. We have
 achieved this using a Model - View - Controller architecture. In order
 for the views to gather data from the Models themselves, a large number
@@ -772,6 +776,21 @@ aforementioned Deployment scenarios.
 \section{Design Pattern}\label{design-pattern}}
 
 Include explanation of any design patterns used
+
+With a large number of \emph{materials} defined within the business
+rules, it was appropriate to use a \textbf{factory design pattern} to
+generate different material types based upon an input provided by the
+user. The specific implementation involved defining a return type as the
+base material class - allowing a covariant return type. This design
+pattern was possible as we have a common interface for every material. A
+UML representation of this pattern can be found in Figure X (CHANGE
+MEEE!!!)
+
+\begin{figure}
+\centering
+\includegraphics{class-diagram/material-factory.jpg}
+\caption{Figure X. MaterialFactory UML Class Diagram}
+\end{figure}
 
 \newpage
 
