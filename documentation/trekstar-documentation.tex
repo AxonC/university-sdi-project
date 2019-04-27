@@ -663,19 +663,15 @@ Pictures to accomplish the following
 \subsection{Cohesion and Coupling
 Considerations}\label{cohesion-and-coupling-considerations}}
 
-A justification and explanation of how cohesion and coupling have been
-considered in the design.
+\hypertarget{cohesion}{%
+\subsubsection{Cohesion}\label{cohesion}}
 
 The concept of cohesion is defined as \enquote{the degree to which all
 elements of a component are directed towards a single task, within a
 single component, or to which the responsibilities of a class are
 related}.
 
-<<<<<<< Updated upstream
 Within the design, it was important to separate out the logic for the
-=======
-Within the design, it was important to seperate out the logic for the
->>>>>>> Stashed changes
 presentation of the information from the business logic. We have
 achieved this using a Model - View - Controller architecture. In order
 for the views to gather data from the Models themselves, a large number
@@ -691,6 +687,20 @@ approach taken to importing data from files. This logic is contained
 within its own object and the only data which is passed into their
 respective objects is a \emph{serialised} version - separating the
 concerns surrounding the importing of files.
+
+Further details on cohesion, relating to specific design patterns, can
+be found in that section of the document.
+
+\hypertarget{coupling}{%
+\subsubsection{Coupling}\label{coupling}}
+
+Due to the relationships between different objects within the system,
+some coupling does occur. An example of this is that a Project has
+Materials associated with it - thus creating a dependency between the
+two objects. However, the relationships defined within the class diagram
+show that the two related objects don't modify the data of eachother,
+but store data about eachother independently. The data between these two
+objects could therefore be considered to be uncoupled.
 
 \newpage
 
@@ -775,6 +785,9 @@ aforementioned Deployment scenarios.
 \hypertarget{design-pattern}{%
 \section{Design Pattern}\label{design-pattern}}
 
+\hypertarget{factory-design-pattern}{%
+\subsection{Factory Design Pattern}\label{factory-design-pattern}}
+
 Include explanation of any design patterns used
 
 With a large number of \emph{materials} defined within the business
@@ -783,14 +796,21 @@ generate different material types based upon an input provided by the
 user. The specific implementation involved defining a return type as the
 base material class - allowing a covariant return type. This design
 pattern was possible as we have a common interface for every material. A
-UML representation of this pattern can be found in Figure X (CHANGE
-MEEE!!!)
+UML representation of this pattern can be found below.
 
 \begin{figure}
 \centering
-\includegraphics{class-diagram/material-factory.jpg}
-\caption{Figure X. MaterialFactory UML Class Diagram}
+\includegraphics{class-diagrams/material-factory.jpg}
+\caption{MaterialFactory UML Class Diagram}
 \end{figure}
+
+The advantages of this pattern is that new materials types can easily be
+added by adding a small conditional statement in this class. This
+provides a level of abstraction and means that this class has only a
+single responsibility - to construct materials - removing this logic
+from the consuming object. This helps with the issue of coupling as
+functional cohesion is achieved. Because of the abstraction, it wouldn't
+mean any changes would necesarily have to occur in the consuming class.
 
 \newpage
 
