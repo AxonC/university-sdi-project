@@ -466,7 +466,22 @@
     \item
       \protect\hyperlink{using-list-projects}{Using List Projects}
     \item
+      \protect\hyperlink{using-view-materials}{Using View Materials}
+    \item
+      \protect\hyperlink{using-view-crew}{Using View Crew}
+    \item
+      \protect\hyperlink{using-view-box-office-reports}{Using View Box
+      Office Reports}
+    \item
       \protect\hyperlink{using-search-projects}{Using Search Projects}
+
+      \begin{itemize}
+      \tightlist
+      \item
+        \protect\hyperlink{using-search-by-title}{Using Search By Title}
+      \item
+        \protect\hyperlink{using-search-by-actor}{Using Search By Actor}
+      \end{itemize}
     \item
       \protect\hyperlink{using-list-materials}{Using List Materials}
     \end{itemize}
@@ -494,9 +509,18 @@
       \item
         \protect\hyperlink{edit-existing-keywords}{Edit Existing
         Keywords}
+      \item
+        \protect\hyperlink{edit-crew}{Edit Crew}
+      \item
+        \protect\hyperlink{edit-crew-name}{Edit Crew Name}
+      \item
+        \protect\hyperlink{edit-crew-job-title}{Edit Crew Job Title}
       \end{itemize}
     \item
       \protect\hyperlink{using-remove-project}{Using Remove Project}
+    \item
+      \protect\hyperlink{using-add-project-materials}{Using Add Project
+      Materials}
     \item
       \protect\hyperlink{using-update-project-materials}{Using Update
       Project Materials}
@@ -517,10 +541,42 @@
         \protect\hyperlink{edit-frame-aspect}{Edit Frame Aspect}
       \item
         \protect\hyperlink{edit-packaging}{Edit Packaging}
+      \item
+        \protect\hyperlink{edit-content}{Edit Content}
+      \item
+        \protect\hyperlink{edit-additional-language-tracks}{Edit
+        Additional Language Tracks}
+      \item
+        \protect\hyperlink{edit-additional-subtitle-tracks}{Edit
+        Additional Subtitle Tracks}
+      \item
+        \protect\hyperlink{edit-bonus-features}{Edit Bonus Features}
+      \item
+        \protect\hyperlink{edit-audio-track}{Edit Audio Track}
       \end{itemize}
     \item
       \protect\hyperlink{using-remove-project-materials}{Using Remove
       Project Materials}
+    \item
+      \protect\hyperlink{using-add-crew}{Using Add Crew}
+    \item
+      \protect\hyperlink{using-update-crew}{Using Update Crew}
+
+      \begin{itemize}
+      \tightlist
+      \item
+        \protect\hyperlink{edit-crew-name-1}{Edit Crew Name}
+      \item
+        \protect\hyperlink{edit-crew-job-title-1}{Edit Crew Job Title}
+      \end{itemize}
+    \item
+      \protect\hyperlink{using-remove-crew}{Using Remove Crew}
+    \item
+      \protect\hyperlink{using-add-box-office-report}{Using Add Box
+      Office Report}
+    \item
+      \protect\hyperlink{using-remove-box-office-report}{Using Remove
+      Box Office Report}
     \end{itemize}
   \end{itemize}
 \item
@@ -552,17 +608,11 @@ pls}}}{Todo - remove me before submission pls}}\label{todo---remove-me-before-su
 \begin{itemize}
 \tightlist
 \item
-  User guide details required for when the application is able to manage
-  crew and materials/projects fully.
-\item
   Add back in image that shows keywords when adding a project when this
   is reimplemented.
 \item
   Change all figure values where text is CHANGEFIGUREVALUE once all
   images added.
-\item
-  Complete \protect\hyperlink{using-update-project-materials}{Using
-  Update Project Materials} once the material id bug has been fixed.
 \item
   Resolve image issue on \protect\hyperlink{edit-packaging}{Edit
   Packaging} once bugs have been fixed
@@ -1221,6 +1271,86 @@ As you can see in Figure CHANGEFIGUREVALUE, there are more options
 available to you, these options allow you to navigate through the
 projects. You can see the associated input actions below.
 
+\begin{longtable}[]{@{}cll@{}}
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\centering
+Input Value\strut
+\end{minipage} & \begin{minipage}[b]{0.51\columnwidth}\raggedright
+Command Action\strut
+\end{minipage} & \begin{minipage}[b]{0.32\columnwidth}\raggedright
+Information Link\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.08\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+This will cause the application to move onto the next project in the
+database\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+Not Required\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+This will cause the application to move onto the previous project in the
+database\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+Not Required\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+This will cause the application to enter the view materials
+functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{using-view-materials}{View Materials}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+This will cause the application to enter the view crew
+functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{using-view-crew}{View Crew}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+This will cause the application to enter the view box office reports
+functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{using-view-box-office-reports}{View Box Office
+Reports}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+This will cause the application to navigate back to view mode\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{using-view-mode}{View Mode}\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\newpage
+
+\hypertarget{using-view-materials}{%
+\subsubsection{Using View Materials}\label{using-view-materials}}
+
+Once you have reached the View Materials page you will be presented with
+the following screen
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/view-mode/using-view-materials.png}
+\caption{Visual representation of View Materials}
+\end{figure}
+
+Once on this screen, you can use the following keyboard inputs to
+navigate around view materials, to find out more about each feature,
+click the associated information link.
+
 \begin{longtable}[]{@{}cl@{}}
 \toprule
 \begin{minipage}[b]{0.13\columnwidth}\centering
@@ -1233,20 +1363,117 @@ Command Action\strut
 \begin{minipage}[t]{0.13\columnwidth}\centering
 1\strut
 \end{minipage} & \begin{minipage}[t]{0.81\columnwidth}\raggedright
-This will cause the application to move onto the next project in the
+This will cause the application to move onto the next material in the
 database\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.13\columnwidth}\centering
 2\strut
 \end{minipage} & \begin{minipage}[t]{0.81\columnwidth}\raggedright
-This will cause the application to move onto the previous project in the
+This will cause the application to move onto the previous material in
+the database\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.13\columnwidth}\centering
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.81\columnwidth}\raggedright
+This will cause the application to navigate back to
+\protect\hyperlink{using-list-projects}{List Projects}\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\newpage
+
+\hypertarget{using-view-crew}{%
+\subsubsection{Using View Crew}\label{using-view-crew}}
+
+Once you have reached the View Crew page you will be presented with the
+following screen
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/view-mode/using-view-crew.png}
+\caption{Visual representation of View Crew}
+\end{figure}
+
+Once on this screen, you can use the following keyboard inputs to
+navigate around view crew, to find out more about each feature, click
+the associated information link.
+
+\begin{longtable}[]{@{}cl@{}}
+\toprule
+\begin{minipage}[b]{0.13\columnwidth}\centering
+Input Value\strut
+\end{minipage} & \begin{minipage}[b]{0.81\columnwidth}\raggedright
+Command Action\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.13\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.81\columnwidth}\raggedright
+This will cause the application to move onto the next crew member in the
+database\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.13\columnwidth}\centering
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.81\columnwidth}\raggedright
+This will cause the application to move onto the previous member in the
 database\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.13\columnwidth}\centering
 3\strut
 \end{minipage} & \begin{minipage}[t]{0.81\columnwidth}\raggedright
 This will cause the application to navigate back to
-\protect\hyperlink{using-view-mode}{View Mode}\strut
+\protect\hyperlink{using-list-projects}{List Projects}\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\newpage
+
+\hypertarget{using-view-box-office-reports}{%
+\subsubsection{Using View Box Office
+Reports}\label{using-view-box-office-reports}}
+
+Once you have reached the View Box Office Reports page you will be
+presented with the following screen
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/view-mode/using-view-box-office-reports.png}
+\caption{Visual representation of View Box Office Reports}
+\end{figure}
+
+Once on this screen, you can use the following keyboard inputs to
+navigate around view box office reports, to find out more about each
+feature, click the associated information link.
+
+\begin{longtable}[]{@{}cl@{}}
+\toprule
+\begin{minipage}[b]{0.13\columnwidth}\centering
+Input Value\strut
+\end{minipage} & \begin{minipage}[b]{0.81\columnwidth}\raggedright
+Command Action\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.13\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.81\columnwidth}\raggedright
+This will cause the application to move onto the next box office report
+in the database\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.13\columnwidth}\centering
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.81\columnwidth}\raggedright
+This will cause the application to move onto the previous box office
+report in the database\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.13\columnwidth}\centering
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.81\columnwidth}\raggedright
+This will cause the application to navigate back to
+\protect\hyperlink{using-list-projects}{List Projects}\strut
 \end{minipage}\tabularnewline
 \bottomrule
 \end{longtable}
@@ -1257,9 +1484,50 @@ This will cause the application to navigate back to
 \subsubsection{Using Search Projects}\label{using-search-projects}}
 
 Once you have entered the Search Projects functionality you will be
-asked to input a search query, this can be any value and data will only
-be returned if there is an associated project title held within the
-database.
+asked to select what search type you would like to use, the following
+options will be provided:
+
+\begin{longtable}[]{@{}cll@{}}
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\centering
+Input Value\strut
+\end{minipage} & \begin{minipage}[b]{0.51\columnwidth}\raggedright
+Command Action\strut
+\end{minipage} & \begin{minipage}[b]{0.32\columnwidth}\raggedright
+Information Link\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.08\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+This will cause the application to enter the search by title
+functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{using-search-by-title}{Search By Title}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+This will cause the application to enter the search by actor
+functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{using-search-by-actor}{View Crew}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+This will cause the application to navigate back to view mode\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{using-view-mode}{View Mode}\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\newpage
+
+\hypertarget{using-search-by-title}{%
+\paragraph{Using Search By Title}\label{using-search-by-title}}
 
 \begin{figure}
 \centering
@@ -1285,15 +1553,12 @@ associated project, which will bring up the following information:
 
 \begin{figure}
 \centering
-\includegraphics{images/user-guide/view-mode/project-search-materials-accept.png}
+\includegraphics{images/user-guide/view-mode/project-search-list-material.png}
 \caption{Visual representation of a projects materials being displayed}
 \end{figure}
 
-As you can see in CHANGEFIGUREVALUE, there are more options available to
-you, these are the options associated with
-\protect\hyperlink{using-view-mode}{View Mode}, therefore you can find
-more information by reading the \protect\hyperlink{using-view-mode}{View
-Mode} section of this user guide.
+As you can see in CHANGEFIGUREVALUE, there are more options available,
+you can find what each command does below
 
 You can also enter \emph{\texttt{n}} to confirm that you do not want to
 view the materials for the associated project, which will bring up the
@@ -1302,6 +1567,89 @@ following information:
 \begin{figure}
 \centering
 \includegraphics{images/user-guide/view-mode/project-search-materials-decline.png}
+\caption{Visual representation of a projects materials not being
+displayed}
+\end{figure}
+
+As you can see in CHANGEFIGUREVALUE, there are more options available to
+you, these are the options associated with
+\protect\hyperlink{using-view-mode}{View Mode}, therefore you can find
+more information by reading the \protect\hyperlink{using-view-mode}{View
+Mode} section of this user guide.
+
+\newpage
+
+\hypertarget{using-search-by-actor}{%
+\paragraph{Using Search By Actor}\label{using-search-by-actor}}
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/view-mode/project-actor-search.png}
+\caption{Visual representation of the application asking for a search
+query}
+\end{figure}
+
+You will now see the associated projects that matched to your search
+query, you can see an example of this below.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/view-mode/project-search-actor.png}
+\caption{Visual representation of a project being discovered from a
+search query}
+\end{figure}
+
+As you can see in Figure CHANGEFIGUREVALUE, there is the option to
+display the associated materials for this project, you can enter
+\emph{\texttt{y}} to confirm that you wish to view the materials for the
+associated project, which will bring up the following information:
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/view-mode/project-search-list-material.png}
+\caption{Visual representation of a projects materials being displayed}
+\end{figure}
+
+As you can see in CHANGEFIGUREVALUE, there are more options available,
+you can find what each command does below
+
+\begin{longtable}[]{@{}cl@{}}
+\toprule
+\begin{minipage}[b]{0.13\columnwidth}\centering
+Input Value\strut
+\end{minipage} & \begin{minipage}[b]{0.81\columnwidth}\raggedright
+Command Action\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.13\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.81\columnwidth}\raggedright
+This will cause the application to move onto the next material in the
+database\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.13\columnwidth}\centering
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.81\columnwidth}\raggedright
+This will cause the application to move onto the previous material in
+the database\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.13\columnwidth}\centering
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.81\columnwidth}\raggedright
+This will cause the application to navigate back to
+\protect\hyperlink{using-view-mode}{View Mode}\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+You can also enter \emph{\texttt{n}} to confirm that you do not want to
+view the materials for the associated project, which will bring up the
+following information:
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/view-mode/project-search-actor-decline.png}
 \caption{Visual representation of a projects materials not being
 displayed}
 \end{figure}
@@ -1665,6 +2013,14 @@ keywords\strut
 \begin{minipage}[t]{0.08\columnwidth}\centering
 5\strut
 \end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter edit existing
+keywords\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{edit-crew}{Edit Crew}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
 Inputting this value will cause the application to navigate back to the
 maintenance mode menu\strut
 \end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
@@ -1818,6 +2174,118 @@ this user guide.
 
 \newpage
 
+\hypertarget{edit-crew}{%
+\paragraph{Edit Crew}\label{edit-crew}}
+
+Once you have entered the Edit Crew functionality you will be asked to
+enter the following information:
+
+You need to enter the crew identifier you wish to update, you can find
+the identifier in the provided list, an example of this can be seen
+below:
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-select-crew.png}
+\caption{Visual representation of the application showing the current
+Crew identifiers}
+\end{figure}
+
+Once you have inputted a valid keyword identifier you will be asked to
+enter the type of data you would like to update, you can find the
+associated values below, to find out more about each function, click the
+associated information link.
+
+\begin{longtable}[]{@{}cll@{}}
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\centering
+Input Value\strut
+\end{minipage} & \begin{minipage}[b]{0.51\columnwidth}\raggedright
+Command Action\strut
+\end{minipage} & \begin{minipage}[b]{0.32\columnwidth}\raggedright
+Information Link\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.08\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter update crew
+name\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{using-edit-crew-name}{Edit Name}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter update crew job
+title\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{using-edit-crew-job-title}{Edit Job Title}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to navigate back to the
+maintenance mode menu\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode Menu}\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\newpage
+
+\hypertarget{edit-crew-name}{%
+\paragraph{Edit Crew Name}\label{edit-crew-name}}
+
+Once you have entered the Edit Crew Name functionality you will be asked
+to enter the following information:
+
+You need to enter the new Crew Name, this is the new name for the crew
+member that you selected. Any value is accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-crew-name.png}
+\caption{Visual representation of the application asking for a new Crew
+Name}
+\end{figure}
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options
+available to you, these are the options associated with
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
+you can find more information by reading the
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
+this user guide.
+
+\newpage
+
+\hypertarget{edit-crew-job-title}{%
+\paragraph{Edit Crew Job Title}\label{edit-crew-job-title}}
+
+Once you have entered the Edit Crew Job Title functionality you will be
+asked to enter the following information:
+
+You need to enter the new Crew Job Title, this is the new job title for
+the crew member that you selected. Any value is accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-crew-job-title.png}
+\caption{Visual representation of the application asking for a new Crew
+Name}
+\end{figure}
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options
+available to you, these are the options associated with
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
+you can find more information by reading the
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
+this user guide.
+
+\newpage
+
 \hypertarget{using-remove-project}{%
 \subsubsection{Using Remove Project}\label{using-remove-project}}
 
@@ -1839,6 +2307,182 @@ project for}
 
 As you can see in Figure CHANGEFIGUREVALUE, there are more options
 available to you, these are the options associated with
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
+you can find more information by reading the
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
+this user guide.
+
+\newpage
+
+\hypertarget{using-add-project-materials}{%
+\subsubsection{Using Add Project
+Materials}\label{using-add-project-materials}}
+
+Once you have entered the Add Project Materials functionality you will
+be asked to enter the following information:
+
+Firstly, you need to enter a Project ID, this must be a numeric value,
+you can find the accepted Project IDs above the input location, select
+an ID from this list.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-select-id.png}
+\caption{Visual representation of selecting a Project ID to proceed with
+selecting a project to add a material to}
+\end{figure}
+
+Next, you will be asked to enter the material format identifer you wish
+to add within the previously selected project, you can find the
+identifier in the provided list, an example of this can be found below:
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/add-material-select-id.png}
+\caption{Visual representation of selecting a Material Format ID to add
+to the project}
+\end{figure}
+
+Once you have selected a Material Format ID you will be asked to enter
+the following information:
+
+Next, you need to enter the Audio Format, this is the audio format that
+you want your material to have. Any value is accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/add-material-audio-format.png}
+\caption{Visual representation of the application asking for a Project
+Title}
+\end{figure}
+
+Next, you will be asked for the material run time. Any numeric value is
+accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/add-material-run-time.png}
+\caption{Visual representation of the application asking for the
+material Run Time}
+\end{figure}
+
+Next, you will be asked for the material language. Any value is
+accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/add-material-language.png}
+\caption{Visual representation of the application asking for the
+material Language}
+\end{figure}
+
+Next, you will be asked for the material retail price. Any numeric value
+is accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/add-material-retail-price.png}
+\caption{Visual representation of the application asking for the
+material Retail Price}
+\end{figure}
+
+Next, you will be asked for the material subtitles. Any value is
+accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/add-material-subtitles.png}
+\caption{Visual representation of the application asking for the
+material Subtitles}
+\end{figure}
+
+Next, you will be asked for the material frame aspect. Any value is
+accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/add-material-frame-aspect.png}
+\caption{Visual representation of the application asking for the
+material Frame Aspect}
+\end{figure}
+
+Next, you will be asked for the material content. Any value is accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/add-material-content.png}
+\caption{Visual representation of the application asking for the
+material Content}
+\end{figure}
+
+Next, you will be asked if the material has any additional language
+tracks. Any value is accepted, if you enter anything other than 0 you
+will be asked for the Additional Language track otherwise you can move
+onto the next input.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/add-material-number-of-additional-language-tracks.png}
+\caption{Visual representation of the application asking if the material
+has any additional language tracks}
+\end{figure}
+
+If you entered more than 0 the application will ask you to enter the
+following information for the amount of language tracks added.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/add-material-additional-language-track.png}
+\caption{Visual representation of the application asking for material
+additional language track information}
+\end{figure}
+
+Next, you will be asked if the material has any additional subtitle
+tracks. Any value is accepted, if you enter anything other than 0 you
+will be asked for the Additional Subtitle track otherwise you can move
+onto the next input.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/add-material-number-of-additional-subtitle-tracks.png}
+\caption{Visual representation of the application asking if the material
+has any additional subtitle tracks}
+\end{figure}
+
+If you entered more than 0 the application will ask you to enter the
+following information for the amount of subtitle tracks added.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/add-material-additional-subtitle-track.png}
+\caption{Visual representation of the application asking for material
+additional subtitle track information}
+\end{figure}
+
+Finally, you will be asked if the material has any additional bonus
+features. Any value is accepted, if you enter anything other than 0 you
+will be asked for the Bonus Feature otherwise you can move onto the next
+input.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/add-material-number-of-bonus-features.png}
+\caption{Visual representation of the application asking if the material
+has any bonus features}
+\end{figure}
+
+If you entered more than 0 the application will ask you to enter the
+following information for the amount of bonus features added.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/add-material-bonus-features.png}
+\caption{Visual representation of the application asking for material
+bonus feature information}
+\end{figure}
+
+As you can see in CHANGEFIGUREVALUE, there are more options available to
+you, these are the options associated with
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
 you can find more information by reading the
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
@@ -1942,12 +2586,126 @@ aspect\strut
 7\strut
 \end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
 Inputting this value will cause the application to enter edit
+content\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{edit-content}{Edit Content}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+8\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter edit additional
+language tracks\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{edit-additional-language-tracks}{Edit Additional
+Language Tracks}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+9\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter edit additional
+subtitle tracks\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{edit-additional-subtitle-tracks}{Edit Additional
+Subtitle Tracks}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+10\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter edit bonus
+features\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{edit-bonus-features}{Edit Bonus Features}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+11\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to navigate back to the
+maintenance mode menu\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode Menu}\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+If you selected VHS, you will see the following options.
+
+\begin{longtable}[]{@{}cll@{}}
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\centering
+Input Value\strut
+\end{minipage} & \begin{minipage}[b]{0.51\columnwidth}\raggedright
+Command Action\strut
+\end{minipage} & \begin{minipage}[b]{0.32\columnwidth}\raggedright
+Information Link\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.08\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter edit audio
+format\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{edit-audio-format}{Edit Audio Format}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter edit run
+time\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{edit-run-time}{Edit Run Time}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter edit
+language\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{edit-language}{Edit Language}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter edit retail
+price\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{edit-retail-price}{Edit Retail Price}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter edit
+subtitles\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{edit-subtitles}{Edit Subtitles}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter edit frame
+aspect\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{edit-frame-aspect}{Edit Frame Aspect}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+7\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter edit
 packaging\strut
 \end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
 \protect\hyperlink{edit-packaging}{Edit Packaging}\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.08\columnwidth}\centering
 8\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter edit audio
+track\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{edit-audio-track}{Edit Audio Track}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+9\strut
 \end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
 Inputting this value will cause the application to navigate back to the
 maintenance mode menu\strut
@@ -2115,14 +2873,178 @@ this user guide.
 Once you have entered the Edit Packaging functionality you will be asked
 to enter the following information:
 
-You need to enter the new Packaging details, this is the new packaging
-information that you want your material to have. Any value is accepted.
+You need to select from the list of packaging types, this is the new
+packaging type that you want your material to have. Any value from 1-2
+is accepted.
 
 \begin{figure}
 \centering
 \includegraphics{images/user-guide/maintenance-mode/update-project-material-packaging.png}
 \caption{Visual representation of the application asking for new
 Packaging information}
+\end{figure}
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options
+available to you, these are the options associated with
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
+you can find more information by reading the
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
+this user guide.
+
+\newpage
+
+\hypertarget{edit-content}{%
+\paragraph{Edit Content}\label{edit-content}}
+
+Once you have entered the Edit Content functionality you will be asked
+to enter the following information:
+
+You need to enter the new Content details, this is the new content
+information that you want your material to have. Any value is accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-material-content.png}
+\caption{Visual representation of the application asking for new Content
+information}
+\end{figure}
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options
+available to you, these are the options associated with
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
+you can find more information by reading the
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
+this user guide.
+
+\newpage
+
+\hypertarget{edit-additional-language-tracks}{%
+\paragraph{Edit Additional Language
+Tracks}\label{edit-additional-language-tracks}}
+
+Once you have entered the Edit Additional Language Tracks functionality
+you will be asked to enter the following information
+
+You need to enter the Additional Language Track identifier you wish to
+update, you can find the identifier in the provided list, an example of
+this can be seen below:
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-material-additional-language-track-select-id.png}
+\caption{Visual representation of the application showing the current
+Additional Language Track identifiers}
+\end{figure}
+
+You need to enter the new Additional Language Tracks details, this is
+the new additional language tracks information that you want your
+material to have. Any value is accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-material-additional-language-tracks.png}
+\caption{Visual representation of the application asking for new
+Additional Language Tracks information}
+\end{figure}
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options
+available to you, these are the options associated with
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
+you can find more information by reading the
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
+this user guide.
+
+\newpage
+
+\hypertarget{edit-additional-subtitle-tracks}{%
+\paragraph{Edit Additional Subtitle
+Tracks}\label{edit-additional-subtitle-tracks}}
+
+Once you have entered the Edit Subtitle Language Tracks functionality
+you will be asked to enter the following information
+
+You need to enter the Subtitle Language Track identifier you wish to
+update, you can find the identifier in the provided list, an example of
+this can be seen below:
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-material-additional-subtitle-track-select-id.png}
+\caption{Visual representation of the application showing the current
+Additional Subtitle Track identifiers}
+\end{figure}
+
+You need to enter the new Additional Subtitle Tracks details, this is
+the new additional subtitle tracks information that you want your
+material to have. Any value is accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-material-additional-subtitle-tracks.png}
+\caption{Visual representation of the application asking for new
+Additional Subtitle Tracks information}
+\end{figure}
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options
+available to you, these are the options associated with
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
+you can find more information by reading the
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
+this user guide.
+
+\newpage
+
+\hypertarget{edit-bonus-features}{%
+\paragraph{Edit Bonus Features}\label{edit-bonus-features}}
+
+Once you have entered the Edit Bonus Features Tracks functionality you
+will be asked to enter the following information
+
+You need to enter the Bonus Features identifier you wish to update, you
+can find the identifier in the provided list, an example of this can be
+seen below:
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-material-bonus-feature-select-id.png}
+\caption{Visual representation of the application showing the current
+Bonus Features identifiers}
+\end{figure}
+
+You need to enter the new Bonus Features details, this is the new bonus
+feature information that you want your material to have. Any value is
+accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-material-bonus-feature.png}
+\caption{Visual representation of the application asking for new Bonus
+Features information}
+\end{figure}
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options
+available to you, these are the options associated with
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
+you can find more information by reading the
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
+this user guide.
+
+\newpage
+
+\hypertarget{edit-audio-track}{%
+\paragraph{Edit Audio Track}\label{edit-audio-track}}
+
+Once you have entered the Edit Audio Track functionality you will be
+asked to enter the following information:
+
+You need to enter the new Audio Track details, this is the new audio
+track that you want your material to have. Any value is accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-materials-audio-track.png}
+\caption{Visual representation of the application asking for new Audio
+Track information}
 \end{figure}
 
 As you can see in Figure CHANGEFIGUREVALUE, there are more options
@@ -2148,8 +3070,8 @@ an ID from this list.
 \begin{figure}
 \centering
 \includegraphics{images/user-guide/maintenance-mode/remove-project-select-id.png}
-\caption{Visual representation of selecting a Project ID to select
-Material IDs for}
+\caption{Visual representation of selecting a Project ID to remove
+Materials for}
 \end{figure}
 
 Once you have selected a Project ID you will be presented with the
@@ -2160,6 +3082,308 @@ list and it must be a numeric value.
 \centering
 \includegraphics{images/user-guide/maintenance-mode/remove-project-materials-select-id.png}
 \caption{Visual representation of selecting a MaterialID to delete}
+\end{figure}
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options
+available to you, these are the options associated with
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
+you can find more information by reading the
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
+this user guide.
+
+\newpage
+
+\hypertarget{using-add-crew}{%
+\subsubsection{Using Add Crew}\label{using-add-crew}}
+
+Once you have entered the Add Crew functionality you will be asked to
+enter the following information:
+
+Firstly, you need to enter a Project ID, this must be a numeric value,
+you can find the accepted Project IDs above the input location, select
+an ID from this list.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-select-id.png}
+\caption{Visual representation of selecting a Project ID to proceed with
+selecting a project to add crew to}
+\end{figure}
+
+Next, you need to enter the Name of the crew member. Any value is
+accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/add-crew-name.png}
+\caption{Visual representation of the application asking for a Crew
+members name}
+\end{figure}
+
+Next, you need to enter the Job Title of the crew member. Any value is
+accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/add-crew-job-title.png}
+\caption{Visual representation of the application asking for a Crew
+members job title}
+\end{figure}
+
+As you can see in CHANGEFIGUREVALUE, there are more options available to
+you, these are the options associated with
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
+you can find more information by reading the
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
+this user guide.
+
+\hypertarget{using-update-crew}{%
+\subsubsection{Using Update Crew}\label{using-update-crew}}
+
+Once you have entered the Update Crew functionality you will be asked to
+enter the following information:
+
+Firstly, you need to enter a Project ID, this must be a numeric value,
+you can find the accepted Project IDs above the input location, select
+an ID from this list.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-select-id.png}
+\caption{Visual representation of selecting a Project ID to proceed with
+selecting a crew member to update}
+\end{figure}
+
+Next, you will be asked to enter the crew identifer you wish to update
+within the previously selected project, you can find the identifier in
+the provided list, an example of this can be found below:
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-crew-select-crew-id.png}
+\caption{Visual representation of selecting a Crew ID to update the
+information for}
+\end{figure}
+
+Next, you will be presented with multiple options, you can use the
+following keyboard inputs to update certain aspects of the material, to
+find out more about each update, click the associated information link.
+
+\begin{longtable}[]{@{}cll@{}}
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\centering
+Input Value\strut
+\end{minipage} & \begin{minipage}[b]{0.51\columnwidth}\raggedright
+Command Action\strut
+\end{minipage} & \begin{minipage}[b]{0.32\columnwidth}\raggedright
+Information Link\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.08\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter edit crew
+name\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{edit-crew-name}{Edit Crew Name}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter edit crew job
+title\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{edit-run-time}{Edit Crew Job Title}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to navigate back to the
+maintenance mode menu\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode Menu}\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\newpage
+
+\hypertarget{edit-crew-name-1}{%
+\paragraph{Edit Crew Name}\label{edit-crew-name-1}}
+
+Once you have entered the Edit Crew Name functionality you will be asked
+to enter the following information:
+
+You need to enter the new Crew Name, this is the new name that you want
+your crew member to have. Any value is accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-crew-name.png}
+\caption{Visual representation of the application asking for a new Crew
+Name}
+\end{figure}
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options
+available to you, these are the options associated with
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
+you can find more information by reading the
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
+this user guide.
+
+\newpage
+
+\hypertarget{edit-crew-job-title-1}{%
+\paragraph{Edit Crew Job Title}\label{edit-crew-job-title-1}}
+
+Once you have entered the Edit Crew Job Title functionality you will be
+asked to enter the following information:
+
+You need to enter the new Crew Job Title, this is the new job title that
+you want your crew member to have. Any value is accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-crew-job-title.png}
+\caption{Visual representation of the application asking for a new Crew
+Job Title}
+\end{figure}
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options
+available to you, these are the options associated with
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
+you can find more information by reading the
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
+this user guide.
+
+\newpage
+
+\hypertarget{using-remove-crew}{%
+\subsubsection{Using Remove Crew}\label{using-remove-crew}}
+
+Once you have entered the Remove Crew functionality you will be asked to
+enter the following information:
+
+Firstly, you need to enter a Project ID, this must be a numeric value,
+you can find the accepted Project IDs above the input location, select
+an ID from this list.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-select-id.png}
+\caption{Visual representation of selecting a Project ID to proceed with
+deleting a crew member}
+\end{figure}
+
+Once you submit this Project ID you will need to select the Crew Member
+to select from the list of IDs above the input location, select an ID
+from this list.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/remove-crew-select-id.png}
+\caption{Visual representation of selecting a Project ID to update the
+project for}
+\end{figure}
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options
+available to you, these are the options associated with
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
+you can find more information by reading the
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
+this user guide.
+
+\newpage
+
+\hypertarget{using-add-box-office-report}{%
+\subsubsection{Using Add Box Office
+Report}\label{using-add-box-office-report}}
+
+Once you have entered the Add Box Office Report functionality you will
+be asked to enter the following information:
+
+Firstly, you need to enter a Project ID, this must be a numeric value,
+you can find the accepted Project IDs above the input location, select
+an ID from this list.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/update-project-select-id.png}
+\caption{Visual representation of selecting a Project ID to proceed with
+selecting a crew member to update}
+\end{figure}
+
+Once you have selected a Project ID you will be asked to enter the
+following information:
+
+Next, you need to enter the Week Number, this is the week number that
+you want your box office report to relate to. Any numeric value is
+accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/add-box-office-report-week-number.png}
+\caption{Visual representation of the application asking for a Week
+Number}
+\end{figure}
+
+Next, you need to enter the Revenue, this is how much money was made
+during the entered week. Any numeric value is accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/add-box-office-report-revenue.png}
+\caption{Visual representation of the application asking for a Revenue
+value}
+\end{figure}
+
+Next, you need to enter the Tickets Sold, this is the amount of tickets
+sold in the entered week. Any numeric value is accepted.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/add-box-office-report-tickets-sold.png}
+\caption{Visual representation of the application asking for a Tickets
+Sold value}
+\end{figure}
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options
+available to you, these are the options associated with
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
+you can find more information by reading the
+\protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
+this user guide.
+
+\newpage
+
+\hypertarget{using-remove-box-office-report}{%
+\subsubsection{Using Remove Box Office
+Report}\label{using-remove-box-office-report}}
+
+Once you have entered the Remove Box Office Report functionality you
+will be asked to enter the following information:
+
+Firstly, you need to enter a Project ID, this must be a numeric value,
+you can find the accepted Project IDs above the input location, select
+an ID from this list.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/remove-project-select-id.png}
+\caption{Visual representation of selecting a Project ID to remove a Box
+Office Report for}
+\end{figure}
+
+Once you have selected a Project ID you will be presented with the
+associated Week IDs, you need to now select a Week ID from this list and
+it must be a numeric value.
+
+\begin{figure}
+\centering
+\includegraphics{images/user-guide/maintenance-mode/remove-box-office-select-id.png}
+\caption{Visual representation of selecting a Box Office Report to
+delete}
 \end{figure}
 
 As you can see in Figure CHANGEFIGUREVALUE, there are more options

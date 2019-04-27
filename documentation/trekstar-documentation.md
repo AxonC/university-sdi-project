@@ -48,7 +48,12 @@ header-includes: |
 	- [Using the Main Menu](#using-the-main-menu)
 	- [Using View Mode](#using-view-mode)
 		- [Using List Projects](#using-list-projects)
+		- [Using View Materials](#using-view-materials)
+		- [Using View Crew](#using-view-crew)
+		- [Using View Box Office Reports](#using-view-box-office-reports)
 		- [Using Search Projects](#using-search-projects)
+			- [Using Search By Title](#using-search-by-title)
+			- [Using Search By Actor](#using-search-by-actor)
 		- [Using List Materials](#using-list-materials)
 	- [Using Maintenance Mode](#using-maintenance-mode)
 		- [Using Add Project](#using-add-project)
@@ -58,7 +63,11 @@ header-includes: |
 			- [Edit Released](#edit-released)
 			- [Edit Playing In Theaters](#edit-playing-in-theaters)
 			- [Edit Existing Keywords](#edit-existing-keywords)
+			- [Edit Crew](#edit-crew)
+			- [Edit Crew Name](#edit-crew-name)
+			- [Edit Crew Job Title](#edit-crew-job-title)
 		- [Using Remove Project](#using-remove-project)
+		- [Using Add Project Materials](#using-add-project-materials)
 		- [Using Update Project Materials](#using-update-project-materials)
 			- [Edit Audio Format](#edit-audio-format)
 			- [Edit Run Time](#edit-run-time)
@@ -67,7 +76,19 @@ header-includes: |
 			- [Edit Subtitles](#edit-subtitles)
 			- [Edit Frame Aspect](#edit-frame-aspect)
 			- [Edit Packaging](#edit-packaging)
+			- [Edit Content](#edit-content)
+			- [Edit Additional Language Tracks](#edit-additional-language-tracks)
+			- [Edit Additional Subtitle Tracks](#edit-additional-subtitle-tracks)
+			- [Edit Bonus Features](#edit-bonus-features)
+			- [Edit Audio Track](#edit-audio-track)
 		- [Using Remove Project Materials](#using-remove-project-materials)
+		- [Using Add Crew](#using-add-crew)
+		- [Using Update Crew](#using-update-crew)
+			- [Edit Crew Name](#edit-crew-name-1)
+			- [Edit Crew Job Title](#edit-crew-job-title-1)
+		- [Using Remove Crew](#using-remove-crew)
+		- [Using Add Box Office Report](#using-add-box-office-report)
+		- [Using Remove Box Office Report](#using-remove-box-office-report)
 - [Conclusion](#conclusion)
 - [Appendix](#appendix)
 	- [Managing group work](#managing-group-work)
@@ -79,10 +100,8 @@ header-includes: |
 # Todo - **_remove me before submission pls_**
 
 ## User Guide
-  - User guide details required for when the application is able to manage crew and materials/projects fully.
   - Add back in image that shows keywords when adding a project when this is reimplemented.
   - Change all figure values where text is CHANGEFIGUREVALUE once all images added.
-  - Complete [Using Update Project Materials](#using-update-project-materials) once the material id bug has been fixed.
   - Resolve image issue on [Edit Packaging](#edit-packaging) once bugs have been fixed
   - Look into new line for  # # # # headers
   - Add class diagram (and any other landscape picture pages) to the TOC on last save
@@ -384,17 +403,78 @@ You will now see the projects that are held within your applications database, y
 
 As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these options allow you to navigate through the projects. You can see the associated input actions below.
 
+| Input Value | Command Action                                                         |        Information Link                               |
+| :----------: | ------------------------------------------------------------------------- | ---------------------------------------------- |
+| 1     | This will cause the application to move onto the next project in the database              | Not Required       |
+| 2     | This will cause the application to move onto the previous project in the database | Not Required|
+| 3     | This will cause the application to enter the view materials functionality |[View Materials](#using-view-materials)|
+| 4     | This will cause the application to enter the view crew functionality |[View Crew](#using-view-crew)|
+| 5     | This will cause the application to enter the view box office reports functionality | [View Box Office Reports](#using-view-box-office-reports)|
+| 6     | This will cause the application to navigate back to view mode          |  [View Mode](#using-view-mode)         |
+
+\newpage
+
+### Using View Materials
+
+Once you have reached the View Materials page you will be presented with the following screen
+
+![Visual representation of View Materials](images/user-guide/view-mode/using-view-materials.png)
+
+Once on this screen, you can use the following keyboard inputs to navigate around view materials, to find out more about each feature, click the associated information link.
+
 | Input Value | Command Action                                                                
 | :----------: | ------------------------------------------------------------------------- |
-| 1     | This will cause the application to move onto the next project in the database              |
-| 2     | This will cause the application to move onto the previous project in the database | 
-| 3     | This will cause the application to navigate back to [View Mode](#using-view-mode)              | 
+| 1     | This will cause the application to move onto the next material in the database              |
+| 2     | This will cause the application to move onto the previous material in the database | 
+| 3     | This will cause the application to navigate back to [List Projects](#using-list-projects)              | 
+
+\newpage
+
+### Using View Crew
+
+Once you have reached the View Crew page you will be presented with the following screen
+
+![Visual representation of View Crew](images/user-guide/view-mode/using-view-crew.png)
+
+Once on this screen, you can use the following keyboard inputs to navigate around view crew, to find out more about each feature, click the associated information link.
+
+| Input Value | Command Action                                                                
+| :----------: | ------------------------------------------------------------------------- |
+| 1     | This will cause the application to move onto the next crew member in the database              |
+| 2     | This will cause the application to move onto the previous member in the database | 
+| 3     | This will cause the application to navigate back to [List Projects](#using-list-projects)              | 
+
+\newpage
+
+### Using View Box Office Reports
+
+Once you have reached the View Box Office Reports page you will be presented with the following screen
+
+![Visual representation of View Box Office Reports](images/user-guide/view-mode/using-view-box-office-reports.png)
+
+Once on this screen, you can use the following keyboard inputs to navigate around view box office reports, to find out more about each feature, click the associated information link.
+
+| Input Value | Command Action                                                                
+| :----------: | ------------------------------------------------------------------------- |
+| 1     | This will cause the application to move onto the next box office report in the database              |
+| 2     | This will cause the application to move onto the previous box office report in the database | 
+| 3     | This will cause the application to navigate back to [List Projects](#using-list-projects)              | 
 
 \newpage
 
 ### Using Search Projects
 
-Once you have entered the Search Projects functionality you will be asked to input a search query, this can be any value and data will only be returned if there is an associated project title held within the database.
+Once you have entered the Search Projects functionality you will be asked to select what search type you would like to use, the following options will be provided:
+
+| Input Value | Command Action                                                         |        Information Link                               |
+| :----------: | ------------------------------------------------------------------------- | ---------------------------------------------- |
+| 1     | This will cause the application to enter the search by title functionality |[Search By Title](#using-search-by-title)|
+| 2     | This will cause the application to enter the search by actor functionality |[View Crew](#using-search-by-actor)|
+| 3     | This will cause the application to navigate back to view mode          |  [View Mode](#using-view-mode)         |
+
+\newpage
+
+#### Using Search By Title
 
 ![Visual representation of the application asking for a search query](images/user-guide/view-mode/project-title-search.png)
 
@@ -404,13 +484,41 @@ You will now see the associated projects that matched to your search query, you 
 
 As you can see in Figure CHANGEFIGUREVALUE, there is the option to display the associated materials for this project, you can enter _`y`_ to confirm that you wish to view the materials for the associated project, which will bring up the following information:
 
-![Visual representation of a projects materials being displayed](images/user-guide/view-mode/project-search-materials-accept.png)
+![Visual representation of a projects materials being displayed](images/user-guide/view-mode/project-search-list-material.png)
 
-As you can see in CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [View Mode](#using-view-mode), therefore you can find more information by reading the [View Mode](#using-view-mode) section of this user guide.
+As you can see in CHANGEFIGUREVALUE, there are more options available, you can find what each command does below
 
 You can also enter _`n`_ to confirm that you do not want to view the materials for the associated project, which will bring up the following information:
 
 ![Visual representation of a projects materials not being displayed](images/user-guide/view-mode/project-search-materials-decline.png)
+
+As you can see in CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [View Mode](#using-view-mode), therefore you can find more information by reading the [View Mode](#using-view-mode) section of this user guide.
+
+\newpage
+
+#### Using Search By Actor
+
+![Visual representation of the application asking for a search query](images/user-guide/view-mode/project-actor-search.png)
+
+You will now see the associated projects that matched to your search query, you can see an example of this below.
+
+![Visual representation of a project being discovered from a search query](images/user-guide/view-mode/project-search-actor.png)
+
+As you can see in Figure CHANGEFIGUREVALUE, there is the option to display the associated materials for this project, you can enter _`y`_ to confirm that you wish to view the materials for the associated project, which will bring up the following information:
+
+![Visual representation of a projects materials being displayed](images/user-guide/view-mode/project-search-list-material.png)
+
+As you can see in CHANGEFIGUREVALUE, there are more options available, you can find what each command does below
+
+| Input Value | Command Action                                                                
+| :----------: | ------------------------------------------------------------------------- |
+| 1     | This will cause the application to move onto the next material in the database              |
+| 2     | This will cause the application to move onto the previous material in the database | 
+| 3     | This will cause the application to navigate back to [View Mode](#using-view-mode)              | 
+
+You can also enter _`n`_ to confirm that you do not want to view the materials for the associated project, which will bring up the following information:
+
+![Visual representation of a projects materials not being displayed](images/user-guide/view-mode/project-search-actor-decline.png)
 
 As you can see in CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [View Mode](#using-view-mode), therefore you can find more information by reading the [View Mode](#using-view-mode) section of this user guide.
 
@@ -511,7 +619,8 @@ Next, you will be presented with multiple options, you can use the following key
 | 3     | Inputting this value will cause the application to enter edit released | [Edit Released](#edit-released) |
 | 4     | Inputting this value will cause the application to enter edit playing in theatres | [Edit Playing In Theatres](#edit-playing-in-theaters) |
 | 4     | Inputting this value will cause the application to enter edit existing keywords | [Edit Existing Keywords](#edit-existing-keywords) |
-| 5     | Inputting this value will cause the application to navigate back to the maintenance mode menu  | [Maintenance Mode Menu](#using-maintenance-mode) |
+| 5     | Inputting this value will cause the application to enter edit existing keywords | [Edit Crew](#edit-crew) |
+| 6     | Inputting this value will cause the application to navigate back to the maintenance mode menu  | [Maintenance Mode Menu](#using-maintenance-mode) |
 
 \newpage
 
@@ -579,6 +688,48 @@ As you can see in Figure CHANGEFIGUREVALUE, there are more options available to 
 
 \newpage
 
+#### Edit Crew
+
+Once you have entered the Edit Crew functionality you will be asked to enter the following information:
+
+You need to enter the crew identifier you wish to update, you can find the identifier in the provided list, an example of this can be seen below:
+
+![Visual representation of the application showing the current Crew identifiers](images/user-guide/maintenance-mode/update-project-select-crew.png)
+
+Once you have inputted a valid keyword identifier you will be asked to enter the type of data you would like to update, you can find the associated values below, to find out more about each function, click the associated information link.
+
+| Input Value | Command Action                                                                     | Information Link                               |
+| :----------: | ------------------------------------------------------------------------- | ---------------------------------------------- |
+| 1     | Inputting this value will cause the application to enter update crew name                 | [Edit Name](#using-edit-crew-name)       |
+| 2     | Inputting this value will cause the application to enter update crew job title | [Edit Job Title](#using-edit-crew-job-title) |
+| 3     | Inputting this value will cause the application to navigate back to the maintenance mode menu  | [Maintenance Mode Menu](#using-maintenance-mode)      |
+
+\newpage
+
+#### Edit Crew Name
+
+Once you have entered the Edit Crew Name functionality you will be asked to enter the following information:
+
+You need to enter the new Crew Name, this is the new name for the crew member that you selected. Any value is accepted.
+
+![Visual representation of the application asking for a new Crew Name](images/user-guide/maintenance-mode/update-crew-name.png)
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+
+\newpage
+
+#### Edit Crew Job Title
+
+Once you have entered the Edit Crew Job Title functionality you will be asked to enter the following information:
+
+You need to enter the new Crew Job Title, this is the new job title for the crew member that you selected. Any value is accepted.
+
+![Visual representation of the application asking for a new Crew Name](images/user-guide/maintenance-mode/update-crew-job-title.png)
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+
+\newpage
+
 ### Using Remove Project
 
 Once you have entered the Remove Project functionality you will be asked to enter the following information:
@@ -591,8 +742,78 @@ Once you submit this Project ID it will be removed from the database.
 
 As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
+\newpage
+
+### Using Add Project Materials
+
+Once you have entered the Add Project Materials functionality you will be asked to enter the following information:
+
+Firstly, you need to enter a Project ID, this must be a numeric value, you can find the accepted Project IDs above the input location, select an ID from this list.
+
+![Visual representation of selecting a Project ID to proceed with selecting a project to add a material to](images/user-guide/maintenance-mode/update-project-select-id.png)
+
+Next, you will be asked to enter the material format identifer you wish to add within the previously selected project, you can find the identifier in the provided list, an example of this can be found below:
+
+![Visual representation of selecting a Material Format ID to add to the project](images/user-guide/maintenance-mode/add-material-select-id.png)
+
+Once you have selected a Material Format ID you will be asked to enter the following information:
+
+Next, you need to enter the Audio Format, this is the audio format that you want your material to have. Any value is accepted.
+
+![Visual representation of the application asking for a Project Title](images/user-guide/maintenance-mode/add-material-audio-format.png)
+
+Next, you will be asked for the material run time. Any numeric value is accepted.
+
+![Visual representation of the application asking for the material Run Time](images/user-guide/maintenance-mode/add-material-run-time.png)
+
+Next, you will be asked for the material language. Any value is accepted.
+
+![Visual representation of the application asking for the material Language](images/user-guide/maintenance-mode/add-material-language.png)
+
+Next, you will be asked for the material retail price. Any numeric value is accepted.
+
+![Visual representation of the application asking for the material Retail Price](images/user-guide/maintenance-mode/add-material-retail-price.png)
+
+Next, you will be asked for the material subtitles. Any value is accepted.
+
+![Visual representation of the application asking for the material Subtitles](images/user-guide/maintenance-mode/add-material-subtitles.png)
+
+Next, you will be asked for the material frame aspect. Any value is accepted.
+
+![Visual representation of the application asking for the material Frame Aspect](images/user-guide/maintenance-mode/add-material-frame-aspect.png)
+
+Next, you will be asked for the material content. Any value is accepted.
+
+![Visual representation of the application asking for the material Content](images/user-guide/maintenance-mode/add-material-content.png)
+
+Next, you will be asked if the material has any additional language tracks. Any value is accepted, if you enter anything other than 0 you will be asked for the Additional Language track otherwise you can move onto the next input.
+
+![Visual representation of the application asking if the material has any additional language tracks](images/user-guide/maintenance-mode/add-material-number-of-additional-language-tracks.png)
+
+If you entered more than 0 the application will ask you to enter the following information for the amount of language tracks added.
+
+![Visual representation of the application asking for material additional language track information](images/user-guide/maintenance-mode/add-material-additional-language-track.png)
+
+Next, you will be asked if the material has any additional subtitle tracks. Any value is accepted, if you enter anything other than 0 you will be asked for the Additional Subtitle track otherwise you can move onto the next input.
+
+![Visual representation of the application asking if the material has any additional subtitle tracks](images/user-guide/maintenance-mode/add-material-number-of-additional-subtitle-tracks.png)
+
+If you entered more than 0 the application will ask you to enter the following information for the amount of subtitle tracks added.
+
+![Visual representation of the application asking for material additional subtitle track information](images/user-guide/maintenance-mode/add-material-additional-subtitle-track.png)
+
+Finally, you will be asked if the material has any additional bonus features. Any value is accepted, if you enter anything other than 0 you will be asked for the Bonus Feature otherwise you can move onto the next input.
+
+![Visual representation of the application asking if the material has any bonus features](images/user-guide/maintenance-mode/add-material-number-of-bonus-features.png)
+
+If you entered more than 0 the application will ask you to enter the following information for the amount of bonus features added.
+
+![Visual representation of the application asking for material bonus feature information](images/user-guide/maintenance-mode/add-material-bonus-features.png)
+
+As you can see in CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
 \newpage
+
 
 ### Using Update Project Materials
 
@@ -616,8 +837,25 @@ Next, you will be presented with multiple options, you can use the following key
 | 4     | Inputting this value will cause the application to enter edit retail price | [Edit Retail Price](#edit-retail-price) |
 | 5     | Inputting this value will cause the application to enter edit subtitles | [Edit Subtitles](#edit-subtitles) |
 | 6     | Inputting this value will cause the application to enter edit frame aspect | [Edit Frame Aspect](#edit-frame-aspect) |
+| 7     | Inputting this value will cause the application to enter edit content | [Edit Content](#edit-content) |
+| 8     | Inputting this value will cause the application to enter edit additional language tracks | [Edit Additional Language Tracks](#edit-additional-language-tracks) |
+| 9     | Inputting this value will cause the application to enter edit additional subtitle tracks | [Edit Additional Subtitle Tracks](#edit-additional-subtitle-tracks) |
+| 10     | Inputting this value will cause the application to enter edit bonus features | [Edit Bonus Features](#edit-bonus-features) |
+| 11     | Inputting this value will cause the application to navigate back to the maintenance mode menu  | [Maintenance Mode Menu](#using-maintenance-mode)      |
+
+If you selected VHS, you will see the following options.
+
+| Input Value | Command Action                                                                     | Information Link                               |
+| :----------: | ------------------------------------------------------------------------- | ---------------------------------------------- |
+| 1     | Inputting this value will cause the application to enter edit audio format         | [Edit Audio Format](#edit-audio-format)    |
+| 2     | Inputting this value will cause the application to enter edit run time | [Edit Run Time](#edit-run-time) |
+| 3     | Inputting this value will cause the application to enter edit language | [Edit Language](#edit-language) |
+| 4     | Inputting this value will cause the application to enter edit retail price | [Edit Retail Price](#edit-retail-price) |
+| 5     | Inputting this value will cause the application to enter edit subtitles | [Edit Subtitles](#edit-subtitles) |
+| 6     | Inputting this value will cause the application to enter edit frame aspect | [Edit Frame Aspect](#edit-frame-aspect) |
 | 7     | Inputting this value will cause the application to enter edit packaging | [Edit Packaging](#edit-packaging) |
-| 8     | Inputting this value will cause the application to navigate back to the maintenance mode menu  | [Maintenance Mode Menu](#using-maintenance-mode)      |
+| 8     | Inputting this value will cause the application to enter edit audio track | [Edit Audio Track](#edit-audio-track) |
+| 9     | Inputting this value will cause the application to navigate back to the maintenance mode menu  | [Maintenance Mode Menu](#using-maintenance-mode)      |
 
 \newpage
 
@@ -697,9 +935,81 @@ As you can see in Figure CHANGEFIGUREVALUE, there are more options available to 
 
 Once you have entered the Edit Packaging functionality you will be asked to enter the following information:
 
-You need to enter the new Packaging details, this is the new packaging information that you want your material to have. Any value is accepted.
+You need to select from the list of packaging types, this is the new packaging type that you want your material to have. Any value from 1-2 is accepted.
 
 ![Visual representation of the application asking for new Packaging information](images/user-guide/maintenance-mode/update-project-material-packaging.png)
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+
+\newpage
+
+#### Edit Content
+
+Once you have entered the Edit Content functionality you will be asked to enter the following information:
+
+You need to enter the new Content details, this is the new content information that you want your material to have. Any value is accepted.
+
+![Visual representation of the application asking for new Content information](images/user-guide/maintenance-mode/update-project-material-content.png)
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+
+\newpage
+
+#### Edit Additional Language Tracks
+
+Once you have entered the Edit Additional Language Tracks functionality you will be asked to enter the following information
+
+You need to enter the Additional Language Track identifier you wish to update, you can find the identifier in the provided list, an example of this can be seen below:
+
+![Visual representation of the application showing the current Additional Language Track identifiers](images/user-guide/maintenance-mode/update-project-material-additional-language-track-select-id.png)
+
+You need to enter the new Additional Language Tracks details, this is the new additional language tracks information that you want your material to have. Any value is accepted.
+
+![Visual representation of the application asking for new Additional Language Tracks information](images/user-guide/maintenance-mode/update-project-material-additional-language-tracks.png)
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+
+\newpage
+
+#### Edit Additional Subtitle Tracks
+
+Once you have entered the Edit Subtitle Language Tracks functionality you will be asked to enter the following information
+
+You need to enter the Subtitle Language Track identifier you wish to update, you can find the identifier in the provided list, an example of this can be seen below:
+
+![Visual representation of the application showing the current Additional Subtitle Track identifiers](images/user-guide/maintenance-mode/update-project-material-additional-subtitle-track-select-id.png)
+
+You need to enter the new Additional Subtitle Tracks details, this is the new additional subtitle tracks information that you want your material to have. Any value is accepted.
+
+![Visual representation of the application asking for new Additional Subtitle Tracks information](images/user-guide/maintenance-mode/update-project-material-additional-subtitle-tracks.png)
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+
+\newpage
+
+#### Edit Bonus Features
+
+Once you have entered the Edit Bonus Features Tracks functionality you will be asked to enter the following information
+
+You need to enter the Bonus Features identifier you wish to update, you can find the identifier in the provided list, an example of this can be seen below:
+
+![Visual representation of the application showing the current Bonus Features identifiers](images/user-guide/maintenance-mode/update-project-material-bonus-feature-select-id.png)
+
+You need to enter the new Bonus Features details, this is the new bonus feature information that you want your material to have. Any value is accepted.
+
+![Visual representation of the application asking for new Bonus Features information](images/user-guide/maintenance-mode/update-project-material-bonus-feature.png)
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+
+\newpage
+
+#### Edit Audio Track
+
+Once you have entered the Edit Audio Track functionality you will be asked to enter the following information:
+
+You need to enter the new Audio Track details, this is the new audio track that you want your material to have. Any value is accepted.
+
+![Visual representation of the application asking for new Audio Track information](images/user-guide/maintenance-mode/update-project-materials-audio-track.png)
 
 As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
@@ -711,11 +1021,133 @@ Once you have entered the Remove Project functionality you will be asked to ente
 
 Firstly, you need to enter a Project ID, this must be a numeric value, you can find the accepted Project IDs above the input location, select an ID from this list.
 
-![Visual representation of selecting a Project ID to select Material IDs for](images/user-guide/maintenance-mode/remove-project-select-id.png)
+![Visual representation of selecting a Project ID to remove Materials for](images/user-guide/maintenance-mode/remove-project-select-id.png)
 
 Once you have selected a Project ID you will be presented with the associated Material IDs, you need to now select a Material ID from this list and it must be a numeric value.
 
 ![Visual representation of selecting a MaterialID to delete](images/user-guide/maintenance-mode/remove-project-materials-select-id.png)
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+
+\newpage
+
+### Using Add Crew
+
+Once you have entered the Add Crew functionality you will be asked to enter the following information:
+
+Firstly, you need to enter a Project ID, this must be a numeric value, you can find the accepted Project IDs above the input location, select an ID from this list.
+
+![Visual representation of selecting a Project ID to proceed with selecting a project to add crew to](images/user-guide/maintenance-mode/update-project-select-id.png)
+
+Next, you need to enter the Name of the crew member. Any value is accepted.
+
+![Visual representation of the application asking for a Crew members name](images/user-guide/maintenance-mode/add-crew-name.png)
+
+Next, you need to enter the Job Title of the crew member. Any value is accepted.
+
+![Visual representation of the application asking for a Crew members job title](images/user-guide/maintenance-mode/add-crew-job-title.png)
+
+As you can see in CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+
+### Using Update Crew
+
+Once you have entered the Update Crew functionality you will be asked to enter the following information:
+
+Firstly, you need to enter a Project ID, this must be a numeric value, you can find the accepted Project IDs above the input location, select an ID from this list.
+
+![Visual representation of selecting a Project ID to proceed with selecting a crew member to update](images/user-guide/maintenance-mode/update-project-select-id.png)
+
+Next, you will be asked to enter the crew identifer you wish to update within the previously selected project, you can find the identifier in the provided list, an example of this can be found below:
+
+![Visual representation of selecting a Crew ID to update the information for](images/user-guide/maintenance-mode/update-project-crew-select-crew-id.png)
+
+Next, you will be presented with multiple options, you can use the following keyboard inputs to update certain aspects of the material, to find out more about each update, click the associated information link.
+
+| Input Value | Command Action                                                                     | Information Link                               |
+| :----------: | ------------------------------------------------------------------------- | ---------------------------------------------- |
+| 1     | Inputting this value will cause the application to enter edit crew name         | [Edit Crew Name](#edit-crew-name)    |
+| 2     | Inputting this value will cause the application to enter edit crew job title | [Edit Crew Job Title](#edit-run-time) |
+| 3     | Inputting this value will cause the application to navigate back to the maintenance mode menu  | [Maintenance Mode Menu](#using-maintenance-mode)      |
+
+\newpage
+
+#### Edit Crew Name
+
+Once you have entered the Edit Crew Name functionality you will be asked to enter the following information:
+
+You need to enter the new Crew Name, this is the new name that you want your crew member to have. Any value is accepted.
+
+![Visual representation of the application asking for a new Crew Name](images/user-guide/maintenance-mode/update-crew-name.png)
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+
+\newpage
+
+#### Edit Crew Job Title
+
+Once you have entered the Edit Crew Job Title functionality you will be asked to enter the following information:
+
+You need to enter the new Crew Job Title, this is the new job title that you want your crew member to have. Any value is accepted.
+
+![Visual representation of the application asking for a new Crew Job Title](images/user-guide/maintenance-mode/update-crew-job-title.png)
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+
+\newpage
+
+### Using Remove Crew
+
+Once you have entered the Remove Crew functionality you will be asked to enter the following information:
+
+Firstly, you need to enter a Project ID, this must be a numeric value, you can find the accepted Project IDs above the input location, select an ID from this list.
+
+![Visual representation of selecting a Project ID to proceed with deleting a crew member](images/user-guide/maintenance-mode/update-project-select-id.png)
+
+Once you submit this Project ID you will need to select the Crew Member to select from the list of IDs above the input location, select an ID from this list.
+
+![Visual representation of selecting a Project ID to update the project for](images/user-guide/maintenance-mode/remove-crew-select-id.png)
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+
+\newpage
+
+### Using Add Box Office Report
+
+Once you have entered the Add Box Office Report functionality you will be asked to enter the following information:
+
+Firstly, you need to enter a Project ID, this must be a numeric value, you can find the accepted Project IDs above the input location, select an ID from this list.
+
+![Visual representation of selecting a Project ID to proceed with selecting a crew member to update](images/user-guide/maintenance-mode/update-project-select-id.png)
+
+Once you have selected a Project ID you will be asked to enter the following information:
+
+Next, you need to enter the Week Number, this is the week number that you want your box office report to relate to. Any numeric value is accepted.
+
+![Visual representation of the application asking for a Week Number](images/user-guide/maintenance-mode/add-box-office-report-week-number.png)
+
+Next, you need to enter the Revenue, this is how much money was made during the entered week. Any numeric value is accepted.
+
+![Visual representation of the application asking for a Revenue value](images/user-guide/maintenance-mode/add-box-office-report-revenue.png)
+
+Next, you need to enter the Tickets Sold, this is the amount of tickets sold in the entered week. Any numeric value is accepted.
+
+![Visual representation of the application asking for a Tickets Sold value](images/user-guide/maintenance-mode/add-box-office-report-tickets-sold.png)
+
+As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+
+\newpage
+
+### Using Remove Box Office Report
+
+Once you have entered the Remove Box Office Report functionality you will be asked to enter the following information:
+
+Firstly, you need to enter a Project ID, this must be a numeric value, you can find the accepted Project IDs above the input location, select an ID from this list.
+
+![Visual representation of selecting a Project ID to remove a Box Office Report for](images/user-guide/maintenance-mode/remove-project-select-id.png)
+
+Once you have selected a Project ID you will be presented with the associated Week IDs, you need to now select a Week ID from this list and it must be a numeric value.
+
+![Visual representation of selecting a Box Office Report to delete](images/user-guide/maintenance-mode/remove-box-office-select-id.png)
 
 As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
