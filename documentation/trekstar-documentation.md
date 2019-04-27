@@ -94,12 +94,20 @@ header-includes: |
 * A description of how cohesion and coupling have been considered in the class design.
 * An explanation of the internal data structures used and the reason of the choices.
 * A justification and explanation of how cohesion and coupling have been considered in the design.
+* An explanation of the planned architecture and the reason of the choices according to ATAM (follow step 4 and 5, i.e., identify possible architecture styles and choose one with respect to the identified utility tree, you need to explain the reason).
+* An explanation of any design pattern used.
   
 ## Callum Carney (N0741707) - Member C
-* Implementation of the Console Interface for the application
+* A cover page (showing the full name and student ID of all members).
+* A table of contents page and identifying who has contributed to which individual tasks.
+* A general description of the system.
 * Component diagrams.
 * Deployment diagrams.
 * Examples (screen shots) of user interface.
+* A user manual and instruction of the software. (regardless if your software is based on GUI or console interface).
+* An explanation of any C++ library used.
+* An explanation about the software testing process and metrics.
+* Meeting minutes.
 
 ## Matthew Robinson (N0724629) - Member B
 * A sequence diagram for a case/scenario of interest.
@@ -109,6 +117,7 @@ header-includes: |
 * One of the searching algorithms studied during the lectures - binary search.
 * A console interface that allows user to interact with the software system.
 * An explanation of the search or sorting algorithm used and the reason of the choices. Explain how the algorithm will work in the system with detailed steps.
+* Discussion and conclusion about your results (reflection on testing approach, reflection on performance such as computational efficiency, reliability, security, portability, maintainability, scalability, etc. design of system complexity using e.g. big O- notation).
 
 All other contributions have been completed as part of a group effort.
 
