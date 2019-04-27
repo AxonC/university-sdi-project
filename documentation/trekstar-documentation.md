@@ -13,25 +13,6 @@ titlepage-rule-color: "FFFFFF"
 titlepage-rule-height: 1
 header-includes: |
 	\usepackage{pdflscape}
-	
-references:
-- type: article-journal
-  id: Tao2019
-  author:
-  - family: Tao
-    given: T. C.
-  issued:
-    date-parts:
-    - - 2019
-      - 4
-      - 25
-	title: 'Taos book of magic'
-	abstract: Taos abstract
-  title-short: TBM
-  container-title: Nature
-  page: 2-3
-  URL: https://url.com
-  language: en-GB
 ...
 
 # Table of Contents
@@ -468,8 +449,14 @@ Once on this screen, you can use the following keyboard inputs to navigate aroun
 | 1     | Inputting this value will cause the application to enter add project             | [Adding Projects](#using-add-project)       |
 | 2     | Inputting this value will cause the application to enter update project | [Updating Projects](#using-update-project) |
 | 3     | Inputting this value will cause the application to enter remove project | [Removing Projects](#using-remove-projects) |
+| 4     | Inputting this value will cause the application to enter update project materials| [Add Project Materials](#using-add-project-materials) |
 | 4     | Inputting this value will cause the application to enter update project materials| [Updating Project Materials](#using-update-project-materials) |
 | 5     | Inputting this value will cause the application to enter remove project materials | [Removing Project Materials](#using-remove-project-materials) |
+| 4     | Inputting this value will cause the application to enter update project materials| [Add Project Crew](#using-update-project-crew) |
+| 4     | Inputting this value will cause the application to enter update project materials| [Updating Project Crew](#using-update-project-crew) |
+| 5     | Inputting this value will cause the application to enter remove project materials | [Removing Project Crew](#using-remove-project-crew) |
+| 4     | Inputting this value will cause the application to enter update project materials| [Add Box Office Report](#using-add-box-office-report) |
+| 4     | Inputting this value will cause the application to enter update project materials| [Updating Box Office Report](#using-update-box-office-report) |
 | 6     | Inputting this value will cause the application to navigate back to the main menu  | [Main Menu](#using-the-main-menu)         |
 
 \newpage
@@ -776,4 +763,5 @@ During group meetings a member was nominated to write minutes, these minutes wer
 
 # References
 
-The seminal work of [@Tao2019]
+[@tao2019]
+[@tao2018]

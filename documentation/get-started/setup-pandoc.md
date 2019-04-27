@@ -20,10 +20,10 @@ Once you have finished editing the .md file or the .tex file, run the respective
 
 ## Create .tex & .pdf from the edited the .md file
 
-`pandoc --filter pandoc-citeproc -s trekstar-documentation.md -o trekstar-documentation.tex --template eisvogel`\
-`pandoc --filter pandoc-citeproc trekstar-documentation.md -o trekstar-documentation.pdf --template eisvogel`
+`pandoc --filter pandoc-citeproc --bibliography=references.bib -s trekstar-documentation.md -o trekstar-documentation.tex --template eisvogel`\
+`pandoc --filter pandoc-citeproc --bibliography=references.bib -s trekstar-documentation.md -o trekstar-documentation.pdf --template eisvogel`
 
 ## Create .md & .pdf from the edited the .tex file
 
-`pandoc --filter pandoc-citeproc trekstar-documentation.tex -o trekstar-documentation.md --template eisvogel`\
-`pandoc --filter pandoc-citeproc trekstar-documentation.tex -o trekstar-documentation.pdf --template eisvogel`
+`pandoc --filter pandoc-citeproc --bibliography=references.bib -s trekstar-documentation.tex -o trekstar-documentation.md --template eisvogel`\
+`pandoc --filter pandoc-citeproc --bibliography=references.bib -s trekstar-documentation.tex -o trekstar-documentation.pdf --template eisvogel`
