@@ -4,6 +4,7 @@
 #include "../material/MaterialController.h"
 #include "../material/DVDController.h"
 #include "../material/DoubleSideDVDController.h"
+#include "../material/BoxSetController.h"
 #include "../material/VHSController.h"
 #include "../../view/people/CrewView.h"
 #include "../people/CrewController.h"
@@ -17,6 +18,8 @@ using TrekStar::Material::DoubleSideDVDView;
 using TrekStar::Material::DoubleSideDVDController;
 using TrekStar::Material::VHSView;
 using TrekStar::Material::VHSController;
+using TrekStar::Material::BoxSetView;
+using TrekStar::Material::BoxSetController;
 using TrekStar::People::CrewView;
 using TrekStar::People::CrewController;
 
@@ -121,7 +124,15 @@ namespace TrekStar
                 return;
             }
 
-            if ( auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::VHS>(material) )
+            if ( auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::BoxSet>(material) )
+            {
+                BoxSetView view(*castedMaterial);
+                BoxSetController controller(*castedMaterial, view);
+
+                controller.SetFormat("boxset");
+                controller.AddNew();
+            }
+            else if ( auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::VHS>(material) )
             {
                 VHSView view(*castedMaterial);
                 VHSController controller(*castedMaterial, view);
@@ -154,7 +165,14 @@ namespace TrekStar
 
             auto material = this->GetModel()->GetMaterials().at(this->GetView()->GetMaterialSelection());
 
-            if ( auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::VHS>(material) )
+            if ( auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::BoxSet>(material) )
+            {
+                BoxSetView view(*castedMaterial);
+                BoxSetController controller(*castedMaterial, view);
+
+                controller.Update();
+            }
+            else if ( auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::VHS>(material) )
             {
                 VHSView view(*castedMaterial);
                 VHSController controller(*castedMaterial, view);
