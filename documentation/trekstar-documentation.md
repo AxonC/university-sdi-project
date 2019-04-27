@@ -91,6 +91,7 @@ header-includes: |
 
 ## Callum Axon (N0727303) - Member A
 * Class Diagram.
+* One of the data structures - stack.
 * A description of how cohesion and coupling have been considered in the class design.
 * An explanation of the internal data structures used and the reason of the choices.
 * A justification and explanation of how cohesion and coupling have been considered in the design.
@@ -112,7 +113,6 @@ header-includes: |
 ## Matthew Robinson (N0724629) - Member B
 * A sequence diagram for a case/scenario of interest.
 * State machine diagram for a class.
-* One of the data structures - stack.
 * One of the sorting studied during the lectures - merge sort.
 * One of the searching algorithms studied during the lectures - binary search.
 * A console interface that allows user to interact with the software system.
