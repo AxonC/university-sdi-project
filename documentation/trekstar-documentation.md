@@ -1270,6 +1270,4 @@ During group meetings a member was nominated to write minutes, these minutes wer
 
 # References
 
-[@tao2019]
-[@tao2018]
 [@infotech_2017]
