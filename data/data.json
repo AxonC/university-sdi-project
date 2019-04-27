@@ -111,6 +111,26 @@
                         "retailPrice": 25.99,
                         "runTime": 160,
                         "subtitles": "ENG"
+                    },
+                    {
+                        "additionalLanguageTracks": [
+                            "2"
+                        ],
+                        "additionalSubtitleTracks": [
+                            "2"
+                        ],
+                        "audioFormat": "dts",
+                        "bonusFeatures": [
+                            "2"
+                        ],
+                        "content": "est",
+                        "format": "bluray",
+                        "frameAspect": "6:10",
+                        "language": "eng",
+                        "packaging": "",
+                        "retailPrice": 9.99,
+                        "runTime": 2000,
+                        "subtitles": "eng"
                     }
                 ],
                 "format": "boxset",

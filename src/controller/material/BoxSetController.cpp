@@ -96,7 +96,7 @@ namespace TrekStar
 
             std::shared_ptr<TrekStar::Material::Material> material = nullptr;
 
-            if ( diskType == 1 )
+            if ( diskType == 1 || diskType == 3 )
             {
                 material = MaterialFactory::Create("dvd");
                 auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::DVD>(material);
@@ -104,12 +104,19 @@ namespace TrekStar
                 DVDView view(*castedMaterial);
                 DVDController controller(*castedMaterial, view);
 
-                controller.SetFormat("dvd");
+                if ( diskType == 1 )
+                {
+                    controller.SetFormat("dvd");
+                }
+                else
+                {
+                    controller.SetFormat("bluray");
+                }
                 controller.AddNew();
 
                 return castedMaterial;
             }
-            else if ( diskType == 2 )
+            else
             {
                 material = MaterialFactory::Create("dsdvd");
                 auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::DoubleSideDVD>(material);
@@ -121,10 +128,6 @@ namespace TrekStar
                 controller.AddNew();
 
                 return castedMaterial;
-            }
-            else
-            {
-                // TO DO: Bluray
             }
         }
 
