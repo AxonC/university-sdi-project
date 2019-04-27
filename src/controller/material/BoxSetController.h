@@ -18,6 +18,7 @@ namespace TrekStar
             void AddDisks();
             void AddDisk();
             void UpdateDisks();
+            void RemoveDisk();
 
             std::shared_ptr<DVD> GetNewDisk();
 

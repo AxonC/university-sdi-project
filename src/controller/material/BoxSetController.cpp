@@ -40,6 +40,9 @@ namespace TrekStar
             case 8:
                 this->UpdateDisks();
                 break;
+            case 9:
+                this->RemoveDisk();
+                break;
             default:
                 break;
             }
@@ -73,6 +76,18 @@ namespace TrekStar
         void BoxSetController::AddDisk()
         {
             this->GetModel()->AddDisk(this->GetNewDisk());
+        }
+
+        void BoxSetController::RemoveDisk()
+        {
+            this->GetView()->PresentLastDisk();
+
+            bool removeConfirmed = this->GetView()->GetRemoveConfirmation();
+
+            if ( removeConfirmed )
+            {
+                this->GetModel()->RemoveDisk();
+            }
         }
 
         std::shared_ptr<DVD> BoxSetController::GetNewDisk()

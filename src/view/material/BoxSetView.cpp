@@ -20,7 +20,8 @@ namespace TrekStar
                             {6, "Edit Frame Aspect"},
                             {7, "Add Disk"},
                             {8, "Edit Disks"},
-                            {9, "Cancel"}
+                            {9, "Remove Disk"},
+                            {10, "Cancel"}
                     },
                     "Update BoxSet"
             );
@@ -70,6 +71,18 @@ namespace TrekStar
                 std::cout << "Disk #" << counter << ": ";
                 std::cout << "Format: " << std::dynamic_pointer_cast<TrekStar::Material::Material>(disk)->GetFormat() << std::endl;
             }
+        }
+
+        void BoxSetView::PresentLastDisk()
+        {
+            std::cout << "Going to remove disk with format ";
+            std::cout << std::dynamic_pointer_cast<TrekStar::Material::Material>(this->GetModel()->GetDisks().peak())->GetFormat() << "." << std::endl;
+        }
+
+        bool BoxSetView::GetRemoveConfirmation()
+        {
+            std::cout << "Remove this disk? (y/n): ";
+            return TrekStar::Command::GetBoolInput();
         }
 
         BoxSet* BoxSetView::GetModel()

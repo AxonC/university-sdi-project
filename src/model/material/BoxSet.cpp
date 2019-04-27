@@ -40,6 +40,11 @@ namespace TrekStar
             this->disks.update(disk, diskNo);
         }
 
+        void BoxSet::RemoveDisk()
+        {
+            this->disks.pop();
+        }
+
         Stack<std::shared_ptr<Material>> BoxSet::GetDisks() const
         {
             return this->disks;

@@ -17,6 +17,7 @@ namespace TrekStar
 
             void push(T const &);
             void pop();
+            T peak();
             bool isEmpty() const; // determines whether or not the stack is empty.
             unsigned int size() const;
             std::vector<T> data() const; // returns the underlying data structure.
@@ -40,6 +41,12 @@ namespace TrekStar
             }
 
             elements.pop_back();
+        }
+
+        template<class T>
+        T Stack<T>::peak()
+        {
+            return elements.back();
         }
 
         template<class T>

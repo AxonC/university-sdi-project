@@ -21,6 +21,8 @@ namespace TrekStar
             unsigned int GetNewDiskType();
 
             void PresentDisks();
+            void PresentLastDisk();
+            bool GetRemoveConfirmation();
 
         private:
             BoxSet* GetModel() override;
