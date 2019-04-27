@@ -82,6 +82,9 @@ namespace TrekStar
             this->UpdateSummary();
             this->UpdateReleased();
             this->UpdatePlayingInTheatres();
+
+            auto newProject = this->GetModel();
+            _logger->info("Project " + std::to_string(newProject->GetId()) + " was added with the title of " + newProject->GetTitle());
         }
 
         void ProjectController::ListMaterials()
