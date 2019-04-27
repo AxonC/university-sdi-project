@@ -264,14 +264,14 @@ namespace TrekStar
 
         void ProjectController::AddCrew()
         {
-            std::shared_ptr<People::Crew> crew;
+            People::Crew crew;
 
-            CrewView view(*crew);
-            CrewController controller(*crew, view);
+            CrewView view(crew);
+            CrewController controller(crew, view);
 
             controller.AddNew();
 
-            this->GetModel()->AddCrew(crew);
+            this->GetModel()->AddCrew(std::make_shared<People::Crew>(crew));
         }
 
         void ProjectController::UpdateCrew()
@@ -338,14 +338,14 @@ namespace TrekStar
 
         void ProjectController::AddBoxOfficeReport()
         {
-            std::shared_ptr<TrekStar::Project::BoxOfficeReport> boxOfficeReport;
+            TrekStar::Project::BoxOfficeReport boxOfficeReport;
 
-            BoxOfficeReportView view(*boxOfficeReport);
-            BoxOfficeReportController controller(*boxOfficeReport, view);
+            BoxOfficeReportView view(boxOfficeReport);
+            BoxOfficeReportController controller(boxOfficeReport, view);
 
             controller.AddNew();
 
-            this->GetModel()->AddBoxOfficeReport(boxOfficeReport);
+            this->GetModel()->AddBoxOfficeReport(std::make_shared<TrekStar::Project::BoxOfficeReport>(boxOfficeReport));
         }
 
         void ProjectController::RemoveBoxOfficeReport()
