@@ -13,7 +13,6 @@ titlepage-rule-color: "FFFFFF"
 titlepage-rule-height: 1
 header-includes: |
 	\usepackage{pdflscape}
-...
 
 # Table of Contents
 
@@ -26,13 +25,14 @@ header-includes: |
 	- [Matthew Robinson (N0724629) - Member B](#matthew-robinson-n0724629---member-b)
 - [System Description](#system-description)
 	- [Cohesion and Coupling Considerations](#cohesion-and-coupling-considerations)
-- [Sequence Diagram](#sequence-diagram)
-- [State Diagram](#state-diagram)
+		- [Cohesion](#cohesion)
+		- [Coupling](#coupling)
 - [Component Diagram](#component-diagram)
 - [Deployment Diagram](#deployment-diagram)
 	- [Individual Installation](#individual-installation)
 	- [Company-Wide Installation](#company-wide-installation)
 - [Design Pattern](#design-pattern)
+	- [Factory Design Pattern](#factory-design-pattern)
 - [Planned Architecture](#planned-architecture)
 - [Included C++ Libraries](#included-c-libraries)
 	- [JSON for C++ (GitHub Link)](#json-for-c-github-link)
@@ -71,6 +71,7 @@ header-includes: |
 - [Appendix](#appendix)
 	- [Managing group work](#managing-group-work)
 	- [Meeting Minutes](#meeting-minutes)
+- [References](#references)
 
 \newpage
 
@@ -93,7 +94,6 @@ header-includes: |
 * Class Diagram.
 * One of the data structures - stack.
 * A description of how cohesion and coupling have been considered in the class design.
-* An explanation of the internal data structures used and the reason of the choices.
 * A justification and explanation of how cohesion and coupling have been considered in the design.
 * An explanation of the planned architecture and the reason of the choices according to ATAM (follow step 4 and 5, i.e., identify possible architecture styles and choose one with respect to the identified utility tree, you need to explain the reason).
 * An explanation of any design pattern used.
@@ -104,6 +104,7 @@ header-includes: |
 * A general description of the system.
 * Component diagrams.
 * Deployment diagrams.
+* An explanation of the internal data structures used and the reason of the choices.
 * Examples (screen shots) of user interface.
 * A user manual and instruction of the software. (regardless if your software is based on GUI or console interface).
 * An explanation of any C++ library used.
@@ -174,17 +175,49 @@ Due to the relationships between different objects within the system, some coupl
 
 \newpage
 
-# Sequence Diagram
+<!-- Sequence Diagram -->
 
-Include sequence diagram here
+\begin{landscape}
+
+\pagestyle{empty}
+
+\hypertarget{sequence-diagram}{%
+\section{Sequence Diagram}\label{sequence-diagram}}
+
+\begin{figure}
+    \makebox[\linewidth]{
+		\includegraphics[width=0.5\linewidth]{images/sequence-diagram/sequence-diagram.png}
+    }
+	\caption{Sequence diagram} \label{fig:sequence_diagram}
+\end{figure}
+
+\end{landscape}
 
 \newpage
 
-# State Diagram
+<!-- End of Sequence Diagram -->
 
-Include state diagram here
+<!-- State Diagram -->
+
+\begin{landscape}
+
+\pagestyle{empty}
+
+\hypertarget{state-diagram}{%
+\section{State Diagram}\label{state-diagram}}
+
+\begin{figure}
+    \makebox[\linewidth]{
+		\includegraphics[width=1.16\linewidth]{images/state-machine-diagram/state-machine-diagram.png}
+    }
+	\caption{State diagram} \label{fig:state_diagram}
+\end{figure}
+
+\end{landscape}
 
 \newpage
+
+<!-- End of State Diagram -->
 
 # Component Diagram
 
@@ -225,17 +258,32 @@ Include explanation of any design patterns used
 
 With a large number of *materials* defined within the business rules, it was appropriate to use a **factory design pattern** to generate different material types based upon an input provided by the user. The specific implementation involved defining a return type as the base material class - allowing a covariant return type. This design pattern was possible as we have a common interface for every material. A UML representation of this pattern can be found below.
 
-![MaterialFactory UML Class Diagram](class-diagrams/material-factory.jpg)
+![MaterialFactory UML Class Diagram](images/class-diagrams/material-factory.jpg)
 
 The advantages of this pattern is that new materials types can easily be added by adding a small conditional statement in this class. This provides a level of abstraction and means that this class has only a single responsibility - to construct materials - removing this logic from the consuming object. This helps with the issue of coupling as functional cohesion is achieved. Because of the abstraction, it wouldn't mean any changes would necesarily have to occur in the consuming class.
+
+## Singleton
+
+Through the logging library spdlog, a singleton pattern was used in order to ensure a single logging instance is present within the application. This involved creating this instance as soon as the application was launched, and then accessed (using the library) within the areas of the application logging is used e.g. in the application. 
+
+A common issue with this pattern is the issue of multithreading, particularly with respect to file handling. There could be multiple components within the application 
 
 \newpage
 
 # Planned Architecture
 
-An explanation of the planned architecture and the reason of the choices according to ATAM
-(follow step 4 and 5, i.e., identify possible architecture styles and choose one with respect to
-the identified utility tree, you need to explain the reason).
+## Architecture Presentation
+
+Architecture tradeoff analysis method (ATAM) was used to decide on an arcitecture which was to be followed for the development of the Trekstar Project Management System.
+
+### Model-View-Controller
+MVC is driven by interaction. The use of Views to prompt their respective controllers to modify the model and subsequently update the view in real time fits the requirements of the Trekstar system. Models act as the data store for all of the related objects within the system. Controllers manipulate the data in the models through an exposed interface on the model objects
+
+## Utility Tree
+
+ The management of projects requires fast, realtime interaction (Top 6 Most Important Benefits of MVC Architecture, 2017). The requirements gathered from Trekstar meant that some of the data needs to be presented in a different manner (e.g. displaying the contents of a double sided DVD). Due the benefit of MVC being able to present data in multiple formats, this made it an ideal choice. One of the stretch goals of the project was to provide the user with a Graphical User Interface (GUI). By using MVC, it will be easier to produce views for a GUI rather than a console based interface as only one component of the system (the views) will need to be changed out.
+
+As previously mentioned in other sections, separating the logic for presenting and performing the business model provides benefits with regards to de-coupling and setting clear boundaries within the system. Given that the components of the MVC architecture are independent of eachother, they can be developed in isolation. Within the context of the project, where individual members are responsible for different sections of the project - e.g. one for data structures & one for the user interface - the development of these components could happen in tandem.
 
 \newpage
 
@@ -465,8 +513,14 @@ Once on this screen, you can use the following keyboard inputs to navigate aroun
 | 1     | Inputting this value will cause the application to enter add project             | [Adding Projects](#using-add-project)       |
 | 2     | Inputting this value will cause the application to enter update project | [Updating Projects](#using-update-project) |
 | 3     | Inputting this value will cause the application to enter remove project | [Removing Projects](#using-remove-projects) |
+| 4     | Inputting this value will cause the application to enter update project materials| [Add Project Materials](#using-add-project-materials) |
 | 4     | Inputting this value will cause the application to enter update project materials| [Updating Project Materials](#using-update-project-materials) |
 | 5     | Inputting this value will cause the application to enter remove project materials | [Removing Project Materials](#using-remove-project-materials) |
+| 4     | Inputting this value will cause the application to enter update project materials| [Add Project Crew](#using-update-project-crew) |
+| 4     | Inputting this value will cause the application to enter update project materials| [Updating Project Crew](#using-update-project-crew) |
+| 5     | Inputting this value will cause the application to enter remove project materials | [Removing Project Crew](#using-remove-project-crew) |
+| 4     | Inputting this value will cause the application to enter update project materials| [Add Box Office Report](#using-add-box-office-report) |
+| 4     | Inputting this value will cause the application to enter update project materials| [Updating Box Office Report](#using-update-box-office-report) |
 | 6     | Inputting this value will cause the application to navigate back to the main menu  | [Main Menu](#using-the-main-menu)         |
 
 \newpage
@@ -770,3 +824,9 @@ During group meetings a member was nominated to write minutes, these minutes wer
 ![Meeting 5 - Minutes](images/meeting-minutes/meeting-5.png)
 
 ![Meeting 6 - Minutes](images/meeting-minutes/meeting-6.png)
+
+# References
+
+[@tao2019]
+[@tao2018]
+[@infotech_2017]

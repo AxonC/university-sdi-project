@@ -395,11 +395,15 @@
   \item
     \protect\hyperlink{cohesion-and-coupling-considerations}{Cohesion
     and Coupling Considerations}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \protect\hyperlink{cohesion}{Cohesion}
+    \item
+      \protect\hyperlink{coupling}{Coupling}
+    \end{itemize}
   \end{itemize}
-\item
-  \protect\hyperlink{sequence-diagram}{Sequence Diagram}
-\item
-  \protect\hyperlink{state-diagram}{State Diagram}
 \item
   \protect\hyperlink{component-diagram}{Component Diagram}
 \item
@@ -415,6 +419,12 @@
   \end{itemize}
 \item
   \protect\hyperlink{design-pattern}{Design Pattern}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \protect\hyperlink{factory-design-pattern}{Factory Design Pattern}
+  \end{itemize}
 \item
   \protect\hyperlink{planned-architecture}{Planned Architecture}
 \item
@@ -525,6 +535,8 @@
   \item
     \protect\hyperlink{meeting-minutes}{Meeting Minutes}
   \end{itemize}
+\item
+  \protect\hyperlink{references}{References}
 \end{itemize}
 
 \newpage
@@ -573,15 +585,22 @@ A}\label{callum-axon-n0727303---member-a}}
 \begin{itemize}
 \tightlist
 \item
-  Implementation of the internal data structure for the application
+  Class Diagram.
 \item
-  Class Diagram
+  One of the data structures - stack.
 \item
   A description of how cohesion and coupling have been considered in the
-  class design
+  class design.
 \item
-  An explanation of the internal data structures used and the reason for
-  the choices.
+  A justification and explanation of how cohesion and coupling have been
+  considered in the design.
+\item
+  An explanation of the planned architecture and the reason of the
+  choices according to ATAM (follow step 4 and 5, i.e., identify
+  possible architecture styles and choose one with respect to the
+  identified utility tree, you need to explain the reason).
+\item
+  An explanation of any design pattern used.
 \end{itemize}
 
 \hypertarget{callum-carney-n0741707---member-c}{%
@@ -591,13 +610,30 @@ C}\label{callum-carney-n0741707---member-c}}
 \begin{itemize}
 \tightlist
 \item
-  Implementation of the Console Interface for the application
+  A cover page (showing the full name and student ID of all members).
 \item
-  Component Diagrams
+  A table of contents page and identifying who has contributed to which
+  individual tasks.
 \item
-  Deployment Diagrams
+  A general description of the system.
 \item
-  Screenshots of the User Interface
+  Component diagrams.
+\item
+  Deployment diagrams.
+\item
+  An explanation of the internal data structures used and the reason of
+  the choices.
+\item
+  Examples (screen shots) of user interface.
+\item
+  A user manual and instruction of the software. (regardless if your
+  software is based on GUI or console interface).
+\item
+  An explanation of any C++ library used.
+\item
+  An explanation about the software testing process and metrics.
+\item
+  Meeting minutes.
 \end{itemize}
 
 \hypertarget{matthew-robinson-n0724629---member-b}{%
@@ -607,13 +643,26 @@ B}\label{matthew-robinson-n0724629---member-b}}
 \begin{itemize}
 \tightlist
 \item
-  Implementation of the search/sorting algorithm within the application
+  A sequence diagram for a case/scenario of interest.
 \item
-  Sequence diagram
+  State machine diagram for a class.
 \item
-  State machine diagram
+  One of the sorting studied during the lectures - merge sort.
 \item
-  An explanation of the search or sorting algorithm used
+  One of the searching algorithms studied during the lectures - binary
+  search.
+\item
+  A console interface that allows user to interact with the software
+  system.
+\item
+  An explanation of the search or sorting algorithm used and the reason
+  of the choices. Explain how the algorithm will work in the system with
+  detailed steps.
+\item
+  Discussion and conclusion about your results (reflection on testing
+  approach, reflection on performance such as computational efficiency,
+  reliability, security, portability, maintainability, scalability, etc.
+  design of system complexity using e.g.~big O- notation).
 \end{itemize}
 
 All other contributions have been completed as part of a group effort.
@@ -704,17 +753,39 @@ objects could therefore be considered to be uncoupled.
 
 \newpage
 
+\begin{landscape}
+
+\pagestyle{empty}
+
 \hypertarget{sequence-diagram}{%
 \section{Sequence Diagram}\label{sequence-diagram}}
 
-Include sequence diagram here
+\begin{figure}
+    \makebox[\linewidth]{
+        \includegraphics[width=0.5\linewidth]{images/sequence-diagram/sequence-diagram.png}
+    }
+    \caption{Sequence diagram} \label{fig:sequence_diagram}
+\end{figure}
+
+\end{landscape}
 
 \newpage
+
+\begin{landscape}
+
+\pagestyle{empty}
 
 \hypertarget{state-diagram}{%
 \section{State Diagram}\label{state-diagram}}
 
-Include state diagram here
+\begin{figure}
+    \makebox[\linewidth]{
+        \includegraphics[width=1.16\linewidth]{images/state-machine-diagram/state-machine-diagram.png}
+    }
+    \caption{State diagram} \label{fig:state_diagram}
+\end{figure}
+
+\end{landscape}
 
 \newpage
 
@@ -800,7 +871,7 @@ UML representation of this pattern can be found below.
 
 \begin{figure}
 \centering
-\includegraphics{class-diagrams/material-factory.jpg}
+\includegraphics{images/class-diagrams/material-factory.jpg}
 \caption{MaterialFactory UML Class Diagram}
 \end{figure}
 
@@ -1361,6 +1432,15 @@ project\strut
 Inputting this value will cause the application to enter update project
 materials\strut
 \end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{using-add-project-materials}{Add Project
+Materials}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter update project
+materials\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
 \protect\hyperlink{using-update-project-materials}{Updating Project
 Materials}\strut
 \end{minipage}\tabularnewline
@@ -1372,6 +1452,50 @@ materials\strut
 \end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
 \protect\hyperlink{using-remove-project-materials}{Removing Project
 Materials}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter update project
+materials\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{using-update-project-crew}{Add Project Crew}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter update project
+materials\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{using-update-project-crew}{Updating Project
+Crew}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter remove project
+materials\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{using-remove-project-crew}{Removing Project
+Crew}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter update project
+materials\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{using-add-box-office-report}{Add Box Office
+Report}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\centering
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
+Inputting this value will cause the application to enter update project
+materials\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\protect\hyperlink{using-update-box-office-report}{Updating Box Office
+Report}\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.08\columnwidth}\centering
 6\strut
@@ -2153,5 +2277,19 @@ the aforementioned meetings.
 \includegraphics{images/meeting-minutes/meeting-6.png}
 \caption{Meeting 6 - Minutes}
 \end{figure}
+
+\hypertarget{references}{%
+\section{References}\label{references}}
+
+(Chen 2019) (Chen 2018)
+
+\hypertarget{refs}{}
+\leavevmode\hypertarget{ref-tao2018}{}%
+Chen, T. C Tao. 2018. ``Tao Chens Book of Wonder.'' \emph{Taos
+Journaling} 31: 25--32.
+
+\leavevmode\hypertarget{ref-tao2019}{}%
+---------. 2019. \emph{Tao Chens Book of Wonder 2}. ya yeet: Tao book
+publishing; co.
 
 \end{document}
