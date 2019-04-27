@@ -16,6 +16,7 @@ namespace TrekStar
             BoxSet* GetModel() override;
 
             void AddDisks();
+            void AddDisk();
             void UpdateDisks();
 
             std::shared_ptr<DVD> GetNewDisk();

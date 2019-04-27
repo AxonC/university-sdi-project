@@ -18,8 +18,9 @@ namespace TrekStar
                             {4, "Edit Retail Price"},
                             {5, "Edit Subtitles"},
                             {6, "Edit Frame Aspect"},
-                            {7, "Edit Disks"},
-                            {8, "Cancel"}
+                            {7, "Add Disk"},
+                            {8, "Edit Disks"},
+                            {9, "Cancel"}
                     },
                     "Update BoxSet"
             );

@@ -35,6 +35,9 @@ namespace TrekStar
                 this->UpdateFrameAspect();
                 break;
             case 7:
+                this->AddDisk();
+                break;
+            case 8:
                 this->UpdateDisks();
                 break;
             default:
@@ -59,7 +62,17 @@ namespace TrekStar
 
         void BoxSetController::AddDisks()
         {
+            unsigned int noOfDisks = this->GetView()->GetNoOfDisks();
 
+            for ( int i = 0; i < noOfDisks; i++)
+            {
+                this->AddDisk();
+            }
+        }
+
+        void BoxSetController::AddDisk()
+        {
+            this->GetModel()->AddDisk(this->GetNewDisk());
         }
 
         std::shared_ptr<DVD> BoxSetController::GetNewDisk()
