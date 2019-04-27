@@ -134,20 +134,20 @@ namespace TrekStar
                 return;
             }
 
-            if ( auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::BoxSet>(material) )
-            {
-                BoxSetView view(*castedMaterial);
-                BoxSetController controller(*castedMaterial, view);
-
-                controller.SetFormat("boxset");
-                controller.AddNew();
-            }
-            else if ( auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::VHS>(material) )
+            if ( auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::VHS>(material) )
             {
                 VHSView view(*castedMaterial);
                 VHSController controller(*castedMaterial, view);
 
                 controller.SetFormat("vhs");
+                controller.AddNew();
+            }
+            else if ( auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::BoxSet>(material) )
+            {
+                BoxSetView view(*castedMaterial);
+                BoxSetController controller(*castedMaterial, view);
+
+                controller.SetFormat("boxset");
                 controller.AddNew();
             }
             else if ( auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::DoubleSideDVD>(material) )

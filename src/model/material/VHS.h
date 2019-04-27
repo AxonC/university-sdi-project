@@ -20,8 +20,9 @@ namespace TrekStar {
         class VHS: public Material
         {
             private:
-                std::vector<std::string> permittedPackaging;
+                std::vector<std::string> permittedPackaging = {"Plastic", "Cardboard"};
                 std::string audioTrack;
+
             public:
                 VHS();
 

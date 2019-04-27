@@ -14,7 +14,6 @@ namespace TrekStar {
             this->subtitles = j.at("subtitles");
             this->frameAspect = j.at("frameAspect");
             this->packaging = j.at("packaging");
-            this->permittedPackaging = {"Plastic", "Cardboard"};
             this->audioTrack = j.at("audioTrack");
         }
 
