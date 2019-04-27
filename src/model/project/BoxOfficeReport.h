@@ -1,6 +1,8 @@
 #ifndef TREKSTAR_BOXOFFICEREPORT_H
 #define TREKSTAR_BOXOFFICEREPORT_H
 
+#include "BoxOfficeReportInterface.h"
+
 using json = nlohmann::json;
 
 namespace TrekStar
@@ -15,7 +17,7 @@ namespace TrekStar
             unsigned long int ticketsSold;
         };
 
-        class BoxOfficeReport
+        class BoxOfficeReport : public BoxOfficeReportInterface
         {
         public:
             BoxOfficeReport() = default;

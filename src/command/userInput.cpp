@@ -36,6 +36,13 @@ namespace TrekStar
             return input;
         }
 
+        unsigned long int GetUnsignedLongIntInput()
+        {
+            unsigned long int input;
+            std::cin >> input;
+            return input;
+        }
+
         double GetDoubleInput()
         {
             double input;

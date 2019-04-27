@@ -41,10 +41,13 @@ namespace TrekStar
             unsigned int GetCurrentMaterial(unsigned int currentMaterial, unsigned int commandInput);
             unsigned int GetListCrewOption();
             unsigned int GetCurrentCrew(unsigned int currentCrew, unsigned int commandInput);
+            unsigned int GetListBoxOfficeReportsOption();
+            unsigned int GetCurrentBoxOfficeReport(unsigned int currentBoxOfficeReport, unsigned int commandInput);
 
             void DisplayCannotAddMaterial();
             void DisplayHasNoMaterials();
             void DisplayHasNoCrew();
+            void DisplayHasNoBoxOfficeReports();
 
             ProjectInterface* GetModel() override;
         };

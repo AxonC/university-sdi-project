@@ -299,6 +299,31 @@ namespace TrekStar
             return sequentialBrowser.GetItemNumber();
         }
 
+        unsigned int ProjectView::GetListBoxOfficeReportsOption()
+        {
+            TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (
+                    {
+                            {1, "Next Box Office Report"},
+                            {2, "Previous Box Office Report"},
+                            {3, "Cancel"}
+                    },
+                    "List Box Office Reports"
+            );
+
+            commandHandler.displayCommands();
+            unsigned int commandInput = commandHandler.getUserInput();
+            commandHandler.clearConsole();
+
+            return commandInput;
+        }
+
+        unsigned int ProjectView::GetCurrentBoxOfficeReport(unsigned int currentBoxOfficeReport, unsigned int commandInput)
+        {
+            TrekStar::Information::SequentialBrowser sequentialBrowser(this->GetModel()->GetBoxOfficeReports().size(), currentBoxOfficeReport, commandInput);
+
+            return sequentialBrowser.GetItemNumber();
+        }
+
         void ProjectView::DisplayCannotAddMaterial()
         {
             std::cout << "Material cannot be added to this Project." << std::endl;
@@ -312,6 +337,11 @@ namespace TrekStar
         void ProjectView::DisplayHasNoCrew()
         {
             std::cout << "This project has no crew members to display." << std::endl;
+        }
+
+        void ProjectView::DisplayHasNoBoxOfficeReports()
+        {
+            std::cout << "This project has no box office reports to display." << std::endl;
         }
 
         ProjectInterface* ProjectView::GetModel()

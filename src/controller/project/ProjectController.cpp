@@ -8,6 +8,8 @@
 #include "../material/VHSController.h"
 #include "../../view/people/CrewView.h"
 #include "../people/CrewController.h"
+#include "../../view/project/BoxOfficeReportView.h"
+#include "../project/BoxOfficeReportController.h"
 #include "../../model/material/MaterialFactory.h"
 
 using TrekStar::Material::MaterialView;
@@ -22,6 +24,8 @@ using TrekStar::Material::BoxSetView;
 using TrekStar::Material::BoxSetController;
 using TrekStar::People::CrewView;
 using TrekStar::People::CrewController;
+using TrekStar::Project::BoxOfficeReportView;
+using TrekStar::Project::BoxOfficeReportController;
 
 namespace TrekStar
 {
@@ -82,6 +86,12 @@ namespace TrekStar
 
         void ProjectController::ListMaterials()
         {
+            if ( this->GetModel()->GetMaterials().empty() )
+            {
+                this->GetView()->DisplayHasNoMaterials();
+                return;
+            }
+
             this->GetModel()->GetMaterials();
 
             unsigned int currentMaterial = 0;
@@ -161,6 +171,12 @@ namespace TrekStar
 
         void ProjectController::UpdateMaterials()
         {
+            if ( this->GetModel()->GetMaterials().empty() )
+            {
+                this->GetView()->DisplayHasNoMaterials();
+                return;
+            }
+
             this->GetView()->PresentMaterialsList();
 
             auto material = this->GetModel()->GetMaterials().at(this->GetView()->GetMaterialSelection());
@@ -218,6 +234,12 @@ namespace TrekStar
 
         void ProjectController::ListCrew()
         {
+            if ( this->GetModel()->GetCrew().empty() )
+            {
+                this->GetView()->DisplayHasNoCrew();
+                return;
+            }
+
             this->GetModel()->GetCrew();
 
             unsigned int currentCrew = 0;
@@ -260,6 +282,12 @@ namespace TrekStar
 
         void ProjectController::UpdateCrew()
         {
+            if ( this->GetModel()->GetCrew().empty() )
+            {
+                this->GetView()->DisplayHasNoCrew();
+                return;
+            }
+
             this->GetView()->PresentCrewList();
 
             auto crew = this->GetModel()->GetCrew().at(this->GetView()->GetCrewSelection());
@@ -278,10 +306,46 @@ namespace TrekStar
                 return;
             }
 
+            if ( this->GetModel()->GetCrew().empty() )
+            {
+                this->GetView()->DisplayHasNoCrew();
+                return;
+            }
+
             this->GetView()->PresentCrewList();
 
             auto crew = this->GetModel()->GetCrew().at(this->GetView()->GetCrewSelection());
             this->GetModel()->RemoveCrew(crew);
+        }
+
+        void ProjectController::ListBoxOfficeReports()
+        {
+            if ( this->GetModel()->GetBoxOfficeReports().empty() )
+            {
+                this->GetView()->DisplayHasNoBoxOfficeReports();
+                return;
+            }
+
+            this->GetModel()->GetBoxOfficeReports();
+
+            unsigned int currentBoxOfficeReport = 0;
+            unsigned int commandInput = 0;
+
+            while ( commandInput != 3 )
+            {
+                commandInput = this->GetView()->GetListBoxOfficeReportsOption();
+
+                if ( commandInput != 3 )
+                {
+                    currentBoxOfficeReport = this->GetView()->GetCurrentBoxOfficeReport(currentBoxOfficeReport, commandInput);
+
+                    const auto boxOfficeReport = this->GetModel()->GetBoxOfficeReports().at(currentBoxOfficeReport);
+
+                    BoxOfficeReportView view(*boxOfficeReport);
+                    BoxOfficeReportController controller(*boxOfficeReport, view);
+                    controller.ShowAll();
+                }
+            }
         }
 
         bool ProjectController::ActorExists(std::string & searchCriteria)

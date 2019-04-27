@@ -53,7 +53,8 @@ namespace TrekStar
                             {2, "Previous Project"},
                             {3, "View Materials"},
                             {4, "View Crew"},
-                            {5, "Cancel"}
+                            {5, "View Box Office Reports"},
+                            {6, "Cancel"}
                     },
                     "List Projects"
             );
@@ -66,7 +67,7 @@ namespace TrekStar
             int commandInput = 0;
             int currentProject = 0;
 
-            while ( commandInput != 5 )
+            while ( commandInput != 6 )
             {
                 SequentialBrowser sequentialBrowser(projects.size(), currentProject, commandInput);
 
@@ -87,6 +88,10 @@ namespace TrekStar
                 else if ( commandInput == 4 )
                 {
                     controller.ListCrew();
+                }
+                else if ( commandInput == 5 )
+                {
+                    controller.ListBoxOfficeReports();
                 }
             }
         }

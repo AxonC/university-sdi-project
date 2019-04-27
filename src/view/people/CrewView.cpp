@@ -11,15 +11,9 @@ namespace TrekStar
             this->model = &model;
         }
 
-        void CrewView::PresentAll()
-        {
+        void CrewView::PresentAll() {}
 
-        }
-
-        void CrewView::PresentList()
-        {
-
-        }
+        void CrewView::PresentList() {}
 
         unsigned int CrewView::GetUpdateOption()
         {
