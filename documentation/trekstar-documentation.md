@@ -146,13 +146,19 @@ The Trekstar system has been developed in order to allow TrekStar Pictures to ac
 
 ## Cohesion and Coupling Considerations
 
+### Cohesion
+
 The concept of cohesion is defined as 'the degree to which all elements of a component are directed towards a single task, within a single component, or to which the responsibilities of a class are related'.
 
 Within the design, it was important to separate out the logic for the presentation of the information from the business logic. We have achieved this using a Model - View - Controller architecture. In order for the views to gather data from the Models themselves, a large number of *so-called* getter functions are present. This is so that the models are not responsible for the presentation and **logical cohesion** does not occur. Utilising these functions also provides an example of how communicational cohesion has been considered within the design, whilst the separation of these elements has provided the situation of functional cohesion.
 
 Another example of how **logical cohesion** has been avoided is the approach taken to importing data from files. This logic is contained within its own object and the only data which is passed into their respective objects is a *serialised* version - separating the concerns surrounding the importing of files.
 
-Further details on coupling & cohesion, relating to specific design patterns, can be found in that section of the document.
+Further details on cohesion, relating to specific design patterns, can be found in that section of the document. 
+
+### Coupling
+
+Due to the relationships between different objects within the system, some coupling does occur. An example of this is that a Project has Materials associated with it - thus creating a dependency between the two objects. However, the relationships defined within the class diagram show that the two related objects don't modify the data of eachother, but store data about eachother independently. The data between these two objects could therefore be considered to be uncoupled.
 
 \newpage
 
