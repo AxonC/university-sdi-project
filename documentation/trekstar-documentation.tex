@@ -128,6 +128,7 @@
 \usepackage{float}
 \floatplacement{figure}{H}
 
+\usepackage{pdflscape}
 \ifxetex
     % See issue https://github.com/reutenauer/polyglossia/issues/127
   \renewcommand*\familydefault{\sfdefault}
@@ -388,8 +389,6 @@
   \end{itemize}
 \item
   \protect\hyperlink{system-description}{System Description}
-\item
-  \protect\hyperlink{class-diagram}{Class Diagram}
 
   \begin{itemize}
   \tightlist
@@ -541,10 +540,6 @@ pls}}}{Todo - remove me before submission pls}}\label{todo---remove-me-before-su
 \begin{itemize}
 \tightlist
 \item
-  \protect\hyperlink{using-maintenance-mode}{Using Maintenance Mode}
-  requires screenshot of the maintenance main menu when remove project
-  is added.
-\item
   User guide details required for when the application is able to manage
   crew and materials/projects fully.
 \item
@@ -561,6 +556,9 @@ pls}}}{Todo - remove me before submission pls}}\label{todo---remove-me-before-su
   Packaging} once bugs have been fixed
 \item
   Look into new line for \# \# \# \# headers
+\item
+  Add class diagram (and any other landscape picture pages) to the TOC
+  on last save
 \end{itemize}
 
 \newpage
@@ -643,10 +641,23 @@ Pictures to accomplish the following
 
 \newpage
 
+\begin{landscape}
+
+\pagestyle{empty}
+
 \hypertarget{class-diagram}{%
 \section{Class Diagram}\label{class-diagram}}
 
-Include class diagram here.
+\begin{figure}
+    \makebox[\linewidth]{
+        \includegraphics[width=1.16\linewidth]{images/class-diagrams/class-diagram-models.jpg}
+    }
+    \caption{Class diagram} \label{fig:class_diagram}
+\end{figure}
+
+\end{landscape}
+
+\newpage
 
 \hypertarget{cohesion-and-coupling-considerations}{%
 \subsection{Cohesion and Coupling
@@ -654,6 +665,28 @@ Considerations}\label{cohesion-and-coupling-considerations}}
 
 A justification and explanation of how cohesion and coupling have been
 considered in the design.
+
+The concept of cohesion is defined as \enquote{the degree to which all
+elements of a component are directed towards a single task, within a
+single component, or to which the responsibilities of a class are
+related}.
+
+Within the design, it was important to separate out the logic for the
+presentation of the information from the business logic. We have
+achieved this using a Model - View - Controller architecture. In order
+for the views to gather data from the Models themselves, a large number
+of \emph{so-called} getter functions are present. This is so that the
+models are not responsible for the presentation and \textbf{logical
+cohesion} does not occur. Utilising these functions also provides an
+example of how communicational cohesion has been considered within the
+design, whilst the separation of these elements has provided the
+situation of functional cohesion.
+
+Another example of how \textbf{logical cohesion} has been avoided is the
+approach taken to importing data from files. This logic is contained
+within its own object and the only data which is passed into their
+respective objects is a \emph{serialised} version - separating the
+concerns surrounding the importing of files.
 
 \newpage
 
@@ -1240,7 +1273,7 @@ with the following screen
 
 \begin{figure}
 \centering
-\includegraphics{images/user-guide/view-mode/using-maintenance-mode.png}
+\includegraphics{images/user-guide/main-menu/using-maintenance-mode.png}
 \caption{Visual representation of Maintenance Mode}
 \end{figure}
 

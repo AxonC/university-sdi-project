@@ -11,6 +11,8 @@ titlepage-color: "06386e"
 titlepage-text-color: "FFFFFF"
 titlepage-rule-color: "FFFFFF"
 titlepage-rule-height: 1
+header-includes: |
+	\usepackage{pdflscape}
 ...
 
 # Table of Contents
@@ -23,7 +25,6 @@ titlepage-rule-height: 1
 	- [Callum Carney (N0741707) - Member C](#callum-carney-n0741707---member-c)
 	- [Matthew Robinson (N0724629) - Member B](#matthew-robinson-n0724629---member-b)
 - [System Description](#system-description)
-- [Class Diagram](#class-diagram)
 	- [Cohesion and Coupling Considerations](#cohesion-and-coupling-considerations)
 - [Sequence Diagram](#sequence-diagram)
 - [State Diagram](#state-diagram)
@@ -82,6 +83,7 @@ titlepage-rule-height: 1
   - Complete [Using Update Project Materials](#using-update-project-materials) once the material id bug has been fixed.
   - Resolve image issue on [Edit Packaging](#edit-packaging) once bugs have been fixed
   - Look into new line for  # # # # headers
+  - Add class diagram (and any other landscape picture pages) to the TOC on last save
 
 \newpage
 
@@ -120,9 +122,27 @@ The Trekstar system has been developed in order to allow TrekStar Pictures to ac
 
 \newpage
 
-# Class Diagram
+<!-- Class Diagram -->
 
-Include class diagram here.
+\begin{landscape}
+
+\pagestyle{empty}
+
+\hypertarget{class-diagram}{%
+\section{Class Diagram}\label{class-diagram}}
+
+\begin{figure}
+    \makebox[\linewidth]{
+		\includegraphics[width=1.16\linewidth]{images/class-diagrams/class-diagram-models.jpg}
+    }
+	\caption{Class diagram} \label{fig:class_diagram}
+\end{figure}
+
+\end{landscape}
+
+\newpage
+
+<!-- End of Class Diagram -->
 
 ## Cohesion and Coupling Considerations
 
@@ -131,7 +151,7 @@ design.
 
 The concept of cohesion is defined as 'the degree to which all elements of a component are directed towards a single task, within a single component, or to which the responsibilities of a class are related'.
 
-Within the design, it was important to seperate out the logic for the presentation of the information from the business logic. We have achieved this using a Model - View - Controller architecture. In order for the views to gather data from the Models themselves, a large number of *so-called* getter functions are present. This is so that the models are not responsible for the presentation and **logical cohesion** does not occur. Utilising these functions also provides an example of how communicational cohesion has been considered within the design, whilst the separation of these elements has provided the situation of functional cohesion.
+Within the design, it was important to separate out the logic for the presentation of the information from the business logic. We have achieved this using a Model - View - Controller architecture. In order for the views to gather data from the Models themselves, a large number of *so-called* getter functions are present. This is so that the models are not responsible for the presentation and **logical cohesion** does not occur. Utilising these functions also provides an example of how communicational cohesion has been considered within the design, whilst the separation of these elements has provided the situation of functional cohesion.
 
 Another example of how **logical cohesion** has been avoided is the approach taken to importing data from files. This logic is contained within its own object and the only data which is passed into their respective objects is a *serialised* version - separating the concerns surrounding the importing of files.
 
