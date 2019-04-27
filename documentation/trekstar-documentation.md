@@ -13,7 +13,6 @@ titlepage-rule-color: "FFFFFF"
 titlepage-rule-height: 1
 header-includes: |
 	\usepackage{pdflscape}
-...
 
 # Table of Contents
 
@@ -263,13 +262,28 @@ With a large number of *materials* defined within the business rules, it was app
 
 The advantages of this pattern is that new materials types can easily be added by adding a small conditional statement in this class. This provides a level of abstraction and means that this class has only a single responsibility - to construct materials - removing this logic from the consuming object. This helps with the issue of coupling as functional cohesion is achieved. Because of the abstraction, it wouldn't mean any changes would necesarily have to occur in the consuming class.
 
+## Singleton
+
+Through the logging library spdlog, a singleton pattern was used in order to ensure a single logging instance is present within the application. This involved creating this instance as soon as the application was launched, and then accessed (using the library) within the areas of the application logging is used e.g. in the application. 
+
+A common issue with this pattern is the issue of multithreading, particularly with respect to file handling. There could be multiple components within the application 
+
 \newpage
 
 # Planned Architecture
 
-An explanation of the planned architecture and the reason of the choices according to ATAM
-(follow step 4 and 5, i.e., identify possible architecture styles and choose one with respect to
-the identified utility tree, you need to explain the reason).
+## Architecture Presentation
+
+Architecture tradeoff analysis method (ATAM) was used to decide on an arcitecture which was to be followed for the development of the Trekstar Project Management System.
+
+### Model-View-Controller
+
+
+## Utility Tree
+
+MVC is driven by interaction. The use of Views to prompt their respective controllers to modify the model and subsequently update the view in real time fits the requirements of the Trekstar system. The management of projects requires fast, realtime interaction. The requirements gathered from Trekstar meant that some of the data needs to be presented in a different manner (e.g. displaying the contents of a double sided DVD). Due the benefit of MVC being able to present data in multiple formats, this made it an ideal choice. One of the stretch goals of the project was to provide the user with a Graphical User Interface (GUI). By using MVC, it will be easier to produce views for a GUI rather than a console based interface as only one component of the system (the views) will need to be changed out.
+
+As previously mentioned in other sections, separating the logic for presenting and performing the business model provides benefits with regards to de-coupling and setting clear boundaries within the system. Given that the components of the MVC architecture are independent of eachother, they can be developed in isolation. Within the context of the project, where individual members are responsible for different sections of the project - e.g. one for data structures & one for the user interface - the development of these components could happen in tandem.
 
 \newpage
 
