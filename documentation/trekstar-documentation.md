@@ -26,13 +26,14 @@ header-includes: |
 	- [Matthew Robinson (N0724629) - Member B](#matthew-robinson-n0724629---member-b)
 - [System Description](#system-description)
 	- [Cohesion and Coupling Considerations](#cohesion-and-coupling-considerations)
-- [Sequence Diagram](#sequence-diagram)
-- [State Diagram](#state-diagram)
+		- [Cohesion](#cohesion)
+		- [Coupling](#coupling)
 - [Component Diagram](#component-diagram)
 - [Deployment Diagram](#deployment-diagram)
 	- [Individual Installation](#individual-installation)
 	- [Company-Wide Installation](#company-wide-installation)
 - [Design Pattern](#design-pattern)
+	- [Factory Design Pattern](#factory-design-pattern)
 - [Planned Architecture](#planned-architecture)
 - [Included C++ Libraries](#included-c-libraries)
 	- [JSON for C++ (GitHub Link)](#json-for-c-github-link)
@@ -93,7 +94,6 @@ header-includes: |
 * Class Diagram.
 * One of the data structures - stack.
 * A description of how cohesion and coupling have been considered in the class design.
-* An explanation of the internal data structures used and the reason of the choices.
 * A justification and explanation of how cohesion and coupling have been considered in the design.
 * An explanation of the planned architecture and the reason of the choices according to ATAM (follow step 4 and 5, i.e., identify possible architecture styles and choose one with respect to the identified utility tree, you need to explain the reason).
 * An explanation of any design pattern used.
@@ -104,6 +104,7 @@ header-includes: |
 * A general description of the system.
 * Component diagrams.
 * Deployment diagrams.
+* An explanation of the internal data structures used and the reason of the choices.
 * Examples (screen shots) of user interface.
 * A user manual and instruction of the software. (regardless if your software is based on GUI or console interface).
 * An explanation of any C++ library used.
@@ -174,17 +175,49 @@ Due to the relationships between different objects within the system, some coupl
 
 \newpage
 
-# Sequence Diagram
+<!-- Sequence Diagram -->
 
-Include sequence diagram here
+\begin{landscape}
+
+\pagestyle{empty}
+
+\hypertarget{sequence-diagram}{%
+\section{Sequence Diagram}\label{sequence-diagram}}
+
+\begin{figure}
+    \makebox[\linewidth]{
+		\includegraphics[width=0.5\linewidth]{images/sequence-diagram/sequence-diagram.png}
+    }
+	\caption{Sequence diagram} \label{fig:sequence_diagram}
+\end{figure}
+
+\end{landscape}
 
 \newpage
 
-# State Diagram
+<!-- End of Sequence Diagram -->
 
-Include state diagram here
+<!-- State Diagram -->
+
+\begin{landscape}
+
+\pagestyle{empty}
+
+\hypertarget{state-diagram}{%
+\section{State Diagram}\label{state-diagram}}
+
+\begin{figure}
+    \makebox[\linewidth]{
+		\includegraphics[width=1.16\linewidth]{images/state-machine-diagram/state-machine-diagram.png}
+    }
+	\caption{State diagram} \label{fig:state_diagram}
+\end{figure}
+
+\end{landscape}
 
 \newpage
+
+<!-- End of State Diagram -->
 
 # Component Diagram
 
@@ -225,7 +258,7 @@ Include explanation of any design patterns used
 
 With a large number of *materials* defined within the business rules, it was appropriate to use a **factory design pattern** to generate different material types based upon an input provided by the user. The specific implementation involved defining a return type as the base material class - allowing a covariant return type. This design pattern was possible as we have a common interface for every material. A UML representation of this pattern can be found below.
 
-![MaterialFactory UML Class Diagram](class-diagrams/material-factory.jpg)
+![MaterialFactory UML Class Diagram](images/class-diagrams/material-factory.jpg)
 
 The advantages of this pattern is that new materials types can easily be added by adding a small conditional statement in this class. This provides a level of abstraction and means that this class has only a single responsibility - to construct materials - removing this logic from the consuming object. This helps with the issue of coupling as functional cohesion is achieved. Because of the abstraction, it wouldn't mean any changes would necesarily have to occur in the consuming class.
 
