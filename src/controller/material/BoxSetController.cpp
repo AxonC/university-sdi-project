@@ -13,7 +13,7 @@ namespace TrekStar
             Method Name:           BoxSetController (constructor)
             Method Access Control: Public
 
-            Takes a model and a view. Constructs the BoxSet controller based on the base class constructor.
+            Constructs the BoxSet controller based on the base class constructor.
 
             @param BoxSet object
             @param BoxSetView object
@@ -74,11 +74,11 @@ namespace TrekStar
            Method Name:           AddNew
            Method Access Control: Public
 
-           Responsible for allowing the user to add a new disk to the box set.
+           Responsible for allowing the user to create a new BoxSet.
         */
         void BoxSetController::AddNew()
         {
-            MaterialController::AddNew();
+            MaterialController::AddNew();  // Call the base class implementation to obtain base class information.
             this->AddDisks();
         }
 
