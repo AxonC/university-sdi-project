@@ -141,6 +141,8 @@ namespace TrekStar
 
                 controller.SetFormat("vhs");
                 controller.AddNew();
+
+                this->LogMaterialAdd(castedMaterial);
             }
             else if ( auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::BoxSet>(material) )
             {
@@ -149,6 +151,8 @@ namespace TrekStar
 
                 controller.SetFormat("boxset");
                 controller.AddNew();
+
+                this->LogMaterialAdd(castedMaterial);
             }
             else if ( auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::DoubleSideDVD>(material) )
             {
@@ -157,7 +161,8 @@ namespace TrekStar
 
                 controller.SetFormat("dsdvd");
                 controller.AddNew();
-                _logger->info("Material " + std::to_string(castedMaterial->GetId()) + " was added to project " + std::to_string(this->GetModel()->GetId()));
+
+                this->LogMaterialAdd(castedMaterial);
             }
             else if ( auto castedMaterial = std::dynamic_pointer_cast<TrekStar::Material::DVD>(material) )
             {
@@ -166,6 +171,8 @@ namespace TrekStar
 
                 controller.SetFormat("dvd");
                 controller.AddNew();
+
+                this->LogMaterialAdd(castedMaterial);
             }
         }
 
@@ -409,6 +416,11 @@ namespace TrekStar
 
             unsigned int keywordNo = this->GetView()->GetKeywordNo();
             this->GetModel()->SetKeyword(keywordNo, this->GetView()->GetNewKeyword(keywordNo));
+        }
+
+        void ProjectController::LogMaterialAdd(const std::shared_ptr<Material::Material>& material)
+        {
+            _logger->info("Material " + std::to_string(material->GetId()) + " was added to project " + std::to_string(this->GetModel()->GetId()));
         }
 
         ProjectInterface* ProjectController::GetModel()
