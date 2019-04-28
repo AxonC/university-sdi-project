@@ -304,6 +304,41 @@ namespace TrekStar
             this->boxOfficeReports.erase(search);
         }
 
+        /**
+            Class:                 Project
+            Method Name:           FindActor
+            Method Access Control: Public
+
+            Attempts to find an actor with the specified name
+        */
+        std::shared_ptr<People::Crew> Project::FindActor(std::string & actorName)
+        {
+            std::string parsedName;
+            std::transform(actorName.begin(), actorName.end(), actorName.begin(), ::tolower);
+            bool found{false};
+
+            for (const auto & crewMember: this->crew)
+            {
+                std::string name = crewMember->GetName();
+                std::transform(name.begin(), name.end(), name.begin(), ::tolower);
+
+                std::string jobTitle = crewMember->GetJobTitle();
+                std::transform(jobTitle.begin(), jobTitle.end(), jobTitle.begin(), ::tolower);
+
+                if ( jobTitle == "actor" && name == actorName)
+                {
+                    found = true;
+                    return crewMember;
+                }
+            }
+
+            if ( ! found ){
+                throw std::out_of_range("Actor is not part of project");
+            }
+
+            return nullptr;
+        }
+
         void to_json(json & j, const SerialisedProject & project)
         {
             j = json

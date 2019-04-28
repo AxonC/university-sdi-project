@@ -20,7 +20,7 @@ namespace TrekStar
         {
         public:
             BoxOfficeReport() = default;
-            explicit BoxOfficeReport(unsigned int weekNumber, double revenue, unsigned long int ticketsSold);
+            BoxOfficeReport(unsigned int weekNumber, double revenue, unsigned long int ticketsSold);
             explicit BoxOfficeReport(const SerialisedBoxOfficeReport & report);
             ~BoxOfficeReport() = default;
 

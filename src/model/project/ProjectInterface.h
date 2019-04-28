@@ -52,6 +52,7 @@ namespace TrekStar
 
             virtual void AddCrew(const std::shared_ptr<People::Crew> &) = 0;
             virtual void RemoveCrew(const std::shared_ptr<People::Crew> &) = 0;
+            virtual std::shared_ptr<People::Crew> FindActor(std::string &) = 0;
 
             virtual std::vector<std::shared_ptr<BoxOfficeReport>> GetBoxOfficeReports() const = 0;
             virtual void AddBoxOfficeReport(const std::shared_ptr<BoxOfficeReport> &) = 0;

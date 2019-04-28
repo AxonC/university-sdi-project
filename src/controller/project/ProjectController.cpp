@@ -519,23 +519,13 @@ namespace TrekStar
         */
         bool ProjectController::ActorExists(std::string & searchCriteria)
         {
-            std::transform(searchCriteria.begin(), searchCriteria.end(), searchCriteria.begin(), ::tolower);
-
-            for ( const auto & crew: this->GetModel()->GetCrew() )
-            {
-                std::string name = crew->GetName();
-                std::transform(name.begin(), name.end(), name.begin(), ::tolower);
-
-                std::string jobTitle = crew->GetJobTitle();
-                std::transform(jobTitle.begin(), jobTitle.end(), jobTitle.begin(), ::tolower);
-
-                if ( jobTitle == "actor" && name == searchCriteria )
-                {
-                    return true;
-                }
+            try {
+                this->GetModel()->FindActor(searchCriteria);
+            } catch (std::out_of_range &) {
+                return false;
             }
 
-            return false;
+            return true;
         }
 
 

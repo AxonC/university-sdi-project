@@ -91,6 +91,18 @@ namespace TrekStarTest {
             EXPECT_EQ(project.GetCrew().size(), 1);
         }
 
+        TEST_F(ProjectTest, ProjectDetectsAnActorCorrectly)
+        {
+            std::shared_ptr<Crew> actor = std::make_shared<Crew>(1, "bob", "actor");
+
+            project.AddCrew(actor);
+
+            std::string name("bob");
+            std::string wrongName("fred");
+            ASSERT_NO_THROW(project.FindActor(name));
+            ASSERT_THROW(project.FindActor(wrongName), std::out_of_range);
+        }
+
         TEST_F(ProjectTest, CantRemoveACrewMemberWhenNotPresent)
         {
             std::shared_ptr<Crew> unassignedCrew = std::make_shared<Crew>();
@@ -101,7 +113,7 @@ namespace TrekStarTest {
         TEST_F(ProjectTest, BoxOfficeReportsCanBeAdded)
         {
             std::shared_ptr<TrekStar::Project::BoxOfficeReport> report =
-                    std::make_shared<TrekStar::Project::BoxOfficeReport>(1, 1, 5000, 500);
+                    std::make_shared<TrekStar::Project::BoxOfficeReport>(1, 5000, 500);
 
             project.AddBoxOfficeReport(report);
 
@@ -111,8 +123,8 @@ namespace TrekStarTest {
         TEST_F(ProjectTest, TotalBoxOfficeRevenueIsCalculated)
         {
             std::vector<std::shared_ptr<TrekStar::Project::BoxOfficeReport>> reports
-                            {std::make_shared<TrekStar::Project::BoxOfficeReport>(1, 1, 5000, 500),
-                             std::make_shared<TrekStar::Project::BoxOfficeReport>(2, 3, 5000, 500)};
+                            {std::make_shared<TrekStar::Project::BoxOfficeReport>(1, 5000, 500),
+                             std::make_shared<TrekStar::Project::BoxOfficeReport>(3, 5000, 500)};
 
             project.AddBoxOfficeReports(reports);
 
@@ -122,10 +134,10 @@ namespace TrekStarTest {
         TEST_F(ProjectTest, ReportCannotBeAddedForTheSameWeek)
         {
             std::shared_ptr<TrekStar::Project::BoxOfficeReport> report =
-                std::make_shared<TrekStar::Project::BoxOfficeReport>(1, 1, 5000, 500);
+                std::make_shared<TrekStar::Project::BoxOfficeReport>(1, 5000, 500);
 
             std::shared_ptr<TrekStar::Project::BoxOfficeReport> report2 =
-                std::make_shared<TrekStar::Project::BoxOfficeReport>(1, 1, 5000, 500);
+                std::make_shared<TrekStar::Project::BoxOfficeReport>(1, 5000, 500);
 
             project.AddBoxOfficeReport(report);
 
@@ -135,8 +147,8 @@ namespace TrekStarTest {
         TEST_F(ProjectTest, TwoReportsForTheSameWeekCannotBeAdded)
         {
             std::vector<std::shared_ptr<TrekStar::Project::BoxOfficeReport>> reports
-                {std::make_shared<TrekStar::Project::BoxOfficeReport>(1, 1, 5000, 500),
-                 std::make_shared<TrekStar::Project::BoxOfficeReport>(2, 1, 5000, 500)};
+                {std::make_shared<TrekStar::Project::BoxOfficeReport>(1, 5000, 500),
+                 std::make_shared<TrekStar::Project::BoxOfficeReport>(1, 5000, 500)};
 
             ASSERT_THROW(project.AddBoxOfficeReports(reports), std::domain_error);
         }
