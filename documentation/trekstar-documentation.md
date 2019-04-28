@@ -1518,9 +1518,45 @@ As you can see in Figure CHANGEFIGUREVALUE, there are more options available to 
 
 # Conclusion
 
-Discussion and conclusion about your results (reflection on testing approach, reflection on
-performance such as computational efficiency, reliability, security, portability, maintainability,
-scalability, etc. design of system complexity using e.g. big O- notation).
+## Testing Approach
+The unit tests written using Google Test allowed us to perform continuous testing as we added new functionality to the application. Should any new code cause the tests to fail, we were able to immediately backtrack and fix the bug. This prevented bugs "snowballing" in to larger issues that could have caused unnecessary delays and stress later in development.
+
+
+## Computational Efficiency
+
+When deciding which algorithm to use to search for a project based on its title, it was decided that a linear search would be far too inefficient. Linear search has an average time complexity of *O(n)*; while this would be suitable for smaller datasets, its inefficiency would become more apparant as more projects are added. As a result, it was decided that a binary search should be used, accompanied by a merge sort in order to satisfy the pre-requisites of the binary search.
+
+The binary search has an average time complexity of *O(log n)* and the merge sort has an average time complexity of *O(n log n)*. As a result, despite performing two operations, the overall average time complexity remains logarithmic and therefore scales well when the dataset containing projects grows.
+
+
+## Reliability
+
+The reliablity of the application was deemed to be good due to the extensive set of unit tests and comprehensive test plan. It was understood that user's actions can not always be predicted and therefore, large amounts of destructive testing proved that the application would not fail due to user input.
+
+
+## Security
+
+???????????
+
+
+## Portability
+
+The application makes use of mostly standard library components that are part of C++. Any additional libraries used for the main application are header-only libraries that can be included alongside the source code and, again, make use of standard library components. This means that building the application will be successful on any platform capable of running a C++ compiler build for the C++11 standard.
+
+It must be noted that Google Test must be installed should user wish to compile and run the tests. However, it was deemed that this would only be performed by further maintainers of the software and therefore its portability was not as crucial.
+
+
+## Maintainability
+
+The modular design of the application allows new methods to be added to the models, view and controllers without changing the behaviour of existing components. This means that future maintainers of the application would be able to extend its functionality easily.
+
+The code is well documented and commented and the provided diagrams of the system are a good reflection of its design and implementation. This would allow further maintainers to quickly understand the architecture of the code and be able to make changes easily.
+
+
+## Scalability
+
+??????????
+
 
 \newpage
 
