@@ -347,13 +347,19 @@ A common issue with this pattern is the issue of multithreading, particularly wi
 Architecture tradeoff analysis method (ATAM) was used to decide on an arcitecture which was to be followed for the development of the Trekstar Project Management System.
 
 ### Model-View-Controller
-MVC is driven by interaction. The use of Views to prompt their respective controllers to modify the model and subsequently update the view in real time fits the requirements of the Trekstar system. Models act as the data store for all of the related objects within the system. Controllers manipulate the data in the models through an exposed interface on the model objects
+MVC is driven by interaction. The use of views to prompt their respective controllers to modify the model and subsequently update the view in real time fits the requirements of the Trekstar system. Models act as the data store for all of the related objects within the system. Controllers manipulate the data in the models through an exposed interface on the model objects
+
+## Microservices
+
+The idea of a microservice architecture is to have a collection of small, modular components which are brought together to make an application (Wayner, 2019). This approach allows components of the system to be independent of eachother - creating an application which is significantly decoupled from its components. This will result in a better standard of cohesion and a more manintaninable application in the long-run, potentially facilitating easier further development.
+
+ In order for these components of the system to integrate together, to make an application, communication has to be established between them. This adds another layer of complexity to the system which might not be present with other software architectures. Given the time constraints with the project, it might be a challenge to meet all the requirements and meet the respective time constraints.
 
 ## Utility Tree
 
- The management of projects requires fast, realtime interaction (Top 6 Most Important Benefits of MVC Architecture, 2017). The requirements gathered from Trekstar meant that some of the data needs to be presented in a different manner (e.g. displaying the contents of a double sided DVD). Due the benefit of MVC being able to present data in multiple formats, this made it an ideal choice. One of the stretch goals of the project was to provide the user with a Graphical User Interface (GUI). By using MVC, it will be easier to produce views for a GUI rather than a console based interface as only one component of the system (the views) will need to be changed out.
+ The management of projects requires fast, realtime interaction (Unknown, 2017). The requirements gathered from Trekstar meant that some of the data needs to be presented in a different manner (e.g. displaying the contents of a double sided DVD). Due the benefit of MVC being able to present data in multiple formats, this made it an ideal choice. One of the stretch goals of the project was to provide the user with a Graphical User Interface (GUI). By using MVC, it will be easier to produce views for a GUI rather than a console based interface as only one component of the system (the views) will need to be changed out.
 
-As previously mentioned in other sections, separating the logic for presenting and performing the business model provides benefits with regards to de-coupling and setting clear boundaries within the system. Given that the components of the MVC architecture are independent of eachother, they can be developed in isolation. Within the context of the project, where individual members are responsible for different sections of the project - e.g. one for data structures & one for the user interface - the development of these components could happen in tandem.
+As previously mentioned in other sections, separating the logic for presenting and performing the business model provides benefits with regards to de-coupling and setting clear boundaries within the system. Given that the components of the MVC architecture are independent of eachother, they can be developed in isolation. Within the context of the project, where individual members are responsible for different sections of the project - e.g. one for data structures & one for the user interface - the development of these components could happen in tandem. This will allow the project to develop at a faster rate and have less dependencies with respect to interrelated tasks.
 
 \newpage
 
@@ -383,7 +389,7 @@ During the design phase of the TrekStar project management application it was de
 
 - The Stack data structure allows for the sequential ordering of disks, and make sense within our use cases. For example, if you have a box set of 4 disks and you would like to add a new disk, its likely that the new disk will be the latest episode, therefore it will be inserted sequentially at the end of the list. Another example would be when a user would like to remove a disk from a boxset, it is unlikely that you will want to remove the 3rd episode within the boxset, however if the 3rd episode was to be removed then the 4th episode (the last one in the underlying vector) can be removed allowing for the 3rd episode to then be removed, therefore the Stack data structure is still appropriate.
 - Another advantage to the Stack data structure is that data can be accessed quicker sequentially, this is because you can iterate though the underlying vectors data finding items that a requested.
-- A final advantage to the Stack data structure is that it uses general programming through the use of templating, as a consequence to this, the Stack data structure supports multiple types.
+- A final advantage to the Stack data structure is that it uses general programming through the use of templating, as a consequence of this, the Stack data structure supports multiple data types. This allows the stack to be used in different contexts, if required.
 
 \newpage
 
@@ -1589,3 +1595,4 @@ During group meetings a member was nominated to write minutes, these minutes wer
 # References
 
 [@infotech_2017]
+[@wayner_2019]
