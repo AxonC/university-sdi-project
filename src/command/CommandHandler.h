@@ -9,9 +9,6 @@ namespace TrekStar
     {
         class CommandHandler
         {
-        private:
-            IntegerStringMap commands;
-            std::string currentAction;
         public:
             CommandHandler() = default;
             CommandHandler(const IntegerStringMap & commands, const std::string & currentAction);
@@ -20,6 +17,10 @@ namespace TrekStar
             void displayCommands() const;
             void clearConsole() const;
             int getUserInput() const;
+
+        private:
+            IntegerStringMap commands;
+            std::string currentAction;
         };
     }
 }
