@@ -20,11 +20,11 @@ namespace TrekStar
             void AddNew();
 
         private:
-            CrewInterface* GetModel();
-            CrewView* GetView();
-
             void UpdateName();
             void UpdateJobTitle();
+
+            CrewView* GetView();
+            CrewInterface* GetModel();
         };
     }
 }
