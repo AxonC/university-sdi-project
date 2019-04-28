@@ -26,13 +26,13 @@ namespace TrekStar
 
             SerialisedBoxOfficeReport ExportToSerialised() const;
 
-            unsigned int GetWeekNumber() const;
-            double GetRevenue() const;
-            unsigned long int GetTicketsSold() const;
+            unsigned int GetWeekNumber() const override;
+            double GetRevenue() const override;
+            unsigned long int GetTicketsSold() const override;
 
-            void SetWeekNumber(unsigned int weekNumber);
-            void SetRevenue(double revenue);
-            void SetTicketsSold(unsigned long int ticketsSold);
+            void SetWeekNumber(unsigned int weekNumber) override;
+            void SetRevenue(double revenue) override;
+            void SetTicketsSold(unsigned long int ticketsSold) override;
 
         private:
             unsigned int weekNumber;
