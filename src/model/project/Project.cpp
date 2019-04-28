@@ -108,11 +108,24 @@ namespace TrekStar
             this->keywords = keywords;
         }
 
+        /**
+        *  Set a keyword at a specific index.
+        *
+        *  @param keywordNo: index of keyword, keyword : keyword to be added
+        *  @return void
+        */
         void Project::SetKeyword(const unsigned int & keywordNo, const std::string & keyword)
         {
             this->keywords.at(keywordNo) = keyword;
         }
 
+        /**
+        *  Add material(s) to a project
+        *
+        *  @throws std::domain_error
+        *  @param materials : collection of materials
+        *  @return void
+        */
         void Project::AddMaterials(const std::vector<std::shared_ptr<Material::Material>> & materials)
         {
             if ( !this->CanAddMaterial() )
@@ -156,16 +169,33 @@ namespace TrekStar
             return this->released && !this->playingInTheatres;
         }
 
+        /**
+        *  Retrieve Crew Members of a project.
+        *
+        *  @return All of the crew members associated with a project.
+        */
         std::vector<std::shared_ptr<People::Crew>> Project::GetCrew() const
         {
             return this->crew;
         }
 
+        /**
+         *  Adds a crew member to the project.
+         *
+         *  @param crewMember : the crew member to be removed
+         *  @return void
+         */
         void Project::AddCrew(const std::shared_ptr<TrekStar::People::Crew> & crewMember)
         {
             this->crew.push_back(crewMember);
         }
 
+        /**
+         *  Adds a number of crew members to the project.
+         *
+         *  @param crewMember : the crew member(s) to be removed
+         *  @return void
+         */
         void Project::AddCrew(const std::vector<std::shared_ptr<People::Crew>> & crew)
         {
             for ( const auto & crewMember: crew )
@@ -174,6 +204,12 @@ namespace TrekStar
             }
         }
 
+        /**
+         *  Removes a single crew member from a project.
+         *
+         *  @param crewMember : the crew member(s) to be removed
+         *  @return void
+         */
         void Project::RemoveCrew(const std::shared_ptr<TrekStar::People::Crew> & crewMember)
         {
             auto search = std::find(crew.begin(), crew.end(), crewMember);
@@ -187,12 +223,10 @@ namespace TrekStar
         }
 
         /**
-            Class:                 Project
-            Method Name:           ReleaseProject
-            Method Access Control: Public
-
-            Set a project to released, following business rules.
-        */
+         *  Mark a project as released enforcing business rules.
+         *
+         *  @return void
+         */
         void Project::ReleaseProject()
         {
             if (this->playingInTheatres)
@@ -219,24 +253,22 @@ namespace TrekStar
         }
 
         /**
-            Class:                 Project
-            Method Name:           MaterialFormatExists
-            Method Access Control: Private
-
-            Indicates whether or not a given format is already present within a project.
-        */
+         *  Determine whether a materials' format is already known to the project.
+         *
+         *  @param materialFormat : format to be compared
+         *  @return bool
+         */
         bool Project::MaterialFormatExists(const std::string & materialFormat) const
         {
             return std::find(this->materialFormats.begin(), this->materialFormats.end(), materialFormat) != this->materialFormats.end();
         }
 
         /**
-            Class:                 Project
-            Method Name:           AddMaterialFormat
-            Method Access Control: Private
-
-            Adds a format to the known formats of a Project.
-        */
+         *  Adds a material format to the project.
+         *
+         *  @param materialFormat : format to be added
+         *  @return void
+         */
         void Project::AddMaterialFormat(const std::string & materialFormat)
         {
             if ( !MaterialFormatExists(materialFormat) )
@@ -281,24 +313,21 @@ namespace TrekStar
         }
 
         /**
-            Class:                 Project
-            Method Name:           GetBoxOfficeReports
-            Method Access Control: Public
-
-            Returns all of the box office reports for the project.
-        */
+         *  Retrieve the box office reports for a project.
+         *
+         *  @return vector of box office reports.
+         */
         std::vector<std::shared_ptr<BoxOfficeReport>> Project::GetBoxOfficeReports() const
         {
             return this->boxOfficeReports;
         }
 
         /**
-            Class:                 Project
-            Method Name:           AddBoxOfficeReport
-            Method Access Control: Public
-
-            Adds a box office report to the project.
-        */
+         *  Add a box office report to the project.
+         *
+         *  @param report : report to be added
+         *  @return void
+         */
         void Project::AddBoxOfficeReport(const std::shared_ptr<BoxOfficeReport> & report)
         {
             for(const auto & existingReport: this->boxOfficeReports)
@@ -313,12 +342,12 @@ namespace TrekStar
         }
 
         /**
-            Class:                 Project
-            Method Name:           AddBoxOfficeReports
-            Method Access Control: Public
-
-            Adds multiple box office reports to the project.
-        */
+         *  Add box office report(s) to the project.
+         *
+         *  @throws std::domain_error
+         *  @param reports : report(s) to be added
+         *  @return void
+         */
         void Project::AddBoxOfficeReports(const std::vector<std::shared_ptr<BoxOfficeReport>> & reports)
         {
             for(const auto & report : reports)
@@ -335,12 +364,10 @@ namespace TrekStar
         }
 
         /**
-            Class:                 Project
-            Method Name:           GetTotalBoxOfficeRevenue
-            Method Access Control: Public
-
-            Gather the total revenue from the contained box office reports.
-        */
+         *  Retrieve the total revenue from all box office reports.
+         *
+         *  @return unsigned long long int : sum of all revenues.
+         */
         unsigned long long int Project::GetTotalBoxOfficeRevenue() const
         {
             unsigned long long int initial = 0;
@@ -352,12 +379,12 @@ namespace TrekStar
         }
 
         /**
-            Class:                 Project
-            Method Name:           RemoveBoxOfficeReport
-            Method Access Control: Public
-
-            Remove a BoxOfficeReport from a Project.
-        */
+         *  Remove a report from the project.
+         *
+         *  @throws std::out_of_range
+         *  @param boxOfficeReport : report to be removed.
+         *  @return void
+         */
         void Project::RemoveBoxOfficeReport(const std::shared_ptr<BoxOfficeReport> & boxOfficeReport)
         {
             auto search = std::find(this->boxOfficeReports.begin(), this->boxOfficeReports.end(), boxOfficeReport);
@@ -371,12 +398,12 @@ namespace TrekStar
         }
 
         /**
-            Class:                 Project
-            Method Name:           FindActor
-            Method Access Control: Public
-
-            Attempts to find an actor with the specified name
-        */
+         *  Find whether an actor is employed
+         *
+         *  @throws std::out_of_range
+         *  @param actorName : name of actor to be found.
+         *  @return std::shared_ptr<People::Crew>
+         */
         std::shared_ptr<People::Crew> Project::FindActor(std::string & actorName)
         {
             std::string parsedName;

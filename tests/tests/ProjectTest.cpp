@@ -69,6 +69,16 @@ namespace TrekStarTest {
             ASSERT_THROW(project.ReleaseProject(), std::domain_error);
         }
 
+        TEST_F(ProjectTest, ProjectCanHaveKeywordsAssociatedWithIt)
+        {
+            std::vector<std::string> keyword{"Action"};
+
+            project.SetKeywords(keyword);
+
+            ASSERT_EQ(1, project.GetKeywords().size());
+            ASSERT_EQ(keyword.at(0), project.GetKeywords().at(0));
+        }
+
         TEST_F(ProjectTest, CanAddMaterialsWhenValid)
         {
             releasedProject.ReleaseProject();
