@@ -595,7 +595,14 @@ Further discussion of the time complexity of binary search can be found in [INSE
 |131 |Inserting an invalid Project ID into the Remove Box Office Report function requests the ID to be entered again|Invalid|The ProjectID will be requested again|The project id is requested again|N/A|N/A|
 |132 |Inserting a Box Office Report ID into the Remove Box Office Report function removes the box office report|Valid|The box office report will be removed|The box office report is removed|N/A|N/A|
 |133 |Inserting an invalid Box Office Report ID into the Remove Box Office Report function requests the ID to be entered again|Invalid|The Box Office Report ID will be requested again|The box office report id is requested again|N/A|N/A|
-
+|134 |Pressing 1 will open the List Projects functionality within View Mode|Valid  |List Projects will open|List Project opens|N/A|N/A|
+|135 |Pressing 2 will open the Search Projects functionality within View Mode|Valid|Search Projects will open|Search Projects opens|N/A|N/A|
+|136 |Pressing 3 will return to the Main Menu|Valid|The application will return to the main menu|The application returns to the main menu|N/A|N/A|
+|137    	|Inserting an invalid value on the view mode menu will throw "Invalid Command"         |Invalid  |The application will throw "Invalid Command"|The application throws invalid command|N/A|N/A|
+|138 |Pressing y on the Sort By Title sorts the projects by title|Valid|The application will sort the projects by title when y is supplied|The application sorts the projects by title when y is supplied|N/A|N/A|
+|139 |Pressing n on the Sort By Title does not sort the projects by title|Valid|The application will not sort the projects by title when n is supplied|The application does not sort the projects by title when n is supplied|N/A|N/A|
+|140 |Inserting an invalid value on the sort by title functionality will throw "Invalid Command"         |Invalid  |The application will throw "Invalid Command"|The application throws invalid command|N/A|N/A|
+|138 |The list projects functionality lists projects|Valid|The application will list the projects when the list project functionality is accessed|The application lists projects when the list |N/A|N/A|
 \newpage
 
 # UI Screenshots
