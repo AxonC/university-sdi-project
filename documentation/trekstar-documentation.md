@@ -52,6 +52,49 @@ header-includes: |
 		- [Explaination](#explaination-1)
 		- [Justification](#justification-1)
 - [UI Screenshots](#ui-screenshots)
+	- [Main Menu](#main-menu)
+	- [View Mode](#view-mode)
+		- [List Projects](#list-projects)
+			- [View Materials](#view-materials)
+			- [View Crew](#view-crew)
+			- [View Box Office Reports](#view-box-office-reports)
+		- [Search Projects](#search-projects)
+			- [Search Title](#search-title)
+			- [Search Actor](#search-actor)
+	- [Maintenance Mode](#maintenance-mode)
+		- [Add Project](#add-project)
+		- [Update Project](#update-project)
+			- [Edit Title](#edit-title)
+			- [Edit Summary](#edit-summary)
+			- [Edit Released](#edit-released)
+			- [Edit Playing In Theaters](#edit-playing-in-theaters)
+			- [Edit Existing Keyword](#edit-existing-keyword)
+			- [Edit Crew](#edit-crew)
+			- [Edit Crew Name](#edit-crew-name)
+			- [Edit Crew Job Title](#edit-crew-job-title)
+		- [Remove Project](#remove-project)
+		- [Add Project Materials](#add-project-materials)
+		- [Add Project Materials - VHS](#add-project-materials---vhs)
+		- [Update Project Materials](#update-project-materials)
+			- [Edit Audio Format](#edit-audio-format)
+			- [Edit Run Time](#edit-run-time)
+			- [Edit Language](#edit-language)
+			- [Edit Retail Price](#edit-retail-price)
+			- [Edit Subtitles](#edit-subtitles)
+			- [Edit Frame Aspect](#edit-frame-aspect)
+			- [Edit Content](#edit-content)
+			- [Edit Additional Language Tracks](#edit-additional-language-tracks)
+			- [Edit Additional Subtitle Tracks](#edit-additional-subtitle-tracks)
+			- [Edit Bonus Features](#edit-bonus-features)
+			- [Edit Packaging](#edit-packaging)
+		- [Remove Project Materials](#remove-project-materials)
+		- [Add Project Crew](#add-project-crew)
+		- [Update Project Crew](#update-project-crew)
+			- [Edit Crew Name](#edit-crew-name-1)
+			- [Edit Crew Job Title](#edit-crew-job-title-1)
+		- [Remove Project Crew](#remove-project-crew)
+		- [Add Box Office Report](#add-box-office-report)
+		- [Remove Box Office Report](#remove-box-office-report)
 - [Software Testing Procedure](#software-testing-procedure)
 - [User Manual](#user-manual)
 	- [Software Introduction](#software-introduction)
@@ -68,34 +111,34 @@ header-includes: |
 	- [Using Maintenance Mode](#using-maintenance-mode)
 		- [Using Add Project](#using-add-project)
 		- [Using Update Project](#using-update-project)
-			- [Edit Title](#edit-title)
-			- [Edit Summary](#edit-summary)
-			- [Edit Released](#edit-released)
-			- [Edit Playing In Theaters](#edit-playing-in-theaters)
+			- [Edit Title](#edit-title-1)
+			- [Edit Summary](#edit-summary-1)
+			- [Edit Released](#edit-released-1)
+			- [Edit Playing In Theaters](#edit-playing-in-theaters-1)
 			- [Edit Existing Keywords](#edit-existing-keywords)
-			- [Edit Crew](#edit-crew)
-			- [Edit Crew Name](#edit-crew-name)
-			- [Edit Crew Job Title](#edit-crew-job-title)
+			- [Edit Crew](#edit-crew-1)
+			- [Edit Crew Name](#edit-crew-name-2)
+			- [Edit Crew Job Title](#edit-crew-job-title-2)
 		- [Using Remove Project](#using-remove-project)
 		- [Using Add Project Materials](#using-add-project-materials)
 		- [Using Update Project Materials](#using-update-project-materials)
-			- [Edit Audio Format](#edit-audio-format)
-			- [Edit Run Time](#edit-run-time)
-			- [Edit Language](#edit-language)
-			- [Edit Retail Price](#edit-retail-price)
-			- [Edit Subtitles](#edit-subtitles)
-			- [Edit Frame Aspect](#edit-frame-aspect)
-			- [Edit Packaging](#edit-packaging)
-			- [Edit Content](#edit-content)
-			- [Edit Additional Language Tracks](#edit-additional-language-tracks)
-			- [Edit Additional Subtitle Tracks](#edit-additional-subtitle-tracks)
-			- [Edit Bonus Features](#edit-bonus-features)
+			- [Edit Audio Format](#edit-audio-format-1)
+			- [Edit Run Time](#edit-run-time-1)
+			- [Edit Language](#edit-language-1)
+			- [Edit Retail Price](#edit-retail-price-1)
+			- [Edit Subtitles](#edit-subtitles-1)
+			- [Edit Frame Aspect](#edit-frame-aspect-1)
+			- [Edit Packaging](#edit-packaging-1)
+			- [Edit Content](#edit-content-1)
+			- [Edit Additional Language Tracks](#edit-additional-language-tracks-1)
+			- [Edit Additional Subtitle Tracks](#edit-additional-subtitle-tracks-1)
+			- [Edit Bonus Features](#edit-bonus-features-1)
 			- [Edit Audio Track](#edit-audio-track)
 		- [Using Remove Project Materials](#using-remove-project-materials)
 		- [Using Add Crew](#using-add-crew)
 		- [Using Update Crew](#using-update-crew)
-			- [Edit Crew Name](#edit-crew-name-1)
-			- [Edit Crew Job Title](#edit-crew-job-title-1)
+			- [Edit Crew Name](#edit-crew-name-3)
+			- [Edit Crew Job Title](#edit-crew-job-title-3)
 		- [Using Remove Crew](#using-remove-crew)
 		- [Using Add Box Office Report](#using-add-box-office-report)
 		- [Using Remove Box Office Report](#using-remove-box-office-report)
@@ -115,6 +158,7 @@ header-includes: |
   - Resolve image issue on [Edit Packaging](#edit-packaging) once bugs have been fixed
   - Look into new line for  # # # # headers
   - Add class diagram (and any other landscape picture pages) to the TOC on last save
+  - Ensure Remove box office bug is fixed
 
 \newpage
 
@@ -405,7 +449,175 @@ Further discussion of the time complexity of binary search can be found in [INSE
 
 # UI Screenshots
 
-Include screenshots of console app here.
+## Main Menu
+
+![Visual representation of the Main Menu](images/ui-screenshots/main-menu.png)
+
+## View Mode
+
+![Visual representation of View Mode](images/ui-screenshots/view-mode.png)
+
+### List Projects
+
+![Visual representation of List Projects](images/ui-screenshots/list-projects.png)
+
+#### View Materials
+
+![Visual representation of View Materials](images/ui-screenshots/list-projects-view-materials.png)
+
+#### View Crew
+
+![Visual representation of View Crew](images/ui-screenshots/list-projects-view-crew.png)
+
+#### View Box Office Reports
+
+![Visual representation of View Box Office Reports](images/ui-screenshots/list-projects-view-box-office-reports.png)
+
+### Search Projects
+
+![Visual representation of Search Projects](images/ui-screenshots/search-projects.png)
+
+#### Search Title
+
+![Visual representation of Search Title](images/ui-screenshots/search-title.png)
+
+#### Search Actor
+
+![Visual representation of Search Actor](images/ui-screenshots/search-actor.png)
+
+## Maintenance Mode
+
+![Visual representation of Search Actor](images/ui-screenshots/maintenance-mode.png)
+
+### Add Project
+
+![Visual representation of Search Actor](images/ui-screenshots/add-project.png)
+
+Requires fix when keyword is back
+
+### Update Project
+
+![Visual representation of Search Actor](images/ui-screenshots/update-project.png)
+
+#### Edit Title
+
+![Visual representation of Edit Title](images/ui-screenshots/update-title.png)
+
+#### Edit Summary
+
+![Visual representation of Edit Summary](images/ui-screenshots/update-summary.png)
+
+#### Edit Released
+
+![Visual representation of Edit Released](images/ui-screenshots/update-released.png)
+
+#### Edit Playing In Theaters
+
+![Visual representation of Edit Playing In Theaters](images/ui-screenshots/update-playing-in-theatres.png)
+
+#### Edit Existing Keyword
+
+![Visual representation of Edit Existing Keyword](images/ui-screenshots/update-existing-keyword.png)
+
+#### Edit Crew
+
+![Visual representation of Edit Crew](images/ui-screenshots/update-crew.png)
+
+#### Edit Crew Name
+
+![Visual representation of Edit Crew Name](images/ui-screenshots/update-crew-name.png)
+
+#### Edit Crew Job Title
+
+![Visual representation of Edit Crew Job Title](images/ui-screenshots/update-crew-job-title.png)
+
+### Remove Project
+
+![Visual representation of Remove Project](images/ui-screenshots/remove-project.png)
+
+### Add Project Materials
+
+![Visual representation of Add Project Materials](images/ui-screenshots/add-project-materials.png)
+
+### Add Project Materials - VHS
+
+![Visual representation of Add Project Materials](images/ui-screenshots/add-project-materials-vhs.png)
+
+### Update Project Materials
+
+#### Edit Audio Format
+
+![Visual representation of Edit Audio Format](images/ui-screenshots/update-project-material-audio-format.png)
+
+#### Edit Run Time
+
+![Visual representation of Edit Run Time](images/ui-screenshots/update-project-material-run-time.png)
+
+#### Edit Language
+
+![Visual representation of Edit Language](images/ui-screenshots/update-project-material-language.png)
+
+#### Edit Retail Price
+
+![Visual representation of Edit Retail Price](images/ui-screenshots/update-project-material-retail-price.png)
+
+#### Edit Subtitles
+
+![Visual representation of Edit Subtitles](images/ui-screenshots/update-project-material-subtitles.png)
+
+#### Edit Frame Aspect
+
+![Visual representation of Edit Frame Aspect](images/ui-screenshots/update-project-material-frame-aspect.png)
+
+#### Edit Content
+
+![Visual representation of Edit Content](images/ui-screenshots/update-project-material-content.png)
+
+#### Edit Additional Language Tracks
+
+![Visual representation of Edit Audio Format](images/ui-screenshots/update-project-material-additional-language-tracks.png)
+
+#### Edit Additional Subtitle Tracks
+
+![Visual representation of Edit Additional Subtitle Tracks](images/ui-screenshots/update-project-material-additional-subtitle-tracks.png)
+
+#### Edit Bonus Features
+
+![Visual representation of Edit Audio Format](images/ui-screenshots/update-project-material-bonus-feature.png)
+
+#### Edit Packaging
+
+![Visual representation of Edit Audio Format](images/ui-screenshots/update-project-material-packaging.png)
+
+### Remove Project Materials
+
+![Visual representation of Remove Project Materials](images/ui-screenshots/remove-project-materials.png)
+
+### Add Project Crew
+
+![Visual representation of Add Project Crew](images/ui-screenshots/add-crew.png)
+
+### Update Project Crew
+
+#### Edit Crew Name
+
+![Visual representation of Edit Crew Name](images/ui-screenshots/update-crew-name.png)
+
+#### Edit Crew Job Title
+
+![Visual representation of Edit Crew Job Title](images/ui-screenshots/update-crew-job-title.png)
+
+### Remove Project Crew
+
+![Visual representation of Remove Project Crew](images/ui-screenshots/remove-crew.png)
+
+### Add Box Office Report
+
+![Visual representation of Add Box Office Report](images/ui-screenshots/add-box-office.png)
+
+### Remove Box Office Report
+
+![Visual representation of Remove Box Office Report](images/ui-screenshots/remove-box-office.png)
 
 \newpage
 
