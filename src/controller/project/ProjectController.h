@@ -44,6 +44,7 @@ namespace TrekStar
             void UpdateSummary();
             void UpdateReleased();
             void UpdatePlayingInTheatres();
+            void AddKeywords();
             void UpdateKeyword();
             void LogMaterialAdd(const std::shared_ptr<Material::Material> & material);
 

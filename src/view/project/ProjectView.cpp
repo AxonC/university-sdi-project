@@ -239,6 +239,12 @@ namespace TrekStar
             }
         }
 
+        unsigned int ProjectView::GetNoOfKeywords()
+        {
+            std::cout << "Number of Keywords: ";
+            return TrekStar::Command::GetIntInput();
+        }
+
         unsigned int ProjectView::GetUpdateOption()
         {
             TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (

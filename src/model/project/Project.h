@@ -80,6 +80,7 @@ namespace TrekStar
             void SetSummary(const std::string & summary) override;
             void SetReleased(const bool & released) override;
             void SetPlayingInTheatres(const bool & playingInTheatres) override;
+            void SetKeywords(const std::vector<std::string> & keywords) override;
             void SetKeyword(const unsigned int & keywordNo, const std::string & keyword) override;
 
             void AddMaterials(const std::vector<std::shared_ptr<Material::Material>> & materials);
