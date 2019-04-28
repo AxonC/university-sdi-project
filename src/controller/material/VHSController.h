@@ -11,18 +11,18 @@ namespace TrekStar
     {
         class VHSController : public MaterialController
         {
+        public:
+            VHSController(VHS & model, VHSView & view);
+
+            void Update() override;
+            void AddNew() override;
+
         private:
             void UpdateAudioTrack();
             void UpdatePackaging();
 
             VHSView* GetView() override;
             VHS* GetModel() override;
-
-        public:
-            VHSController(VHS & model, VHSView & view);
-
-            void Update() override;
-            void AddNew() override;
         };
     }
 }

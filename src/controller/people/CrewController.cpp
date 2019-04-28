@@ -10,19 +10,6 @@ namespace TrekStar
             this->view = &view;
         }
 
-        void CrewController::ShowAll()
-        {
-            auto model = this->GetModel();
-
-            std::cout << "Name      : " << model->GetName() << std::endl;
-            std::cout << "Job Title : " << model->GetJobTitle() << std::endl;
-        }
-
-        void CrewController::ShowList()
-        {
-            std::cout << "Name: " << this->GetModel()->GetName() << std::endl;
-        }
-
         void CrewController::Update()
         {
             unsigned int commandInput = this->GetView()->GetUpdateOption();

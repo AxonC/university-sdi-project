@@ -194,7 +194,7 @@ namespace TrekStar
             this->model->SetFrameAspect(this->GetView()->GetNewFrameAspect());
         }
 
-        
+
         /**
            Class:                 MaterialController
            Method Name:           GetView
