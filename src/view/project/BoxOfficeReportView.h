@@ -23,6 +23,7 @@ namespace TrekStar
             double GetNewRevenue();
             unsigned long int GetNewTicketsSold();
 
+        private:
             BoxOfficeReportInterface* GetModel() override;
         };
     }

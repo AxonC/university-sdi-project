@@ -50,6 +50,7 @@ namespace TrekStar
             void DisplayHasNoMaterials();
             void DisplayHasNoCrew();
             void DisplayHasNoBoxOfficeReports();
+            void DisplayCannotAddBoxOfficeReport();
 
             ProjectInterface* GetModel() override;
         };

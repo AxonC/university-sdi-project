@@ -482,7 +482,14 @@ namespace TrekStar
 
             controller.AddNew();
 
-            this->GetModel()->AddBoxOfficeReport(std::make_shared<TrekStar::Project::BoxOfficeReport>(boxOfficeReport));
+            try
+            {
+                this->GetModel()->AddBoxOfficeReport(std::make_shared<TrekStar::Project::BoxOfficeReport>(boxOfficeReport));
+            }
+            catch ( std::domain_error & )
+            {
+                this->GetView()->DisplayCannotAddBoxOfficeReport();
+            }
         }
 
 

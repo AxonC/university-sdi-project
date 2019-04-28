@@ -371,6 +371,11 @@ namespace TrekStar
             std::cout << "This project has no box office reports to display." << std::endl;
         }
 
+        void ProjectView::DisplayCannotAddBoxOfficeReport()
+        {
+            std::cout << "Cannot add box office report to this week number as a report for this week already exists." << std::endl;
+        }
+
         ProjectInterface* ProjectView::GetModel()
         {
             return dynamic_cast<ProjectInterface*>(this->model);
