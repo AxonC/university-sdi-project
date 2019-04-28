@@ -58,9 +58,6 @@ namespace TrekStar
                 this->AddDisk();
                 break;
             case 8:
-                this->UpdateDisks();
-                break;
-            case 9:
                 this->RemoveDisk();
                 break;
             default:
@@ -111,24 +108,6 @@ namespace TrekStar
         void BoxSetController::AddDisk()
         {
             this->GetModel()->AddDisk(this->GetNewDisk());
-        }
-
-
-        /**
-           Class:                 BoxOfficeController
-           Method Name:           UpdateDisks
-           Method Access Control: Private
-
-           Responsible for allowing the user to update information pertaining to a selected disk in a BoxSet.
-        */
-        void BoxSetController::UpdateDisks()
-        {
-            this->GetView()->PresentDisks();  // Display a list of disks in the BoxSet to the user.
-
-            unsigned int diskNo = this->GetView()->GetDiskNo();  // Get user selection for the disk they wish to update.
-
-            this->GetModel()->SetDisk(this->GetNewDisk(), diskNo);  // Update the disk in the model with the new
-                                                                    // information provided by the user.
         }
 
 

@@ -9,6 +9,12 @@ namespace TrekStar
          */
         DVD::DVD() : Material() {}
 
+        /**
+        *  Interprets the information stored from file.
+        *
+        *  @param j : jsonString contaning the data.
+        *  @return void
+        */
         void DVD::PopulateFromFile(const json & j)
         {
             this->format = j.at("format");

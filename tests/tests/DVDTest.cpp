@@ -1,20 +1,20 @@
-#include <gmock/gmock.h>
-#include <gtest/gtest.h>
+#include "TestCase.h"
 
 #include <model/material/DVD.h>
 #include <model/material/BoxSet.h>
 
 using TrekStar::Material::DVD;
 using TrekStar::Material::BoxSet;
+using TrekStarTests::Tests::TestCase;
 using ::testing::ElementsAre;
 
 namespace TrekStarTest {
     namespace Tests {
-        class DVDTest : public testing::Test
+     class DVDTest : public TestCase
         {
          public:
             // Default state of Material every time a test fixture is run
-            DVDTest() :  material()
+            DVDTest() :  TestCase(), material()
             {
                 json j = {
                     {"id", 1},

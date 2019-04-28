@@ -1,13 +1,13 @@
-#include <gmock/gmock.h>
-#include <gtest/gtest.h>
+#include "TestCase.h"
 
 #include <model/material/DVD.h>
 
 using TrekStar::Material::DVD;
+using TrekStarTests::Tests::TestCase;
 
 namespace TrekStarTests {
     namespace Tests {
-        class BaseMaterialTest: public testing::Test
+     class BaseMaterialTest : public TestCase
         {
          public:
             BaseMaterialTest() : exampleMaterial()
