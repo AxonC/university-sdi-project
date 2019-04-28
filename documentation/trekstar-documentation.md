@@ -55,43 +55,17 @@ header-includes: |
 	- [Main Menu](#main-menu)
 	- [View Mode](#view-mode)
 		- [List Projects](#list-projects)
-			- [View Materials](#view-materials)
-			- [View Crew](#view-crew)
-			- [View Box Office Reports](#view-box-office-reports)
 		- [Search Projects](#search-projects)
-			- [Search Title](#search-title)
-			- [Search Actor](#search-actor)
 	- [Maintenance Mode](#maintenance-mode)
 		- [Add Project](#add-project)
 		- [Update Project](#update-project)
-			- [Edit Title](#edit-title)
-			- [Edit Summary](#edit-summary)
-			- [Edit Released](#edit-released)
-			- [Edit Playing In Theaters](#edit-playing-in-theaters)
-			- [Edit Existing Keyword](#edit-existing-keyword)
-			- [Edit Crew](#edit-crew)
-			- [Edit Crew Name](#edit-crew-name)
-			- [Edit Crew Job Title](#edit-crew-job-title)
 		- [Remove Project](#remove-project)
 		- [Add Project Materials](#add-project-materials)
 		- [Add Project Materials - VHS](#add-project-materials---vhs)
 		- [Update Project Materials](#update-project-materials)
-			- [Edit Audio Format](#edit-audio-format)
-			- [Edit Run Time](#edit-run-time)
-			- [Edit Language](#edit-language)
-			- [Edit Retail Price](#edit-retail-price)
-			- [Edit Subtitles](#edit-subtitles)
-			- [Edit Frame Aspect](#edit-frame-aspect)
-			- [Edit Content](#edit-content)
-			- [Edit Additional Language Tracks](#edit-additional-language-tracks)
-			- [Edit Additional Subtitle Tracks](#edit-additional-subtitle-tracks)
-			- [Edit Bonus Features](#edit-bonus-features)
-			- [Edit Packaging](#edit-packaging)
 		- [Remove Project Materials](#remove-project-materials)
 		- [Add Project Crew](#add-project-crew)
 		- [Update Project Crew](#update-project-crew)
-			- [Edit Crew Name](#edit-crew-name-1)
-			- [Edit Crew Job Title](#edit-crew-job-title-1)
 		- [Remove Project Crew](#remove-project-crew)
 		- [Add Box Office Report](#add-box-office-report)
 		- [Remove Box Office Report](#remove-box-office-report)
@@ -105,40 +79,16 @@ header-includes: |
 		- [Using View Crew](#using-view-crew)
 		- [Using View Box Office Reports](#using-view-box-office-reports)
 		- [Using Search Projects](#using-search-projects)
-			- [Using Search By Title](#using-search-by-title)
-			- [Using Search By Actor](#using-search-by-actor)
 		- [Using List Materials](#using-list-materials)
 	- [Using Maintenance Mode](#using-maintenance-mode)
 		- [Using Add Project](#using-add-project)
 		- [Using Update Project](#using-update-project)
-			- [Edit Title](#edit-title-1)
-			- [Edit Summary](#edit-summary-1)
-			- [Edit Released](#edit-released-1)
-			- [Edit Playing In Theaters](#edit-playing-in-theaters-1)
-			- [Edit Existing Keywords](#edit-existing-keywords)
-			- [Edit Crew](#edit-crew-1)
-			- [Edit Crew Name](#edit-crew-name-2)
-			- [Edit Crew Job Title](#edit-crew-job-title-2)
 		- [Using Remove Project](#using-remove-project)
 		- [Using Add Project Materials](#using-add-project-materials)
 		- [Using Update Project Materials](#using-update-project-materials)
-			- [Edit Audio Format](#edit-audio-format-1)
-			- [Edit Run Time](#edit-run-time-1)
-			- [Edit Language](#edit-language-1)
-			- [Edit Retail Price](#edit-retail-price-1)
-			- [Edit Subtitles](#edit-subtitles-1)
-			- [Edit Frame Aspect](#edit-frame-aspect-1)
-			- [Edit Packaging](#edit-packaging-1)
-			- [Edit Content](#edit-content-1)
-			- [Edit Additional Language Tracks](#edit-additional-language-tracks-1)
-			- [Edit Additional Subtitle Tracks](#edit-additional-subtitle-tracks-1)
-			- [Edit Bonus Features](#edit-bonus-features-1)
-			- [Edit Audio Track](#edit-audio-track)
 		- [Using Remove Project Materials](#using-remove-project-materials)
 		- [Using Add Crew](#using-add-crew)
 		- [Using Update Crew](#using-update-crew)
-			- [Edit Crew Name](#edit-crew-name-3)
-			- [Edit Crew Job Title](#edit-crew-job-title-3)
 		- [Using Remove Crew](#using-remove-crew)
 		- [Using Add Box Office Report](#using-add-box-office-report)
 		- [Using Remove Box Office Report](#using-remove-box-office-report)
@@ -156,7 +106,6 @@ header-includes: |
   - Add back in image that shows keywords when adding a project when this is reimplemented.
   - Change all figure values where text is CHANGEFIGUREVALUE once all images added.
   - Resolve image issue on [Edit Packaging](#edit-packaging) once bugs have been fixed
-  - Look into new line for  # # # # headers
   - Add class diagram (and any other landscape picture pages) to the TOC on last save
   - Ensure Remove box office bug is fixed
 
@@ -453,167 +402,243 @@ Further discussion of the time complexity of binary search can be found in [INSE
 
 ![Visual representation of the Main Menu](images/ui-screenshots/main-menu.png)
 
+\newpage
+
 ## View Mode
 
 ![Visual representation of View Mode](images/ui-screenshots/view-mode.png)
+
+\newpage
 
 ### List Projects
 
 ![Visual representation of List Projects](images/ui-screenshots/list-projects.png)
 
-#### View Materials
+<!-- Contents Page Stopper --> ### View Materials
 
 ![Visual representation of View Materials](images/ui-screenshots/list-projects-view-materials.png)
 
-#### View Crew
+\newpage
+
+<!-- Contents Page Stopper --> ### View Crew
 
 ![Visual representation of View Crew](images/ui-screenshots/list-projects-view-crew.png)
 
-#### View Box Office Reports
+\newpage
+
+<!-- Contents Page Stopper --> ### View Box Office Reports
 
 ![Visual representation of View Box Office Reports](images/ui-screenshots/list-projects-view-box-office-reports.png)
+
+\newpage
 
 ### Search Projects
 
 ![Visual representation of Search Projects](images/ui-screenshots/search-projects.png)
 
-#### Search Title
+\newpage
+
+<!-- Contents Page Stopper --> ### Search Title
 
 ![Visual representation of Search Title](images/ui-screenshots/search-title.png)
 
-#### Search Actor
+\newpage
+
+<!-- Contents Page Stopper --> ### Search Actor
 
 ![Visual representation of Search Actor](images/ui-screenshots/search-actor.png)
 
+\newpage
+
 ## Maintenance Mode
 
-![Visual representation of Search Actor](images/ui-screenshots/maintenance-mode.png)
+![Visual representation of Maintenance Mode](images/ui-screenshots/maintenance-mode.png)
 
 ### Add Project
 
-![Visual representation of Search Actor](images/ui-screenshots/add-project.png)
+![Visual representation of Add Project](images/ui-screenshots/add-project-need-fix.png)
 
 Requires fix when keyword is back
 
+\newpage
+
 ### Update Project
 
-![Visual representation of Search Actor](images/ui-screenshots/update-project.png)
+![Visual representation of Update Project](images/ui-screenshots/update-project.png)
 
-#### Edit Title
+\newpage
+
+<!-- Contents Page Stopper --> ### Edit Title
 
 ![Visual representation of Edit Title](images/ui-screenshots/update-title.png)
 
-#### Edit Summary
+\newpage
+
+<!-- Contents Page Stopper --> ### Edit Summary
 
 ![Visual representation of Edit Summary](images/ui-screenshots/update-summary.png)
 
-#### Edit Released
+\newpage
+
+<!-- Contents Page Stopper --> ### Edit Released
 
 ![Visual representation of Edit Released](images/ui-screenshots/update-released.png)
 
-#### Edit Playing In Theaters
+\newpage
+
+<!-- Contents Page Stopper --> ### Edit Playing In Theaters
 
 ![Visual representation of Edit Playing In Theaters](images/ui-screenshots/update-playing-in-theatres.png)
 
-#### Edit Existing Keyword
+\newpage
+
+<!-- Contents Page Stopper --> ### Edit Existing Keyword
 
 ![Visual representation of Edit Existing Keyword](images/ui-screenshots/update-existing-keyword.png)
 
-#### Edit Crew
+\newpage
+
+<!-- Contents Page Stopper --> ### Edit Crew
 
 ![Visual representation of Edit Crew](images/ui-screenshots/update-crew.png)
 
-#### Edit Crew Name
+\newpage
+
+<!-- Contents Page Stopper --> ### Edit Crew Name
 
 ![Visual representation of Edit Crew Name](images/ui-screenshots/update-crew-name.png)
 
-#### Edit Crew Job Title
+\newpage
+
+<!-- Contents Page Stopper --> ### Edit Crew Job Title
 
 ![Visual representation of Edit Crew Job Title](images/ui-screenshots/update-crew-job-title.png)
+
+\newpage
 
 ### Remove Project
 
 ![Visual representation of Remove Project](images/ui-screenshots/remove-project.png)
 
+\newpage
+
 ### Add Project Materials
 
 ![Visual representation of Add Project Materials](images/ui-screenshots/add-project-materials.png)
+
+\newpage
 
 ### Add Project Materials - VHS
 
 ![Visual representation of Add Project Materials](images/ui-screenshots/add-project-materials-vhs.png)
 
+\newpage
+
 ### Update Project Materials
 
-#### Edit Audio Format
+<!-- Contents Page Stopper --> ### Edit Audio Format
 
 ![Visual representation of Edit Audio Format](images/ui-screenshots/update-project-material-audio-format.png)
 
-#### Edit Run Time
+\newpage
+
+<!-- Contents Page Stopper --> ### Edit Run Time
 
 ![Visual representation of Edit Run Time](images/ui-screenshots/update-project-material-run-time.png)
 
-#### Edit Language
+\newpage
+
+<!-- Contents Page Stopper --> ### Edit Language
 
 ![Visual representation of Edit Language](images/ui-screenshots/update-project-material-language.png)
 
-#### Edit Retail Price
+\newpage
+
+<!-- Contents Page Stopper --> ### Edit Retail Price
 
 ![Visual representation of Edit Retail Price](images/ui-screenshots/update-project-material-retail-price.png)
 
-#### Edit Subtitles
+\newpage
+
+<!-- Contents Page Stopper --> ### Edit Subtitles
 
 ![Visual representation of Edit Subtitles](images/ui-screenshots/update-project-material-subtitles.png)
 
-#### Edit Frame Aspect
+\newpage
+
+<!-- Contents Page Stopper --> ### Edit Frame Aspect
 
 ![Visual representation of Edit Frame Aspect](images/ui-screenshots/update-project-material-frame-aspect.png)
 
-#### Edit Content
+\newpage
+
+<!-- Contents Page Stopper --> ### Edit Content
 
 ![Visual representation of Edit Content](images/ui-screenshots/update-project-material-content.png)
 
-#### Edit Additional Language Tracks
+\newpage
 
-![Visual representation of Edit Audio Format](images/ui-screenshots/update-project-material-additional-language-tracks.png)
+<!-- Contents Page Stopper --> ### Edit Additional Language Tracks
 
-#### Edit Additional Subtitle Tracks
+![Visual representation of Edit Additional Language Tracks](images/ui-screenshots/update-project-material-additional-language-tracks.png)
+
+\newpage
+
+<!-- Contents Page Stopper --> ### Edit Additional Subtitle Tracks
 
 ![Visual representation of Edit Additional Subtitle Tracks](images/ui-screenshots/update-project-material-additional-subtitle-tracks.png)
 
-#### Edit Bonus Features
+\newpage
 
-![Visual representation of Edit Audio Format](images/ui-screenshots/update-project-material-bonus-feature.png)
+<!-- Contents Page Stopper --> ### Edit Bonus Features
 
-#### Edit Packaging
+![Visual representation of Edit Bonus Features](images/ui-screenshots/update-project-material-bonus-feature.png)
 
-![Visual representation of Edit Audio Format](images/ui-screenshots/update-project-material-packaging.png)
+\newpage
+
+<!-- Contents Page Stopper --> ### Edit Packaging
+
+![Visual representation of Edit Packaging](images/ui-screenshots/update-project-material-packaging.png)
+
+\newpage
 
 ### Remove Project Materials
 
 ![Visual representation of Remove Project Materials](images/ui-screenshots/remove-project-materials.png)
 
+\newpage
+
 ### Add Project Crew
 
 ![Visual representation of Add Project Crew](images/ui-screenshots/add-crew.png)
 
+\newpage
+
 ### Update Project Crew
 
-#### Edit Crew Name
+<!-- Contents Page Stopper --> ### Edit Crew Name
 
 ![Visual representation of Edit Crew Name](images/ui-screenshots/update-crew-name.png)
 
-#### Edit Crew Job Title
+\newpage
+
+<!-- Contents Page Stopper --> ### Edit Crew Job Title
 
 ![Visual representation of Edit Crew Job Title](images/ui-screenshots/update-crew-job-title.png)
+
+\newpage
 
 ### Remove Project Crew
 
 ![Visual representation of Remove Project Crew](images/ui-screenshots/remove-crew.png)
 
+\newpage
+
 ### Add Box Office Report
 
 ![Visual representation of Add Box Office Report](images/ui-screenshots/add-box-office.png)
+
+\newpage
 
 ### Remove Box Office Report
 
@@ -761,7 +786,7 @@ Once you have entered the Search Projects functionality you will be asked to sel
 
 \newpage
 
-#### Using Search By Title
+<!-- Contents Page Stopper --> ### Using Search By Title
 
 ![Visual representation of the application asking for a search query](images/user-guide/view-mode/project-title-search.png)
 
@@ -783,7 +808,7 @@ As you can see in CHANGEFIGUREVALUE, there are more options available to you, th
 
 \newpage
 
-#### Using Search By Actor
+<!-- Contents Page Stopper --> ### Using Search By Actor
 
 ![Visual representation of the application asking for a search query](images/user-guide/view-mode/project-actor-search.png)
 
@@ -911,7 +936,7 @@ Next, you will be presented with multiple options, you can use the following key
 
 \newpage
 
-#### Edit Title
+<!-- Contents Page Stopper --> ### Edit Title
 
 Once you have entered the Edit Title functionality you will be asked to enter the following information:
 
@@ -923,7 +948,7 @@ As you can see in Figure CHANGEFIGUREVALUE, there are more options available to 
 
 \newpage
 
-#### Edit Summary
+<!-- Contents Page Stopper --> ### Edit Summary
 
 Once you have entered the Edit Summary functionality you will be asked to enter the following information:
 
@@ -935,7 +960,7 @@ As you can see in Figure CHANGEFIGUREVALUE, there are more options available to 
 
 \newpage
 
-#### Edit Released
+<!-- Contents Page Stopper --> ### Edit Released
 
 Once you have entered the Edit Released functionality you will be asked to enter the following information:
 
@@ -947,7 +972,7 @@ As you can see in Figure CHANGEFIGUREVALUE, there are more options available to 
 
 \newpage
 
-#### Edit Playing In Theaters
+<!-- Contents Page Stopper --> ### Edit Playing In Theaters
 
 Once you have entered the Edit Playing In Theaters functionality you will be asked to enter the following information:
 
@@ -959,7 +984,7 @@ As you can see in Figure CHANGEFIGUREVALUE, there are more options available to 
 
 \newpage
 
-#### Edit Existing Keywords
+<!-- Contents Page Stopper --> ### Edit Existing Keywords
 
 Once you have entered the Edit Existing Keywords functionality you will be asked to enter the following information:
 
@@ -975,7 +1000,7 @@ As you can see in Figure CHANGEFIGUREVALUE, there are more options available to 
 
 \newpage
 
-#### Edit Crew
+<!-- Contents Page Stopper --> ### Edit Crew
 
 Once you have entered the Edit Crew functionality you will be asked to enter the following information:
 
@@ -993,7 +1018,7 @@ Once you have inputted a valid keyword identifier you will be asked to enter the
 
 \newpage
 
-#### Edit Crew Name
+<!-- Contents Page Stopper --> ### Edit Crew Name
 
 Once you have entered the Edit Crew Name functionality you will be asked to enter the following information:
 
@@ -1005,7 +1030,7 @@ As you can see in Figure CHANGEFIGUREVALUE, there are more options available to 
 
 \newpage
 
-#### Edit Crew Job Title
+<!-- Contents Page Stopper --> ### Edit Crew Job Title
 
 Once you have entered the Edit Crew Job Title functionality you will be asked to enter the following information:
 
@@ -1146,7 +1171,7 @@ If you selected VHS, you will see the following options.
 
 \newpage
 
-#### Edit Audio Format
+<!-- Contents Page Stopper --> ### Edit Audio Format
 
 Once you have entered the Audio Format functionality you will be asked to enter the following information:
 
@@ -1158,7 +1183,7 @@ As you can see in Figure CHANGEFIGUREVALUE, there are more options available to 
 
 \newpage
 
-#### Edit Run Time
+<!-- Contents Page Stopper --> ### Edit Run Time
 
 Once you have entered the Edit Run Time functionality you will be asked to enter the following information:
 
@@ -1170,7 +1195,7 @@ As you can see in Figure CHANGEFIGUREVALUE, there are more options available to 
 
 \newpage
 
-#### Edit Language
+<!-- Contents Page Stopper --> ### Edit Language
 
 Once you have entered the Edit Language functionality you will be asked to enter the following information:
 
@@ -1182,7 +1207,7 @@ As you can see in Figure CHANGEFIGUREVALUE, there are more options available to 
 
 \newpage
 
-#### Edit Retail Price
+<!-- Contents Page Stopper --> ### Edit Retail Price
 
 Once you have entered the Edit Retail Price functionality you will be asked to enter the following information:
 
@@ -1194,7 +1219,7 @@ As you can see in Figure CHANGEFIGUREVALUE, there are more options available to 
 
 \newpage
 
-#### Edit Subtitles
+<!-- Contents Page Stopper --> ### Edit Subtitles
 
 Once you have entered the Edit Subtitles functionality you will be asked to enter the following information:
 
@@ -1206,7 +1231,7 @@ As you can see in Figure CHANGEFIGUREVALUE, there are more options available to 
 
 \newpage
 
-#### Edit Frame Aspect
+<!-- Contents Page Stopper --> ### Edit Frame Aspect
 
 Once you have entered the Edit Frame Aspect functionality you will be asked to enter the following information:
 
@@ -1218,7 +1243,7 @@ As you can see in Figure CHANGEFIGUREVALUE, there are more options available to 
 
 \newpage
 
-#### Edit Packaging
+<!-- Contents Page Stopper --> ### Edit Packaging
 
 Once you have entered the Edit Packaging functionality you will be asked to enter the following information:
 
@@ -1230,7 +1255,7 @@ As you can see in Figure CHANGEFIGUREVALUE, there are more options available to 
 
 \newpage
 
-#### Edit Content
+<!-- Contents Page Stopper --> ### Edit Content
 
 Once you have entered the Edit Content functionality you will be asked to enter the following information:
 
@@ -1242,7 +1267,7 @@ As you can see in Figure CHANGEFIGUREVALUE, there are more options available to 
 
 \newpage
 
-#### Edit Additional Language Tracks
+<!-- Contents Page Stopper --> ### Edit Additional Language Tracks
 
 Once you have entered the Edit Additional Language Tracks functionality you will be asked to enter the following information
 
@@ -1258,7 +1283,7 @@ As you can see in Figure CHANGEFIGUREVALUE, there are more options available to 
 
 \newpage
 
-#### Edit Additional Subtitle Tracks
+<!-- Contents Page Stopper --> ### Edit Additional Subtitle Tracks
 
 Once you have entered the Edit Subtitle Language Tracks functionality you will be asked to enter the following information
 
@@ -1274,7 +1299,7 @@ As you can see in Figure CHANGEFIGUREVALUE, there are more options available to 
 
 \newpage
 
-#### Edit Bonus Features
+<!-- Contents Page Stopper --> ### Edit Bonus Features
 
 Once you have entered the Edit Bonus Features Tracks functionality you will be asked to enter the following information
 
@@ -1290,7 +1315,7 @@ As you can see in Figure CHANGEFIGUREVALUE, there are more options available to 
 
 \newpage
 
-#### Edit Audio Track
+<!-- Contents Page Stopper --> ### Edit Audio Track
 
 Once you have entered the Edit Audio Track functionality you will be asked to enter the following information:
 
@@ -1358,7 +1383,7 @@ Next, you will be presented with multiple options, you can use the following key
 
 \newpage
 
-#### Edit Crew Name
+<!-- Contents Page Stopper --> ### Edit Crew Name
 
 Once you have entered the Edit Crew Name functionality you will be asked to enter the following information:
 
@@ -1370,7 +1395,7 @@ As you can see in Figure CHANGEFIGUREVALUE, there are more options available to 
 
 \newpage
 
-#### Edit Crew Job Title
+<!-- Contents Page Stopper --> ### Edit Crew Job Title
 
 Once you have entered the Edit Crew Job Title functionality you will be asked to enter the following information:
 
