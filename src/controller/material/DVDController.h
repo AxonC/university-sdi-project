@@ -12,6 +12,12 @@ namespace TrekStar
     {
         class DVDController : public MaterialController
         {
+        public:
+            DVDController(DVD & model, DVDView & view);
+
+            void Update() override;
+            void AddNew() override;
+
         private:
             void UpdateContent();
             void UpdateAdditionalLanguageTracks();
@@ -24,12 +30,6 @@ namespace TrekStar
 
             DVDView* GetView() override;
             DVD* GetModel() override;
-
-        public:
-            DVDController(DVD & model, DVDView & view);
-
-            void Update() override;
-            void AddNew() override;
         };
     }
 }
