@@ -602,7 +602,7 @@ namespace TrekStar
         void ProjectController::AddKeywords()
         {
             // Call method on view to get user input for how many additional subtitle tracks should be added.
-            unsigned int noOfKeywords = this->GetView()->GetNoOfKeyWords();
+            unsigned int noOfKeywords = this->GetView()->GetNoOfKeywords();
 
             std::vector<std::string> keywords;  // Create empty vector.
 
