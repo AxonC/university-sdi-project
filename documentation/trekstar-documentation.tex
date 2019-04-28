@@ -389,21 +389,21 @@
   \end{itemize}
 \item
   \protect\hyperlink{system-description}{System Description}
+\item
+  \protect\hyperlink{class-diagram}{Class Diagram}
+\item
+  \protect\hyperlink{cohesion-and-coupling-considerations}{Cohesion and
+  Coupling Considerations}
 
   \begin{itemize}
   \tightlist
   \item
-    \protect\hyperlink{cohesion-and-coupling-considerations}{Cohesion
-    and Coupling Considerations}
-
-    \begin{itemize}
-    \tightlist
-    \item
-      \protect\hyperlink{cohesion}{Cohesion}
-    \item
-      \protect\hyperlink{coupling}{Coupling}
-    \end{itemize}
+    \protect\hyperlink{cohesion}{Cohesion}
+  \item
+    \protect\hyperlink{coupling}{Coupling}
   \end{itemize}
+\item
+  \protect\hyperlink{sequence-diagram}{Sequence Diagram}
 \item
   \protect\hyperlink{component-diagram}{Component Diagram}
 \item
@@ -485,6 +485,8 @@
       \protect\hyperlink{justification-1}{Justification}
     \end{itemize}
   \end{itemize}
+\item
+  \protect\hyperlink{test-plan}{Test Plan}
 \item
   \protect\hyperlink{ui-screenshots}{UI Screenshots}
 
@@ -835,6 +837,8 @@ C}\label{callum-carney-n0741707---member-c}}
 \item
   Examples (screen shots) of user interface.
 \item
+  Test Plan
+\item
   A user manual and instruction of the software. (regardless if your
   software is based on GUI or console interface).
 \item
@@ -908,7 +912,7 @@ Pictures to accomplish the following
 
 \begin{figure}
     \makebox[\linewidth]{
-        \includegraphics[width=1.16\linewidth]{images/class-diagrams/class-diagram-models.jpg}
+        \includegraphics[width=1.13\linewidth]{images/class-diagrams/class-diagram-models.jpg}
     }
     \caption{Class diagram} \label{fig:class_diagram}
 \end{figure}
@@ -1090,7 +1094,7 @@ provides a level of abstraction and means that this class has only a
 single responsibility - to construct materials - removing this logic
 from the consuming object. This helps with the issue of coupling as
 functional cohesion is achieved. Because of the abstraction, it wouldn't
-mean any changes would necesarily have to occur in the consuming class.
+mean any changes would necessarily have to occur in the consuming class.
 
 \hypertarget{singleton}{%
 \subsection{Singleton}\label{singleton}}
@@ -1114,8 +1118,8 @@ components within the application
 \subsection{Architecture Presentation}\label{architecture-presentation}}
 
 Architecture tradeoff analysis method (ATAM) was used to decide on an
-arcitecture which was to be followed for the development of the Trekstar
-Project Management System.
+architecture which was to be followed for the development of the
+Trekstar Project Management System.
 
 \hypertarget{model-view-controller}{%
 \subsubsection{Model-View-Controller}\label{model-view-controller}}
@@ -1130,7 +1134,7 @@ interface on the model objects
 \hypertarget{utility-tree}{%
 \subsection{Utility Tree}\label{utility-tree}}
 
-The management of projects requires fast, realtime interaction (Top 6
+The management of projects requires fast, real time interaction (Top 6
 Most Important Benefits of MVC Architecture, 2017). The requirements
 gathered from Trekstar meant that some of the data needs to be presented
 in a different manner (e.g.~displaying the contents of a double sided
@@ -1145,10 +1149,11 @@ As previously mentioned in other sections, separating the logic for
 presenting and performing the business model provides benefits with
 regards to de-coupling and setting clear boundaries within the system.
 Given that the components of the MVC architecture are independent of
-eachother, they can be developed in isolation. Within the context of the
-project, where individual members are responsible for different sections
-of the project - e.g.~one for data structures \& one for the user
-interface - the development of these components could happen in tandem.
+each other, they can be developed in isolation. Within the context of
+the project, where individual members are responsible for different
+sections of the project - e.g.~one for data structures \& one for the
+user interface - the development of these components could happen in
+tandem.
 
 \newpage
 
@@ -1284,13 +1289,13 @@ through a similar process whereby the halves are repeatedly split until
 they are of length one, which is, by definition, a sorted list.
 
 The sublists in each half are then merged together by following this
-process until all projects are in the merged list: * compare the first
-project in the left half with the first project in the right half; * if
+process until all projects are in the merged list: - compare the first
+project in the left half with the first project in the right half; - if
 the project in the left half is less than the project in the right half,
 add the project from the left half to the merged list and read the next
-project from the left half; * if the project in the right half is less
+project from the left half; - if the project in the right half is less
 than the project in the left half, add the project from the right half
-to the merged list and read the next project from the right half; and *
+to the merged list and read the next project from the right half; and -
 once either list is empty, any remaining projects are added to the
 merged list.
 
@@ -1365,6 +1370,2258 @@ the project list is discarded.
 
 Further discussion of the time complexity of binary search can be found
 in {[}INSERT SECTION LINK HERE{]}.
+
+\newpage
+
+\hypertarget{test-plan}{%
+\section{Test Plan}\label{test-plan}}
+
+\begin{longtable}[]{@{}cllllll@{}}
+\toprule
+\begin{minipage}[b]{0.06\columnwidth}\centering
+Test No\strut
+\end{minipage} & \begin{minipage}[b]{0.21\columnwidth}\raggedright
+Requirement\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\raggedright
+Type of Test\strut
+\end{minipage} & \begin{minipage}[b]{0.18\columnwidth}\raggedright
+Expected Result\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\raggedright
+Actual Result\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\raggedright
+Workaround\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\raggedright
+Retest\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.06\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+The application opens and displays the main menu with options\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application opens and displays 3 options\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application opens and displays 3 options\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 1 will open the View Mode\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+View mode will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+View mode opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 2 will open Maintenance Mode\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Maintenance Mode will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Maintenance mode opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 3 will close the application gracefully\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application will close gracefully\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application closes gracefully\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value on the main menu will throw \enquote{Invalid
+Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application will throw \enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application throws invalid command\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Maintenance Mode menu loads\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The maintenance mode view will open and display 12 options\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The maintenance mode menu opens and shows 12 options\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 1 will open the Add Project functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Add Project will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Add Project opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+7\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 2 will open the Update Project functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Update Project will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Update Project opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+8\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 3 will open the Remove Project functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Remove Project will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Remove Project opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+9\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 4 will open the Add Project Materials functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Add Project Materials will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Add Project Materials opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+10\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 5 will open the Update Project Materials functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Update Project Materials will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Update Project Materials opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+11\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 6 will open the Remove Project Materials functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Remove Project Materials will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Remove Project Materials opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+12\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 7 will open the Add Project Crew functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Add Project Crew will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Add Project crew opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+13\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 8 will open the Update Project Crew functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Update Project Crew will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Update Project crew opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+14\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 9 will open the Remove Project Crew functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Remove Project Crew will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Remove Project crew opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+15\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 10 will open the Add Box Office Report functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Add Box Office Report will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Add Box Office Report opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+16\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 11 will open the Remove Box Office Report functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Remove Box Office Report will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Remove Box Office Report opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+17\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 12 will return back to the main menu\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The main menu will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The main menu opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+18\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value on the maintenance menu will throw
+\enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application will throw \enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application throws invalid command\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+19\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Title input on Add Project saves the value to
+the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+20\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Summary input on Add Project saves the value
+to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+21\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Released input on Add Project saves the value
+to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+22\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Playing In Theatres input on Add Project
+saves the value to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+23\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Number of Keywords input on Add Project saves
+the value to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+24\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Keyword input on Add Project saves the value
+to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+25\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value into the Released input on Add Project
+requests the information to be typed again\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value will be requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+26\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value into the Playing in Theatres input on Add
+Project requests the information to be typed again\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value will be requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+27\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value into the Number of Keywords input on Add
+Project requests the information to be typed again\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value will be requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+28\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 1 will open the Edit Title functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Edit Title will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Edit Title opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+29\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 2 will open the Edit Summary functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Edit Summary will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Edit Summary opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+30\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 3 will open the Edit Released functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Edit Released will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Edit Released opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+31\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 4 will open the Edit Playing in Theatres functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Playing in Theatres will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Playing in Theatres opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+32\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 5 will open the Edit Existing Keywords functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Edit Existing Keywords will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Edit Existing Keywords opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+33\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 6 will open the Edit Crew functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Edit Crew will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Edit Crew opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+34\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 7 will return to the Maintenance Menu\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Maintenance Menu will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Maintenance Menu opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+35\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value on the update project menu will throw
+\enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application will throw \enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application throws invalid command\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+36\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Title input on Update Project saves the value
+to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+37\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Summary input on Update Project saves the
+value to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+38\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Released input on Update Project saves the
+value to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+39\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Playing In Theatres input on Update Project
+saves the value to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+40\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Number of Keywords input on Update Project
+selects the keyword\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value is selected and the application moves onto the update keyword
+functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is successfully selected and the application moves onto the
+update keyword screen\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+41\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Keyword input on Update Project saves the
+value to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+42\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value into the Released input on Update Project
+requests the information to be typed again\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value will be requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+43\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value into the Playing in Theatres input on Update
+Project requests the information to be typed again\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value will be requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+44\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value into the Number of Keywords input on Update
+Project requests the information to be typed again\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value will be requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+45\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Crew ID input on Update Project selects the
+keyword\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value is selected and the application moves onto the update crew
+functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is successfully selected and the application moves onto the
+update crew screen\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+46\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Crew input on Update Project saves the value
+to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+47\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a Project ID into the Remove Project function removes the
+Project\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The project will be removed\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The project is removed\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+48\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid Project ID into the Remove Project function
+requests the ID to be entered again\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The ProjectID will be requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The project is requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+49\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a Project ID into the Add Project Material function moves onto
+the Project Material Selection Screen\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The project ID will be inserted and the material selection screen will
+be loaded\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The project ID is inserted and the material selection screen is
+loaded\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+50\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 1 will select a DVD as the Material Format and move onto
+entering details\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+DVD will be selected and the application will move onto the input
+information screen\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+DVD is selected and the application moves onto the input information
+screen\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+51\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 2 will select a Double Sided DVD as the Material Format and
+move onto entering details\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Double Sided DVD will be selected and the application will move onto the
+input information screen\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Double Sided DVD is selected and the application moves onto the input
+information screen\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+51\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 3 will select a Bluray as the Material Format and move onto
+entering details\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Bluray will be selected and the application will move onto the input
+information screen\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Bluray is selected and the application moves onto the input information
+screen\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+52\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 4 will select a VHS as the Material Format and move onto
+entering details\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+VHS will be selected and the application will move onto the input
+information screen\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+VHS is selected and the application moves onto the input information
+screen\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+53\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 5 will select a Box Set as the Material Format and move onto
+entering details\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Box Set will be selected and the application will move onto the input
+information screen\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Box Set is selected and the application moves onto the input information
+screen\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+54\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value on the add project material menu will throw
+\enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application will throw \enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application throws invalid command\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+55\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Audio Format input on Add Project Material
+saves the value to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+56\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Run Time input on Add Project Material saves
+the value to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+57\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Language input on Add Project Material saves
+the value to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+58\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Retail Price input on Add Project Material
+saves the value to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+59\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Subtitles input on Add Project Material saves
+the value to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+60\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Frame Aspect input on Add Project Material
+saves the value to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+61\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Content input on Add Project Material saves
+the value to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+62\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Number of Additional Language Tracks input on
+Add Project Material selects the amount of Additional Language
+Tracks\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value is added and the application moves onto the add Additional
+Language Tracks functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is successfully added and the application moves onto the add
+Additional Language Tracks functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+63\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Additional Language Track input on Add
+Project Material saves the value to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+64\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Number of Additional Subtitle Tracks input on
+Add Project Material selects the amount of Additional Subtitle
+Tracks\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value is added and the application moves onto the add Additional
+Subtitle Tracks functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is successfully added and the application moves onto the add
+Additional Subtitle Tracks functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+65\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Additional Subtitle Track input on Add
+Project Material saves the value to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+66\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Number of Bonus Features input on Add Project
+Material selects the amount of Bonus Features\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value is added and the application moves onto the add Bonus Features
+functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is successfully added and the application moves onto the add
+Bonus Features functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+67\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Bonus Features input on Add Project Material
+saves the value to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+68\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value into the Number of Additional Language Tracks
+input on Add Project Material requests the information to be typed
+again\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value will be requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+69\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value into the Number of Additional Subtitle Tracks
+input on Add Project Material requests the information to be typed
+again\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value will be requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+70\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value into the Number of Bonus Features input on
+Add Project Material requests the information to be typed again\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value will be requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+71\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a Project ID into the Update Project Material function moves
+onto the Project Material Selection Screen\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The project ID will be selected and the select project material screen
+will be loaded\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The project id is selected and the select project material screen is
+loaded\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+72\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value on the Update Project Material menu will
+throw \enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application will throw \enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application throws invalid command\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+73\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a Material ID into the Update Project Material function moves
+onto the Update DVD functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The material ID will be selected and the update dvd screen will be
+loaded\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The material id is selected and the update dvd screen is loaded\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+74\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value on the Update Project Material Material ID
+menu will throw \enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application will throw \enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application throws invalid command\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+75\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 1 will open the Edit Audio Format functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Edit Audio Format will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Edit Audio Format opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+76\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 2 will open the Edit Run Time functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Edit Run Time will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Edit Run Time opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+77\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 3 will open the Edit Language functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Edit Language will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Edit Language opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+78\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 4 will open the Edit Retail Price functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Edit Retail Price will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Edit Retail Price opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+79\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 5 will open the Edit Subtitles functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Edit Subtitles will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Edit Subtitles opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+80\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 6 will open the Edit Frame Aspect functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Edit Frame Aspect will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Edit Frame Aspect opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+81\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 7 will open the Edit Content functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Edit Content will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Edit Content opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+82\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 8 will open the Edit Additional Language Tracks
+functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Edit Language Tracks will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Edit Language Tracks opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+83\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 9 will open the Edit Additional Subtitle Tracks
+functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Edit Subtitle Tracks will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Edit Subtitle Tracks opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+84\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 10 will open the Edit Bonus Features functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Edit Bonus Features will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Edit Bonus Features opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+85\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 12 will return back to the maintenance menu\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The maintenance menu will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The maintenance menu opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+86\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value on the update project material menu will
+throw \enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application will throw \enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application throws invalid command\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+87\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Audio Format input on Edit Project Material
+saves the value to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+88\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Run Time input on Edit Project Material saves
+the value to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+89\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Language input on Edit Project Material saves
+the value to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+90\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Retail Price input on Edit Project Material
+saves the value to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+91\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Subtitles input on Edit Project Material
+saves the value to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+92\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Frame Aspect input on Edit Project Material
+saves the value to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+93\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Content input on Edit Project Material saves
+the value to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+94\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Number of Additional Language Tracks input on
+Edit Project Material selects the ID of an Additional Language
+Tracks\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value is selected and the application moves onto the edit Additional
+Language Tracks functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is successfully selected and the application moves onto the
+edit Additional Language Tracks functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+95\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Additional Language Track input on Edit
+Project Material saves the value to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+96\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Number of Additional Subtitle Tracks input on
+Edit Project Material selects the ID of an Additional Subtitle
+Tracks\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value is selected and the application moves onto the edit Additional
+Subtitle Tracks functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is successfully selected and the application moves onto the
+edit Additional Subtitle Tracks functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+97\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Additional Subtitle Track input on Edit
+Project Material saves the value to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+98\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Number of Bonus Features input on Edit
+Project Material selects the ID of a Bonus Features\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value is selected and the application moves onto the edit Bonus
+Features functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is successfully selected and the application moves onto the
+edit Bonus Features functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+99\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Bonus Features input on Edit Project Material
+saves the value to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+100\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value into the Number of Additional Language Tracks
+input on Edit Project Material requests the information to be typed
+again\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value will be requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+101\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value into the Number of Additional Subtitle Tracks
+input on Edit Project Material requests the information to be typed
+again\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value will be requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+102\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value into the Number of Bonus Features input on
+Edit Project Material requests the information to be typed again\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value will be requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+103\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a Project ID into the Remove Project Material function, the
+application requests a Material ID to delete\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The project id will be used to select the associated materials and the
+select material id page will be loaded\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The project id is be used to select the associated materials and the
+select material id page is loaded\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+104\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid Project ID into the Remove Project function
+requests the ID to be entered again\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The ProjectID will be requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The project id is requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+105\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a Material ID into the Remove Project Material function
+removes the material\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The material will be deleted\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The material is deleted\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+106\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid Material ID into the Remove Project function
+requests the ID to be entered again\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The MaterialID will be requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The project id is requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+107\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a Project ID into the Add Crew function moves onto the Crew
+Information Screen\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The project ID will be selected and the add crew information screen will
+be loaded\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The project id is selected and the add crew information screen is
+loaded\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+108\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value on the Add Crew menu will throw
+\enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application will throw \enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application throws invalid command\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+109\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Name input on Add Crew saves the value to the
+database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+110\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Job Title input on Add Crew saves the value
+to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+111\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a Project ID into the Update Crew function moves onto the Crew
+Selection Screen\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The project ID will be selected and the select crew id screen will be
+loaded\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The project id is selected and the select crew id screen is loaded\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+112\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid Project ID into the Update Crew function requests
+the ID to be entered again\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The ProjectID will be requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The project id is requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+111\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a Crew ID into the Crew Selection function moves onto the Crew
+Information Update Screen\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The crew ID will be selected and the crew information update screen will
+be loaded\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The crew id is selected and the update crew information screen is
+loaded\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+112\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid Crew ID into the Remove Project function requests
+the ID to be entered again\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The ProjectID will be requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The project id is requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+113\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 1 will open the Edit Name functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Edit Name will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Edit Name opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+114\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 2 will open the Edit Job Title functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Edit Job Title will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Edit Job Title opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+114\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 3 will return to the maintenance menu\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Maintenance Menu will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Maintenance Menu opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+115\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value on the update crew menu will throw
+\enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application will throw \enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application throws invalid command\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+116\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Name input on Update Crew saves the value to
+the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+117\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Job Title input on Update Crew saves the
+value to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+118\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a Project ID into the Remove Crew function moves onto the Crew
+Removal Select ID Screen\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The project ID will be selected and the crew removal select id screen
+will be loaded\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The project id is selected and the crew removal select id screen is
+loaded\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+119\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid Project ID into the Remove Crew function requests
+the ID to be entered again\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The ProjectID will be requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The project id is requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+120\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a Material ID into the Crew Removal Select ID function Removes
+the selected crew member\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The Crew ID will be selected and the crew member will be removed\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The crew id is selected and the crew member is removed from the
+project\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+121\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid Material ID into the Remove Crew function requests
+the ID to be entered again\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The MaterialID will be requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The material id is requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+122\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a Project ID into the Add Box Office Report function moves
+onto the Add Box Office Report Screen\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The project ID will be selected and the Add Box Office Report screen
+will be loaded\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The project id is selected and the Add Box Office Report screen is
+loaded\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+123\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid Project ID into the Remove Crew function requests
+the ID to be entered again\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The ProjectID will be requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The project id is requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+124\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Week Number input on Add Box Office Report
+saves the value to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+125\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value into the Week Number input on Add Box Office
+Report requests the information to be typed again\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value will be requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+126\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Revenue input on Add Box Office Report saves
+the value to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+127\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value into the Revenue input on Add Box Office
+Report requests the information to be typed again\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value will be requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+128\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a value into the Tickets Sold input on Add Box Office Report
+saves the value to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value saves to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is saved to the database\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+129\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value into the Tickets Sold input on Add Box Office
+Report requests the information to be typed again\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The value will be requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The value is requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+130\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a Project ID into the Remove Box Office Report function moves
+onto the Remove Box Office Report Screen\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The project ID will be selected and the Remove Box Office Report screen
+will be loaded\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The project id is selected and the Remove Box Office Report screen is
+loaded\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+131\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid Project ID into the Remove Box Office Report
+function requests the ID to be entered again\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The ProjectID will be requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The project id is requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+132\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting a Box Office Report ID into the Remove Box Office Report
+function removes the box office report\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The box office report will be removed\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The box office report is removed\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+133\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid Box Office Report ID into the Remove Box Office
+Report function requests the ID to be entered again\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The Box Office Report ID will be requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The box office report id is requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
 
 \newpage
 
@@ -4180,7 +6437,7 @@ When deciding which algorithm to use to search for a project based on
 its title, it was decided that a linear search would be far too
 inefficient. Linear search has an average time complexity of
 \emph{O(n)}; while this would be suitable for smaller datasets, its
-inefficiency would become more apparant as more projects are added. As a
+inefficiency would become more apparent as more projects are added. As a
 result, it was decided that a binary search should be used, accompanied
 by a merge sort in order to satisfy the pre-requisites of the binary
 search.
@@ -4194,7 +6451,7 @@ dataset containing projects grows.
 \hypertarget{reliability}{%
 \subsection{Reliability}\label{reliability}}
 
-The reliablity of the application was deemed to be good due to the
+The reliability of the application was deemed to be good due to the
 extensive set of unit tests and comprehensive test plan. It was
 understood that user's actions can not always be predicted and
 therefore, large amounts of destructive testing proved that the
@@ -4203,7 +6460,33 @@ application would not fail due to user input.
 \hypertarget{security}{%
 \subsection{Security}\label{security}}
 
-???????????
+When working on the project there were multiple considerations around
+the security of the application, you can see some of the considerations
+below, however, due to time restrictions it was not feasible to
+implement the features:
+
+\begin{itemize}
+\tightlist
+\item
+  As a major feature implementation it was a consideration to add User
+  Roles to the application, this would allow an organisation to control
+  who has access to what information or functionality, for example, an
+  organisation could create the reader and writer roles. The writer role
+  would allow assigned users to add projects, project materials, crew,
+  etc and read data. Whereas the reader role would only allow users to
+  view what data has been inputted into the system. We see this addition
+  as an important inclusion into the application as it will help to
+  protect the security/integrity of the data.
+\item
+  As a more minor implementation, it was a consideration to add
+  integrity validation to the JSON file to ensure that the database has
+  not been tampered with, this would be achieved by creating a SHA256
+  hash of the JSON content when the application is gracefully closed and
+  then verifying the hash is the same upon opening the application. This
+  would allow the application to verify that the content has not been
+  tampered with while it was closed, protecting the security and
+  integrity of the application data.
+\end{itemize}
 
 \hypertarget{portability}{%
 \subsection{Portability}\label{portability}}
@@ -4236,7 +6519,12 @@ of the code and be able to make changes easily.
 \hypertarget{scalability}{%
 \subsection{Scalability}\label{scalability}}
 
-??????????
+When developing the application scalability was considered and the
+design of the applications database will allow for organisations to
+release the application via a Group Policy Object (on Windows machines)
+and report back to the central database that will provide the
+information to the applications. This means that it is possible to scale
+the application across all employees.
 
 \newpage
 
