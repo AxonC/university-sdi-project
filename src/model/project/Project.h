@@ -96,6 +96,7 @@ namespace TrekStar
             void AddBoxOfficeReport(const std::shared_ptr<BoxOfficeReport> &) override;
             void AddBoxOfficeReports(const std::vector<std::shared_ptr<BoxOfficeReport>> &) override;
             unsigned long long int GetTotalBoxOfficeRevenue() const override;
+            void RemoveBoxOfficeReport(const std::shared_ptr<BoxOfficeReport> &) override;
 
             void ReleaseProject();
 

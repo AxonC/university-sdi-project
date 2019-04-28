@@ -504,8 +504,8 @@ namespace TrekStar
 
             this->GetView()->PresentBoxOfficeReportsList();
 
-            auto crew = this->GetModel()->GetCrew().at(this->GetView()->GetCrewSelection());
-            this->GetModel()->RemoveCrew(crew);
+            auto boxOfficeReport = this->GetModel()->GetBoxOfficeReports().at(this->GetView()->GetBoxOfficeReportSelection());
+            this->GetModel()->RemoveBoxOfficeReport(boxOfficeReport);
         }
 
 

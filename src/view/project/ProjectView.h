@@ -37,6 +37,7 @@ namespace TrekStar
             unsigned int GetUpdateOption();
             unsigned int GetMaterialSelection();
             unsigned int GetCrewSelection();
+            unsigned int GetBoxOfficeReportSelection();
 
             unsigned int GetListMaterialsOption();
             unsigned int GetCurrentMaterial(unsigned int currentMaterial, unsigned int commandInput);

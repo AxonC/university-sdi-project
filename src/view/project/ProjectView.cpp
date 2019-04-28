@@ -271,6 +271,11 @@ namespace TrekStar
             return TrekStar::Command::GetIndexInput(this->GetModel()->GetCrew().size(), "Crew ID");
         }
 
+        unsigned int ProjectView::GetBoxOfficeReportSelection()
+        {
+            return TrekStar::Command::GetIndexInput(this->GetModel()->GetBoxOfficeReports().size(), "Box Office Report ID");
+        }
+
         unsigned int ProjectView::GetListMaterialsOption()
         {
             TrekStar::Command::CommandHandler commandHandler = TrekStar::Command::CommandHandler (

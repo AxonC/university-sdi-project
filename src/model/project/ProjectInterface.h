@@ -57,6 +57,7 @@ namespace TrekStar
             virtual void AddBoxOfficeReport(const std::shared_ptr<BoxOfficeReport> &) = 0;
             virtual void AddBoxOfficeReports(const std::vector<std::shared_ptr<BoxOfficeReport>> &) = 0;
             virtual unsigned long long int GetTotalBoxOfficeRevenue() const = 0;
+            virtual void RemoveBoxOfficeReport(const std::shared_ptr<BoxOfficeReport> &) = 0;
         };
     }
 }

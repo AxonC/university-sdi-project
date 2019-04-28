@@ -292,6 +292,18 @@ namespace TrekStar
             return initial;
         }
 
+        void Project::RemoveBoxOfficeReport(const std::shared_ptr<BoxOfficeReport> & boxOfficeReport)
+        {
+            auto search = std::find(this->boxOfficeReports.begin(), this->boxOfficeReports.end(), boxOfficeReport);
+
+            if ( search == this->boxOfficeReports.end() )
+            {
+                throw std::out_of_range("Box office report not found.");
+            }
+
+            this->boxOfficeReports.erase(search);
+        }
+
         void to_json(json & j, const SerialisedProject & project)
         {
             j = json
