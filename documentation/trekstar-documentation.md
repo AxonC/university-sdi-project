@@ -25,9 +25,11 @@ header-includes: |
 	- [Callum Carney (N0741707) - Member C](#callum-carney-n0741707---member-c)
 	- [Matthew Robinson (N0724629) - Member B](#matthew-robinson-n0724629---member-b)
 - [System Description](#system-description)
-	- [Cohesion and Coupling Considerations](#cohesion-and-coupling-considerations)
-		- [Cohesion](#cohesion)
-		- [Coupling](#coupling)
+- [Class Diagram](#class-diagram)
+- [Cohesion and Coupling Considerations](#cohesion-and-coupling-considerations)
+	- [Cohesion](#cohesion)
+	- [Coupling](#coupling)
+- [Sequence Diagram](#sequence-diagram)
 - [Component Diagram](#component-diagram)
 - [Deployment Diagram](#deployment-diagram)
 	- [Individual Installation](#individual-installation)
@@ -51,6 +53,7 @@ header-includes: |
 	- [Binary Search](#binary-search)
 		- [Explaination](#explaination-1)
 		- [Justification](#justification-1)
+- [Test Plan](#test-plan)
 - [UI Screenshots](#ui-screenshots)
 	- [Main Menu](#main-menu)
 	- [View Mode](#view-mode)
@@ -176,6 +179,7 @@ header-includes: |
 * Deployment diagrams.
 * An explanation of the internal data structures used and the reason of the choices.
 * Examples (screen shots) of user interface.
+* Test Plan
 * A user manual and instruction of the software. (regardless if your software is based on GUI or console interface).
 * An explanation of any C++ library used.
 * An explanation about the software testing process and metrics.
@@ -216,7 +220,7 @@ The Trekstar system has been developed in order to allow TrekStar Pictures to ac
 
 \begin{figure}
     \makebox[\linewidth]{
-		\includegraphics[width=1.16\linewidth]{images/class-diagrams/class-diagram-models.jpg}
+		\includegraphics[width=1.13\linewidth]{images/class-diagrams/class-diagram-models.jpg}
     }
 	\caption{Class diagram} \label{fig:class_diagram}
 \end{figure}
@@ -306,9 +310,9 @@ These two deployments are different due to the change in the data storage locati
 
 However, no matter where the application is installed the following Operating Systems are supported:
 
-* Windows
-* Mac OS
-* Linux
+- Windows
+- Mac OS
+- Linux
 
 On the following pages you can find a visual representation of the aforementioned Deployment scenarios.
 
@@ -330,7 +334,7 @@ With a large number of *materials* defined within the business rules, it was app
 
 ![MaterialFactory UML Class Diagram](images/class-diagrams/material-factory.jpg)
 
-The advantages of this pattern is that new materials types can easily be added by adding a small conditional statement in this class. This provides a level of abstraction and means that this class has only a single responsibility - to construct materials - removing this logic from the consuming object. This helps with the issue of coupling as functional cohesion is achieved. Because of the abstraction, it wouldn't mean any changes would necesarily have to occur in the consuming class.
+The advantages of this pattern is that new materials types can easily be added by adding a small conditional statement in this class. This provides a level of abstraction and means that this class has only a single responsibility - to construct materials - removing this logic from the consuming object. This helps with the issue of coupling as functional cohesion is achieved. Because of the abstraction, it wouldn't mean any changes would necessarily have to occur in the consuming class.
 
 ## Singleton
 
@@ -344,16 +348,16 @@ A common issue with this pattern is the issue of multithreading, particularly wi
 
 ## Architecture Presentation
 
-Architecture tradeoff analysis method (ATAM) was used to decide on an arcitecture which was to be followed for the development of the Trekstar Project Management System.
+Architecture tradeoff analysis method (ATAM) was used to decide on an architecture which was to be followed for the development of the Trekstar Project Management System.
 
 ### Model-View-Controller
 MVC is driven by interaction. The use of Views to prompt their respective controllers to modify the model and subsequently update the view in real time fits the requirements of the Trekstar system. Models act as the data store for all of the related objects within the system. Controllers manipulate the data in the models through an exposed interface on the model objects
 
 ## Utility Tree
 
- The management of projects requires fast, realtime interaction (Top 6 Most Important Benefits of MVC Architecture, 2017). The requirements gathered from Trekstar meant that some of the data needs to be presented in a different manner (e.g. displaying the contents of a double sided DVD). Due the benefit of MVC being able to present data in multiple formats, this made it an ideal choice. One of the stretch goals of the project was to provide the user with a Graphical User Interface (GUI). By using MVC, it will be easier to produce views for a GUI rather than a console based interface as only one component of the system (the views) will need to be changed out.
+ The management of projects requires fast, real time interaction (Top 6 Most Important Benefits of MVC Architecture, 2017). The requirements gathered from Trekstar meant that some of the data needs to be presented in a different manner (e.g. displaying the contents of a double sided DVD). Due the benefit of MVC being able to present data in multiple formats, this made it an ideal choice. One of the stretch goals of the project was to provide the user with a Graphical User Interface (GUI). By using MVC, it will be easier to produce views for a GUI rather than a console based interface as only one component of the system (the views) will need to be changed out.
 
-As previously mentioned in other sections, separating the logic for presenting and performing the business model provides benefits with regards to de-coupling and setting clear boundaries within the system. Given that the components of the MVC architecture are independent of eachother, they can be developed in isolation. Within the context of the project, where individual members are responsible for different sections of the project - e.g. one for data structures & one for the user interface - the development of these components could happen in tandem.
+As previously mentioned in other sections, separating the logic for presenting and performing the business model provides benefits with regards to de-coupling and setting clear boundaries within the system. Given that the components of the MVC architecture are independent of each other, they can be developed in isolation. Within the context of the project, where individual members are responsible for different sections of the project - e.g. one for data structures & one for the user interface - the development of these components could happen in tandem.
 
 \newpage
 
@@ -400,10 +404,10 @@ Merge sort is a divide and conquer sorting algorithm where the list recursively 
 The list of projects is split into two halves. Each half then goes through a similar process whereby the halves are repeatedly split until they are of length one, which is, by definition, a sorted list.
 
 The sublists in each half are then merged together by following this process until all projects are in the merged list:
-* compare the first project in the left half with the first project in the right half;
-* if the project in the left half is less than the project in the right half, add the project from the left half to the merged list and read the next project from the left half;
-* if the project in the right half is less than the project in the left half, add the project from the right half to the merged list and read the next project from the right half; and
-* once either list is empty, any remaining projects are added to the merged list.
+- compare the first project in the left half with the first project in the right half;
+- if the project in the left half is less than the project in the right half, add the project from the left half to the merged list and read the next project from the left half;
+- if the project in the right half is less than the project in the left half, add the project from the right half to the merged list and read the next project from the right half; and
+- once either list is empty, any remaining projects are added to the merged list.
 
 The two halves are then merged together by following the same process above until all projects are in the merged list. As merge sort is an "in-place" sorting algorithm and the list of project was passed by reference, there is no return value. The list of projects is now sorted and can be used as such from where the merge sort function was originally called.
 
@@ -440,6 +444,151 @@ After these stages have been completed, the value of *result* can be returned. T
 A movie company, such as TrekStar, may have a large number of projects. It is important that searching these projects is efficient; the binary search algorithm avoids checking every project in the list. This is because comparisons are made to determine which half of the list the target project resides within. As a result, on each iteration, half of the project list is discarded.
 
 Further discussion of the time complexity of binary search can be found in [INSERT SECTION LINK HERE].
+
+\newpage
+
+# Test Plan
+
+| Test No | Requirement | Type of Test|Expected Result|Actual Result|Workaround|Retest|
+| :-----: | -------------------------- | ----------|----------------------|---------------|------------|--------|
+| 1     |The application opens and displays the main menu with options| Valid | The application opens and displays 3 options |The application opens and displays 3 options|N/A|N/A|
+| 2    	|Pressing 1 will open the View Mode | Valid  | View mode will open|View mode opens|N/A|N/A|
+| 3     |Pressing 2 will open Maintenance Mode         |Valid  |Maintenance Mode will open|Maintenance mode opens|N/A|N/A|
+| 4     |Pressing 3 will close the application gracefully       |Valid  |The application will close gracefully|The application closes gracefully|N/A|N/A|
+| 4    	|Inserting an invalid value on the main menu will throw "Invalid Command"         |Invalid  |The application will throw "Invalid Command"|The application throws invalid command|N/A|N/A|
+| 5     |Maintenance Mode menu loads|Valid  |The maintenance mode view will open and display 12 options|The maintenance mode menu opens and shows 12 options|N/A|N/A|
+| 6     |Pressing 1 will open the Add Project functionality         |Valid  |Add Project will open|Add Project opens|N/A|N/A|
+|7 |Pressing 2 will open the Update Project functionality|Valid|Update Project will open|Update Project opens|N/A|N/A|
+|8 |Pressing 3 will open the Remove Project functionality|Valid|Remove Project will open|Remove Project opens|N/A|N/A|
+|9 |Pressing 4 will open the Add Project Materials functionality|Valid|Add Project Materials will open|Add Project Materials opens|N/A|N/A|
+|10 |Pressing 5 will open the Update Project Materials functionality|Valid|Update Project Materials will open|Update Project Materials opens|N/A|N/A|
+|11 |Pressing 6 will open the Remove Project Materials functionality|Valid|Remove Project Materials will open|Remove Project Materials opens|N/A|N/A|
+|12 |Pressing 7 will open the Add Project Crew functionality|Valid|Add Project Crew will open|Add Project crew opens|N/A|N/A|
+|13 |Pressing 8 will open the Update Project Crew functionality|Valid|Update Project Crew will open|Update Project crew opens|N/A|N/A|
+|14 |Pressing 9 will open the Remove Project Crew functionality|Valid|Remove Project Crew will open|Remove Project crew opens|N/A|N/A|
+|15 |Pressing 10 will open the Add Box Office Report functionality|Valid|Add Box Office Report will open|Add Box Office Report opens|N/A|N/A|
+|16 |Pressing 11 will open the Remove Box Office Report functionality|Valid|Remove Box Office Report will open|Remove Box Office Report opens|N/A|N/A|
+|17 |Pressing 12 will return back to the main menu|Valid|The main menu will open|The main menu opens|N/A|N/A|
+|18    	|Inserting an invalid value on the maintenance menu will throw "Invalid Command"         |Invalid  |The application will throw "Invalid Command"|The application throws invalid command|N/A|N/A|
+|19 |Inserting a value into the Title input on Add Project saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|20 |Inserting a value into the Summary input on Add Project saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|21 |Inserting a value into the Released input on Add Project saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|22 |Inserting a value into the Playing In Theatres input on Add Project saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|23 |Inserting a value into the Number of Keywords input on Add Project saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|24 |Inserting a value into the Keyword input on Add Project saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|25 |Inserting an invalid value into the Released input on Add Project requests the information to be typed again|Invalid|The value will be requested again|The value is requested again|N/A|N/A|
+|26 |Inserting an invalid value into the Playing in Theatres input on Add Project requests the information to be typed again|Invalid|The value will be requested again|The value is requested again|N/A|N/A|
+|27 |Inserting an invalid value into the Number of Keywords input on Add Project requests the information to be typed again|Invalid|The value will be requested again|The value is requested again|N/A|N/A|
+|28 |Pressing 1 will open the Edit Title functionality|Valid|Edit Title will open|Edit Title opens|N/A|N/A|
+|29 |Pressing 2 will open the Edit Summary functionality|Valid|Edit Summary will open|Edit Summary opens|N/A|N/A|
+|30 |Pressing 3 will open the Edit Released functionality|Valid|Edit Released will open|Edit Released opens|N/A|N/A|
+|31 |Pressing 4 will open the Edit Playing in Theatres functionality|Valid|Playing in Theatres will open|Playing in Theatres opens|N/A|N/A|
+|32 |Pressing 5 will open the Edit Existing Keywords functionality|Valid|Edit Existing Keywords will open|Edit Existing Keywords opens|N/A|N/A|
+|33 |Pressing 6 will open the Edit Crew functionality|Valid|Edit Crew will open|Edit Crew opens|N/A|N/A|
+|34 |Pressing 7 will return to the Maintenance Menu|Valid|Maintenance Menu will open|Maintenance Menu opens|N/A|N/A|
+|35    	|Inserting an invalid value on the update project menu will throw "Invalid Command"         |Invalid  |The application will throw "Invalid Command"|The application throws invalid command|N/A|N/A|
+|36 |Inserting a value into the Title input on Update Project saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|37 |Inserting a value into the Summary input on Update Project saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|38 |Inserting a value into the Released input on Update Project saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|39 |Inserting a value into the Playing In Theatres input on Update Project saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|40 |Inserting a value into the Number of Keywords input on Update Project selects the keyword|Valid|The value is selected and the application moves onto the update keyword functionality|The value is successfully selected and the application moves onto the update keyword screen|N/A|N/A|
+|41 |Inserting a value into the Keyword input on Update Project saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|42 |Inserting an invalid value into the Released input on Update Project requests the information to be typed again|Invalid|The value will be requested again|The value is requested again|N/A|N/A|
+|43 |Inserting an invalid value into the Playing in Theatres input on Update Project requests the information to be typed again|Invalid|The value will be requested again|The value is requested again|N/A|N/A|
+|44 |Inserting an invalid value into the Number of Keywords input on Update Project requests the information to be typed again|Invalid|The value will be requested again|The value is requested again|N/A|N/A|
+|45 |Inserting a value into the Crew ID input on Update Project selects the keyword|Valid|The value is selected and the application moves onto the update crew functionality|The value is successfully selected and the application moves onto the update crew screen|N/A|N/A|
+|46 |Inserting a value into the Crew input on Update Project saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|47 |Inserting a Project ID into the Remove Project function removes the Project|Valid|The project will be removed|The project is removed|N/A|N/A|
+|48 |Inserting an invalid Project ID into the Remove Project function requests the ID to be entered again|Invalid|The ProjectID will be requested again|The project is requested again|N/A|N/A|
+|49 |Inserting a Project ID into the Add Project Material function moves onto the Project Material Selection Screen|Valid|The project ID will be inserted and the material selection screen will be loaded|The project ID is inserted and the material selection screen is loaded|N/A|N/A|
+|50 |Pressing 1 will select a DVD as the Material Format and move onto entering details|Valid|DVD will be selected and the application will move onto the input information screen|DVD is selected and the application moves onto the input information screen|N/A|N/A|
+|51 |Pressing 2 will select a Double Sided DVD as the Material Format and move onto entering details|Valid|Double Sided DVD will be selected and the application will move onto the input information screen|Double Sided DVD is selected and the application moves onto the input information screen|N/A|N/A|
+|51 |Pressing 3 will select a Bluray as the Material Format and move onto entering details|Valid|Bluray will be selected and the application will move onto the input information screen|Bluray is selected and the application moves onto the input information screen|N/A|N/A|
+|52 |Pressing 4 will select a VHS as the Material Format and move onto entering details|Valid|VHS will be selected and the application will move onto the input information screen|VHS is selected and the application moves onto the input information screen|N/A|N/A|
+|53 |Pressing 5 will select a Box Set as the Material Format and move onto entering details|Valid|Box Set will be selected and the application will move onto the input information screen|Box Set is selected and the application moves onto the input information screen|N/A|N/A|
+|54    	|Inserting an invalid value on the add project material menu will throw "Invalid Command"         |Invalid  |The application will throw "Invalid Command"|The application throws invalid command|N/A|N/A|
+|55 |Inserting a value into the Audio Format input on Add Project Material saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|56 |Inserting a value into the Run Time input on Add Project Material saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|57 |Inserting a value into the Language input on Add Project Material saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|58 |Inserting a value into the Retail Price input on Add Project Material saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|59 |Inserting a value into the Subtitles input on Add Project Material saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|60 |Inserting a value into the Frame Aspect input on Add Project Material saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|61 |Inserting a value into the Content input on Add Project Material saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|62 |Inserting a value into the Number of Additional Language Tracks input on Add Project Material selects the amount of Additional Language Tracks|Valid|The value is added and the application moves onto the add Additional Language Tracks functionality|The value is successfully added and the application moves onto the add Additional Language Tracks functionality|N/A|N/A|
+|63 |Inserting a value into the Additional Language Track input on Add Project Material saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|64 |Inserting a value into the Number of Additional Subtitle Tracks input on Add Project Material selects the amount of Additional Subtitle Tracks|Valid|The value is added and the application moves onto the add Additional Subtitle Tracks functionality|The value is successfully added and the application moves onto the add Additional Subtitle Tracks functionality|N/A|N/A|
+|65 |Inserting a value into the Additional Subtitle Track input on Add Project Material saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|66 |Inserting a value into the Number of Bonus Features input on Add Project Material selects the amount of Bonus Features|Valid|The value is added and the application moves onto the add Bonus Features functionality|The value is successfully added and the application moves onto the add Bonus Features functionality|N/A|N/A|
+|67 |Inserting a value into the Bonus Features input on Add Project Material saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|68 |Inserting an invalid value into the Number of Additional Language Tracks input on Add Project Material requests the information to be typed again|Invalid|The value will be requested again|The value is requested again|N/A|N/A|
+|69 |Inserting an invalid value into the Number of Additional Subtitle Tracks input on Add Project Material requests the information to be typed again|Invalid|The value will be requested again|The value is requested again|N/A|N/A|
+|70 |Inserting an invalid value into the Number of Bonus Features input on Add Project Material requests the information to be typed again|Invalid|The value will be requested again|The value is requested again|N/A|N/A|
+|71 |Inserting a Project ID into the Update Project Material function moves onto the Project Material Selection Screen|Valid|The project ID will be selected and the select project material screen will be loaded |The project id is selected and the select project material screen is loaded|N/A|N/A|
+|72    	|Inserting an invalid value on the Update Project Material menu will throw "Invalid Command"         |Invalid  |The application will throw "Invalid Command"|The application throws invalid command|N/A|N/A|
+|73 |Inserting a Material ID into the Update Project Material function moves onto the Update DVD functionality|Valid|The material ID will be selected and the update dvd screen will be loaded |The material id is selected and the update dvd screen is loaded|N/A|N/A|
+|74    	|Inserting an invalid value on the Update Project Material Material ID menu will throw "Invalid Command"         |Invalid  |The application will throw "Invalid Command"|The application throws invalid command|N/A|N/A|
+|75     |Pressing 1 will open the Edit Audio Format functionality |Valid  |Edit Audio Format will open|Edit Audio Format opens|N/A|N/A|
+|76 |Pressing 2 will open the Edit Run Time functionality|Valid|Edit Run Time will open|Edit Run Time opens|N/A|N/A|
+|77 |Pressing 3 will open the Edit Language functionality|Valid|Edit Language will open|Edit Language opens|N/A|N/A|
+|78 |Pressing 4 will open the Edit Retail Price functionality|Valid|Edit Retail Price will open|Edit Retail Price opens|N/A|N/A|
+|79 |Pressing 5 will open the Edit Subtitles functionality|Valid|Edit Subtitles will open|Edit Subtitles opens|N/A|N/A|
+|80 |Pressing 6 will open the Edit Frame Aspect functionality|Valid|Edit Frame Aspect will open|Edit Frame Aspect opens|N/A|N/A|
+|81 |Pressing 7 will open the Edit Content functionality|Valid|Edit Content will open|Edit Content opens|N/A|N/A|
+|82 |Pressing 8 will open the Edit Additional Language Tracks functionality|Valid|Edit Language Tracks will open|Edit Language Tracks opens|N/A|N/A|
+|83 |Pressing 9 will open the Edit Additional Subtitle Tracks functionality|Valid|Edit Subtitle Tracks will open|Edit Subtitle Tracks opens|N/A|N/A|
+|84 |Pressing 10 will open the Edit Bonus Features functionality|Valid|Edit Bonus Features will open|Edit Bonus Features opens|N/A|N/A|
+|85 |Pressing 12 will return back to the maintenance menu|Valid|The maintenance menu will open|The maintenance menu opens|N/A|N/A|
+|86    	|Inserting an invalid value on the update project material menu will throw "Invalid Command"         |Invalid  |The application will throw "Invalid Command"|The application throws invalid command|N/A|N/A|
+|87 |Inserting a value into the Audio Format input on Edit Project Material saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|88 |Inserting a value into the Run Time input on Edit Project Material saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|89 |Inserting a value into the Language input on Edit Project Material saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|90 |Inserting a value into the Retail Price input on Edit Project Material saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|91 |Inserting a value into the Subtitles input on Edit Project Material saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|92 |Inserting a value into the Frame Aspect input on Edit Project Material saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|93 |Inserting a value into the Content input on Edit Project Material saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|94 |Inserting a value into the Number of Additional Language Tracks input on Edit Project Material selects the ID of an Additional Language Tracks|Valid|The value is selected and the application moves onto the edit Additional Language Tracks functionality|The value is successfully selected and the application moves onto the edit Additional Language Tracks functionality|N/A|N/A|
+|95 |Inserting a value into the Additional Language Track input on Edit Project Material saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|96 |Inserting a value into the Number of Additional Subtitle Tracks input on Edit Project Material selects the ID of an Additional Subtitle Tracks|Valid|The value is selected and the application moves onto the edit Additional Subtitle Tracks functionality|The value is successfully selected and the application moves onto the edit Additional Subtitle Tracks functionality|N/A|N/A|
+|97 |Inserting a value into the Additional Subtitle Track input on Edit Project Material saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|98 |Inserting a value into the Number of Bonus Features input on Edit Project Material selects the ID of a Bonus Features|Valid|The value is selected and the application moves onto the edit Bonus Features functionality|The value is successfully selected and the application moves onto the edit Bonus Features functionality|N/A|N/A|
+|99 |Inserting a value into the Bonus Features input on Edit Project Material saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|100 |Inserting an invalid value into the Number of Additional Language Tracks input on Edit Project Material requests the information to be typed again|Invalid|The value will be requested again|The value is requested again|N/A|N/A|
+|101 |Inserting an invalid value into the Number of Additional Subtitle Tracks input on Edit Project Material requests the information to be typed again|Invalid|The value will be requested again|The value is requested again|N/A|N/A|
+|102 |Inserting an invalid value into the Number of Bonus Features input on Edit Project Material requests the information to be typed again|Invalid|The value will be requested again|The value is requested again|N/A|N/A|
+|103 |Inserting a Project ID into the Remove Project Material function, the application requests a Material ID to delete|Valid|The project id will be used to select the associated materials and the select material id page will be loaded|The project id is be used to select the associated materials and the select material id page is loaded||N/A|N/A|
+|104 |Inserting an invalid Project ID into the Remove Project function requests the ID to be entered again|Invalid|The ProjectID will be requested again|The project id is requested again|N/A|N/A|
+|105 |Inserting a Material ID into the Remove Project Material function removes the material|Valid|The material will be deleted|The material is deleted||N/A|N/A|
+|106 |Inserting an invalid Material ID into the Remove Project function requests the ID to be entered again|Invalid|The MaterialID will be requested again|The project id is requested again|N/A|N/A|
+|107 |Inserting a Project ID into the Add Crew function moves onto the Crew Information Screen|Valid|The project ID will be selected and the add crew information screen will be loaded |The project id is selected and the add crew information screen is loaded|N/A|N/A|
+|108    	|Inserting an invalid value on the Add Crew menu will throw "Invalid Command"         |Invalid  |The application will throw "Invalid Command"|The application throws invalid command|N/A|N/A|
+|109 |Inserting a value into the Name input on Add Crew saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|110 |Inserting a value into the Job Title input on Add Crew saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|111 |Inserting a Project ID into the Update Crew function moves onto the Crew Selection Screen|Valid|The project ID will be selected and the select crew id screen will be loaded |The project id is selected and the select crew id screen is loaded|N/A|N/A|
+|112 |Inserting an invalid Project ID into the Update Crew function requests the ID to be entered again|Invalid|The ProjectID will be requested again|The project id is requested again|N/A|N/A|
+|111 |Inserting a Crew ID into the Crew Selection function moves onto the Crew Information Update Screen|Valid|The crew ID will be selected and the crew information update screen will be loaded |The crew id is selected and the update crew information screen is loaded|N/A|N/A|
+|112 |Inserting an invalid Crew ID into the Remove Project function requests the ID to be entered again|Invalid|The ProjectID will be requested again|The project id is requested again|N/A|N/A|
+|113     |Pressing 1 will open the Edit Name functionality |Valid  |Edit Name will open|Edit Name opens|N/A|N/A|
+|114 |Pressing 2 will open the Edit Job Title functionality|Valid|Edit Job Title will open|Edit Job Title opens|N/A|N/A|
+|114 |Pressing 3 will return to the maintenance menu|Valid|Maintenance Menu will open|Maintenance Menu opens|N/A|N/A|
+|115    	|Inserting an invalid value on the update crew menu will throw "Invalid Command"         |Invalid  |The application will throw "Invalid Command"|The application throws invalid command|N/A|N/A|
+|116 |Inserting a value into the Name input on Update Crew saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|117 |Inserting a value into the Job Title input on Update Crew saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|118 |Inserting a Project ID into the Remove Crew function moves onto the Crew Removal Select ID Screen|Valid|The project ID will be selected and the crew removal select id screen will be loaded |The project id is selected and the crew removal select id screen is loaded|N/A|N/A|
+|119 |Inserting an invalid Project ID into the Remove Crew function requests the ID to be entered again|Invalid|The ProjectID will be requested again|The project id is requested again|N/A|N/A|
+|120 |Inserting a Material ID into the Crew Removal Select ID function Removes the selected crew member|Valid|The Crew ID will be selected and the crew member will be removed|The crew id is selected and the crew member is removed from the project|N/A|N/A|
+|121 |Inserting an invalid Material ID into the Remove Crew function requests the ID to be entered again|Invalid|The MaterialID will be requested again|The material id is requested again|N/A|N/A|
+|122 |Inserting a Project ID into the Add Box Office Report function moves onto the Add Box Office Report Screen|Valid|The project ID will be selected and the Add Box Office Report screen will be loaded |The project id is selected and the Add Box Office Report screen is loaded|N/A|N/A|
+|123 |Inserting an invalid Project ID into the Remove Crew function requests the ID to be entered again|Invalid|The ProjectID will be requested again|The project id is requested again|N/A|N/A|
+|124 |Inserting a value into the Week Number input on Add Box Office Report saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|125 |Inserting an invalid value into the Week Number input on Add Box Office Report requests the information to be typed again|Invalid|The value will be requested again|The value is requested again|N/A|N/A|
+|126 |Inserting a value into the Revenue input on Add Box Office Report saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|127 |Inserting an invalid value into the Revenue input on Add Box Office Report requests the information to be typed again|Invalid|The value will be requested again|The value is requested again|N/A|N/A|
+|128 |Inserting a value into the Tickets Sold input on Add Box Office Report saves the value to the database|Valid|The value saves to the database|The value is saved to the database|N/A|N/A|
+|129 |Inserting an invalid value into the Tickets Sold input on Add Box Office Report requests the information to be typed again|Invalid|The value will be requested again|The value is requested again|N/A|N/A|
+|130 |Inserting a Project ID into the Remove Box Office Report function moves onto the Remove Box Office Report Screen|Valid|The project ID will be selected and the Remove Box Office Report screen will be loaded |The project id is selected and the Remove Box Office Report screen is loaded|N/A|N/A|
+|131 |Inserting an invalid Project ID into the Remove Box Office Report function requests the ID to be entered again|Invalid|The ProjectID will be requested again|The project id is requested again|N/A|N/A|
+|132 |Inserting a Box Office Report ID into the Remove Box Office Report function removes the box office report|Valid|The box office report will be removed|The box office report is removed|N/A|N/A|
+|133 |Inserting an invalid Box Office Report ID into the Remove Box Office Report function requests the ID to be entered again|Invalid|The Box Office Report ID will be requested again|The box office report id is requested again|N/A|N/A|
 
 \newpage
 
@@ -1519,19 +1668,22 @@ The unit tests written using Google Test allowed us to perform continuous testin
 
 ## Computational Efficiency
 
-When deciding which algorithm to use to search for a project based on its title, it was decided that a linear search would be far too inefficient. Linear search has an average time complexity of *O(n)*; while this would be suitable for smaller datasets, its inefficiency would become more apparant as more projects are added. As a result, it was decided that a binary search should be used, accompanied by a merge sort in order to satisfy the pre-requisites of the binary search.
+When deciding which algorithm to use to search for a project based on its title, it was decided that a linear search would be far too inefficient. Linear search has an average time complexity of *O(n)*; while this would be suitable for smaller datasets, its inefficiency would become more apparent as more projects are added. As a result, it was decided that a binary search should be used, accompanied by a merge sort in order to satisfy the pre-requisites of the binary search.
 
 The binary search has an average time complexity of *O(log n)* and the merge sort has an average time complexity of *O(n log n)*. As a result, despite performing two operations, the overall average time complexity remains logarithmic and therefore scales well when the dataset containing projects grows.
 
 
 ## Reliability
 
-The reliablity of the application was deemed to be good due to the extensive set of unit tests and comprehensive test plan. It was understood that user's actions can not always be predicted and therefore, large amounts of destructive testing proved that the application would not fail due to user input.
+The reliability of the application was deemed to be good due to the extensive set of unit tests and comprehensive test plan. It was understood that user's actions can not always be predicted and therefore, large amounts of destructive testing proved that the application would not fail due to user input.
 
 
 ## Security
 
-???????????
+When working on the project there were multiple considerations around the security of the application, you can see some of the considerations below, however, due to time restrictions it was not feasible to implement the features:
+
+- As a major feature implementation it was a consideration to add User Roles to the application, this would allow an organisation to control who has access to what information or functionality, for example, an organisation could create the reader and writer roles. The writer role would allow assigned users to add projects, project materials, crew, etc and read data. Whereas the reader role would only allow users to view what data has been inputted into the system. We see this addition as an important inclusion into the application as it will help to protect the security/integrity of the data.
+- As a more minor implementation, it was a consideration to add integrity validation to the JSON file to ensure that the database has not been tampered with, this would be achieved by creating a SHA256 hash of the JSON content when the application is gracefully closed and then verifying the hash is the same upon opening the application. This would allow the application to verify that the content has not been tampered with while it was closed, protecting the security and integrity of the application data.
 
 
 ## Portability
@@ -1550,8 +1702,7 @@ The code is well documented and commented and the provided diagrams of the syste
 
 ## Scalability
 
-??????????
-
+When developing the application scalability was considered and the design of the applications database will allow for organisations to release the application via a Group Policy Object (on Windows machines) and report back to the central database that will provide the information to the applications. This means that it is possible to scale the application across all employees.
 
 \newpage
 
@@ -1589,3 +1740,5 @@ During group meetings a member was nominated to write minutes, these minutes wer
 # References
 
 [@infotech_2017]
+
+
