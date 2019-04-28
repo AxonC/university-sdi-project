@@ -31,26 +31,62 @@ namespace TrekStar
 {
     namespace Project
     {
+        /**
+            Class:                 ProjectController
+            Method Name:           ProjectController (constructor)
+            Method Access Control: Public
+
+            Constructs the Project controller based on the base class constructor.
+
+            @param ProjectInterface object
+            @param ViewInterface object
+        */
         ProjectController::ProjectController(ProjectInterface & model, ViewInterface & view) : BaseController()
         {
             this->model = &model;
             this->view = &view;
         }
 
+
+        /**
+            Class:                 ProjectController
+            Method Name:           ShowAll
+            Method Access Control: Public
+
+            Responsible for ordering the view to display all information for the Project.
+        */
         void ProjectController::ShowAll()
         {
             this->view->PresentAll();
         }
 
+
+        /**
+            Class:                 ProjectController
+            Method Name:           ShowList
+            Method Access Control: Public
+
+            Responsible for ordering the view to display a summary list of information for the Project.
+        */
         void ProjectController::ShowList()
         {
             this->view->PresentList();
         }
 
+
+        /**
+            Class:                 ProjectController
+            Method Name:           UpdateProject
+            Method Access Control: Public
+
+            Responsible for determining which attributes of the Project are to be updated.
+        */
         void ProjectController::UpdateProject()
         {
-            unsigned int commandInput = this->GetView()->GetUpdateOption();
+            unsigned int commandInput = this->GetView()->GetUpdateOption();  // Get user selection for the attribute
+                                                                             // they wish to update.
 
+            // Call the relevant private member function of ProjectController based on user selection.
             switch ( commandInput )
             {
             case 1:
@@ -76,6 +112,14 @@ namespace TrekStar
             }
         }
 
+
+        /**
+           Class:                 ProjectController
+           Method Name:           AddNew
+           Method Access Control: Public
+
+           Responsible for allowing the user to create a new Project.
+        */
         void ProjectController::AddNew()
         {
             this->UpdateTitle();
@@ -87,6 +131,15 @@ namespace TrekStar
             _logger->info("Project " + std::to_string(newProject->GetId()) + " was added with the title of " + newProject->GetTitle());
         }
 
+
+        /**
+           Class:                 ProjectController
+           Method Name:           ListMaterials
+           Method Access Control: Public
+
+           Responsible for interfacing with the View/Controller for the Materials in the Project and allowing the user
+           to view their details.
+        */
         void ProjectController::ListMaterials()
         {
             if ( this->GetModel()->GetMaterials().empty() )
@@ -117,6 +170,14 @@ namespace TrekStar
             }
         }
 
+
+        /**
+           Class:                 ProjectController
+           Method Name:           AddMaterial
+           Method Access Control: Public
+
+           Responsible for interfacing with the View/Controller for a new Material to be added to the Project.
+        */
         void ProjectController::AddMaterial()
         {
             std::shared_ptr<Material::Material> material = nullptr;
@@ -179,6 +240,14 @@ namespace TrekStar
             }
         }
 
+
+        /**
+            Class:                 ProjectController
+            Method Name:           UpdateMaterials
+            Method Access Control: Public
+
+            Responsible for interfacing with the View/Controller for a Material whose attributes are to be updated.
+        */
         void ProjectController::UpdateMaterials()
         {
             if ( this->GetModel()->GetMaterials().empty() )
@@ -228,6 +297,14 @@ namespace TrekStar
             }
         }
 
+
+        /**
+            Class:                 ProjectController
+            Method Name:           RemoveMaterial
+            Method Access Control: Public
+
+            Responsible for interfacing with the View/Controller for a Material that is to be removed from the Project.
+        */
         void ProjectController::RemoveMaterial()
         {
             if ( this->GetModel()->GetMaterials().empty() )
@@ -242,6 +319,15 @@ namespace TrekStar
             this->GetModel()->RemoveMaterial(material);
         }
 
+
+        /**
+           Class:                 ProjectController
+           Method Name:           ListCrew
+           Method Access Control: Public
+
+           Responsible for interfacing with the View/Controller for the Crew in the Project and allowing the user
+           to view their details.
+        */
         void ProjectController::ListCrew()
         {
             if ( this->GetModel()->GetCrew().empty() )
@@ -272,6 +358,14 @@ namespace TrekStar
             }
         }
 
+
+        /**
+           Class:                 ProjectController
+           Method Name:           AddCrew
+           Method Access Control: Public
+
+           Responsible for interfacing with the View/Controller for a new Crew to be added to the Project.
+        */
         void ProjectController::AddCrew()
         {
             People::Crew crew;
@@ -284,6 +378,14 @@ namespace TrekStar
             this->GetModel()->AddCrew(std::make_shared<People::Crew>(crew));
         }
 
+
+        /**
+            Class:                 ProjectController
+            Method Name:           UpdateCrew
+            Method Access Control: Public
+
+            Responsible for interfacing with the View/Controller for a Crew whose attributes are to be updated.
+        */
         void ProjectController::UpdateCrew()
         {
             if ( this->GetModel()->GetCrew().empty() )
@@ -302,6 +404,14 @@ namespace TrekStar
             controller.Update();
         }
 
+
+        /**
+            Class:                 ProjectController
+            Method Name:           RemoveCrew
+            Method Access Control: Public
+
+            Responsible for interfacing with the View/Controller for a Crew that is to be removed from the Project.
+        */
         void ProjectController::RemoveCrew()
         {
             if ( this->GetModel()->GetCrew().empty() )
@@ -316,6 +426,15 @@ namespace TrekStar
             this->GetModel()->RemoveCrew(crew);
         }
 
+
+        /**
+           Class:                 ProjectController
+           Method Name:           ListBoxOfficeReports
+           Method Access Control: Public
+
+           Responsible for interfacing with the View/Controller for the BoxOfficeReports in the Project and allowing the
+           user to view their details.
+        */
         void ProjectController::ListBoxOfficeReports()
         {
             if ( this->GetModel()->GetBoxOfficeReports().empty() )
@@ -346,6 +465,14 @@ namespace TrekStar
             }
         }
 
+
+        /**
+           Class:                 ProjectController
+           Method Name:           AddBoxOfficeReport
+           Method Access Control: Public
+
+           Responsible for interfacing with the View/Controller for a new BoxOfficeReport to be added to the Project.
+        */
         void ProjectController::AddBoxOfficeReport()
         {
             TrekStar::Project::BoxOfficeReport boxOfficeReport;
@@ -358,6 +485,15 @@ namespace TrekStar
             this->GetModel()->AddBoxOfficeReport(std::make_shared<TrekStar::Project::BoxOfficeReport>(boxOfficeReport));
         }
 
+
+        /**
+            Class:                 ProjectController
+            Method Name:           RemoveBoxOfficeReport
+            Method Access Control: Public
+
+            Responsible for interfacing with the View/Controller for a BoxOfficeReport that is to be removed from the
+            Project.
+        */
         void ProjectController::RemoveBoxOfficeReport()
         {
             if ( this->GetModel()->GetBoxOfficeReports().empty() )
@@ -372,6 +508,15 @@ namespace TrekStar
             this->GetModel()->RemoveCrew(crew);
         }
 
+
+        /**
+            Class:                 ProjectController
+            Method Name:           ActorExists
+            Method Access Control: Public
+
+            Responsible for checking if the Project has a Crew member that matches user's search criteria for an actor
+            with a specified name.
+        */
         bool ProjectController::ActorExists(std::string & searchCriteria)
         {
             std::transform(searchCriteria.begin(), searchCriteria.end(), searchCriteria.begin(), ::tolower);
@@ -393,26 +538,66 @@ namespace TrekStar
             return false;
         }
 
+
+        /**
+          Class:                 ProjectController
+          Method Name:           UpdateTitle
+          Method Access Control: Public
+
+          Responsible for allowing the title of the Project to be updated.
+        */
         void ProjectController::UpdateTitle()
         {
             this->GetModel()->SetTitle(this->GetView()->GetNewTitle());
         }
 
+
+        /**
+          Class:                 ProjectController
+          Method Name:           UpdateSummary
+          Method Access Control: Public
+
+          Responsible for allowing the sumary of the Project to be updated.
+        */
         void ProjectController::UpdateSummary()
         {
             this->GetModel()->SetSummary(this->GetView()->GetNewSummary());
         }
 
+
+        /**
+          Class:                 ProjectController
+          Method Name:           UpdateReleased
+          Method Access Control: Public
+
+          Responsible for allowing the released status of the Project to be updated.
+        */
         void ProjectController::UpdateReleased()
         {
             this->GetModel()->SetReleased(this->GetView()->GetNewReleased());
         }
 
+
+        /**
+          Class:                 ProjectController
+          Method Name:           UpdatePlayingInTheatres
+          Method Access Control: Public
+
+          Responsible for allowing the playing in theatres status of the Project to be updated.
+        */
         void ProjectController::UpdatePlayingInTheatres()
         {
             this->GetModel()->SetPlayingInTheatres(this->GetView()->GetNewPlayingInTheatres());
         }
 
+
+        /**
+          Class:                 ProjectController
+          Method Name:           UpdateKeyword
+          Method Access Control: Public
+
+          Responsible for allowing a keyword for the Project to be updated.
+        */
         void ProjectController::UpdateKeyword()
         {
             this->GetView()->PresentKeywords();
@@ -421,19 +606,47 @@ namespace TrekStar
             this->GetModel()->SetKeyword(keywordNo, this->GetView()->GetNewKeyword(keywordNo));
         }
 
+
+        /**
+          Class:                 ProjectController
+          Method Name:           LogMaterialAdd
+          Method Access Control: Public
+
+          Responsible for logging events where new Materials were added to the Project.
+        */
         void ProjectController::LogMaterialAdd(const std::shared_ptr<Material::Material>& material)
         {
             _logger->info("Material " + std::to_string(material->GetId()) + " was added to project " + std::to_string(this->GetModel()->GetId()));
         }
 
-        ProjectInterface* ProjectController::GetModel()
-        {
-            return dynamic_cast<ProjectInterface*>(this->model);
-        }
 
+        /**
+           Class:                 ProjectController
+           Method Name:           GetView
+           Method Access Control: Protected
+
+           Responsible for allowing access to the Projects view object.
+
+           @return A pointer to the ProjectView object.
+        */
         ProjectView* ProjectController::GetView()
         {
             return dynamic_cast<ProjectView*>(this->view);
+        }
+
+
+        /**
+           Class:                 ProjectController
+           Method Name:           GetModel
+           Method Access Control: Private
+
+           Responsible for accessing the Project interface.
+
+           @return A pointer to the ProjectInterface object.
+        */
+        ProjectInterface* ProjectController::GetModel()
+        {
+            return dynamic_cast<ProjectInterface*>(this->model);
         }
     }
 }

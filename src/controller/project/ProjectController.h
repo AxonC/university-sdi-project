@@ -40,14 +40,15 @@ namespace TrekStar
             bool ActorExists(std::string & searchCriteria);
 
         private:
-            ProjectInterface* GetModel();
-            ProjectView* GetView();
             void UpdateTitle();
             void UpdateSummary();
             void UpdateReleased();
             void UpdatePlayingInTheatres();
             void UpdateKeyword();
             void LogMaterialAdd(const std::shared_ptr<Material::Material> & material);
+
+            ProjectView* GetView();
+            ProjectInterface* GetModel();
         };
     }
 }
