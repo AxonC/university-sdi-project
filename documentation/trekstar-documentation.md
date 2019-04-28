@@ -153,11 +153,8 @@ header-includes: |
 # Todo - **_remove me before submission pls_**
 
 ## User Guide
-  - Add back in image that shows keywords when adding a project when this is reimplemented.
   - Change all figure values where text is CHANGEFIGUREVALUE once all images added.
-  - Resolve image issue on [Edit Packaging](#edit-packaging) once bugs have been fixed
   - Add class diagram (and any other landscape picture pages) to the TOC on last save
-  - Ensure Remove box office bug is fixed
 
 \newpage
 
@@ -506,9 +503,7 @@ Further discussion of the time complexity of binary search can be found in [INSE
 
 ### Add Project
 
-![Visual representation of Add Project](images/ui-screenshots/add-project-need-fix.png)
-
-Requires fix when keyword is back
+![Visual representation of Add Project](images/ui-screenshots/add-project.png)
 
 \newpage
 
