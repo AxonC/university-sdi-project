@@ -186,8 +186,20 @@ namespace TrekStar
             crew.erase(search);
         }
 
+        /**
+            Class:                 Project
+            Method Name:           ReleaseProject
+            Method Access Control: Public
+
+            Set a project to released, following business rules.
+        */
         void Project::ReleaseProject()
         {
+            if (this->playingInTheatres)
+            {
+                throw std::domain_error("A Project cannot be released whilst still playing in theatres.");
+            }
+
             this->released = true;
         }
 

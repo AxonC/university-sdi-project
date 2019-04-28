@@ -54,6 +54,21 @@ namespace TrekStarTest {
             std::streambuf* storedStreambuf_;
         };
 
+        TEST_F(ProjectTest, ProjectCanBeReleasedWhenNotPlayingInTheatres)
+        {
+            project.SetPlayingInTheatres(false);
+            project.ReleaseProject();
+
+            ASSERT_TRUE(project.GetReleased());
+        }
+
+        TEST_F(ProjectTest, ProjectCantBeReleasedWhenStillInTheatres)
+        {
+            project.SetPlayingInTheatres(true);
+
+            ASSERT_THROW(project.ReleaseProject(), std::domain_error);
+        }
+
         TEST_F(ProjectTest, CanAddMaterialsWhenValid)
         {
             releasedProject.ReleaseProject();
