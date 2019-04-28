@@ -164,35 +164,20 @@ header-includes: |
 # Contributions
 
 ## Callum Axon (N0727303) - Member A
-* Class Diagram.
-* One of the data structures - stack.
-* A description of how cohesion and coupling have been considered in the class design.
-* A justification and explanation of how cohesion and coupling have been considered in the design.
-* An explanation of the planned architecture and the reason of the choices according to ATAM (follow step 4 and 5, i.e., identify possible architecture styles and choose one with respect to the identified utility tree, you need to explain the reason).
-* An explanation of any design pattern used.
+* S1 - Cohesion and coupling.
+* S2 - Class diagram.
+* S9 - Stack data structure.
   
 ## Callum Carney (N0741707) - Member C
-* A cover page (showing the full name and student ID of all members).
-* A table of contents page and identifying who has contributed to which individual tasks.
-* A general description of the system.
-* Component diagrams.
-* Deployment diagrams.
-* An explanation of the internal data structures used and the reason of the choices.
-* Examples (screen shots) of user interface.
-* Test Plan
-* A user manual and instruction of the software. (regardless if your software is based on GUI or console interface).
-* An explanation of any C++ library used.
-* An explanation about the software testing process and metrics.
-* Meeting minutes.
+* S5: Component diagram.
+* S6: Deployment diagram.
+* S10: Binary search algorithm.
 
 ## Matthew Robinson (N0724629) - Member B
-* A sequence diagram for a case/scenario of interest.
-* State machine diagram for a class.
-* One of the sorting studied during the lectures - merge sort.
-* One of the searching algorithms studied during the lectures - binary search.
-* A console interface that allows user to interact with the software system.
-* An explanation of the search or sorting algorithm used and the reason of the choices. Explain how the algorithm will work in the system with detailed steps.
-* Discussion and conclusion about your results (reflection on testing approach, reflection on performance such as computational efficiency, reliability, security, portability, maintainability, scalability, etc. design of system complexity using e.g. big O- notation).
+* S3: A sequence diagram for a use case.
+* S4: State machine diagram for a class.
+* S10: Merge sort algorithm.
+* S13: Console interface.
 
 All other contributions have been completed as part of a group effort.
 
@@ -260,7 +245,7 @@ Due to the relationships between different objects within the system, some coupl
 
 \begin{figure}
     \makebox[\linewidth]{
-		\includegraphics[width=0.5\linewidth]{images/sequence-diagram/sequence-diagram.png}
+		\includegraphics[width=0.5\linewidth]{images/interaction-design/sequence-diagram.png}
     }
 	\caption{Sequence diagram} \label{fig:sequence_diagram}
 \end{figure}
@@ -282,7 +267,7 @@ Due to the relationships between different objects within the system, some coupl
 
 \begin{figure}
     \makebox[\linewidth]{
-		\includegraphics[width=1.16\linewidth]{images/state-machine-diagram/state-machine-diagram.png}
+		\includegraphics[width=1.16\linewidth]{images/interaction-design/state-machine-diagram.png}
     }
 	\caption{State diagram} \label{fig:state_diagram}
 \end{figure}

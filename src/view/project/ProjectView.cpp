@@ -178,7 +178,7 @@ namespace TrekStar
                 released = "yes";
             }
 
-            std::cout << "Released [current: " << released << "]: ";
+            std::cout << "Released [current: " << released << "] (y/n): ";
             return TrekStar::Command::GetBoolInput();
         }
 
@@ -190,7 +190,7 @@ namespace TrekStar
                 playingInTheatres = "yes";
             }
 
-            std::cout << "Playing In Theatres [current: " << playingInTheatres << "]: ";
+            std::cout << "Playing In Theatres [current: " << playingInTheatres << "] (y/n): ";
             return TrekStar::Command::GetBoolInput();
         }
 
