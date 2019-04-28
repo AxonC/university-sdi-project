@@ -14,10 +14,6 @@ namespace TrekStar
     {
         class MaterialController : public BaseController
         {
-        protected:
-            MaterialInterface* model;
-            ViewInterface* view;
-
         public:
             MaterialController() = default;
             MaterialController(MaterialInterface & model, ViewInterface & view);
@@ -26,19 +22,23 @@ namespace TrekStar
             void ShowAll() override;
             void ShowList() override;
 
+            virtual void Update();
+            virtual void AddNew();
+
+        protected:
             void SetFormat(const std::string & format);
             void UpdateAudioFormat();
             void UpdateRunTime();
             void UpdateLanguage();
             void UpdateRetailPrice();
             void UpdateSubtitles();
-            void UpdateFrameAspect();;
+            void UpdateFrameAspect();
 
-            virtual void Update();
-            virtual void AddNew();
-
-            virtual MaterialInterface* GetModel();
             virtual MaterialView* GetView();
+            virtual MaterialInterface* GetModel();
+
+            ViewInterface* view;
+            MaterialInterface* model;
         };
     }
 }
