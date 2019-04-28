@@ -23,10 +23,10 @@ namespace TrekStar
 
         /**
             Class:                 MaterialController
-            Method Name:           Show All
+            Method Name:           ShowAll
             Method Access Control: Public
 
-            Responsible for ordering the view to display all information for the material.
+            Responsible for ordering the view to display all information for the Material.
         */
         void MaterialController::ShowAll()
         {
@@ -36,10 +36,10 @@ namespace TrekStar
 
         /**
             Class:                 MaterialController
-            Method Name:           Show All
+            Method Name:           ShowList
             Method Access Control: Public
 
-            Responsible for ordering the view to display a summary list of information for the material.
+            Responsible for ordering the view to display a summary list of information for the Material.
         */
         void MaterialController::ShowList()
         {
@@ -107,7 +107,7 @@ namespace TrekStar
         /**
           Class:                 MaterialController
           Method Name:           SetFormat
-          Method Access Control: Protected
+          Method Access Control: Public
 
           Responsible for allowing the format of the Material to be set.
         */
@@ -120,7 +120,7 @@ namespace TrekStar
         /**
           Class:                 MaterialController
           Method Name:           UpdateAudioFormat
-          Method Access Control: Protected
+          Method Access Control: Public
 
           Responsible for allowing the audio format of the Material to be updated.
         */
@@ -133,7 +133,7 @@ namespace TrekStar
         /**
           Class:                 MaterialController
           Method Name:           UpdateRunTime
-          Method Access Control: Protected
+          Method Access Control: Public
 
           Responsible for allowing the run time of the Material to be updated.
         */
@@ -146,7 +146,7 @@ namespace TrekStar
         /**
           Class:                 MaterialController
           Method Name:           UpdateLanguage
-          Method Access Control: Protected
+          Method Access Control: Public
 
           Responsible for allowing the language of the Material to be updated.
         */
@@ -159,7 +159,7 @@ namespace TrekStar
         /**
           Class:                 MaterialController
           Method Name:           UpdateLanguage
-          Method Access Control: Protected
+          Method Access Control: Public
 
           Responsible for allowing the retail price of the Material to be updated.
         */
@@ -172,7 +172,7 @@ namespace TrekStar
         /**
           Class:                 MaterialController
           Method Name:           UpdateSubtitles
-          Method Access Control: Protected
+          Method Access Control: Public
 
           Responsible for allowing the subtitles of the Material to be updated.
         */
@@ -185,7 +185,7 @@ namespace TrekStar
         /**
           Class:                 MaterialController
           Method Name:           UpdateFrameAspect
-          Method Access Control: Protected
+          Method Access Control: Public
 
           Responsible for allowing the frame aspect of the Material to be updated.
         */

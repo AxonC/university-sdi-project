@@ -16,6 +16,9 @@ namespace TrekStar
             CrewController(CrewInterface & model, ViewInterface & view);
             ~CrewController() = default;
 
+            void ShowAll() override;
+            void ShowList() override;
+
             void Update();
             void AddNew();
 

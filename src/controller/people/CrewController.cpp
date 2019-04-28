@@ -23,6 +23,32 @@ namespace TrekStar
 
         /**
             Class:                 CrewController
+            Method Name:           ShowAll
+            Method Access Control: Public
+
+            Responsible for ordering the view to display all information for the Crew.
+        */
+        void CrewController::ShowAll()
+        {
+            this->view->PresentAll();
+        }
+
+
+        /**
+            Class:                 CrewController
+            Method Name:           ShowList
+            Method Access Control: Public
+
+            Responsible for ordering the view to display a summary list of information for the Crew.
+        */
+        void CrewController::ShowList()
+        {
+            this->view->PresentList();
+        }
+
+
+        /**
+            Class:                 CrewController
             Method Name:           Update
             Method Access Control: Public
 

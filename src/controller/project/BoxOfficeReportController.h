@@ -27,8 +27,8 @@ namespace TrekStar
             void AddRevenue();
             void AddTicketsSold();
 
-            BoxOfficeReportInterface* GetModel();
             BoxOfficeReportView* GetView();
+            BoxOfficeReportInterface* GetModel();
         };
     }
 }

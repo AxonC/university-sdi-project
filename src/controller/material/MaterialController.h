@@ -25,7 +25,6 @@ namespace TrekStar
             virtual void Update();
             virtual void AddNew();
 
-        protected:
             void SetFormat(const std::string & format);
             void UpdateAudioFormat();
             void UpdateRunTime();
@@ -34,6 +33,7 @@ namespace TrekStar
             void UpdateSubtitles();
             void UpdateFrameAspect();
 
+        protected:
             virtual MaterialView* GetView();
             virtual MaterialInterface* GetModel();
 
