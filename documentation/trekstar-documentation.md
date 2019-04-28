@@ -1,5 +1,5 @@
 ---
-title: "Software Design and Implementation"
+title: "Software Design and Implementation - Group 17"
 author: [Callum Axon (N0727303), Callum Carney (N0741707), Matthew Robinson (N0724629)]
 subtitle: "TrekStar Software System"
 lang: "en"
