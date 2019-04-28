@@ -364,14 +364,7 @@
 \item
   \protect\hyperlink{table-of-contents}{Table of Contents}
 \item
-  \protect\hyperlink{todo---remove-me-before-submission-pls}{Todo -
-  \textbf{\emph{remove me before submission pls}}}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    \protect\hyperlink{user-guide}{User Guide}
-  \end{itemize}
+  \protect\hyperlink{plagiarism-declaration}{Plagiarism Declaration}
 \item
   \protect\hyperlink{contributions}{Contributions}
 
@@ -403,11 +396,21 @@
     \protect\hyperlink{coupling}{Coupling}
   \end{itemize}
 \item
-  \protect\hyperlink{sequence-diagram}{Sequence Diagram}
+  \protect\hyperlink{interaction-design}{Interaction Design}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \protect\hyperlink{use-case}{Use Case}
+  \item
+    \protect\hyperlink{sequence-diagram}{Sequence Diagram}
+  \item
+    \protect\hyperlink{state-machine-diagram}{State Machine Diagram}
+  \end{itemize}
 \item
   \protect\hyperlink{component-diagram}{Component Diagram}
 \item
-  \protect\hyperlink{deployment-diagram}{Deployment Diagram}
+  \protect\hyperlink{deployment-diagrams}{Deployment Diagrams}
 
   \begin{itemize}
   \tightlist
@@ -766,23 +769,18 @@
 
 \newpage
 
-\hypertarget{todo---remove-me-before-submission-pls}{%
-\section{\texorpdfstring{Todo - \textbf{\emph{remove me before
-submission
-pls}}}{Todo - remove me before submission pls}}\label{todo---remove-me-before-submission-pls}}
+\hypertarget{plagiarism-declaration}{%
+\section{Plagiarism Declaration}\label{plagiarism-declaration}}
 
-\hypertarget{user-guide}{%
-\subsection{User Guide}\label{user-guide}}
+This report and the software it documents is the result of my own work,
+other contributing group members are acknowledged. Any contributions to
+the work by third parties, other than tutors, are stated clearly below
+this declaration. Should this statement prove to be untrue I recognise
+the right and duty of the Board of Examiners to take appropriate action
+in line with the university's regulations on assessment.
 
-\begin{itemize}
-\tightlist
-\item
-  Change all figure values where text is CHANGEFIGUREVALUE once all
-  images added.
-\item
-  Add class diagram (and any other landscape picture pages) to the TOC
-  on last save
-\end{itemize}
+Name: Callum Axon - ID No: N0727303 \newline Name: Callum Carney - ID
+No: N0741707 \newline Name: Matthew Robinson - ID No: N0724629
 
 \newpage
 
@@ -796,22 +794,11 @@ A}\label{callum-axon-n0727303---member-a}}
 \begin{itemize}
 \tightlist
 \item
-  Class Diagram.
+  S1 - Cohesion and coupling.
 \item
-  One of the data structures - stack.
+  S2 - Class diagram.
 \item
-  A description of how cohesion and coupling have been considered in the
-  class design.
-\item
-  A justification and explanation of how cohesion and coupling have been
-  considered in the design.
-\item
-  An explanation of the planned architecture and the reason of the
-  choices according to ATAM (follow step 4 and 5, i.e., identify
-  possible architecture styles and choose one with respect to the
-  identified utility tree, you need to explain the reason).
-\item
-  An explanation of any design pattern used.
+  S9 - Stack data structure.
 \end{itemize}
 
 \hypertarget{callum-carney-n0741707---member-c}{%
@@ -821,32 +808,11 @@ C}\label{callum-carney-n0741707---member-c}}
 \begin{itemize}
 \tightlist
 \item
-  A cover page (showing the full name and student ID of all members).
+  S5: Component diagram.
 \item
-  A table of contents page and identifying who has contributed to which
-  individual tasks.
+  S6: Deployment diagram.
 \item
-  A general description of the system.
-\item
-  Component diagrams.
-\item
-  Deployment diagrams.
-\item
-  An explanation of the internal data structures used and the reason of
-  the choices.
-\item
-  Examples (screen shots) of user interface.
-\item
-  Test Plan
-\item
-  A user manual and instruction of the software. (regardless if your
-  software is based on GUI or console interface).
-\item
-  An explanation of any C++ library used.
-\item
-  An explanation about the software testing process and metrics.
-\item
-  Meeting minutes.
+  S10: Binary search algorithm.
 \end{itemize}
 
 \hypertarget{matthew-robinson-n0724629---member-b}{%
@@ -856,26 +822,15 @@ B}\label{matthew-robinson-n0724629---member-b}}
 \begin{itemize}
 \tightlist
 \item
-  A sequence diagram for a case/scenario of interest.
+  S3/S4: Use Case for Import Project.
 \item
-  State machine diagram for a class.
+  S3: A sequence diagram for import project use case.
 \item
-  One of the sorting studied during the lectures - merge sort.
+  S4: State machine diagram for ProjectController.
 \item
-  One of the searching algorithms studied during the lectures - binary
-  search.
+  S10: Merge sort algorithm.
 \item
-  A console interface that allows user to interact with the software
-  system.
-\item
-  An explanation of the search or sorting algorithm used and the reason
-  of the choices. Explain how the algorithm will work in the system with
-  detailed steps.
-\item
-  Discussion and conclusion about your results (reflection on testing
-  approach, reflection on performance such as computational efficiency,
-  reliability, security, portability, maintainability, scalability, etc.
-  design of system complexity using e.g.~big O- notation).
+  S13: Console interface.
 \end{itemize}
 
 All other contributions have been completed as part of a group effort.
@@ -903,21 +858,18 @@ Pictures to accomplish the following
 
 \newpage
 
-\begin{landscape}
-
-\pagestyle{empty}
-
 \hypertarget{class-diagram}{%
 \section{Class Diagram}\label{class-diagram}}
 
 \begin{figure}
-    \makebox[\linewidth]{
-        \includegraphics[width=1.13\linewidth]{images/class-diagrams/class-diagram-models.jpg}
-    }
-    \caption{Class diagram} \label{fig:class_diagram}
+\centering
+\includegraphics{images/class-diagrams/class-diagram-models.jpg}
+\caption{Smaller version of class diagram}
 \end{figure}
 
-\end{landscape}
+\hypertarget{see-imagesclass-diagram.png-for-full-sized-image}{%
+\subsection{See images/class-diagram.png for full sized
+image}\label{see-imagesclass-diagram.png-for-full-sized-image}}
 
 \newpage
 
@@ -966,21 +918,32 @@ objects could therefore be considered to be uncoupled.
 
 \newpage
 
-\begin{landscape}
+\hypertarget{interaction-design}{%
+\section{Interaction Design}\label{interaction-design}}
 
-\pagestyle{empty}
-
-\hypertarget{sequence-diagram}{%
-\section{Sequence Diagram}\label{sequence-diagram}}
+\hypertarget{use-case}{%
+\subsection{Use Case}\label{use-case}}
 
 \begin{figure}
-    \makebox[\linewidth]{
-        \includegraphics[width=0.5\linewidth]{images/sequence-diagram/sequence-diagram.png}
-    }
-    \caption{Sequence diagram} \label{fig:sequence_diagram}
+\centering
+\includegraphics[width=0.9\textwidth,height=\textheight]{images/interaction-design/import-project-use-case.png}
+\caption{Use case}
 \end{figure}
 
-\end{landscape}
+\newpage
+
+\hypertarget{sequence-diagram}{%
+\subsection{Sequence Diagram}\label{sequence-diagram}}
+
+\begin{figure}
+\centering
+\includegraphics{images/interaction-design/sequence-diagram.png}
+\caption{Smaller version of sequence diagram}
+\end{figure}
+
+\hypertarget{see-imagessequence-diagram.png-for-full-sized-image}{%
+\subsection{See images/sequence-diagram.png for full sized
+image}\label{see-imagessequence-diagram.png-for-full-sized-image}}
 
 \newpage
 
@@ -989,13 +952,13 @@ objects could therefore be considered to be uncoupled.
 \pagestyle{empty}
 
 \hypertarget{state-diagram}{%
-\section{State Diagram}\label{state-diagram}}
+\section{State Machine Diagram}\label{state-machine-diagram}}
 
 \begin{figure}
     \makebox[\linewidth]{
-        \includegraphics[width=1.16\linewidth]{images/state-machine-diagram/state-machine-diagram.png}
+        \includegraphics[width=1.16\linewidth]{images/interaction-design/state-machine-diagram.png}
     }
-    \caption{State diagram} \label{fig:state_diagram}
+    \caption{State machine diagram} \label{fig:state_machine_diagram}
 \end{figure}
 
 \end{landscape}
@@ -1005,12 +968,20 @@ objects could therefore be considered to be uncoupled.
 \hypertarget{component-diagram}{%
 \section{Component Diagram}\label{component-diagram}}
 
-Include component diagram here
+\begin{figure}
+\centering
+\includegraphics{images/component-diagram/component-diagram.jpg}
+\caption{Smaller version of component diagram}
+\end{figure}
+
+\hypertarget{see-imagescomponent-diagram.jpg-for-full-sized-image}{%
+\subsection{See images/component-diagram.jpg for full sized
+image}\label{see-imagescomponent-diagram.jpg-for-full-sized-image}}
 
 \newpage
 
-\hypertarget{deployment-diagram}{%
-\section{Deployment Diagram}\label{deployment-diagram}}
+\hypertarget{deployment-diagrams}{%
+\section{Deployment Diagrams}\label{deployment-diagrams}}
 
 There are two possible deployment scenarios for the TrekStar management
 system, these being:
@@ -1107,7 +1078,8 @@ the areas of the application logging is used e.g.~in the application.
 
 A common issue with this pattern is the issue of multithreading,
 particularly with respect to file handling. There could be multiple
-components within the application
+components within the application that could be trying to access the
+log, which is why it's important to have a single instance.
 
 \newpage
 
@@ -1338,7 +1310,7 @@ software was to be used in the real world, there may be hundreds of
 thousands of projects sorted in the projects list.
 
 Further discussion of the time complexity of merge sort can be found in
-{[}INSERT SECTION LINK HERE{]}.
+\protect\hyperlink{computational-efficiency}{Computational Efficiency}.
 
 \hypertarget{binary-search}{%
 \subsection{Binary Search}\label{binary-search}}
@@ -1388,7 +1360,8 @@ target project resides within. As a result, on each iteration, half of
 the project list is discarded.
 
 Further discussion of the time complexity of binary search can be found
-in {[}INSERT SECTION LINK HERE{]}.
+in \protect\hyperlink{computational-efficiency}{Computational
+Efficiency}.
 
 \newpage
 
@@ -3130,7 +3103,7 @@ The material will be deleted\strut
 \end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
 The material is deleted\strut
 \end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
-\strut
+N/A\strut
 \end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
 N/A\strut
 \end{minipage}\tabularnewline
@@ -3634,6 +3607,529 @@ Invalid\strut
 The Box Office Report ID will be requested again\strut
 \end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
 The box office report id is requested again\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+134\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 1 will open the List Projects functionality within View
+Mode\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+List Projects will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+List Project opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+135\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 2 will open the Search Projects functionality within View
+Mode\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Search Projects will open\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Search Projects opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+136\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 3 will return to the Main Menu\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application will return to the main menu\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application returns to the main menu\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+137\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value on the view mode menu will throw
+\enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application will throw \enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application throws invalid command\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+138\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing y on the Sort By Title sorts the projects by title\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application will sort the projects by title when y is supplied\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application sorts the projects by title when y is supplied\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+139\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing n on the Sort By Title does not sort the projects by
+title\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application will not sort the projects by title when n is
+supplied\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application does not sort the projects by title when n is
+supplied\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+140\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value on the sort by title functionality will throw
+\enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application will throw \enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application throws invalid command\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+141\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+The list projects functionality lists projects\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application will list the projects when the list project
+functionality is accessed\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application lists projects when the list\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+142\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 1 will open the Next Project functionality within View
+Mode\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Next Project will show the next project\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Next Project runs and shows the next project\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+143\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 2 will open the Previous Project functionality within View
+Mode\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+Previous Project will show the previous project\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Previous Project runs and shows the previous project\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+144\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 3 will enter the View Materials functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application will show materials for the selected project\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application shows materials for the selected project\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+145\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 4 will enter the View Crew functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application will show crew for the selected project\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application shows crew for the selected project\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+146\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 5 will enter the View Box Office Reports functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application will show box office reports for the selected
+project\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application will show box office reports for the selected
+project\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+147\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value on the list projects menu will throw
+\enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application will throw \enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application throws invalid command\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+148\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 1 will run the Next Material functionality within List
+Materials\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The next material function will execute and show the next material\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Nothing occurs when pressing 1\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+The code surrounding the List Materials functionality was analysed and
+the bug was discovered.\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+Successful\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+149\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 2 will run the Previous Material functionality within List
+Materials\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The next material function will execute and show the next material\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+Nothing occurs when pressing 1\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+150\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 3 will exit the List Materials functionality and return to the
+List Project functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application exists List Materials and navigates to the list projects
+functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application returns to the list projects functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+151\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value on the list crew materials will throw
+\enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application will throw \enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application throws invalid command\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+152\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 1 will run the Next Crew functionality within List Crew\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The next crew function will execute and show the next crew member\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The next crew functionality executes and shows the next member\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+153\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 2 will run the Previous Crew functionality within List
+Crew\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The previous crew function will execute and show the previous crew
+member material\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The previous crew function executes and shows the previous crew
+member\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+154\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 3 will exit the List Crew functionality and return to the List
+Project functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application exists List Crew and navigates to the list projects
+functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application returns to the list projects functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+155\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value on the list crew members menu will throw
+\enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application will throw \enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application throws invalid command\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+156\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 1 will run the Next Box Office Report functionality within View
+Box Office Reports\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The next box office report function will execute and show the next box
+office report\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The box office report functionality executes and shows the next box
+office report\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+157\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 2 will run the Previous Box Office Report functionality within
+View Box Office Reports\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The previous box office reports function will execute and show the
+previous box office report\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The previous box office reports function executes and shows the previous
+box office report\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+158\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 3 will exit the View Box Office Report functionality and return
+to the List Project functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application exists List Crew and navigates to the list projects
+functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application returns to the list projects functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+159\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value on the view box office reports menu will
+throw \enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application will throw \enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application throws invalid command\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+160\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 1 will run the Search By Title functionality within Search
+Projects functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The search by title function will execute and open the search projects
+screen\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The search by title function opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+160\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 2 will run the Search By Actor functionality within Search
+Projects functionality\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The search by actor function will execute and open the search projects
+screen\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The search by actor function opens\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+162\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Pressing 3 will exit the Search Projects functionality and return to the
+Main Menu\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application exists the Search Project functionality and navigates to
+the main menu\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application returns to the main menu\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+163\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Inserting an invalid value on the search project menu will throw
+\enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Invalid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application will throw \enquote{Invalid Command}\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application throws invalid command\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+164\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Entering a title value within Search by Title will return search
+results\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application will return results based on the title provided\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application returns results based on the title provided\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+N/A\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+N/A\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering
+165\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Entering a title value within Search by Actor will return search
+results\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+Valid\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+The application will return results based on the actor provided\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+The application returns results based on the actor provided\strut
 \end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
 N/A\strut
 \end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
@@ -4307,9 +4803,9 @@ database, you can see an example of this below.
 \caption{Visual representation of project listings}
 \end{figure}
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options
-available to you, these options allow you to navigate through the
-projects. You can see the associated input actions below.
+As you can see in the figure above, there are more options available to
+you, these options allow you to navigate through the projects. You can
+see the associated input actions below.
 
 \begin{longtable}[]{@{}cll@{}}
 \toprule
@@ -4586,10 +5082,10 @@ query, you can see an example of this below.
 search query}
 \end{figure}
 
-As you can see in Figure CHANGEFIGUREVALUE, there is the option to
-display the associated materials for this project, you can enter
-\emph{\texttt{y}} to confirm that you wish to view the materials for the
-associated project, which will bring up the following information:
+As you can see in the figure above, there is the option to display the
+associated materials for this project, you can enter \emph{\texttt{y}}
+to confirm that you wish to view the materials for the associated
+project, which will bring up the following information:
 
 \begin{figure}
 \centering
@@ -4639,10 +5135,10 @@ query, you can see an example of this below.
 search query}
 \end{figure}
 
-As you can see in Figure CHANGEFIGUREVALUE, there is the option to
-display the associated materials for this project, you can enter
-\emph{\texttt{y}} to confirm that you wish to view the materials for the
-associated project, which will bring up the following information:
+As you can see in the figure above, there is the option to display the
+associated materials for this project, you can enter \emph{\texttt{y}}
+to confirm that you wish to view the materials for the associated
+project, which will bring up the following information:
 
 \begin{figure}
 \centering
@@ -5087,8 +5583,8 @@ want your project to be called. Any value is accepted.
 Project Title}
 \end{figure}
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options
-available to you, these are the options associated with
+As you can see in the figure above, there are more options available to
+you, these are the options associated with
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
 you can find more information by reading the
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
@@ -5112,8 +5608,8 @@ you want your project to have. Any value is accepted.
 Project Summary}
 \end{figure}
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options
-available to you, these are the options associated with
+As you can see in the figure above, there are more options available to
+you, these are the options associated with
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
 you can find more information by reading the
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
@@ -5140,8 +5636,8 @@ project is not released.
 Released value}
 \end{figure}
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options
-available to you, these are the options associated with
+As you can see in the figure above, there are more options available to
+you, these are the options associated with
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
 you can find more information by reading the
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
@@ -5170,8 +5666,8 @@ playing in theatres.
 Project Title}
 \end{figure}
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options
-available to you, these are the options associated with
+As you can see in the figure above, there are more options available to
+you, these are the options associated with
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
 you can find more information by reading the
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
@@ -5206,8 +5702,8 @@ enter your new Keyword, any value is accepted.
 keyword}
 \end{figure}
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options
-available to you, these are the options associated with
+As you can see in the figure above, there are more options available to
+you, these are the options associated with
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
 you can find more information by reading the
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
@@ -5293,8 +5789,8 @@ member that you selected. Any value is accepted.
 Name}
 \end{figure}
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options
-available to you, these are the options associated with
+As you can see in the figure above, there are more options available to
+you, these are the options associated with
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
 you can find more information by reading the
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
@@ -5318,8 +5814,8 @@ the crew member that you selected. Any value is accepted.
 Name}
 \end{figure}
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options
-available to you, these are the options associated with
+As you can see in the figure above, there are more options available to
+you, these are the options associated with
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
 you can find more information by reading the
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
@@ -5346,8 +5842,8 @@ Once you submit this Project ID it will be removed from the database.
 project for}
 \end{figure}
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options
-available to you, these are the options associated with
+As you can see in the figure above, there are more options available to
+you, these are the options associated with
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
 you can find more information by reading the
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
@@ -5774,8 +6270,8 @@ that you want your material to have. Any value is accepted.
 Format}
 \end{figure}
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options
-available to you, these are the options associated with
+As you can see in the figure above, there are more options available to
+you, these are the options associated with
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
 you can find more information by reading the
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
@@ -5799,8 +6295,8 @@ want your material to have. Any numeric value is accepted.
 Time}
 \end{figure}
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options
-available to you, these are the options associated with
+As you can see in the figure above, there are more options available to
+you, these are the options associated with
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
 you can find more information by reading the
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
@@ -5824,8 +6320,8 @@ want your material to have. Any value is accepted.
 Language}
 \end{figure}
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options
-available to you, these are the options associated with
+As you can see in the figure above, there are more options available to
+you, these are the options associated with
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
 you can find more information by reading the
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
@@ -5849,8 +6345,8 @@ that you want your material to have. Any numeric value is accepted.
 Retail Price}
 \end{figure}
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options
-available to you, these are the options associated with
+As you can see in the figure above, there are more options available to
+you, these are the options associated with
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
 you can find more information by reading the
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
@@ -5874,8 +6370,8 @@ want your material to have. Any value is accepted.
 Subtitles}
 \end{figure}
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options
-available to you, these are the options associated with
+As you can see in the figure above, there are more options available to
+you, these are the options associated with
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
 you can find more information by reading the
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
@@ -5899,8 +6395,8 @@ that you want your material to have. Any value is accepted.
 Aspect}
 \end{figure}
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options
-available to you, these are the options associated with
+As you can see in the figure above, there are more options available to
+you, these are the options associated with
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
 you can find more information by reading the
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
@@ -5925,8 +6421,8 @@ is accepted.
 Packaging information}
 \end{figure}
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options
-available to you, these are the options associated with
+As you can see in the figure above, there are more options available to
+you, these are the options associated with
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
 you can find more information by reading the
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
@@ -5950,8 +6446,8 @@ information that you want your material to have. Any value is accepted.
 information}
 \end{figure}
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options
-available to you, these are the options associated with
+As you can see in the figure above, there are more options available to
+you, these are the options associated with
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
 you can find more information by reading the
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
@@ -5988,8 +6484,8 @@ material to have. Any value is accepted.
 Additional Language Tracks information}
 \end{figure}
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options
-available to you, these are the options associated with
+As you can see in the figure above, there are more options available to
+you, these are the options associated with
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
 you can find more information by reading the
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
@@ -6026,8 +6522,8 @@ material to have. Any value is accepted.
 Additional Subtitle Tracks information}
 \end{figure}
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options
-available to you, these are the options associated with
+As you can see in the figure above, there are more options available to
+you, these are the options associated with
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
 you can find more information by reading the
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
@@ -6063,8 +6559,8 @@ accepted.
 Features information}
 \end{figure}
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options
-available to you, these are the options associated with
+As you can see in the figure above, there are more options available to
+you, these are the options associated with
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
 you can find more information by reading the
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
@@ -6088,8 +6584,8 @@ track that you want your material to have. Any value is accepted.
 Track information}
 \end{figure}
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options
-available to you, these are the options associated with
+As you can see in the figure above, there are more options available to
+you, these are the options associated with
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
 you can find more information by reading the
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
@@ -6125,8 +6621,8 @@ list and it must be a numeric value.
 \caption{Visual representation of selecting a MaterialID to delete}
 \end{figure}
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options
-available to you, these are the options associated with
+As you can see in the figure above, there are more options available to
+you, these are the options associated with
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
 you can find more information by reading the
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
@@ -6266,8 +6762,8 @@ your crew member to have. Any value is accepted.
 Name}
 \end{figure}
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options
-available to you, these are the options associated with
+As you can see in the figure above, there are more options available to
+you, these are the options associated with
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
 you can find more information by reading the
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
@@ -6291,8 +6787,8 @@ you want your crew member to have. Any value is accepted.
 Job Title}
 \end{figure}
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options
-available to you, these are the options associated with
+As you can see in the figure above, there are more options available to
+you, these are the options associated with
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
 you can find more information by reading the
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
@@ -6328,8 +6824,8 @@ from this list.
 project for}
 \end{figure}
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options
-available to you, these are the options associated with
+As you can see in the figure above, there are more options available to
+you, these are the options associated with
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
 you can find more information by reading the
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
@@ -6389,8 +6885,8 @@ sold in the entered week. Any numeric value is accepted.
 Sold value}
 \end{figure}
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options
-available to you, these are the options associated with
+As you can see in the figure above, there are more options available to
+you, these are the options associated with
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
 you can find more information by reading the
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of
@@ -6427,8 +6923,8 @@ it must be a numeric value.
 delete}
 \end{figure}
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options
-available to you, these are the options associated with
+As you can see in the figure above, there are more options available to
+you, these are the options associated with
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode}, therefore
 you can find more information by reading the
 \protect\hyperlink{using-maintenance-mode}{Maintenance Mode} section of

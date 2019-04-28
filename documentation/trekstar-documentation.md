@@ -18,8 +18,7 @@ header-includes: |
 # Table of Contents
 
 - [Table of Contents](#table-of-contents)
-- [Todo - **_remove me before submission pls_**](#todo---remove-me-before-submission-pls)
-	- [User Guide](#user-guide)
+- [Plagiarism Declaration](#plagiarism-declaration)
 - [Contributions](#contributions)
 	- [Callum Axon (N0727303) - Member A](#callum-axon-n0727303---member-a)
 	- [Callum Carney (N0741707) - Member C](#callum-carney-n0741707---member-c)
@@ -29,9 +28,12 @@ header-includes: |
 - [Cohesion and Coupling Considerations](#cohesion-and-coupling-considerations)
 	- [Cohesion](#cohesion)
 	- [Coupling](#coupling)
-- [Sequence Diagram](#sequence-diagram)
+- [Interaction Design](#interaction-design)
+  - [Use Case](#use-case)
+  - [Sequence Diagram](#sequence-diagram)
+  - [State Machine Diagram](#state-machine-diagram)
 - [Component Diagram](#component-diagram)
-- [Deployment Diagram](#deployment-diagram)
+- [Deployment Diagrams](#deployment-diagrams)
 	- [Individual Installation](#individual-installation)
 	- [Company-Wide Installation](#company-wide-installation)
 - [Design Pattern](#design-pattern)
@@ -153,11 +155,13 @@ header-includes: |
 
 \newpage
 
-# Todo - **_remove me before submission pls_**
+# Plagiarism Declaration
 
-## User Guide
-  - Change all figure values where text is CHANGEFIGUREVALUE once all images added.
-  - Add class diagram (and any other landscape picture pages) to the TOC on last save
+This report and the software it documents is the result of my own work, other contributing group members are acknowledged. Any contributions to the work by third parties, other than tutors, are stated clearly below this declaration. Should this statement prove to be untrue I recognise the right and duty of the Board of Examiners to take appropriate action in line with the university’s regulations on assessment.
+
+Name: Callum Axon - ID No: N0727303 \newline
+Name: Callum Carney - ID No: N0741707 \newline
+Name: Matthew Robinson - ID No: N0724629
 
 \newpage
 
@@ -174,8 +178,9 @@ header-includes: |
 * S10: Binary search algorithm.
 
 ## Matthew Robinson (N0724629) - Member B
-* S3: A sequence diagram for a use case.
-* S4: State machine diagram for a class.
+* S3/S4: Use Case for Import Project.
+* S3: A sequence diagram for import project use case.
+* S4: State machine diagram for ProjectController.
 * S10: Merge sort algorithm.
 * S13: Console interface.
 
@@ -196,21 +201,11 @@ The Trekstar system has been developed in order to allow TrekStar Pictures to ac
 
 <!-- Class Diagram -->
 
-\begin{landscape}
+# Class Diagram
 
-\pagestyle{empty}
+![Smaller version of class diagram](images/class-diagrams/class-diagram-models.jpg)
 
-\hypertarget{class-diagram}{%
-\section{Class Diagram}\label{class-diagram}}
-
-\begin{figure}
-    \makebox[\linewidth]{
-		\includegraphics[width=1.13\linewidth]{images/class-diagrams/class-diagram-models.jpg}
-    }
-	\caption{Class diagram} \label{fig:class_diagram}
-\end{figure}
-
-\end{landscape}
+## See images/class-diagram.png for full sized image
 
 \newpage
 
@@ -234,23 +229,20 @@ Due to the relationships between different objects within the system, some coupl
 
 \newpage
 
+# Interaction Design
+
+## Use Case
+
+![Use case](images/interaction-design/import-project-use-case.png){width=90%}
+
+\newpage
 <!-- Sequence Diagram -->
 
-\begin{landscape}
+## Sequence Diagram
 
-\pagestyle{empty}
+![Smaller version of sequence diagram](images/interaction-design/sequence-diagram.png)
 
-\hypertarget{sequence-diagram}{%
-\section{Sequence Diagram}\label{sequence-diagram}}
-
-\begin{figure}
-    \makebox[\linewidth]{
-		\includegraphics[width=0.5\linewidth]{images/interaction-design/sequence-diagram.png}
-    }
-	\caption{Sequence diagram} \label{fig:sequence_diagram}
-\end{figure}
-
-\end{landscape}
+## See images/sequence-diagram.png for full sized image
 
 \newpage
 
@@ -263,13 +255,13 @@ Due to the relationships between different objects within the system, some coupl
 \pagestyle{empty}
 
 \hypertarget{state-diagram}{%
-\section{State Diagram}\label{state-diagram}}
+\section{State Machine Diagram}\label{state-machine-diagram}}
 
 \begin{figure}
     \makebox[\linewidth]{
 		\includegraphics[width=1.16\linewidth]{images/interaction-design/state-machine-diagram.png}
     }
-	\caption{State diagram} \label{fig:state_diagram}
+	\caption{State machine diagram} \label{fig:state_machine_diagram}
 \end{figure}
 
 \end{landscape}
@@ -280,11 +272,13 @@ Due to the relationships between different objects within the system, some coupl
 
 # Component Diagram
 
-Include component diagram here
+![Smaller version of component diagram](images/component-diagram/component-diagram.jpg)
+
+## See images/component-diagram.jpg for full sized image
 
 \newpage
 
-# Deployment Diagram
+# Deployment Diagrams
 
 There are two possible deployment scenarios for the TrekStar management system, these being:
 
@@ -325,7 +319,7 @@ The advantages of this pattern is that new materials types can easily be added b
 
 Through the logging library spdlog, a singleton pattern was used in order to ensure a single logging instance is present within the application. This involved creating this instance as soon as the application was launched, and then accessed (using the library) within the areas of the application logging is used e.g. in the application. 
 
-A common issue with this pattern is the issue of multithreading, particularly with respect to file handling. There could be multiple components within the application 
+A common issue with this pattern is the issue of multithreading, particularly with respect to file handling. There could be multiple components within the application that could be trying to access the log, which is why it's important to have a single instance.
 
 \newpage
 
@@ -406,7 +400,7 @@ The two halves are then merged together by following the same process above unti
 
 The implementation of a merge sort algorithm was determined to be necessary in order to benefit from the higher efficiency of sorting using the binary search algorithm, as described below. The merge sort algorithm was used as when compared to other alternatives, such as quick sort, merge sort is more efficient on larger datasets. While the testing was completed with small numbers of projects, it is likely that, if this software was to be used in the real world, there may be hundreds of thousands of projects sorted in the projects list.
 
-Further discussion of the time complexity of merge sort can be found in [INSERT SECTION LINK HERE].
+Further discussion of the time complexity of merge sort can be found in [Computational Efficiency](#computational-efficiency).
 
 ## Binary Search
 
@@ -434,7 +428,7 @@ After these stages have been completed, the value of *result* can be returned. T
 
 A movie company, such as TrekStar, may have a large number of projects. It is important that searching these projects is efficient; the binary search algorithm avoids checking every project in the list. This is because comparisons are made to determine which half of the list the target project resides within. As a result, on each iteration, half of the project list is discarded.
 
-Further discussion of the time complexity of binary search can be found in [INSERT SECTION LINK HERE].
+Further discussion of the time complexity of binary search can be found in [Computational Efficiency](#computational-efficiency).
 
 \newpage
 
@@ -548,7 +542,7 @@ Further discussion of the time complexity of binary search can be found in [INSE
 |102 |Inserting an invalid value into the Number of Bonus Features input on Edit Project Material requests the information to be typed again|Invalid|The value will be requested again|The value is requested again|N/A|N/A|
 |103 |Inserting a Project ID into the Remove Project Material function, the application requests a Material ID to delete|Valid|The project id will be used to select the associated materials and the select material id page will be loaded|The project id is be used to select the associated materials and the select material id page is loaded||N/A|N/A|
 |104 |Inserting an invalid Project ID into the Remove Project function requests the ID to be entered again|Invalid|The ProjectID will be requested again|The project id is requested again|N/A|N/A|
-|105 |Inserting a Material ID into the Remove Project Material function removes the material|Valid|The material will be deleted|The material is deleted||N/A|N/A|
+|105 |Inserting a Material ID into the Remove Project Material function removes the material|Valid|The material will be deleted|The material is deleted|N/A|N/A|
 |106 |Inserting an invalid Material ID into the Remove Project function requests the ID to be entered again|Invalid|The MaterialID will be requested again|The project id is requested again|N/A|N/A|
 |107 |Inserting a Project ID into the Add Crew function moves onto the Crew Information Screen|Valid|The project ID will be selected and the add crew information screen will be loaded |The project id is selected and the add crew information screen is loaded|N/A|N/A|
 |108    	|Inserting an invalid value on the Add Crew menu will throw "Invalid Command"         |Invalid  |The application will throw "Invalid Command"|The application throws invalid command|N/A|N/A|
@@ -587,7 +581,31 @@ Further discussion of the time complexity of binary search can be found in [INSE
 |138 |Pressing y on the Sort By Title sorts the projects by title|Valid|The application will sort the projects by title when y is supplied|The application sorts the projects by title when y is supplied|N/A|N/A|
 |139 |Pressing n on the Sort By Title does not sort the projects by title|Valid|The application will not sort the projects by title when n is supplied|The application does not sort the projects by title when n is supplied|N/A|N/A|
 |140 |Inserting an invalid value on the sort by title functionality will throw "Invalid Command"         |Invalid  |The application will throw "Invalid Command"|The application throws invalid command|N/A|N/A|
-|138 |The list projects functionality lists projects|Valid|The application will list the projects when the list project functionality is accessed|The application lists projects when the list |N/A|N/A|
+|141 |The list projects functionality lists projects|Valid|The application will list the projects when the list project functionality is accessed|The application lists projects when the list |N/A|N/A|
+|142 |Pressing 1 will open the Next Project functionality within View Mode|Valid  |Next Project will show the next project|Next Project runs and shows the next project|N/A|N/A|
+|143 |Pressing 2 will open the Previous Project functionality within View Mode|Valid|Previous Project will show the previous project|Previous Project runs and shows the previous project|N/A|N/A|
+|144 |Pressing 3 will enter the View Materials functionality|Valid|The application will show materials for the selected project|The application shows materials for the selected project|N/A|N/A|
+|145 |Pressing 4 will enter the View Crew functionality|Valid|The application will show crew for the selected project|The application shows crew for the selected project|N/A|N/A|
+|146 |Pressing 5 will enter the View Box Office Reports functionality|Valid|The application will show box office reports for the selected project|The application will show box office reports for the selected project|N/A|N/A|
+|147    	|Inserting an invalid value on the list projects menu will throw "Invalid Command"         |Invalid  |The application will throw "Invalid Command"|The application throws invalid command|N/A|N/A|
+|148 |Pressing 1 will run the Next Material functionality within List Materials|Valid|The next material function will execute and show the next material|Nothing occurs when pressing 1|The code surrounding the List Materials functionality was analysed and the bug was discovered.|Successful|
+|149 |Pressing 2 will run the Previous Material functionality within List Materials|Valid|The next material function will execute and show the next material|Nothing occurs when pressing 1|N/A|N/A|
+|150 |Pressing 3 will exit the List Materials functionality and return to the List Project functionality|Valid|The application exists List Materials and navigates to the list projects functionality|The application returns to the list projects functionality|N/A|N/A|
+|151    	|Inserting an invalid value on the list crew materials will throw "Invalid Command"         |Invalid  |The application will throw "Invalid Command"|The application throws invalid command|N/A|N/A|
+|152 |Pressing 1 will run the Next Crew functionality within List Crew|Valid|The next crew function will execute and show the next crew member|The next crew functionality executes and shows the next member|N/A|N/A|
+|153 |Pressing 2 will run the Previous Crew functionality within List Crew|Valid|The previous crew function will execute and show the previous crew member material|The previous crew function executes and shows the previous crew member|N/A|N/A|
+|154 |Pressing 3 will exit the List Crew functionality and return to the List Project functionality|Valid|The application exists List Crew and navigates to the list projects functionality|The application returns to the list projects functionality|N/A|N/A|
+|155    	|Inserting an invalid value on the list crew members menu will throw "Invalid Command"         |Invalid  |The application will throw "Invalid Command"|The application throws invalid command|N/A|N/A|
+|156 |Pressing 1 will run the Next Box Office Report functionality within View Box Office Reports|Valid|The next box office report function will execute and show the next box office report|The box office report functionality executes and shows the next box office report|N/A|N/A|
+|157 |Pressing 2 will run the Previous Box Office Report functionality within View Box Office Reports|Valid|The previous box office reports function will execute and show the previous box office report|The previous box office reports function executes and shows the previous box office report|N/A|N/A|
+|158 |Pressing 3 will exit the View Box Office Report functionality and return to the List Project functionality|Valid|The application exists List Crew and navigates to the list projects functionality|The application returns to the list projects functionality|N/A|N/A|
+|159    	|Inserting an invalid value on the view box office reports menu will throw "Invalid Command"         |Invalid  |The application will throw "Invalid Command"|The application throws invalid command|N/A|N/A|
+|160 |Pressing 1 will run the Search By Title functionality within Search Projects functionality|Valid|The search by title function will execute and open the search projects screen|The search by title function opens|N/A|N/A|
+|160 |Pressing 2 will run the Search By Actor functionality within Search Projects functionality|Valid|The search by actor function will execute and open the search projects screen|The search by actor function opens|N/A|N/A|
+|162 |Pressing 3 will exit the Search Projects functionality and return to the Main Menu|Valid|The application exists the Search Project functionality and navigates to the main menu|The application returns to the main menu|N/A|N/A|
+|163    	|Inserting an invalid value on the search project menu will throw "Invalid Command"         |Invalid  |The application will throw "Invalid Command"|The application throws invalid command|N/A|N/A|
+|164 |Entering a title value within Search by Title will return search results |Valid|The application will return results based on the title provided|The application returns results based on the title provided|N/A|N/A|
+|165 |Entering a title value within Search by Actor will return search results |Valid|The application will return results based on the actor provided|The application returns results based on the actor provided|N/A|N/A|
 \newpage
 
 # UI Screenshots
@@ -905,7 +923,7 @@ You will now see the projects that are held within your applications database, y
 
 ![Visual representation of project listings](images/user-guide/view-mode/listed-projects.png)
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these options allow you to navigate through the projects. You can see the associated input actions below.
+As you can see in the figure above, there are more options available to you, these options allow you to navigate through the projects. You can see the associated input actions below.
 
 | Input Value | Command Action                                                         |        Information Link                               |
 | :----------: | ------------------------------------------------------------------------- | ---------------------------------------------- |
@@ -986,7 +1004,7 @@ You will now see the associated projects that matched to your search query, you 
 
 ![Visual representation of a project being discovered from a search query](images/user-guide/view-mode/project-search-term.png)
 
-As you can see in Figure CHANGEFIGUREVALUE, there is the option to display the associated materials for this project, you can enter _`y`_ to confirm that you wish to view the materials for the associated project, which will bring up the following information:
+As you can see in the figure above, there is the option to display the associated materials for this project, you can enter _`y`_ to confirm that you wish to view the materials for the associated project, which will bring up the following information:
 
 ![Visual representation of a projects materials being displayed](images/user-guide/view-mode/project-search-list-material.png)
 
@@ -1008,7 +1026,7 @@ You will now see the associated projects that matched to your search query, you 
 
 ![Visual representation of a project being discovered from a search query](images/user-guide/view-mode/project-search-actor.png)
 
-As you can see in Figure CHANGEFIGUREVALUE, there is the option to display the associated materials for this project, you can enter _`y`_ to confirm that you wish to view the materials for the associated project, which will bring up the following information:
+As you can see in the figure above, there is the option to display the associated materials for this project, you can enter _`y`_ to confirm that you wish to view the materials for the associated project, which will bring up the following information:
 
 ![Visual representation of a projects materials being displayed](images/user-guide/view-mode/project-search-list-material.png)
 
@@ -1136,7 +1154,7 @@ You need to enter the new Project Title, this is the new name that you want your
 
 ![Visual representation of the application asking for a new Project Title](images/user-guide/maintenance-mode/update-project-title.png)
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+As you can see in the figure above, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
 \newpage
 
@@ -1148,7 +1166,7 @@ You need to enter the new Project Summary, this is the new summary that you want
 
 ![Visual representation of the application asking for a new Project Summary](images/user-guide/maintenance-mode/update-project-summary.png)
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+As you can see in the figure above, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
 \newpage
 
@@ -1160,7 +1178,7 @@ You need to enter the new Released value, this is the new released state that yo
 
 ![Visual representation of the application asking for a new Released value](images/user-guide/maintenance-mode/update-project-released.png)
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+As you can see in the figure above, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
 \newpage
 
@@ -1172,7 +1190,7 @@ You need to enter the new playing in theatres value, this is the new playing in 
 
 ![Visual representation of the application asking for a new Project Title](images/user-guide/maintenance-mode/update-project-playing-in-theaters.png)
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+As you can see in the figure above, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
 \newpage
 
@@ -1188,7 +1206,7 @@ Once you have inputted a valid keyword identifier you will be asked to enter you
 
 ![Visual representation of the application asking for a new keyword](images/user-guide/maintenance-mode/update-project-keyword.png)
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+As you can see in the figure above, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
 \newpage
 
@@ -1218,7 +1236,7 @@ You need to enter the new Crew Name, this is the new name for the crew member th
 
 ![Visual representation of the application asking for a new Crew Name](images/user-guide/maintenance-mode/update-crew-name.png)
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+As you can see in the figure above, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
 \newpage
 
@@ -1230,7 +1248,7 @@ You need to enter the new Crew Job Title, this is the new job title for the crew
 
 ![Visual representation of the application asking for a new Crew Name](images/user-guide/maintenance-mode/update-crew-job-title.png)
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+As you can see in the figure above, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
 \newpage
 
@@ -1244,7 +1262,7 @@ Once you submit this Project ID it will be removed from the database.
 
 ![Visual representation of selecting a Project ID to update the project for](images/user-guide/maintenance-mode/remove-project-select-id.png)
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+As you can see in the figure above, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
 \newpage
 
@@ -1371,7 +1389,7 @@ You need to enter the new Audio Format, this is the new audio format that you wa
 
 ![Visual representation of the application asking for a new Audio Format](images/user-guide/maintenance-mode/update-project-material-audio-format.png)
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+As you can see in the figure above, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
 \newpage
 
@@ -1383,7 +1401,7 @@ You need to enter the new Run Time, this is the new run time that you want your 
 
 ![Visual representation of the application asking for a new Run Time](images/user-guide/maintenance-mode/update-project-material-run-time.png)
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+As you can see in the figure above, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
 \newpage
 
@@ -1395,7 +1413,7 @@ You need to enter the new Language, this is the new language that you want your 
 
 ![Visual representation of the application asking for a new Language](images/user-guide/maintenance-mode/update-project-material-language.png)
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+As you can see in the figure above, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
 \newpage
 
@@ -1407,7 +1425,7 @@ You need to enter the new Retail Price, this is the new retail price that you wa
 
 ![Visual representation of the application asking for a new Retail Price](images/user-guide/maintenance-mode/update-project-material-retail-price.png)
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+As you can see in the figure above, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
 \newpage
 
@@ -1419,7 +1437,7 @@ You need to enter the new Subtitles, this is the new subtitles that you want you
 
 ![Visual representation of the application asking for new Subtitles](images/user-guide/maintenance-mode/update-project-material-subtitles.png)
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+As you can see in the figure above, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
 \newpage
 
@@ -1431,7 +1449,7 @@ You need to enter the new Frame Aspect, this is the new frame aspect that you wa
 
 ![Visual representation of the application asking for a new Frame Aspect](images/user-guide/maintenance-mode/update-project-material-frame-aspect.png)
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+As you can see in the figure above, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
 \newpage
 
@@ -1443,7 +1461,7 @@ You need to select from the list of packaging types, this is the new packaging t
 
 ![Visual representation of the application asking for new Packaging information](images/user-guide/maintenance-mode/update-project-material-packaging.png)
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+As you can see in the figure above, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
 \newpage
 
@@ -1455,7 +1473,7 @@ You need to enter the new Content details, this is the new content information t
 
 ![Visual representation of the application asking for new Content information](images/user-guide/maintenance-mode/update-project-material-content.png)
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+As you can see in the figure above, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
 \newpage
 
@@ -1471,7 +1489,7 @@ You need to enter the new Additional Language Tracks details, this is the new ad
 
 ![Visual representation of the application asking for new Additional Language Tracks information](images/user-guide/maintenance-mode/update-project-material-additional-language-tracks.png)
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+As you can see in the figure above, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
 \newpage
 
@@ -1487,7 +1505,7 @@ You need to enter the new Additional Subtitle Tracks details, this is the new ad
 
 ![Visual representation of the application asking for new Additional Subtitle Tracks information](images/user-guide/maintenance-mode/update-project-material-additional-subtitle-tracks.png)
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+As you can see in the figure above, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
 \newpage
 
@@ -1503,7 +1521,7 @@ You need to enter the new Bonus Features details, this is the new bonus feature 
 
 ![Visual representation of the application asking for new Bonus Features information](images/user-guide/maintenance-mode/update-project-material-bonus-feature.png)
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+As you can see in the figure above, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
 \newpage
 
@@ -1515,7 +1533,7 @@ You need to enter the new Audio Track details, this is the new audio track that 
 
 ![Visual representation of the application asking for new Audio Track information](images/user-guide/maintenance-mode/update-project-materials-audio-track.png)
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+As you can see in the figure above, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
 \newpage
 
@@ -1531,7 +1549,7 @@ Once you have selected a Project ID you will be presented with the associated Ma
 
 ![Visual representation of selecting a MaterialID to delete](images/user-guide/maintenance-mode/remove-project-materials-select-id.png)
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+As you can see in the figure above, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
 \newpage
 
@@ -1583,7 +1601,7 @@ You need to enter the new Crew Name, this is the new name that you want your cre
 
 ![Visual representation of the application asking for a new Crew Name](images/user-guide/maintenance-mode/update-crew-name.png)
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+As you can see in the figure above, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
 \newpage
 
@@ -1595,7 +1613,7 @@ You need to enter the new Crew Job Title, this is the new job title that you wan
 
 ![Visual representation of the application asking for a new Crew Job Title](images/user-guide/maintenance-mode/update-crew-job-title.png)
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+As you can see in the figure above, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
 \newpage
 
@@ -1611,7 +1629,7 @@ Once you submit this Project ID you will need to select the Crew Member to selec
 
 ![Visual representation of selecting a Project ID to update the project for](images/user-guide/maintenance-mode/remove-crew-select-id.png)
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+As you can see in the figure above, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
 \newpage
 
@@ -1637,7 +1655,7 @@ Next, you need to enter the Tickets Sold, this is the amount of tickets sold in 
 
 ![Visual representation of the application asking for a Tickets Sold value](images/user-guide/maintenance-mode/add-box-office-report-tickets-sold.png)
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+As you can see in the figure above, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
 \newpage
 
@@ -1653,7 +1671,7 @@ Once you have selected a Project ID you will be presented with the associated We
 
 ![Visual representation of selecting a Box Office Report to delete](images/user-guide/maintenance-mode/remove-box-office-select-id.png)
 
-As you can see in Figure CHANGEFIGUREVALUE, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
+As you can see in the figure above, there are more options available to you, these are the options associated with [Maintenance Mode](#using-maintenance-mode), therefore you can find more information by reading the [Maintenance Mode](#using-maintenance-mode) section of this user guide.
 
 \newpage
 
