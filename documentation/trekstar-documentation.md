@@ -260,7 +260,7 @@ Due to the relationships between different objects within the system, some coupl
 
 \begin{figure}
     \makebox[\linewidth]{
-		\includegraphics[width=0.5\linewidth]{images/sequence-diagram/sequence-diagram.png}
+		\includegraphics[width=0.5\linewidth]{images/interaction-design/sequence-diagram.png}
     }
 	\caption{Sequence diagram} \label{fig:sequence_diagram}
 \end{figure}
@@ -282,7 +282,7 @@ Due to the relationships between different objects within the system, some coupl
 
 \begin{figure}
     \makebox[\linewidth]{
-		\includegraphics[width=1.16\linewidth]{images/state-machine-diagram/state-machine-diagram.png}
+		\includegraphics[width=1.16\linewidth]{images/interaction-design/state-machine-diagram.png}
     }
 	\caption{State diagram} \label{fig:state_diagram}
 \end{figure}
