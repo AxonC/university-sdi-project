@@ -14,36 +14,31 @@
 #include "../mock/MockProject.h"
 #include "../mock/MockProjectView.h"
 
+#include "TestCase.h"
+
 using TrekStar::People::Crew;
 using TrekStar::Material::DVD;
 using TrekStar::Project::Project;
 using TrekStar::Project::ProjectView;
 using TrekStar::Project::ProjectController;
 using TrekStar::Material::Material;
+using TrekStarTests::Tests::TestCase;
 
 using ::testing::NiceMock;
 
 namespace TrekStarTest {
     namespace Tests {
-        class ProjectTest: public testing::Test
+        class ProjectTest: public TestCase
         {
         public:
             // Default state of a project every time a test is ran.
-            ProjectTest() : project("Project", "A summary of a project", false, true, {"hello", "keyword"}),
+            ProjectTest() : TestCase(),
+                            project("Project", "A summary of a project", false, true, {"hello", "keyword"}),
                             releasedProject("Project 2", "A summary of a project", true, false, {"keyword", "keyword 2"})
             {
                 releasedProject.ReleaseProject();
             }
 
-            // surpresses console output by redirecting the std::cout stream
-            virtual void SetUp() {
-              storedStreambuf_ = std::cout.rdbuf();
-              std::cout.rdbuf(nullptr);
-            }
-
-            virtual void TearDown() {
-              std::cout.rdbuf(storedStreambuf_);
-            }
 
             NiceMock<MockProject> mockProject;
 
@@ -51,7 +46,7 @@ namespace TrekStarTest {
             Project releasedProject;
             std::shared_ptr<DVD> material = std::make_shared<DVD>();
             std::shared_ptr<Crew> crewMember = std::make_shared<Crew>();
-            std::streambuf* storedStreambuf_;
+
         };
 
         TEST_F(ProjectTest, ProjectCanBeReleasedWhenNotPlayingInTheatres)

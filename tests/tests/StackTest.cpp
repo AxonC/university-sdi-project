@@ -1,19 +1,19 @@
-#include <gtest/gtest.h>
+#include "TestCase.h"
 
 #include <structures/Stack.h>
 
 using TrekStar::Structures::Stack;
+using TrekStarTests::Tests::TestCase;
 
 namespace TrekStarTests {
     namespace Tests {
-        class StackTest: public testing::Test
+        class StackTest: public TestCase
             {
-         public:
-            StackTest()
-            = default;
+            public:
+                StackTest() : TestCase() {}
 
-          Stack<int> stack;
-          Stack<int> usedStack{1};
+                Stack<int> stack;
+                Stack<int> usedStack{1};
         };
 
         TEST_F(StackTest, AnElementCanBeAddedToAStack)
