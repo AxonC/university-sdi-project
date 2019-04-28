@@ -103,6 +103,11 @@ namespace TrekStar
             this->playingInTheatres = playingInTheatres;
         }
 
+        void Project::SetKeywords(const std::vector<std::string> & keywords)
+        {
+            this->keywords = keywords;
+        }
+
         void Project::SetKeyword(const unsigned int & keywordNo, const std::string & keyword)
         {
             this->keywords.at(keywordNo) = keyword;

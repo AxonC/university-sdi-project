@@ -201,7 +201,14 @@ namespace TrekStar
 
         std::string ProjectView::GetNewKeyword(const unsigned int & keywordNo)
         {
-            std::cout << "Keyword #" << keywordNo + 1 << " [current: " << this->GetModel()->GetKeywords().at(keywordNo) << "]: ";
+            if ( this->GetModel()->GetKeywords().empty() )
+            {
+                std::cout << "Keyword: ";
+            }
+            else
+            {
+                std::cout << "Keyword #" << keywordNo + 1 << " [current: " << this->GetModel()->GetKeywords().at(keywordNo) << "]: ";
+            }
             return TrekStar::Command::GetStringInput();
         }
 
@@ -237,6 +244,12 @@ namespace TrekStar
             default:
                 return "dvd";
             }
+        }
+
+        unsigned int ProjectView::GetNoOfKeywords()
+        {
+            std::cout << "Number of Keywords: ";
+            return TrekStar::Command::GetIntInput();
         }
 
         unsigned int ProjectView::GetUpdateOption()
@@ -369,6 +382,11 @@ namespace TrekStar
         void ProjectView::DisplayHasNoBoxOfficeReports()
         {
             std::cout << "This project has no box office reports to display." << std::endl;
+        }
+
+        void ProjectView::DisplayCannotAddBoxOfficeReport()
+        {
+            std::cout << "Cannot add box office report to this week number as a report for this week already exists." << std::endl;
         }
 
         ProjectInterface* ProjectView::GetModel()

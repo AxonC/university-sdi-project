@@ -24,7 +24,7 @@ namespace TrekStar
             {
                 std::cin >> input;
             }
-            while( !std::cin.fail() && input != 'y' && input != 'n' );
+            while ( !std::cin.fail() && input != 'y' && input != 'n' );
 
             return input == 'y';
         }
@@ -33,6 +33,12 @@ namespace TrekStar
         {
             int input;
             std::cin >> input;
+            while ( std::cin.fail() || input < 0 )
+            {
+                std::cin.clear();
+                std::cin.ignore(256,'\n');
+                std::cin >> input;
+            }
             return input;
         }
 
@@ -40,6 +46,12 @@ namespace TrekStar
         {
             unsigned long int input;
             std::cin >> input;
+            while ( std::cin.fail() || input < 0 )
+            {
+                std::cin.clear();
+                std::cin.ignore(256,'\n');
+                std::cin >> input;
+            }
             return input;
         }
 
@@ -47,6 +59,12 @@ namespace TrekStar
         {
             double input;
             std::cin >> input;
+            while ( std::cin.fail() || input < 0 )
+            {
+                std::cin.clear();
+                std::cin.ignore(256,'\n');
+                std::cin >> input;
+            }
             return input;
         }
 
@@ -81,6 +99,12 @@ namespace TrekStar
             {
                 std::cout << name << " [1 - " << vectorSize << "]: ";
                 std::cin >> input;
+                while ( std::cin.fail() || input < 0 )
+                {
+                    std::cin.clear();
+                    std::cin.ignore(256,'\n');
+                    std::cin >> input;
+                }
             }
 
             return input - 1;

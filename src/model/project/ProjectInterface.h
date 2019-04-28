@@ -42,6 +42,7 @@ namespace TrekStar
             virtual void SetSummary(const std::string & summary) = 0;
             virtual void SetReleased(const bool & released) = 0;
             virtual void SetPlayingInTheatres(const bool & playingInTheatres) = 0;
+            virtual void SetKeywords(const std::vector<std::string> & keywords) = 0;
             virtual void SetKeyword(const unsigned int & keywordNo, const std::string & keyword) = 0;
 
             virtual std::vector<std::shared_ptr<People::Crew>> GetCrew() const = 0;

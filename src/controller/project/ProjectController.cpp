@@ -126,6 +126,7 @@ namespace TrekStar
             this->UpdateSummary();
             this->UpdateReleased();
             this->UpdatePlayingInTheatres();
+            this->AddKeywords();
 
             auto newProject = this->GetModel();
             _logger->info("Project " + std::to_string(newProject->GetId()) + " was added with the title of " + newProject->GetTitle());
@@ -482,7 +483,14 @@ namespace TrekStar
 
             controller.AddNew();
 
-            this->GetModel()->AddBoxOfficeReport(std::make_shared<TrekStar::Project::BoxOfficeReport>(boxOfficeReport));
+            try
+            {
+                this->GetModel()->AddBoxOfficeReport(std::make_shared<TrekStar::Project::BoxOfficeReport>(boxOfficeReport));
+            }
+            catch ( std::domain_error & )
+            {
+                this->GetView()->DisplayCannotAddBoxOfficeReport();
+            }
         }
 
 
@@ -578,6 +586,24 @@ namespace TrekStar
         void ProjectController::UpdatePlayingInTheatres()
         {
             this->GetModel()->SetPlayingInTheatres(this->GetView()->GetNewPlayingInTheatres());
+        }
+
+
+        void ProjectController::AddKeywords()
+        {
+            // Call method on view to get user input for how many additional subtitle tracks should be added.
+            unsigned int noOfKeywords = this->GetView()->GetNoOfKeywords();
+
+            std::vector<std::string> keywords;  // Create empty vector.
+
+            for ( unsigned int i = 0; i < noOfKeywords; i++ )
+            {
+                // Add to the vector the returned value from the view's method to get user input for a new additional
+                // subtitle track.
+                keywords.push_back(this->GetView()->GetNewKeyword(i));
+            }
+
+            this->GetModel()->SetKeywords(keywords);
         }
 
 

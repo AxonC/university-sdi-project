@@ -34,6 +34,8 @@ namespace TrekStar
             std::string GetNewKeyword(const unsigned int & keywordNo);
             std::string GetNewMaterialFormat();
 
+            unsigned int GetNoOfKeywords();
+
             unsigned int GetUpdateOption();
             unsigned int GetMaterialSelection();
             unsigned int GetCrewSelection();
@@ -50,6 +52,7 @@ namespace TrekStar
             void DisplayHasNoMaterials();
             void DisplayHasNoCrew();
             void DisplayHasNoBoxOfficeReports();
+            void DisplayCannotAddBoxOfficeReport();
 
             ProjectInterface* GetModel() override;
         };
