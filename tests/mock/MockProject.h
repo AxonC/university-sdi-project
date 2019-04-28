@@ -26,6 +26,7 @@ public:
     MOCK_METHOD1(SetReleased, void(const bool &));
     MOCK_METHOD1(SetPlayingInTheatres, void(const bool &));
     MOCK_METHOD2(SetKeyword, void(const unsigned int &, const std::string &));
+    MOCK_METHOD1(SetKeywords, void(const std::vector<std::string> &));
 
     MOCK_CONST_METHOD0(GetCrew, std::vector<std::shared_ptr<TrekStar::People::Crew>>());
 

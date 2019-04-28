@@ -165,5 +165,18 @@ namespace TrekStarTest {
 
             controller.ShowAll();
         }
+
+        TEST_F(ProjectTest, DuplicateKnownFormatsAreNotAdded)
+        {
+            std::shared_ptr<DVD> material = std::make_shared<DVD>();
+            std::shared_ptr<DVD> material2 = std::make_shared<DVD>();
+            material->SetFormat("dvd");
+            material2->SetFormat("dvd");
+
+            releasedProject.AddMaterial(material);
+            ASSERT_EQ(1, releasedProject.GetMaterialFormats().size());
+            releasedProject.AddMaterial(material2);
+            ASSERT_EQ(1, releasedProject.GetMaterialFormats().size());
+        }
     }
 }

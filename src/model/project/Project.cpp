@@ -206,11 +206,25 @@ namespace TrekStar
                 };
         }
 
+        /**
+            Class:                 Project
+            Method Name:           MaterialFormatExists
+            Method Access Control: Private
+
+            Indicates whether or not a given format is already present within a project.
+        */
         bool Project::MaterialFormatExists(const std::string & materialFormat) const
         {
             return std::find(this->materialFormats.begin(), this->materialFormats.end(), materialFormat) != this->materialFormats.end();
         }
 
+        /**
+            Class:                 Project
+            Method Name:           AddMaterialFormat
+            Method Access Control: Private
+
+            Adds a format to the known formats of a Project.
+        */
         void Project::AddMaterialFormat(const std::string & materialFormat)
         {
             if ( !MaterialFormatExists(materialFormat) )
@@ -254,11 +268,25 @@ namespace TrekStar
             return this->GetSearchableTitle() < title;
         }
 
+        /**
+            Class:                 Project
+            Method Name:           GetBoxOfficeReports
+            Method Access Control: Public
+
+            Returns all of the box office reports for the project.
+        */
         std::vector<std::shared_ptr<BoxOfficeReport>> Project::GetBoxOfficeReports() const
         {
             return this->boxOfficeReports;
         }
 
+        /**
+            Class:                 Project
+            Method Name:           AddBoxOfficeReport
+            Method Access Control: Public
+
+            Adds a box office report to the project.
+        */
         void Project::AddBoxOfficeReport(const std::shared_ptr<BoxOfficeReport> & report)
         {
             for(const auto & existingReport: this->boxOfficeReports)
@@ -272,6 +300,13 @@ namespace TrekStar
             this->boxOfficeReports.push_back(report);
         }
 
+        /**
+            Class:                 Project
+            Method Name:           AddBoxOfficeReports
+            Method Access Control: Public
+
+            Adds multiple box office reports to the project.
+        */
         void Project::AddBoxOfficeReports(const std::vector<std::shared_ptr<BoxOfficeReport>> & reports)
         {
             for(const auto & report : reports)
@@ -287,6 +322,13 @@ namespace TrekStar
             }
         }
 
+        /**
+            Class:                 Project
+            Method Name:           GetTotalBoxOfficeRevenue
+            Method Access Control: Public
+
+            Gather the total revenue from the contained box office reports.
+        */
         unsigned long long int Project::GetTotalBoxOfficeRevenue() const
         {
             unsigned long long int initial = 0;
@@ -297,6 +339,13 @@ namespace TrekStar
             return initial;
         }
 
+        /**
+            Class:                 Project
+            Method Name:           RemoveBoxOfficeReport
+            Method Access Control: Public
+
+            Remove a BoxOfficeReport from a Project.
+        */
         void Project::RemoveBoxOfficeReport(const std::shared_ptr<BoxOfficeReport> & boxOfficeReport)
         {
             auto search = std::find(this->boxOfficeReports.begin(), this->boxOfficeReports.end(), boxOfficeReport);
