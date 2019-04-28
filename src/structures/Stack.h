@@ -21,7 +21,6 @@ namespace TrekStar
             bool isEmpty() const;
             unsigned int size() const;
             std::vector<T> data() const;
-            void update(T const &, unsigned int);
 
             T operator[](unsigned int) const;
         private:
@@ -95,12 +94,6 @@ namespace TrekStar
         template<class T>
         std::vector<T> Stack<T>::data() const {
             return elements;
-        }
-
-        template<class T>
-        void Stack<T>::update(const T & element, unsigned int elementPos)
-        {
-            this->elements.at(elementPos) = element;
         }
 
         /**

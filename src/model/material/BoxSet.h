@@ -34,7 +34,6 @@ namespace TrekStar
 
             void AddDisks(const std::vector<std::shared_ptr<DVD>> &);
             void AddDisk(const std::shared_ptr<DVD> &);
-            void SetDisk(const std::shared_ptr<DVD> & disk, unsigned int diskNo);
             void RemoveDisk();
 
             Stack<std::shared_ptr<Material>> GetDisks() const;

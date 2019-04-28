@@ -35,11 +35,6 @@ namespace TrekStar
             this->disks.push(disk);
         }
 
-        void BoxSet::SetDisk(const std::shared_ptr<DVD> & disk, unsigned int diskNo)
-        {
-            this->disks.update(disk, diskNo);
-        }
-
         void BoxSet::RemoveDisk()
         {
             this->disks.pop();
